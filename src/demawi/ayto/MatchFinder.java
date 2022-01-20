@@ -37,7 +37,7 @@ public class MatchFinder {
 
       boolean debug = false;
 
-      AYTO_Permutator3<Frau, Mann, Pair> permutator = AYTO_Permutator3.create(data.frauen, data.maenner, Pair::pair);
+      AYTO_Permutator<Frau, Mann, Pair> permutator = AYTO_Permutator.create(data.frauen, data.maenner, Pair::pair);
       permutator.permutate(new Consumer<Set<Pair>>() {
         // AYTO_Permutator2.create(data.frauen, data.maenner).permutate(new Consumer<Set<Pair>>() {
         @Override

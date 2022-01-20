@@ -25,14 +25,17 @@ public class AYTO_Permutator<F, M, R> {
   }
 
   public void permutate(Consumer<Set<R>> pairConsumer) {
-    int maxA = frauen.size();
-    int maxB = maenner.size();
-    int size = Math.max(maxA, maxB);
+    int anzahlFrauen = frauen.size();
+    int anzahlMaenner = maenner.size();
+    int size = Math.max(anzahlFrauen, anzahlMaenner);
     Set<Integer> current = new HashSet<>();
-    permutateIntern(maxA, maxB, size, -1, current, pairConsumer);
+    permutateInternImpl2(anzahlFrauen, anzahlMaenner, size, -1, 0, 0, current, pairConsumer);
   }
 
-  private void permutateIntern(int maxA, int maxB, int size, int lastAdd, Set<Integer> current,
+  /**
+   * Just iterate over both lists.
+   */
+  private void permutateInternImpl1(int maxA, int maxB, int size, int lastAdd, Set<Integer> current,
     Consumer<Set<R>> pairConsumer) {
 
     if (size == current.size()) {
@@ -48,7 +51,46 @@ public class AYTO_Permutator<F, M, R> {
           if (number <= lastAdd) return;
           Set<Integer> newSet = new HashSet<>(current);
           newSet.add(number);
-          permutateIntern(maxA, maxB, size, number, newSet, pairConsumer);
+          permutateInternImpl1(maxA, maxB, size, number, newSet, pairConsumer);
+        }
+      }
+    }
+  }
+
+  /**
+   * Optimized iteration only over one list.
+   */
+  private void permutateInternImpl2(int anzahlFrauen, int anzahlMaenner, int size, int lastAdd, int startFrau,
+    int startMann, Set<Integer> current, Consumer<Set<R>> pairConsumer) {
+
+    if (size == current.size()) {
+      pairConsumer.accept(decodePairs(current));
+      return;
+    }
+
+    if (anzahlFrauen >= anzahlMaenner) { // bei Frauenüberschuss
+      for (int mann = 0; mann < anzahlMaenner; mann++) {
+        int number = encodePair(startFrau, mann);
+        if (canAdd(startFrau, mann, current)) {
+          if (number <= lastAdd) {
+            throw new IllegalStateException("Das solle nicht passieren! Wir wollen alles aufsteigend hinzufügen!");
+          }
+          Set<Integer> newSet = new HashSet<>(current);
+          newSet.add(number);
+          permutateInternImpl2(anzahlFrauen, anzahlMaenner, size, number, startFrau + 1, 0, newSet, pairConsumer);
+        }
+      }
+    }
+    else { // bei Männerüberschuss
+      for (int frau = 0; frau < anzahlFrauen; frau++) {
+        int number = encodePair(frau, startMann);
+        if (canAdd(frau, startMann, current)) {
+          if (number <= lastAdd) {
+            throw new IllegalStateException("Das solle nicht passieren! Wir wollen alles aufsteigend hinzufügen!");
+          }
+          Set<Integer> newSet = new HashSet<>(current);
+          newSet.add(number);
+          permutateInternImpl2(anzahlFrauen, anzahlMaenner, size, number, 0, startMann + 1, newSet, pairConsumer);
         }
       }
     }
