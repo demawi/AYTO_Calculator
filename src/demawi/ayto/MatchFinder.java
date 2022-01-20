@@ -48,7 +48,7 @@ public class MatchFinder {
       });
       if (info) System.out.println("Size: " + result.totalConstellations + " Yes: " + result.yes + " / "
         + setsOhneZusatz.size() + " No: " + result.no + " Calculation time: "
-        + minSecs(System.currentTimeMillis() - start) + " Tested iterations: " + permutator.testCount);
+        + minSecs(System.currentTimeMillis() - start) + " Tested intern iterations: " + permutator.testCount);
     }
   }
 
@@ -77,11 +77,13 @@ public class MatchFinder {
     List<Pair> sortedPairs = new ArrayList<Pair>(result.pairCount.keySet());
     Collections.sort(sortedPairs, pairComparator);
 
+    System.out.println();
     System.out.println("Potential pairs: " + result.pairCount.size());
 
     for (Pair pair : sortedPairs) {
-      double percent = Math
-        .round((result.pairCount.get(pair) / ((double) result.possibleConstellations.size())) * 10000) / 100.0;
+      Integer pairCounting = result.pairCount.get(pair);
+      Integer gesamtCounting = result.possibleConstellations.size();
+      double percent = Math.round((pairCounting / (double) gesamtCounting) * 10000) / 100.0;
 
       int count = 0;
       for (MatchingNight night : data.matchingNights) {
@@ -89,8 +91,8 @@ public class MatchFinder {
           count++;
         }
       }
-      System.out
-        .println(pair.frau + " & " + pair.mann + " => " + percent + "% " + count + "/" + data.matchingNights.size());
+      System.out.println(pair.frau + " & " + pair.mann + " => " + percent + "% [" + pairCounting + "/" + gesamtCounting
+        + "] Gemeinsame MNs: " + count + "/" + data.matchingNights.size());
     }
 
     System.out.println();
@@ -120,7 +122,8 @@ public class MatchFinder {
     for (int i = 0; i < 100; i++) {
       Set<Pair> constellation = sortedConstellations.get(i);
       System.out.println("> Platz " + (i + 1) + " mit "
-        + constellation.stream().collect(Collectors.summingInt(a -> result.pairCount.get(a))) + " Punkten");
+        + constellation.stream().collect(Collectors.summingInt(a -> result.pairCount.get(a)))
+        + " Punkten (Summe der Vorkommen der Einzelpaare)");
       for (Pair pair : constellation) {
         System.out.println(pair);
       }
@@ -129,13 +132,13 @@ public class MatchFinder {
   }
 
   public void search(Pair... pairs) {
-    search(Arrays.asList(pairs));
+    printProbabilities(Arrays.asList(pairs));
   }
 
   /**
    * Prints the spot probabilities 0..10 for the given constellation.
    */
-  public void search(Collection<Pair> pairs) {
+  public void printProbabilities(Collection<Pair> pairs) {
     calulate(true);
 
     int[] lightResults = new int[11];

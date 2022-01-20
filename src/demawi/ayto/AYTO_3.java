@@ -60,10 +60,10 @@ public class AYTO_3 extends MatchFinder {
 
     // 6ter Tag
     add(false, pair(Jessica, Max));
-    if (false) {
-      mn(4, pair(Dana, Antonino), pair(Estelle, Mike), pair(Isabelle, Dustin), pair(Jessica, Leon), pair(Joelina, Tim),
-        pair(Kerstin, Max), pair(Marie, Andre), pair(Raphaela, William), pair(Zaira, Marius), pair(Desiree, Jordi));
+    mn(4, pair(Dana, Antonino), pair(Estelle, Mike), pair(Isabelle, Dustin), pair(Jessica, Leon), pair(Joelina, Tim),
+      pair(Kerstin, Max), pair(Marie, Andre), pair(Raphaela, William), pair(Zaira, Marius), pair(Desiree, Jordi));
 
+    if (false) {
       // coming
       // add(false, pair(Kerstin, Max)); // 26.32
       // add(false, pair(Isabelle, Dustin)); // 0
@@ -89,11 +89,11 @@ public class AYTO_3 extends MatchFinder {
   public static void main(String[] args) {
     AYTO_3 ayto = new AYTO_3();
     // System.out.println(ayto.test(ayto.testtest(), true));
-    ayto.search(pair(Dana, Antonino), pair(Estelle, Mike), pair(Isabelle, Dustin), pair(Jessica, Leon),
+    if (false) ayto.search(pair(Dana, Antonino), pair(Estelle, Mike), pair(Isabelle, Dustin), pair(Jessica, Leon),
       pair(Joelina, Tim), pair(Kerstin, Max), pair(Marie, Andre), pair(Raphaela, William), pair(Zaira, Marius),
       pair(Desiree, Jordi));
 
-    // ayto.search();
+    ayto.search();
   }
 
 }
