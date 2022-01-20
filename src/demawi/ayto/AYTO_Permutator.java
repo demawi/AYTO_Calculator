@@ -68,7 +68,7 @@ public class AYTO_Permutator<F, M, R> {
       return;
     }
 
-    if (anzahlFrauen >= anzahlMaenner) { // jede Frau ist nur einmal vorhanden.
+    if (anzahlFrauen >= anzahlMaenner) { // jede Frau ist nur einmal vorhanden, somit frauAktuell immer + 1
       for (int mann = 0; mann < anzahlMaenner; mann++) {
         if (canAdd(frauAktuell, mann, currentConstellation)) {
           int number = encodePair(frauAktuell, mann);
@@ -78,7 +78,7 @@ public class AYTO_Permutator<F, M, R> {
         }
       }
     }
-    else { // jeder Mann ist nur einmal vorhanden.
+    else { // jeder Mann ist nur einmal vorhanden, somit mannAktuell immer +1.
       for (int frau = 0; frau < anzahlFrauen; frau++) {
         if (canAdd(frau, mannAktuell, currentConstellation)) {
           int number = encodePair(frau, mannAktuell);
