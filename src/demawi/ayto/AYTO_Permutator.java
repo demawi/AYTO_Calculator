@@ -20,7 +20,7 @@ public class AYTO_Permutator<F, M, R> {
   }
 
   public static <F, M, R> AYTO_Permutator<F, M, R> create(List<F> setA, List<M> setB,
-    BiFunction<F, M, R> packingFunction) {
+        BiFunction<F, M, R> packingFunction) {
     return new AYTO_Permutator<F, M, R>(setA, setB, packingFunction);
   }
 
@@ -29,14 +29,14 @@ public class AYTO_Permutator<F, M, R> {
     int anzahlMaenner = maenner.size();
     int size = Math.max(anzahlFrauen, anzahlMaenner);
     Set<Integer> current = new HashSet<>();
-    permutateInternImpl2(anzahlFrauen, anzahlMaenner, size, -1, 0, 0, current, pairConsumer);
+    permutateInternImpl2(anzahlFrauen, anzahlMaenner, size, 0, 0, current, pairConsumer);
   }
 
   /**
    * Just iterate over both lists.
    */
   private void permutateInternImpl1(int maxA, int maxB, int size, int lastAdd, Set<Integer> current,
-    Consumer<Set<R>> pairConsumer) {
+        Consumer<Set<R>> pairConsumer) {
 
     if (size == current.size()) {
       pairConsumer.accept(decodePairs(current));
@@ -60,31 +60,31 @@ public class AYTO_Permutator<F, M, R> {
   /**
    * Optimized iteration only over one list.
    */
-  private void permutateInternImpl2(int anzahlFrauen, int anzahlMaenner, int size, int lastAdd, int startFrau,
-    int startMann, Set<Integer> current, Consumer<Set<R>> pairConsumer) {
+  private void permutateInternImpl2(int anzahlFrauen, int anzahlMaenner, int size, int frauAktuell, int mannAktuell,
+        Set<Integer> currentConstellation, Consumer<Set<R>> pairConsumer) {
 
-    if (size == current.size()) {
-      pairConsumer.accept(decodePairs(current));
+    if (size == currentConstellation.size()) {
+      pairConsumer.accept(decodePairs(currentConstellation));
       return;
     }
 
-    if (anzahlFrauen >= anzahlMaenner) { // bei Frauenüberschuss
+    if (anzahlFrauen >= anzahlMaenner) { // jede Frau ist nur einmal vorhanden.
       for (int mann = 0; mann < anzahlMaenner; mann++) {
-        int number = encodePair(startFrau, mann);
-        if (canAdd(startFrau, mann, current)) {
-          Set<Integer> newSet = new HashSet<>(current);
+        if (canAdd(frauAktuell, mann, currentConstellation)) {
+          int number = encodePair(frauAktuell, mann);
+          Set<Integer> newSet = new HashSet<>(currentConstellation);
           newSet.add(number);
-          permutateInternImpl2(anzahlFrauen, anzahlMaenner, size, number, startFrau + 1, 0, newSet, pairConsumer);
+          permutateInternImpl2(anzahlFrauen, anzahlMaenner, size, frauAktuell + 1, 0, newSet, pairConsumer);
         }
       }
     }
-    else { // bei Männerüberschuss
+    else { // jeder Mann ist nur einmal vorhanden.
       for (int frau = 0; frau < anzahlFrauen; frau++) {
-        int number = encodePair(frau, startMann);
-        if (canAdd(frau, startMann, current)) {
-          Set<Integer> newSet = new HashSet<>(current);
+        if (canAdd(frau, mannAktuell, currentConstellation)) {
+          int number = encodePair(frau, mannAktuell);
+          Set<Integer> newSet = new HashSet<>(currentConstellation);
           newSet.add(number);
-          permutateInternImpl2(anzahlFrauen, anzahlMaenner, size, number, 0, startMann + 1, newSet, pairConsumer);
+          permutateInternImpl2(anzahlFrauen, anzahlMaenner, size, 0, mannAktuell + 1, newSet, pairConsumer);
         }
       }
     }
@@ -94,11 +94,14 @@ public class AYTO_Permutator<F, M, R> {
   private Set<Integer> frauDouble = new HashSet<>();
   private Set<Integer> mannDouble = new HashSet<>();
 
-  private boolean canAdd(int frau, int mann, Set<Integer> set) {
+  /**
+   * Prüft, ob ein Paar wirklich zu der bisherigen Konstellation hinzugefügt werden kann.
+   */
+  private boolean canAdd(int frau, int mann, Set<Integer> constellation) {
     testCount++;
     frauDouble.clear();
     mannDouble.clear();
-    for (Integer current : set) {
+    for (Integer current : constellation) {
       if (decodeFrau(current) == frau) {
         // die Frau ist bereits enthalten
         if (mann > 9) { // Könnte erlaubt sein, wenn der Mann ein Zusatzmann ist
