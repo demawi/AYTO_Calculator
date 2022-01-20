@@ -72,9 +72,6 @@ public class AYTO_Permutator<F, M, R> {
       for (int mann = 0; mann < anzahlMaenner; mann++) {
         int number = encodePair(startFrau, mann);
         if (canAdd(startFrau, mann, current)) {
-          if (number <= lastAdd) {
-            throw new IllegalStateException("Das solle nicht passieren! Wir wollen alles aufsteigend hinzufügen!");
-          }
           Set<Integer> newSet = new HashSet<>(current);
           newSet.add(number);
           permutateInternImpl2(anzahlFrauen, anzahlMaenner, size, number, startFrau + 1, 0, newSet, pairConsumer);
@@ -85,9 +82,6 @@ public class AYTO_Permutator<F, M, R> {
       for (int frau = 0; frau < anzahlFrauen; frau++) {
         int number = encodePair(frau, startMann);
         if (canAdd(frau, startMann, current)) {
-          if (number <= lastAdd) {
-            throw new IllegalStateException("Das solle nicht passieren! Wir wollen alles aufsteigend hinzufügen!");
-          }
           Set<Integer> newSet = new HashSet<>(current);
           newSet.add(number);
           permutateInternImpl2(anzahlFrauen, anzahlMaenner, size, number, 0, startMann + 1, newSet, pairConsumer);
