@@ -1,6 +1,7 @@
 package demawi.ayto;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
@@ -79,8 +80,8 @@ public class MatchFinder {
     System.out.println("Potential pairs: " + result.pairCount.size());
 
     for (Pair pair : sortedPairs) {
-      double percent = Math.round((result.pairCount.get(pair) / ((double) result.constellations.size())) * 10000)
-        / 100.0;
+      double percent = Math
+        .round((result.pairCount.get(pair) / ((double) result.possibleConstellations.size())) * 10000) / 100.0;
 
       int count = 0;
       for (MatchingNight night : data.matchingNights) {
@@ -104,7 +105,7 @@ public class MatchFinder {
       System.out.println(mann + ": " + (set == null ? "-" : set.size() + " " + getRanking(result, mann)));
     }
 
-    List<Set<Pair>> sortedConstellations = new ArrayList<Set<Pair>>(result.constellations);
+    List<Set<Pair>> sortedConstellations = new ArrayList<Set<Pair>>(result.possibleConstellations);
     Collections.sort(sortedConstellations, new Comparator<Set<Pair>>() {
       @Override
       public int compare(Set<Pair> o1, Set<Pair> o2) {
@@ -127,15 +128,31 @@ public class MatchFinder {
     }
   }
 
+  public void search(Pair... pairs) {
+    search(Arrays.asList(pairs));
+  }
+
   /**
    * Prints the spot probabilities 0..10 for the given constellation.
    */
-  public void search(Pair... pairs) {
+  public void search(Collection<Pair> pairs) {
     calulate(true);
 
-    for (Pair pair : pairs) {
-      result.getChance(pair);
+    int[] lightResults = new int[11];
+    for (int i = 0, l = 11; i < l; i++) {
+      lightResults[i] = 0;
     }
+
+    for (Set<Pair> constellation : result.possibleConstellations) {
+      lightResults[getLights(constellation, pairs)]++;
+    }
+
+    for (int i = 0, l = 11; i < l; i++) {
+      System.out.println("Light probabilities " + i + " => "
+        + Math.round(((double) lightResults[i] / result.possibleConstellations.size()) * 10000.0) / 100.0 + " ["
+        + lightResults[i] + "]");
+    }
+
   }
 
   private static String getRankingStat(int acc, int gesamt) {
@@ -206,12 +223,7 @@ public class MatchFinder {
     }
     for (int i = 0, l = data.matchingNights.size(); i < l; i++) {
       MatchingNight night = data.matchingNights.get(i);
-      int lights = 0;
-      for (Pair pair : night.constellation) {
-        if (constellation.contains(pair)) {
-          lights++;
-        }
-      }
+      int lights = getLights(constellation, night.constellation);
       if (lights != night.lights) {
         if (debug) {
           System.out.println("Falsch aufgrund von Matching Night Nr. " + (i + 1) + " Erwartete Lichter: " + lights
@@ -221,6 +233,16 @@ public class MatchFinder {
       }
     }
     return true;
+  }
+
+  public int getLights(Collection<Pair> assumptionModell, Collection<Pair> testConstellation) {
+    int lights = 0;
+    for (Pair pair : testConstellation) {
+      if (assumptionModell.contains(pair)) {
+        lights++;
+      }
+    }
+    return lights;
   }
 
   protected void mn(int spots, Pair... constellation) {

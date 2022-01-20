@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class AYTO_Result {
 
-  public List<Set<Pair>> constellations = new ArrayList<>();
+  public List<Set<Pair>> possibleConstellations = new ArrayList<>();
   public Map<Pair, Integer> pairCount = new HashMap<Pair, Integer>();
   public Map<Frau, Set<Mann>> frauCount = new HashMap<>();
   public Map<Mann, Set<Frau>> mannCount = new HashMap<>();
@@ -46,7 +46,7 @@ public class AYTO_Result {
    * Fügt die Konsteallation als gültig ein.
    */
   public void addYes(Set<Pair> pairs) {
-    constellations.add(pairs);
+    possibleConstellations.add(pairs);
 
     // directly update pair-,frau-,mannCount
     for (Pair current : pairs) {

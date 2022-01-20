@@ -20,7 +20,7 @@ public class AYTO_Permutator<F, M, R> {
   }
 
   public static <F, M, R> AYTO_Permutator<F, M, R> create(List<F> setA, List<M> setB,
-        BiFunction<F, M, R> packingFunction) {
+    BiFunction<F, M, R> packingFunction) {
     return new AYTO_Permutator<F, M, R>(setA, setB, packingFunction);
   }
 
@@ -36,7 +36,7 @@ public class AYTO_Permutator<F, M, R> {
    * Just iterate over both lists.
    */
   private void permutateInternImpl1(int maxA, int maxB, int size, int lastAdd, Set<Integer> current,
-        Consumer<Set<R>> pairConsumer) {
+    Consumer<Set<R>> pairConsumer) {
 
     if (size == current.size()) {
       pairConsumer.accept(decodePairs(current));
@@ -61,7 +61,7 @@ public class AYTO_Permutator<F, M, R> {
    * Optimized iteration only over one list.
    */
   private void permutateInternImpl2(int anzahlFrauen, int anzahlMaenner, int size, int frauAktuell, int mannAktuell,
-        Set<Integer> currentConstellation, Consumer<Set<R>> pairConsumer) {
+    Set<Integer> currentConstellation, Consumer<Set<R>> pairConsumer) {
 
     if (size == currentConstellation.size()) {
       pairConsumer.accept(decodePairs(currentConstellation));
