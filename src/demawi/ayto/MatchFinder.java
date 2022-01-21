@@ -1,11 +1,9 @@
 package demawi.ayto;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.function.Consumer;
@@ -20,11 +18,9 @@ import demawi.ayto.modell.Pair;
 
 public class MatchFinder {
 
+  private String name;
   protected AYTO_Data data = new AYTO_Data();
   protected AYTO_Result result;
-
-  private String name;
-  private Set<Set<Integer>> setsOhneZusatz = new HashSet<>();
 
   public MatchFinder(String name) {
     this.name = name;
@@ -40,15 +36,14 @@ public class MatchFinder {
 
       AYTO_Permutator<Frau, Mann, Pair> permutator = AYTO_Permutator.create(data.frauen, data.maenner, Pair::pair);
       permutator.permutate(new Consumer<Set<Pair>>() {
-        // AYTO_Permutator2.create(data.frauen, data.maenner).permutate(new Consumer<Set<Pair>>() {
         @Override
         public void accept(Set<Pair> constellation) {
-          result.addResult(test(constellation, debug), constellation);
+          result.addResult(data.test(constellation, debug), constellation);
         }
       });
-      if (info) System.out.println("Size: " + result.totalConstellations + " Yes: " + result.yes + " / "
-        + setsOhneZusatz.size() + " No: " + result.no + " Calculation time: "
-        + minSecs(System.currentTimeMillis() - start) + " Tested intern iterations: " + permutator.testCount);
+      if (info) System.out.println("Combinations: " + result.totalConstellations + " Yes: " + result.yes + " No: "
+        + result.no + " Calculation time: " + minSecs(System.currentTimeMillis() - start)
+        + " (Tested intern iterations: " + permutator.testCount + ")");
     }
   }
 
@@ -58,14 +53,48 @@ public class MatchFinder {
     return min + " min " + secs + " secs";
   }
 
-  public static void main(String[] args) {
-    System.out.println(minSecs(60000));
+  /**
+   * Berechnet die vorherigen Lichter Wahrscheinlichkeiten indem die letzte Matching Night herausgenommen wird.
+   */
+  public void printLightChancesAndResult() {
+    AYTO_Data previous = data;
+    data = new AYTO_Data();
+    for (Pair pair : previous.matches) {
+      data.add(true, pair);
+    }
+    for (Pair pair : previous.noMatches) {
+      data.add(false, pair);
+    }
+    int size = previous.matchingNights.size();
+    for (int i = 0; i < size - 1; i++) {
+      data.add(previous.matchingNights.get(i));
+    }
+    for (Frau frau : previous.frauen) {
+      if (!data.frauen.contains(frau)) {
+        data.frauen.add(frau);
+        System.out
+          .println("Eine Frau ist hinzugekommen: " + frau + ". Die Anzahl der Kombinationen erhöht sich damit!");
+      }
+    }
+    for (Mann mann : previous.maenner) {
+      if (!data.maenner.contains(mann)) {
+        data.maenner.add(mann);
+        System.out.println("Ein Mann ist hinzugekommen: " + mann + ". Die Anzahl der Kombinationen erhöht sich damit!");
+      }
+    }
+    result = null;
+    MatchingNight matchingNight = previous.matchingNights.get(size - 1);
+    printLightChances(matchingNight.constellation, matchingNight.lights);
+    data = previous;
+    result = null;
+    System.out.println();
+    printResult();
   }
 
   /**
    * Prints all pair probabilities
    */
-  public void search() {
+  public void printResult() {
     calulate(true);
 
     Comparator<Pair> pairComparator = new Comparator<Pair>() {
@@ -76,24 +105,6 @@ public class MatchFinder {
     };
     List<Pair> sortedPairs = new ArrayList<Pair>(result.pairCount.keySet());
     Collections.sort(sortedPairs, pairComparator);
-
-    System.out.println();
-    System.out.println("Potential pairs: " + result.pairCount.size());
-
-    for (Pair pair : sortedPairs) {
-      Integer pairCounting = result.pairCount.get(pair);
-      Integer gesamtCounting = result.possibleConstellations.size();
-      double percent = Math.round((pairCounting / (double) gesamtCounting) * 10000) / 100.0;
-
-      int count = 0;
-      for (MatchingNight night : data.matchingNights) {
-        if (night.constellation.contains(pair)) {
-          count++;
-        }
-      }
-      System.out.println(pair.frau + " & " + pair.mann + " => " + percent + "% [" + pairCounting + "/" + gesamtCounting
-        + "] Gemeinsame MNs: " + count + "/" + data.matchingNights.size());
-    }
 
     System.out.println();
     System.out.println("==== Partner ====");
@@ -118,8 +129,26 @@ public class MatchFinder {
     });
 
     System.out.println();
+    System.out.println(
+      "==== Mögliche Paare: " + result.pairCount.size() + "/" + (data.frauen.size() * data.maenner.size()) + " ====");
+    for (Pair pair : sortedPairs) {
+      Integer pairCounting = result.pairCount.get(pair);
+      Integer gesamtCounting = result.possibleConstellations.size();
+      double percent = Math.round((pairCounting / (double) gesamtCounting) * 10000) / 100.0;
+
+      int count = 0;
+      for (MatchingNight night : data.matchingNights) {
+        if (night.constellation.contains(pair)) {
+          count++;
+        }
+      }
+      System.out.println(pair.frau + " & " + pair.mann + " => " + percent + "% [" + pairCounting + "/" + gesamtCounting
+        + "] Gemeinsame MNs: " + count + "/" + data.matchingNights.size());
+    }
+
+    System.out.println();
     System.out.println("==== Beste Konstellationen ====");
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0, l = Math.min(20, sortedConstellations.size()); i < l; i++) {
       Set<Pair> constellation = sortedConstellations.get(i);
       System.out.println("> Platz " + (i + 1) + " mit "
         + constellation.stream().collect(Collectors.summingInt(a -> result.pairCount.get(a)))
@@ -131,15 +160,12 @@ public class MatchFinder {
     }
   }
 
-  public void search(Pair... pairs) {
-    printProbabilities(Arrays.asList(pairs));
-  }
-
   /**
    * Prints the spot probabilities 0..10 for the given constellation.
    */
-  public void printProbabilities(Collection<Pair> pairs) {
+  public void printLightChances(Collection<Pair> pairs, Integer spotsReached) {
     calulate(true);
+    MatchingNight.validatePairs(pairs);
 
     int[] lightResults = new int[11];
     for (int i = 0, l = 11; i < l; i++) {
@@ -147,13 +173,17 @@ public class MatchFinder {
     }
 
     for (Set<Pair> constellation : result.possibleConstellations) {
-      lightResults[getLights(constellation, pairs)]++;
+      lightResults[data.getLights(constellation, pairs)]++;
     }
 
     for (int i = 0, l = 11; i < l; i++) {
-      System.out.println("Light probabilities " + i + " => "
+      String marker = "";
+      if (i == spotsReached) {
+        marker = " <==";
+      }
+      System.out.println("Spot probabilities " + i + " => "
         + Math.round(((double) lightResults[i] / result.possibleConstellations.size()) * 10000.0) / 100.0 + " ["
-        + lightResults[i] + "]");
+        + lightResults[i] + "]" + marker);
     }
 
   }
@@ -208,52 +238,6 @@ public class MatchFinder {
       stringBuffer.append(frau + " (" + getRankingStat(resulter.getCount(frau, mann), gesamt) + ")");
     }
     return "[" + stringBuffer.toString() + "]";
-  }
-
-  /**
-   * Testet ob die übergebene Paar-Konstellation zu einem Widerspruch führt.
-   */
-  public boolean test(Collection<Pair> constellation, boolean debug) {
-    for (Pair pair : data.noMatches) {
-      if (constellation.contains(pair)) {
-        return false;
-      }
-    }
-    for (Pair pair : data.matches) {
-      if (!constellation.contains(pair)) {
-        return false;
-      }
-    }
-    for (int i = 0, l = data.matchingNights.size(); i < l; i++) {
-      MatchingNight night = data.matchingNights.get(i);
-      int lights = getLights(constellation, night.constellation);
-      if (lights != night.lights) {
-        if (debug) {
-          System.out.println("Falsch aufgrund von Matching Night Nr. " + (i + 1) + " Erwartete Lichter: " + lights
-            + ". Es waren aber: " + night.lights);
-        }
-        return false;
-      }
-    }
-    return true;
-  }
-
-  public int getLights(Collection<Pair> assumptionModell, Collection<Pair> testConstellation) {
-    int lights = 0;
-    for (Pair pair : testConstellation) {
-      if (assumptionModell.contains(pair)) {
-        lights++;
-      }
-    }
-    return lights;
-  }
-
-  protected void mn(int spots, Pair... constellation) {
-    data.add(new MatchingNight(spots, constellation));
-  }
-
-  protected void add(boolean b, Pair pair) {
-    data.add(b, pair);
   }
 
 }
