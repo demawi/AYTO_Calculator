@@ -78,10 +78,14 @@ public class AYTO_2 extends MatchFinder {
       pair(Christin, Maximilian), pair(Victoria, Marko), pair(Sabrina, Dominic), pair(Vanessa, Marvin),
       pair(Laura, Germain), pair(Kathleen, Dario));
 
+    if (false) {}
+
+    setData(data);
+
   }
 
   public static void main(String[] args) {
-    new AYTO_2().printResult();
+    new AYTO_2().printLightChancesAndResult();
   }
 
 }

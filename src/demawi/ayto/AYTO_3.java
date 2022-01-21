@@ -79,10 +79,6 @@ public class AYTO_3 extends MatchFinder {
 
   }
 
-  private void setData(AYTO_Data data) {
-    this.data = data;
-  }
-
   public static void main(String[] args) {
     new AYTO_3().printLightChancesAndResult();
   }

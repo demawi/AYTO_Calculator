@@ -26,6 +26,10 @@ public class MatchFinder {
     this.name = name;
   }
 
+  protected void setData(AYTO_Data data) {
+    this.data = data;
+  }
+
   private void calulate(boolean info) {
     if (result == null) {
       long start = System.currentTimeMillis();

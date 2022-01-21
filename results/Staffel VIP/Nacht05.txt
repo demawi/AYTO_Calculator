@@ -1,0 +1,391 @@
+Berechne AYTO_VIP - Nacht 4...
+Combinations: 36288000 Yes: 8471 No: 36279529 Calculation time: 0 min 24 secs (Tested intern iterations: 98641010)
+Spot probabilities 0 => 0.0 [0]
+Spot probabilities 1 => 35.58 [3014]
+Spot probabilities 2 => 35.12 [2975]
+Spot probabilities 3 => 20.02 [1696] <==
+Spot probabilities 4 => 7.05 [597]
+Spot probabilities 5 => 1.84 [156]
+Spot probabilities 6 => 0.37 [31]
+Spot probabilities 7 => 0.02 [2]
+Spot probabilities 8 => 0.0 [0]
+Spot probabilities 9 => 0.0 [0]
+Spot probabilities 10 => 0.0 [0]
+
+Berechne AYTO_VIP - Nacht 5...
+Combinations: 36288000 Yes: 1696 No: 36286304 Calculation time: 0 min 23 secs (Tested intern iterations: 98641010)
+
+==== Partner ====
+Sarah: 8 [Josua (69.87), Alex (14.62), Jamie (4.83), Diogo (3.42), Manuel (3.24), Salvatore (1.95), Tommy (1.83), Eugen (0.24), Danilo (0.0), Francesco (0.0)]
+Walentina: 7 [Salvatore (23.94), Danilo (15.92), Jamie (15.39), Alex (13.33), Eugen (11.08), Manuel (10.44), Diogo (9.91), Josua (0.0), Tommy (0.0), Francesco (0.0)]
+Jules: 1 [Francesco (100.0), Josua (0.0), Eugen (0.0), Alex (0.0), Salvatore (0.0), Manuel (0.0), Danilo (0.0), Diogo (0.0), Tommy (0.0), Jamie (0.0)]
+Jaqui: 9 [Salvatore (24.76), Danilo (14.98), Alex (11.32), Jamie (10.55), Eugen (9.02), Manuel (8.37), Diogo (7.9), Tommy (7.43), Josua (5.66), Francesco (0.0)]
+Kathleen: 9 [Manuel (45.52), Danilo (10.38), Salvatore (8.73), Jamie (8.2), Alex (7.72), Eugen (5.31), Tommy (5.25), Josua (4.48), Diogo (4.42), Francesco (0.0)]
+Steffi: 8 [Danilo (22.41), Alex (20.64), Jamie (18.81), Salvatore (11.85), Tommy (9.61), Diogo (9.02), Manuel (6.96), Josua (0.71), Eugen (0.0), Francesco (0.0)]
+Aurelia: 9 [Diogo (45.64), Danilo (15.09), Alex (9.08), Jamie (8.02), Salvatore (5.9), Josua (4.72), Tommy (4.36), Manuel (4.01), Eugen (3.18), Francesco (0.0)]
+Melina: 9 [Tommy (58.08), Danilo (7.43), Alex (7.08), Manuel (5.6), Diogo (5.13), Salvatore (4.95), Josua (4.83), Jamie (4.66), Eugen (2.24), Francesco (0.0)]
+Jill: 9 [Jamie (22.64), Danilo (13.8), Alex (12.85), Salvatore (10.32), Tommy (9.61), Diogo (8.25), Manuel (8.14), Eugen (8.02), Josua (6.37), Francesco (0.0)]
+Finnja: 8 [Eugen (60.91), Manuel (7.72), Salvatore (7.61), Jamie (6.9), Diogo (6.31), Tommy (3.83), Josua (3.36), Alex (3.36), Danilo (0.0), Francesco (0.0)]
+Vanessa: 10 [Jamie (16.45), Diogo (15.63), Josua (8.49), Eugen (8.49), Alex (8.49), Salvatore (8.49), Manuel (8.49), Danilo (8.49), Tommy (8.49), Francesco (8.49)]
+
+Josua: 9 [Sarah (69.87), Vanessa (8.49), Jill (6.37), Jaqui (5.66), Melina (4.83), Aurelia (4.72), Kathleen (4.48), Finnja (3.36), Steffi (0.71), Walentina (0.0), Jules (0.0)]
+Eugen: 9 [Finnja (60.91), Walentina (11.08), Jaqui (9.02), Vanessa (8.49), Jill (8.02), Kathleen (5.31), Aurelia (3.18), Melina (2.24), Sarah (0.24), Jules (0.0), Steffi (0.0)]
+Alex: 10 [Steffi (20.64), Sarah (14.62), Walentina (13.33), Jill (12.85), Jaqui (11.32), Aurelia (9.08), Vanessa (8.49), Kathleen (7.72), Melina (7.08), Finnja (3.36), Jules (0.0)]
+Salvatore: 10 [Jaqui (24.76), Walentina (23.94), Steffi (11.85), Jill (10.32), Kathleen (8.73), Vanessa (8.49), Finnja (7.61), Aurelia (5.9), Melina (4.95), Sarah (1.95), Jules (0.0)]
+Manuel: 10 [Kathleen (45.52), Walentina (10.44), Vanessa (8.49), Jaqui (8.37), Jill (8.14), Finnja (7.72), Steffi (6.96), Melina (5.6), Aurelia (4.01), Sarah (3.24), Jules (0.0)]
+Danilo: 8 [Steffi (22.41), Walentina (15.92), Aurelia (15.09), Jaqui (14.98), Jill (13.8), Kathleen (10.38), Vanessa (8.49), Melina (7.43), Sarah (0.0), Jules (0.0), Finnja (0.0)]
+Diogo: 10 [Aurelia (45.64), Vanessa (15.63), Walentina (9.91), Steffi (9.02), Jill (8.25), Jaqui (7.9), Finnja (6.31), Melina (5.13), Kathleen (4.42), Sarah (3.42), Jules (0.0)]
+Tommy: 9 [Melina (58.08), Steffi (9.61), Jill (9.61), Vanessa (8.49), Jaqui (7.43), Kathleen (5.25), Aurelia (4.36), Finnja (3.83), Sarah (1.83), Walentina (0.0), Jules (0.0)]
+Jamie: 10 [Jill (22.64), Steffi (18.81), Vanessa (16.45), Walentina (15.39), Jaqui (10.55), Kathleen (8.2), Aurelia (8.02), Finnja (6.9), Sarah (4.83), Melina (4.66), Jules (0.0)]
+Francesco: 2 [Jules (100.0), Vanessa (8.49), Sarah (0.0), Walentina (0.0), Jaqui (0.0), Kathleen (0.0), Steffi (0.0), Aurelia (0.0), Melina (0.0), Jill (0.0), Finnja (0.0)]
+
+==== Mögliche Paare: 87/110 ====
+Jules & Francesco => 100.0% [1696/1696] Gemeinsame MNs: 3/5
+Sarah & Josua => 69.87% [1185/1696] Gemeinsame MNs: 3/5
+Finnja & Eugen => 60.91% [1033/1696] Gemeinsame MNs: 2/5
+Melina & Tommy => 58.08% [985/1696] Gemeinsame MNs: 4/5
+Aurelia & Diogo => 45.64% [774/1696] Gemeinsame MNs: 4/5
+Kathleen & Manuel => 45.52% [772/1696] Gemeinsame MNs: 4/5
+Jaqui & Salvatore => 24.76% [420/1696] Gemeinsame MNs: 3/5
+Walentina & Salvatore => 23.94% [406/1696] Gemeinsame MNs: 1/5
+Jill & Jamie => 22.64% [384/1696] Gemeinsame MNs: 3/5
+Steffi & Danilo => 22.41% [380/1696] Gemeinsame MNs: 2/5
+Steffi & Alex => 20.64% [350/1696] Gemeinsame MNs: 1/5
+Steffi & Jamie => 18.81% [319/1696] Gemeinsame MNs: 1/5
+Vanessa & Jamie => 16.45% [279/1696] Gemeinsame MNs: 1/5
+Walentina & Danilo => 15.92% [270/1696] Gemeinsame MNs: 0/5
+Vanessa & Diogo => 15.63% [265/1696] Gemeinsame MNs: 1/5
+Walentina & Jamie => 15.39% [261/1696] Gemeinsame MNs: 0/5
+Aurelia & Danilo => 15.09% [256/1696] Gemeinsame MNs: 1/5
+Jaqui & Danilo => 14.98% [254/1696] Gemeinsame MNs: 0/5
+Sarah & Alex => 14.62% [248/1696] Gemeinsame MNs: 1/5
+Jill & Danilo => 13.8% [234/1696] Gemeinsame MNs: 0/5
+Walentina & Alex => 13.33% [226/1696] Gemeinsame MNs: 0/5
+Jill & Alex => 12.85% [218/1696] Gemeinsame MNs: 0/5
+Steffi & Salvatore => 11.85% [201/1696] Gemeinsame MNs: 0/5
+Jaqui & Alex => 11.32% [192/1696] Gemeinsame MNs: 0/5
+Walentina & Eugen => 11.08% [188/1696] Gemeinsame MNs: 2/5
+Jaqui & Jamie => 10.55% [179/1696] Gemeinsame MNs: 0/5
+Walentina & Manuel => 10.44% [177/1696] Gemeinsame MNs: 0/5
+Kathleen & Danilo => 10.38% [176/1696] Gemeinsame MNs: 0/5
+Jill & Salvatore => 10.32% [175/1696] Gemeinsame MNs: 0/5
+Walentina & Diogo => 9.91% [168/1696] Gemeinsame MNs: 0/5
+Steffi & Tommy => 9.61% [163/1696] Gemeinsame MNs: 0/5
+Jill & Tommy => 9.61% [163/1696] Gemeinsame MNs: 1/5
+Aurelia & Alex => 9.08% [154/1696] Gemeinsame MNs: 0/5
+Jaqui & Eugen => 9.02% [153/1696] Gemeinsame MNs: 0/5
+Steffi & Diogo => 9.02% [153/1696] Gemeinsame MNs: 0/5
+Kathleen & Salvatore => 8.73% [148/1696] Gemeinsame MNs: 1/5
+Vanessa & Tommy => 8.49% [144/1696] Gemeinsame MNs: 0/5
+Vanessa & Salvatore => 8.49% [144/1696] Gemeinsame MNs: 0/5
+Vanessa & Eugen => 8.49% [144/1696] Gemeinsame MNs: 0/5
+Vanessa & Danilo => 8.49% [144/1696] Gemeinsame MNs: 0/5
+Vanessa & Alex => 8.49% [144/1696] Gemeinsame MNs: 0/5
+Vanessa & Francesco => 8.49% [144/1696] Gemeinsame MNs: 0/5
+Vanessa & Josua => 8.49% [144/1696] Gemeinsame MNs: 0/5
+Vanessa & Manuel => 8.49% [144/1696] Gemeinsame MNs: 0/5
+Jaqui & Manuel => 8.37% [142/1696] Gemeinsame MNs: 0/5
+Jill & Diogo => 8.25% [140/1696] Gemeinsame MNs: 0/5
+Kathleen & Jamie => 8.2% [139/1696] Gemeinsame MNs: 0/5
+Jill & Manuel => 8.14% [138/1696] Gemeinsame MNs: 1/5
+Jill & Eugen => 8.02% [136/1696] Gemeinsame MNs: 0/5
+Aurelia & Jamie => 8.02% [136/1696] Gemeinsame MNs: 0/5
+Jaqui & Diogo => 7.9% [134/1696] Gemeinsame MNs: 0/5
+Kathleen & Alex => 7.72% [131/1696] Gemeinsame MNs: 0/5
+Finnja & Manuel => 7.72% [131/1696] Gemeinsame MNs: 0/5
+Finnja & Salvatore => 7.61% [129/1696] Gemeinsame MNs: 0/5
+Jaqui & Tommy => 7.43% [126/1696] Gemeinsame MNs: 0/5
+Melina & Danilo => 7.43% [126/1696] Gemeinsame MNs: 1/5
+Melina & Alex => 7.08% [120/1696] Gemeinsame MNs: 0/5
+Steffi & Manuel => 6.96% [118/1696] Gemeinsame MNs: 0/5
+Finnja & Jamie => 6.9% [117/1696] Gemeinsame MNs: 0/5
+Jill & Josua => 6.37% [108/1696] Gemeinsame MNs: 0/5
+Finnja & Diogo => 6.31% [107/1696] Gemeinsame MNs: 0/5
+Aurelia & Salvatore => 5.9% [100/1696] Gemeinsame MNs: 0/5
+Jaqui & Josua => 5.66% [96/1696] Gemeinsame MNs: 0/5
+Melina & Manuel => 5.6% [95/1696] Gemeinsame MNs: 0/5
+Kathleen & Eugen => 5.31% [90/1696] Gemeinsame MNs: 0/5
+Kathleen & Tommy => 5.25% [89/1696] Gemeinsame MNs: 0/5
+Melina & Diogo => 5.13% [87/1696] Gemeinsame MNs: 0/5
+Melina & Salvatore => 4.95% [84/1696] Gemeinsame MNs: 0/5
+Sarah & Jamie => 4.83% [82/1696] Gemeinsame MNs: 0/5
+Melina & Josua => 4.83% [82/1696] Gemeinsame MNs: 0/5
+Aurelia & Josua => 4.72% [80/1696] Gemeinsame MNs: 0/5
+Melina & Jamie => 4.66% [79/1696] Gemeinsame MNs: 0/5
+Kathleen & Josua => 4.48% [76/1696] Gemeinsame MNs: 0/5
+Kathleen & Diogo => 4.42% [75/1696] Gemeinsame MNs: 0/5
+Aurelia & Tommy => 4.36% [74/1696] Gemeinsame MNs: 0/5
+Aurelia & Manuel => 4.01% [68/1696] Gemeinsame MNs: 0/5
+Finnja & Tommy => 3.83% [65/1696] Gemeinsame MNs: 0/5
+Sarah & Diogo => 3.42% [58/1696] Gemeinsame MNs: 0/5
+Finnja & Josua => 3.36% [57/1696] Gemeinsame MNs: 0/5
+Finnja & Alex => 3.36% [57/1696] Gemeinsame MNs: 1/5
+Sarah & Manuel => 3.24% [55/1696] Gemeinsame MNs: 0/5
+Aurelia & Eugen => 3.18% [54/1696] Gemeinsame MNs: 0/5
+Melina & Eugen => 2.24% [38/1696] Gemeinsame MNs: 0/5
+Sarah & Salvatore => 1.95% [33/1696] Gemeinsame MNs: 0/5
+Sarah & Tommy => 1.83% [31/1696] Gemeinsame MNs: 0/5
+Steffi & Josua => 0.71% [12/1696] Gemeinsame MNs: 0/5
+Sarah & Eugen => 0.24% [4/1696] Gemeinsame MNs: 0/5
+
+==== Beste Konstellationen ====
+> Platz 1 mit 6825 Punkten (Summe der Vorkommen der Einzelpaare)
+Jill & Diogo
+Walentina & Jamie
+Sarah & Josua
+Aurelia & Alex
+Finnja & Eugen
+Kathleen & Manuel
+Jaqui & Danilo
+Jules & Francesco
+Vanessa & Josua
+Steffi & Salvatore
+Melina & Tommy
+
+> Platz 2 mit 6825 Punkten (Summe der Vorkommen der Einzelpaare)
+Jill & Diogo
+Walentina & Jamie
+Sarah & Josua
+Aurelia & Alex
+Finnja & Eugen
+Kathleen & Manuel
+Jaqui & Danilo
+Jules & Francesco
+Steffi & Salvatore
+Melina & Tommy
+Vanessa & Eugen
+
+> Platz 3 mit 6825 Punkten (Summe der Vorkommen der Einzelpaare)
+Vanessa & Alex
+Jill & Diogo
+Walentina & Jamie
+Sarah & Josua
+Aurelia & Alex
+Finnja & Eugen
+Kathleen & Manuel
+Jaqui & Danilo
+Jules & Francesco
+Steffi & Salvatore
+Melina & Tommy
+
+> Platz 4 mit 6825 Punkten (Summe der Vorkommen der Einzelpaare)
+Jill & Diogo
+Walentina & Jamie
+Sarah & Josua
+Aurelia & Alex
+Finnja & Eugen
+Vanessa & Salvatore
+Kathleen & Manuel
+Jaqui & Danilo
+Jules & Francesco
+Steffi & Salvatore
+Melina & Tommy
+
+> Platz 5 mit 6825 Punkten (Summe der Vorkommen der Einzelpaare)
+Jill & Diogo
+Walentina & Jamie
+Sarah & Josua
+Vanessa & Manuel
+Aurelia & Alex
+Finnja & Eugen
+Kathleen & Manuel
+Jaqui & Danilo
+Jules & Francesco
+Steffi & Salvatore
+Melina & Tommy
+
+> Platz 6 mit 6825 Punkten (Summe der Vorkommen der Einzelpaare)
+Jill & Diogo
+Walentina & Jamie
+Sarah & Josua
+Aurelia & Alex
+Finnja & Eugen
+Kathleen & Manuel
+Jaqui & Danilo
+Jules & Francesco
+Steffi & Salvatore
+Melina & Tommy
+Vanessa & Danilo
+
+> Platz 7 mit 6825 Punkten (Summe der Vorkommen der Einzelpaare)
+Vanessa & Tommy
+Jill & Diogo
+Walentina & Jamie
+Sarah & Josua
+Aurelia & Alex
+Finnja & Eugen
+Kathleen & Manuel
+Jaqui & Danilo
+Jules & Francesco
+Steffi & Salvatore
+Melina & Tommy
+
+> Platz 8 mit 6825 Punkten (Summe der Vorkommen der Einzelpaare)
+Jill & Diogo
+Walentina & Jamie
+Sarah & Josua
+Aurelia & Alex
+Finnja & Eugen
+Kathleen & Manuel
+Jaqui & Danilo
+Jules & Francesco
+Vanessa & Francesco
+Steffi & Salvatore
+Melina & Tommy
+
+> Platz 9 mit 6815 Punkten (Summe der Vorkommen der Einzelpaare)
+Kathleen & Danilo
+Walentina & Jamie
+Sarah & Josua
+Jill & Alex
+Jaqui & Manuel
+Finnja & Eugen
+Jules & Francesco
+Vanessa & Josua
+Steffi & Salvatore
+Aurelia & Diogo
+Melina & Tommy
+
+> Platz 10 mit 6815 Punkten (Summe der Vorkommen der Einzelpaare)
+Kathleen & Danilo
+Walentina & Jamie
+Sarah & Josua
+Jill & Alex
+Jaqui & Manuel
+Finnja & Eugen
+Jules & Francesco
+Steffi & Salvatore
+Aurelia & Diogo
+Melina & Tommy
+Vanessa & Eugen
+
+> Platz 11 mit 6815 Punkten (Summe der Vorkommen der Einzelpaare)
+Vanessa & Alex
+Kathleen & Danilo
+Walentina & Jamie
+Sarah & Josua
+Jill & Alex
+Jaqui & Manuel
+Finnja & Eugen
+Jules & Francesco
+Steffi & Salvatore
+Aurelia & Diogo
+Melina & Tommy
+
+> Platz 12 mit 6815 Punkten (Summe der Vorkommen der Einzelpaare)
+Kathleen & Danilo
+Walentina & Jamie
+Sarah & Josua
+Jill & Alex
+Jaqui & Manuel
+Finnja & Eugen
+Vanessa & Salvatore
+Jules & Francesco
+Steffi & Salvatore
+Aurelia & Diogo
+Melina & Tommy
+
+> Platz 13 mit 6815 Punkten (Summe der Vorkommen der Einzelpaare)
+Kathleen & Danilo
+Walentina & Jamie
+Sarah & Josua
+Jill & Alex
+Jaqui & Manuel
+Vanessa & Manuel
+Finnja & Eugen
+Jules & Francesco
+Steffi & Salvatore
+Aurelia & Diogo
+Melina & Tommy
+
+> Platz 14 mit 6815 Punkten (Summe der Vorkommen der Einzelpaare)
+Kathleen & Danilo
+Walentina & Jamie
+Sarah & Josua
+Jill & Alex
+Jaqui & Manuel
+Finnja & Eugen
+Jules & Francesco
+Steffi & Salvatore
+Aurelia & Diogo
+Melina & Tommy
+Vanessa & Danilo
+
+> Platz 15 mit 6815 Punkten (Summe der Vorkommen der Einzelpaare)
+Vanessa & Tommy
+Kathleen & Danilo
+Walentina & Jamie
+Sarah & Josua
+Jill & Alex
+Jaqui & Manuel
+Finnja & Eugen
+Jules & Francesco
+Steffi & Salvatore
+Aurelia & Diogo
+Melina & Tommy
+
+> Platz 16 mit 6815 Punkten (Summe der Vorkommen der Einzelpaare)
+Kathleen & Danilo
+Walentina & Jamie
+Sarah & Josua
+Jill & Alex
+Jaqui & Manuel
+Finnja & Eugen
+Jules & Francesco
+Vanessa & Francesco
+Steffi & Salvatore
+Aurelia & Diogo
+Melina & Tommy
+
+> Platz 17 mit 6812 Punkten (Summe der Vorkommen der Einzelpaare)
+Steffi & Diogo
+Walentina & Jamie
+Sarah & Josua
+Aurelia & Alex
+Finnja & Eugen
+Jill & Salvatore
+Kathleen & Manuel
+Jaqui & Danilo
+Jules & Francesco
+Vanessa & Josua
+Melina & Tommy
+
+> Platz 18 mit 6812 Punkten (Summe der Vorkommen der Einzelpaare)
+Steffi & Diogo
+Walentina & Jamie
+Sarah & Josua
+Aurelia & Alex
+Finnja & Eugen
+Jill & Salvatore
+Kathleen & Manuel
+Jaqui & Danilo
+Jules & Francesco
+Melina & Tommy
+Vanessa & Eugen
+
+> Platz 19 mit 6812 Punkten (Summe der Vorkommen der Einzelpaare)
+Vanessa & Alex
+Steffi & Diogo
+Walentina & Jamie
+Sarah & Josua
+Aurelia & Alex
+Finnja & Eugen
+Jill & Salvatore
+Kathleen & Manuel
+Jaqui & Danilo
+Jules & Francesco
+Melina & Tommy
+
+> Platz 20 mit 6812 Punkten (Summe der Vorkommen der Einzelpaare)
+Steffi & Diogo
+Walentina & Jamie
+Sarah & Josua
+Aurelia & Alex
+Finnja & Eugen
+Vanessa & Salvatore
+Jill & Salvatore
+Kathleen & Manuel
+Jaqui & Danilo
+Jules & Francesco
+Melina & Tommy
+
