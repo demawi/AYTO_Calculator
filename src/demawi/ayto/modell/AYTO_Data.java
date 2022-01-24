@@ -1,67 +1,86 @@
 package demawi.ayto.modell;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
+import java.util.function.Consumer;
 
 public class AYTO_Data {
 
-  public Set<Pair> noMatches = new HashSet<Pair>();
-  public Set<Pair> matches = new HashSet<Pair>();
-  public List<MatchingNight> matchingNights = new ArrayList<>();
-  public List<Frau> frauen = new ArrayList<>();
-  public List<Mann> maenner = new ArrayList<>();
+  public String name;
+  public List<Tag> tage = new ArrayList<>();
 
-  public void add(MatchingNight matchingNight) {
-    matchingNights.add(matchingNight);
-    for (Pair pair : matchingNight.constellation) {
-      if (!frauen.contains(pair.frau)) {
-        frauen.add(pair.frau);
-      }
-      if (!maenner.contains(pair.mann)) {
-        maenner.add(pair.mann);
-      }
-    }
+  public AYTO_Data(String name) {
+    this.name = name;
   }
 
-  public void add(boolean b, Pair pair) {
-    if (b) {
-      matches.add(pair);
-    }
-    else {
-      noMatches.add(pair);
-    }
+  public void add(Boolean b, Pair pair, int i, Pair... pairs) {
+    tage.add(new Tag(pair, b, pairs == null ? null : new MatchingNight(i, Arrays.asList(pairs))));
   }
 
-  public void add(int i, Pair... pairs) {
-    add(new MatchingNight(i, pairs));
+  public List<Frau> getFrauen(int tagDef) {
+    List<Frau> result = new ArrayList<>();
+    getPairs(tagDef, pair -> {
+      if (!result.contains(pair.frau)) {
+        result.add(pair.frau);
+      }
+    });
+    return result;
+  }
+
+  public List<Mann> getMaenner(int tagDef) {
+    List<Mann> result = new ArrayList<>();
+    getPairs(tagDef, pair -> {
+      if (!result.contains(pair.mann)) {
+        result.add(pair.mann);
+      }
+    });
+    return result;
+  }
+
+  private void getPairs(int tagNr, Consumer<Pair> consumer) {
+    for (int i = 0; i < tagNr; i++) {
+      Tag tag = tage.get(i);
+      consumer.accept(tag.matchingPair);
+      if (tag.matchingNight != null) {
+        for (Pair pair : tag.matchingNight.constellation) {
+          consumer.accept(pair);
+        }
+      }
+    }
   }
 
   /**
    * Testet ob die übergebene Paar-Konstellation zu einem Widerspruch führt.
    */
-  public boolean test(Collection<Pair> constellation, boolean debug) {
-    for (Pair pair : noMatches) {
-      if (constellation.contains(pair)) {
-        return false;
-      }
-    }
-    for (Pair pair : matches) {
-      if (!constellation.contains(pair)) {
-        return false;
-      }
-    }
-    for (int i = 0, l = matchingNights.size(); i < l; i++) {
-      MatchingNight night = matchingNights.get(i);
-      int lights = getLights(constellation, night.constellation);
-      if (lights != night.lights) {
-        if (debug) {
-          System.out.println("Falsch aufgrund von Matching Night Nr. " + (i + 1) + " Erwartete Lichter: " + lights
-            + ". Es waren aber: " + night.lights);
+  public boolean test(Collection<Pair> constellation, TagDef tagDef, boolean debug) {
+    for (int i = 0; i < tagDef.tagNr; i++) {
+      Tag tag = tage.get(i);
+
+      boolean aktuell = i == tagDef.tagNr - 1;
+      if (!aktuell || tagDef.mitMatchbox) {
+        if (tag.perfectMatch != null) {
+          if (tag.perfectMatch != constellation.contains(tag.matchingPair)) {
+            return false;
+          }
         }
-        return false;
+      }
+      if (!aktuell || tagDef.mitMatchingNight) {
+        MatchingNight night = tag.matchingNight;
+        if (night != null) {
+          for (int nightNr = 0, l = night.constellation.size(); nightNr < l; nightNr++) {
+            int lights = getLights(constellation, night.constellation);
+            if (lights != night.lights) {
+              if (debug) {
+                System.out.println(
+                      "Falsch aufgrund von Matching Night Nr. " + (nightNr + 1) + " Erwartete Lichter: " + lights
+                            + ". Es waren aber: " + night.lights);
+              }
+              return false;
+            }
+          }
+        }
       }
     }
     return true;

@@ -16,10 +16,12 @@ public class AYTO_Result {
   public int yes = 0;
   public int no = 0;
   public int totalConstellations = 0;
-  private AYTO_Data data;
 
-  public AYTO_Result(AYTO_Data data) {
-    this.data = data;
+  public AYTO_Result() {
+  }
+
+  public int getYes() {
+    return yes;
   }
 
   public Integer getCount(Frau frau, Mann mann) {
@@ -71,22 +73,6 @@ public class AYTO_Result {
       }
       mannSet.add(current.frau);
     }
-  }
-
-  public double getChance(Pair pair) {
-    int gefunden = getCount(pair);
-    if (gefunden == 0) return 0;
-    int gesamt = 0;
-    for (int i = 0, l = 10; i < l; i++) {
-      Frau frau = data.frauen.get(i);
-      Pair toCheck = Pair.pair(frau, pair.mann);
-      gesamt += getCount(toCheck);
-    }
-    return gefunden / (double) gesamt;
-  }
-
-  public double getChance(Frau frau, Mann mann) {
-    return getChance(Pair.pair(frau, mann));
   }
 
 }

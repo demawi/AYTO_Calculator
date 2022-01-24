@@ -1,12 +1,13 @@
 package demawi.ayto;
 
-import static demawi.ayto.modell.Pair.*;
-
 import demawi.ayto.modell.AYTO_Data;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
 
-public class AYTO_3 extends MatchFinder {
+import static demawi.ayto.modell.Pair.pair;
+
+public class AYTO_3
+      extends AYTO_Data {
 
   private static Frau Jessica = new Frau("Jessica");
   private static Frau Joelina = new Frau("Joelina");
@@ -31,45 +32,33 @@ public class AYTO_3 extends MatchFinder {
   private static Mann Andre = new Mann("Andre");
   private static Mann Jordi = new Mann("Jordi");
 
-  private AYTO_3() {
-    super("AYTO_3");
+  public AYTO_3() {
+    super("03");
+    add(false, pair(Jessica, Mike), 3, pair(Jessica, Leon), pair(Joelina, Mike), pair(Kerstin, Max),
+          pair(Monami, Antonino), pair(Marie, Tim), pair(Zaira, Dustin), pair(Dana, William), pair(Isabelle, Marius),
+          pair(Raphaela, Andre), pair(Estelle, Jordi));
 
-    AYTO_Data data = new AYTO_Data();
-    data.add(false, pair(Jessica, Mike));
-    data.add(3, pair(Jessica, Leon), pair(Joelina, Mike), pair(Kerstin, Max), pair(Monami, Antonino), pair(Marie, Tim),
-      pair(Zaira, Dustin), pair(Dana, William), pair(Isabelle, Marius), pair(Raphaela, Andre), pair(Estelle, Jordi));
+    add(false, pair(Monami, Leon), 2, pair(Dana, Andre), pair(Estelle, Leon), pair(Isabelle, Dustin),
+          pair(Jessica, Tim), pair(Joelina, Mike), pair(Kerstin, Max), pair(Marie, Marius), pair(Monami, Antonino),
+          pair(Raphaela, William), pair(Zaira, Jordi));
 
-    if (false) {
-      data.add(false, pair(Monami, Leon));
-      data.add(2, pair(Dana, Andre), pair(Estelle, Leon), pair(Isabelle, Dustin), pair(Jessica, Tim),
-        pair(Joelina, Mike), pair(Kerstin, Max), pair(Marie, Marius), pair(Monami, Antonino), pair(Raphaela, William),
-        pair(Zaira, Jordi));
+    add(false, pair(Raphaela, Andre), 2, pair(Dana, William), pair(Estelle, Leon), pair(Isabelle, Marius),
+          pair(Jessica, Jordi), pair(Joelina, Mike), pair(Kerstin, Antonino), pair(Marie, Tim), pair(Monami, Max),
+          pair(Raphaela, Andre), pair(Zaira, Dustin));
 
-      data.add(false, pair(Raphaela, Andre));
-      data.add(2, pair(Dana, William), pair(Estelle, Leon), pair(Isabelle, Marius), pair(Jessica, Jordi),
-        pair(Joelina, Mike), pair(Kerstin, Antonino), pair(Marie, Tim), pair(Monami, Max), pair(Raphaela, Andre),
-        pair(Zaira, Dustin));
+    add(null, pair(Dana, William), 3, pair(Dana, William), pair(Estelle, Leon), pair(Isabelle, Andre),
+          pair(Jessica, Marius), pair(Joelina, Mike), pair(Kerstin, Tim), pair(Marie, Max), pair(Monami, Antonino),
+          pair(Raphaela, Jordi), pair(Zaira, Dustin));
 
-      // add(true, pair(Dana, William));
-      data.add(3, pair(Dana, William), pair(Estelle, Leon), pair(Isabelle, Andre), pair(Jessica, Marius),
-        pair(Joelina, Mike), pair(Kerstin, Tim), pair(Marie, Max), pair(Monami, Antonino), pair(Raphaela, Jordi),
-        pair(Zaira, Dustin));
+    // 5ter Tag
+    add(false, pair(Monami, Antonino), 2, pair(Jessica, Leon), pair(Estelle, Mike), pair(Raphaela, Marius),
+          pair(Desiree, Tim), pair(Joelina, Andre), pair(Isabelle, Dustin), pair(Monami, Max), pair(Kerstin, Antonino),
+          pair(Zaira, Jordi), pair(Dana, William));
 
-      // 5ter Tag
-      data.add(false, pair(Monami, Antonino));
-      data.add(2, pair(Jessica, Leon), pair(Estelle, Mike), pair(Raphaela, Marius), pair(Desiree, Tim),
-        pair(Joelina, Andre), pair(Isabelle, Dustin), pair(Monami, Max), pair(Kerstin, Antonino), pair(Zaira, Jordi),
-        pair(Dana, William));
-
-      // 6ter Tag
-      data.add(false, pair(Jessica, Max));
-      data.add(4, pair(Dana, Antonino), pair(Estelle, Mike), pair(Isabelle, Dustin), pair(Jessica, Leon),
-        pair(Joelina, Tim), pair(Kerstin, Max), pair(Marie, Andre), pair(Raphaela, William), pair(Zaira, Marius),
-        pair(Desiree, Jordi));
-
-    }
-
-    setData(data);
+    // 6ter Tag
+    add(false, pair(Jessica, Max), 4, pair(Dana, Antonino), pair(Estelle, Mike), pair(Isabelle, Dustin),
+          pair(Jessica, Leon), pair(Joelina, Tim), pair(Kerstin, Max), pair(Marie, Andre), pair(Raphaela, William),
+          pair(Zaira, Marius), pair(Desiree, Jordi));
 
     // coming
     // add(false, pair(Kerstin, Max)); // 26.32
@@ -80,7 +69,7 @@ public class AYTO_3 extends MatchFinder {
   }
 
   public static void main(String[] args) {
-    new AYTO_3().printLightChancesAndResult();
+    new MatchFinder().printLightChancesAndResult(new AYTO_3());
   }
 
 }

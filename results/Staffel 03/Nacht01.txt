@@ -1,382 +1,420 @@
-Berechne AYTO_3 - Nacht 0...
-Combinations: 3628800 Yes: 3265920 No: 362880 Calculation time: 0 min 21 secs (Tested intern iterations: 62353010)
-Spot probabilities 0 => 36.33 [1186632]
-Spot probabilities 1 => 36.79 [1201464]
-Spot probabilities 2 => 18.62 [608153]
-Spot probabilities 3 => 6.28 [205176] <==
-Spot probabilities 4 => 1.59 [51940]
-Spot probabilities 5 => 0.32 [10472]
-Spot probabilities 6 => 0.06 [1806]
-Spot probabilities 7 => 0.01 [232]
-Spot probabilities 8 => 0.0 [44]
-Spot probabilities 9 => 0.0 [0]
-Spot probabilities 10 => 0.0 [1]
+Eine Frau ist hinzugekommen: Jessica. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Monami. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Joelina. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Estelle. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Raphaela. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Dana. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Kerstin. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Zaira. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Marie. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Isabelle. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Mike. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Antonino. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Jordi. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Andre. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: William. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Max. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Dustin. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Tim. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Marius. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Leon. Die Anzahl der Kombinationen erhöht sich damit!
+-- Berechne 03 - Nacht 1...
+-- Combinations: 3628800 Yes: 3628800 No: 0 Calculation time: 0 min 8 secs (Tested intern iterations: 62353010)
+Die Anzahl der Kombinationen hat sich verändert: 0 => 3628800
+-- Berechne 03 - Nacht 1 inkl. Matchbox...
+-- Combinations: 3628800 Yes: 3265920 No: 362880 Calculation time: 0 min 10 secs (Tested intern iterations: 62353010)
+MatchBox Jessica & Mike: false. Kombinationen reduzieren sich: 3628800 => 3265920
 
-Berechne AYTO_3 - Nacht 1...
-Combinations: 3628800 Yes: 205176 No: 3423624 Calculation time: 0 min 5 secs (Tested intern iterations: 62353010)
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Monami & Antonino: 9.88%
+Joelina & Mike: 11.11%
+Estelle & Jordi: 9.88%
+Raphaela & Andre: 9.88%
+Dana & William: 9.88%
+Kerstin & Max: 9.88%
+Zaira & Dustin: 9.88%
+Marie & Tim: 9.88%
+Isabelle & Marius: 9.88%
+Jessica & Leon: 11.11%
+
+Wahrscheinlichkeit für entsprechende Spotanzahl:
+0 => 36.33% [1186632]
+1 => 36.79% [1201464]
+2 => 18.62% [608153]
+3 => 6.28% [205176] <==
+4 => 1.59% [51940]
+5 => 0.32% [10472]
+6 => 0.06% [1806]
+7 => 0.01% [232]
+8 => 0.0% [44]
+9 => 0.0% [0]
+10 => 0.0% [1]
+
+-- Berechne 03 - Nacht 1 inkl. Matchbox inkl. Matchingnight...
+-- Combinations: 3628800 Yes: 205176 No: 3423624 Calculation time: 0 min 7 secs (Tested intern iterations: 62353010)
 
 ==== Partner ====
-Estelle: 10 [Jordi (29.37), Mike (8.43), Marius (7.81), William (7.81), Tim (7.81), Antonino (7.81), Dustin (7.81), Andre (7.81), Max (7.81), Leon (7.53)]
-Isabelle: 10 [Marius (29.37), Mike (8.43), Jordi (7.81), William (7.81), Tim (7.81), Antonino (7.81), Dustin (7.81), Andre (7.81), Max (7.81), Leon (7.53)]
-Dana: 10 [William (29.37), Mike (8.43), Jordi (7.81), Marius (7.81), Tim (7.81), Antonino (7.81), Dustin (7.81), Andre (7.81), Max (7.81), Leon (7.53)]
-Marie: 10 [Tim (29.37), Mike (8.43), Jordi (7.81), Marius (7.81), William (7.81), Antonino (7.81), Dustin (7.81), Andre (7.81), Max (7.81), Leon (7.53)]
-Joelina: 10 [Mike (32.53), Jordi (7.53), Marius (7.53), William (7.53), Tim (7.53), Antonino (7.53), Dustin (7.53), Andre (7.53), Max (7.53), Leon (7.23)]
-Monami: 10 [Antonino (29.37), Mike (8.43), Jordi (7.81), Marius (7.81), William (7.81), Tim (7.81), Dustin (7.81), Andre (7.81), Max (7.81), Leon (7.53)]
-Zaira: 10 [Dustin (29.37), Mike (8.43), Jordi (7.81), Marius (7.81), William (7.81), Tim (7.81), Antonino (7.81), Andre (7.81), Max (7.81), Leon (7.53)]
-Raphaela: 10 [Andre (29.37), Mike (8.43), Jordi (7.81), Marius (7.81), William (7.81), Tim (7.81), Antonino (7.81), Dustin (7.81), Max (7.81), Leon (7.53)]
-Jessica: 9 [Leon (32.53), Jordi (8.43), Marius (8.43), William (8.43), Tim (8.43), Antonino (8.43), Dustin (8.43), Andre (8.43), Max (8.43), Mike (0.0)]
-Kerstin: 10 [Max (29.37), Mike (8.43), Jordi (7.81), Marius (7.81), William (7.81), Tim (7.81), Antonino (7.81), Dustin (7.81), Andre (7.81), Leon (7.53)]
+Jessica: 9 [Leon (32.53), Antonino (8.43), Jordi (8.43), Andre (8.43), William (8.43), Max (8.43), Dustin (8.43), Tim (8.43), Marius (8.43), Mike (0.0)]
+Monami: 10 [Antonino (29.37), Mike (8.43), Jordi (7.81), Andre (7.81), William (7.81), Max (7.81), Dustin (7.81), Tim (7.81), Marius (7.81), Leon (7.53)]
+Joelina: 10 [Mike (32.53), Antonino (7.53), Jordi (7.53), Andre (7.53), William (7.53), Max (7.53), Dustin (7.53), Tim (7.53), Marius (7.53), Leon (7.23)]
+Estelle: 10 [Jordi (29.37), Mike (8.43), Antonino (7.81), Andre (7.81), William (7.81), Max (7.81), Dustin (7.81), Tim (7.81), Marius (7.81), Leon (7.53)]
+Raphaela: 10 [Andre (29.37), Mike (8.43), Antonino (7.81), Jordi (7.81), William (7.81), Max (7.81), Dustin (7.81), Tim (7.81), Marius (7.81), Leon (7.53)]
+Dana: 10 [William (29.37), Mike (8.43), Antonino (7.81), Jordi (7.81), Andre (7.81), Max (7.81), Dustin (7.81), Tim (7.81), Marius (7.81), Leon (7.53)]
+Kerstin: 10 [Max (29.37), Mike (8.43), Antonino (7.81), Jordi (7.81), Andre (7.81), William (7.81), Dustin (7.81), Tim (7.81), Marius (7.81), Leon (7.53)]
+Zaira: 10 [Dustin (29.37), Mike (8.43), Antonino (7.81), Jordi (7.81), Andre (7.81), William (7.81), Max (7.81), Tim (7.81), Marius (7.81), Leon (7.53)]
+Marie: 10 [Tim (29.37), Mike (8.43), Antonino (7.81), Jordi (7.81), Andre (7.81), William (7.81), Max (7.81), Dustin (7.81), Marius (7.81), Leon (7.53)]
+Isabelle: 10 [Marius (29.37), Mike (8.43), Antonino (7.81), Jordi (7.81), Andre (7.81), William (7.81), Max (7.81), Dustin (7.81), Tim (7.81), Leon (7.53)]
 
-Jordi: 10 [Estelle (29.37), Jessica (8.43), Isabelle (7.81), Dana (7.81), Marie (7.81), Monami (7.81), Zaira (7.81), Raphaela (7.81), Kerstin (7.81), Joelina (7.53)]
-Marius: 10 [Isabelle (29.37), Jessica (8.43), Estelle (7.81), Dana (7.81), Marie (7.81), Monami (7.81), Zaira (7.81), Raphaela (7.81), Kerstin (7.81), Joelina (7.53)]
-William: 10 [Dana (29.37), Jessica (8.43), Estelle (7.81), Isabelle (7.81), Marie (7.81), Monami (7.81), Zaira (7.81), Raphaela (7.81), Kerstin (7.81), Joelina (7.53)]
-Tim: 10 [Marie (29.37), Jessica (8.43), Estelle (7.81), Isabelle (7.81), Dana (7.81), Monami (7.81), Zaira (7.81), Raphaela (7.81), Kerstin (7.81), Joelina (7.53)]
-Mike: 9 [Joelina (32.53), Estelle (8.43), Isabelle (8.43), Dana (8.43), Marie (8.43), Monami (8.43), Zaira (8.43), Raphaela (8.43), Kerstin (8.43), Jessica (0.0)]
-Antonino: 10 [Monami (29.37), Jessica (8.43), Estelle (7.81), Isabelle (7.81), Dana (7.81), Marie (7.81), Zaira (7.81), Raphaela (7.81), Kerstin (7.81), Joelina (7.53)]
-Dustin: 10 [Zaira (29.37), Jessica (8.43), Estelle (7.81), Isabelle (7.81), Dana (7.81), Marie (7.81), Monami (7.81), Raphaela (7.81), Kerstin (7.81), Joelina (7.53)]
-Andre: 10 [Raphaela (29.37), Jessica (8.43), Estelle (7.81), Isabelle (7.81), Dana (7.81), Marie (7.81), Monami (7.81), Zaira (7.81), Kerstin (7.81), Joelina (7.53)]
-Leon: 10 [Jessica (32.53), Estelle (7.53), Isabelle (7.53), Dana (7.53), Marie (7.53), Monami (7.53), Zaira (7.53), Raphaela (7.53), Kerstin (7.53), Joelina (7.23)]
-Max: 10 [Kerstin (29.37), Jessica (8.43), Estelle (7.81), Isabelle (7.81), Dana (7.81), Marie (7.81), Monami (7.81), Zaira (7.81), Raphaela (7.81), Joelina (7.53)]
+Mike: 9 [Joelina (32.53), Monami (8.43), Estelle (8.43), Raphaela (8.43), Dana (8.43), Kerstin (8.43), Zaira (8.43), Marie (8.43), Isabelle (8.43), Jessica (0.0)]
+Antonino: 10 [Monami (29.37), Jessica (8.43), Estelle (7.81), Raphaela (7.81), Dana (7.81), Kerstin (7.81), Zaira (7.81), Marie (7.81), Isabelle (7.81), Joelina (7.53)]
+Jordi: 10 [Estelle (29.37), Jessica (8.43), Monami (7.81), Raphaela (7.81), Dana (7.81), Kerstin (7.81), Zaira (7.81), Marie (7.81), Isabelle (7.81), Joelina (7.53)]
+Andre: 10 [Raphaela (29.37), Jessica (8.43), Monami (7.81), Estelle (7.81), Dana (7.81), Kerstin (7.81), Zaira (7.81), Marie (7.81), Isabelle (7.81), Joelina (7.53)]
+William: 10 [Dana (29.37), Jessica (8.43), Monami (7.81), Estelle (7.81), Raphaela (7.81), Kerstin (7.81), Zaira (7.81), Marie (7.81), Isabelle (7.81), Joelina (7.53)]
+Max: 10 [Kerstin (29.37), Jessica (8.43), Monami (7.81), Estelle (7.81), Raphaela (7.81), Dana (7.81), Zaira (7.81), Marie (7.81), Isabelle (7.81), Joelina (7.53)]
+Dustin: 10 [Zaira (29.37), Jessica (8.43), Monami (7.81), Estelle (7.81), Raphaela (7.81), Dana (7.81), Kerstin (7.81), Marie (7.81), Isabelle (7.81), Joelina (7.53)]
+Tim: 10 [Marie (29.37), Jessica (8.43), Monami (7.81), Estelle (7.81), Raphaela (7.81), Dana (7.81), Kerstin (7.81), Zaira (7.81), Isabelle (7.81), Joelina (7.53)]
+Marius: 10 [Isabelle (29.37), Jessica (8.43), Monami (7.81), Estelle (7.81), Raphaela (7.81), Dana (7.81), Kerstin (7.81), Zaira (7.81), Marie (7.81), Joelina (7.53)]
+Leon: 10 [Jessica (32.53), Monami (7.53), Estelle (7.53), Raphaela (7.53), Dana (7.53), Kerstin (7.53), Zaira (7.53), Marie (7.53), Isabelle (7.53), Joelina (7.23)]
 
 ==== Mögliche Paare: 99/100 ====
-Jessica & Leon => 32.53% [66744/205176] Gemeinsame MNs: 1/1
-Joelina & Mike => 32.53% [66744/205176] Gemeinsame MNs: 1/1
-Isabelle & Marius => 29.37% [60255/205176] Gemeinsame MNs: 1/1
-Marie & Tim => 29.37% [60255/205176] Gemeinsame MNs: 1/1
-Kerstin & Max => 29.37% [60255/205176] Gemeinsame MNs: 1/1
-Dana & William => 29.37% [60255/205176] Gemeinsame MNs: 1/1
-Monami & Antonino => 29.37% [60255/205176] Gemeinsame MNs: 1/1
-Estelle & Jordi => 29.37% [60255/205176] Gemeinsame MNs: 1/1
-Zaira & Dustin => 29.37% [60255/205176] Gemeinsame MNs: 1/1
-Raphaela & Andre => 29.37% [60255/205176] Gemeinsame MNs: 1/1
-Jessica & Max => 8.43% [17304/205176] Gemeinsame MNs: 0/1
-Jessica & Dustin => 8.43% [17304/205176] Gemeinsame MNs: 0/1
-Jessica & William => 8.43% [17304/205176] Gemeinsame MNs: 0/1
-Jessica & Antonino => 8.43% [17304/205176] Gemeinsame MNs: 0/1
-Zaira & Mike => 8.43% [17304/205176] Gemeinsame MNs: 0/1
-Jessica & Tim => 8.43% [17304/205176] Gemeinsame MNs: 0/1
-Kerstin & Mike => 8.43% [17304/205176] Gemeinsame MNs: 0/1
-Jessica & Jordi => 8.43% [17304/205176] Gemeinsame MNs: 0/1
-Estelle & Mike => 8.43% [17304/205176] Gemeinsame MNs: 0/1
-Marie & Mike => 8.43% [17304/205176] Gemeinsame MNs: 0/1
-Jessica & Marius => 8.43% [17304/205176] Gemeinsame MNs: 0/1
-Isabelle & Mike => 8.43% [17304/205176] Gemeinsame MNs: 0/1
-Monami & Mike => 8.43% [17304/205176] Gemeinsame MNs: 0/1
-Jessica & Andre => 8.43% [17304/205176] Gemeinsame MNs: 0/1
-Raphaela & Mike => 8.43% [17304/205176] Gemeinsame MNs: 0/1
-Dana & Mike => 8.43% [17304/205176] Gemeinsame MNs: 0/1
-Estelle & Antonino => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Marie & William => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Isabelle & Andre => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Dana & Tim => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Estelle & William => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Kerstin & Jordi => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Estelle & Andre => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Marie & Andre => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Raphaela & Marius => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Zaira & Antonino => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Estelle & Tim => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Monami & William => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Monami & Dustin => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Zaira & Andre => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Raphaela & Dustin => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Raphaela & Tim => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Monami & Max => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Isabelle & Antonino => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Dana & Antonino => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Monami & Tim => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Raphaela & William => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Estelle & Max => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Dana & Dustin => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Isabelle & Jordi => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Marie & Dustin => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Dana & Jordi => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Monami & Marius => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Dana & Marius => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Monami & Jordi => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Kerstin & Tim => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Marie & Max => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Estelle & Dustin => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Raphaela & Max => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Kerstin & Antonino => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Zaira & Jordi => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Kerstin & Andre => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Zaira & Marius => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Isabelle & Dustin => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Kerstin & William => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Zaira & Max => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Dana & Max => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Marie & Marius => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Isabelle & Tim => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Dana & Andre => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Raphaela & Antonino => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Estelle & Marius => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Marie & Jordi => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Zaira & William => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Isabelle & William => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Raphaela & Jordi => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Kerstin & Marius => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Kerstin & Dustin => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Zaira & Tim => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Isabelle & Max => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Marie & Antonino => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Monami & Andre => 7.81% [16024/205176] Gemeinsame MNs: 0/1
-Monami & Leon => 7.53% [15449/205176] Gemeinsame MNs: 0/1
-Dana & Leon => 7.53% [15449/205176] Gemeinsame MNs: 0/1
-Joelina & Andre => 7.53% [15449/205176] Gemeinsame MNs: 0/1
-Joelina & Antonino => 7.53% [15449/205176] Gemeinsame MNs: 0/1
-Joelina & William => 7.53% [15449/205176] Gemeinsame MNs: 0/1
-Zaira & Leon => 7.53% [15449/205176] Gemeinsame MNs: 0/1
-Marie & Leon => 7.53% [15449/205176] Gemeinsame MNs: 0/1
-Joelina & Jordi => 7.53% [15449/205176] Gemeinsame MNs: 0/1
-Kerstin & Leon => 7.53% [15449/205176] Gemeinsame MNs: 0/1
-Estelle & Leon => 7.53% [15449/205176] Gemeinsame MNs: 0/1
-Raphaela & Leon => 7.53% [15449/205176] Gemeinsame MNs: 0/1
-Joelina & Max => 7.53% [15449/205176] Gemeinsame MNs: 0/1
-Joelina & Tim => 7.53% [15449/205176] Gemeinsame MNs: 0/1
-Joelina & Marius => 7.53% [15449/205176] Gemeinsame MNs: 0/1
-Joelina & Dustin => 7.53% [15449/205176] Gemeinsame MNs: 0/1
-Isabelle & Leon => 7.53% [15449/205176] Gemeinsame MNs: 0/1
-Joelina & Leon => 7.23% [14840/205176] Gemeinsame MNs: 0/1
+Joelina & Mike => 32.53% [66744/205176] Gemeinsame MNs: 4/6
+Jessica & Leon => 32.53% [66744/205176] Gemeinsame MNs: 3/6
+Isabelle & Marius => 29.37% [60255/205176] Gemeinsame MNs: 2/6
+Zaira & Dustin => 29.37% [60255/205176] Gemeinsame MNs: 3/6
+Dana & William => 29.37% [60255/205176] Gemeinsame MNs: 4/6
+Marie & Tim => 29.37% [60255/205176] Gemeinsame MNs: 2/6
+Kerstin & Max => 29.37% [60255/205176] Gemeinsame MNs: 3/6
+Raphaela & Andre => 29.37% [60255/205176] Gemeinsame MNs: 2/6
+Monami & Antonino => 29.37% [60255/205176] Gemeinsame MNs: 3/6
+Estelle & Jordi => 29.37% [60255/205176] Gemeinsame MNs: 1/6
+Jessica & Antonino => 8.43% [17304/205176] Gemeinsame MNs: 0/6
+Isabelle & Mike => 8.43% [17304/205176] Gemeinsame MNs: 0/6
+Kerstin & Mike => 8.43% [17304/205176] Gemeinsame MNs: 0/6
+Raphaela & Mike => 8.43% [17304/205176] Gemeinsame MNs: 0/6
+Zaira & Mike => 8.43% [17304/205176] Gemeinsame MNs: 0/6
+Jessica & Max => 8.43% [17304/205176] Gemeinsame MNs: 0/6
+Marie & Mike => 8.43% [17304/205176] Gemeinsame MNs: 0/6
+Monami & Mike => 8.43% [17304/205176] Gemeinsame MNs: 0/6
+Dana & Mike => 8.43% [17304/205176] Gemeinsame MNs: 0/6
+Jessica & Tim => 8.43% [17304/205176] Gemeinsame MNs: 1/6
+Jessica & Marius => 8.43% [17304/205176] Gemeinsame MNs: 1/6
+Jessica & Andre => 8.43% [17304/205176] Gemeinsame MNs: 0/6
+Jessica & William => 8.43% [17304/205176] Gemeinsame MNs: 0/6
+Estelle & Mike => 8.43% [17304/205176] Gemeinsame MNs: 2/6
+Jessica & Jordi => 8.43% [17304/205176] Gemeinsame MNs: 1/6
+Jessica & Dustin => 8.43% [17304/205176] Gemeinsame MNs: 0/6
+Isabelle & William => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Kerstin & William => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Estelle & Max => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Monami & Marius => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Dana & Tim => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Dana & Andre => 7.81% [16024/205176] Gemeinsame MNs: 1/6
+Kerstin & Jordi => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Raphaela & Antonino => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Zaira & Tim => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Zaira & Marius => 7.81% [16024/205176] Gemeinsame MNs: 1/6
+Kerstin & Antonino => 7.81% [16024/205176] Gemeinsame MNs: 2/6
+Dana & Dustin => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Monami & William => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Raphaela & Max => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Estelle & William => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Dana & Max => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Marie & Andre => 7.81% [16024/205176] Gemeinsame MNs: 1/6
+Zaira & Andre => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Zaira & William => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Isabelle & Jordi => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Raphaela & William => 7.81% [16024/205176] Gemeinsame MNs: 2/6
+Monami & Jordi => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Marie & William => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Kerstin & Tim => 7.81% [16024/205176] Gemeinsame MNs: 1/6
+Estelle & Antonino => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Zaira & Jordi => 7.81% [16024/205176] Gemeinsame MNs: 2/6
+Monami & Tim => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Isabelle & Andre => 7.81% [16024/205176] Gemeinsame MNs: 1/6
+Dana & Marius => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Kerstin & Marius => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Monami & Andre => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Marie & Jordi => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Marie & Dustin => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Isabelle & Tim => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Isabelle & Dustin => 7.81% [16024/205176] Gemeinsame MNs: 3/6
+Monami & Dustin => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Kerstin & Andre => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Zaira & Antonino => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Kerstin & Dustin => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Raphaela & Jordi => 7.81% [16024/205176] Gemeinsame MNs: 1/6
+Dana & Antonino => 7.81% [16024/205176] Gemeinsame MNs: 1/6
+Dana & Jordi => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Raphaela & Dustin => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Marie & Marius => 7.81% [16024/205176] Gemeinsame MNs: 1/6
+Monami & Max => 7.81% [16024/205176] Gemeinsame MNs: 2/6
+Estelle & Marius => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Isabelle & Max => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Estelle & Dustin => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Marie & Max => 7.81% [16024/205176] Gemeinsame MNs: 1/6
+Raphaela & Tim => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Estelle & Tim => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Isabelle & Antonino => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Marie & Antonino => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Zaira & Max => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Estelle & Andre => 7.81% [16024/205176] Gemeinsame MNs: 0/6
+Raphaela & Marius => 7.81% [16024/205176] Gemeinsame MNs: 1/6
+Dana & Leon => 7.53% [15449/205176] Gemeinsame MNs: 0/6
+Joelina & Tim => 7.53% [15449/205176] Gemeinsame MNs: 1/6
+Zaira & Leon => 7.53% [15449/205176] Gemeinsame MNs: 0/6
+Joelina & Marius => 7.53% [15449/205176] Gemeinsame MNs: 0/6
+Joelina & Andre => 7.53% [15449/205176] Gemeinsame MNs: 1/6
+Estelle & Leon => 7.53% [15449/205176] Gemeinsame MNs: 3/6
+Joelina & Jordi => 7.53% [15449/205176] Gemeinsame MNs: 0/6
+Raphaela & Leon => 7.53% [15449/205176] Gemeinsame MNs: 0/6
+Joelina & Dustin => 7.53% [15449/205176] Gemeinsame MNs: 0/6
+Joelina & Antonino => 7.53% [15449/205176] Gemeinsame MNs: 0/6
+Isabelle & Leon => 7.53% [15449/205176] Gemeinsame MNs: 0/6
+Monami & Leon => 7.53% [15449/205176] Gemeinsame MNs: 0/6
+Marie & Leon => 7.53% [15449/205176] Gemeinsame MNs: 0/6
+Joelina & William => 7.53% [15449/205176] Gemeinsame MNs: 0/6
+Kerstin & Leon => 7.53% [15449/205176] Gemeinsame MNs: 0/6
+Joelina & Max => 7.53% [15449/205176] Gemeinsame MNs: 0/6
+Joelina & Leon => 7.23% [14840/205176] Gemeinsame MNs: 0/6
 
 ==== Beste Konstellationen ====
 > Platz 1 mit 305911 Punkten (Summe der Vorkommen der Einzelpaare)
-Isabelle & William
-Kerstin & Dustin
-Estelle & Jordi
-Monami & Tim
-Dana & Marius
+Monami & Antonino
+Isabelle & Dustin
+Dana & Max
 Joelina & Mike
-Marie & Antonino
+Raphaela & Jordi
+Zaira & Tim
+Kerstin & William
+Estelle & Andre
+Marie & Marius
 Jessica & Leon
-Raphaela & Max
-Zaira & Andre
 
 > Platz 2 mit 305911 Punkten (Summe der Vorkommen der Einzelpaare)
-Isabelle & William
-Zaira & Max
-Estelle & Jordi
-Monami & Tim
-Dana & Marius
+Monami & Antonino
+Dana & Max
 Joelina & Mike
-Marie & Antonino
+Raphaela & Jordi
+Kerstin & William
+Estelle & Andre
+Zaira & Marius
+Marie & Dustin
+Isabelle & Tim
 Jessica & Leon
-Kerstin & Andre
-Raphaela & Dustin
 
 > Platz 3 mit 305911 Punkten (Summe der Vorkommen der Einzelpaare)
-Isabelle & William
-Estelle & Jordi
-Zaira & Tim
-Dana & Marius
-Monami & Dustin
+Monami & Antonino
+Dana & Max
+Kerstin & Dustin
 Joelina & Mike
-Marie & Antonino
+Raphaela & Jordi
+Estelle & Andre
+Isabelle & Tim
+Marie & Marius
+Zaira & William
 Jessica & Leon
-Kerstin & Andre
-Raphaela & Max
 
 > Platz 4 mit 305911 Punkten (Summe der Vorkommen der Einzelpaare)
+Monami & Antonino
+Dana & Max
 Isabelle & William
-Kerstin & Tim
-Estelle & Jordi
-Dana & Marius
-Monami & Dustin
+Kerstin & Dustin
 Joelina & Mike
-Marie & Antonino
+Raphaela & Jordi
+Zaira & Tim
+Estelle & Andre
+Marie & Marius
 Jessica & Leon
-Raphaela & Max
-Zaira & Andre
 
 > Platz 5 mit 305911 Punkten (Summe der Vorkommen der Einzelpaare)
-Isabelle & William
-Raphaela & Tim
-Zaira & Max
-Estelle & Jordi
-Dana & Marius
-Monami & Dustin
+Monami & Antonino
+Dana & Max
+Kerstin & Dustin
 Joelina & Mike
-Marie & Antonino
+Raphaela & Jordi
+Estelle & Andre
+Zaira & Marius
+Marie & William
+Isabelle & Tim
 Jessica & Leon
-Kerstin & Andre
 
 > Platz 6 mit 305911 Punkten (Summe der Vorkommen der Einzelpaare)
-Isabelle & William
-Kerstin & Dustin
-Estelle & Jordi
-Zaira & Tim
-Dana & Marius
+Monami & Antonino
+Isabelle & Dustin
+Dana & Max
 Joelina & Mike
-Marie & Antonino
+Raphaela & Jordi
+Estelle & Andre
+Kerstin & Tim
+Marie & Marius
+Zaira & William
 Jessica & Leon
-Monami & Andre
-Raphaela & Max
 
 > Platz 7 mit 305911 Punkten (Summe der Vorkommen der Einzelpaare)
-Isabelle & William
-Raphaela & Tim
-Kerstin & Dustin
-Zaira & Max
-Estelle & Jordi
-Dana & Marius
+Monami & Antonino
+Isabelle & Dustin
+Dana & Max
 Joelina & Mike
-Marie & Antonino
+Raphaela & Jordi
+Estelle & Andre
+Zaira & Marius
+Marie & William
+Kerstin & Tim
 Jessica & Leon
-Monami & Andre
 
 > Platz 8 mit 305911 Punkten (Summe der Vorkommen der Einzelpaare)
+Monami & Antonino
+Dana & Max
 Isabelle & William
-Zaira & Max
-Kerstin & Tim
-Estelle & Jordi
-Dana & Marius
 Joelina & Mike
-Marie & Antonino
+Raphaela & Jordi
+Estelle & Andre
+Zaira & Marius
+Marie & Dustin
+Kerstin & Tim
 Jessica & Leon
-Monami & Andre
-Raphaela & Dustin
 
 > Platz 9 mit 305911 Punkten (Summe der Vorkommen der Einzelpaare)
-Isabelle & William
-Monami & Max
-Estelle & Jordi
-Zaira & Tim
-Dana & Marius
+Monami & Antonino
+Dana & Max
 Joelina & Mike
-Marie & Antonino
+Kerstin & Marius
+Raphaela & Jordi
+Estelle & Andre
+Marie & Dustin
+Isabelle & Tim
+Zaira & William
 Jessica & Leon
-Kerstin & Andre
-Raphaela & Dustin
 
 > Platz 10 mit 305911 Punkten (Summe der Vorkommen der Einzelpaare)
-Isabelle & William
-Raphaela & Tim
-Kerstin & Dustin
-Monami & Max
-Estelle & Jordi
-Dana & Marius
+Monami & Antonino
+Isabelle & Dustin
+Dana & Max
 Joelina & Mike
-Marie & Antonino
+Kerstin & Marius
+Raphaela & Jordi
+Zaira & Tim
+Estelle & Andre
+Marie & William
 Jessica & Leon
-Zaira & Andre
 
 > Platz 11 mit 305911 Punkten (Summe der Vorkommen der Einzelpaare)
+Monami & Antonino
+Dana & Max
 Isabelle & William
-Kerstin & Tim
-Monami & Max
-Estelle & Jordi
-Dana & Marius
 Joelina & Mike
-Marie & Antonino
+Kerstin & Marius
+Raphaela & Jordi
+Zaira & Tim
+Estelle & Andre
+Marie & Dustin
 Jessica & Leon
-Raphaela & Dustin
-Zaira & Andre
 
 > Platz 12 mit 305911 Punkten (Summe der Vorkommen der Einzelpaare)
-Isabelle & William
-Marie & Dustin
-Estelle & Jordi
-Monami & Tim
-Dana & Marius
+Monami & Antonino
 Joelina & Mike
-Zaira & Antonino
+Raphaela & Jordi
+Kerstin & William
+Estelle & Andre
+Dana & Dustin
+Zaira & Max
+Isabelle & Tim
+Marie & Marius
 Jessica & Leon
-Kerstin & Andre
-Raphaela & Max
 
 > Platz 13 mit 305911 Punkten (Summe der Vorkommen der Einzelpaare)
-Isabelle & William
-Marie & Dustin
-Estelle & Jordi
-Monami & Tim
-Dana & Marius
+Monami & Antonino
 Joelina & Mike
+Raphaela & Jordi
+Zaira & Tim
+Kerstin & William
+Estelle & Andre
+Isabelle & Max
+Dana & Dustin
+Marie & Marius
 Jessica & Leon
-Kerstin & Antonino
-Raphaela & Max
-Zaira & Andre
 
 > Platz 14 mit 305911 Punkten (Summe der Vorkommen der Einzelpaare)
-Isabelle & William
-Zaira & Max
-Marie & Dustin
-Estelle & Jordi
-Monami & Tim
-Dana & Marius
+Monami & Antonino
+Marie & Max
 Joelina & Mike
+Raphaela & Jordi
+Kerstin & William
+Estelle & Andre
+Zaira & Marius
+Dana & Dustin
+Isabelle & Tim
 Jessica & Leon
-Kerstin & Andre
-Raphaela & Antonino
 
 > Platz 15 mit 305911 Punkten (Summe der Vorkommen der Einzelpaare)
-Isabelle & William
-Marie & Dustin
-Estelle & Jordi
-Zaira & Tim
-Dana & Marius
+Monami & Antonino
 Joelina & Mike
+Raphaela & Jordi
+Estelle & Andre
+Isabelle & Max
+Dana & Dustin
+Kerstin & Tim
+Marie & Marius
+Zaira & William
 Jessica & Leon
-Kerstin & Antonino
-Monami & Andre
-Raphaela & Max
 
 > Platz 16 mit 305911 Punkten (Summe der Vorkommen der Einzelpaare)
+Monami & Antonino
 Isabelle & William
-Kerstin & Tim
-Marie & Dustin
-Estelle & Jordi
-Dana & Marius
 Joelina & Mike
-Zaira & Antonino
+Raphaela & Jordi
+Estelle & Andre
+Dana & Dustin
+Zaira & Max
+Kerstin & Tim
+Marie & Marius
 Jessica & Leon
-Monami & Andre
-Raphaela & Max
 
 > Platz 17 mit 305911 Punkten (Summe der Vorkommen der Einzelpaare)
-Isabelle & William
-Raphaela & Tim
-Zaira & Max
-Marie & Dustin
-Estelle & Jordi
-Dana & Marius
+Monami & Antonino
 Joelina & Mike
+Raphaela & Jordi
+Estelle & Andre
+Zaira & Marius
+Isabelle & Max
+Dana & Dustin
+Marie & William
+Kerstin & Tim
 Jessica & Leon
-Kerstin & Antonino
-Monami & Andre
 
 > Platz 18 mit 305911 Punkten (Summe der Vorkommen der Einzelpaare)
+Monami & Antonino
 Isabelle & William
-Zaira & Max
-Kerstin & Tim
-Marie & Dustin
-Estelle & Jordi
-Dana & Marius
+Marie & Max
 Joelina & Mike
+Raphaela & Jordi
+Estelle & Andre
+Zaira & Marius
+Dana & Dustin
+Kerstin & Tim
 Jessica & Leon
-Monami & Andre
-Raphaela & Antonino
 
 > Platz 19 mit 305911 Punkten (Summe der Vorkommen der Einzelpaare)
-Isabelle & William
-Marie & Dustin
-Monami & Max
-Estelle & Jordi
-Zaira & Tim
-Dana & Marius
+Monami & Antonino
+Marie & Max
 Joelina & Mike
+Kerstin & Marius
+Raphaela & Jordi
+Estelle & Andre
+Dana & Dustin
+Isabelle & Tim
+Zaira & William
 Jessica & Leon
-Kerstin & Andre
-Raphaela & Antonino
 
 > Platz 20 mit 305911 Punkten (Summe der Vorkommen der Einzelpaare)
-Isabelle & William
-Raphaela & Tim
-Marie & Dustin
-Monami & Max
-Estelle & Jordi
-Dana & Marius
+Monami & Antonino
 Joelina & Mike
-Zaira & Antonino
+Kerstin & Marius
+Raphaela & Jordi
+Estelle & Andre
+Dana & Dustin
+Marie & William
+Zaira & Max
+Isabelle & Tim
 Jessica & Leon
-Kerstin & Andre
 
