@@ -65,6 +65,9 @@ public class AYTO_3
           pair(Isabelle, Dustin), pair(Monami, Jordi), pair(Desiree, Andre), pair(Marie, Max), pair(Kerstin, Tim),
           pair(Joelina, Mike), pair(Jessica, Leon));
 
+
+    track(pair(Estelle, Jordi), pair(Zaira, Marius), pair(Monami, Max), pair(Isabelle, Andre), pair(Dana, Antonino), pair(Joelina, Mike), pair(Raphaela, William), pair(Marie, Dustin),
+          pair(Kerstin, Tim), pair(Jessica, Leon));
     // coming
     // add(false, pair(Kerstin, Max)); // 0
     // add(false, pair(Isabelle, Dustin)); // 0
@@ -73,7 +76,7 @@ public class AYTO_3
   }
 
   public static void main(String[] args) {
-    new MatchFinder().printLightChancesAndResult(new AYTO_3());
+    new MatchFinder().printLightChancesAndResult(new AYTO_3(), 2);
   }
 
 }

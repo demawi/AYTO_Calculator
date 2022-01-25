@@ -183,6 +183,14 @@ public class MatchFinder {
             + "] Gemeinsame MNs: " + count + "/" + data.tage.size());
     }
 
+    if (data.pairsToTrack != null) {
+      out.accept("");
+      out.accept("==== Tracking der Perfect Matches im Verlauf ====");
+      for (Pair pair : data.pairsToTrack) {
+        out.accept(pair + " => " + prozent(result.getCount(pair), result.possibleConstellations.size())+"%");
+      }
+    }
+
     out.accept("");
     out.accept("==== Beste Konstellationen ====");
     for (int i = 0, l = Math.min(20, sortedConstellations.size()); i < l; i++) {

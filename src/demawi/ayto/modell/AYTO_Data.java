@@ -10,9 +10,14 @@ public class AYTO_Data {
 
   public String name;
   public List<Tag> tage = new ArrayList<>();
+  public List<Pair> pairsToTrack;
 
   public AYTO_Data(String name) {
     this.name = name;
+  }
+
+  public void track(Pair... pairs) {
+    this.pairsToTrack = Arrays.asList(pairs);
   }
 
   public void add(Boolean b, Pair pair, int i, Pair... pairs) {
