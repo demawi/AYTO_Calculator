@@ -1,18 +1,17 @@
 Eine Frau ist hinzugekommen: Vanessa. Die Anzahl der Kombinationen erhöht sich damit!
 -- Berechne VIP_01 - Nacht 3 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 3628800 Yes: 5522 No: 3623278 Calculation time: 0 min 5 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 5522 No: 3623278 Calculation time: 0 min 4 secs (Tested intern iterations: 62353010)
 
 -- Berechne VIP_01 - Nacht 4...
--- Combinations: 36288000 Yes: 55220 No: 36232780 Calculation time: 0 min 36 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 55220 No: 36232780 Calculation time: 0 min 31 secs (Tested intern iterations: 98641010)
 
 Die Anzahl der Kombinationen hat sich verändert: 5522 => 55220
 -- Berechne VIP_01 - Nacht 4 inkl. Matchbox...
--- Combinations: 36288000 Yes: 55220 No: 36232780 Calculation time: 0 min 35 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 55220 No: 36232780 Calculation time: 0 min 31 secs (Tested intern iterations: 98641010)
 
-MatchBox Aurelia & Diogo: verkauft.
-Die Wahrscheinlichkeiten waren: 
-true => 36.82% [20330]
-false => 63.18% [34890]
+MatchBox: Aurelia & Diogo verkauft. (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 36.82% [20330]
+Nein => 63.18% [34890]
 Die Kombinationen reduzieren sich: 55220 => 55220
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
@@ -39,11 +38,12 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0.08% [44]
 9 => 0.02% [12]
 10 => 0.0% [1]
+Die Kombinationen reduzieren sich: 55220 => 8471
 
 -- Berechne VIP_01 - Nacht 4 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 36288000 Yes: 8471 No: 36279529 Calculation time: 0 min 32 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 8471 No: 36279529 Calculation time: 0 min 31 secs (Tested intern iterations: 98641010)
 
-==== Partner ====
+==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
 Finnja: 8 [Eugen (31.07), Tommy (14.96), Jamie (12.43), Salvatore (11.19), Alex (8.61), Josua (7.96), Manuel (6.89), Diogo (6.89), Danilo (0.0), Francesco (0.0)]
 Melina: 9 [Tommy (27.33), Danilo (20.82), Eugen (10.05), Alex (9.4), Jamie (8.28), Salvatore (8.07), Josua (6.47), Manuel (4.79), Diogo (4.79), Francesco (0.0)]
 Jules: 1 [Francesco (100.0), Danilo (0.0), Tommy (0.0), Alex (0.0), Eugen (0.0), Manuel (0.0), Salvatore (0.0), Diogo (0.0), Josua (0.0), Jamie (0.0)]

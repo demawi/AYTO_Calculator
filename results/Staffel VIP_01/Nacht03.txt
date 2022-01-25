@@ -2,12 +2,11 @@
 -- Combinations: 3628800 Yes: 15449 No: 3613351 Calculation time: 0 min 5 secs (Tested intern iterations: 62353010)
 
 -- Berechne VIP_01 - Nacht 3 inkl. Matchbox...
--- Combinations: 3628800 Yes: 14309 No: 3614491 Calculation time: 0 min 5 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 14309 No: 3614491 Calculation time: 0 min 4 secs (Tested intern iterations: 62353010)
 
-MatchBox Walentina & Tommy: false. Kombinationen reduzieren sich: 15449 => 14309
-Die Wahrscheinlichkeiten waren: 
-true => 7.38% [1140]
-false => 92.62% [14309] <==
+MatchBox: Walentina & Tommy... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 7.38% [1140]
+Nein => 92.62% [14309] <==
 Die Kombinationen reduzieren sich: 15449 => 14309
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
@@ -34,11 +33,12 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0.07% [10]
 9 => 0.0% [0]
 10 => 0.0% [0]
+Die Kombinationen reduzieren sich: 15449 => 5522
 
 -- Berechne VIP_01 - Nacht 3 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 3628800 Yes: 5522 No: 3623278 Calculation time: 0 min 5 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 5522 No: 3623278 Calculation time: 0 min 4 secs (Tested intern iterations: 62353010)
 
-==== Partner ====
+==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
 Finnja: 8 [Josua (15.68), Eugen (14.81), Tommy (12.71), Manuel (11.41), Salvatore (11.41), Diogo (11.41), Jamie (11.41), Alex (11.16), Danilo (0.0), Francesco (0.0)]
 Melina: 9 [Tommy (41.58), Danilo (10.14), Alex (8.8), Josua (8.4), Eugen (7.82), Manuel (5.81), Salvatore (5.81), Diogo (5.81), Jamie (5.81), Francesco (0.0)]
 Jules: 1 [Francesco (100.0), Danilo (0.0), Tommy (0.0), Alex (0.0), Eugen (0.0), Manuel (0.0), Salvatore (0.0), Diogo (0.0), Josua (0.0), Jamie (0.0)]
