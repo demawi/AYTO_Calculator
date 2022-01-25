@@ -60,11 +60,15 @@ public class AYTO_3
           pair(Jessica, Leon), pair(Joelina, Tim), pair(Kerstin, Max), pair(Marie, Andre), pair(Raphaela, William),
           pair(Zaira, Marius), pair(Desiree, Jordi));
 
+    // 7ter Tag
+    add(true, pair(Zaira, Marius), 6, pair(Zaira, Marius), pair(Raphaela, William), pair(Dana, Antonino),
+          pair(Isabelle, Dustin), pair(Monami, Jordi), pair(Desiree, Andre), pair(Marie, Max), pair(Kerstin, Tim),
+          pair(Joelina, Mike), pair(Jessica, Leon));
+
     // coming
-    // add(false, pair(Kerstin, Max)); // 26.32
+    // add(false, pair(Kerstin, Max)); // 0
     // add(false, pair(Isabelle, Dustin)); // 0
-    // add(false, pair(Zaira, Marius)); // 57.89
-    // add(false, pair(Raphaela, Jordi)); // 15.79
+    // add(false, pair(Raphaela, Jordi)); // 0
 
   }
 

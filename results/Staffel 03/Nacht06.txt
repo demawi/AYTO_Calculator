@@ -1,8 +1,14 @@
 -- Berechne 03 - Nacht 6...
--- Combinations: 36288000 Yes: 1924 No: 36286076 Calculation time: 0 min 35 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 1924 No: 36286076 Calculation time: 0 min 47 secs (Tested intern iterations: 98641010)
+
 -- Berechne 03 - Nacht 6 inkl. Matchbox...
--- Combinations: 36288000 Yes: 1859 No: 36286141 Calculation time: 0 min 36 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 1859 No: 36286141 Calculation time: 0 min 47 secs (Tested intern iterations: 98641010)
+
 MatchBox Jessica & Max: false. Kombinationen reduzieren sich: 1924 => 1859
+Die Wahrscheinlichkeiten waren: 
+true => 3.38% [65]
+false => 96.62% [1859] <==
+Die Kombinationen reduzieren sich: 1924 => 1859
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Isabelle & Dustin: 16.46%
@@ -30,7 +36,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 10 => 0.0% [0]
 
 -- Berechne 03 - Nacht 6 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 36288000 Yes: 19 No: 36287981 Calculation time: 0 min 38 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 19 No: 36287981 Calculation time: 0 min 52 secs (Tested intern iterations: 98641010)
 
 ==== Partner ====
 Jessica: 4 [Leon (73.68), Antonino (10.53), Tim (10.53), Marius (5.26), Mike (0.0), Jordi (0.0), Andre (0.0), William (0.0), Max (0.0), Dustin (0.0)]
@@ -57,59 +63,59 @@ Marius: 7 [Zaira (57.89), Monami (15.79), Marie (10.53), Jessica (5.26), Estelle
 Leon: 5 [Jessica (73.68), Joelina (10.53), Isabelle (10.53), Raphaela (5.26), Desiree (5.26), Monami (0.0), Estelle (0.0), Dana (0.0), Kerstin (0.0), Zaira (0.0), Marie (0.0)]
 
 ==== Mögliche Paare: 53/110 ====
-Raphaela & William => 78.95% [15/19] Gemeinsame MNs: 2/6
-Jessica & Leon => 73.68% [14/19] Gemeinsame MNs: 3/6
-Isabelle & Andre => 68.42% [13/19] Gemeinsame MNs: 1/6
-Joelina & Mike => 68.42% [13/19] Gemeinsame MNs: 4/6
-Kerstin & Tim => 63.16% [12/19] Gemeinsame MNs: 1/6
-Zaira & Marius => 57.89% [11/19] Gemeinsame MNs: 1/6
-Dana & Antonino => 57.89% [11/19] Gemeinsame MNs: 1/6
-Estelle & Jordi => 57.89% [11/19] Gemeinsame MNs: 1/6
-Monami & Max => 47.37% [9/19] Gemeinsame MNs: 2/6
-Zaira & Dustin => 42.11% [8/19] Gemeinsame MNs: 3/6
-Desiree & Jordi => 42.11% [8/19] Gemeinsame MNs: 1/6
-Marie & Dustin => 42.11% [8/19] Gemeinsame MNs: 0/6
-Estelle & Mike => 31.58% [6/19] Gemeinsame MNs: 2/6
-Kerstin & Max => 26.32% [5/19] Gemeinsame MNs: 3/6
-Dana & William => 21.05% [4/19] Gemeinsame MNs: 4/6
-Marie & Andre => 21.05% [4/19] Gemeinsame MNs: 1/6
-Monami & Jordi => 21.05% [4/19] Gemeinsame MNs: 0/6
-Monami & Marius => 15.79% [3/19] Gemeinsame MNs: 0/6
-Raphaela & Jordi => 15.79% [3/19] Gemeinsame MNs: 1/6
-Desiree & Tim => 15.79% [3/19] Gemeinsame MNs: 1/6
-Marie & Max => 15.79% [3/19] Gemeinsame MNs: 1/6
-Joelina & Antonino => 10.53% [2/19] Gemeinsame MNs: 0/6
-Jessica & Antonino => 10.53% [2/19] Gemeinsame MNs: 0/6
-Isabelle & Leon => 10.53% [2/19] Gemeinsame MNs: 0/6
-Jessica & Tim => 10.53% [2/19] Gemeinsame MNs: 1/6
-Joelina & Tim => 10.53% [2/19] Gemeinsame MNs: 1/6
-Kerstin & Antonino => 10.53% [2/19] Gemeinsame MNs: 2/6
-Joelina & Leon => 10.53% [2/19] Gemeinsame MNs: 0/6
-Dana & Dustin => 10.53% [2/19] Gemeinsame MNs: 0/6
-Marie & Marius => 10.53% [2/19] Gemeinsame MNs: 1/6
-Desiree & Marius => 5.26% [1/19] Gemeinsame MNs: 0/6
-Desiree & Andre => 5.26% [1/19] Gemeinsame MNs: 0/6
-Monami & Dustin => 5.26% [1/19] Gemeinsame MNs: 0/6
-Marie & Tim => 5.26% [1/19] Gemeinsame MNs: 2/6
-Estelle & Max => 5.26% [1/19] Gemeinsame MNs: 0/6
-Dana & Tim => 5.26% [1/19] Gemeinsame MNs: 0/6
-Dana & Andre => 5.26% [1/19] Gemeinsame MNs: 1/6
-Desiree & William => 5.26% [1/19] Gemeinsame MNs: 0/6
-Desiree & Leon => 5.26% [1/19] Gemeinsame MNs: 0/6
-Jessica & Marius => 5.26% [1/19] Gemeinsame MNs: 1/6
-Desiree & Antonino => 5.26% [1/19] Gemeinsame MNs: 0/6
-Isabelle & Jordi => 5.26% [1/19] Gemeinsame MNs: 0/6
-Estelle & Marius => 5.26% [1/19] Gemeinsame MNs: 0/6
-Isabelle & Max => 5.26% [1/19] Gemeinsame MNs: 0/6
-Isabelle & Marius => 5.26% [1/19] Gemeinsame MNs: 2/6
-Monami & Tim => 5.26% [1/19] Gemeinsame MNs: 0/6
-Isabelle & Antonino => 5.26% [1/19] Gemeinsame MNs: 0/6
-Desiree & Max => 5.26% [1/19] Gemeinsame MNs: 0/6
-Marie & Antonino => 5.26% [1/19] Gemeinsame MNs: 0/6
-Desiree & Mike => 5.26% [1/19] Gemeinsame MNs: 0/6
-Monami & Andre => 5.26% [1/19] Gemeinsame MNs: 0/6
-Desiree & Dustin => 5.26% [1/19] Gemeinsame MNs: 0/6
-Raphaela & Leon => 5.26% [1/19] Gemeinsame MNs: 0/6
+Raphaela & William => 78.95% [15/19] Gemeinsame MNs: 3/7
+Jessica & Leon => 73.68% [14/19] Gemeinsame MNs: 4/7
+Isabelle & Andre => 68.42% [13/19] Gemeinsame MNs: 1/7
+Joelina & Mike => 68.42% [13/19] Gemeinsame MNs: 5/7
+Kerstin & Tim => 63.16% [12/19] Gemeinsame MNs: 2/7
+Zaira & Marius => 57.89% [11/19] Gemeinsame MNs: 2/7
+Dana & Antonino => 57.89% [11/19] Gemeinsame MNs: 2/7
+Estelle & Jordi => 57.89% [11/19] Gemeinsame MNs: 1/7
+Monami & Max => 47.37% [9/19] Gemeinsame MNs: 2/7
+Zaira & Dustin => 42.11% [8/19] Gemeinsame MNs: 3/7
+Desiree & Jordi => 42.11% [8/19] Gemeinsame MNs: 1/7
+Marie & Dustin => 42.11% [8/19] Gemeinsame MNs: 0/7
+Estelle & Mike => 31.58% [6/19] Gemeinsame MNs: 2/7
+Kerstin & Max => 26.32% [5/19] Gemeinsame MNs: 3/7
+Dana & William => 21.05% [4/19] Gemeinsame MNs: 4/7
+Marie & Andre => 21.05% [4/19] Gemeinsame MNs: 1/7
+Monami & Jordi => 21.05% [4/19] Gemeinsame MNs: 1/7
+Monami & Marius => 15.79% [3/19] Gemeinsame MNs: 0/7
+Raphaela & Jordi => 15.79% [3/19] Gemeinsame MNs: 1/7
+Desiree & Tim => 15.79% [3/19] Gemeinsame MNs: 1/7
+Marie & Max => 15.79% [3/19] Gemeinsame MNs: 2/7
+Joelina & Antonino => 10.53% [2/19] Gemeinsame MNs: 0/7
+Jessica & Antonino => 10.53% [2/19] Gemeinsame MNs: 0/7
+Isabelle & Leon => 10.53% [2/19] Gemeinsame MNs: 0/7
+Jessica & Tim => 10.53% [2/19] Gemeinsame MNs: 1/7
+Joelina & Tim => 10.53% [2/19] Gemeinsame MNs: 1/7
+Kerstin & Antonino => 10.53% [2/19] Gemeinsame MNs: 2/7
+Joelina & Leon => 10.53% [2/19] Gemeinsame MNs: 0/7
+Dana & Dustin => 10.53% [2/19] Gemeinsame MNs: 0/7
+Marie & Marius => 10.53% [2/19] Gemeinsame MNs: 1/7
+Desiree & Marius => 5.26% [1/19] Gemeinsame MNs: 0/7
+Desiree & Andre => 5.26% [1/19] Gemeinsame MNs: 1/7
+Monami & Dustin => 5.26% [1/19] Gemeinsame MNs: 0/7
+Marie & Tim => 5.26% [1/19] Gemeinsame MNs: 2/7
+Estelle & Max => 5.26% [1/19] Gemeinsame MNs: 0/7
+Dana & Tim => 5.26% [1/19] Gemeinsame MNs: 0/7
+Dana & Andre => 5.26% [1/19] Gemeinsame MNs: 1/7
+Desiree & William => 5.26% [1/19] Gemeinsame MNs: 0/7
+Desiree & Leon => 5.26% [1/19] Gemeinsame MNs: 0/7
+Jessica & Marius => 5.26% [1/19] Gemeinsame MNs: 1/7
+Desiree & Antonino => 5.26% [1/19] Gemeinsame MNs: 0/7
+Isabelle & Jordi => 5.26% [1/19] Gemeinsame MNs: 0/7
+Estelle & Marius => 5.26% [1/19] Gemeinsame MNs: 0/7
+Isabelle & Max => 5.26% [1/19] Gemeinsame MNs: 0/7
+Isabelle & Marius => 5.26% [1/19] Gemeinsame MNs: 2/7
+Monami & Tim => 5.26% [1/19] Gemeinsame MNs: 0/7
+Isabelle & Antonino => 5.26% [1/19] Gemeinsame MNs: 0/7
+Desiree & Max => 5.26% [1/19] Gemeinsame MNs: 0/7
+Marie & Antonino => 5.26% [1/19] Gemeinsame MNs: 0/7
+Desiree & Mike => 5.26% [1/19] Gemeinsame MNs: 0/7
+Monami & Andre => 5.26% [1/19] Gemeinsame MNs: 0/7
+Desiree & Dustin => 5.26% [1/19] Gemeinsame MNs: 0/7
+Raphaela & Leon => 5.26% [1/19] Gemeinsame MNs: 0/7
 
 ==== Beste Konstellationen ====
 > Platz 1 mit 118 Punkten (Summe der Vorkommen der Einzelpaare)

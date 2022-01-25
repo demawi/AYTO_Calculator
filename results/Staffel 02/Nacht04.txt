@@ -1,8 +1,14 @@
 -- Berechne 02 - Nacht 4...
--- Combinations: 3628800 Yes: 5406 No: 3623394 Calculation time: 0 min 6 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 5406 No: 3623394 Calculation time: 0 min 8 secs (Tested intern iterations: 62353010)
+
 -- Berechne 02 - Nacht 4 inkl. Matchbox...
--- Combinations: 3628800 Yes: 3217 No: 3625583 Calculation time: 0 min 6 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 3217 No: 3625583 Calculation time: 0 min 9 secs (Tested intern iterations: 62353010)
+
 MatchBox Laura & Marcel: false. Kombinationen reduzieren sich: 5406 => 3217
+Die Wahrscheinlichkeiten waren: 
+true => 40.49% [2189]
+false => 59.51% [3217] <==
+Die Kombinationen reduzieren sich: 5406 => 3217
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Sabrina & Marko: 24.84%
@@ -30,7 +36,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 10 => 0.0% [0]
 
 -- Berechne 02 - Nacht 4 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 3628800 Yes: 381 No: 3628419 Calculation time: 0 min 6 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 381 No: 3628419 Calculation time: 0 min 9 secs (Tested intern iterations: 62353010)
 
 ==== Partner ====
 Jill: 9 [Marvin (17.85), Germain (16.8), Marcel (12.6), Dominic (12.34), Sascha (11.02), Marko (9.19), Dario (8.14), Marc (7.87), Aaron (4.2), Maximilian (0.0)]

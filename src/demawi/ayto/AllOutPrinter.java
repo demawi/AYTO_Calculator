@@ -23,18 +23,20 @@ public class AllOutPrinter {
          for (int i = 0, l = staffel.tage.size(); i < l; i++) {
             File file = new File(directory.getAbsoluteFile() + "/Nacht" + numberFormat.format(i + 1) + ".txt");
             System.out.println("Write file " + file.getAbsoluteFile() + "...");
-            FileWriter out = new FileWriter(file);
-            finder.setOut(str -> {
-               try {
-                  out.write(str + "\n");
-               }
-               catch (IOException e) {
-                  e.printStackTrace();
-               }
-            });
-            finder.printLightChancesAndResult(staffel, i + 1);
-            out.flush();
-            out.close();
+            if(!file.exists()) {
+               FileWriter out = new FileWriter(file);
+               finder.setOut(str -> {
+                  try {
+                     out.write(str + "\n");
+                  }
+                  catch (IOException e) {
+                     e.printStackTrace();
+                  }
+               });
+               finder.printLightChancesAndResult(staffel, i + 1);
+               out.flush();
+               out.close();
+            }
          }
       }
    }

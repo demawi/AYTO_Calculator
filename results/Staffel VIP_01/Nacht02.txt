@@ -1,8 +1,15 @@
 -- Berechne VIP_01 - Nacht 2...
 -- Combinations: 3628800 Yes: 205176 No: 3423624 Calculation time: 0 min 6 secs (Tested intern iterations: 62353010)
+
 -- Berechne VIP_01 - Nacht 2 inkl. Matchbox...
 -- Combinations: 3628800 Yes: 15449 No: 3613351 Calculation time: 0 min 5 secs (Tested intern iterations: 62353010)
+
 MatchBox Jules & Francesco: true. Kombinationen reduzieren sich: 205176 => 15449
+Die Wahrscheinlichkeiten waren: 
+true => 7.53% [15449] <==
+false => 92.47% [189727]
+Die Kombinationen reduzieren sich: 205176 => 15449
+
 Es hat keine Matching Night stattgefunden!
 
 -- Berechne VIP_01 - Nacht 2 inkl. Matchbox inkl. Matchingnight...

@@ -1,8 +1,14 @@
 -- Berechne VIP_01 - Nacht 3...
 -- Combinations: 3628800 Yes: 15449 No: 3613351 Calculation time: 0 min 5 secs (Tested intern iterations: 62353010)
+
 -- Berechne VIP_01 - Nacht 3 inkl. Matchbox...
 -- Combinations: 3628800 Yes: 14309 No: 3614491 Calculation time: 0 min 5 secs (Tested intern iterations: 62353010)
+
 MatchBox Walentina & Tommy: false. Kombinationen reduzieren sich: 15449 => 14309
+Die Wahrscheinlichkeiten waren: 
+true => 7.38% [1140]
+false => 92.62% [14309] <==
+Die Kombinationen reduzieren sich: 15449 => 14309
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Sarah & Danilo: 8.44%

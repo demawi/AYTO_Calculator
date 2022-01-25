@@ -62,6 +62,7 @@ public class MatchFinder {
       out.accept("-- Combinations: " + result.totalConstellations + " Yes: " + result.yes + " No: " + result.no
             + " Calculation time: " + minSecs(System.currentTimeMillis() - start) + " (Tested intern iterations: "
             + permutator.testCount + ")");
+      out.accept("");
     }
     return result;
   }
@@ -105,8 +106,26 @@ public class MatchFinder {
     out.accept("MatchBox " + tag.matchingPair + ": " + (
           tag.perfectMatch == null ? "verkauft." : (tag.perfectMatch + ". Kombinationen reduzieren sich: "
                 + result1.getYes() + " => " + result2.getYes())));
+    out.accept("Die Wahrscheinlichkeiten waren: ");
+    String yesMarker = "";
+    String noMarker = "";
+    if (tag.perfectMatch != null) {
+      if (tag.perfectMatch) {
+        yesMarker = " <==";
+      }
+      else {
+        noMarker = " <==";
+      }
+    }
+    out.accept("true => " + prozent(result1.getCount(tag.matchingPair), result1.possibleConstellations.size()) + "% ["
+          + result1.getCount(tag.matchingPair) + "]" + yesMarker);
+    out.accept("false => " + prozent(result1.possibleConstellations.size() - result1.getCount(tag.matchingPair),
+          result1.possibleConstellations.size()) + "% [" + (result1.possibleConstellations.size() - result1.getCount(
+          tag.matchingPair)) + "]" + noMarker);
+    out.accept("Die Kombinationen reduzieren sich: " + result1.getYes() + " => " + result2.getYes());
     MatchingNight matchingNight = tag.matchingNight;
     if (matchingNight == null) {
+      out.accept("");
       out.accept("Es hat keine Matching Night stattgefunden!");
     }
     else {
@@ -128,7 +147,6 @@ public class MatchFinder {
     List<Pair> sortedPairs = new ArrayList<>(result.pairCount.keySet());
     Collections.sort(sortedPairs, pairComparator);
 
-    out.accept("");
     out.accept("==== Partner ====");
     for (Frau frau : frauen) {
       Set<Mann> set = result.frauCount.get(frau);

@@ -1,8 +1,14 @@
 -- Berechne 02 - Nacht 8...
--- Combinations: 36288000 Yes: 47 No: 36287953 Calculation time: 0 min 44 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 47 No: 36287953 Calculation time: 0 min 57 secs (Tested intern iterations: 98641010)
+
 -- Berechne 02 - Nacht 8 inkl. Matchbox...
--- Combinations: 36288000 Yes: 47 No: 36287953 Calculation time: 0 min 42 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 47 No: 36287953 Calculation time: 1 min 9 secs (Tested intern iterations: 98641010)
+
 MatchBox Sabrina & Marko: false. Kombinationen reduzieren sich: 47 => 47
+Die Wahrscheinlichkeiten waren: 
+true => 0.0% [0]
+false => 100.0% [47] <==
+Die Kombinationen reduzieren sich: 47 => 47
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Mirjam & Maximilian: 0.0%
@@ -30,7 +36,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 10 => 0.0% [0]
 
 -- Berechne 02 - Nacht 8 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 36288000 Yes: 6 No: 36287994 Calculation time: 0 min 42 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 6 No: 36287994 Calculation time: 1 min 8 secs (Tested intern iterations: 98641010)
 
 ==== Partner ====
 Jill: 1 [Marvin (100.0), Maximilian (0.0), Marko (0.0), Aaron (0.0), Marc (0.0), Sascha (0.0), Dario (0.0), Germain (0.0), Dominic (0.0), Marcel (0.0)]
