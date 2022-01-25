@@ -1,8 +1,8 @@
 -- Berechne 03 - Nacht 7...
--- Combinations: 36288000 Yes: 19 No: 36287981 Calculation time: 0 min 34 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 19 No: 36287981 Calculation time: 0 min 38 secs (Tested intern iterations: 98641010)
 
 -- Berechne 03 - Nacht 7 inkl. Matchbox...
--- Combinations: 36288000 Yes: 11 No: 36287989 Calculation time: 0 min 34 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 11 No: 36287989 Calculation time: 0 min 37 secs (Tested intern iterations: 98641010)
 
 MatchBox: Zaira & Marius... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 57.89% [11] <==
@@ -36,7 +36,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 Die Kombinationen reduzieren sich: 19 => 7
 
 -- Berechne 03 - Nacht 7 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 36288000 Yes: 7 No: 36287993 Calculation time: 0 min 34 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 7 No: 36287993 Calculation time: 0 min 35 secs (Tested intern iterations: 98641010)
 
 ==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
 Jessica: 1 [Leon (100.0), Mike (0.0), Antonino (0.0), Jordi (0.0), Andre (0.0), William (0.0), Max (0.0), Dustin (0.0), Tim (0.0), Marius (0.0)]
@@ -80,6 +80,18 @@ Desiree & Max => 14.29% [1/7] Gemeinsame MNs: 0/7
 Desiree & Leon => 14.29% [1/7] Gemeinsame MNs: 0/7
 Desiree & Mike => 14.29% [1/7] Gemeinsame MNs: 0/7
 Desiree & Dustin => 14.29% [1/7] Gemeinsame MNs: 0/7
+
+==== Tracking der Perfect Matches im Verlauf ====
+Estelle & Jordi => 100.0%
+Zaira & Marius => 100.0%
+Monami & Max => 100.0%
+Isabelle & Andre => 100.0%
+Dana & Antonino => 100.0%
+Joelina & Mike => 100.0%
+Raphaela & William => 100.0%
+Marie & Dustin => 100.0%
+Kerstin & Tim => 100.0%
+Jessica & Leon => 100.0%
 
 ==== Beste Konstellationen ====
 > Platz 1 mit 71 Punkten (Summe der Vorkommen der Einzelpaare)

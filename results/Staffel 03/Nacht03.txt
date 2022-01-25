@@ -159,6 +159,18 @@ Joelina & Tim => 2.3% [280/12166] Gemeinsame MNs: 1/7
 Kerstin & Antonino => 1.43% [174/12166] Gemeinsame MNs: 2/7
 Monami & Max => 1.43% [174/12166] Gemeinsame MNs: 2/7
 
+==== Tracking der Perfect Matches im Verlauf ====
+Estelle & Jordi => 14.53%
+Zaira & Marius => 6.13%
+Monami & Max => 1.43%
+Isabelle & Andre => 9.56%
+Dana & Antonino => 6.46%
+Joelina & Mike => 64.38%
+Raphaela & William => 12.58%
+Marie & Dustin => 6.18%
+Kerstin & Tim => 7.45%
+Jessica & Leon => 18.02%
+
 ==== Beste Konstellationen ====
 > Platz 1 mit 26008 Punkten (Summe der Vorkommen der Einzelpaare)
 Monami & Antonino

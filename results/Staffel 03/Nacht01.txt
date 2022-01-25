@@ -19,11 +19,11 @@ Ein Mann ist hinzugekommen: Tim. Die Anzahl der Kombinationen erhöht sich damit
 Ein Mann ist hinzugekommen: Marius. Die Anzahl der Kombinationen erhöht sich damit!
 Ein Mann ist hinzugekommen: Leon. Die Anzahl der Kombinationen erhöht sich damit!
 -- Berechne 03 - Nacht 1...
--- Combinations: 3628800 Yes: 3628800 No: 0 Calculation time: 0 min 8 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 3628800 No: 0 Calculation time: 0 min 9 secs (Tested intern iterations: 62353010)
 
 Die Anzahl der Kombinationen hat sich verändert: 0 => 3628800
 -- Berechne 03 - Nacht 1 inkl. Matchbox...
--- Combinations: 3628800 Yes: 3265920 No: 362880 Calculation time: 0 min 10 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 3265920 No: 362880 Calculation time: 0 min 9 secs (Tested intern iterations: 62353010)
 
 MatchBox: Jessica & Mike... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 10.0% [362880]
@@ -57,7 +57,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 Die Kombinationen reduzieren sich: 3628800 => 205176
 
 -- Berechne 03 - Nacht 1 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 3628800 Yes: 205176 No: 3423624 Calculation time: 0 min 7 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 205176 No: 3423624 Calculation time: 0 min 6 secs (Tested intern iterations: 62353010)
 
 ==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
 Jessica: 9 [Leon (32.53), Antonino (8.43), Jordi (8.43), Andre (8.43), William (8.43), Max (8.43), Dustin (8.43), Tim (8.43), Marius (8.43), Mike (0.0)]
@@ -182,6 +182,18 @@ Joelina & William => 7.53% [15449/205176] Gemeinsame MNs: 0/7
 Kerstin & Leon => 7.53% [15449/205176] Gemeinsame MNs: 0/7
 Joelina & Max => 7.53% [15449/205176] Gemeinsame MNs: 0/7
 Joelina & Leon => 7.23% [14840/205176] Gemeinsame MNs: 0/7
+
+==== Tracking der Perfect Matches im Verlauf ====
+Estelle & Jordi => 29.37%
+Zaira & Marius => 7.81%
+Monami & Max => 7.81%
+Isabelle & Andre => 7.81%
+Dana & Antonino => 7.81%
+Joelina & Mike => 32.53%
+Raphaela & William => 7.81%
+Marie & Dustin => 7.81%
+Kerstin & Tim => 7.81%
+Jessica & Leon => 32.53%
 
 ==== Beste Konstellationen ====
 > Platz 1 mit 305911 Punkten (Summe der Vorkommen der Einzelpaare)

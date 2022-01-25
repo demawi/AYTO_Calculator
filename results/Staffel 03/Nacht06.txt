@@ -1,8 +1,8 @@
 -- Berechne 03 - Nacht 6...
--- Combinations: 36288000 Yes: 1924 No: 36286076 Calculation time: 0 min 34 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 1924 No: 36286076 Calculation time: 0 min 36 secs (Tested intern iterations: 98641010)
 
 -- Berechne 03 - Nacht 6 inkl. Matchbox...
--- Combinations: 36288000 Yes: 1859 No: 36286141 Calculation time: 0 min 34 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 1859 No: 36286141 Calculation time: 0 min 33 secs (Tested intern iterations: 98641010)
 
 MatchBox: Jessica & Max... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 3.38% [65]
@@ -116,6 +116,18 @@ Desiree & Mike => 5.26% [1/19] Gemeinsame MNs: 0/7
 Monami & Andre => 5.26% [1/19] Gemeinsame MNs: 0/7
 Desiree & Dustin => 5.26% [1/19] Gemeinsame MNs: 0/7
 Raphaela & Leon => 5.26% [1/19] Gemeinsame MNs: 0/7
+
+==== Tracking der Perfect Matches im Verlauf ====
+Estelle & Jordi => 57.89%
+Zaira & Marius => 57.89%
+Monami & Max => 47.37%
+Isabelle & Andre => 68.42%
+Dana & Antonino => 57.89%
+Joelina & Mike => 68.42%
+Raphaela & William => 78.95%
+Marie & Dustin => 42.11%
+Kerstin & Tim => 63.16%
+Jessica & Leon => 73.68%
 
 ==== Beste Konstellationen ====
 > Platz 1 mit 118 Punkten (Summe der Vorkommen der Einzelpaare)

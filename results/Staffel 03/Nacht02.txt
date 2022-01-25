@@ -1,5 +1,5 @@
 -- Berechne 03 - Nacht 2...
--- Combinations: 3628800 Yes: 205176 No: 3423624 Calculation time: 0 min 5 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 205176 No: 3423624 Calculation time: 0 min 7 secs (Tested intern iterations: 62353010)
 
 -- Berechne 03 - Nacht 2 inkl. Matchbox...
 -- Combinations: 3628800 Yes: 189727 No: 3439073 Calculation time: 0 min 5 secs (Tested intern iterations: 62353010)
@@ -160,6 +160,18 @@ Monami & Max => 5.6% [2839/50721] Gemeinsame MNs: 2/7
 Kerstin & Antonino => 4.96% [2517/50721] Gemeinsame MNs: 2/7
 Joelina & Max => 4.96% [2517/50721] Gemeinsame MNs: 0/7
 Joelina & Antonino => 4.52% [2291/50721] Gemeinsame MNs: 0/7
+
+==== Tracking der Perfect Matches im Verlauf ====
+Estelle & Jordi => 24.11%
+Zaira & Marius => 8.61%
+Monami & Max => 5.6%
+Isabelle & Andre => 8.67%
+Dana & Antonino => 6.66%
+Joelina & Mike => 43.31%
+Raphaela & William => 10.56%
+Marie & Dustin => 8.58%
+Kerstin & Tim => 7.12%
+Jessica & Leon => 28.95%
 
 ==== Beste Konstellationen ====
 > Platz 1 mit 88072 Punkten (Summe der Vorkommen der Einzelpaare)
