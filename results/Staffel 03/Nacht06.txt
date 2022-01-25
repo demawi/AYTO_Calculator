@@ -1,13 +1,12 @@
 -- Berechne 03 - Nacht 6...
--- Combinations: 36288000 Yes: 1924 No: 36286076 Calculation time: 0 min 47 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 1924 No: 36286076 Calculation time: 0 min 34 secs (Tested intern iterations: 98641010)
 
 -- Berechne 03 - Nacht 6 inkl. Matchbox...
--- Combinations: 36288000 Yes: 1859 No: 36286141 Calculation time: 0 min 47 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 1859 No: 36286141 Calculation time: 0 min 34 secs (Tested intern iterations: 98641010)
 
-MatchBox Jessica & Max: false. Kombinationen reduzieren sich: 1924 => 1859
-Die Wahrscheinlichkeiten waren: 
-true => 3.38% [65]
-false => 96.62% [1859] <==
+MatchBox: Jessica & Max... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 3.38% [65]
+Nein => 96.62% [1859] <==
 Die Kombinationen reduzieren sich: 1924 => 1859
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
@@ -34,11 +33,12 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0.0% [0]
 9 => 0.0% [0]
 10 => 0.0% [0]
+Die Kombinationen reduzieren sich: 1924 => 19
 
 -- Berechne 03 - Nacht 6 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 36288000 Yes: 19 No: 36287981 Calculation time: 0 min 52 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 19 No: 36287981 Calculation time: 0 min 34 secs (Tested intern iterations: 98641010)
 
-==== Partner ====
+==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
 Jessica: 4 [Leon (73.68), Antonino (10.53), Tim (10.53), Marius (5.26), Mike (0.0), Jordi (0.0), Andre (0.0), William (0.0), Max (0.0), Dustin (0.0)]
 Monami: 6 [Max (47.37), Jordi (21.05), Marius (15.79), Andre (5.26), Dustin (5.26), Tim (5.26), Mike (0.0), Antonino (0.0), William (0.0), Leon (0.0)]
 Joelina: 4 [Mike (68.42), Antonino (10.53), Tim (10.53), Leon (10.53), Jordi (0.0), Andre (0.0), William (0.0), Max (0.0), Dustin (0.0), Marius (0.0)]

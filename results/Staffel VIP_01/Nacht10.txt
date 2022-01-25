@@ -1,13 +1,12 @@
 -- Berechne VIP_01 - Nacht 10...
--- Combinations: 36288000 Yes: 17 No: 36287983 Calculation time: 0 min 42 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 17 No: 36287983 Calculation time: 0 min 31 secs (Tested intern iterations: 98641010)
 
 -- Berechne VIP_01 - Nacht 10 inkl. Matchbox...
--- Combinations: 36288000 Yes: 7 No: 36287993 Calculation time: 0 min 55 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 7 No: 36287993 Calculation time: 0 min 31 secs (Tested intern iterations: 98641010)
 
-MatchBox Aurelia & Josua: true. Kombinationen reduzieren sich: 17 => 7
-Die Wahrscheinlichkeiten waren: 
-true => 41.18% [7] <==
-false => 58.82% [10]
+MatchBox: Aurelia & Josua... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 41.18% [7] <==
+Nein => 58.82% [10]
 Die Kombinationen reduzieren sich: 17 => 7
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
@@ -34,11 +33,12 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0.0% [0]
 9 => 0.0% [0]
 10 => 0.0% [0]
+Die Kombinationen reduzieren sich: 17 => 1
 
 -- Berechne VIP_01 - Nacht 10 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 36288000 Yes: 1 No: 36287999 Calculation time: 1 min 0 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 1 No: 36287999 Calculation time: 0 min 31 secs (Tested intern iterations: 98641010)
 
-==== Partner ====
+==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
 Finnja: 1 [Diogo (100.0), Danilo (0.0), Tommy (0.0), Alex (0.0), Eugen (0.0), Manuel (0.0), Francesco (0.0), Salvatore (0.0), Josua (0.0), Jamie (0.0)]
 Melina: 1 [Danilo (100.0), Tommy (0.0), Alex (0.0), Eugen (0.0), Manuel (0.0), Francesco (0.0), Salvatore (0.0), Diogo (0.0), Josua (0.0), Jamie (0.0)]
 Jules: 1 [Francesco (100.0), Danilo (0.0), Tommy (0.0), Alex (0.0), Eugen (0.0), Manuel (0.0), Salvatore (0.0), Diogo (0.0), Josua (0.0), Jamie (0.0)]

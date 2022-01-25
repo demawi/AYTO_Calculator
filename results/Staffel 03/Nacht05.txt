@@ -1,18 +1,17 @@
 Eine Frau ist hinzugekommen: Desiree. Die Anzahl der Kombinationen erhöht sich damit!
 -- Berechne 03 - Nacht 4 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 3628800 Yes: 2699 No: 3626101 Calculation time: 0 min 9 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 2699 No: 3626101 Calculation time: 0 min 5 secs (Tested intern iterations: 62353010)
 
 -- Berechne 03 - Nacht 5...
--- Combinations: 36288000 Yes: 26990 No: 36261010 Calculation time: 0 min 53 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 26990 No: 36261010 Calculation time: 0 min 33 secs (Tested intern iterations: 98641010)
 
 Die Anzahl der Kombinationen hat sich verändert: 2699 => 26990
 -- Berechne 03 - Nacht 5 inkl. Matchbox...
--- Combinations: 36288000 Yes: 11320 No: 36276680 Calculation time: 0 min 53 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 11320 No: 36276680 Calculation time: 0 min 33 secs (Tested intern iterations: 98641010)
 
-MatchBox Monami & Antonino: false. Kombinationen reduzieren sich: 26990 => 11320
-Die Wahrscheinlichkeiten waren: 
-true => 58.06% [15670]
-false => 41.94% [11320] <==
+MatchBox: Monami & Antonino... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 58.06% [15670]
+Nein => 41.94% [11320] <==
 Die Kombinationen reduzieren sich: 26990 => 11320
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
@@ -39,11 +38,12 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0.0% [0]
 9 => 0.0% [0]
 10 => 0.0% [0]
+Die Kombinationen reduzieren sich: 26990 => 1924
 
 -- Berechne 03 - Nacht 5 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 36288000 Yes: 1924 No: 36286076 Calculation time: 0 min 56 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 1924 No: 36286076 Calculation time: 0 min 33 secs (Tested intern iterations: 98641010)
 
-==== Partner ====
+==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
 Jessica: 8 [Leon (44.65), Tim (14.09), Antonino (13.25), Marius (13.25), Andre (6.76), Dustin (4.31), Max (3.38), William (0.31), Mike (0.0), Jordi (0.0)]
 Monami: 8 [Tim (18.92), Jordi (18.45), Andre (17.05), Marius (16.01), Dustin (14.71), Mike (6.65), William (5.41), Max (2.81), Antonino (0.0), Leon (0.0)]
 Joelina: 9 [Mike (80.67), Leon (7.07), Antonino (3.9), Andre (2.34), Marius (2.29), Jordi (2.18), Tim (1.04), Dustin (0.47), Max (0.05), William (0.0)]

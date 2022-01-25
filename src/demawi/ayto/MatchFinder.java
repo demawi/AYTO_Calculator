@@ -103,10 +103,8 @@ public class MatchFinder {
 
     AYTO_Result result2 = calulate(data, new TagDef(tagNr, true, false), info);
     Tag tag = data.tage.get(tagNr - 1);
-    out.accept("MatchBox " + tag.matchingPair + ": " + (
-          tag.perfectMatch == null ? "verkauft." : (tag.perfectMatch + ". Kombinationen reduzieren sich: "
-                + result1.getYes() + " => " + result2.getYes())));
-    out.accept("Die Wahrscheinlichkeiten waren: ");
+    out.accept("MatchBox: " + tag.matchingPair + (tag.perfectMatch == null ? " verkauft." : "...")
+          + " (Wahrscheinlichkeit für das Ausgang des Ergebnisses)");
     String yesMarker = "";
     String noMarker = "";
     if (tag.perfectMatch != null) {
@@ -117,9 +115,9 @@ public class MatchFinder {
         noMarker = " <==";
       }
     }
-    out.accept("true => " + prozent(result1.getCount(tag.matchingPair), result1.possibleConstellations.size()) + "% ["
+    out.accept("Ja   => " + prozent(result1.getCount(tag.matchingPair), result1.possibleConstellations.size()) + "% ["
           + result1.getCount(tag.matchingPair) + "]" + yesMarker);
-    out.accept("false => " + prozent(result1.possibleConstellations.size() - result1.getCount(tag.matchingPair),
+    out.accept("Nein => " + prozent(result1.possibleConstellations.size() - result1.getCount(tag.matchingPair),
           result1.possibleConstellations.size()) + "% [" + (result1.possibleConstellations.size() - result1.getCount(
           tag.matchingPair)) + "]" + noMarker);
     out.accept("Die Kombinationen reduzieren sich: " + result1.getYes() + " => " + result2.getYes());
@@ -129,7 +127,8 @@ public class MatchFinder {
       out.accept("Es hat keine Matching Night stattgefunden!");
     }
     else {
-      printLightChances(data, result2, matchingNight.constellation, matchingNight.lights);
+      printLightChances(data, result2, matchingNight.constellation, matchingNight.lights,
+            result1.possibleConstellations.size());
     }
     out.accept("");
     TagDef tagesEnde = new TagDef(tagNr, true, true);
@@ -147,7 +146,7 @@ public class MatchFinder {
     List<Pair> sortedPairs = new ArrayList<>(result.pairCount.keySet());
     Collections.sort(sortedPairs, pairComparator);
 
-    out.accept("==== Partner ====");
+    out.accept("==== Partner ==== (und entsprechende Wahrscheinlichkeiten)");
     for (Frau frau : frauen) {
       Set<Mann> set = result.frauCount.get(frau);
       out.accept(frau + ": " + (set == null ? "-" : set.size() + " " + getRanking(result, frau, maenner)));
@@ -201,7 +200,8 @@ public class MatchFinder {
   /**
    * Prints the spot probabilities 0..10 for the given constellation.
    */
-  public void printLightChances(AYTO_Data data, AYTO_Result result, Collection<Pair> pairs, Integer spotsReached) {
+  public void printLightChances(AYTO_Data data, AYTO_Result result, Collection<Pair> pairs, Integer spotsReached,
+        int lightsVorher) {
     MatchingNight.validatePairs(pairs);
 
     int[] lightResults = new int[11];
@@ -229,6 +229,7 @@ public class MatchFinder {
             i + " => " + prozent(lightResults[i], result.possibleConstellations.size()) + "% [" + lightResults[i] + "]"
                   + marker);
     }
+    out.accept("Die Kombinationen reduzieren sich: " + lightsVorher + " => " + lightResults[spotsReached]);
 
   }
 

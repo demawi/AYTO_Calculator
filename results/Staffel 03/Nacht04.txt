@@ -1,13 +1,12 @@
 -- Berechne 03 - Nacht 4...
--- Combinations: 3628800 Yes: 12166 No: 3616634 Calculation time: 0 min 8 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 12166 No: 3616634 Calculation time: 0 min 5 secs (Tested intern iterations: 62353010)
 
 -- Berechne 03 - Nacht 4 inkl. Matchbox...
--- Combinations: 3628800 Yes: 12166 No: 3616634 Calculation time: 0 min 8 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 12166 No: 3616634 Calculation time: 0 min 5 secs (Tested intern iterations: 62353010)
 
-MatchBox Dana & William: verkauft.
-Die Wahrscheinlichkeiten waren: 
-true => 31.1% [3784]
-false => 68.9% [8382]
+MatchBox: Dana & William verkauft. (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 31.1% [3784]
+Nein => 68.9% [8382]
 Die Kombinationen reduzieren sich: 12166 => 12166
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
@@ -34,11 +33,12 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0.02% [2]
 9 => 0.0% [0]
 10 => 0.0% [0]
+Die Kombinationen reduzieren sich: 12166 => 2699
 
 -- Berechne 03 - Nacht 4 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 3628800 Yes: 2699 No: 3626101 Calculation time: 0 min 8 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 2699 No: 3626101 Calculation time: 0 min 5 secs (Tested intern iterations: 62353010)
 
-==== Partner ====
+==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
 Jessica: 9 [Marius (16.52), Andre (15.71), Max (13.75), Leon (12.93), Tim (12.52), William (10.15), Dustin (9.82), Antonino (5.78), Jordi (2.82), Mike (0.0)]
 Monami: 9 [Antonino (58.06), Andre (8.23), Marius (8.0), Tim (7.67), Jordi (6.85), Dustin (4.85), William (4.63), Mike (1.48), Max (0.22), Leon (0.0)]
 Joelina: 10 [Mike (71.58), Leon (7.6), Jordi (4.45), Andre (3.93), Max (3.78), Marius (2.89), Tim (1.89), Dustin (1.67), William (1.37), Antonino (0.85)]

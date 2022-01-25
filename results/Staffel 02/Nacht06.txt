@@ -1,13 +1,12 @@
 -- Berechne 02 - Nacht 6...
--- Combinations: 36288000 Yes: 856 No: 36287144 Calculation time: 0 min 57 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 856 No: 36287144 Calculation time: 0 min 39 secs (Tested intern iterations: 98641010)
 
 -- Berechne 02 - Nacht 6 inkl. Matchbox...
--- Combinations: 36288000 Yes: 856 No: 36287144 Calculation time: 0 min 52 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 856 No: 36287144 Calculation time: 0 min 39 secs (Tested intern iterations: 98641010)
 
-MatchBox Laura & Dario: verkauft.
-Die Wahrscheinlichkeiten waren: 
-true => 0.7% [6]
-false => 99.3% [850]
+MatchBox: Laura & Dario verkauft. (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 0.7% [6]
+Nein => 99.3% [850]
 Die Kombinationen reduzieren sich: 856 => 856
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
@@ -34,11 +33,12 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0.0% [0]
 9 => 0.0% [0]
 10 => 0.0% [0]
+Die Kombinationen reduzieren sich: 856 => 241
 
 -- Berechne 02 - Nacht 6 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 36288000 Yes: 241 No: 36287759 Calculation time: 0 min 56 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 241 No: 36287759 Calculation time: 0 min 40 secs (Tested intern iterations: 98641010)
 
-==== Partner ====
+==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
 Jill: 6 [Marvin (35.27), Dominic (21.16), Germain (18.67), Marc (12.45), Marko (10.79), Aaron (1.66), Maximilian (0.0), Sascha (0.0), Dario (0.0), Marcel (0.0)]
 Sabrina: 8 [Marko (47.3), Sascha (13.69), Dario (13.28), Marvin (11.62), Maximilian (5.39), Dominic (4.56), Germain (2.9), Marc (1.24), Aaron (0.0), Marcel (0.0)]
 Kathleen: 8 [Maximilian (40.66), Sascha (20.75), Marvin (12.03), Marc (7.05), Marko (5.81), Germain (5.39), Dominic (4.98), Dario (3.32), Aaron (0.0), Marcel (0.0)]
