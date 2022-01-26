@@ -1,8 +1,8 @@
 -- Berechne 03 - Nacht 6...
--- Combinations: 36288000 Yes: 1924 No: 36286076 Calculation time: 0 min 36 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 1924 No: 36286076 Calculation time: 0 min 42 secs (Tested intern iterations: 98641010)
 
 -- Berechne 03 - Nacht 6 inkl. Matchbox...
--- Combinations: 36288000 Yes: 1859 No: 36286141 Calculation time: 0 min 33 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 1859 No: 36286141 Calculation time: 0 min 38 secs (Tested intern iterations: 98641010)
 
 MatchBox: Jessica & Max... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 3.38% [65]
@@ -36,31 +36,31 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 Die Kombinationen reduzieren sich: 1924 => 19
 
 -- Berechne 03 - Nacht 6 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 36288000 Yes: 19 No: 36287981 Calculation time: 0 min 34 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 19 No: 36287981 Calculation time: 0 min 39 secs (Tested intern iterations: 98641010)
 
 ==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
-Jessica: 4 [Leon (73.68), Antonino (10.53), Tim (10.53), Marius (5.26), Mike (0.0), Jordi (0.0), Andre (0.0), William (0.0), Max (0.0), Dustin (0.0)]
-Monami: 6 [Max (47.37), Jordi (21.05), Marius (15.79), Andre (5.26), Dustin (5.26), Tim (5.26), Mike (0.0), Antonino (0.0), William (0.0), Leon (0.0)]
-Joelina: 4 [Mike (68.42), Antonino (10.53), Tim (10.53), Leon (10.53), Jordi (0.0), Andre (0.0), William (0.0), Max (0.0), Dustin (0.0), Marius (0.0)]
-Estelle: 4 [Jordi (57.89), Mike (31.58), Max (5.26), Marius (5.26), Antonino (0.0), Andre (0.0), William (0.0), Dustin (0.0), Tim (0.0), Leon (0.0)]
-Raphaela: 3 [William (78.95), Jordi (15.79), Leon (5.26), Mike (0.0), Antonino (0.0), Andre (0.0), Max (0.0), Dustin (0.0), Tim (0.0), Marius (0.0)]
-Dana: 5 [Antonino (57.89), William (21.05), Dustin (10.53), Andre (5.26), Tim (5.26), Mike (0.0), Jordi (0.0), Max (0.0), Marius (0.0), Leon (0.0)]
-Kerstin: 3 [Tim (63.16), Max (26.32), Antonino (10.53), Mike (0.0), Jordi (0.0), Andre (0.0), William (0.0), Dustin (0.0), Marius (0.0), Leon (0.0)]
-Zaira: 2 [Marius (57.89), Dustin (42.11), Mike (0.0), Antonino (0.0), Jordi (0.0), Andre (0.0), William (0.0), Max (0.0), Tim (0.0), Leon (0.0)]
-Marie: 6 [Dustin (42.11), Andre (21.05), Max (15.79), Marius (10.53), Antonino (5.26), Tim (5.26), Mike (0.0), Jordi (0.0), William (0.0), Leon (0.0)]
-Isabelle: 6 [Andre (68.42), Leon (10.53), Antonino (5.26), Jordi (5.26), Max (5.26), Marius (5.26), Mike (0.0), William (0.0), Dustin (0.0), Tim (0.0)]
+Jessica: 4 [Leon (73.68), Antonino (10.53), Tim (10.53), Marius (5.26)]
+Monami: 6 [Max (47.37), Jordi (21.05), Marius (15.79), Andre (5.26), Dustin (5.26), Tim (5.26)]
+Joelina: 4 [Mike (68.42), Antonino (10.53), Tim (10.53), Leon (10.53)]
+Estelle: 4 [Jordi (57.89), Mike (31.58), Max (5.26), Marius (5.26)]
+Raphaela: 3 [William (78.95), Jordi (15.79), Leon (5.26)]
+Dana: 5 [Antonino (57.89), William (21.05), Dustin (10.53), Andre (5.26), Tim (5.26)]
+Kerstin: 3 [Tim (63.16), Max (26.32), Antonino (10.53)]
+Zaira: 2 [Marius (57.89), Dustin (42.11)]
+Marie: 6 [Dustin (42.11), Andre (21.05), Max (15.79), Marius (10.53), Antonino (5.26), Tim (5.26)]
+Isabelle: 6 [Andre (68.42), Leon (10.53), Antonino (5.26), Jordi (5.26), Max (5.26), Marius (5.26)]
 Desiree: 10 [Jordi (42.11), Tim (15.79), Mike (5.26), Antonino (5.26), Andre (5.26), William (5.26), Max (5.26), Dustin (5.26), Marius (5.26), Leon (5.26)]
 
-Mike: 3 [Joelina (68.42), Estelle (31.58), Desiree (5.26), Jessica (0.0), Monami (0.0), Raphaela (0.0), Dana (0.0), Kerstin (0.0), Zaira (0.0), Marie (0.0), Isabelle (0.0)]
-Antonino: 7 [Dana (57.89), Jessica (10.53), Joelina (10.53), Kerstin (10.53), Marie (5.26), Isabelle (5.26), Desiree (5.26), Monami (0.0), Estelle (0.0), Raphaela (0.0), Zaira (0.0)]
-Jordi: 5 [Estelle (57.89), Desiree (42.11), Monami (21.05), Raphaela (15.79), Isabelle (5.26), Jessica (0.0), Joelina (0.0), Dana (0.0), Kerstin (0.0), Zaira (0.0), Marie (0.0)]
-Andre: 5 [Isabelle (68.42), Marie (21.05), Monami (5.26), Dana (5.26), Desiree (5.26), Jessica (0.0), Joelina (0.0), Estelle (0.0), Raphaela (0.0), Kerstin (0.0), Zaira (0.0)]
-William: 3 [Raphaela (78.95), Dana (21.05), Desiree (5.26), Jessica (0.0), Monami (0.0), Joelina (0.0), Estelle (0.0), Kerstin (0.0), Zaira (0.0), Marie (0.0), Isabelle (0.0)]
-Max: 6 [Monami (47.37), Kerstin (26.32), Marie (15.79), Estelle (5.26), Isabelle (5.26), Desiree (5.26), Jessica (0.0), Joelina (0.0), Raphaela (0.0), Dana (0.0), Zaira (0.0)]
-Dustin: 5 [Zaira (42.11), Marie (42.11), Dana (10.53), Monami (5.26), Desiree (5.26), Jessica (0.0), Joelina (0.0), Estelle (0.0), Raphaela (0.0), Kerstin (0.0), Isabelle (0.0)]
-Tim: 7 [Kerstin (63.16), Desiree (15.79), Jessica (10.53), Joelina (10.53), Monami (5.26), Dana (5.26), Marie (5.26), Estelle (0.0), Raphaela (0.0), Zaira (0.0), Isabelle (0.0)]
-Marius: 7 [Zaira (57.89), Monami (15.79), Marie (10.53), Jessica (5.26), Estelle (5.26), Isabelle (5.26), Desiree (5.26), Joelina (0.0), Raphaela (0.0), Dana (0.0), Kerstin (0.0)]
-Leon: 5 [Jessica (73.68), Joelina (10.53), Isabelle (10.53), Raphaela (5.26), Desiree (5.26), Monami (0.0), Estelle (0.0), Dana (0.0), Kerstin (0.0), Zaira (0.0), Marie (0.0)]
+Mike: 3 [Joelina (68.42), Estelle (31.58), Desiree (5.26)]
+Antonino: 7 [Dana (57.89), Jessica (10.53), Joelina (10.53), Kerstin (10.53), Marie (5.26), Isabelle (5.26), Desiree (5.26)]
+Jordi: 5 [Estelle (57.89), Desiree (42.11), Monami (21.05), Raphaela (15.79), Isabelle (5.26)]
+Andre: 5 [Isabelle (68.42), Marie (21.05), Monami (5.26), Dana (5.26), Desiree (5.26)]
+William: 3 [Raphaela (78.95), Dana (21.05), Desiree (5.26)]
+Max: 6 [Monami (47.37), Kerstin (26.32), Marie (15.79), Estelle (5.26), Isabelle (5.26), Desiree (5.26)]
+Dustin: 5 [Zaira (42.11), Marie (42.11), Dana (10.53), Monami (5.26), Desiree (5.26)]
+Tim: 7 [Kerstin (63.16), Desiree (15.79), Jessica (10.53), Joelina (10.53), Monami (5.26), Dana (5.26), Marie (5.26)]
+Marius: 7 [Zaira (57.89), Monami (15.79), Marie (10.53), Jessica (5.26), Estelle (5.26), Isabelle (5.26), Desiree (5.26)]
+Leon: 5 [Jessica (73.68), Joelina (10.53), Isabelle (10.53), Raphaela (5.26), Desiree (5.26)]
 
 ==== Mögliche Paare: 53/110 ====
 Raphaela & William => 78.95% [15/19] Gemeinsame MNs: 3/7

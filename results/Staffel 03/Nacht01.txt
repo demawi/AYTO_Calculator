@@ -19,11 +19,11 @@ Ein Mann ist hinzugekommen: Tim. Die Anzahl der Kombinationen erhöht sich damit
 Ein Mann ist hinzugekommen: Marius. Die Anzahl der Kombinationen erhöht sich damit!
 Ein Mann ist hinzugekommen: Leon. Die Anzahl der Kombinationen erhöht sich damit!
 -- Berechne 03 - Nacht 1...
--- Combinations: 3628800 Yes: 3628800 No: 0 Calculation time: 0 min 9 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 3628800 No: 0 Calculation time: 0 min 13 secs (Tested intern iterations: 62353010)
 
 Die Anzahl der Kombinationen hat sich verändert: 0 => 3628800
 -- Berechne 03 - Nacht 1 inkl. Matchbox...
--- Combinations: 3628800 Yes: 3265920 No: 362880 Calculation time: 0 min 9 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 3265920 No: 362880 Calculation time: 0 min 15 secs (Tested intern iterations: 62353010)
 
 MatchBox: Jessica & Mike... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 10.0% [362880]
@@ -57,10 +57,10 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 Die Kombinationen reduzieren sich: 3628800 => 205176
 
 -- Berechne 03 - Nacht 1 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 3628800 Yes: 205176 No: 3423624 Calculation time: 0 min 6 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 205176 No: 3423624 Calculation time: 0 min 11 secs (Tested intern iterations: 62353010)
 
 ==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
-Jessica: 9 [Leon (32.53), Antonino (8.43), Jordi (8.43), Andre (8.43), William (8.43), Max (8.43), Dustin (8.43), Tim (8.43), Marius (8.43), Mike (0.0)]
+Jessica: 9 [Leon (32.53), Antonino (8.43), Jordi (8.43), Andre (8.43), William (8.43), Max (8.43), Dustin (8.43), Tim (8.43), Marius (8.43)]
 Monami: 10 [Antonino (29.37), Mike (8.43), Jordi (7.81), Andre (7.81), William (7.81), Max (7.81), Dustin (7.81), Tim (7.81), Marius (7.81), Leon (7.53)]
 Joelina: 10 [Mike (32.53), Antonino (7.53), Jordi (7.53), Andre (7.53), William (7.53), Max (7.53), Dustin (7.53), Tim (7.53), Marius (7.53), Leon (7.23)]
 Estelle: 10 [Jordi (29.37), Mike (8.43), Antonino (7.81), Andre (7.81), William (7.81), Max (7.81), Dustin (7.81), Tim (7.81), Marius (7.81), Leon (7.53)]
@@ -71,7 +71,7 @@ Zaira: 10 [Dustin (29.37), Mike (8.43), Antonino (7.81), Jordi (7.81), Andre (7.
 Marie: 10 [Tim (29.37), Mike (8.43), Antonino (7.81), Jordi (7.81), Andre (7.81), William (7.81), Max (7.81), Dustin (7.81), Marius (7.81), Leon (7.53)]
 Isabelle: 10 [Marius (29.37), Mike (8.43), Antonino (7.81), Jordi (7.81), Andre (7.81), William (7.81), Max (7.81), Dustin (7.81), Tim (7.81), Leon (7.53)]
 
-Mike: 9 [Joelina (32.53), Monami (8.43), Estelle (8.43), Raphaela (8.43), Dana (8.43), Kerstin (8.43), Zaira (8.43), Marie (8.43), Isabelle (8.43), Jessica (0.0)]
+Mike: 9 [Joelina (32.53), Monami (8.43), Estelle (8.43), Raphaela (8.43), Dana (8.43), Kerstin (8.43), Zaira (8.43), Marie (8.43), Isabelle (8.43)]
 Antonino: 10 [Monami (29.37), Jessica (8.43), Estelle (7.81), Raphaela (7.81), Dana (7.81), Kerstin (7.81), Zaira (7.81), Marie (7.81), Isabelle (7.81), Joelina (7.53)]
 Jordi: 10 [Estelle (29.37), Jessica (8.43), Monami (7.81), Raphaela (7.81), Dana (7.81), Kerstin (7.81), Zaira (7.81), Marie (7.81), Isabelle (7.81), Joelina (7.53)]
 Andre: 10 [Raphaela (29.37), Jessica (8.43), Monami (7.81), Estelle (7.81), Dana (7.81), Kerstin (7.81), Zaira (7.81), Marie (7.81), Isabelle (7.81), Joelina (7.53)]

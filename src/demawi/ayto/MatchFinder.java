@@ -251,6 +251,9 @@ public class MatchFinder {
     List<Mann> sortedPartner = new ArrayList<>(maenner);
     sortedPartner.sort((o1, o2) -> resulter.getCount(frau, o2)
           .compareTo(resulter.getCount(frau, o1)));
+    sortedPartner = sortedPartner.stream()
+          .filter(mann -> resulter.getCount(frau, mann) > 0)
+          .collect(Collectors.toList());
 
     StringBuffer stringBuffer = new StringBuffer();
     for (Mann mann : sortedPartner) {
@@ -272,6 +275,9 @@ public class MatchFinder {
     List<Frau> sortedPartner = new ArrayList<>(frauen);
     sortedPartner.sort((o1, o2) -> resulter.getCount(o2, mann)
           .compareTo(resulter.getCount(o1, mann)));
+    sortedPartner = sortedPartner.stream()
+          .filter(frau -> resulter.getCount(frau, mann) > 0)
+          .collect(Collectors.toList());
 
     StringBuffer stringBuffer = new StringBuffer();
     for (Frau frau : sortedPartner) {

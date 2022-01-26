@@ -1,8 +1,8 @@
 -- Berechne 02 - Nacht 3...
--- Combinations: 3628800 Yes: 170886 No: 3457914 Calculation time: 0 min 6 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 170886 No: 3457914 Calculation time: 0 min 8 secs (Tested intern iterations: 62353010)
 
 -- Berechne 02 - Nacht 3 inkl. Matchbox...
--- Combinations: 3628800 Yes: 125268 No: 3503532 Calculation time: 0 min 6 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 125268 No: 3503532 Calculation time: 0 min 9 secs (Tested intern iterations: 62353010)
 
 MatchBox: Kathleen & Aaron... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 26.69% [45618]
@@ -36,12 +36,12 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 Die Kombinationen reduzieren sich: 170886 => 5406
 
 -- Berechne 02 - Nacht 3 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 3628800 Yes: 5406 No: 3623394 Calculation time: 0 min 6 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 5406 No: 3623394 Calculation time: 0 min 8 secs (Tested intern iterations: 62353010)
 
 ==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
-Jill: 9 [Sascha (34.28), Aaron (11.01), Marko (8.81), Dario (8.77), Dominic (8.29), Marc (8.14), Germain (7.82), Marcel (6.51), Marvin (6.38), Maximilian (0.0)]
+Jill: 9 [Sascha (34.28), Aaron (11.01), Marko (8.81), Dario (8.77), Dominic (8.29), Marc (8.14), Germain (7.82), Marcel (6.51), Marvin (6.38)]
 Sabrina: 10 [Sascha (27.28), Marko (23.6), Aaron (7.42), Germain (7.14), Maximilian (7.07), Dario (5.72), Marcel (5.62), Dominic (5.57), Marvin (5.4), Marc (5.18)]
-Kathleen: 9 [Marvin (37.92), Maximilian (10.34), Germain (8.45), Marko (7.77), Dario (7.57), Marcel (7.45), Dominic (7.03), Marc (6.96), Sascha (6.51), Aaron (0.0)]
+Kathleen: 9 [Marvin (37.92), Maximilian (10.34), Germain (8.45), Marko (7.77), Dario (7.57), Marcel (7.45), Dominic (7.03), Marc (6.96), Sascha (6.51)]
 Mirjam: 10 [Marko (25.4), Marc (22.42), Aaron (8.07), Maximilian (7.77), Germain (7.23), Dario (6.16), Dominic (6.09), Marcel (5.72), Sascha (5.7), Marvin (5.46)]
 Vanessa: 10 [Dominic (28.21), Marvin (21.85), Maximilian (8.36), Aaron (7.47), Marko (6.46), Dario (6.46), Germain (6.22), Marc (5.97), Marcel (5.35), Sascha (3.66)]
 Victoria: 10 [Dario (40.68), Germain (15.54), Aaron (7.36), Maximilian (7.29), Marko (5.59), Dominic (5.55), Marc (5.2), Marcel (4.62), Sascha (4.14), Marvin (4.03)]
@@ -50,9 +50,9 @@ Leonie: 10 [Marc (32.8), Marcel (15.43), Maximilian (9.16), Aaron (8.07), Dario 
 Melissa: 10 [Aaron (37.03), Dominic (22.9), Maximilian (5.97), Germain (5.85), Marko (5.46), Dario (5.03), Marcel (4.66), Marvin (4.46), Marc (4.37), Sascha (4.27)]
 Laura: 10 [Marcel (40.49), Germain (7.95), Aaron (7.92), Maximilian (7.79), Dario (7.73), Marko (5.9), Dominic (5.77), Sascha (5.66), Marc (5.57), Marvin (5.22)]
 
-Maximilian: 9 [Christin (36.26), Kathleen (10.34), Leonie (9.16), Vanessa (8.36), Laura (7.79), Mirjam (7.77), Victoria (7.29), Sabrina (7.07), Melissa (5.97), Jill (0.0)]
+Maximilian: 9 [Christin (36.26), Kathleen (10.34), Leonie (9.16), Vanessa (8.36), Laura (7.79), Mirjam (7.77), Victoria (7.29), Sabrina (7.07), Melissa (5.97)]
 Marko: 10 [Mirjam (25.4), Sabrina (23.6), Jill (8.81), Kathleen (7.77), Leonie (6.96), Vanessa (6.46), Laura (5.9), Victoria (5.59), Melissa (5.46), Christin (4.07)]
-Aaron: 9 [Melissa (37.03), Jill (11.01), Mirjam (8.07), Leonie (8.07), Laura (7.92), Vanessa (7.47), Sabrina (7.42), Victoria (7.36), Christin (5.66), Kathleen (0.0)]
+Aaron: 9 [Melissa (37.03), Jill (11.01), Mirjam (8.07), Leonie (8.07), Laura (7.92), Vanessa (7.47), Sabrina (7.42), Victoria (7.36), Christin (5.66)]
 Marc: 10 [Leonie (32.8), Mirjam (22.42), Jill (8.14), Kathleen (6.96), Vanessa (5.97), Laura (5.57), Victoria (5.2), Sabrina (5.18), Melissa (4.37), Christin (3.4)]
 Sascha: 10 [Jill (34.28), Sabrina (27.28), Kathleen (6.51), Mirjam (5.7), Laura (5.66), Leonie (4.29), Melissa (4.27), Christin (4.2), Victoria (4.14), Vanessa (3.66)]
 Dario: 10 [Victoria (40.68), Jill (8.77), Laura (7.73), Leonie (7.64), Kathleen (7.57), Vanessa (6.46), Mirjam (6.16), Sabrina (5.72), Melissa (5.03), Christin (4.25)]

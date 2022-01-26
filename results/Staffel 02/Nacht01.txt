@@ -19,11 +19,11 @@ Ein Mann ist hinzugekommen: Germain. Die Anzahl der Kombinationen erhöht sich d
 Ein Mann ist hinzugekommen: Dominic. Die Anzahl der Kombinationen erhöht sich damit!
 Ein Mann ist hinzugekommen: Marcel. Die Anzahl der Kombinationen erhöht sich damit!
 -- Berechne 02 - Nacht 1...
--- Combinations: 3628800 Yes: 3628800 No: 0 Calculation time: 0 min 8 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 3628800 No: 0 Calculation time: 0 min 11 secs (Tested intern iterations: 62353010)
 
 Die Anzahl der Kombinationen hat sich verändert: 0 => 3628800
 -- Berechne 02 - Nacht 1 inkl. Matchbox...
--- Combinations: 3628800 Yes: 3265920 No: 362880 Calculation time: 330 min 32 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 3265920 No: 362880 Calculation time: 0 min 13 secs (Tested intern iterations: 62353010)
 
 MatchBox: Jill & Maximilian... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 10.0% [362880]
@@ -57,10 +57,10 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 Die Kombinationen reduzieren sich: 3628800 => 608153
 
 -- Berechne 02 - Nacht 1 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 3628800 Yes: 608153 No: 3020647 Calculation time: 0 min 8 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 608153 No: 3020647 Calculation time: 0 min 11 secs (Tested intern iterations: 62353010)
 
 ==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
-Jill: 9 [Marvin (21.95), Marko (9.76), Aaron (9.76), Marc (9.76), Sascha (9.76), Dario (9.76), Germain (9.76), Dominic (9.76), Marcel (9.76), Maximilian (0.0)]
+Jill: 9 [Marvin (21.95), Marko (9.76), Aaron (9.76), Marc (9.76), Sascha (9.76), Dario (9.76), Germain (9.76), Dominic (9.76), Marcel (9.76)]
 Sabrina: 10 [Marko (19.51), Maximilian (9.76), Aaron (8.86), Marc (8.86), Sascha (8.86), Dario (8.86), Germain (8.86), Dominic (8.86), Marcel (8.86), Marvin (8.69)]
 Kathleen: 10 [Aaron (19.51), Maximilian (9.76), Marko (8.86), Marc (8.86), Sascha (8.86), Dario (8.86), Germain (8.86), Dominic (8.86), Marcel (8.86), Marvin (8.69)]
 Mirjam: 10 [Marc (19.51), Maximilian (9.76), Marko (8.86), Aaron (8.86), Sascha (8.86), Dario (8.86), Germain (8.86), Dominic (8.86), Marcel (8.86), Marvin (8.69)]
@@ -71,7 +71,7 @@ Leonie: 10 [Germain (19.51), Maximilian (9.76), Marko (8.86), Aaron (8.86), Marc
 Melissa: 10 [Dominic (19.51), Maximilian (9.76), Marko (8.86), Aaron (8.86), Marc (8.86), Sascha (8.86), Dario (8.86), Germain (8.86), Marcel (8.86), Marvin (8.69)]
 Laura: 10 [Marcel (19.51), Maximilian (9.76), Marko (8.86), Aaron (8.86), Marc (8.86), Sascha (8.86), Dario (8.86), Germain (8.86), Dominic (8.86), Marvin (8.69)]
 
-Maximilian: 9 [Christin (21.95), Sabrina (9.76), Kathleen (9.76), Mirjam (9.76), Vanessa (9.76), Victoria (9.76), Leonie (9.76), Melissa (9.76), Laura (9.76), Jill (0.0)]
+Maximilian: 9 [Christin (21.95), Sabrina (9.76), Kathleen (9.76), Mirjam (9.76), Vanessa (9.76), Victoria (9.76), Leonie (9.76), Melissa (9.76), Laura (9.76)]
 Marko: 10 [Sabrina (19.51), Jill (9.76), Kathleen (8.86), Mirjam (8.86), Vanessa (8.86), Victoria (8.86), Leonie (8.86), Melissa (8.86), Laura (8.86), Christin (8.69)]
 Aaron: 10 [Kathleen (19.51), Jill (9.76), Sabrina (8.86), Mirjam (8.86), Vanessa (8.86), Victoria (8.86), Leonie (8.86), Melissa (8.86), Laura (8.86), Christin (8.69)]
 Marc: 10 [Mirjam (19.51), Jill (9.76), Sabrina (8.86), Kathleen (8.86), Vanessa (8.86), Victoria (8.86), Leonie (8.86), Melissa (8.86), Laura (8.86), Christin (8.69)]

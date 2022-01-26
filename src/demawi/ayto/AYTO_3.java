@@ -76,7 +76,7 @@ public class AYTO_3
   }
 
   public static void main(String[] args) {
-    new MatchFinder().printLightChancesAndResult(new AYTO_3(), 2);
+    new MatchFinder().printLightChancesAndResult(new AYTO_3());
   }
 
 }

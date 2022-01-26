@@ -1,8 +1,8 @@
 -- Berechne VIP_01 - Nacht 6...
--- Combinations: 36288000 Yes: 711 No: 36287289 Calculation time: 0 min 31 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 711 No: 36287289 Calculation time: 0 min 44 secs (Tested intern iterations: 98641010)
 
 -- Berechne VIP_01 - Nacht 6 inkl. Matchbox...
--- Combinations: 36288000 Yes: 684 No: 36287316 Calculation time: 0 min 31 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 684 No: 36287316 Calculation time: 0 min 43 secs (Tested intern iterations: 98641010)
 
 MatchBox: Finnja & Salvatore... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 3.8% [27]
@@ -36,31 +36,31 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 Die Kombinationen reduzieren sich: 711 => 342
 
 -- Berechne VIP_01 - Nacht 6 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 36288000 Yes: 342 No: 36287658 Calculation time: 0 min 31 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 342 No: 36287658 Calculation time: 0 min 39 secs (Tested intern iterations: 98641010)
 
 ==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
-Finnja: 7 [Eugen (58.77), Tommy (14.91), Josua (10.23), Diogo (6.43), Manuel (4.97), Jamie (4.39), Alex (0.29), Danilo (0.0), Francesco (0.0), Salvatore (0.0)]
-Melina: 8 [Danilo (25.73), Alex (16.67), Salvatore (16.37), Manuel (13.16), Diogo (10.23), Josua (9.36), Eugen (6.73), Jamie (1.75), Tommy (0.0), Francesco (0.0)]
-Jules: 1 [Francesco (100.0), Danilo (0.0), Tommy (0.0), Alex (0.0), Eugen (0.0), Manuel (0.0), Salvatore (0.0), Diogo (0.0), Josua (0.0), Jamie (0.0)]
-Walentina: 7 [Eugen (24.85), Alex (22.22), Salvatore (20.76), Danilo (15.2), Diogo (9.36), Manuel (7.31), Jamie (0.29), Tommy (0.0), Francesco (0.0), Josua (0.0)]
-Kathleen: 9 [Manuel (53.8), Salvatore (15.79), Tommy (10.23), Josua (6.43), Alex (4.97), Eugen (3.51), Danilo (2.63), Diogo (1.46), Jamie (1.17), Francesco (0.0)]
-Jacky: 9 [Salvatore (27.49), Tommy (23.68), Danilo (12.57), Josua (10.82), Alex (9.06), Manuel (7.02), Diogo (6.14), Eugen (1.75), Jamie (1.46), Francesco (0.0)]
-Aurelia: 9 [Diogo (57.02), Danilo (19.59), Tommy (9.06), Josua (6.43), Alex (3.8), Salvatore (1.75), Eugen (0.88), Manuel (0.88), Jamie (0.58), Francesco (0.0)]
-Sarah: 6 [Josua (51.46), Alex (38.6), Tommy (4.68), Manuel (2.34), Diogo (1.75), Salvatore (1.17), Danilo (0.0), Eugen (0.0), Francesco (0.0), Jamie (0.0)]
-Jill: 9 [Jamie (61.4), Tommy (16.96), Salvatore (7.31), Manuel (4.97), Eugen (3.51), Josua (2.63), Alex (1.75), Diogo (1.17), Danilo (0.29), Francesco (0.0)]
-Steffi: 8 [Jamie (28.95), Danilo (23.98), Tommy (20.47), Salvatore (9.36), Diogo (6.43), Manuel (5.56), Alex (2.63), Josua (2.63), Eugen (0.0), Francesco (0.0)]
+Finnja: 7 [Eugen (58.77), Tommy (14.91), Josua (10.23), Diogo (6.43), Manuel (4.97), Jamie (4.39), Alex (0.29)]
+Melina: 8 [Danilo (25.73), Alex (16.67), Salvatore (16.37), Manuel (13.16), Diogo (10.23), Josua (9.36), Eugen (6.73), Jamie (1.75)]
+Jules: 1 [Francesco (100.0)]
+Walentina: 7 [Eugen (24.85), Alex (22.22), Salvatore (20.76), Danilo (15.2), Diogo (9.36), Manuel (7.31), Jamie (0.29)]
+Kathleen: 9 [Manuel (53.8), Salvatore (15.79), Tommy (10.23), Josua (6.43), Alex (4.97), Eugen (3.51), Danilo (2.63), Diogo (1.46), Jamie (1.17)]
+Jacky: 9 [Salvatore (27.49), Tommy (23.68), Danilo (12.57), Josua (10.82), Alex (9.06), Manuel (7.02), Diogo (6.14), Eugen (1.75), Jamie (1.46)]
+Aurelia: 9 [Diogo (57.02), Danilo (19.59), Tommy (9.06), Josua (6.43), Alex (3.8), Salvatore (1.75), Eugen (0.88), Manuel (0.88), Jamie (0.58)]
+Sarah: 6 [Josua (51.46), Alex (38.6), Tommy (4.68), Manuel (2.34), Diogo (1.75), Salvatore (1.17)]
+Jill: 9 [Jamie (61.4), Tommy (16.96), Salvatore (7.31), Manuel (4.97), Eugen (3.51), Josua (2.63), Alex (1.75), Diogo (1.17), Danilo (0.29)]
+Steffi: 8 [Jamie (28.95), Danilo (23.98), Tommy (20.47), Salvatore (9.36), Diogo (6.43), Manuel (5.56), Alex (2.63), Josua (2.63)]
 Vanessa: 10 [Diogo (33.33), Jamie (12.87), Danilo (6.73), Tommy (6.73), Alex (6.73), Eugen (6.73), Manuel (6.73), Francesco (6.73), Salvatore (6.73), Josua (6.73)]
 
-Danilo: 8 [Melina (25.73), Steffi (23.98), Aurelia (19.59), Walentina (15.2), Jacky (12.57), Vanessa (6.73), Kathleen (2.63), Jill (0.29), Finnja (0.0), Jules (0.0), Sarah (0.0)]
-Tommy: 8 [Jacky (23.68), Steffi (20.47), Jill (16.96), Finnja (14.91), Kathleen (10.23), Aurelia (9.06), Vanessa (6.73), Sarah (4.68), Melina (0.0), Jules (0.0), Walentina (0.0)]
-Alex: 10 [Sarah (38.6), Walentina (22.22), Melina (16.67), Jacky (9.06), Vanessa (6.73), Kathleen (4.97), Aurelia (3.8), Steffi (2.63), Jill (1.75), Finnja (0.29), Jules (0.0)]
-Eugen: 8 [Finnja (58.77), Walentina (24.85), Melina (6.73), Vanessa (6.73), Kathleen (3.51), Jill (3.51), Jacky (1.75), Aurelia (0.88), Jules (0.0), Sarah (0.0), Steffi (0.0)]
-Manuel: 10 [Kathleen (53.8), Melina (13.16), Walentina (7.31), Jacky (7.02), Vanessa (6.73), Steffi (5.56), Finnja (4.97), Jill (4.97), Sarah (2.34), Aurelia (0.88), Jules (0.0)]
-Francesco: 2 [Jules (100.0), Vanessa (6.73), Finnja (0.0), Melina (0.0), Walentina (0.0), Kathleen (0.0), Jacky (0.0), Aurelia (0.0), Sarah (0.0), Jill (0.0), Steffi (0.0)]
-Salvatore: 9 [Jacky (27.49), Walentina (20.76), Melina (16.37), Kathleen (15.79), Steffi (9.36), Jill (7.31), Vanessa (6.73), Aurelia (1.75), Sarah (1.17), Finnja (0.0), Jules (0.0)]
-Diogo: 10 [Aurelia (57.02), Vanessa (33.33), Melina (10.23), Walentina (9.36), Finnja (6.43), Steffi (6.43), Jacky (6.14), Sarah (1.75), Kathleen (1.46), Jill (1.17), Jules (0.0)]
-Josua: 9 [Sarah (51.46), Jacky (10.82), Finnja (10.23), Melina (9.36), Vanessa (6.73), Kathleen (6.43), Aurelia (6.43), Jill (2.63), Steffi (2.63), Jules (0.0), Walentina (0.0)]
-Jamie: 9 [Jill (61.4), Steffi (28.95), Vanessa (12.87), Finnja (4.39), Melina (1.75), Jacky (1.46), Kathleen (1.17), Aurelia (0.58), Walentina (0.29), Jules (0.0), Sarah (0.0)]
+Danilo: 8 [Melina (25.73), Steffi (23.98), Aurelia (19.59), Walentina (15.2), Jacky (12.57), Vanessa (6.73), Kathleen (2.63), Jill (0.29)]
+Tommy: 8 [Jacky (23.68), Steffi (20.47), Jill (16.96), Finnja (14.91), Kathleen (10.23), Aurelia (9.06), Vanessa (6.73), Sarah (4.68)]
+Alex: 10 [Sarah (38.6), Walentina (22.22), Melina (16.67), Jacky (9.06), Vanessa (6.73), Kathleen (4.97), Aurelia (3.8), Steffi (2.63), Jill (1.75), Finnja (0.29)]
+Eugen: 8 [Finnja (58.77), Walentina (24.85), Melina (6.73), Vanessa (6.73), Kathleen (3.51), Jill (3.51), Jacky (1.75), Aurelia (0.88)]
+Manuel: 10 [Kathleen (53.8), Melina (13.16), Walentina (7.31), Jacky (7.02), Vanessa (6.73), Steffi (5.56), Finnja (4.97), Jill (4.97), Sarah (2.34), Aurelia (0.88)]
+Francesco: 2 [Jules (100.0), Vanessa (6.73)]
+Salvatore: 9 [Jacky (27.49), Walentina (20.76), Melina (16.37), Kathleen (15.79), Steffi (9.36), Jill (7.31), Vanessa (6.73), Aurelia (1.75), Sarah (1.17)]
+Diogo: 10 [Aurelia (57.02), Vanessa (33.33), Melina (10.23), Walentina (9.36), Finnja (6.43), Steffi (6.43), Jacky (6.14), Sarah (1.75), Kathleen (1.46), Jill (1.17)]
+Josua: 9 [Sarah (51.46), Jacky (10.82), Finnja (10.23), Melina (9.36), Vanessa (6.73), Kathleen (6.43), Aurelia (6.43), Jill (2.63), Steffi (2.63)]
+Jamie: 9 [Jill (61.4), Steffi (28.95), Vanessa (12.87), Finnja (4.39), Melina (1.75), Jacky (1.46), Kathleen (1.17), Aurelia (0.58), Walentina (0.29)]
 
 ==== Mögliche Paare: 83/110 ====
 Jules & Francesco => 100.0% [342/342] Gemeinsame MNs: 8/10
