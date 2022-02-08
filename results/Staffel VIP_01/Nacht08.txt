@@ -1,8 +1,8 @@
 -- Berechne VIP_01 - Nacht 8...
--- Combinations: 36288000 Yes: 58 No: 36287942 Calculation time: 0 min 38 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 58 No: 36287942 Calculation time: 0 min 31 secs (Tested intern iterations: 98641010)
 
 -- Berechne VIP_01 - Nacht 8 inkl. Matchbox...
--- Combinations: 36288000 Yes: 58 No: 36287942 Calculation time: 0 min 39 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 58 No: 36287942 Calculation time: 0 min 31 secs (Tested intern iterations: 98641010)
 
 MatchBox: Steffi & Eugen... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 0.0% [0]
@@ -36,7 +36,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 Die Kombinationen reduzieren sich: 58 => 32
 
 -- Berechne VIP_01 - Nacht 8 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 36288000 Yes: 32 No: 36287968 Calculation time: 0 min 38 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 32 No: 36287968 Calculation time: 0 min 31 secs (Tested intern iterations: 98641010)
 
 ==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
 Finnja: 5 [Tommy (37.5), Diogo (28.13), Josua (28.13), Alex (3.13), Jamie (3.13)]

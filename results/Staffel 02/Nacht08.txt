@@ -1,8 +1,8 @@
 -- Berechne 02 - Nacht 8...
--- Combinations: 36288000 Yes: 47 No: 36287953 Calculation time: 0 min 45 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 47 No: 36287953 Calculation time: 0 min 44 secs (Tested intern iterations: 98641010)
 
 -- Berechne 02 - Nacht 8 inkl. Matchbox...
--- Combinations: 36288000 Yes: 47 No: 36287953 Calculation time: 0 min 46 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 47 No: 36287953 Calculation time: 0 min 42 secs (Tested intern iterations: 98641010)
 
 MatchBox: Sabrina & Marko... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 0.0% [0]
@@ -36,7 +36,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 Die Kombinationen reduzieren sich: 47 => 6
 
 -- Berechne 02 - Nacht 8 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 36288000 Yes: 6 No: 36287994 Calculation time: 0 min 47 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 6 No: 36287994 Calculation time: 0 min 43 secs (Tested intern iterations: 98641010)
 
 ==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
 Jill: 1 [Marvin (100.0)]

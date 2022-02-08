@@ -1,0 +1,353 @@
+-- Berechne 01 - Nacht 7...
+-- Combinations: 36288000 Yes: 111 No: 36287889 Calculation time: 0 min 42 secs (Tested intern iterations: 98641010)
+
+-- Berechne 01 - Nacht 7 inkl. Matchbox...
+-- Combinations: 36288000 Yes: 99 No: 36287901 Calculation time: 0 min 43 secs (Tested intern iterations: 98641010)
+
+MatchBox: Ivana & Edin... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 10.81% [12]
+Nein => 89.19% [99] <==
+Die Kombinationen reduzieren sich: 111 => 99
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Katharina & Elisha: 16.16%
+Luisa & Axel: 41.41%
+Nadine & Ferhat: 25.25%
+Sabrina & Dominic: 0.0%
+Maddie & Aleks: 72.73%
+Michelle & René: 100.0%
+Laura & Juliano: 58.59%
+Aline & Mo: 100.0%
+Ivana & Kevin: 16.16%
+Melissa & Laurin: 100.0%
+
+Wahrscheinlichkeit für entsprechende Spotanzahl:
+0 => 0.0% [0]
+1 => 0.0% [0]
+2 => 0.0% [0]
+3 => 17.17% [17]
+4 => 17.17% [17]
+5 => 24.24% [24] <==
+6 => 17.17% [17]
+7 => 8.08% [8]
+8 => 16.16% [16]
+9 => 0.0% [0]
+10 => 0.0% [0]
+Die Kombinationen reduzieren sich: 99 => 24
+
+-- Berechne 01 - Nacht 7 inkl. Matchbox inkl. Matchingnight...
+-- Combinations: 36288000 Yes: 24 No: 36287976 Calculation time: 0 min 42 secs (Tested intern iterations: 98641010)
+
+==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
+Ivana: 1 [Dominic (100.0)]
+Luisa: 3 [Kevin (66.67), Axel (33.33), Edin (12.5)]
+Melissa: 2 [Laurin (100.0), Edin (12.5)]
+Michelle: 2 [René (100.0), Edin (12.5)]
+Nadine: 3 [Elisha (66.67), Ferhat (33.33), Edin (12.5)]
+Katharina: 4 [Axel (33.33), Ferhat (33.33), Kevin (33.33), Edin (12.5)]
+Laura: 2 [Juliano (66.67), Aleks (33.33)]
+Maddie: 3 [Aleks (66.67), Juliano (33.33), Edin (12.5)]
+Aline: 2 [Mo (100.0), Edin (12.5)]
+Sabrina: 4 [Axel (33.33), Elisha (33.33), Ferhat (33.33), Edin (12.5)]
+
+Mo: 1 [Aline (100.0)]
+Axel: 3 [Luisa (33.33), Katharina (33.33), Sabrina (33.33)]
+Juliano: 2 [Laura (66.67), Maddie (33.33)]
+Dominic: 1 [Ivana (100.0)]
+Elisha: 2 [Nadine (66.67), Sabrina (33.33)]
+René: 1 [Michelle (100.0)]
+Ferhat: 3 [Nadine (33.33), Katharina (33.33), Sabrina (33.33)]
+Laurin: 1 [Melissa (100.0)]
+Kevin: 2 [Luisa (66.67), Katharina (33.33)]
+Aleks: 2 [Maddie (66.67), Laura (33.33)]
+Edin: 8 [Luisa (12.5), Melissa (12.5), Michelle (12.5), Nadine (12.5), Katharina (12.5), Maddie (12.5), Aline (12.5), Sabrina (12.5)]
+
+==== Mögliche Paare: 26/110 ====
+Aline & Mo => 100.0% [24/24] Gemeinsame MNs: 8/10
+Michelle & René => 100.0% [24/24] Gemeinsame MNs: 5/10
+Ivana & Dominic => 100.0% [24/24] Gemeinsame MNs: 3/10
+Melissa & Laurin => 100.0% [24/24] Gemeinsame MNs: 9/10
+Maddie & Aleks => 66.67% [16/24] Gemeinsame MNs: 3/10
+Nadine & Elisha => 66.67% [16/24] Gemeinsame MNs: 2/10
+Luisa & Kevin => 66.67% [16/24] Gemeinsame MNs: 0/10
+Laura & Juliano => 66.67% [16/24] Gemeinsame MNs: 6/10
+Sabrina & Axel => 33.33% [8/24] Gemeinsame MNs: 0/10
+Katharina & Kevin => 33.33% [8/24] Gemeinsame MNs: 5/10
+Katharina & Ferhat => 33.33% [8/24] Gemeinsame MNs: 0/10
+Maddie & Juliano => 33.33% [8/24] Gemeinsame MNs: 1/10
+Luisa & Axel => 33.33% [8/24] Gemeinsame MNs: 6/10
+Nadine & Ferhat => 33.33% [8/24] Gemeinsame MNs: 4/10
+Katharina & Axel => 33.33% [8/24] Gemeinsame MNs: 0/10
+Sabrina & Elisha => 33.33% [8/24] Gemeinsame MNs: 3/10
+Laura & Aleks => 33.33% [8/24] Gemeinsame MNs: 1/10
+Sabrina & Ferhat => 33.33% [8/24] Gemeinsame MNs: 0/10
+Nadine & Edin => 12.5% [3/24] Gemeinsame MNs: 0/10
+Aline & Edin => 12.5% [3/24] Gemeinsame MNs: 0/10
+Maddie & Edin => 12.5% [3/24] Gemeinsame MNs: 1/10
+Katharina & Edin => 12.5% [3/24] Gemeinsame MNs: 0/10
+Melissa & Edin => 12.5% [3/24] Gemeinsame MNs: 0/10
+Michelle & Edin => 12.5% [3/24] Gemeinsame MNs: 0/10
+Luisa & Edin => 12.5% [3/24] Gemeinsame MNs: 0/10
+Sabrina & Edin => 12.5% [3/24] Gemeinsame MNs: 0/10
+
+==== Beste Konstellationen ====
+> Platz 1 mit 179 Punkten (Summe der Vorkommen der Einzelpaare)
+Maddie & Aleks
+Sabrina & Ferhat
+Luisa & Edin
+Michelle & René
+Laura & Juliano
+Nadine & Elisha
+Katharina & Axel
+Ivana & Dominic
+Aline & Mo
+Luisa & Kevin
+Melissa & Laurin
+
+> Platz 2 mit 179 Punkten (Summe der Vorkommen der Einzelpaare)
+Melissa & Edin
+Maddie & Aleks
+Sabrina & Ferhat
+Michelle & René
+Laura & Juliano
+Nadine & Elisha
+Katharina & Axel
+Ivana & Dominic
+Aline & Mo
+Luisa & Kevin
+Melissa & Laurin
+
+> Platz 3 mit 179 Punkten (Summe der Vorkommen der Einzelpaare)
+Michelle & Edin
+Maddie & Aleks
+Sabrina & Ferhat
+Michelle & René
+Laura & Juliano
+Nadine & Elisha
+Katharina & Axel
+Ivana & Dominic
+Aline & Mo
+Luisa & Kevin
+Melissa & Laurin
+
+> Platz 4 mit 179 Punkten (Summe der Vorkommen der Einzelpaare)
+Nadine & Edin
+Maddie & Aleks
+Sabrina & Ferhat
+Michelle & René
+Laura & Juliano
+Nadine & Elisha
+Katharina & Axel
+Ivana & Dominic
+Aline & Mo
+Luisa & Kevin
+Melissa & Laurin
+
+> Platz 5 mit 179 Punkten (Summe der Vorkommen der Einzelpaare)
+Maddie & Aleks
+Sabrina & Ferhat
+Michelle & René
+Laura & Juliano
+Nadine & Elisha
+Katharina & Axel
+Ivana & Dominic
+Aline & Mo
+Luisa & Kevin
+Katharina & Edin
+Melissa & Laurin
+
+> Platz 6 mit 179 Punkten (Summe der Vorkommen der Einzelpaare)
+Maddie & Aleks
+Sabrina & Ferhat
+Michelle & René
+Laura & Juliano
+Nadine & Elisha
+Katharina & Axel
+Maddie & Edin
+Ivana & Dominic
+Aline & Mo
+Luisa & Kevin
+Melissa & Laurin
+
+> Platz 7 mit 179 Punkten (Summe der Vorkommen der Einzelpaare)
+Maddie & Aleks
+Sabrina & Ferhat
+Aline & Edin
+Michelle & René
+Laura & Juliano
+Nadine & Elisha
+Katharina & Axel
+Ivana & Dominic
+Aline & Mo
+Luisa & Kevin
+Melissa & Laurin
+
+> Platz 8 mit 179 Punkten (Summe der Vorkommen der Einzelpaare)
+Maddie & Aleks
+Sabrina & Ferhat
+Michelle & René
+Sabrina & Edin
+Laura & Juliano
+Nadine & Elisha
+Katharina & Axel
+Ivana & Dominic
+Aline & Mo
+Luisa & Kevin
+Melissa & Laurin
+
+> Platz 9 mit 179 Punkten (Summe der Vorkommen der Einzelpaare)
+Maddie & Aleks
+Luisa & Edin
+Michelle & René
+Laura & Juliano
+Nadine & Elisha
+Ivana & Dominic
+Katharina & Ferhat
+Aline & Mo
+Luisa & Kevin
+Sabrina & Axel
+Melissa & Laurin
+
+> Platz 10 mit 179 Punkten (Summe der Vorkommen der Einzelpaare)
+Melissa & Edin
+Maddie & Aleks
+Michelle & René
+Laura & Juliano
+Nadine & Elisha
+Ivana & Dominic
+Katharina & Ferhat
+Aline & Mo
+Luisa & Kevin
+Sabrina & Axel
+Melissa & Laurin
+
+> Platz 11 mit 179 Punkten (Summe der Vorkommen der Einzelpaare)
+Michelle & Edin
+Maddie & Aleks
+Michelle & René
+Laura & Juliano
+Nadine & Elisha
+Ivana & Dominic
+Katharina & Ferhat
+Aline & Mo
+Luisa & Kevin
+Sabrina & Axel
+Melissa & Laurin
+
+> Platz 12 mit 179 Punkten (Summe der Vorkommen der Einzelpaare)
+Nadine & Edin
+Maddie & Aleks
+Michelle & René
+Laura & Juliano
+Nadine & Elisha
+Ivana & Dominic
+Katharina & Ferhat
+Aline & Mo
+Luisa & Kevin
+Sabrina & Axel
+Melissa & Laurin
+
+> Platz 13 mit 179 Punkten (Summe der Vorkommen der Einzelpaare)
+Maddie & Aleks
+Michelle & René
+Laura & Juliano
+Nadine & Elisha
+Ivana & Dominic
+Katharina & Ferhat
+Aline & Mo
+Luisa & Kevin
+Katharina & Edin
+Sabrina & Axel
+Melissa & Laurin
+
+> Platz 14 mit 179 Punkten (Summe der Vorkommen der Einzelpaare)
+Maddie & Aleks
+Michelle & René
+Laura & Juliano
+Nadine & Elisha
+Maddie & Edin
+Ivana & Dominic
+Katharina & Ferhat
+Aline & Mo
+Luisa & Kevin
+Sabrina & Axel
+Melissa & Laurin
+
+> Platz 15 mit 179 Punkten (Summe der Vorkommen der Einzelpaare)
+Maddie & Aleks
+Aline & Edin
+Michelle & René
+Laura & Juliano
+Nadine & Elisha
+Ivana & Dominic
+Katharina & Ferhat
+Aline & Mo
+Luisa & Kevin
+Sabrina & Axel
+Melissa & Laurin
+
+> Platz 16 mit 179 Punkten (Summe der Vorkommen der Einzelpaare)
+Maddie & Aleks
+Michelle & René
+Sabrina & Edin
+Laura & Juliano
+Nadine & Elisha
+Ivana & Dominic
+Katharina & Ferhat
+Aline & Mo
+Luisa & Kevin
+Sabrina & Axel
+Melissa & Laurin
+
+> Platz 17 mit 147 Punkten (Summe der Vorkommen der Einzelpaare)
+Luisa & Axel
+Sabrina & Elisha
+Nadine & Ferhat
+Laura & Aleks
+Katharina & Kevin
+Luisa & Edin
+Michelle & René
+Ivana & Dominic
+Aline & Mo
+Maddie & Juliano
+Melissa & Laurin
+
+> Platz 18 mit 147 Punkten (Summe der Vorkommen der Einzelpaare)
+Luisa & Axel
+Sabrina & Elisha
+Melissa & Edin
+Nadine & Ferhat
+Laura & Aleks
+Katharina & Kevin
+Michelle & René
+Ivana & Dominic
+Aline & Mo
+Maddie & Juliano
+Melissa & Laurin
+
+> Platz 19 mit 147 Punkten (Summe der Vorkommen der Einzelpaare)
+Luisa & Axel
+Sabrina & Elisha
+Michelle & Edin
+Nadine & Ferhat
+Laura & Aleks
+Katharina & Kevin
+Michelle & René
+Ivana & Dominic
+Aline & Mo
+Maddie & Juliano
+Melissa & Laurin
+
+> Platz 20 mit 147 Punkten (Summe der Vorkommen der Einzelpaare)
+Luisa & Axel
+Sabrina & Elisha
+Nadine & Edin
+Nadine & Ferhat
+Laura & Aleks
+Katharina & Kevin
+Michelle & René
+Ivana & Dominic
+Aline & Mo
+Maddie & Juliano
+Melissa & Laurin
+

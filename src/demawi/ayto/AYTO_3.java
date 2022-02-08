@@ -65,13 +65,23 @@ public class AYTO_3
           pair(Isabelle, Dustin), pair(Monami, Jordi), pair(Desiree, Andre), pair(Marie, Max), pair(Kerstin, Tim),
           pair(Joelina, Mike), pair(Jessica, Leon));
 
+    // 8ter Tag
+    add(false, pair(Raphaela, Jordi), 4, pair(Zaira, Marius), pair(Dana, Antonino), pair(Monami, Jordi),
+          pair(Joelina, Tim), pair(Raphaela, William), pair(Estelle, Mike), pair(Isabelle, Dustin), pair(Kerstin, Max),
+          pair(Jessica, Leon), pair(Marie, Andre));
 
-    track(pair(Estelle, Jordi), pair(Zaira, Marius), pair(Monami, Max), pair(Isabelle, Andre), pair(Dana, Antonino), pair(Joelina, Mike), pair(Raphaela, William), pair(Marie, Dustin),
-          pair(Kerstin, Tim), pair(Jessica, Leon));
+    // 9ter Tag
+    add(false, pair(Kerstin, Max), 2, pair(Zaira, Marius), pair(Raphaela, Max), pair(Marie, William),
+          pair(Desiree, Andre), pair(Dana, Dustin), pair(Isabelle, Antonino), pair(Monami, Jordi), pair(Estelle, Mike),
+          pair(Joelina, Tim), pair(Jessica, Leon));
+
+    // 10ter Tag
+    add(false, pair(Isabelle, Dustin), 2, null);
+
+    track(pair(Estelle, Jordi), pair(Zaira, Marius), pair(Monami, Max), pair(Isabelle, Andre), pair(Dana, Antonino),
+          pair(Joelina, Mike), pair(Raphaela, William), pair(Marie, Dustin), pair(Kerstin, Tim), pair(Jessica, Leon));
+
     // coming
-    // add(false, pair(Kerstin, Max)); // 0
-    // add(false, pair(Isabelle, Dustin)); // 0
-    // add(false, pair(Raphaela, Jordi)); // 0
 
   }
 

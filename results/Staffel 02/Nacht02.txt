@@ -1,8 +1,8 @@
 -- Berechne 02 - Nacht 2...
--- Combinations: 3628800 Yes: 608153 No: 3020647 Calculation time: 0 min 9 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 608153 No: 3020647 Calculation time: 0 min 8 secs (Tested intern iterations: 62353010)
 
 -- Berechne 02 - Nacht 2 inkl. Matchbox...
--- Combinations: 3628800 Yes: 608153 No: 3020647 Calculation time: 0 min 8 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 608153 No: 3020647 Calculation time: 0 min 6 secs (Tested intern iterations: 62353010)
 
 MatchBox: Jill & Maximilian verkauft. (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 0.0% [0]
@@ -36,7 +36,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 Die Kombinationen reduzieren sich: 608153 => 170886
 
 -- Berechne 02 - Nacht 2 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 3628800 Yes: 170886 No: 3457914 Calculation time: 0 min 8 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 170886 No: 3457914 Calculation time: 0 min 6 secs (Tested intern iterations: 62353010)
 
 ==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
 Jill: 9 [Sascha (14.03), Marvin (14.03), Dario (11.65), Germain (11.65), Marcel (11.65), Marko (9.25), Aaron (9.25), Marc (9.25), Dominic (9.25)]

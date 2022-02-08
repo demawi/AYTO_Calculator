@@ -1,8 +1,8 @@
 -- Berechne VIP_01 - Nacht 6...
--- Combinations: 36288000 Yes: 711 No: 36287289 Calculation time: 0 min 44 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 711 No: 36287289 Calculation time: 0 min 32 secs (Tested intern iterations: 98641010)
 
 -- Berechne VIP_01 - Nacht 6 inkl. Matchbox...
--- Combinations: 36288000 Yes: 684 No: 36287316 Calculation time: 0 min 43 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 684 No: 36287316 Calculation time: 0 min 32 secs (Tested intern iterations: 98641010)
 
 MatchBox: Finnja & Salvatore... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 3.8% [27]
@@ -33,10 +33,10 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0.0% [0]
 9 => 0.0% [0]
 10 => 0.0% [0]
-Die Kombinationen reduzieren sich: 711 => 342
+Die Kombinationen reduzieren sich: 684 => 342
 
 -- Berechne VIP_01 - Nacht 6 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 36288000 Yes: 342 No: 36287658 Calculation time: 0 min 39 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 342 No: 36287658 Calculation time: 0 min 32 secs (Tested intern iterations: 98641010)
 
 ==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
 Finnja: 7 [Eugen (58.77), Tommy (14.91), Josua (10.23), Diogo (6.43), Manuel (4.97), Jamie (4.39), Alex (0.29)]

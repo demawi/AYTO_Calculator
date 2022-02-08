@@ -19,11 +19,11 @@ Ein Mann ist hinzugekommen: Germain. Die Anzahl der Kombinationen erhöht sich d
 Ein Mann ist hinzugekommen: Dominic. Die Anzahl der Kombinationen erhöht sich damit!
 Ein Mann ist hinzugekommen: Marcel. Die Anzahl der Kombinationen erhöht sich damit!
 -- Berechne 02 - Nacht 1...
--- Combinations: 3628800 Yes: 3628800 No: 0 Calculation time: 0 min 11 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 3628800 No: 0 Calculation time: 0 min 8 secs (Tested intern iterations: 62353010)
 
 Die Anzahl der Kombinationen hat sich verändert: 0 => 3628800
 -- Berechne 02 - Nacht 1 inkl. Matchbox...
--- Combinations: 3628800 Yes: 3265920 No: 362880 Calculation time: 0 min 13 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 3265920 No: 362880 Calculation time: 0 min 9 secs (Tested intern iterations: 62353010)
 
 MatchBox: Jill & Maximilian... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 10.0% [362880]
@@ -54,10 +54,10 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0.0% [44]
 9 => 0.0% [0]
 10 => 0.0% [1]
-Die Kombinationen reduzieren sich: 3628800 => 608153
+Die Kombinationen reduzieren sich: 3265920 => 608153
 
 -- Berechne 02 - Nacht 1 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 3628800 Yes: 608153 No: 3020647 Calculation time: 0 min 11 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 608153 No: 3020647 Calculation time: 0 min 7 secs (Tested intern iterations: 62353010)
 
 ==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
 Jill: 9 [Marvin (21.95), Marko (9.76), Aaron (9.76), Marc (9.76), Sascha (9.76), Dario (9.76), Germain (9.76), Dominic (9.76), Marcel (9.76)]

@@ -1,13 +1,13 @@
 Eine Frau ist hinzugekommen: Vanessa. Die Anzahl der Kombinationen erhöht sich damit!
 -- Berechne VIP_01 - Nacht 3 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 3628800 Yes: 5522 No: 3623278 Calculation time: 0 min 8 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 5522 No: 3623278 Calculation time: 0 min 4 secs (Tested intern iterations: 62353010)
 
 -- Berechne VIP_01 - Nacht 4...
--- Combinations: 36288000 Yes: 55220 No: 36232780 Calculation time: 0 min 52 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 55220 No: 36232780 Calculation time: 0 min 31 secs (Tested intern iterations: 98641010)
 
 Die Anzahl der Kombinationen hat sich verändert: 5522 => 55220
 -- Berechne VIP_01 - Nacht 4 inkl. Matchbox...
--- Combinations: 36288000 Yes: 55220 No: 36232780 Calculation time: 0 min 54 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 55220 No: 36232780 Calculation time: 0 min 32 secs (Tested intern iterations: 98641010)
 
 MatchBox: Aurelia & Diogo verkauft. (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 36.82% [20330]
@@ -41,7 +41,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 Die Kombinationen reduzieren sich: 55220 => 8471
 
 -- Berechne VIP_01 - Nacht 4 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 36288000 Yes: 8471 No: 36279529 Calculation time: 0 min 52 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 8471 No: 36279529 Calculation time: 0 min 32 secs (Tested intern iterations: 98641010)
 
 ==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
 Finnja: 8 [Eugen (31.07), Tommy (14.96), Jamie (12.43), Salvatore (11.19), Alex (8.61), Josua (7.96), Manuel (6.89), Diogo (6.89)]

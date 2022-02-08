@@ -1,8 +1,8 @@
 -- Berechne VIP_01 - Nacht 5...
--- Combinations: 36288000 Yes: 8471 No: 36279529 Calculation time: 0 min 50 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 8471 No: 36279529 Calculation time: 0 min 32 secs (Tested intern iterations: 98641010)
 
 -- Berechne VIP_01 - Nacht 5 inkl. Matchbox...
--- Combinations: 36288000 Yes: 6156 No: 36281844 Calculation time: 0 min 51 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 6156 No: 36281844 Calculation time: 0 min 32 secs (Tested intern iterations: 98641010)
 
 MatchBox: Melina & Tommy... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 27.33% [2315]
@@ -33,10 +33,10 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0.0% [0]
 9 => 0.0% [0]
 10 => 0.0% [0]
-Die Kombinationen reduzieren sich: 8471 => 711
+Die Kombinationen reduzieren sich: 6156 => 711
 
 -- Berechne VIP_01 - Nacht 5 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 36288000 Yes: 711 No: 36287289 Calculation time: 0 min 46 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 711 No: 36287289 Calculation time: 0 min 32 secs (Tested intern iterations: 98641010)
 
 ==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
 Finnja: 8 [Eugen (64.84), Tommy (9.14), Alex (7.45), Josua (5.91), Salvatore (3.8), Diogo (3.52), Manuel (2.81), Jamie (2.53)]

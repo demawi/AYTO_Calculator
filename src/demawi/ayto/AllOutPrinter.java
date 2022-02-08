@@ -43,7 +43,7 @@ public class AllOutPrinter {
 
    public static void main(String[] args)
          throws Exception {
-      print(new AYTO_VIP01(), new AYTO_2(), new AYTO_3());
+      print(new AYTO_VIP01(), new AYTO_1(), new AYTO_2(), new AYTO_3());
    }
 
 }

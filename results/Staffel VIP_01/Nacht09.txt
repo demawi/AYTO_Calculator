@@ -1,8 +1,8 @@
 -- Berechne VIP_01 - Nacht 9...
--- Combinations: 36288000 Yes: 32 No: 36287968 Calculation time: 0 min 39 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 32 No: 36287968 Calculation time: 0 min 31 secs (Tested intern iterations: 98641010)
 
 -- Berechne VIP_01 - Nacht 9 inkl. Matchbox...
--- Combinations: 36288000 Yes: 32 No: 36287968 Calculation time: 0 min 40 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 32 No: 36287968 Calculation time: 0 min 33 secs (Tested intern iterations: 98641010)
 
 MatchBox: Melina & Tommy... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 0.0% [0]
@@ -36,7 +36,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 Die Kombinationen reduzieren sich: 32 => 17
 
 -- Berechne VIP_01 - Nacht 9 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 36288000 Yes: 17 No: 36287983 Calculation time: 0 min 40 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 17 No: 36287983 Calculation time: 0 min 32 secs (Tested intern iterations: 98641010)
 
 ==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
 Finnja: 4 [Diogo (47.06), Tommy (41.18), Alex (5.88), Josua (5.88)]

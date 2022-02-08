@@ -1,8 +1,8 @@
 -- Berechne VIP_01 - Nacht 2...
--- Combinations: 3628800 Yes: 205176 No: 3423624 Calculation time: 0 min 10 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 205176 No: 3423624 Calculation time: 0 min 6 secs (Tested intern iterations: 62353010)
 
 -- Berechne VIP_01 - Nacht 2 inkl. Matchbox...
--- Combinations: 3628800 Yes: 15449 No: 3613351 Calculation time: 0 min 8 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 15449 No: 3613351 Calculation time: 0 min 5 secs (Tested intern iterations: 62353010)
 
 MatchBox: Jules & Francesco... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 7.53% [15449] <==
@@ -12,7 +12,7 @@ Die Kombinationen reduzieren sich: 205176 => 15449
 Es hat keine Matching Night stattgefunden!
 
 -- Berechne VIP_01 - Nacht 2 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 3628800 Yes: 15449 No: 3613351 Calculation time: 0 min 8 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 15449 No: 3613351 Calculation time: 0 min 5 secs (Tested intern iterations: 62353010)
 
 ==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
 Finnja: 8 [Alex (15.95), Tommy (12.01), Eugen (12.01), Manuel (12.01), Salvatore (12.01), Diogo (12.01), Josua (12.01), Jamie (12.01)]

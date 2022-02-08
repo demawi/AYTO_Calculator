@@ -1,8 +1,8 @@
 -- Berechne 02 - Nacht 3...
--- Combinations: 3628800 Yes: 170886 No: 3457914 Calculation time: 0 min 8 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 170886 No: 3457914 Calculation time: 0 min 6 secs (Tested intern iterations: 62353010)
 
 -- Berechne 02 - Nacht 3 inkl. Matchbox...
--- Combinations: 3628800 Yes: 125268 No: 3503532 Calculation time: 0 min 9 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 125268 No: 3503532 Calculation time: 0 min 6 secs (Tested intern iterations: 62353010)
 
 MatchBox: Kathleen & Aaron... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 26.69% [45618]
@@ -33,10 +33,10 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0.0% [0]
 9 => 0.0% [0]
 10 => 0.0% [0]
-Die Kombinationen reduzieren sich: 170886 => 5406
+Die Kombinationen reduzieren sich: 125268 => 5406
 
 -- Berechne 02 - Nacht 3 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 3628800 Yes: 5406 No: 3623394 Calculation time: 0 min 8 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 5406 No: 3623394 Calculation time: 0 min 6 secs (Tested intern iterations: 62353010)
 
 ==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
 Jill: 9 [Sascha (34.28), Aaron (11.01), Marko (8.81), Dario (8.77), Dominic (8.29), Marc (8.14), Germain (7.82), Marcel (6.51), Marvin (6.38)]

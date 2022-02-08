@@ -1,8 +1,8 @@
 -- Berechne VIP_01 - Nacht 10...
--- Combinations: 36288000 Yes: 17 No: 36287983 Calculation time: 0 min 42 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 17 No: 36287983 Calculation time: 0 min 31 secs (Tested intern iterations: 98641010)
 
 -- Berechne VIP_01 - Nacht 10 inkl. Matchbox...
--- Combinations: 36288000 Yes: 7 No: 36287993 Calculation time: 0 min 41 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 7 No: 36287993 Calculation time: 0 min 33 secs (Tested intern iterations: 98641010)
 
 MatchBox: Aurelia & Josua... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 41.18% [7] <==
@@ -33,10 +33,10 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0.0% [0]
 9 => 0.0% [0]
 10 => 0.0% [0]
-Die Kombinationen reduzieren sich: 17 => 1
+Die Kombinationen reduzieren sich: 7 => 1
 
 -- Berechne VIP_01 - Nacht 10 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 36288000 Yes: 1 No: 36287999 Calculation time: 0 min 41 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 1 No: 36287999 Calculation time: 0 min 31 secs (Tested intern iterations: 98641010)
 
 ==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
 Finnja: 1 [Diogo (100.0)]

@@ -1,0 +1,404 @@
+-- Berechne 01 - Nacht 2...
+-- Combinations: 3628800 Yes: 1201464 No: 2427336 Calculation time: 0 min 7 secs (Tested intern iterations: 62353010)
+
+-- Berechne 01 - Nacht 2 inkl. Matchbox...
+-- Combinations: 3628800 Yes: 1084655 No: 2544145 Calculation time: 0 min 7 secs (Tested intern iterations: 62353010)
+
+MatchBox: Melissa & Dominic... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 9.72% [116809]
+Nein => 90.28% [1084655] <==
+Die Kombinationen reduzieren sich: 1201464 => 1084655
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Sabrina & Dominic: 10.96%
+Luisa & René: 9.65%
+Maddie & Axel: 9.65%
+Katharina & Kevin: 9.65%
+Ivana & Elisha: 10.77%
+Aline & Ferhat: 9.65%
+Michelle & Mo: 12.31%
+Laura & Juliano: 9.6%
+Nadine & Aleks: 9.65%
+Melissa & Laurin: 10.96%
+
+Wahrscheinlichkeit für entsprechende Spotanzahl:
+0 => 36.07% [391210]
+1 => 36.51% [395984]
+2 => 18.71% [202933] <==
+3 => 6.51% [70575]
+4 => 1.74% [18868]
+5 => 0.38% [4135]
+6 => 0.07% [801]
+7 => 0.01% [121]
+8 => 0.0% [27]
+9 => 0.0% [0]
+10 => 0.0% [1]
+Die Kombinationen reduzieren sich: 1084655 => 202933
+
+-- Berechne 01 - Nacht 2 inkl. Matchbox inkl. Matchingnight...
+-- Combinations: 3628800 Yes: 202933 No: 3425867 Calculation time: 0 min 6 secs (Tested intern iterations: 62353010)
+
+==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
+Ivana: 9 [Elisha (20.96), Dominic (10.68), Juliano (10.67), René (9.68), Kevin (9.67), Axel (9.67), Ferhat (9.63), Aleks (9.62), Laurin (9.41)]
+Luisa: 10 [René (18.74), Dominic (9.75), Mo (9.37), Axel (9.37), Ferhat (8.88), Kevin (8.86), Aleks (8.85), Juliano (8.83), Elisha (8.73), Laurin (8.62)]
+Melissa: 9 [Laurin (21.35), Mo (10.67), Ferhat (9.75), Kevin (9.75), René (9.75), Axel (9.74), Aleks (9.72), Juliano (9.71), Elisha (9.56)]
+Michelle: 10 [Mo (24.01), Dominic (9.51), Ferhat (8.36), Axel (8.36), Kevin (8.36), René (8.36), Aleks (8.33), Juliano (8.32), Elisha (8.22), Laurin (8.17)]
+Nadine: 10 [Aleks (18.73), Dominic (9.75), Mo (9.36), Elisha (9.14), Ferhat (8.89), Kevin (8.89), Axel (8.89), René (8.88), Juliano (8.79), Laurin (8.67)]
+Katharina: 10 [Kevin (18.74), Dominic (9.75), Mo (9.37), René (9.37), Ferhat (8.87), Aleks (8.84), Axel (8.84), Juliano (8.83), Elisha (8.74), Laurin (8.65)]
+Laura: 10 [Juliano (18.63), Dominic (9.76), Mo (9.37), Ferhat (9.34), Axel (8.89), René (8.89), Aleks (8.87), Kevin (8.85), Elisha (8.73), Laurin (8.66)]
+Maddie: 10 [Axel (18.73), Dominic (9.71), Laurin (9.37), Mo (9.34), Ferhat (8.86), Kevin (8.85), René (8.83), Aleks (8.81), Juliano (8.8), Elisha (8.7)]
+Aline: 10 [Ferhat (18.75), Dominic (9.74), Kevin (9.37), Mo (9.37), Axel (8.87), Aleks (8.85), René (8.84), Juliano (8.81), Elisha (8.74), Laurin (8.65)]
+Sabrina: 10 [Dominic (21.35), Aleks (9.36), Mo (9.14), Ferhat (8.67), René (8.66), Kevin (8.65), Axel (8.65), Juliano (8.6), Elisha (8.47), Laurin (8.45)]
+
+Mo: 9 [Michelle (24.01), Melissa (10.67), Laura (9.37), Katharina (9.37), Luisa (9.37), Aline (9.37), Nadine (9.36), Maddie (9.34), Sabrina (9.14)]
+Axel: 10 [Maddie (18.73), Melissa (9.74), Ivana (9.67), Luisa (9.37), Laura (8.89), Nadine (8.89), Aline (8.87), Katharina (8.84), Sabrina (8.65), Michelle (8.36)]
+Juliano: 10 [Laura (18.63), Ivana (10.67), Melissa (9.71), Katharina (8.83), Luisa (8.83), Aline (8.81), Maddie (8.8), Nadine (8.79), Sabrina (8.6), Michelle (8.32)]
+Dominic: 9 [Sabrina (21.35), Ivana (10.68), Laura (9.76), Katharina (9.75), Nadine (9.75), Luisa (9.75), Aline (9.74), Maddie (9.71), Michelle (9.51)]
+Elisha: 10 [Ivana (20.96), Melissa (9.56), Nadine (9.14), Katharina (8.74), Aline (8.74), Luisa (8.73), Laura (8.73), Maddie (8.7), Sabrina (8.47), Michelle (8.22)]
+René: 10 [Luisa (18.74), Melissa (9.75), Ivana (9.68), Katharina (9.37), Laura (8.89), Nadine (8.88), Aline (8.84), Maddie (8.83), Sabrina (8.66), Michelle (8.36)]
+Ferhat: 10 [Aline (18.75), Melissa (9.75), Ivana (9.63), Laura (9.34), Nadine (8.89), Luisa (8.88), Katharina (8.87), Maddie (8.86), Sabrina (8.67), Michelle (8.36)]
+Laurin: 10 [Melissa (21.35), Ivana (9.41), Maddie (9.37), Nadine (8.67), Laura (8.66), Aline (8.65), Katharina (8.65), Luisa (8.62), Sabrina (8.45), Michelle (8.17)]
+Kevin: 10 [Katharina (18.74), Melissa (9.75), Ivana (9.67), Aline (9.37), Nadine (8.89), Luisa (8.86), Laura (8.85), Maddie (8.85), Sabrina (8.65), Michelle (8.36)]
+Aleks: 10 [Nadine (18.73), Melissa (9.72), Ivana (9.62), Sabrina (9.36), Laura (8.87), Aline (8.85), Luisa (8.85), Katharina (8.84), Maddie (8.81), Michelle (8.33)]
+
+==== Mögliche Paare: 98/100 ====
+Michelle & Mo => 24.01% [48717/202933] Gemeinsame MNs: 2/10
+Sabrina & Dominic => 21.35% [43329/202933] Gemeinsame MNs: 5/10
+Melissa & Laurin => 21.35% [43323/202933] Gemeinsame MNs: 9/10
+Ivana & Elisha => 20.96% [42537/202933] Gemeinsame MNs: 2/10
+Aline & Ferhat => 18.75% [38043/202933] Gemeinsame MNs: 1/10
+Katharina & Kevin => 18.74% [38039/202933] Gemeinsame MNs: 5/10
+Luisa & René => 18.74% [38038/202933] Gemeinsame MNs: 3/10
+Maddie & Axel => 18.73% [38016/202933] Gemeinsame MNs: 2/10
+Nadine & Aleks => 18.73% [38008/202933] Gemeinsame MNs: 2/10
+Laura & Juliano => 18.63% [37816/202933] Gemeinsame MNs: 6/10
+Ivana & Dominic => 10.68% [21670/202933] Gemeinsame MNs: 3/10
+Melissa & Mo => 10.67% [21654/202933] Gemeinsame MNs: 0/10
+Ivana & Juliano => 10.67% [21654/202933] Gemeinsame MNs: 2/10
+Laura & Dominic => 9.76% [19816/202933] Gemeinsame MNs: 0/10
+Melissa & Ferhat => 9.75% [19790/202933] Gemeinsame MNs: 0/10
+Melissa & Kevin => 9.75% [19789/202933] Gemeinsame MNs: 0/10
+Katharina & Dominic => 9.75% [19783/202933] Gemeinsame MNs: 0/10
+Nadine & Dominic => 9.75% [19781/202933] Gemeinsame MNs: 1/10
+Luisa & Dominic => 9.75% [19780/202933] Gemeinsame MNs: 0/10
+Melissa & René => 9.75% [19778/202933] Gemeinsame MNs: 0/10
+Aline & Dominic => 9.74% [19771/202933] Gemeinsame MNs: 0/10
+Melissa & Axel => 9.74% [19757/202933] Gemeinsame MNs: 0/10
+Melissa & Aleks => 9.72% [19731/202933] Gemeinsame MNs: 0/10
+Maddie & Dominic => 9.71% [19714/202933] Gemeinsame MNs: 0/10
+Melissa & Juliano => 9.71% [19714/202933] Gemeinsame MNs: 0/10
+Ivana & René => 9.68% [19646/202933] Gemeinsame MNs: 0/10
+Ivana & Kevin => 9.67% [19631/202933] Gemeinsame MNs: 2/10
+Ivana & Axel => 9.67% [19624/202933] Gemeinsame MNs: 1/10
+Ivana & Ferhat => 9.63% [19551/202933] Gemeinsame MNs: 0/10
+Ivana & Aleks => 9.62% [19520/202933] Gemeinsame MNs: 0/10
+Melissa & Elisha => 9.56% [19397/202933] Gemeinsame MNs: 0/10
+Michelle & Dominic => 9.51% [19289/202933] Gemeinsame MNs: 0/10
+Ivana & Laurin => 9.41% [19100/202933] Gemeinsame MNs: 0/10
+Maddie & Laurin => 9.37% [19018/202933] Gemeinsame MNs: 1/10
+Laura & Mo => 9.37% [19018/202933] Gemeinsame MNs: 0/10
+Katharina & Mo => 9.37% [19015/202933] Gemeinsame MNs: 0/10
+Katharina & René => 9.37% [19015/202933] Gemeinsame MNs: 1/10
+Aline & Kevin => 9.37% [19014/202933] Gemeinsame MNs: 1/10
+Luisa & Mo => 9.37% [19014/202933] Gemeinsame MNs: 0/10
+Luisa & Axel => 9.37% [19012/202933] Gemeinsame MNs: 6/10
+Aline & Mo => 9.37% [19012/202933] Gemeinsame MNs: 8/10
+Sabrina & Aleks => 9.36% [19003/202933] Gemeinsame MNs: 2/10
+Nadine & Mo => 9.36% [19003/202933] Gemeinsame MNs: 0/10
+Maddie & Mo => 9.34% [18946/202933] Gemeinsame MNs: 0/10
+Laura & Ferhat => 9.34% [18946/202933] Gemeinsame MNs: 1/10
+Sabrina & Mo => 9.14% [18554/202933] Gemeinsame MNs: 0/10
+Nadine & Elisha => 9.14% [18554/202933] Gemeinsame MNs: 2/10
+Nadine & Ferhat => 8.89% [18049/202933] Gemeinsame MNs: 4/10
+Nadine & Kevin => 8.89% [18046/202933] Gemeinsame MNs: 0/10
+Laura & Axel => 8.89% [18039/202933] Gemeinsame MNs: 0/10
+Laura & René => 8.89% [18037/202933] Gemeinsame MNs: 0/10
+Nadine & Axel => 8.89% [18035/202933] Gemeinsame MNs: 0/10
+Nadine & René => 8.88% [18029/202933] Gemeinsame MNs: 1/10
+Luisa & Ferhat => 8.88% [18022/202933] Gemeinsame MNs: 1/10
+Aline & Axel => 8.87% [18000/202933] Gemeinsame MNs: 0/10
+Katharina & Ferhat => 8.87% [18000/202933] Gemeinsame MNs: 0/10
+Laura & Aleks => 8.87% [17999/202933] Gemeinsame MNs: 1/10
+Luisa & Kevin => 8.86% [17976/202933] Gemeinsame MNs: 0/10
+Maddie & Ferhat => 8.86% [17975/202933] Gemeinsame MNs: 1/10
+Laura & Kevin => 8.85% [17969/202933] Gemeinsame MNs: 1/10
+Aline & Aleks => 8.85% [17969/202933] Gemeinsame MNs: 0/10
+Luisa & Aleks => 8.85% [17962/202933] Gemeinsame MNs: 0/10
+Maddie & Kevin => 8.85% [17952/202933] Gemeinsame MNs: 1/10
+Aline & René => 8.84% [17945/202933] Gemeinsame MNs: 0/10
+Katharina & Aleks => 8.84% [17945/202933] Gemeinsame MNs: 2/10
+Katharina & Axel => 8.84% [17933/202933] Gemeinsame MNs: 0/10
+Katharina & Juliano => 8.83% [17919/202933] Gemeinsame MNs: 1/10
+Maddie & René => 8.83% [17918/202933] Gemeinsame MNs: 0/10
+Luisa & Juliano => 8.83% [17918/202933] Gemeinsame MNs: 0/10
+Aline & Juliano => 8.81% [17886/202933] Gemeinsame MNs: 0/10
+Maddie & Aleks => 8.81% [17883/202933] Gemeinsame MNs: 3/10
+Maddie & Juliano => 8.8% [17849/202933] Gemeinsame MNs: 1/10
+Nadine & Juliano => 8.79% [17840/202933] Gemeinsame MNs: 0/10
+Katharina & Elisha => 8.74% [17738/202933] Gemeinsame MNs: 1/10
+Aline & Elisha => 8.74% [17733/202933] Gemeinsame MNs: 0/10
+Luisa & Elisha => 8.73% [17721/202933] Gemeinsame MNs: 0/10
+Laura & Elisha => 8.73% [17718/202933] Gemeinsame MNs: 0/10
+Maddie & Elisha => 8.7% [17662/202933] Gemeinsame MNs: 0/10
+Nadine & Laurin => 8.67% [17588/202933] Gemeinsame MNs: 0/10
+Sabrina & Ferhat => 8.67% [17587/202933] Gemeinsame MNs: 0/10
+Laura & Laurin => 8.66% [17575/202933] Gemeinsame MNs: 0/10
+Sabrina & René => 8.66% [17565/202933] Gemeinsame MNs: 0/10
+Aline & Laurin => 8.65% [17560/202933] Gemeinsame MNs: 0/10
+Sabrina & Kevin => 8.65% [17554/202933] Gemeinsame MNs: 0/10
+Sabrina & Axel => 8.65% [17548/202933] Gemeinsame MNs: 0/10
+Katharina & Laurin => 8.65% [17546/202933] Gemeinsame MNs: 0/10
+Luisa & Laurin => 8.62% [17490/202933] Gemeinsame MNs: 0/10
+Sabrina & Juliano => 8.6% [17447/202933] Gemeinsame MNs: 0/10
+Sabrina & Elisha => 8.47% [17192/202933] Gemeinsame MNs: 3/10
+Sabrina & Laurin => 8.45% [17154/202933] Gemeinsame MNs: 0/10
+Michelle & Ferhat => 8.36% [16970/202933] Gemeinsame MNs: 1/10
+Michelle & Axel => 8.36% [16969/202933] Gemeinsame MNs: 1/10
+Michelle & Kevin => 8.36% [16963/202933] Gemeinsame MNs: 0/10
+Michelle & René => 8.36% [16962/202933] Gemeinsame MNs: 5/10
+Michelle & Aleks => 8.33% [16913/202933] Gemeinsame MNs: 0/10
+Michelle & Juliano => 8.32% [16890/202933] Gemeinsame MNs: 0/10
+Michelle & Elisha => 8.22% [16681/202933] Gemeinsame MNs: 1/10
+Michelle & Laurin => 8.17% [16579/202933] Gemeinsame MNs: 0/10
+
+==== Beste Konstellationen ====
+> Platz 1 mit 238960 Punkten (Summe der Vorkommen der Einzelpaare)
+Katharina & Elisha
+Luisa & Juliano
+Michelle & Mo
+Maddie & Ferhat
+Laura & Axel
+Sabrina & René
+Ivana & Dominic
+Aline & Aleks
+Melissa & Laurin
+Nadine & Kevin
+
+> Platz 2 mit 238951 Punkten (Summe der Vorkommen der Einzelpaare)
+Katharina & Elisha
+Aline & Axel
+Luisa & Juliano
+Laura & Aleks
+Michelle & Mo
+Maddie & Ferhat
+Sabrina & René
+Ivana & Dominic
+Melissa & Laurin
+Nadine & Kevin
+
+> Platz 3 mit 238949 Punkten (Summe der Vorkommen der Einzelpaare)
+Michelle & Mo
+Katharina & Juliano
+Aline & Elisha
+Maddie & Ferhat
+Laura & Axel
+Sabrina & René
+Ivana & Dominic
+Luisa & Aleks
+Melissa & Laurin
+Nadine & Kevin
+
+> Platz 4 mit 238946 Punkten (Summe der Vorkommen der Einzelpaare)
+Katharina & Elisha
+Luisa & Juliano
+Maddie & Kevin
+Sabrina & Ferhat
+Michelle & Mo
+Nadine & Axel
+Ivana & Dominic
+Aline & Aleks
+Laura & René
+Melissa & Laurin
+
+> Platz 5 mit 238944 Punkten (Summe der Vorkommen der Einzelpaare)
+Michelle & Mo
+Katharina & Juliano
+Maddie & Ferhat
+Laura & Axel
+Luisa & Elisha
+Sabrina & René
+Ivana & Dominic
+Aline & Aleks
+Melissa & Laurin
+Nadine & Kevin
+
+> Platz 6 mit 238942 Punkten (Summe der Vorkommen der Einzelpaare)
+Katharina & Elisha
+Luisa & Juliano
+Maddie & Kevin
+Sabrina & Ferhat
+Michelle & Mo
+Laura & Axel
+Ivana & Dominic
+Nadine & René
+Aline & Aleks
+Melissa & Laurin
+
+> Platz 7 mit 238941 Punkten (Summe der Vorkommen der Einzelpaare)
+Katharina & Elisha
+Luisa & Juliano
+Michelle & Mo
+Maddie & Ferhat
+Ivana & Dominic
+Aline & Aleks
+Sabrina & Axel
+Laura & René
+Melissa & Laurin
+Nadine & Kevin
+
+> Platz 8 mit 238940 Punkten (Summe der Vorkommen der Einzelpaare)
+Katharina & Elisha
+Nadine & Ferhat
+Luisa & Juliano
+Maddie & Kevin
+Michelle & Mo
+Laura & Axel
+Sabrina & René
+Ivana & Dominic
+Aline & Aleks
+Melissa & Laurin
+
+> Platz 9 mit 238938 Punkten (Summe der Vorkommen der Einzelpaare)
+Katharina & Elisha
+Luisa & Ferhat
+Michelle & Mo
+Laura & Axel
+Sabrina & René
+Ivana & Dominic
+Maddie & Juliano
+Aline & Aleks
+Melissa & Laurin
+Nadine & Kevin
+
+> Platz 10 mit 238936 Punkten (Summe der Vorkommen der Einzelpaare)
+Katharina & Elisha
+Luisa & Juliano
+Michelle & Mo
+Maddie & Ferhat
+Nadine & Axel
+Ivana & Dominic
+Sabrina & Kevin
+Aline & Aleks
+Laura & René
+Melissa & Laurin
+
+> Platz 11 mit 238935 Punkten (Summe der Vorkommen der Einzelpaare)
+Aline & Axel
+Laura & Aleks
+Michelle & Mo
+Katharina & Juliano
+Maddie & Ferhat
+Luisa & Elisha
+Sabrina & René
+Ivana & Dominic
+Melissa & Laurin
+Nadine & Kevin
+
+> Platz 12 mit 238935 Punkten (Summe der Vorkommen der Einzelpaare)
+Maddie & Kevin
+Laura & Aleks
+Luisa & Ferhat
+Michelle & Mo
+Katharina & Juliano
+Aline & Elisha
+Sabrina & René
+Nadine & Axel
+Ivana & Dominic
+Melissa & Laurin
+
+> Platz 13 mit 238935 Punkten (Summe der Vorkommen der Einzelpaare)
+Maddie & Kevin
+Sabrina & Ferhat
+Michelle & Mo
+Katharina & Juliano
+Aline & Elisha
+Nadine & Axel
+Ivana & Dominic
+Luisa & Aleks
+Laura & René
+Melissa & Laurin
+
+> Platz 14 mit 238933 Punkten (Summe der Vorkommen der Einzelpaare)
+Katharina & Elisha
+Aline & Axel
+Luisa & Juliano
+Maddie & Kevin
+Laura & Aleks
+Sabrina & Ferhat
+Michelle & Mo
+Ivana & Dominic
+Nadine & René
+Melissa & Laurin
+
+> Platz 15 mit 238932 Punkten (Summe der Vorkommen der Einzelpaare)
+Katharina & Elisha
+Luisa & Juliano
+Michelle & Mo
+Maddie & Ferhat
+Laura & Axel
+Ivana & Dominic
+Nadine & René
+Sabrina & Kevin
+Aline & Aleks
+Melissa & Laurin
+
+> Platz 16 mit 238932 Punkten (Summe der Vorkommen der Einzelpaare)
+Luisa & Ferhat
+Michelle & Mo
+Katharina & Juliano
+Laura & Axel
+Sabrina & René
+Ivana & Dominic
+Aline & Aleks
+Melissa & Laurin
+Nadine & Kevin
+Maddie & Elisha
+
+> Platz 17 mit 238931 Punkten (Summe der Vorkommen der Einzelpaare)
+Katharina & Elisha
+Aline & Axel
+Nadine & Ferhat
+Luisa & Juliano
+Maddie & Kevin
+Laura & Aleks
+Michelle & Mo
+Sabrina & René
+Ivana & Dominic
+Melissa & Laurin
+
+> Platz 18 mit 238931 Punkten (Summe der Vorkommen der Einzelpaare)
+Katharina & Aleks
+Luisa & Juliano
+Michelle & Mo
+Aline & Elisha
+Maddie & Ferhat
+Laura & Axel
+Sabrina & René
+Ivana & Dominic
+Melissa & Laurin
+Nadine & Kevin
+
+> Platz 19 mit 238931 Punkten (Summe der Vorkommen der Einzelpaare)
+Maddie & Kevin
+Sabrina & Ferhat
+Michelle & Mo
+Katharina & Juliano
+Aline & Elisha
+Laura & Axel
+Ivana & Dominic
+Nadine & René
+Luisa & Aleks
+Melissa & Laurin
+
+> Platz 20 mit 238930 Punkten (Summe der Vorkommen der Einzelpaare)
+Maddie & Kevin
+Sabrina & Ferhat
+Michelle & Mo
+Katharina & Juliano
+Luisa & Elisha
+Nadine & Axel
+Ivana & Dominic
+Aline & Aleks
+Laura & René
+Melissa & Laurin
+
