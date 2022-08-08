@@ -12,6 +12,14 @@ public class AYTO_Data {
   public List<Tag> tage = new ArrayList<>();
   public List<Pair> pairsToTrack;
 
+  public static Frau newFrau(String name) {
+    return new Frau(name);
+  }
+
+  public static Mann newMann(String name) {
+    return new Mann(name);
+  }
+
   public AYTO_Data(String name) {
     this.name = name;
   }

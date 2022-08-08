@@ -76,7 +76,9 @@ public class AYTO_3
           pair(Joelina, Tim), pair(Jessica, Leon));
 
     // 10ter Tag
-    add(false, pair(Isabelle, Dustin), 2, null);
+    add(false, pair(Isabelle, Dustin), 10, pair(Zaira, Marius), pair(Marie, Dustin), pair(Isabelle, Andre),
+          pair(Kerstin, Tim), pair(Monami, Max), pair(Estelle, Jordi), pair(Jessica, Leon), pair(Joelina, Mike),
+          pair(Raphaela, William), pair(Dana, Antonino)); // Desiree
 
     track(pair(Estelle, Jordi), pair(Zaira, Marius), pair(Monami, Max), pair(Isabelle, Andre), pair(Dana, Antonino),
           pair(Joelina, Mike), pair(Raphaela, William), pair(Marie, Dustin), pair(Kerstin, Tim), pair(Jessica, Leon));
