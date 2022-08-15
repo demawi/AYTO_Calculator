@@ -29,7 +29,7 @@ public class AYTO_VIP02
    private static Mann Fabio = newMann("Fabio");
    private static Mann Max = newMann("Max");
    private static Mann Michael = newMann("Michael");
-   private static Mann Luca = newMann("Josua");
+   private static Mann Luca = newMann("Luca");
 
    public AYTO_VIP02() {
       super("VIP_02");
@@ -38,7 +38,9 @@ public class AYTO_VIP02
             pair(Ricarda, Maurice), pair(Gina, Calvin), pair(Cecilia, Amadu), pair(Karina, Pharrell),
             pair(Isabelle, Lukas), pair(Luisa, Fabio), pair(Zoe, Luca));
 
-      add(false, pair(Karina, Pharrell), 3, null);
+      add(false, pair(Karina, Pharrell), 2, pair(Ricarda, Maurice), pair(Isabelle, Martin), pair(Anna, Michael),
+            pair(Gina, Amadu), pair(Luisa, Calvin), pair(Franziska, Luca), pair(Celina, Max), pair(Zoe, Lukas),
+            pair(Karina, Fabio), pair(Cecilia, Pharrell));
 
       // coming
       // add(false, pair(Kerstin, Max)); // 26.32
