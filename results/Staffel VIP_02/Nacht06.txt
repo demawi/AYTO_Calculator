@@ -1,0 +1,401 @@
+-- Berechne VIP_02 - Nacht 6...
+-- Combinations: 36288000 Yes: 904 No: 36287096 Calculation time: 0 min 41 secs (Tested intern iterations: 98641010)
+
+-- Berechne VIP_02 - Nacht 6 inkl. Matchbox...
+-- Combinations: 36288000 Yes: 764 No: 36287236 Calculation time: 0 min 46 secs (Tested intern iterations: 98641010)
+
+MatchBox: Isabelle & Pharrell... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 15.49% [140]
+Nein => 84.51% [764] <==
+Die Kombinationen reduzieren sich: 904 => 764
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Ricarda & Pharrell: 3.53%
+Cecilia & Maurice: 0.0%
+Gina & Felix: 13.09%
+Zoe & Luca: 28.66%
+Isabelle & Martin: 26.83%
+Anna & Michael: 35.99%
+Luisa & Lukas: 100.0%
+Franziska & Max: 21.07%
+Karina & Calvin: 27.09%
+Celina & Fabio: 30.63%
+
+Wahrscheinlichkeit für entsprechende Spotanzahl:
+0 => 0.0% [0]
+1 => 14.66% [112]
+2 => 31.41% [240]
+3 => 25.52% [195] <==
+4 => 14.79% [113]
+5 => 9.03% [69]
+6 => 3.53% [27]
+7 => 1.05% [8]
+8 => 0.0% [0]
+9 => 0.0% [0]
+10 => 0.0% [0]
+Die Kombinationen reduzieren sich: 764 => 195
+
+-- Berechne VIP_02 - Nacht 6 inkl. Matchbox inkl. Matchingnight...
+-- Combinations: 36288000 Yes: 195 No: 36287805 Calculation time: 0 min 43 secs (Tested intern iterations: 98641010)
+
+==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
+Zoe: 8 [Luca (28.72), Pharrell (20.0), Max (15.38), Michael (14.87), Calvin (10.26), Felix (10.26), Fabio (6.15), Amadu (4.62)]
+Ricarda: 4 [Maurice (93.85), Fabio (4.1), Martin (1.03), Calvin (1.03)]
+Isabelle: 9 [Martin (26.15), Luca (20.51), Max (16.92), Michael (15.38), Calvin (10.77), Felix (10.26), Maurice (4.1), Amadu (4.1), Fabio (2.05)]
+Karina: 7 [Max (28.21), Luca (27.69), Martin (17.44), Calvin (14.87), Felix (10.26), Fabio (6.67), Michael (5.13)]
+Cecilia: 7 [Amadu (73.85), Pharrell (12.31), Felix (10.26), Max (8.21), Luca (4.1), Fabio (1.03), Calvin (0.51)]
+Anna: 9 [Michael (46.15), Fabio (18.46), Martin (11.28), Felix (10.26), Max (5.64), Calvin (5.13), Luca (4.62), Pharrell (4.62), Amadu (4.1)]
+Celina: 10 [Fabio (53.33), Pharrell (14.36), Calvin (11.79), Felix (10.26), Martin (8.21), Max (8.21), Luca (1.54), Michael (1.54), Maurice (0.51), Amadu (0.51)]
+Luisa: 2 [Lukas (100.0), Felix (10.26)]
+Franziska: 9 [Pharrell (32.31), Martin (18.97), Amadu (12.82), Max (12.82), Felix (10.26), Calvin (9.23), Luca (6.67), Fabio (6.15), Maurice (1.03)]
+Gina: 9 [Calvin (36.41), Felix (17.95), Martin (16.92), Michael (16.92), Pharrell (16.41), Luca (6.15), Max (4.62), Fabio (2.05), Maurice (0.51)]
+
+Martin: 7 [Isabelle (26.15), Franziska (18.97), Karina (17.44), Gina (16.92), Anna (11.28), Celina (8.21), Ricarda (1.03)]
+Maurice: 5 [Ricarda (93.85), Isabelle (4.1), Franziska (1.03), Celina (0.51), Gina (0.51)]
+Luca: 8 [Zoe (28.72), Karina (27.69), Isabelle (20.51), Franziska (6.67), Gina (6.15), Anna (4.62), Cecilia (4.1), Celina (1.54)]
+Lukas: 1 [Luisa (100.0)]
+Pharrell: 6 [Franziska (32.31), Zoe (20.0), Gina (16.41), Celina (14.36), Cecilia (12.31), Anna (4.62)]
+Amadu: 6 [Cecilia (73.85), Franziska (12.82), Zoe (4.62), Isabelle (4.1), Anna (4.1), Celina (0.51)]
+Michael: 6 [Anna (46.15), Gina (16.92), Isabelle (15.38), Zoe (14.87), Karina (5.13), Celina (1.54)]
+Fabio: 9 [Celina (53.33), Anna (18.46), Karina (6.67), Zoe (6.15), Franziska (6.15), Ricarda (4.1), Isabelle (2.05), Gina (2.05), Cecilia (1.03)]
+Max: 8 [Karina (28.21), Isabelle (16.92), Zoe (15.38), Franziska (12.82), Cecilia (8.21), Celina (8.21), Anna (5.64), Gina (4.62)]
+Calvin: 9 [Gina (36.41), Karina (14.87), Celina (11.79), Isabelle (10.77), Zoe (10.26), Franziska (9.23), Anna (5.13), Ricarda (1.03), Cecilia (0.51)]
+Felix: 9 [Gina (17.95), Zoe (10.26), Isabelle (10.26), Karina (10.26), Cecilia (10.26), Anna (10.26), Celina (10.26), Luisa (10.26), Franziska (10.26)]
+
+==== Mögliche Paare: 74/110 ====
+Luisa & Lukas => 100.0% [195/195] Gemeinsame MNs: 2/6
+Ricarda & Maurice => 93.85% [183/195] Gemeinsame MNs: 3/6
+Cecilia & Amadu => 73.85% [144/195] Gemeinsame MNs: 3/6
+Celina & Fabio => 53.33% [104/195] Gemeinsame MNs: 3/6
+Anna & Michael => 46.15% [90/195] Gemeinsame MNs: 3/6
+Gina & Calvin => 36.41% [71/195] Gemeinsame MNs: 1/6
+Franziska & Pharrell => 32.31% [63/195] Gemeinsame MNs: 0/6
+Zoe & Luca => 28.72% [56/195] Gemeinsame MNs: 3/6
+Karina & Max => 28.21% [55/195] Gemeinsame MNs: 0/6
+Karina & Luca => 27.69% [54/195] Gemeinsame MNs: 0/6
+Isabelle & Martin => 26.15% [51/195] Gemeinsame MNs: 2/6
+Isabelle & Luca => 20.51% [40/195] Gemeinsame MNs: 1/6
+Zoe & Pharrell => 20.0% [39/195] Gemeinsame MNs: 0/6
+Franziska & Martin => 18.97% [37/195] Gemeinsame MNs: 0/6
+Anna & Fabio => 18.46% [36/195] Gemeinsame MNs: 0/6
+Gina & Felix => 17.95% [35/195] Gemeinsame MNs: 2/6
+Karina & Martin => 17.44% [34/195] Gemeinsame MNs: 1/6
+Gina & Michael => 16.92% [33/195] Gemeinsame MNs: 1/6
+Isabelle & Max => 16.92% [33/195] Gemeinsame MNs: 0/6
+Gina & Martin => 16.92% [33/195] Gemeinsame MNs: 0/6
+Gina & Pharrell => 16.41% [32/195] Gemeinsame MNs: 0/6
+Isabelle & Michael => 15.38% [30/195] Gemeinsame MNs: 0/6
+Zoe & Max => 15.38% [30/195] Gemeinsame MNs: 1/6
+Karina & Calvin => 14.87% [29/195] Gemeinsame MNs: 2/6
+Zoe & Michael => 14.87% [29/195] Gemeinsame MNs: 0/6
+Celina & Pharrell => 14.36% [28/195] Gemeinsame MNs: 0/6
+Franziska & Amadu => 12.82% [25/195] Gemeinsame MNs: 0/6
+Franziska & Max => 12.82% [25/195] Gemeinsame MNs: 2/6
+Cecilia & Pharrell => 12.31% [24/195] Gemeinsame MNs: 1/6
+Celina & Calvin => 11.79% [23/195] Gemeinsame MNs: 0/6
+Anna & Martin => 11.28% [22/195] Gemeinsame MNs: 1/6
+Isabelle & Calvin => 10.77% [21/195] Gemeinsame MNs: 0/6
+Zoe & Calvin => 10.26% [20/195] Gemeinsame MNs: 0/6
+Cecilia & Felix => 10.26% [20/195] Gemeinsame MNs: 0/6
+Franziska & Felix => 10.26% [20/195] Gemeinsame MNs: 0/6
+Zoe & Felix => 10.26% [20/195] Gemeinsame MNs: 0/6
+Celina & Felix => 10.26% [20/195] Gemeinsame MNs: 0/6
+Karina & Felix => 10.26% [20/195] Gemeinsame MNs: 0/6
+Anna & Felix => 10.26% [20/195] Gemeinsame MNs: 0/6
+Isabelle & Felix => 10.26% [20/195] Gemeinsame MNs: 0/6
+Luisa & Felix => 10.26% [20/195] Gemeinsame MNs: 0/6
+Franziska & Calvin => 9.23% [18/195] Gemeinsame MNs: 0/6
+Celina & Martin => 8.21% [16/195] Gemeinsame MNs: 1/6
+Cecilia & Max => 8.21% [16/195] Gemeinsame MNs: 0/6
+Celina & Max => 8.21% [16/195] Gemeinsame MNs: 1/6
+Karina & Fabio => 6.67% [13/195] Gemeinsame MNs: 1/6
+Franziska & Luca => 6.67% [13/195] Gemeinsame MNs: 1/6
+Zoe & Fabio => 6.15% [12/195] Gemeinsame MNs: 0/6
+Gina & Luca => 6.15% [12/195] Gemeinsame MNs: 0/6
+Franziska & Fabio => 6.15% [12/195] Gemeinsame MNs: 0/6
+Anna & Max => 5.64% [11/195] Gemeinsame MNs: 0/6
+Anna & Calvin => 5.13% [10/195] Gemeinsame MNs: 0/6
+Karina & Michael => 5.13% [10/195] Gemeinsame MNs: 0/6
+Zoe & Amadu => 4.62% [9/195] Gemeinsame MNs: 0/6
+Anna & Pharrell => 4.62% [9/195] Gemeinsame MNs: 1/6
+Gina & Max => 4.62% [9/195] Gemeinsame MNs: 0/6
+Anna & Luca => 4.62% [9/195] Gemeinsame MNs: 0/6
+Isabelle & Maurice => 4.1% [8/195] Gemeinsame MNs: 1/6
+Isabelle & Amadu => 4.1% [8/195] Gemeinsame MNs: 0/6
+Ricarda & Fabio => 4.1% [8/195] Gemeinsame MNs: 0/6
+Cecilia & Luca => 4.1% [8/195] Gemeinsame MNs: 0/6
+Anna & Amadu => 4.1% [8/195] Gemeinsame MNs: 0/6
+Gina & Fabio => 2.05% [4/195] Gemeinsame MNs: 0/6
+Isabelle & Fabio => 2.05% [4/195] Gemeinsame MNs: 0/6
+Celina & Michael => 1.54% [3/195] Gemeinsame MNs: 0/6
+Celina & Luca => 1.54% [3/195] Gemeinsame MNs: 0/6
+Franziska & Maurice => 1.03% [2/195] Gemeinsame MNs: 0/6
+Ricarda & Calvin => 1.03% [2/195] Gemeinsame MNs: 0/6
+Ricarda & Martin => 1.03% [2/195] Gemeinsame MNs: 0/6
+Cecilia & Fabio => 1.03% [2/195] Gemeinsame MNs: 0/6
+Celina & Amadu => 0.51% [1/195] Gemeinsame MNs: 0/6
+Celina & Maurice => 0.51% [1/195] Gemeinsame MNs: 0/6
+Cecilia & Calvin => 0.51% [1/195] Gemeinsame MNs: 0/6
+Gina & Maurice => 0.51% [1/195] Gemeinsame MNs: 0/6
+
+==== Beste Konstellationen ====
+> Platz 1 mit 939 Punkten (Summe der Vorkommen der Einzelpaare)
+Ricarda & Maurice
+Zoe & Calvin
+Karina & Luca
+Zoe & Felix
+Gina & Martin
+Franziska & Pharrell
+Cecilia & Amadu
+Anna & Michael
+Luisa & Lukas
+Isabelle & Max
+Celina & Fabio
+
+> Platz 2 mit 939 Punkten (Summe der Vorkommen der Einzelpaare)
+Ricarda & Maurice
+Zoe & Calvin
+Karina & Luca
+Isabelle & Felix
+Gina & Martin
+Franziska & Pharrell
+Cecilia & Amadu
+Anna & Michael
+Luisa & Lukas
+Isabelle & Max
+Celina & Fabio
+
+> Platz 3 mit 939 Punkten (Summe der Vorkommen der Einzelpaare)
+Ricarda & Maurice
+Zoe & Calvin
+Karina & Luca
+Gina & Martin
+Franziska & Pharrell
+Cecilia & Amadu
+Anna & Michael
+Karina & Felix
+Luisa & Lukas
+Isabelle & Max
+Celina & Fabio
+
+> Platz 4 mit 939 Punkten (Summe der Vorkommen der Einzelpaare)
+Ricarda & Maurice
+Zoe & Calvin
+Karina & Luca
+Cecilia & Felix
+Gina & Martin
+Franziska & Pharrell
+Cecilia & Amadu
+Anna & Michael
+Luisa & Lukas
+Isabelle & Max
+Celina & Fabio
+
+> Platz 5 mit 939 Punkten (Summe der Vorkommen der Einzelpaare)
+Ricarda & Maurice
+Zoe & Calvin
+Karina & Luca
+Gina & Martin
+Franziska & Pharrell
+Cecilia & Amadu
+Anna & Michael
+Luisa & Lukas
+Isabelle & Max
+Anna & Felix
+Celina & Fabio
+
+> Platz 6 mit 939 Punkten (Summe der Vorkommen der Einzelpaare)
+Ricarda & Maurice
+Zoe & Calvin
+Celina & Felix
+Karina & Luca
+Gina & Martin
+Franziska & Pharrell
+Cecilia & Amadu
+Anna & Michael
+Luisa & Lukas
+Isabelle & Max
+Celina & Fabio
+
+> Platz 7 mit 939 Punkten (Summe der Vorkommen der Einzelpaare)
+Ricarda & Maurice
+Zoe & Calvin
+Karina & Luca
+Gina & Martin
+Franziska & Pharrell
+Cecilia & Amadu
+Anna & Michael
+Luisa & Lukas
+Isabelle & Max
+Celina & Fabio
+Luisa & Felix
+
+> Platz 8 mit 939 Punkten (Summe der Vorkommen der Einzelpaare)
+Ricarda & Maurice
+Zoe & Calvin
+Karina & Luca
+Gina & Martin
+Franziska & Pharrell
+Cecilia & Amadu
+Anna & Michael
+Franziska & Felix
+Luisa & Lukas
+Isabelle & Max
+Celina & Fabio
+
+> Platz 9 mit 925 Punkten (Summe der Vorkommen der Einzelpaare)
+Ricarda & Maurice
+Karina & Luca
+Zoe & Michael
+Zoe & Felix
+Franziska & Pharrell
+Cecilia & Amadu
+Isabelle & Martin
+Anna & Max
+Luisa & Lukas
+Gina & Calvin
+Celina & Fabio
+
+> Platz 10 mit 925 Punkten (Summe der Vorkommen der Einzelpaare)
+Ricarda & Maurice
+Karina & Luca
+Isabelle & Felix
+Zoe & Michael
+Franziska & Pharrell
+Cecilia & Amadu
+Isabelle & Martin
+Anna & Max
+Luisa & Lukas
+Gina & Calvin
+Celina & Fabio
+
+> Platz 11 mit 925 Punkten (Summe der Vorkommen der Einzelpaare)
+Ricarda & Maurice
+Karina & Luca
+Zoe & Michael
+Franziska & Pharrell
+Cecilia & Amadu
+Isabelle & Martin
+Anna & Max
+Karina & Felix
+Luisa & Lukas
+Gina & Calvin
+Celina & Fabio
+
+> Platz 12 mit 925 Punkten (Summe der Vorkommen der Einzelpaare)
+Ricarda & Maurice
+Karina & Luca
+Zoe & Michael
+Cecilia & Felix
+Franziska & Pharrell
+Cecilia & Amadu
+Isabelle & Martin
+Anna & Max
+Luisa & Lukas
+Gina & Calvin
+Celina & Fabio
+
+> Platz 13 mit 925 Punkten (Summe der Vorkommen der Einzelpaare)
+Ricarda & Maurice
+Karina & Luca
+Zoe & Michael
+Franziska & Pharrell
+Cecilia & Amadu
+Isabelle & Martin
+Anna & Max
+Luisa & Lukas
+Gina & Calvin
+Anna & Felix
+Celina & Fabio
+
+> Platz 14 mit 925 Punkten (Summe der Vorkommen der Einzelpaare)
+Ricarda & Maurice
+Celina & Felix
+Karina & Luca
+Zoe & Michael
+Franziska & Pharrell
+Cecilia & Amadu
+Isabelle & Martin
+Anna & Max
+Luisa & Lukas
+Gina & Calvin
+Celina & Fabio
+
+> Platz 15 mit 925 Punkten (Summe der Vorkommen der Einzelpaare)
+Ricarda & Maurice
+Karina & Luca
+Zoe & Michael
+Franziska & Pharrell
+Cecilia & Amadu
+Isabelle & Martin
+Anna & Max
+Luisa & Lukas
+Gina & Calvin
+Celina & Fabio
+Luisa & Felix
+
+> Platz 16 mit 925 Punkten (Summe der Vorkommen der Einzelpaare)
+Ricarda & Maurice
+Karina & Luca
+Zoe & Michael
+Franziska & Pharrell
+Cecilia & Amadu
+Isabelle & Martin
+Anna & Max
+Franziska & Felix
+Luisa & Lukas
+Gina & Calvin
+Celina & Fabio
+
+> Platz 17 mit 924 Punkten (Summe der Vorkommen der Einzelpaare)
+Ricarda & Maurice
+Zoe & Michael
+Zoe & Felix
+Karina & Max
+Franziska & Pharrell
+Cecilia & Amadu
+Isabelle & Martin
+Luisa & Lukas
+Anna & Luca
+Gina & Calvin
+Celina & Fabio
+
+> Platz 18 mit 924 Punkten (Summe der Vorkommen der Einzelpaare)
+Ricarda & Maurice
+Isabelle & Felix
+Zoe & Michael
+Karina & Max
+Franziska & Pharrell
+Cecilia & Amadu
+Isabelle & Martin
+Luisa & Lukas
+Anna & Luca
+Gina & Calvin
+Celina & Fabio
+
+> Platz 19 mit 924 Punkten (Summe der Vorkommen der Einzelpaare)
+Ricarda & Maurice
+Zoe & Michael
+Karina & Max
+Franziska & Pharrell
+Cecilia & Amadu
+Isabelle & Martin
+Karina & Felix
+Luisa & Lukas
+Anna & Luca
+Gina & Calvin
+Celina & Fabio
+
+> Platz 20 mit 924 Punkten (Summe der Vorkommen der Einzelpaare)
+Ricarda & Maurice
+Zoe & Michael
+Cecilia & Felix
+Karina & Max
+Franziska & Pharrell
+Cecilia & Amadu
+Isabelle & Martin
+Luisa & Lukas
+Anna & Luca
+Gina & Calvin
+Celina & Fabio
+

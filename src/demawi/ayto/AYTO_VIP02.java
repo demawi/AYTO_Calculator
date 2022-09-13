@@ -53,7 +53,12 @@ public class AYTO_VIP02
             pair(Franziska, Michael), pair(Ricarda, Max), pair(Zoe, Luca), pair(Celina, Fabio), pair(Karina, Martin),
             pair(Isabelle, Maurice), pair(Gina, Felix));
 
-      //add(true, pair(Isabelle, Pharrell), 2, null);
+      add(false, pair(Isabelle, Pharrell), 3, pair(Luisa, Lukas), pair(Isabelle, Martin), pair(Ricarda, Pharrell),
+            pair(Cecilia, Maurice), pair(Anna, Michael), pair(Franziska, Max), pair(Celina, Fabio), pair(Gina, Felix),
+            pair(Karina, Calvin), pair(Zoe, Luca));
+
+      // add(true, pair(Cecilia, Amadu), 3, null);
+
       //add(true, pair(Cecilia, Amadu), 2, null);
       //add(true, pair(Celina, Michael), 2, null);
       //add(true, pair(Karina, Calvin), 2, null);
