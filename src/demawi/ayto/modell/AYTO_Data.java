@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 
 public class AYTO_Data {
@@ -28,13 +29,15 @@ public class AYTO_Data {
     this.pairsToTrack = Arrays.asList(pairs);
   }
 
-  public void add(Boolean b, Pair pair, int i, Pair... pairs) {
-    tage.add(new Tag(pair, b, pairs == null ? null : new MatchingNight(i, Arrays.asList(pairs))));
+  public Tag add(Boolean b, Pair pair, int i, Pair... pairs) {
+    Tag tag = new Tag(pair, b, pairs == null ? null : new MatchingNight(i, Arrays.asList(pairs)));
+    tage.add(tag);
+    return tag;
   }
 
-  public List<Frau> getFrauen(int tagDef) {
+  public List<Frau> getFrauen(int tag) {
     List<Frau> result = new ArrayList<>();
-    getPairs(tagDef, pair -> {
+    getPairs(tag, pair -> {
       if (!result.contains(pair.frau)) {
         result.add(pair.frau);
       }
@@ -42,9 +45,9 @@ public class AYTO_Data {
     return result;
   }
 
-  public List<Mann> getMaenner(int tagDef) {
+  public List<Mann> getMaenner(int tag) {
     List<Mann> result = new ArrayList<>();
-    getPairs(tagDef, pair -> {
+    getPairs(tag, pair -> {
       if (!result.contains(pair.mann)) {
         result.add(pair.mann);
       }
@@ -75,6 +78,11 @@ public class AYTO_Data {
       if (!aktuell || tagDef.mitMatchbox) {
         if (tag.perfectMatch != null) {
           if (tag.perfectMatch != constellation.contains(tag.matchingPair)) {
+            return false;
+          }
+        }
+        for(Map.Entry<Pair, Boolean> entry : tag.implicits.entrySet()) {
+          if(entry.getValue() != constellation.contains(entry.getKey())) {
             return false;
           }
         }
