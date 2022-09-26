@@ -1,0 +1,91 @@
+-- Berechne VIP_02 - Nacht 8...
+-- Combinations: 36288000 Yes: 130 No: 36287870 Calculation time: 0 min 53 secs (Tested intern iterations: 98641010)
+
+-- Berechne VIP_02 - Nacht 8 inkl. Matchbox...
+-- Combinations: 36288000 Yes: 58 No: 36287942 Calculation time: 0 min 47 secs (Tested intern iterations: 98641010)
+
+MatchBox: Anna & Michael... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 44.62% [58] <==
+Nein => 55.38% [72]
+Die Kombinationen reduzieren sich: 130 => 58
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Ricarda & Pharrell: 0.0%
+Gina & Fabio: 5.17%
+Isabelle & Felix: 10.34%
+Karina & Martin: 0.0%
+Franziska & Calvin: 15.52%
+Cecilia & Amadu: 100.0%
+Celina & Luca: 0.0%
+Anna & Michael: 100.0%
+Zoe & Maurice: 0.0%
+Luisa & Lukas: 100.0%
+
+Wahrscheinlichkeit für entsprechende Spotanzahl:
+0 => 0.0% [0]
+1 => 0.0% [0]
+2 => 0.0% [0]
+3 => 70.69% [41]
+4 => 27.59% [16]
+5 => 1.72% [1] <==
+6 => 0.0% [0]
+7 => 0.0% [0]
+8 => 0.0% [0]
+9 => 0.0% [0]
+10 => 0.0% [0]
+Die Kombinationen reduzieren sich: 58 => 1
+
+-- Berechne VIP_02 - Nacht 8 inkl. Matchbox inkl. Matchingnight...
+-- Combinations: 36288000 Yes: 1 No: 36287999 Calculation time: 0 min 52 secs (Tested intern iterations: 98641010)
+
+==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
+Zoe: 1 [Pharrell (100.0)]
+Ricarda: 1 [Maurice (100.0)]
+Isabelle: 2 [Max (100.0), Felix (100.0)]
+Karina: 1 [Luca (100.0)]
+Cecilia: 1 [Amadu (100.0)]
+Anna: 1 [Michael (100.0)]
+Celina: 1 [Fabio (100.0)]
+Luisa: 1 [Lukas (100.0)]
+Franziska: 1 [Calvin (100.0)]
+Gina: 1 [Martin (100.0)]
+
+Martin: 1 [Gina (100.0)]
+Maurice: 1 [Ricarda (100.0)]
+Luca: 1 [Karina (100.0)]
+Lukas: 1 [Luisa (100.0)]
+Pharrell: 1 [Zoe (100.0)]
+Amadu: 1 [Cecilia (100.0)]
+Michael: 1 [Anna (100.0)]
+Fabio: 1 [Celina (100.0)]
+Max: 1 [Isabelle (100.0)]
+Calvin: 1 [Franziska (100.0)]
+Felix: 1 [Isabelle (100.0)]
+
+==== Mögliche Paare: 11/110 ====
+Ricarda & Maurice => 100.0% [1/1] Gemeinsame MNs: 3/8
+Karina & Luca => 100.0% [1/1] Gemeinsame MNs: 0/8
+Isabelle & Felix => 100.0% [1/1] Gemeinsame MNs: 1/8
+Franziska & Calvin => 100.0% [1/1] Gemeinsame MNs: 1/8
+Gina & Martin => 100.0% [1/1] Gemeinsame MNs: 0/8
+Cecilia & Amadu => 100.0% [1/1] Gemeinsame MNs: 5/8
+Zoe & Pharrell => 100.0% [1/1] Gemeinsame MNs: 0/8
+Anna & Michael => 100.0% [1/1] Gemeinsame MNs: 5/8
+Luisa & Lukas => 100.0% [1/1] Gemeinsame MNs: 4/8
+Isabelle & Max => 100.0% [1/1] Gemeinsame MNs: 0/8
+Celina & Fabio => 100.0% [1/1] Gemeinsame MNs: 4/8
+
+==== Beste Konstellationen ====
+> Platz 1 mit 11 Punkten (Summe der Vorkommen der Einzelpaare)
+Ricarda & Maurice
+Karina & Luca
+Isabelle & Felix
+Franziska & Calvin
+Gina & Martin
+Cecilia & Amadu
+Zoe & Pharrell
+Anna & Michael
+Luisa & Lukas
+Isabelle & Max
+Celina & Fabio
+
