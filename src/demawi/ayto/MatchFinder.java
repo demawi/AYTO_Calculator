@@ -15,6 +15,7 @@ import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
 import demawi.ayto.modell.MatchingNight;
 import demawi.ayto.modell.Pair;
+import demawi.ayto.modell.TablePrinter;
 import demawi.ayto.modell.Tag;
 import demawi.ayto.modell.TagDef;
 
@@ -25,7 +26,11 @@ public class MatchFinder {
   };
 
   private static String prozent(double anteil, double von) {
-    return "" + Math.round(anteil / von * 10000.0) / 100.0;
+    return String.format("%.2f", 100 * anteil / von);
+  }
+
+  private static String numberFormat(double number) {
+    return String.format("%5s", String.format("%.2f", number));
   }
 
   private static String minSecs(long mills) {
@@ -145,15 +150,62 @@ public class MatchFinder {
     List<Pair> sortedPairs = new ArrayList<>(result.pairCount.keySet());
     Collections.sort(sortedPairs, pairComparator);
 
-    out.accept("==== Partner ==== (und entsprechende Wahrscheinlichkeiten)");
+    out.accept(
+          "==== Partner ==== (und entsprechende Wahrscheinlichkeiten) (In Klammern: Anzahl gemeinsame Matching Night)");
     for (Frau frau : frauen) {
       Set<Mann> set = result.frauCount.get(frau);
-      out.accept(frau + ": " + (set == null ? "-" : set.size() + " " + getRanking(result, frau, maenner)));
+      //out.accept(frau + ": " + (set == null ? "-" : set.size() + " " + getRanking(result, frau, maenner)));
     }
     out.accept("");
     for (Mann mann : maenner) {
       Set<Frau> set = result.mannCount.get(mann);
-      out.accept(mann + ": " + (set == null ? "-" : set.size() + " " + getRanking(result, mann, frauen)));
+      //out.accept(mann + ": " + (set == null ? "-" : set.size() + " " + getRanking(result, mann, frauen)));
+    }
+
+    List<List<String>> table = new ArrayList<>();
+    table.add(new ArrayList<>());
+    table.get(0)
+          .add("");
+    for (Frau frau : frauen) {
+      table.get(0)
+            .add(frau.name);
+    }
+    for (Mann mann : maenner) {
+      List<String> line = new ArrayList<>();
+      table.add(line);
+      line.add(mann.name);
+      for (Frau frau : frauen) {
+        Pair pair = new Pair(frau, mann);
+        int count = 0;
+        for (Tag tag : data.tage) {
+          MatchingNight night = tag.matchingNight;
+          if (night != null && night.constellation.contains(pair)) {
+            count++;
+          }
+        }
+        double possibility = getPossibility(result, mann, frau, frauen);
+        String possOut;
+        if (possibility == 0d) {
+          possOut = "  -    ";
+        }
+        else if (possibility == 1d) {
+          possOut = "  ✅    ";
+        }
+        else {
+          possOut = numberFormat(possibility * 100)+" %";
+        }
+        line.add(possOut + " (" + count + ")"); //  + "/" + data.tage.size()+
+      }
+    }
+    out.accept(TablePrinter.formatAsTable(table));
+    out.accept("Mögliche Paare: " + result.pairCount.size() + "/" + (frauen.size() * maenner.size()));
+
+    if (data.pairsToTrack != null) {
+      out.accept("");
+      out.accept("==== Tracking der Perfect Matches im Verlauf ====");
+      for (Pair pair : data.pairsToTrack) {
+        out.accept(pair + " => " + prozent(result.getCount(pair), result.possibleConstellations.size()) + "%");
+      }
     }
 
     List<Set<Pair>> sortedConstellations = new ArrayList<>(result.possibleConstellations);
@@ -164,32 +216,6 @@ public class MatchFinder {
             .collect(Collectors.summingInt(a -> result.pairCount.get(a)));
       return o2Count.compareTo(o1Count);
     });
-    out.accept("");
-    out.accept("==== Mögliche Paare: " + result.pairCount.size() + "/" + (frauen.size() * maenner.size()) + " ====");
-    for (Pair pair : sortedPairs) {
-      Integer pairCounting = result.pairCount.get(pair);
-      Integer gesamtCounting = result.possibleConstellations.size();
-      double percent = Math.round((pairCounting / (double) gesamtCounting) * 10000) / 100.0;
-
-      int count = 0;
-      for (Tag tag : data.tage) {
-        MatchingNight night = tag.matchingNight;
-        if (night != null && night.constellation.contains(pair)) {
-          count++;
-        }
-      }
-      out.accept(pair.frau + " & " + pair.mann + " => " + percent + "% [" + pairCounting + "/" + gesamtCounting
-            + "] Gemeinsame MNs: " + count + "/" + data.tage.size());
-    }
-
-    if (data.pairsToTrack != null) {
-      out.accept("");
-      out.accept("==== Tracking der Perfect Matches im Verlauf ====");
-      for (Pair pair : data.pairsToTrack) {
-        out.accept(pair + " => " + prozent(result.getCount(pair), result.possibleConstellations.size())+"%");
-      }
-    }
-
     out.accept("");
     out.accept("==== Beste Konstellationen ====");
     for (int i = 0, l = Math.min(20, sortedConstellations.size()); i < l; i++) {
@@ -264,18 +290,18 @@ public class MatchFinder {
     return "[" + stringBuffer.toString() + "]";
   }
 
-  private String getRanking(AYTO_Result resulter, Mann mann, List<Frau> frauen) {
+  private String getRanking(AYTO_Result result, Mann mann, List<Frau> frauen) {
     int gesamt = 0;
     for (Frau frau : frauen) {
       if (frauen.indexOf(frau) <= 9) {
-        gesamt += resulter.getCount(frau, mann);
+        gesamt += result.getCount(frau, mann);
       }
     }
     List<Frau> sortedPartner = new ArrayList<>(frauen);
-    sortedPartner.sort((o1, o2) -> resulter.getCount(o2, mann)
-          .compareTo(resulter.getCount(o1, mann)));
+    sortedPartner.sort((o1, o2) -> result.getCount(o2, mann)
+          .compareTo(result.getCount(o1, mann)));
     sortedPartner = sortedPartner.stream()
-          .filter(frau -> resulter.getCount(frau, mann) > 0)
+          .filter(frau -> result.getCount(frau, mann) > 0)
           .collect(Collectors.toList());
 
     StringBuffer stringBuffer = new StringBuffer();
@@ -283,9 +309,19 @@ public class MatchFinder {
       if (stringBuffer.length() > 0) {
         stringBuffer.append(", ");
       }
-      stringBuffer.append(frau + " (" + prozent(resulter.getCount(frau, mann), gesamt) + ")");
+      stringBuffer.append(frau + " (" + prozent(result.getCount(frau, mann), gesamt) + ")");
     }
     return "[" + stringBuffer.toString() + "]";
+  }
+
+  private double getPossibility(AYTO_Result result, Mann mann, Frau frauX, List<Frau> frauen) {
+    int gesamt = 0;
+    for (Frau frau : frauen) {
+      if (frauen.indexOf(frau) <= 9) {
+        gesamt += result.getCount(frau, mann);
+      }
+    }
+    return 1d * result.getCount(frauX, mann) / gesamt;
   }
 
 }
