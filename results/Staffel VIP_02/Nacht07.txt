@@ -1,8 +1,8 @@
 -- Berechne VIP_02 - Nacht 7...
--- Combinations: 36288000 Yes: 175 No: 36287825 Calculation time: 0 min 46 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 175 No: 36287825 Calculation time: 0 min 57 secs (Tested intern iterations: 98641010)
 
 -- Berechne VIP_02 - Nacht 7 inkl. Matchbox...
--- Combinations: 36288000 Yes: 130 No: 36287870 Calculation time: 0 min 45 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 130 No: 36287870 Calculation time: 1 min 3 secs (Tested intern iterations: 98641010)
 
 MatchBox: Cecilia & Amadu... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 74,29% [130] <==
@@ -36,22 +36,22 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 Die Kombinationen reduzieren sich: 130 => 130
 
 -- Berechne VIP_02 - Nacht 7 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 36288000 Yes: 130 No: 36287870 Calculation time: 0 min 45 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 130 No: 36287870 Calculation time: 1 min 3 secs (Tested intern iterations: 98641010)
 
-==== Partner ==== (und entsprechende Wahrscheinlichkeiten) (In Klammern: Anzahl gemeinsame Matching Night)
+==== Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights)
 
-          Zoe          Ricarda      Isabelle     Karina       Cecilia       Anna         Celina       Luisa         Franziska    Gina         
-Martin      -     (0)   1,54 % (0)  34,62 % (3)    -     (1)    -     (0)    4,62 % (1)  10,77 % (1)    -     (0)   25,38 % (0)  23,08 % (0)  
-Maurice     -     (0)  91,54 % (3)   5,38 % (1)    -     (0)    -     (1)     -     (0)   0,77 % (0)    -     (0)    1,54 % (0)   0,77 % (0)  
-Luca      26,92 % (4)    -     (0)  10,00 % (1)  36,92 % (0)    -     (0)    6,15 % (0)   2,31 % (0)    -     (0)    9,23 % (1)   8,46 % (0)  
-Lukas       -     (1)    -     (0)    -     (1)    -     (0)    -     (0)     -     (0)    -     (0)    🗸     (3)    -     (1)    -     (0)  
-Pharrell  21,54 % (0)    -     (2)    -     (0)    -     (1)    -     (1)    5,38 % (1)  19,23 % (0)    -     (1)   31,54 % (0)  22,31 % (0)  
-Amadu       -     (0)    -     (0)    -     (0)    -     (0)    🗸     (4)    -     (0)    -     (0)    -     (0)     -     (0)    -     (1)  
-Michael   14,62 % (0)    -     (0)  15,38 % (0)   1,54 % (0)    -     (0)   44,62 % (4)   2,31 % (0)    -     (0)     -     (1)  21,54 % (1)  
-Fabio      8,46 % (0)   5,38 % (0)   3,08 % (0)   9,23 % (1)    -     (0)   24,62 % (0)  37,69 % (4)    -     (1)    8,46 % (0)   3,08 % (0)  
-Max       14,62 % (1)    -     (1)  16,92 % (0)  32,31 % (0)    -     (0)    7,69 % (0)  10,77 % (1)    -     (0)   11,54 % (3)   6,15 % (0)  
-Calvin    13,85 % (0)   1,54 % (0)  14,62 % (0)  20,00 % (3)    -     (0)    6,92 % (0)  16,15 % (0)    -     (1)   12,31 % (0)  14,62 % (1)  
-Felix     10,77 % (0)    -     (0)  10,77 % (0)  10,77 % (0)  10,77 % (0)   10,77 % (0)  10,77 % (0)    -     (0)   10,77 % (0)  24,62 % (3)  
+          Zoe          Ricarda      Isabelle     Karina       Cecilia      Anna         Celina       Luisa        Franziska    Gina         
+Martin      -     (0)   1,54 % (0)  34,62 % (3)    -     (2)    -     (0)   4,62 % (1)  10,77 % (1)    -     (0)  25,38 % (0)  23,08 % (0)  
+Maurice     -     (1)  91,54 % (3)   5,38 % (1)    -     (0)    -     (1)    -     (0)   0,77 % (0)    -     (0)   1,54 % (0)   0,77 % (0)  
+Luca      26,92 % (4)    -     (0)  10,00 % (1)  36,92 % (0)    -     (0)   6,15 % (0)   2,31 % (1)    -     (0)   9,23 % (1)   8,46 % (0)  
+Lukas       -     (1)    -     (0)    -     (1)    -     (0)    -     (0)    -     (0)    -     (0)    ✓     (4)    -     (1)    -     (0)  
+Pharrell  21,54 % (0)    -     (3)    -     (0)    -     (1)    -     (1)   5,38 % (1)  19,23 % (0)    -     (1)  31,54 % (0)  22,31 % (0)  
+Amadu       -     (0)    -     (0)    -     (0)    -     (0)    ✓     (5)    -     (0)    -     (0)    -     (0)    -     (0)    -     (1)  
+Michael   14,62 % (0)    -     (0)  15,38 % (0)   1,54 % (0)    -     (0)  44,62 % (5)   2,31 % (0)    -     (0)    -     (1)  21,54 % (1)  
+Fabio      8,46 % (0)   5,38 % (0)   3,08 % (0)   9,23 % (1)    -     (0)  24,62 % (0)  37,69 % (4)    -     (1)   8,46 % (0)   3,08 % (1)  
+Max       14,62 % (1)    -     (1)  16,92 % (0)  32,31 % (0)    -     (0)   7,69 % (0)  10,77 % (1)    -     (0)  11,54 % (3)   6,15 % (0)  
+Calvin    13,85 % (0)   1,54 % (0)  14,62 % (0)  20,00 % (3)    -     (0)   6,92 % (0)  16,15 % (0)    -     (1)  12,31 % (1)  14,62 % (1)  
+Felix     10,77 % (0)    -     (0)  10,77 % (1)  10,77 % (0)  10,77 % (0)  10,77 % (0)  10,77 % (0)    -     (0)  10,77 % (0)  24,62 % (3)  
 
 Mögliche Paare: 62/110
 

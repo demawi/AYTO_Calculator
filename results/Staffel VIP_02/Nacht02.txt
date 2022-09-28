@@ -1,165 +1,58 @@
 -- Berechne VIP_02 - Nacht 2...
--- Combinations: 3628800 Yes: 205176 No: 3423624 Calculation time: 0 min 11 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 205176 No: 3423624 Calculation time: 0 min 12 secs (Tested intern iterations: 62353010)
 
 -- Berechne VIP_02 - Nacht 2 inkl. Matchbox...
--- Combinations: 3628800 Yes: 144921 No: 3483879 Calculation time: 0 min 8 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 144921 No: 3483879 Calculation time: 0 min 11 secs (Tested intern iterations: 62353010)
 
 MatchBox: Karina & Pharrell... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
-Ja   => 29.37% [60255]
-Nein => 70.63% [144921] <==
+Ja   => 29,37% [60255]
+Nein => 70,63% [144921] <==
 Die Kombinationen reduzieren sich: 205176 => 144921
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Ricarda & Maurice: 32.62%
-Karina & Fabio: 11.06%
-Zoe & Lukas: 7.46%
-Cecilia & Pharrell: 11.06%
-Franziska & Luca: 6.73%
-Gina & Amadu: 7.02%
-Celina & Max: 6.73%
-Isabelle & Martin: 7.46%
-Luisa & Calvin: 7.02%
-Anna & Michael: 32.62%
+Ricarda & Maurice: 32,62%
+Karina & Fabio: 11,06%
+Zoe & Lukas: 7,46%
+Cecilia & Pharrell: 11,06%
+Franziska & Luca: 6,73%
+Gina & Amadu: 7,02%
+Celina & Max: 6,73%
+Isabelle & Martin: 7,46%
+Luisa & Calvin: 7,02%
+Anna & Michael: 32,62%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
-0 => 25.67% [37196]
-1 => 37.02% [53654]
-2 => 23.87% [34595] <==
-3 => 9.76% [14140]
-4 => 2.84% [4113]
-5 => 0.69% [1002]
-6 => 0.13% [187]
-7 => 0.02% [28]
-8 => 0.0% [6]
-9 => 0.0% [0]
-10 => 0.0% [0]
+0 => 25,67% [37196]
+1 => 37,02% [53654]
+2 => 23,87% [34595] <==
+3 => 9,76% [14140]
+4 => 2,84% [4113]
+5 => 0,69% [1002]
+6 => 0,13% [187]
+7 => 0,02% [28]
+8 => 0,00% [6]
+9 => 0,00% [0]
+10 => 0,00% [0]
 Die Kombinationen reduzieren sich: 144921 => 34595
 
 -- Berechne VIP_02 - Nacht 2 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 3628800 Yes: 34595 No: 3594205 Calculation time: 0 min 7 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 34595 No: 3594205 Calculation time: 0 min 11 secs (Tested intern iterations: 62353010)
 
-==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
-Zoe: 9 [Luca (31.15), Pharrell (11.98), Lukas (11.64), Amadu (8.43), Max (8.43), Calvin (8.34), Fabio (8.02), Maurice (6.0), Michael (6.0)]
-Ricarda: 10 [Maurice (49.67), Pharrell (8.1), Martin (6.0), Amadu (5.75), Calvin (5.64), Max (5.61), Lukas (5.6), Luca (5.4), Fabio (5.37), Michael (2.86)]
-Isabelle: 10 [Lukas (27.92), Martin (11.64), Pharrell (10.92), Amadu (7.84), Max (7.76), Calvin (7.72), Luca (7.56), Fabio (7.44), Maurice (5.6), Michael (5.6)]
-Karina: 9 [Fabio (17.27), Martin (11.98), Amadu (11.03), Max (10.97), Calvin (10.95), Lukas (10.92), Luca (10.68), Maurice (8.1), Michael (8.1)]
-Cecilia: 10 [Amadu (27.08), Pharrell (17.27), Martin (8.02), Calvin (7.53), Lukas (7.44), Max (7.42), Fabio (7.31), Luca (7.19), Maurice (5.37), Michael (5.37)]
-Anna: 10 [Michael (49.67), Pharrell (8.1), Martin (6.0), Amadu (5.75), Calvin (5.64), Max (5.61), Lukas (5.6), Luca (5.4), Fabio (5.37), Maurice (2.86)]
-Celina: 10 [Martin (31.15), Pharrell (10.68), Max (10.42), Lukas (7.56), Amadu (7.53), Calvin (7.45), Luca (7.21), Fabio (7.19), Maurice (5.4), Michael (5.4)]
-Luisa: 10 [Fabio (27.08), Pharrell (11.03), Calvin (10.99), Martin (8.43), Lukas (7.84), Amadu (7.8), Max (7.79), Luca (7.53), Maurice (5.75), Michael (5.75)]
-Franziska: 10 [Max (28.25), Pharrell (10.97), Luca (10.42), Martin (8.43), Amadu (7.79), Lukas (7.76), Calvin (7.74), Fabio (7.42), Maurice (5.61), Michael (5.61)]
-Gina: 10 [Calvin (28.0), Amadu (10.99), Pharrell (10.95), Martin (8.34), Max (7.74), Lukas (7.72), Fabio (7.53), Luca (7.45), Maurice (5.64), Michael (5.64)]
+==== Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights)
 
-Martin: 9 [Celina (31.15), Karina (11.98), Isabelle (11.64), Luisa (8.43), Franziska (8.43), Gina (8.34), Cecilia (8.02), Ricarda (6.0), Anna (6.0)]
-Maurice: 10 [Ricarda (49.67), Karina (8.1), Zoe (6.0), Luisa (5.75), Gina (5.64), Franziska (5.61), Isabelle (5.6), Celina (5.4), Cecilia (5.37), Anna (2.86)]
-Luca: 10 [Zoe (31.15), Karina (10.68), Franziska (10.42), Isabelle (7.56), Luisa (7.53), Gina (7.45), Celina (7.21), Cecilia (7.19), Ricarda (5.4), Anna (5.4)]
-Lukas: 10 [Isabelle (27.92), Zoe (11.64), Karina (10.92), Luisa (7.84), Franziska (7.76), Gina (7.72), Celina (7.56), Cecilia (7.44), Ricarda (5.6), Anna (5.6)]
-Pharrell: 9 [Cecilia (17.27), Zoe (11.98), Luisa (11.03), Franziska (10.97), Gina (10.95), Isabelle (10.92), Celina (10.68), Ricarda (8.1), Anna (8.1)]
-Amadu: 10 [Cecilia (27.08), Karina (11.03), Gina (10.99), Zoe (8.43), Isabelle (7.84), Luisa (7.8), Franziska (7.79), Celina (7.53), Ricarda (5.75), Anna (5.75)]
-Michael: 10 [Anna (49.67), Karina (8.1), Zoe (6.0), Luisa (5.75), Gina (5.64), Franziska (5.61), Isabelle (5.6), Celina (5.4), Cecilia (5.37), Ricarda (2.86)]
-Fabio: 10 [Luisa (27.08), Karina (17.27), Zoe (8.02), Gina (7.53), Isabelle (7.44), Franziska (7.42), Cecilia (7.31), Celina (7.19), Ricarda (5.37), Anna (5.37)]
-Max: 10 [Franziska (28.25), Karina (10.97), Celina (10.42), Zoe (8.43), Luisa (7.79), Isabelle (7.76), Gina (7.74), Cecilia (7.42), Ricarda (5.61), Anna (5.61)]
-Calvin: 10 [Gina (28.0), Luisa (10.99), Karina (10.95), Zoe (8.34), Franziska (7.74), Isabelle (7.72), Cecilia (7.53), Celina (7.45), Ricarda (5.64), Anna (5.64)]
+          Zoe          Ricarda      Isabelle     Karina       Cecilia      Anna         Celina       Luisa        Franziska    Gina         
+Martin      -     (0)   6,00 % (0)  11,64 % (3)  11,98 % (2)   8,02 % (0)   6,00 % (1)  31,15 % (1)   8,43 % (0)   8,43 % (0)   8,34 % (0)  
+Maurice    6,00 % (1)  49,67 % (3)   5,60 % (1)   8,10 % (0)   5,37 % (1)   2,86 % (0)   5,40 % (0)   5,75 % (0)   5,61 % (0)   5,64 % (0)  
+Luca      31,15 % (4)   5,40 % (0)   7,56 % (1)  10,68 % (0)   7,19 % (0)   5,40 % (0)   7,21 % (1)   7,53 % (0)  10,42 % (1)   7,45 % (0)  
+Lukas     11,64 % (1)   5,60 % (0)  27,92 % (1)  10,92 % (0)   7,44 % (0)   5,60 % (0)   7,56 % (0)   7,84 % (4)   7,76 % (1)   7,72 % (0)  
+Pharrell  11,98 % (0)   8,10 % (3)  10,92 % (0)    -     (1)  17,27 % (1)   8,10 % (1)  10,68 % (0)  11,03 % (1)  10,97 % (0)  10,95 % (0)  
+Amadu      8,43 % (0)   5,75 % (0)   7,84 % (0)  11,03 % (0)  27,08 % (5)   5,75 % (0)   7,53 % (0)   7,80 % (0)   7,79 % (0)  10,99 % (1)  
+Michael    6,00 % (0)   2,86 % (0)   5,60 % (0)   8,10 % (0)   5,37 % (0)  49,67 % (5)   5,40 % (0)   5,75 % (0)   5,61 % (1)   5,64 % (1)  
+Fabio      8,02 % (0)   5,37 % (0)   7,44 % (0)  17,27 % (1)   7,31 % (0)   5,37 % (0)   7,19 % (4)  27,08 % (1)   7,42 % (0)   7,53 % (1)  
+Max        8,43 % (1)   5,61 % (1)   7,76 % (0)  10,97 % (0)   7,42 % (0)   5,61 % (0)  10,42 % (1)   7,79 % (0)  28,25 % (3)   7,74 % (0)  
+Calvin     8,34 % (0)   5,64 % (0)   7,72 % (0)  10,95 % (3)   7,53 % (0)   5,64 % (0)   7,45 % (0)  10,99 % (1)   7,74 % (1)  28,00 % (1)  
 
-==== Mögliche Paare: 98/100 ====
-Anna & Michael => 49.67% [17185/34595] Gemeinsame MNs: 3/7
-Ricarda & Maurice => 49.67% [17185/34595] Gemeinsame MNs: 3/7
-Celina & Martin => 31.15% [10778/34595] Gemeinsame MNs: 1/7
-Zoe & Luca => 31.15% [10778/34595] Gemeinsame MNs: 3/7
-Franziska & Max => 28.25% [9774/34595] Gemeinsame MNs: 2/7
-Gina & Calvin => 28.0% [9688/34595] Gemeinsame MNs: 1/7
-Isabelle & Lukas => 27.92% [9659/34595] Gemeinsame MNs: 1/7
-Luisa & Fabio => 27.08% [9369/34595] Gemeinsame MNs: 1/7
-Cecilia & Amadu => 27.08% [9369/34595] Gemeinsame MNs: 3/7
-Karina & Fabio => 17.27% [5974/34595] Gemeinsame MNs: 1/7
-Cecilia & Pharrell => 17.27% [5974/34595] Gemeinsame MNs: 1/7
-Karina & Martin => 11.98% [4144/34595] Gemeinsame MNs: 1/7
-Zoe & Pharrell => 11.98% [4144/34595] Gemeinsame MNs: 0/7
-Zoe & Lukas => 11.64% [4028/34595] Gemeinsame MNs: 1/7
-Isabelle & Martin => 11.64% [4028/34595] Gemeinsame MNs: 2/7
-Luisa & Pharrell => 11.03% [3817/34595] Gemeinsame MNs: 1/7
-Karina & Amadu => 11.03% [3817/34595] Gemeinsame MNs: 0/7
-Luisa & Calvin => 10.99% [3802/34595] Gemeinsame MNs: 1/7
-Gina & Amadu => 10.99% [3802/34595] Gemeinsame MNs: 1/7
-Karina & Max => 10.97% [3795/34595] Gemeinsame MNs: 0/7
-Franziska & Pharrell => 10.97% [3795/34595] Gemeinsame MNs: 0/7
-Gina & Pharrell => 10.95% [3788/34595] Gemeinsame MNs: 0/7
-Karina & Calvin => 10.95% [3788/34595] Gemeinsame MNs: 2/7
-Karina & Lukas => 10.92% [3779/34595] Gemeinsame MNs: 0/7
-Isabelle & Pharrell => 10.92% [3779/34595] Gemeinsame MNs: 0/7
-Celina & Pharrell => 10.68% [3694/34595] Gemeinsame MNs: 0/7
-Karina & Luca => 10.68% [3694/34595] Gemeinsame MNs: 0/7
-Franziska & Luca => 10.42% [3606/34595] Gemeinsame MNs: 1/7
-Celina & Max => 10.42% [3606/34595] Gemeinsame MNs: 1/7
-Zoe & Amadu => 8.43% [2918/34595] Gemeinsame MNs: 0/7
-Luisa & Martin => 8.43% [2918/34595] Gemeinsame MNs: 0/7
-Zoe & Max => 8.43% [2915/34595] Gemeinsame MNs: 1/7
-Franziska & Martin => 8.43% [2915/34595] Gemeinsame MNs: 0/7
-Gina & Martin => 8.34% [2884/34595] Gemeinsame MNs: 0/7
-Zoe & Calvin => 8.34% [2884/34595] Gemeinsame MNs: 0/7
-Karina & Maurice => 8.1% [2802/34595] Gemeinsame MNs: 0/7
-Anna & Pharrell => 8.1% [2802/34595] Gemeinsame MNs: 1/7
-Ricarda & Pharrell => 8.1% [2802/34595] Gemeinsame MNs: 1/7
-Karina & Michael => 8.1% [2802/34595] Gemeinsame MNs: 0/7
-Zoe & Fabio => 8.02% [2774/34595] Gemeinsame MNs: 0/7
-Cecilia & Martin => 8.02% [2774/34595] Gemeinsame MNs: 0/7
-Luisa & Lukas => 7.84% [2711/34595] Gemeinsame MNs: 2/7
-Isabelle & Amadu => 7.84% [2711/34595] Gemeinsame MNs: 0/7
-Luisa & Amadu => 7.8% [2700/34595] Gemeinsame MNs: 0/7
-Luisa & Max => 7.79% [2694/34595] Gemeinsame MNs: 0/7
-Franziska & Amadu => 7.79% [2694/34595] Gemeinsame MNs: 0/7
-Franziska & Lukas => 7.76% [2684/34595] Gemeinsame MNs: 1/7
-Isabelle & Max => 7.76% [2684/34595] Gemeinsame MNs: 0/7
-Gina & Max => 7.74% [2678/34595] Gemeinsame MNs: 0/7
-Franziska & Calvin => 7.74% [2678/34595] Gemeinsame MNs: 0/7
-Gina & Lukas => 7.72% [2672/34595] Gemeinsame MNs: 0/7
-Isabelle & Calvin => 7.72% [2672/34595] Gemeinsame MNs: 0/7
-Isabelle & Luca => 7.56% [2615/34595] Gemeinsame MNs: 1/7
-Celina & Lukas => 7.56% [2615/34595] Gemeinsame MNs: 0/7
-Celina & Amadu => 7.53% [2606/34595] Gemeinsame MNs: 0/7
-Luisa & Luca => 7.53% [2606/34595] Gemeinsame MNs: 0/7
-Gina & Fabio => 7.53% [2604/34595] Gemeinsame MNs: 0/7
-Cecilia & Calvin => 7.53% [2604/34595] Gemeinsame MNs: 0/7
-Gina & Luca => 7.45% [2579/34595] Gemeinsame MNs: 0/7
-Celina & Calvin => 7.45% [2579/34595] Gemeinsame MNs: 0/7
-Isabelle & Fabio => 7.44% [2575/34595] Gemeinsame MNs: 0/7
-Cecilia & Lukas => 7.44% [2575/34595] Gemeinsame MNs: 0/7
-Cecilia & Max => 7.42% [2567/34595] Gemeinsame MNs: 0/7
-Franziska & Fabio => 7.42% [2567/34595] Gemeinsame MNs: 0/7
-Cecilia & Fabio => 7.31% [2530/34595] Gemeinsame MNs: 0/7
-Celina & Luca => 7.21% [2493/34595] Gemeinsame MNs: 0/7
-Cecilia & Luca => 7.19% [2486/34595] Gemeinsame MNs: 0/7
-Celina & Fabio => 7.19% [2486/34595] Gemeinsame MNs: 3/7
-Zoe & Maurice => 6.0% [2077/34595] Gemeinsame MNs: 0/7
-Ricarda & Martin => 6.0% [2077/34595] Gemeinsame MNs: 0/7
-Anna & Martin => 6.0% [2077/34595] Gemeinsame MNs: 1/7
-Zoe & Michael => 6.0% [2077/34595] Gemeinsame MNs: 0/7
-Ricarda & Amadu => 5.75% [1989/34595] Gemeinsame MNs: 0/7
-Luisa & Maurice => 5.75% [1989/34595] Gemeinsame MNs: 0/7
-Anna & Amadu => 5.75% [1989/34595] Gemeinsame MNs: 0/7
-Luisa & Michael => 5.75% [1989/34595] Gemeinsame MNs: 0/7
-Anna & Calvin => 5.64% [1950/34595] Gemeinsame MNs: 0/7
-Gina & Maurice => 5.64% [1950/34595] Gemeinsame MNs: 0/7
-Ricarda & Calvin => 5.64% [1950/34595] Gemeinsame MNs: 0/7
-Gina & Michael => 5.64% [1950/34595] Gemeinsame MNs: 1/7
-Franziska & Maurice => 5.61% [1941/34595] Gemeinsame MNs: 0/7
-Ricarda & Max => 5.61% [1941/34595] Gemeinsame MNs: 1/7
-Franziska & Michael => 5.61% [1941/34595] Gemeinsame MNs: 1/7
-Anna & Max => 5.61% [1941/34595] Gemeinsame MNs: 0/7
-Isabelle & Michael => 5.6% [1936/34595] Gemeinsame MNs: 0/7
-Isabelle & Maurice => 5.6% [1936/34595] Gemeinsame MNs: 1/7
-Ricarda & Lukas => 5.6% [1936/34595] Gemeinsame MNs: 0/7
-Anna & Lukas => 5.6% [1936/34595] Gemeinsame MNs: 0/7
-Celina & Maurice => 5.4% [1869/34595] Gemeinsame MNs: 0/7
-Ricarda & Luca => 5.4% [1869/34595] Gemeinsame MNs: 0/7
-Anna & Luca => 5.4% [1869/34595] Gemeinsame MNs: 0/7
-Celina & Michael => 5.4% [1869/34595] Gemeinsame MNs: 0/7
-Anna & Fabio => 5.37% [1858/34595] Gemeinsame MNs: 0/7
-Ricarda & Fabio => 5.37% [1858/34595] Gemeinsame MNs: 0/7
-Cecilia & Maurice => 5.37% [1858/34595] Gemeinsame MNs: 1/7
-Cecilia & Michael => 5.37% [1858/34595] Gemeinsame MNs: 0/7
-Ricarda & Michael => 2.86% [988/34595] Gemeinsame MNs: 0/7
-Anna & Maurice => 2.86% [988/34595] Gemeinsame MNs: 0/7
+Mögliche Paare: 98/100
 
 ==== Beste Konstellationen ====
 > Platz 1 mit 66321 Punkten (Summe der Vorkommen der Einzelpaare)

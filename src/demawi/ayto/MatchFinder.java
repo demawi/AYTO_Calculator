@@ -151,7 +151,7 @@ public class MatchFinder {
     Collections.sort(sortedPairs, pairComparator);
 
     out.accept(
-          "==== Partner ==== (und entsprechende Wahrscheinlichkeiten) (In Klammern: Anzahl gemeinsame Matching Night)");
+          "==== Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights)");
     for (Frau frau : frauen) {
       Set<Mann> set = result.frauCount.get(frau);
       //out.accept(frau + ": " + (set == null ? "-" : set.size() + " " + getRanking(result, frau, maenner)));
@@ -166,15 +166,19 @@ public class MatchFinder {
     table.add(new ArrayList<>());
     table.get(0)
           .add("");
-    for (Frau frau : frauen) {
+    List<Frau> sortedFrauen = new ArrayList<>(frauen);
+    List<Mann> sortedMaenner = new ArrayList<>(maenner);
+    frauen.sort(Comparator.comparing(a -> a.name));
+    maenner.sort(Comparator.comparing(a -> a.name));
+    for (Frau frau : sortedFrauen) {
       table.get(0)
             .add(frau.name);
     }
-    for (Mann mann : maenner) {
+    for (Mann mann : sortedMaenner) {
       List<String> line = new ArrayList<>();
       table.add(line);
       line.add(mann.name);
-      for (Frau frau : frauen) {
+      for (Frau frau : sortedFrauen) {
         Pair pair = new Pair(frau, mann);
         int count = 0;
         for (Tag tag : data.tage) {
@@ -189,7 +193,7 @@ public class MatchFinder {
           possOut = "  -    ";
         }
         else if (possibility == 1d) {
-          possOut = "  ✅    ";
+          possOut = "  ✓    ";
         }
         else {
           possOut = numberFormat(possibility * 100)+" %";
