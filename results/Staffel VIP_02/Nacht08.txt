@@ -1,8 +1,8 @@
 -- Berechne VIP_02 - Nacht 8...
--- Combinations: 36288000 Yes: 130 No: 36287870 Calculation time: 0 min 45 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 130 No: 36287870 Calculation time: 1 min 5 secs (Tested intern iterations: 98641010)
 
 -- Berechne VIP_02 - Nacht 8 inkl. Matchbox...
--- Combinations: 36288000 Yes: 58 No: 36287942 Calculation time: 0 min 47 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 58 No: 36287942 Calculation time: 1 min 6 secs (Tested intern iterations: 98641010)
 
 MatchBox: Anna & Michael... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 44,62% [58] <==
@@ -36,22 +36,22 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 Die Kombinationen reduzieren sich: 58 => 1
 
 -- Berechne VIP_02 - Nacht 8 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 36288000 Yes: 1 No: 36287999 Calculation time: 0 min 46 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 1 No: 36287999 Calculation time: 0 min 59 secs (Tested intern iterations: 98641010)
 
-==== Partner ==== (und entsprechende Wahrscheinlichkeiten) (In Klammern: Anzahl gemeinsame Matching Night)
+==== Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights)
 
           Zoe          Ricarda      Isabelle     Karina       Cecilia      Anna         Celina       Luisa        Franziska    Gina         
-Martin      -     (0)    -     (0)    -     (3)    -     (2)    -     (0)    -     (1)    -     (1)    -     (0)    -     (0)    ✅     (0)  
-Maurice     -     (1)    ✅     (3)    -     (1)    -     (0)    -     (1)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)  
-Luca        -     (4)    -     (0)    -     (1)    ✅     (0)    -     (0)    -     (0)    -     (1)    -     (0)    -     (1)    -     (0)  
-Lukas       -     (1)    -     (0)    -     (1)    -     (0)    -     (0)    -     (0)    -     (0)    ✅     (4)    -     (1)    -     (0)  
-Pharrell    ✅     (0)    -     (3)    -     (0)    -     (1)    -     (1)    -     (1)    -     (0)    -     (1)    -     (0)    -     (0)  
-Amadu       -     (0)    -     (0)    -     (0)    -     (0)    ✅     (5)    -     (0)    -     (0)    -     (0)    -     (0)    -     (1)  
-Michael     -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    ✅     (5)    -     (0)    -     (0)    -     (1)    -     (1)  
-Fabio       -     (0)    -     (0)    -     (0)    -     (1)    -     (0)    -     (0)    ✅     (4)    -     (1)    -     (0)    -     (1)  
-Max         -     (1)    -     (1)    ✅     (0)    -     (0)    -     (0)    -     (0)    -     (1)    -     (0)    -     (3)    -     (0)  
-Calvin      -     (0)    -     (0)    -     (0)    -     (3)    -     (0)    -     (0)    -     (0)    -     (1)    ✅     (1)    -     (1)  
-Felix       -     (0)    -     (0)    ✅     (1)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (3)  
+Martin      -     (0)    -     (0)    -     (3)    -     (2)    -     (0)    -     (1)    -     (1)    -     (0)    -     (0)    ✓     (0)  
+Maurice     -     (1)    ✓     (3)    -     (1)    -     (0)    -     (1)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)  
+Luca        -     (4)    -     (0)    -     (1)    ✓     (0)    -     (0)    -     (0)    -     (1)    -     (0)    -     (1)    -     (0)  
+Lukas       -     (1)    -     (0)    -     (1)    -     (0)    -     (0)    -     (0)    -     (0)    ✓     (4)    -     (1)    -     (0)  
+Pharrell    ✓     (0)    -     (3)    -     (0)    -     (1)    -     (1)    -     (1)    -     (0)    -     (1)    -     (0)    -     (0)  
+Amadu       -     (0)    -     (0)    -     (0)    -     (0)    ✓     (5)    -     (0)    -     (0)    -     (0)    -     (0)    -     (1)  
+Michael     -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    ✓     (5)    -     (0)    -     (0)    -     (1)    -     (1)  
+Fabio       -     (0)    -     (0)    -     (0)    -     (1)    -     (0)    -     (0)    ✓     (4)    -     (1)    -     (0)    -     (1)  
+Max         -     (1)    -     (1)    ✓     (0)    -     (0)    -     (0)    -     (0)    -     (1)    -     (0)    -     (3)    -     (0)  
+Calvin      -     (0)    -     (0)    -     (0)    -     (3)    -     (0)    -     (0)    -     (0)    -     (1)    ✓     (1)    -     (1)  
+Felix       -     (0)    -     (0)    ✓     (1)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (3)  
 
 Mögliche Paare: 11/110
 
