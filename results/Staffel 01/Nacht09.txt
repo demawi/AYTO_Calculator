@@ -1,79 +1,59 @@
 -- Berechne 01 - Nacht 9...
--- Combinations: 36288000 Yes: 1 No: 36287999 Calculation time: 0 min 42 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 1 No: 36287999 Calculation time: 1 min 7 secs (Tested intern iterations: 98641010)
 
 -- Berechne 01 - Nacht 9 inkl. Matchbox...
--- Combinations: 36288000 Yes: 1 No: 36287999 Calculation time: 0 min 42 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 1 No: 36287999 Calculation time: 1 min 8 secs (Tested intern iterations: 98641010)
 
 MatchBox: Maddie & Ferhat... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
-Ja   => 0.0% [0]
-Nein => 100.0% [1] <==
+Ja   => 0,00% [0]
+Nein => 100,00% [1] <==
 Die Kombinationen reduzieren sich: 1 => 1
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Sabrina & Elisha: 100.0%
-Luisa & Axel: 100.0%
-Katharina & Aleks: 0.0%
-Nadine & Ferhat: 100.0%
-Maddie & Kevin: 0.0%
-Michelle & René: 100.0%
-Laura & Juliano: 0.0%
-Ivana & Dominic: 100.0%
-Aline & Mo: 100.0%
-Melissa & Laurin: 100.0%
+Sabrina & Elisha: 100,00%
+Luisa & Axel: 100,00%
+Katharina & Aleks: 0,00%
+Nadine & Ferhat: 100,00%
+Maddie & Kevin: 0,00%
+Michelle & René: 100,00%
+Laura & Juliano: 0,00%
+Ivana & Dominic: 100,00%
+Aline & Mo: 100,00%
+Melissa & Laurin: 100,00%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
-0 => 0.0% [0]
-1 => 0.0% [0]
-2 => 0.0% [0]
-3 => 0.0% [0]
-4 => 0.0% [0]
-5 => 0.0% [0]
-6 => 0.0% [0]
-7 => 100.0% [1] <==
-8 => 0.0% [0]
-9 => 0.0% [0]
-10 => 0.0% [0]
+0 => 0,00% [0]
+1 => 0,00% [0]
+2 => 0,00% [0]
+3 => 0,00% [0]
+4 => 0,00% [0]
+5 => 0,00% [0]
+6 => 0,00% [0]
+7 => 100,00% [1] <==
+8 => 0,00% [0]
+9 => 0,00% [0]
+10 => 0,00% [0]
 Die Kombinationen reduzieren sich: 1 => 1
 
 -- Berechne 01 - Nacht 9 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 36288000 Yes: 1 No: 36287999 Calculation time: 0 min 42 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 1 No: 36287999 Calculation time: 1 min 8 secs (Tested intern iterations: 98641010)
 
-==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
-Ivana: 1 [Dominic (100.0)]
-Luisa: 1 [Axel (100.0)]
-Melissa: 1 [Laurin (100.0)]
-Michelle: 1 [René (100.0)]
-Nadine: 1 [Ferhat (100.0)]
-Katharina: 1 [Kevin (100.0)]
-Laura: 1 [Aleks (100.0)]
-Maddie: 2 [Juliano (100.0), Edin (100.0)]
-Aline: 1 [Mo (100.0)]
-Sabrina: 1 [Elisha (100.0)]
+==== Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights)
 
-Mo: 1 [Aline (100.0)]
-Axel: 1 [Luisa (100.0)]
-Juliano: 1 [Maddie (100.0)]
-Dominic: 1 [Ivana (100.0)]
-Elisha: 1 [Sabrina (100.0)]
-René: 1 [Michelle (100.0)]
-Ferhat: 1 [Nadine (100.0)]
-Laurin: 1 [Melissa (100.0)]
-Kevin: 1 [Katharina (100.0)]
-Aleks: 1 [Laura (100.0)]
-Edin: 1 [Maddie (100.0)]
+         Aline        Ivana        Katharina    Laura        Luisa        Maddie       Melissa      Michelle     Nadine       Sabrina      
+Aleks      -     (0)    -     (0)    -     (2)    ✓     (1)    -     (0)    -     (3)    -     (0)    -     (0)    -     (2)    -     (2)  
+Axel       -     (0)    -     (1)    -     (0)    -     (0)    ✓     (6)    -     (2)    -     (0)    -     (1)    -     (0)    -     (0)  
+Dominic    -     (0)    ✓     (3)    -     (0)    -     (0)    -     (0)    -     (0)    -     (1)    -     (0)    -     (1)    -     (5)  
+Edin       -     (0)    -     (0)    -     (0)    -     (1)    -     (0)    ✓     (1)    -     (0)    -     (0)    -     (0)    -     (0)  
+Elisha     -     (0)    -     (2)    -     (1)    -     (0)    -     (0)    -     (0)    -     (0)    -     (1)    -     (2)    ✓     (3)  
+Ferhat     -     (1)    -     (0)    -     (0)    -     (1)    -     (1)    -     (1)    -     (0)    -     (1)    ✓     (4)    -     (0)  
+Juliano    -     (0)    -     (2)    -     (1)    -     (6)    -     (0)    ✓     (1)    -     (0)    -     (0)    -     (0)    -     (0)  
+Kevin      -     (1)    -     (2)    ✓     (5)    -     (1)    -     (0)    -     (1)    -     (0)    -     (0)    -     (0)    -     (0)  
+Laurin     -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (1)    ✓     (9)    -     (0)    -     (0)    -     (0)  
+Mo         ✓     (8)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (2)    -     (0)    -     (0)  
+René       -     (0)    -     (0)    -     (1)    -     (0)    -     (3)    -     (0)    -     (0)    ✓     (5)    -     (1)    -     (0)  
 
-==== Mögliche Paare: 11/110 ====
-Luisa & Axel => 100.0% [1/1] Gemeinsame MNs: 6/10
-Sabrina & Elisha => 100.0% [1/1] Gemeinsame MNs: 3/10
-Nadine & Ferhat => 100.0% [1/1] Gemeinsame MNs: 4/10
-Laura & Aleks => 100.0% [1/1] Gemeinsame MNs: 1/10
-Katharina & Kevin => 100.0% [1/1] Gemeinsame MNs: 5/10
-Michelle & René => 100.0% [1/1] Gemeinsame MNs: 5/10
-Maddie & Edin => 100.0% [1/1] Gemeinsame MNs: 1/10
-Ivana & Dominic => 100.0% [1/1] Gemeinsame MNs: 3/10
-Aline & Mo => 100.0% [1/1] Gemeinsame MNs: 8/10
-Maddie & Juliano => 100.0% [1/1] Gemeinsame MNs: 1/10
-Melissa & Laurin => 100.0% [1/1] Gemeinsame MNs: 9/10
+Mögliche Paare: 11/110
 
 ==== Beste Konstellationen ====
 > Platz 1 mit 11 Punkten (Summe der Vorkommen der Einzelpaare)
