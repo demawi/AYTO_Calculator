@@ -1,401 +1,317 @@
 -- Berechne 02 - Nacht 6...
--- Combinations: 36288000 Yes: 856 No: 36287144 Calculation time: 0 min 41 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 765 No: 36287235 Calculation time: 0 min 57 secs (Tested intern iterations: 98641010)
 
 -- Berechne 02 - Nacht 6 inkl. Matchbox...
--- Combinations: 36288000 Yes: 856 No: 36287144 Calculation time: 0 min 40 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 765 No: 36287235 Calculation time: 0 min 57 secs (Tested intern iterations: 98641010)
 
 MatchBox: Laura & Dario verkauft. (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
-Ja   => 0.7% [6]
-Nein => 99.3% [850]
-Die Kombinationen reduzieren sich: 856 => 856
+Ja   => 0,78% [6]
+Nein => 99,22% [759]
+Die Kombinationen reduzieren sich: 765 => 765
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Sabrina & Marko: 36.8%
-Leonie & Marcel: 100.0%
-Melissa & Aaron: 77.92%
-Jill & Sascha: 0.0%
-Mirjam & Marc: 56.07%
-Victoria & Germain: 0.0%
-Vanessa & Dominic: 37.73%
-Laura & Marvin: 17.64%
-Christin & Maximilian: 6.43%
-VanessaM & Dario: 10.63%
+Christin & Maximilian: 6,67%
+Melissa & Aaron: 78,04%
+Mirjam & Marc: 55,95%
+Leonie & Marcel: 100,00%
+VanessaM & Dario: 11,90%
+Jill & Sascha: 0,00%
+Victoria & Germain: 0,00%
+Vanessa & Dominic: 37,65%
+Sabrina & Marko: 36,60%
+Laura & Marvin: 17,65%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
-0 => 0.0% [0]
-1 => 0.0% [0]
-2 => 10.05% [86]
-3 => 49.77% [426]
-4 => 28.15% [241] <==
-5 => 10.98% [94]
-6 => 1.05% [9]
-7 => 0.0% [0]
-8 => 0.0% [0]
-9 => 0.0% [0]
-10 => 0.0% [0]
-Die Kombinationen reduzieren sich: 856 => 241
+0 => 0,00% [0]
+1 => 0,00% [0]
+2 => 9,93% [76]
+3 => 49,15% [376]
+4 => 28,63% [219] <==
+5 => 11,11% [85]
+6 => 1,18% [9]
+7 => 0,00% [0]
+8 => 0,00% [0]
+9 => 0,00% [0]
+10 => 0,00% [0]
+Die Kombinationen reduzieren sich: 765 => 219
 
 -- Berechne 02 - Nacht 6 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 36288000 Yes: 241 No: 36287759 Calculation time: 0 min 40 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Yes: 219 No: 36287781 Calculation time: 0 min 57 secs (Tested intern iterations: 98641010)
 
-==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
-Jill: 6 [Marvin (35.27), Dominic (21.16), Germain (18.67), Marc (12.45), Marko (10.79), Aaron (1.66)]
-Sabrina: 8 [Marko (47.3), Sascha (13.69), Dario (13.28), Marvin (11.62), Maximilian (5.39), Dominic (4.56), Germain (2.9), Marc (1.24)]
-Kathleen: 8 [Maximilian (40.66), Sascha (20.75), Marvin (12.03), Marc (7.05), Marko (5.81), Germain (5.39), Dominic (4.98), Dario (3.32)]
-Mirjam: 8 [Marc (48.96), Dario (13.28), Sascha (12.86), Marvin (11.62), Maximilian (5.39), Dominic (4.56), Germain (2.07), Marko (1.24)]
-Vanessa: 6 [Dominic (57.68), Maximilian (23.65), Marc (8.3), Marko (5.81), Germain (3.73), Dario (0.83)]
-Victoria: 7 [Dario (64.73), Maximilian (14.52), Marko (8.3), Sascha (7.47), Marc (4.15), Aaron (0.41), Dominic (0.41)]
-Christin: 8 [Germain (55.19), Sascha (17.43), Marko (5.81), Marc (4.98), Dominic (4.98), Dario (4.56), Maximilian (3.73), Marvin (3.32)]
-Leonie: 1 [Marcel (100.0)]
-Melissa: 4 [Aaron (95.44), Maximilian (2.49), Marko (1.24), Germain (0.83)]
-Laura: 8 [Sascha (27.8), Marvin (26.14), Marko (13.69), Marc (12.86), Germain (11.2), Maximilian (4.15), Aaron (2.49), Dominic (1.66)]
-VanessaM: 10 [Dario (20.75), Maximilian (9.13), Aaron (9.13), Marc (9.13), Sascha (9.13), Marvin (9.13), Germain (9.13), Dominic (9.13), Marcel (9.13), Marko (6.22)]
+==== Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights)
 
-Maximilian: 9 [Kathleen (40.66), Vanessa (23.65), Victoria (14.52), VanessaM (9.13), Sabrina (5.39), Mirjam (5.39), Laura (4.15), Christin (3.73), Melissa (2.49)]
-Marko: 10 [Sabrina (47.3), Laura (13.69), Jill (10.79), Victoria (8.3), VanessaM (6.22), Kathleen (5.81), Vanessa (5.81), Christin (5.81), Mirjam (1.24), Melissa (1.24)]
-Aaron: 5 [Melissa (95.44), VanessaM (9.13), Laura (2.49), Jill (1.66), Victoria (0.41)]
-Marc: 9 [Mirjam (48.96), Laura (12.86), Jill (12.45), VanessaM (9.13), Vanessa (8.3), Kathleen (7.05), Christin (4.98), Victoria (4.15), Sabrina (1.24)]
-Sascha: 7 [Laura (27.8), Kathleen (20.75), Christin (17.43), Sabrina (13.69), Mirjam (12.86), VanessaM (9.13), Victoria (7.47)]
-Dario: 7 [Victoria (64.73), VanessaM (20.75), Sabrina (13.28), Mirjam (13.28), Christin (4.56), Kathleen (3.32), Vanessa (0.83)]
-Marvin: 7 [Jill (35.27), Laura (26.14), Kathleen (12.03), Sabrina (11.62), Mirjam (11.62), VanessaM (9.13), Christin (3.32)]
-Germain: 9 [Christin (55.19), Jill (18.67), Laura (11.2), VanessaM (9.13), Kathleen (5.39), Vanessa (3.73), Sabrina (2.9), Mirjam (2.07), Melissa (0.83)]
-Dominic: 9 [Vanessa (57.68), Jill (21.16), VanessaM (9.13), Kathleen (4.98), Christin (4.98), Sabrina (4.56), Mirjam (4.56), Laura (1.66), Victoria (0.41)]
-Marcel: 2 [Leonie (100.0), VanessaM (9.13)]
+            Christin     Jill         Kathleen     Laura        Leonie       Melissa      Mirjam       Sabrina      Vanessa      VanessaM     Victoria     
+Aaron         -     (0)   1,83 % (0)    -     (2)   2,74 % (0)    -     (0)  94,98 % (5)    -     (1)    -     (0)    -     (1)  10,05 % (0)   0,46 % (0)  
+Dario        4,57 % (0)    -     (0)   3,65 % (2)    -     (1)    -     (0)    -     (0)  12,79 % (0)  12,79 % (1)   0,91 % (0)  22,83 % (1)  65,30 % (4)  
+Dominic      5,48 % (0)  21,46 % (0)   5,02 % (0)   1,83 % (2)    -     (0)    -     (3)   4,57 % (0)   4,57 % (1)  56,62 % (3)  10,05 % (0)   0,46 % (0)  
+Germain     53,88 % (2)  18,72 % (1)   5,48 % (0)  11,42 % (1)    -     (1)   0,91 % (0)   2,28 % (0)   3,20 % (0)   4,11 % (0)  10,05 % (1)    -     (3)  
+Marc         5,02 % (0)  12,33 % (0)   6,85 % (0)  12,79 % (0)    -     (1)    -     (1)  49,32 % (6)   1,37 % (0)   8,22 % (0)  10,05 % (1)   4,11 % (0)  
+Marcel        -     (0)    -     (0)    -     (0)    -     (2)    ✓     (7)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)  
+Marko        5,94 % (0)  10,96 % (0)   5,94 % (0)  13,70 % (1)    -     (0)   1,37 % (0)   1,37 % (1)  46,58 % (4)   5,94 % (0)   6,85 % (1)   8,22 % (2)  
+Marvin       3,65 % (1)  34,70 % (1)  13,24 % (4)  25,57 % (1)    -     (0)    -     (0)  11,42 % (0)  11,42 % (0)    -     (2)  10,05 % (0)    -     (0)  
+Maximilian   4,11 % (5)    -     (2)  39,73 % (0)   4,11 % (1)    -     (0)   2,74 % (0)   5,48 % (1)   5,48 % (0)  24,20 % (0)  10,05 % (0)  14,16 % (0)  
+Sascha      17,35 % (0)    -     (5)  20,09 % (0)  27,85 % (0)    -     (0)    -     (0)  12,79 % (0)  14,61 % (2)    -     (2)  10,05 % (0)   7,31 % (0)  
 
-==== Mögliche Paare: 74/110 ====
-Leonie & Marcel => 100.0% [241/241] Gemeinsame MNs: 7/9
-Melissa & Aaron => 95.44% [230/241] Gemeinsame MNs: 5/9
-Victoria & Dario => 64.73% [156/241] Gemeinsame MNs: 4/9
-Vanessa & Dominic => 57.68% [139/241] Gemeinsame MNs: 3/9
-Christin & Germain => 55.19% [133/241] Gemeinsame MNs: 2/9
-Mirjam & Marc => 48.96% [118/241] Gemeinsame MNs: 6/9
-Sabrina & Marko => 47.3% [114/241] Gemeinsame MNs: 4/9
-Kathleen & Maximilian => 40.66% [98/241] Gemeinsame MNs: 0/9
-Jill & Marvin => 35.27% [85/241] Gemeinsame MNs: 1/9
-Laura & Sascha => 27.8% [67/241] Gemeinsame MNs: 0/9
-Laura & Marvin => 26.14% [63/241] Gemeinsame MNs: 1/9
-Vanessa & Maximilian => 23.65% [57/241] Gemeinsame MNs: 0/9
-Jill & Dominic => 21.16% [51/241] Gemeinsame MNs: 0/9
-Kathleen & Sascha => 20.75% [50/241] Gemeinsame MNs: 0/9
-VanessaM & Dario => 20.75% [50/241] Gemeinsame MNs: 1/9
-Jill & Germain => 18.67% [45/241] Gemeinsame MNs: 1/9
-Christin & Sascha => 17.43% [42/241] Gemeinsame MNs: 0/9
-Victoria & Maximilian => 14.52% [35/241] Gemeinsame MNs: 0/9
-Sabrina & Sascha => 13.69% [33/241] Gemeinsame MNs: 2/9
-Laura & Marko => 13.69% [33/241] Gemeinsame MNs: 1/9
-Sabrina & Dario => 13.28% [32/241] Gemeinsame MNs: 1/9
-Mirjam & Dario => 13.28% [32/241] Gemeinsame MNs: 0/9
-Laura & Marc => 12.86% [31/241] Gemeinsame MNs: 0/9
-Mirjam & Sascha => 12.86% [31/241] Gemeinsame MNs: 0/9
-Jill & Marc => 12.45% [30/241] Gemeinsame MNs: 0/9
-Kathleen & Marvin => 12.03% [29/241] Gemeinsame MNs: 4/9
-Sabrina & Marvin => 11.62% [28/241] Gemeinsame MNs: 0/9
-Mirjam & Marvin => 11.62% [28/241] Gemeinsame MNs: 0/9
-Laura & Germain => 11.2% [27/241] Gemeinsame MNs: 1/9
-Jill & Marko => 10.79% [26/241] Gemeinsame MNs: 0/9
-VanessaM & Sascha => 9.13% [22/241] Gemeinsame MNs: 0/9
-VanessaM & Marvin => 9.13% [22/241] Gemeinsame MNs: 0/9
-VanessaM & Maximilian => 9.13% [22/241] Gemeinsame MNs: 0/9
-VanessaM & Marc => 9.13% [22/241] Gemeinsame MNs: 1/9
-VanessaM & Germain => 9.13% [22/241] Gemeinsame MNs: 1/9
-VanessaM & Dominic => 9.13% [22/241] Gemeinsame MNs: 0/9
-VanessaM & Marcel => 9.13% [22/241] Gemeinsame MNs: 0/9
-VanessaM & Aaron => 9.13% [22/241] Gemeinsame MNs: 0/9
-Victoria & Marko => 8.3% [20/241] Gemeinsame MNs: 2/9
-Vanessa & Marc => 8.3% [20/241] Gemeinsame MNs: 0/9
-Victoria & Sascha => 7.47% [18/241] Gemeinsame MNs: 0/9
-Kathleen & Marc => 7.05% [17/241] Gemeinsame MNs: 0/9
-VanessaM & Marko => 6.22% [15/241] Gemeinsame MNs: 1/9
-Vanessa & Marko => 5.81% [14/241] Gemeinsame MNs: 0/9
-Christin & Marko => 5.81% [14/241] Gemeinsame MNs: 0/9
-Kathleen & Marko => 5.81% [14/241] Gemeinsame MNs: 0/9
-Mirjam & Maximilian => 5.39% [13/241] Gemeinsame MNs: 1/9
-Sabrina & Maximilian => 5.39% [13/241] Gemeinsame MNs: 0/9
-Kathleen & Germain => 5.39% [13/241] Gemeinsame MNs: 0/9
-Kathleen & Dominic => 4.98% [12/241] Gemeinsame MNs: 0/9
-Christin & Marc => 4.98% [12/241] Gemeinsame MNs: 0/9
-Christin & Dominic => 4.98% [12/241] Gemeinsame MNs: 0/9
-Sabrina & Dominic => 4.56% [11/241] Gemeinsame MNs: 1/9
-Mirjam & Dominic => 4.56% [11/241] Gemeinsame MNs: 0/9
-Christin & Dario => 4.56% [11/241] Gemeinsame MNs: 0/9
-Laura & Maximilian => 4.15% [10/241] Gemeinsame MNs: 1/9
-Victoria & Marc => 4.15% [10/241] Gemeinsame MNs: 0/9
-Vanessa & Germain => 3.73% [9/241] Gemeinsame MNs: 0/9
-Christin & Maximilian => 3.73% [9/241] Gemeinsame MNs: 5/9
-Christin & Marvin => 3.32% [8/241] Gemeinsame MNs: 1/9
-Kathleen & Dario => 3.32% [8/241] Gemeinsame MNs: 2/9
-Sabrina & Germain => 2.9% [7/241] Gemeinsame MNs: 0/9
-Melissa & Maximilian => 2.49% [6/241] Gemeinsame MNs: 0/9
-Laura & Aaron => 2.49% [6/241] Gemeinsame MNs: 0/9
-Mirjam & Germain => 2.07% [5/241] Gemeinsame MNs: 0/9
-Jill & Aaron => 1.66% [4/241] Gemeinsame MNs: 0/9
-Laura & Dominic => 1.66% [4/241] Gemeinsame MNs: 2/9
-Mirjam & Marko => 1.24% [3/241] Gemeinsame MNs: 1/9
-Sabrina & Marc => 1.24% [3/241] Gemeinsame MNs: 0/9
-Melissa & Marko => 1.24% [3/241] Gemeinsame MNs: 0/9
-Melissa & Germain => 0.83% [2/241] Gemeinsame MNs: 0/9
-Vanessa & Dario => 0.83% [2/241] Gemeinsame MNs: 0/9
-Victoria & Dominic => 0.41% [1/241] Gemeinsame MNs: 0/9
-Victoria & Aaron => 0.41% [1/241] Gemeinsame MNs: 0/9
+Mögliche Paare: 73/110
 
 ==== Beste Konstellationen ====
-> Platz 1 mit 1188 Punkten (Summe der Vorkommen der Einzelpaare)
-Sabrina & Marko
-Kathleen & Maximilian
-Leonie & Marcel
-Melissa & Aaron
+> Platz 1 mit 1079 Punkten (Summe der Vorkommen der Einzelpaare)
 Jill & Dominic
-Mirjam & Marvin
-Christin & Germain
-Vanessa & Marc
-Victoria & Dario
-Laura & Sascha
-VanessaM & Dario
-
-> Platz 2 mit 1186 Punkten (Summe der Vorkommen der Einzelpaare)
-Kathleen & Maximilian
-Leonie & Marcel
 Melissa & Aaron
+Christin & Germain
+Mirjam & Marc
+Kathleen & Maximilian
 Sabrina & Marvin
-Jill & Dominic
-Vanessa & Marko
-Christin & Germain
-Mirjam & Marc
 Victoria & Dario
+Leonie & Marcel
 Laura & Sascha
 VanessaM & Dario
+Vanessa & Marko
 
-> Platz 3 mit 1185 Punkten (Summe der Vorkommen der Einzelpaare)
-Kathleen & Maximilian
-Leonie & Marcel
+> Platz 2 mit 1078 Punkten (Summe der Vorkommen der Einzelpaare)
+Jill & Dominic
 Melissa & Aaron
 Christin & Germain
-Mirjam & Marc
-Vanessa & Dominic
+Kathleen & Maximilian
+Vanessa & Marc
+Mirjam & Marvin
+Victoria & Dario
+Leonie & Marcel
+Laura & Sascha
+VanessaM & Dario
+Sabrina & Marko
+
+> Platz 3 mit 1069 Punkten (Summe der Vorkommen der Einzelpaare)
 Sabrina & Dario
 Jill & Marvin
+Melissa & Aaron
+Christin & Germain
 VanessaM & Maximilian
+Mirjam & Marc
 Victoria & Marko
-Laura & Sascha
-
-> Platz 4 mit 1185 Punkten (Summe der Vorkommen der Einzelpaare)
 Kathleen & Maximilian
 Leonie & Marcel
-Melissa & Aaron
-Christin & Germain
-Mirjam & Marc
+Laura & Sascha
 Vanessa & Dominic
+
+> Platz 4 mit 1069 Punkten (Summe der Vorkommen der Einzelpaare)
 Sabrina & Dario
 Jill & Marvin
+Melissa & Aaron
+VanessaM & Marvin
+Christin & Germain
+Mirjam & Marc
 Victoria & Marko
-Laura & Sascha
-VanessaM & Aaron
-
-> Platz 5 mit 1185 Punkten (Summe der Vorkommen der Einzelpaare)
 Kathleen & Maximilian
 Leonie & Marcel
-Melissa & Aaron
+Laura & Sascha
+Vanessa & Dominic
+
+> Platz 5 mit 1069 Punkten (Summe der Vorkommen der Einzelpaare)
 VanessaM & Marc
-Christin & Germain
-Mirjam & Marc
-Vanessa & Dominic
 Sabrina & Dario
 Jill & Marvin
+Melissa & Aaron
+Christin & Germain
+Mirjam & Marc
 Victoria & Marko
+Kathleen & Maximilian
+Leonie & Marcel
 Laura & Sascha
+Vanessa & Dominic
 
-> Platz 6 mit 1185 Punkten (Summe der Vorkommen der Einzelpaare)
+> Platz 6 mit 1069 Punkten (Summe der Vorkommen der Einzelpaare)
+VanessaM & Dominic
+Sabrina & Dario
+Jill & Marvin
+Melissa & Aaron
+Christin & Germain
+Mirjam & Marc
+Victoria & Marko
+Kathleen & Maximilian
+Leonie & Marcel
+Laura & Sascha
+Vanessa & Dominic
+
+> Platz 7 mit 1069 Punkten (Summe der Vorkommen der Einzelpaare)
+Sabrina & Dario
+Jill & Marvin
+Melissa & Aaron
+Christin & Germain
+Mirjam & Marc
+VanessaM & Sascha
+Victoria & Marko
+Kathleen & Maximilian
+Leonie & Marcel
+Laura & Sascha
+Vanessa & Dominic
+
+> Platz 8 mit 1069 Punkten (Summe der Vorkommen der Einzelpaare)
+Sabrina & Dario
+Jill & Marvin
+Melissa & Aaron
+Christin & Germain
+Mirjam & Marc
+Victoria & Marko
+Kathleen & Maximilian
+Leonie & Marcel
+Laura & Sascha
+VanessaM & Germain
+Vanessa & Dominic
+
+> Platz 9 mit 1069 Punkten (Summe der Vorkommen der Einzelpaare)
+VanessaM & Aaron
+Sabrina & Dario
+Jill & Marvin
+Melissa & Aaron
+Christin & Germain
+Mirjam & Marc
+Victoria & Marko
+Kathleen & Maximilian
+Leonie & Marcel
+Laura & Sascha
+Vanessa & Dominic
+
+> Platz 10 mit 1054 Punkten (Summe der Vorkommen der Einzelpaare)
+Jill & Marvin
+Melissa & Aaron
+Christin & Germain
+VanessaM & Maximilian
+Kathleen & Maximilian
+Leonie & Marcel
+Laura & Sascha
+Victoria & Marc
+Vanessa & Dominic
+Mirjam & Dario
+Sabrina & Marko
+
+> Platz 11 mit 1054 Punkten (Summe der Vorkommen der Einzelpaare)
+Jill & Marvin
+Melissa & Aaron
+VanessaM & Marvin
+Christin & Germain
+Kathleen & Maximilian
+Leonie & Marcel
+Laura & Sascha
+Victoria & Marc
+Vanessa & Dominic
+Mirjam & Dario
+Sabrina & Marko
+
+> Platz 12 mit 1054 Punkten (Summe der Vorkommen der Einzelpaare)
+VanessaM & Marc
+Jill & Marvin
+Melissa & Aaron
+Christin & Germain
+Kathleen & Maximilian
+Leonie & Marcel
+Laura & Sascha
+Victoria & Marc
+Vanessa & Dominic
+Mirjam & Dario
+Sabrina & Marko
+
+> Platz 13 mit 1054 Punkten (Summe der Vorkommen der Einzelpaare)
+VanessaM & Dominic
+Jill & Marvin
+Melissa & Aaron
+Christin & Germain
+Kathleen & Maximilian
+Leonie & Marcel
+Laura & Sascha
+Victoria & Marc
+Vanessa & Dominic
+Mirjam & Dario
+Sabrina & Marko
+
+> Platz 14 mit 1054 Punkten (Summe der Vorkommen der Einzelpaare)
+Jill & Marvin
+Melissa & Aaron
+Christin & Germain
 VanessaM & Sascha
 Kathleen & Maximilian
 Leonie & Marcel
+Laura & Sascha
+Victoria & Marc
+Vanessa & Dominic
+Mirjam & Dario
+Sabrina & Marko
+
+> Platz 15 mit 1054 Punkten (Summe der Vorkommen der Einzelpaare)
+Jill & Marvin
 Melissa & Aaron
 Christin & Germain
-Mirjam & Marc
-Vanessa & Dominic
-Sabrina & Dario
-Jill & Marvin
-Victoria & Marko
-Laura & Sascha
-
-> Platz 7 mit 1185 Punkten (Summe der Vorkommen der Einzelpaare)
 Kathleen & Maximilian
 Leonie & Marcel
-Melissa & Aaron
-Christin & Germain
-Mirjam & Marc
-VanessaM & Marvin
-Vanessa & Dominic
-Sabrina & Dario
-Jill & Marvin
-Victoria & Marko
-Laura & Sascha
-
-> Platz 8 mit 1185 Punkten (Summe der Vorkommen der Einzelpaare)
-Kathleen & Maximilian
-Leonie & Marcel
-Melissa & Aaron
-Christin & Germain
-Mirjam & Marc
-Vanessa & Dominic
-Sabrina & Dario
-Jill & Marvin
-Victoria & Marko
 Laura & Sascha
 VanessaM & Germain
-
-> Platz 9 mit 1185 Punkten (Summe der Vorkommen der Einzelpaare)
-VanessaM & Dominic
-Kathleen & Maximilian
-Leonie & Marcel
-Melissa & Aaron
-Christin & Germain
-Mirjam & Marc
-Vanessa & Dominic
-Sabrina & Dario
-Jill & Marvin
-Victoria & Marko
-Laura & Sascha
-
-> Platz 10 mit 1185 Punkten (Summe der Vorkommen der Einzelpaare)
-Kathleen & Maximilian
-Leonie & Marcel
-Melissa & Aaron
-VanessaM & Marcel
-Christin & Germain
-Mirjam & Marc
-Vanessa & Dominic
-Sabrina & Dario
-Jill & Marvin
-Victoria & Marko
-Laura & Sascha
-
-> Platz 11 mit 1171 Punkten (Summe der Vorkommen der Einzelpaare)
-Sabrina & Marko
-Kathleen & Maximilian
-Leonie & Marcel
-Melissa & Aaron
-Christin & Germain
-Vanessa & Dominic
-Jill & Marvin
-VanessaM & Maximilian
-Laura & Sascha
-Mirjam & Dario
 Victoria & Marc
-
-> Platz 12 mit 1171 Punkten (Summe der Vorkommen der Einzelpaare)
-Sabrina & Marko
-Kathleen & Maximilian
-Leonie & Marcel
-Melissa & Aaron
-Christin & Germain
 Vanessa & Dominic
-Jill & Marvin
-Laura & Sascha
 Mirjam & Dario
+Sabrina & Marko
+
+> Platz 16 mit 1054 Punkten (Summe der Vorkommen der Einzelpaare)
 VanessaM & Aaron
-Victoria & Marc
-
-> Platz 13 mit 1171 Punkten (Summe der Vorkommen der Einzelpaare)
-Sabrina & Marko
+Jill & Marvin
+Melissa & Aaron
+Christin & Germain
 Kathleen & Maximilian
 Leonie & Marcel
+Laura & Sascha
+Victoria & Marc
+Vanessa & Dominic
+Mirjam & Dario
+Sabrina & Marko
+
+> Platz 17 mit 1051 Punkten (Summe der Vorkommen der Einzelpaare)
 Melissa & Aaron
+VanessaM & Maximilian
+Mirjam & Marc
+Kathleen & Maximilian
+Sabrina & Marvin
+Victoria & Dario
+Leonie & Marcel
+Laura & Sascha
+Christin & Marko
+Jill & Germain
+Vanessa & Dominic
+
+> Platz 18 mit 1051 Punkten (Summe der Vorkommen der Einzelpaare)
+Melissa & Aaron
+VanessaM & Marvin
+Mirjam & Marc
+Kathleen & Maximilian
+Sabrina & Marvin
+Victoria & Dario
+Leonie & Marcel
+Laura & Sascha
+Christin & Marko
+Jill & Germain
+Vanessa & Dominic
+
+> Platz 19 mit 1051 Punkten (Summe der Vorkommen der Einzelpaare)
 VanessaM & Marc
-Christin & Germain
-Vanessa & Dominic
-Jill & Marvin
-Laura & Sascha
-Mirjam & Dario
-Victoria & Marc
-
-> Platz 14 mit 1171 Punkten (Summe der Vorkommen der Einzelpaare)
-Sabrina & Marko
-VanessaM & Sascha
-Kathleen & Maximilian
-Leonie & Marcel
 Melissa & Aaron
-Christin & Germain
-Vanessa & Dominic
-Jill & Marvin
-Laura & Sascha
-Mirjam & Dario
-Victoria & Marc
-
-> Platz 15 mit 1171 Punkten (Summe der Vorkommen der Einzelpaare)
-Sabrina & Marko
+Mirjam & Marc
 Kathleen & Maximilian
+Sabrina & Marvin
+Victoria & Dario
 Leonie & Marcel
-Melissa & Aaron
-Christin & Germain
-VanessaM & Marvin
-Vanessa & Dominic
-Jill & Marvin
 Laura & Sascha
-Mirjam & Dario
-Victoria & Marc
-
-> Platz 16 mit 1171 Punkten (Summe der Vorkommen der Einzelpaare)
-Sabrina & Marko
-Kathleen & Maximilian
-Leonie & Marcel
-Melissa & Aaron
-Christin & Germain
+Christin & Marko
+Jill & Germain
 Vanessa & Dominic
-Jill & Marvin
-Laura & Sascha
-VanessaM & Germain
-Mirjam & Dario
-Victoria & Marc
 
-> Platz 17 mit 1171 Punkten (Summe der Vorkommen der Einzelpaare)
-Sabrina & Marko
+> Platz 20 mit 1051 Punkten (Summe der Vorkommen der Einzelpaare)
 VanessaM & Dominic
-Kathleen & Maximilian
-Leonie & Marcel
 Melissa & Aaron
-Christin & Germain
-Vanessa & Dominic
-Jill & Marvin
-Laura & Sascha
-Mirjam & Dario
-Victoria & Marc
-
-> Platz 18 mit 1171 Punkten (Summe der Vorkommen der Einzelpaare)
-Sabrina & Marko
+Mirjam & Marc
 Kathleen & Maximilian
-Leonie & Marcel
-Melissa & Aaron
-VanessaM & Marcel
-Christin & Germain
-Vanessa & Dominic
-Jill & Marvin
-Laura & Sascha
-Mirjam & Dario
-Victoria & Marc
-
-> Platz 19 mit 1159 Punkten (Summe der Vorkommen der Einzelpaare)
-Sabrina & Marko
-Kathleen & Maximilian
-Leonie & Marcel
-Melissa & Aaron
-Jill & Dominic
-Christin & Germain
-Vanessa & Marc
-Mirjam & Sascha
+Sabrina & Marvin
 Victoria & Dario
-Laura & Marvin
-VanessaM & Maximilian
-
-> Platz 20 mit 1159 Punkten (Summe der Vorkommen der Einzelpaare)
-Sabrina & Marko
-Kathleen & Maximilian
 Leonie & Marcel
-Melissa & Aaron
-Jill & Dominic
-Christin & Germain
-Vanessa & Marc
-Mirjam & Sascha
-Victoria & Dario
-Laura & Marvin
-VanessaM & Aaron
+Laura & Sascha
+Christin & Marko
+Jill & Germain
+Vanessa & Dominic
 

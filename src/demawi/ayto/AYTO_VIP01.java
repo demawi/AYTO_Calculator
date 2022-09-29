@@ -48,7 +48,7 @@ public class AYTO_VIP01
 
     add(null, pair(Aurelia, Diogo), 4, pair(Jules, Francesco), pair(Aurelia, Diogo), pair(Finnja, Eugen),
           pair(Jill, Tommy), pair(Kathleen, Manuel), pair(Melina, Danilo), pair(Sarah, Josua), pair(Steffi, Alex),
-          pair(Walentina, Salvatore), pair(Vanessa, Jamie));
+          pair(Walentina, Salvatore), pair(Vanessa, Jamie)).addImplicit(false, pair(Vanessa, Francesco));
 
     add(false, pair(Melina, Tommy), 3, pair(Jules, Francesco), pair(Aurelia, Danilo), pair(Finnja, Eugen),
           pair(Jill, Manuel), pair(Kathleen, Salvatore), pair(Melina, Tommy), pair(Sarah, Alex), pair(Steffi, Jamie),

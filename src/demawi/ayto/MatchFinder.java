@@ -168,8 +168,8 @@ public class MatchFinder {
           .add("");
     List<Frau> sortedFrauen = new ArrayList<>(frauen);
     List<Mann> sortedMaenner = new ArrayList<>(maenner);
-    frauen.sort(Comparator.comparing(a -> a.name));
-    maenner.sort(Comparator.comparing(a -> a.name));
+    sortedFrauen.sort(Comparator.comparing(a -> a.name));
+    sortedMaenner.sort(Comparator.comparing(a -> a.name));
     for (Frau frau : sortedFrauen) {
       table.get(0)
             .add(frau.name);

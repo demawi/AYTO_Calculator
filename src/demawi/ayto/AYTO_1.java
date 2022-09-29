@@ -57,7 +57,8 @@ public class AYTO_1
 
       add(true, pair(Michelle, Rene), 5, pair(Aline, Mo), pair(Melissa, Laurin), pair(Michelle, Rene),
             pair(Nadine, Elisha), pair(Luisa, Axel), pair(Laura, Edin), pair(Katharina, Kevin), pair(Ivana, Juliano),
-            pair(Maddie, Aleks), pair(Sabrina, Dominic)); // Ferhat
+            pair(Maddie, Aleks), pair(Sabrina, Dominic)).addImplicit(false, pair(Aline, Edin)).addImplicit(false, pair(Melissa, Edin))
+            .addImplicit(false, pair(Michelle, Edin)); // Ferhat
 
       // 7ter Tag
       add(false, pair(Ivana, Edin), 5, pair(Aline, Mo), pair(Melissa, Laurin), pair(Michelle, Rene),

@@ -1,144 +1,58 @@
 -- Berechne VIP_01 - Nacht 3...
--- Combinations: 3628800 Yes: 15449 No: 3613351 Calculation time: 0 min 4 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 15449 No: 3613351 Calculation time: 0 min 9 secs (Tested intern iterations: 62353010)
 
 -- Berechne VIP_01 - Nacht 3 inkl. Matchbox...
--- Combinations: 3628800 Yes: 14309 No: 3614491 Calculation time: 0 min 4 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 14309 No: 3614491 Calculation time: 0 min 9 secs (Tested intern iterations: 62353010)
 
 MatchBox: Walentina & Tommy... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
-Ja   => 7.38% [1140]
-Nein => 92.62% [14309] <==
+Ja   => 7,38% [1140]
+Nein => 92,62% [14309] <==
 Die Kombinationen reduzieren sich: 15449 => 14309
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Sarah & Danilo: 8.44%
-Melina & Tommy: 39.79%
-Walentina & Josua: 7.97%
-Finnja & Alex: 15.68%
-Kathleen & Manuel: 35.91%
-Jacky & Salvatore: 35.91%
-Steffi & Eugen: 6.64%
-Aurelia & Diogo: 35.91%
-Jill & Jamie: 35.91%
-Jules & Francesco: 100.0%
+Sarah & Danilo: 8,44%
+Melina & Tommy: 39,79%
+Walentina & Josua: 7,97%
+Finnja & Alex: 15,68%
+Kathleen & Manuel: 35,91%
+Jacky & Salvatore: 35,91%
+Steffi & Eugen: 6,64%
+Aurelia & Diogo: 35,91%
+Jill & Jamie: 35,91%
+Jules & Francesco: 100,00%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
-0 => 0.0% [0]
-1 => 1.85% [265]
-2 => 24.75% [3542]
-3 => 38.59% [5522] <==
-4 => 22.98% [3288]
-5 => 8.51% [1218]
-6 => 2.71% [388]
-7 => 0.53% [76]
-8 => 0.07% [10]
-9 => 0.0% [0]
-10 => 0.0% [0]
+0 => 0,00% [0]
+1 => 1,85% [265]
+2 => 24,75% [3542]
+3 => 38,59% [5522] <==
+4 => 22,98% [3288]
+5 => 8,51% [1218]
+6 => 2,71% [388]
+7 => 0,53% [76]
+8 => 0,07% [10]
+9 => 0,00% [0]
+10 => 0,00% [0]
 Die Kombinationen reduzieren sich: 14309 => 5522
 
 -- Berechne VIP_01 - Nacht 3 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 3628800 Yes: 5522 No: 3623278 Calculation time: 0 min 4 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 5522 No: 3623278 Calculation time: 0 min 9 secs (Tested intern iterations: 62353010)
 
-==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
-Finnja: 8 [Josua (15.68), Eugen (14.81), Tommy (12.71), Manuel (11.41), Salvatore (11.41), Diogo (11.41), Jamie (11.41), Alex (11.16)]
-Melina: 9 [Tommy (41.58), Danilo (10.14), Alex (8.8), Josua (8.4), Eugen (7.82), Manuel (5.81), Salvatore (5.81), Diogo (5.81), Jamie (5.81)]
-Jules: 1 [Francesco (100.0)]
-Walentina: 7 [Eugen (36.76), Alex (15.57), Manuel (9.92), Salvatore (9.92), Diogo (9.92), Jamie (9.92), Danilo (7.97)]
-Kathleen: 9 [Manuel (36.82), Danilo (10.52), Alex (9.51), Josua (8.84), Eugen (8.46), Tommy (6.85), Salvatore (6.34), Diogo (6.34), Jamie (6.34)]
-Jacky: 9 [Salvatore (36.82), Danilo (10.52), Alex (9.51), Josua (8.84), Eugen (8.46), Tommy (6.85), Manuel (6.34), Diogo (6.34), Jamie (6.34)]
-Aurelia: 9 [Diogo (36.82), Danilo (10.52), Alex (9.51), Josua (8.84), Eugen (8.46), Tommy (6.85), Manuel (6.34), Salvatore (6.34), Jamie (6.34)]
-Sarah: 8 [Josua (34.59), Alex (13.69), Tommy (9.6), Manuel (8.84), Salvatore (8.84), Diogo (8.84), Jamie (8.84), Eugen (6.77)]
-Jill: 9 [Jamie (36.82), Danilo (10.52), Alex (9.51), Josua (8.84), Eugen (8.46), Tommy (6.85), Manuel (6.34), Salvatore (6.34), Diogo (6.34)]
-Steffi: 8 [Danilo (39.8), Alex (12.75), Tommy (8.73), Manuel (8.19), Salvatore (8.19), Diogo (8.19), Jamie (8.19), Josua (5.98)]
+==== Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights)
 
-Danilo: 7 [Steffi (39.8), Kathleen (10.52), Jacky (10.52), Aurelia (10.52), Jill (10.52), Melina (10.14), Walentina (7.97)]
-Tommy: 8 [Melina (41.58), Finnja (12.71), Sarah (9.6), Steffi (8.73), Kathleen (6.85), Jacky (6.85), Aurelia (6.85), Jill (6.85)]
-Alex: 9 [Walentina (15.57), Sarah (13.69), Steffi (12.75), Finnja (11.16), Kathleen (9.51), Jacky (9.51), Aurelia (9.51), Jill (9.51), Melina (8.8)]
-Eugen: 8 [Walentina (36.76), Finnja (14.81), Kathleen (8.46), Jacky (8.46), Aurelia (8.46), Jill (8.46), Melina (7.82), Sarah (6.77)]
-Manuel: 9 [Kathleen (36.82), Finnja (11.41), Walentina (9.92), Sarah (8.84), Steffi (8.19), Jacky (6.34), Aurelia (6.34), Jill (6.34), Melina (5.81)]
-Francesco: 1 [Jules (100.0)]
-Salvatore: 9 [Jacky (36.82), Finnja (11.41), Walentina (9.92), Sarah (8.84), Steffi (8.19), Kathleen (6.34), Aurelia (6.34), Jill (6.34), Melina (5.81)]
-Diogo: 9 [Aurelia (36.82), Finnja (11.41), Walentina (9.92), Sarah (8.84), Steffi (8.19), Kathleen (6.34), Jacky (6.34), Jill (6.34), Melina (5.81)]
-Josua: 8 [Sarah (34.59), Finnja (15.68), Kathleen (8.84), Jacky (8.84), Aurelia (8.84), Jill (8.84), Melina (8.4), Steffi (5.98)]
-Jamie: 9 [Jill (36.82), Finnja (11.41), Walentina (9.92), Sarah (8.84), Steffi (8.19), Kathleen (6.34), Jacky (6.34), Aurelia (6.34), Melina (5.81)]
+           Aurelia      Finnja       Jacky        Jill         Jules        Kathleen     Melina       Sarah        Steffi       Walentina    
+Alex        9,51 % (0)  11,16 % (1)   9,51 % (1)   9,51 % (0)    -     (1)   9,51 % (0)   8,80 % (1)  13,69 % (2)  12,75 % (2)  15,57 % (0)  
+Danilo     10,52 % (3)    -     (0)  10,52 % (0)  10,52 % (2)    -     (0)  10,52 % (0)  10,14 % (1)    -     (2)  39,80 % (1)   7,97 % (0)  
+Diogo      36,82 % (5)  11,41 % (0)   6,34 % (0)   6,34 % (1)    -     (0)   6,34 % (0)   5,81 % (0)   8,84 % (0)   8,19 % (0)   9,92 % (0)  
+Eugen       8,46 % (0)  14,81 % (3)   8,46 % (1)   8,46 % (1)    -     (0)   8,46 % (0)   7,82 % (1)   6,77 % (0)    -     (1)  36,76 % (2)  
+Francesco    -     (0)    -     (1)    -     (0)    -     (0)    ✓     (8)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)  
+Jamie       6,34 % (0)  11,41 % (1)   6,34 % (0)  36,82 % (2)    -     (0)   6,34 % (0)   5,81 % (0)   8,84 % (2)   8,19 % (3)   9,92 % (0)  
+Josua       8,84 % (1)  15,68 % (0)   8,84 % (0)   8,84 % (0)    -     (0)   8,84 % (0)   8,40 % (0)  34,59 % (3)   5,98 % (0)    -     (4)  
+Manuel      6,34 % (0)  11,41 % (1)   6,34 % (0)   6,34 % (1)    -     (0)  36,82 % (7)   5,81 % (0)   8,84 % (0)   8,19 % (0)   9,92 % (0)  
+Salvatore   6,34 % (0)  11,41 % (0)  36,82 % (4)   6,34 % (1)    -     (0)   6,34 % (1)   5,81 % (0)   8,84 % (0)   8,19 % (0)   9,92 % (3)  
+Tommy       6,85 % (0)  12,71 % (2)   6,85 % (0)   6,85 % (1)    -     (0)   6,85 % (0)  41,58 % (5)   9,60 % (0)   8,73 % (1)    -     (0)  
 
-==== Mögliche Paare: 77/100 ====
-Jules & Francesco => 100.0% [5522/5522] Gemeinsame MNs: 8/10
-Melina & Tommy => 41.58% [2296/5522] Gemeinsame MNs: 5/10
-Steffi & Danilo => 39.8% [2198/5522] Gemeinsame MNs: 1/10
-Kathleen & Manuel => 36.82% [2033/5522] Gemeinsame MNs: 7/10
-Aurelia & Diogo => 36.82% [2033/5522] Gemeinsame MNs: 5/10
-Jill & Jamie => 36.82% [2033/5522] Gemeinsame MNs: 2/10
-Jacky & Salvatore => 36.82% [2033/5522] Gemeinsame MNs: 4/10
-Walentina & Eugen => 36.76% [2030/5522] Gemeinsame MNs: 2/10
-Sarah & Josua => 34.59% [1910/5522] Gemeinsame MNs: 3/10
-Finnja & Josua => 15.68% [866/5522] Gemeinsame MNs: 0/10
-Walentina & Alex => 15.57% [860/5522] Gemeinsame MNs: 0/10
-Finnja & Eugen => 14.81% [818/5522] Gemeinsame MNs: 3/10
-Sarah & Alex => 13.69% [756/5522] Gemeinsame MNs: 2/10
-Steffi & Alex => 12.75% [704/5522] Gemeinsame MNs: 2/10
-Finnja & Tommy => 12.71% [702/5522] Gemeinsame MNs: 2/10
-Finnja & Salvatore => 11.41% [630/5522] Gemeinsame MNs: 0/10
-Finnja & Jamie => 11.41% [630/5522] Gemeinsame MNs: 1/10
-Finnja & Diogo => 11.41% [630/5522] Gemeinsame MNs: 0/10
-Finnja & Manuel => 11.41% [630/5522] Gemeinsame MNs: 1/10
-Finnja & Alex => 11.16% [616/5522] Gemeinsame MNs: 1/10
-Kathleen & Danilo => 10.52% [581/5522] Gemeinsame MNs: 0/10
-Aurelia & Danilo => 10.52% [581/5522] Gemeinsame MNs: 3/10
-Jacky & Danilo => 10.52% [581/5522] Gemeinsame MNs: 0/10
-Jill & Danilo => 10.52% [581/5522] Gemeinsame MNs: 2/10
-Melina & Danilo => 10.14% [560/5522] Gemeinsame MNs: 1/10
-Walentina & Diogo => 9.92% [548/5522] Gemeinsame MNs: 0/10
-Walentina & Jamie => 9.92% [548/5522] Gemeinsame MNs: 0/10
-Walentina & Manuel => 9.92% [548/5522] Gemeinsame MNs: 0/10
-Walentina & Salvatore => 9.92% [548/5522] Gemeinsame MNs: 3/10
-Sarah & Tommy => 9.6% [530/5522] Gemeinsame MNs: 0/10
-Kathleen & Alex => 9.51% [525/5522] Gemeinsame MNs: 0/10
-Aurelia & Alex => 9.51% [525/5522] Gemeinsame MNs: 0/10
-Jill & Alex => 9.51% [525/5522] Gemeinsame MNs: 0/10
-Jacky & Alex => 9.51% [525/5522] Gemeinsame MNs: 1/10
-Sarah & Salvatore => 8.84% [488/5522] Gemeinsame MNs: 0/10
-Jacky & Josua => 8.84% [488/5522] Gemeinsame MNs: 0/10
-Sarah & Manuel => 8.84% [488/5522] Gemeinsame MNs: 0/10
-Jill & Josua => 8.84% [488/5522] Gemeinsame MNs: 0/10
-Sarah & Diogo => 8.84% [488/5522] Gemeinsame MNs: 0/10
-Kathleen & Josua => 8.84% [488/5522] Gemeinsame MNs: 0/10
-Aurelia & Josua => 8.84% [488/5522] Gemeinsame MNs: 1/10
-Sarah & Jamie => 8.84% [488/5522] Gemeinsame MNs: 2/10
-Melina & Alex => 8.8% [486/5522] Gemeinsame MNs: 1/10
-Steffi & Tommy => 8.73% [482/5522] Gemeinsame MNs: 1/10
-Kathleen & Eugen => 8.46% [467/5522] Gemeinsame MNs: 0/10
-Aurelia & Eugen => 8.46% [467/5522] Gemeinsame MNs: 0/10
-Jill & Eugen => 8.46% [467/5522] Gemeinsame MNs: 1/10
-Jacky & Eugen => 8.46% [467/5522] Gemeinsame MNs: 1/10
-Melina & Josua => 8.4% [464/5522] Gemeinsame MNs: 0/10
-Steffi & Jamie => 8.19% [452/5522] Gemeinsame MNs: 3/10
-Steffi & Manuel => 8.19% [452/5522] Gemeinsame MNs: 0/10
-Steffi & Salvatore => 8.19% [452/5522] Gemeinsame MNs: 0/10
-Steffi & Diogo => 8.19% [452/5522] Gemeinsame MNs: 0/10
-Walentina & Danilo => 7.97% [440/5522] Gemeinsame MNs: 0/10
-Melina & Eugen => 7.82% [432/5522] Gemeinsame MNs: 1/10
-Jill & Tommy => 6.85% [378/5522] Gemeinsame MNs: 1/10
-Jacky & Tommy => 6.85% [378/5522] Gemeinsame MNs: 0/10
-Aurelia & Tommy => 6.85% [378/5522] Gemeinsame MNs: 0/10
-Kathleen & Tommy => 6.85% [378/5522] Gemeinsame MNs: 0/10
-Sarah & Eugen => 6.77% [374/5522] Gemeinsame MNs: 0/10
-Jacky & Jamie => 6.34% [350/5522] Gemeinsame MNs: 0/10
-Jill & Manuel => 6.34% [350/5522] Gemeinsame MNs: 1/10
-Jacky & Manuel => 6.34% [350/5522] Gemeinsame MNs: 0/10
-Kathleen & Salvatore => 6.34% [350/5522] Gemeinsame MNs: 1/10
-Aurelia & Manuel => 6.34% [350/5522] Gemeinsame MNs: 0/10
-Aurelia & Salvatore => 6.34% [350/5522] Gemeinsame MNs: 0/10
-Kathleen & Diogo => 6.34% [350/5522] Gemeinsame MNs: 0/10
-Aurelia & Jamie => 6.34% [350/5522] Gemeinsame MNs: 0/10
-Jill & Salvatore => 6.34% [350/5522] Gemeinsame MNs: 1/10
-Jill & Diogo => 6.34% [350/5522] Gemeinsame MNs: 1/10
-Jacky & Diogo => 6.34% [350/5522] Gemeinsame MNs: 0/10
-Kathleen & Jamie => 6.34% [350/5522] Gemeinsame MNs: 0/10
-Steffi & Josua => 5.98% [330/5522] Gemeinsame MNs: 0/10
-Melina & Jamie => 5.81% [321/5522] Gemeinsame MNs: 0/10
-Melina & Salvatore => 5.81% [321/5522] Gemeinsame MNs: 0/10
-Melina & Manuel => 5.81% [321/5522] Gemeinsame MNs: 0/10
-Melina & Diogo => 5.81% [321/5522] Gemeinsame MNs: 0/10
+Mögliche Paare: 77/100
 
 ==== Beste Konstellationen ====
 > Platz 1 mit 15430 Punkten (Summe der Vorkommen der Einzelpaare)

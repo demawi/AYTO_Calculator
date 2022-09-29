@@ -1,147 +1,58 @@
 -- Berechne 01 - Nacht 3...
--- Combinations: 3628800 Yes: 202933 No: 3425867 Calculation time: 0 min 6 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 202933 No: 3425867 Calculation time: 0 min 11 secs (Tested intern iterations: 62353010)
 
 -- Berechne 01 - Nacht 3 inkl. Matchbox...
--- Combinations: 3628800 Yes: 19012 No: 3609788 Calculation time: 0 min 6 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 19012 No: 3609788 Calculation time: 0 min 11 secs (Tested intern iterations: 62353010)
 
 MatchBox: Aline & Mo... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
-Ja   => 9.37% [19012] <==
-Nein => 90.63% [183921]
+Ja   => 9,37% [19012] <==
+Nein => 90,63% [183921]
 Die Kombinationen reduzieren sich: 202933 => 19012
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Michelle & Ferhat: 12.26%
-Sabrina & Dominic: 28.42%
-Maddie & Axel: 23.64%
-Luisa & René: 23.66%
-Katharina & Kevin: 24.85%
-Ivana & Elisha: 23.65%
-Laura & Juliano: 23.75%
-Nadine & Aleks: 23.66%
-Aline & Mo: 100.0%
-Melissa & Laurin: 28.36%
+Michelle & Ferhat: 12,26%
+Sabrina & Dominic: 28,42%
+Maddie & Axel: 23,64%
+Luisa & René: 23,66%
+Katharina & Kevin: 24,85%
+Ivana & Elisha: 23,65%
+Laura & Juliano: 23,75%
+Nadine & Aleks: 23,66%
+Aline & Mo: 100,00%
+Melissa & Laurin: 28,36%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
-0 => 0.0% [0]
-1 => 0.0% [0]
-2 => 0.0% [0]
-3 => 87.74% [16682] <==
-4 => 12.26% [2330]
-5 => 0.0% [0]
-6 => 0.0% [0]
-7 => 0.0% [0]
-8 => 0.0% [0]
-9 => 0.0% [0]
-10 => 0.0% [0]
+0 => 0,00% [0]
+1 => 0,00% [0]
+2 => 0,00% [0]
+3 => 87,74% [16682] <==
+4 => 12,26% [2330]
+5 => 0,00% [0]
+6 => 0,00% [0]
+7 => 0,00% [0]
+8 => 0,00% [0]
+9 => 0,00% [0]
+10 => 0,00% [0]
 Die Kombinationen reduzieren sich: 19012 => 16682
 
 -- Berechne 01 - Nacht 3 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 3628800 Yes: 16682 No: 3612118 Calculation time: 0 min 6 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Yes: 16682 No: 3612118 Calculation time: 0 min 11 secs (Tested intern iterations: 62353010)
 
-==== Partner ==== (und entsprechende Wahrscheinlichkeiten)
-Ivana: 9 [Elisha (23.71), Juliano (13.52), Ferhat (11.35), Dominic (9.66), Kevin (8.86), Axel (8.38), René (8.32), Aleks (8.28), Laurin (7.92)]
-Luisa: 9 [René (23.73), Axel (13.52), Ferhat (11.43), Dominic (9.66), Kevin (8.82), Elisha (8.38), Juliano (8.35), Aleks (8.34), Laurin (7.78)]
-Melissa: 8 [Laurin (28.29), Ferhat (13.57), Kevin (10.04), Elisha (9.66), Axel (9.63), Juliano (9.63), René (9.59), Aleks (9.59)]
-Michelle: 8 [Dominic (14.07), Kevin (12.76), Axel (12.31), Elisha (12.29), Juliano (12.26), René (12.24), Aleks (12.19), Laurin (11.89)]
-Nadine: 9 [Aleks (23.72), Elisha (13.51), Ferhat (11.43), Dominic (9.63), Kevin (8.85), Axel (8.4), René (8.28), Juliano (8.27), Laurin (7.92)]
-Katharina: 9 [Kevin (24.87), René (13.87), Ferhat (11.31), Dominic (9.59), Elisha (8.21), Juliano (8.18), Aleks (8.14), Axel (8.12), Laurin (7.71)]
-Laura: 9 [Juliano (23.62), Ferhat (18.58), Dominic (9.45), Kevin (8.67), Axel (8.08), Elisha (8.04), René (8.01), Aleks (8.0), Laurin (7.55)]
-Maddie: 9 [Axel (23.7), Laurin (13.51), Ferhat (11.35), Dominic (9.59), Kevin (8.78), Elisha (8.35), Juliano (8.28), Aleks (8.25), René (8.19)]
-Aline: 1 [Mo (100.0)]
-Sabrina: 9 [Dominic (28.37), Aleks (13.49), Ferhat (10.99), Kevin (8.36), Juliano (7.89), Axel (7.86), Elisha (7.85), René (7.77), Laurin (7.42)]
+==== Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights)
 
-Mo: 1 [Aline (100.0)]
-Axel: 9 [Maddie (23.7), Luisa (13.52), Michelle (12.31), Melissa (9.63), Nadine (8.4), Ivana (8.38), Katharina (8.12), Laura (8.08), Sabrina (7.86)]
-Juliano: 9 [Laura (23.62), Ivana (13.52), Michelle (12.26), Melissa (9.63), Luisa (8.35), Maddie (8.28), Nadine (8.27), Katharina (8.18), Sabrina (7.89)]
-Dominic: 8 [Sabrina (28.37), Michelle (14.07), Ivana (9.66), Luisa (9.66), Nadine (9.63), Maddie (9.59), Katharina (9.59), Laura (9.45)]
-Elisha: 9 [Ivana (23.71), Nadine (13.51), Michelle (12.29), Melissa (9.66), Luisa (8.38), Maddie (8.35), Katharina (8.21), Laura (8.04), Sabrina (7.85)]
-René: 9 [Luisa (23.73), Katharina (13.87), Michelle (12.24), Melissa (9.59), Ivana (8.32), Nadine (8.28), Maddie (8.19), Laura (8.01), Sabrina (7.77)]
-Ferhat: 8 [Laura (18.58), Melissa (13.57), Luisa (11.43), Nadine (11.43), Ivana (11.35), Maddie (11.35), Katharina (11.31), Sabrina (10.99)]
-Laurin: 9 [Melissa (28.29), Maddie (13.51), Michelle (11.89), Nadine (7.92), Ivana (7.92), Luisa (7.78), Katharina (7.71), Laura (7.55), Sabrina (7.42)]
-Kevin: 9 [Katharina (24.87), Michelle (12.76), Melissa (10.04), Ivana (8.86), Nadine (8.85), Luisa (8.82), Maddie (8.78), Laura (8.67), Sabrina (8.36)]
-Aleks: 9 [Nadine (23.72), Sabrina (13.49), Michelle (12.19), Melissa (9.59), Luisa (8.34), Ivana (8.28), Maddie (8.25), Katharina (8.14), Laura (8.0)]
+         Aline        Ivana        Katharina    Laura        Luisa        Maddie       Melissa      Michelle     Nadine       Sabrina      
+Aleks      -     (0)   8,28 % (0)   8,14 % (2)   8,00 % (1)   8,34 % (0)   8,25 % (3)   9,59 % (0)  12,19 % (0)  23,72 % (2)  13,49 % (2)  
+Axel       -     (0)   8,38 % (1)   8,12 % (0)   8,08 % (0)  13,52 % (6)  23,70 % (2)   9,63 % (0)  12,31 % (1)   8,40 % (0)   7,86 % (0)  
+Dominic    -     (0)   9,66 % (3)   9,59 % (0)   9,45 % (0)   9,66 % (0)   9,59 % (0)    -     (1)  14,07 % (0)   9,63 % (1)  28,37 % (5)  
+Elisha     -     (0)  23,71 % (2)   8,21 % (1)   8,04 % (0)   8,38 % (0)   8,35 % (0)   9,66 % (0)  12,29 % (1)  13,51 % (2)   7,85 % (3)  
+Ferhat     -     (1)  11,35 % (0)  11,31 % (0)  18,58 % (1)  11,43 % (1)  11,35 % (1)  13,57 % (0)    -     (1)  11,43 % (4)  10,99 % (0)  
+Juliano    -     (0)  13,52 % (2)   8,18 % (1)  23,62 % (6)   8,35 % (0)   8,28 % (1)   9,63 % (0)  12,26 % (0)   8,27 % (0)   7,89 % (0)  
+Kevin      -     (1)   8,86 % (2)  24,87 % (5)   8,67 % (1)   8,82 % (0)   8,78 % (1)  10,04 % (0)  12,76 % (0)   8,85 % (0)   8,36 % (0)  
+Laurin     -     (0)   7,92 % (0)   7,71 % (0)   7,55 % (0)   7,78 % (0)  13,51 % (1)  28,29 % (9)  11,89 % (0)   7,92 % (0)   7,42 % (0)  
+Mo         ✓     (8)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (2)    -     (0)    -     (0)  
+René       -     (0)   8,32 % (0)  13,87 % (1)   8,01 % (0)  23,73 % (3)   8,19 % (0)   9,59 % (0)  12,24 % (5)   8,28 % (1)   7,77 % (0)  
 
-==== Mögliche Paare: 80/100 ====
-Aline & Mo => 100.0% [16682/16682] Gemeinsame MNs: 8/10
-Sabrina & Dominic => 28.37% [4732/16682] Gemeinsame MNs: 5/10
-Melissa & Laurin => 28.29% [4720/16682] Gemeinsame MNs: 9/10
-Katharina & Kevin => 24.87% [4149/16682] Gemeinsame MNs: 5/10
-Luisa & René => 23.73% [3958/16682] Gemeinsame MNs: 3/10
-Nadine & Aleks => 23.72% [3957/16682] Gemeinsame MNs: 2/10
-Ivana & Elisha => 23.71% [3955/16682] Gemeinsame MNs: 2/10
-Maddie & Axel => 23.7% [3953/16682] Gemeinsame MNs: 2/10
-Laura & Juliano => 23.62% [3940/16682] Gemeinsame MNs: 6/10
-Laura & Ferhat => 18.58% [3100/16682] Gemeinsame MNs: 1/10
-Michelle & Dominic => 14.07% [2347/16682] Gemeinsame MNs: 0/10
-Katharina & René => 13.87% [2313/16682] Gemeinsame MNs: 1/10
-Melissa & Ferhat => 13.57% [2263/16682] Gemeinsame MNs: 0/10
-Ivana & Juliano => 13.52% [2256/16682] Gemeinsame MNs: 2/10
-Luisa & Axel => 13.52% [2255/16682] Gemeinsame MNs: 6/10
-Maddie & Laurin => 13.51% [2254/16682] Gemeinsame MNs: 1/10
-Nadine & Elisha => 13.51% [2253/16682] Gemeinsame MNs: 2/10
-Sabrina & Aleks => 13.49% [2251/16682] Gemeinsame MNs: 2/10
-Michelle & Kevin => 12.76% [2128/16682] Gemeinsame MNs: 0/10
-Michelle & Axel => 12.31% [2053/16682] Gemeinsame MNs: 1/10
-Michelle & Elisha => 12.29% [2051/16682] Gemeinsame MNs: 1/10
-Michelle & Juliano => 12.26% [2045/16682] Gemeinsame MNs: 0/10
-Michelle & René => 12.24% [2042/16682] Gemeinsame MNs: 5/10
-Michelle & Aleks => 12.19% [2033/16682] Gemeinsame MNs: 0/10
-Michelle & Laurin => 11.89% [1983/16682] Gemeinsame MNs: 0/10
-Luisa & Ferhat => 11.43% [1907/16682] Gemeinsame MNs: 1/10
-Nadine & Ferhat => 11.43% [1906/16682] Gemeinsame MNs: 4/10
-Ivana & Ferhat => 11.35% [1894/16682] Gemeinsame MNs: 0/10
-Maddie & Ferhat => 11.35% [1893/16682] Gemeinsame MNs: 1/10
-Katharina & Ferhat => 11.31% [1886/16682] Gemeinsame MNs: 0/10
-Sabrina & Ferhat => 10.99% [1833/16682] Gemeinsame MNs: 0/10
-Melissa & Kevin => 10.04% [1675/16682] Gemeinsame MNs: 0/10
-Luisa & Dominic => 9.66% [1611/16682] Gemeinsame MNs: 0/10
-Melissa & Elisha => 9.66% [1611/16682] Gemeinsame MNs: 0/10
-Ivana & Dominic => 9.66% [1611/16682] Gemeinsame MNs: 3/10
-Melissa & Axel => 9.63% [1607/16682] Gemeinsame MNs: 0/10
-Melissa & Juliano => 9.63% [1606/16682] Gemeinsame MNs: 0/10
-Nadine & Dominic => 9.63% [1606/16682] Gemeinsame MNs: 1/10
-Melissa & Aleks => 9.59% [1600/16682] Gemeinsame MNs: 0/10
-Maddie & Dominic => 9.59% [1600/16682] Gemeinsame MNs: 0/10
-Melissa & René => 9.59% [1600/16682] Gemeinsame MNs: 0/10
-Katharina & Dominic => 9.59% [1599/16682] Gemeinsame MNs: 0/10
-Laura & Dominic => 9.45% [1576/16682] Gemeinsame MNs: 0/10
-Ivana & Kevin => 8.86% [1478/16682] Gemeinsame MNs: 2/10
-Nadine & Kevin => 8.85% [1476/16682] Gemeinsame MNs: 0/10
-Luisa & Kevin => 8.82% [1471/16682] Gemeinsame MNs: 0/10
-Maddie & Kevin => 8.78% [1465/16682] Gemeinsame MNs: 1/10
-Laura & Kevin => 8.67% [1446/16682] Gemeinsame MNs: 1/10
-Nadine & Axel => 8.4% [1401/16682] Gemeinsame MNs: 0/10
-Luisa & Elisha => 8.38% [1398/16682] Gemeinsame MNs: 0/10
-Ivana & Axel => 8.38% [1398/16682] Gemeinsame MNs: 1/10
-Sabrina & Kevin => 8.36% [1394/16682] Gemeinsame MNs: 0/10
-Maddie & Elisha => 8.35% [1393/16682] Gemeinsame MNs: 0/10
-Luisa & Juliano => 8.35% [1393/16682] Gemeinsame MNs: 0/10
-Luisa & Aleks => 8.34% [1391/16682] Gemeinsame MNs: 0/10
-Ivana & René => 8.32% [1388/16682] Gemeinsame MNs: 0/10
-Nadine & René => 8.28% [1382/16682] Gemeinsame MNs: 1/10
-Maddie & Juliano => 8.28% [1381/16682] Gemeinsame MNs: 1/10
-Ivana & Aleks => 8.28% [1381/16682] Gemeinsame MNs: 0/10
-Nadine & Juliano => 8.27% [1379/16682] Gemeinsame MNs: 0/10
-Maddie & Aleks => 8.25% [1377/16682] Gemeinsame MNs: 3/10
-Katharina & Elisha => 8.21% [1370/16682] Gemeinsame MNs: 1/10
-Maddie & René => 8.19% [1366/16682] Gemeinsame MNs: 0/10
-Katharina & Juliano => 8.18% [1365/16682] Gemeinsame MNs: 1/10
-Katharina & Aleks => 8.14% [1358/16682] Gemeinsame MNs: 2/10
-Katharina & Axel => 8.12% [1355/16682] Gemeinsame MNs: 0/10
-Laura & Axel => 8.08% [1348/16682] Gemeinsame MNs: 0/10
-Laura & Elisha => 8.04% [1342/16682] Gemeinsame MNs: 0/10
-Laura & René => 8.01% [1336/16682] Gemeinsame MNs: 0/10
-Laura & Aleks => 8.0% [1334/16682] Gemeinsame MNs: 1/10
-Nadine & Laurin => 7.92% [1322/16682] Gemeinsame MNs: 0/10
-Ivana & Laurin => 7.92% [1321/16682] Gemeinsame MNs: 0/10
-Sabrina & Juliano => 7.89% [1317/16682] Gemeinsame MNs: 0/10
-Sabrina & Axel => 7.86% [1312/16682] Gemeinsame MNs: 0/10
-Sabrina & Elisha => 7.85% [1309/16682] Gemeinsame MNs: 3/10
-Luisa & Laurin => 7.78% [1298/16682] Gemeinsame MNs: 0/10
-Sabrina & René => 7.77% [1297/16682] Gemeinsame MNs: 0/10
-Katharina & Laurin => 7.71% [1287/16682] Gemeinsame MNs: 0/10
-Laura & Laurin => 7.55% [1260/16682] Gemeinsame MNs: 0/10
-Sabrina & Laurin => 7.42% [1237/16682] Gemeinsame MNs: 0/10
+Mögliche Paare: 80/100
 
 ==== Beste Konstellationen ====
 > Platz 1 mit 38304 Punkten (Summe der Vorkommen der Einzelpaare)
