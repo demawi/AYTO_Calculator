@@ -20,7 +20,7 @@ public class AllOutPrinter {
          directory.mkdirs();
          MatchFinder finder = new MatchFinder();
 
-         for (int i = 0, l = staffel.tage.size(); i < l; i++) {
+         for (int i = 0, l = staffel.getAnzahlTage(); i < l; i++) {
             File file = new File(directory.getAbsoluteFile() + "/Nacht" + numberFormat.format(i + 1) + ".txt");
             System.out.println("Write file " + file.getAbsoluteFile() + "...");
             if(!file.exists()) {
