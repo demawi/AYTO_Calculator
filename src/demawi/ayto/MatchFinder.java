@@ -48,7 +48,6 @@ public class MatchFinder {
     this.out = out;
   }
 
-  int resultAdded = 0;
   private AYTO_Result calculate(AYTO_Data data, TagDef tagDef, boolean info) {
     long start = System.currentTimeMillis();
     AYTO_Result result = new AYTO_Result(data);
@@ -64,14 +63,7 @@ public class MatchFinder {
 
     AYTO_Permutator<Frau, Mann, Pair> permutator = AYTO_Permutator.create(data.getFrauen(tagDef.tagNr),
           data.getMaenner(tagDef.tagNr), data.getZusatztype(), Pair::pair);
-    resultAdded = 0;
-    permutator.permutate(constellation -> {
-      result.addResult(data.test(constellation, tagDef, debug), constellation);
-      resultAdded++;
-      if (resultAdded % 1000 == 0) {
-        System.out.println("ResultAdded: " + resultAdded);
-      }
-    });
+    permutator.permutate(constellation -> result.addResult(data.test(constellation, tagDef, debug), constellation));
     if (info) {
       out.accept("-- Combinations: " + result.totalConstellations + " Yes: " + result.yes + " No: " + result.no
             + " Calculation time: " + minSecs(System.currentTimeMillis() - start) + " (Tested intern iterations: "
