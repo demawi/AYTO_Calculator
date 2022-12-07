@@ -1,15 +1,21 @@
 package demawi.ayto.modell;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Tag {
 
-   public Map<Pair, Boolean> boxPairs = new LinkedHashMap<>();
+   public List<MatchBoxResult> boxPairs = new ArrayList<>();
    public MatchingNight matchingNight;
    public Map<Pair, Boolean> implicits = new LinkedHashMap<>();
 
    public Tag() {
+   }
+
+   public static Tag create() {
+      return new Tag();
    }
 
    public Tag(Pair boxPair, Boolean boxResult, MatchingNight matchingNight) {
@@ -24,7 +30,7 @@ public class Tag {
 
    public Tag matchBox(Pair matchingPair, Boolean perfectMatch) {
       if (matchingPair != null) {
-         boxPairs.put(matchingPair, perfectMatch);
+         boxPairs.add(new MatchBoxResult(matchingPair, perfectMatch));
       }
       return this;
    }

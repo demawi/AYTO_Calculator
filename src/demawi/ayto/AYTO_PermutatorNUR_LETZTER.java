@@ -5,10 +5,13 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.BiFunction;
 
-public class AYTO_PermutatorLAST<F, M, R>
+/**
+ * Nur der übschüssige Kandidat, kann sich zu jemand anderem doppeln.
+ */
+public class AYTO_PermutatorNUR_LETZTER<F, M, R>
       extends AYTO_Permutator<F, M, R> {
 
-   public AYTO_PermutatorLAST(List<F> frauen, List<M> maenner, ZUSATZTYPE zusatzType,
+   public AYTO_PermutatorNUR_LETZTER(List<F> frauen, List<M> maenner, ZUSATZTYPE zusatzType,
          BiFunction<F, M, R> packingFunction) {
       super(frauen, maenner, zusatzType, packingFunction);
    }

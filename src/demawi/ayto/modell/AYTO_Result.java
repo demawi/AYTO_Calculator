@@ -1,33 +1,49 @@
 package demawi.ayto.modell;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import demawi.ayto.AYTO_Permutator;
+
 public class AYTO_Result {
 
   private AYTO_Data data;
-  public List<Set<Pair>> possibleConstellations = new ArrayList<>();
-  public Map<Pair, Integer> pairCount = new HashMap<Pair, Integer>();
+  public Map<Pair, Integer> pairCount = new HashMap<>();
   public Map<Frau, Set<Mann>> frauCount = new HashMap<>();
   public Map<Mann, Set<Frau>> mannCount = new HashMap<>();
-  public int yes = 0;
-  public int no = 0;
   public int totalConstellations = 0;
+  public int possible = 0;
+  public int notPossible = 0;
+  private Set<Pair> matchingNightConstellation;
+  private int[] lightResults;
 
-  public AYTO_Result(AYTO_Data data) {
+  public AYTO_Result(AYTO_Data data, CalculationOptions calcOptions) {
     this.data = data;
+
+    if (calcOptions.tagNr > 0) {
+      matchingNightConstellation = data.tage.get(calcOptions.tagNr - 1).matchingNight.constellation;
+
+      lightResults = new int[11];
+      for (int i = 0, l = 11; i < l; i++) {
+        lightResults[i] = 0;
+      }
+    }
+
   }
 
   public AYTO_Data getData() {
     return data;
   }
 
-  public int getYes() {
-    return yes;
+  public int getPossibleConstellationSize() {
+    return possible;
+  }
+
+  public List<Set<Pair>> getAllPossibleConstellations() {
+    throw new IllegalStateException("Wird nicht mehr geliefert!");
   }
 
   public Integer getCount(Frau frau, Mann mann) {
@@ -39,22 +55,35 @@ public class AYTO_Result {
     return result == null ? 0 : result;
   }
 
+  public double getPossibility(Mann mann, Frau frauX, List<Frau> frauen) {
+    int gesamt = 0;
+    for (Frau frau : frauen) {
+      AYTO_Permutator.ZUSATZTYPE zusatztype = getData().getZusatztype();
+      if (zusatztype == AYTO_Permutator.ZUSATZTYPE.JEDER && frauen.size() > 10 || frauen.indexOf(frau) <= 9) {
+        gesamt += getCount(frau, mann);
+      }
+    }
+    return 1d * getCount(frauX, mann) / gesamt;
+  }
+
   public void addResult(boolean result, Set<Pair> pairs) {
     totalConstellations++;
     if (result) {
-      addYes(pairs);
-      yes++;
+      addPossible(pairs);
+      possible++;
     }
     else {
-      no++;
+      notPossible++;
     }
   }
 
   /**
    * Fügt die Konsteallation als gültig ein.
    */
-  public void addYes(Set<Pair> pairs) {
-    possibleConstellations.add(pairs);
+  public void addPossible(Set<Pair> pairs) {
+    if(lightResults != null) {
+      lightResults[data.getLights(pairs, matchingNightConstellation)]++;
+    }
 
     // directly update pair-,frau-,mannCount
     for (Pair current : pairs) {
@@ -81,4 +110,7 @@ public class AYTO_Result {
     }
   }
 
+  public int[] getLightResultsForLastMatchingNight() {
+    return lightResults;
+  }
 }

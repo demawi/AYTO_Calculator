@@ -10,7 +10,7 @@ import java.util.function.Consumer;
 public abstract class AYTO_Permutator<F, M, R> {
 
   public static enum ZUSATZTYPE {
-    UNKNOWN, LAST
+    JEDER, NUR_LETZTER
   }
 
   protected final List<F> frauen;
@@ -36,11 +36,11 @@ public abstract class AYTO_Permutator<F, M, R> {
 
   public static <F, M, R> AYTO_Permutator<F, M, R> create(List<F> setA, List<M> setB, ZUSATZTYPE zusatzType,
     BiFunction<F, M, R> packingFunction) {
-    if (zusatzType == ZUSATZTYPE.UNKNOWN) {
-      return new AYTO_PermutatorUNKNOWN<>(setA, setB, zusatzType, packingFunction);
+    if (zusatzType == ZUSATZTYPE.JEDER) {
+      return new AYTO_PermutatorJEDER<>(setA, setB, zusatzType, packingFunction);
     }
     else {
-      return new AYTO_PermutatorLAST<>(setA, setB, zusatzType, packingFunction);
+      return new AYTO_PermutatorNUR_LETZTER<>(setA, setB, zusatzType, packingFunction);
     }
   }
 
@@ -54,11 +54,11 @@ public abstract class AYTO_Permutator<F, M, R> {
     permutateInternImpl(anzahlFrauen, anzahlMaenner, 0, 0, current, (a -> {
       count++;
       if ((count % 1000000) == 0) {
-        System.out.println("Count: " + count / 1000000 + "mio");
+        //System.out.println("Count: " + count / 1000000 + "mio");
       }
       pairConsumer.accept(a);
     }));
-    System.out.println("Permutations: " + count);
+    //System.out.println("Permutations: " + count);
   }
 
   public abstract Object[] createInitialConstellation();

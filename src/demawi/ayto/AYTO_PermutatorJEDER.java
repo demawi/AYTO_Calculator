@@ -5,10 +5,13 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.BiFunction;
 
-public class AYTO_PermutatorUNKNOWN<F, M, R>
+/**
+ * Jeder Kandidat, kann sich zu jemand anderem doppeln.
+ */
+public class AYTO_PermutatorJEDER<F, M, R>
       extends AYTO_Permutator<F, M, R> {
 
-   public AYTO_PermutatorUNKNOWN(List<F> frauen, List<M> maenner, ZUSATZTYPE zusatzType,
+   public AYTO_PermutatorJEDER(List<F> frauen, List<M> maenner, ZUSATZTYPE zusatzType,
          BiFunction<F, M, R> packingFunction) {
       super(frauen, maenner, zusatzType, packingFunction);
    }

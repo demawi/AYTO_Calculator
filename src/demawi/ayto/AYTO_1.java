@@ -33,7 +33,7 @@ public class AYTO_1
    private Mann Edin = mann("Edin");
 
    public AYTO_1() {
-      super("01", AYTO_Permutator.ZUSATZTYPE.LAST);
+      super("01", AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER);
 
       add(false, pair(Ivana, Mo), 1, pair(Luisa, Axel), pair(Katharina, Rene), pair(Nadine, Elisha),
             pair(Laura, Ferhat), pair(Maddie, Laurin), pair(Michelle, Mo), pair(Aline, Kevin), pair(Ivana, Juliano),
@@ -83,7 +83,7 @@ public class AYTO_1
    }
 
    public static void main(String[] args) {
-      new MatchFinder().printLightChancesAndResult(new AYTO_1());
+      new MatchFinder().printDayResults(new AYTO_1());
    }
 
 }

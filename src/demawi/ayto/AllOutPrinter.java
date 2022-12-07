@@ -33,7 +33,7 @@ public class AllOutPrinter {
                      e.printStackTrace();
                   }
                });
-               finder.printLightChancesAndResult(staffel, i + 1);
+               finder.printDayResults(staffel, i + 1);
                out.flush();
                out.close();
             }
@@ -43,7 +43,7 @@ public class AllOutPrinter {
 
    public static void main(String[] args)
          throws Exception {
-      print(new AYTO_VIP01(), new AYTO_1(), new AYTO_2(), new AYTO_3(), new AYTO_VIP02());
+      print(new AYTO_VIP01(), new AYTO_1(), new AYTO_2(), new AYTO_3(), new AYTO_VIP02(), new AYTO_4());
    }
 
 }

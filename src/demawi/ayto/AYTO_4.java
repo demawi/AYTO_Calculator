@@ -34,16 +34,19 @@ public class AYTO_4
   private static Mann Marwin = mann("Marwin");
 
   public AYTO_4() {
-    super("04", AYTO_Permutator.ZUSATZTYPE.LAST);
-    add(new Tag().matchBox(pair(Valeria, Marwin), false)
-          .matchNight(4, pair(Aurelia, Barkin), pair(Carina, Burim), pair(Caroline, Christopher), pair(Dorna, Deniz),
+    super("04", AYTO_Permutator.ZUSATZTYPE.JEDER);
+
+    add(Tag.create()
+          .matchBox(pair(Valeria, Marwin), false)
+          .matchBox(pair(Dorna, Kenneth), false)
+          .matchNight(2, pair(Aurelia, Barkin), pair(Carina, Burim), pair(Caroline, Christopher), pair(Dorna, Deniz),
                 pair(Henna, Joel), pair(Juliette, Ken), pair(Larissa, Kenneth), pair(Stefanie, Maximilian),
                 pair(Vanessa, Pascal), pair(Valeria, Sasa)));
 
   }
 
   public static void main(String[] args) {
-    new MatchFinder().printLightChancesAndResult(new AYTO_4());
+    new MatchFinder().printDayResults(new AYTO_4());
   }
 
 }

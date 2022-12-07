@@ -32,7 +32,7 @@ public class AYTO_2 extends AYTO_Data {
   private Mann Marcel = mann("Marcel");
 
   public AYTO_2() {
-    super("02", AYTO_Permutator.ZUSATZTYPE.LAST);
+    super("02", AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER);
 
     add(false, pair(Jill, Maximilian), 2, pair(Sabrina, Marko), pair(Jill, Marvin), pair(Victoria, Dario),
           pair(Christin, Maximilian), pair(Leonie, Germain), pair(Vanessa, Sascha), pair(Melissa, Dominic),
@@ -76,7 +76,7 @@ public class AYTO_2 extends AYTO_Data {
   }
 
   public static void main(String[] args) {
-    new MatchFinder().printLightChancesAndResult(new AYTO_2());
+    new MatchFinder().printDayResults(new AYTO_2());
   }
 
 }

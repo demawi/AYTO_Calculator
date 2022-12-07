@@ -33,7 +33,7 @@ public class AYTO_VIP02
    private static Mann Felix = mann("Felix");
 
    public AYTO_VIP02() {
-      super("VIP_02", AYTO_Permutator.ZUSATZTYPE.LAST);
+      super("VIP_02", AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER);
 
       add(false, pair(Zoe, Martin), 3, pair(Franziska, Max), pair(Anna, Michael), pair(Celina, Martin),
             pair(Ricarda, Maurice), pair(Gina, Calvin), pair(Cecilia, Amadu), pair(Karina, Pharrell),
@@ -76,7 +76,7 @@ public class AYTO_VIP02
    }
 
    public static void main(String[] args) {
-      new MatchFinder().printLightChancesAndResult(new AYTO_VIP02());
+      new MatchFinder().printDayResults(new AYTO_VIP02());
    }
 
 }

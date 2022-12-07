@@ -33,7 +33,7 @@ public class AYTO_3
   private static Mann Jordi = mann("Jordi");
 
   public AYTO_3() {
-    super("03", AYTO_Permutator.ZUSATZTYPE.LAST);
+    super("03", AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER);
     add(false, pair(Jessica, Mike), 3, pair(Jessica, Leon), pair(Joelina, Mike), pair(Kerstin, Max),
           pair(Monami, Antonino), pair(Marie, Tim), pair(Zaira, Dustin), pair(Dana, William), pair(Isabelle, Marius),
           pair(Raphaela, Andre), pair(Estelle, Jordi));
@@ -88,7 +88,7 @@ public class AYTO_3
   }
 
   public static void main(String[] args) {
-    new MatchFinder().printLightChancesAndResult(new AYTO_3());
+    new MatchFinder().printDayResults(new AYTO_3());
   }
 
 }

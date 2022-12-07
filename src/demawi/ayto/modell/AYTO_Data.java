@@ -38,6 +38,10 @@ public class AYTO_Data {
     return tag;
   }
 
+  public Tag getTag(int index) {
+    return tage.get(index - 1);
+  }
+
   public Tag add(Boolean b, Pair pair, int i, Pair... pairs) {
     Tag tag = new Tag(pair, b, pairs == null ? null : new MatchingNight(i, Arrays.asList(pairs)));
     tage.add(tag);
@@ -67,7 +71,7 @@ public class AYTO_Data {
   private void getPairs(int tagNr, Consumer<Pair> consumer) {
     for (int i = 0; i < tagNr; i++) {
       Tag tag = tage.get(i);
-      tag.boxPairs.forEach((pair, result) -> consumer.accept(pair));
+      tag.boxPairs.forEach((matchBoxResult) -> consumer.accept(matchBoxResult.pair));
       if (tag.matchingNight != null) {
         for (Pair pair : tag.matchingNight.constellation) {
           consumer.accept(pair);
@@ -79,15 +83,18 @@ public class AYTO_Data {
   /**
    * Testet ob die übergebene Paar-Konstellation zu einem Widerspruch führt.
    */
-  public boolean test(Collection<Pair> constellation, TagDef tagDef, boolean debug) {
-    for (int i = 0; i < tagDef.tagNr; i++) {
-      Tag tag = tage.get(i);
+  public boolean test(Collection<Pair> constellation, CalculationOptions calcOptions, boolean debug) {
+    for (int tagNr = 0; tagNr < calcOptions.tagNr; tagNr++) {
+      Tag tag = tage.get(tagNr);
 
-      boolean aktuell = i == tagDef.tagNr - 1;
-      if (!aktuell || tagDef.mitMatchbox) {
-        for (Map.Entry<Pair, Boolean> cur : tag.boxPairs.entrySet()) {
-          Boolean result = cur.getValue();
-          if (result != null && result != constellation.contains(cur.getKey())) {
+      boolean aktuell = tagNr == calcOptions.tagNr - 1;
+      int matchBoxes = calcOptions.getAnzahlMatchBoxen(tag.boxPairs.size());
+      if (!aktuell || matchBoxes > 0) {
+        for (int matchBoxNr = 0, l = calcOptions.getAnzahlMatchBoxen(tag.boxPairs.size());
+             matchBoxNr < l; matchBoxNr++) {
+          MatchBoxResult matchBoxResult = tag.boxPairs.get(matchBoxNr);
+          Boolean result = matchBoxResult.result;
+          if (result != null && result != constellation.contains(matchBoxResult.pair)) {
             return false;
           }
         }
@@ -97,7 +104,7 @@ public class AYTO_Data {
           }
         }
       }
-      if (!aktuell || tagDef.mitMatchingNight) {
+      if (!aktuell || calcOptions.mitMatchingNight) {
         MatchingNight night = tag.matchingNight;
         if (night != null) {
           for (int nightNr = 0, l = night.constellation.size(); nightNr < l; nightNr++) {

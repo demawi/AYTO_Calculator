@@ -31,13 +31,13 @@ public class AYTO_PermutatorTest {
       List<String> maenner = Arrays.asList("1", "2", "3");
 
       AYTO_Permutator<String, String, String> permutator = AYTO_Permutator.create(frauen, maenner,
-            AYTO_Permutator.ZUSATZTYPE.UNKNOWN, (a, b) -> "" + a + b);
+            AYTO_Permutator.ZUSATZTYPE.JEDER, (a, b) -> "" + a + b);
       permutator.permutate(result -> {
          //check(result, frauen, maenner);
          System.out.println(result);
       });
       AYTO_Permutator<String, String, String> permutator2 = AYTO_Permutator.create(frauen, maenner,
-            AYTO_Permutator.ZUSATZTYPE.LAST, (a, b) -> "" + a + b);
+            AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER, (a, b) -> "" + a + b);
       permutator2.permutate(result -> {
          //check(result, frauen, maenner);
          System.out.println(result);
@@ -49,7 +49,7 @@ public class AYTO_PermutatorTest {
       List<String> frauen = Arrays.asList("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K");
       List<String> maenner = Arrays.asList("1", "2", "3", "4", "5", "6", "7", "8", "9", "0");
       AYTO_Permutator<String, String, String> permutator = AYTO_Permutator.create(frauen, maenner,
-            AYTO_Permutator.ZUSATZTYPE.UNKNOWN, (a, b) -> "" + a + b);
+            AYTO_Permutator.ZUSATZTYPE.JEDER, (a, b) -> "" + a + b);
       permutator.permutate(result -> {
          //check(result, frauen, maenner);
          //System.out.println(result);
@@ -61,7 +61,7 @@ public class AYTO_PermutatorTest {
       List<String> frauen = Arrays.asList("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K");
       List<String> maenner = Arrays.asList("1", "2", "3", "4", "5", "6", "7", "8", "9", "0");
       AYTO_Permutator<String, String, String> permutator = AYTO_Permutator.create(frauen, maenner,
-            AYTO_Permutator.ZUSATZTYPE.LAST, (a, b) -> "" + a + b);
+            AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER, (a, b) -> "" + a + b);
       permutator.permutate(result -> {
          //check(result, frauen, maenner);
          //System.out.println(result);
@@ -74,7 +74,7 @@ public class AYTO_PermutatorTest {
    @Test
    public void testCanAdd() {
       AYTO_Permutator<String, String, String> permutator = AYTO_Permutator.create(frauen, maenner,
-            AYTO_Permutator.ZUSATZTYPE.UNKNOWN, (a, b) -> "" + a + b);
+            AYTO_Permutator.ZUSATZTYPE.JEDER, (a, b) -> "" + a + b);
       // UrsprungDoppelt: 1 Es fehlt: 4
       System.out.println(
             permutator.canAdd(ind("A"), ind("1"), pairs("A1", "I9", "G8", "C7", "J2", "F0", "K5", "H6", "B1", "D3")));
@@ -94,7 +94,7 @@ public class AYTO_PermutatorTest {
       List<String> frauen = Arrays.asList("A", "B", "C", "D");
       List<String> maenner = Arrays.asList("1", "2", "3");
       AYTO_Permutator<String, String, String> permutator = AYTO_Permutator.create(frauen, maenner,
-            AYTO_Permutator.ZUSATZTYPE.UNKNOWN, (a, b) -> "" + a + b);
+            AYTO_Permutator.ZUSATZTYPE.JEDER, (a, b) -> "" + a + b);
       System.out.println(permutator.canAdd(ind("B"), ind("2"), pairs(false, "A1")));
       System.out.println(permutator.canAdd(ind("C"), ind("1"), pairs(false, "A1", "B2")));
       System.out.println(permutator.canAdd(ind("D"), ind("3"), pairs(true, "A1", "B2", "C1")));
