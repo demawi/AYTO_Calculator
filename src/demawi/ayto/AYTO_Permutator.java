@@ -8,20 +8,30 @@ import java.util.function.Consumer;
 
 public class AYTO_Permutator<F, M, R> {
 
+  public static enum ZUSATZTYPE {
+    UNKNOWN, LAST
+  }
+
   private List<F> frauen;
   private List<M> maenner;
+  private ZUSATZTYPE zusatzType;
   private BiFunction<F, M, R> packingFunction;
   public long testCount = 0;
 
-  private AYTO_Permutator(List<F> frauen, List<M> maenner, BiFunction<F, M, R> packingFunction) {
+  /**
+   * -1: man weiß nicht wer der Zusatzmann/frau ist
+   * >0:
+   */
+  private AYTO_Permutator(List<F> frauen, List<M> maenner, ZUSATZTYPE zusatzType, BiFunction<F, M, R> packingFunction) {
     this.frauen = frauen;
     this.maenner = maenner;
+    this.zusatzType = zusatzType;
     this.packingFunction = packingFunction;
   }
 
-  public static <F, M, R> AYTO_Permutator<F, M, R> create(List<F> setA, List<M> setB,
+  public static <F, M, R> AYTO_Permutator<F, M, R> create(List<F> setA, List<M> setB, ZUSATZTYPE zusatzType,
     BiFunction<F, M, R> packingFunction) {
-    return new AYTO_Permutator<F, M, R>(setA, setB, packingFunction);
+    return new AYTO_Permutator<F, M, R>(setA, setB, zusatzType, packingFunction);
   }
 
   public void permutate(Consumer<Set<R>> pairConsumer) {
@@ -104,7 +114,7 @@ public class AYTO_Permutator<F, M, R> {
     for (Integer current : constellation) {
       if (decodeFrau(current) == frau) {
         // die Frau ist bereits enthalten
-        if (mann > 9) { // Könnte erlaubt sein, wenn der Mann ein Zusatzmann ist
+        if (zusatzType == ZUSATZTYPE.UNKNOWN || mann > 9) { // Könnte erlaubt sein, wenn der Mann ein Zusatzmann ist
           if (mannDouble.contains(mann)) { // aber auch nur einmal
             return false;
           }
@@ -115,7 +125,7 @@ public class AYTO_Permutator<F, M, R> {
       }
       if (decodeMann(current) == mann) {
         // der Mann ist bereits enthalten
-        if (frau > 9) { // Könnte erlaubt sein, wenn die Frau eine Zusatzfrau ist
+        if (zusatzType == ZUSATZTYPE.UNKNOWN || frau > 9) { // Könnte erlaubt sein, wenn die Frau eine Zusatzfrau ist
           if (frauDouble.contains(frau)) { // aber auch nur einmal
             return false;
           }

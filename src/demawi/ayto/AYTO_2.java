@@ -8,31 +8,31 @@ import static demawi.ayto.modell.Pair.pair;
 
 public class AYTO_2 extends AYTO_Data {
 
-  private Frau Sabrina = new Frau("Sabrina");
-  private Frau Jill = new Frau("Jill");
-  private Frau Victoria = new Frau("Victoria");
-  private Frau Christin = new Frau("Christin");
-  private Frau Leonie = new Frau("Leonie");
-  private Frau Vanessa = new Frau("Vanessa");
-  private Frau Melissa = new Frau("Melissa");
-  private Frau Kathleen = new Frau("Kathleen");
-  private Frau Mirjam = new Frau("Mirjam");
-  private Frau Laura = new Frau("Laura");
-  private Frau VanessaM = new Frau("VanessaM");
+  private Frau Sabrina = frau("Sabrina");
+  private Frau Jill = frau("Jill");
+  private Frau Victoria = frau("Victoria");
+  private Frau Christin = frau("Christin");
+  private Frau Leonie = frau("Leonie");
+  private Frau Vanessa = frau("Vanessa");
+  private Frau Melissa = frau("Melissa");
+  private Frau Kathleen = frau("Kathleen");
+  private Frau Mirjam = frau("Mirjam");
+  private Frau Laura = frau("Laura");
+  private Frau VanessaM = frau("VanessaM");
 
-  private Mann Marko = new Mann("Marko");
-  private Mann Marvin = new Mann("Marvin");
-  private Mann Dario = new Mann("Dario");
-  private Mann Maximilian = new Mann("Maximilian");
-  private Mann Germain = new Mann("Germain");
-  private Mann Sascha = new Mann("Sascha");
-  private Mann Dominic = new Mann("Dominic");
-  private Mann Aaron = new Mann("Aaron");
-  private Mann Marc = new Mann("Marc");
-  private Mann Marcel = new Mann("Marcel");
+  private Mann Marko = mann("Marko");
+  private Mann Marvin = mann("Marvin");
+  private Mann Dario = mann("Dario");
+  private Mann Maximilian = mann("Maximilian");
+  private Mann Germain = mann("Germain");
+  private Mann Sascha = mann("Sascha");
+  private Mann Dominic = mann("Dominic");
+  private Mann Aaron = mann("Aaron");
+  private Mann Marc = mann("Marc");
+  private Mann Marcel = mann("Marcel");
 
   public AYTO_2() {
-    super("02");
+    super("02", AYTO_Permutator.ZUSATZTYPE.LAST);
 
     add(false, pair(Jill, Maximilian), 2, pair(Sabrina, Marko), pair(Jill, Marvin), pair(Victoria, Dario),
           pair(Christin, Maximilian), pair(Leonie, Germain), pair(Vanessa, Sascha), pair(Melissa, Dominic),

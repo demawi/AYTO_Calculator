@@ -9,31 +9,31 @@ import static demawi.ayto.modell.Pair.pair;
 public class AYTO_VIP02
       extends AYTO_Data {
 
-   private static Frau Ricarda = newFrau("Ricarda");
-   private static Frau Luisa = newFrau("Luisa");
-   private static Frau Cecilia = newFrau("Cecilia");
-   private static Frau Karina = newFrau("Karina");
-   private static Frau Isabelle = newFrau("Isabelle");
-   private static Frau Gina = newFrau("Gina");
-   private static Frau Celina = newFrau("Celina");
-   private static Frau Zoe = newFrau("Zoe");
-   private static Frau Franziska = newFrau("Franziska");
-   private static Frau Anna = newFrau("Anna");
+   private static Frau Ricarda = frau("Ricarda");
+   private static Frau Luisa = frau("Luisa");
+   private static Frau Cecilia = frau("Cecilia");
+   private static Frau Karina = frau("Karina");
+   private static Frau Isabelle = frau("Isabelle");
+   private static Frau Gina = frau("Gina");
+   private static Frau Celina = frau("Celina");
+   private static Frau Zoe = frau("Zoe");
+   private static Frau Franziska = frau("Franziska");
+   private static Frau Anna = frau("Anna");
 
-   private static Mann Calvin = newMann("Calvin");
-   private static Mann Martin = newMann("Martin");
-   private static Mann Lukas = newMann("Lukas");
-   private static Mann Maurice = newMann("Maurice");
-   private static Mann Amadu = newMann("Amadu");
-   private static Mann Pharrell = newMann("Pharrell");
-   private static Mann Fabio = newMann("Fabio");
-   private static Mann Max = newMann("Max");
-   private static Mann Michael = newMann("Michael");
-   private static Mann Luca = newMann("Luca");
-   private static Mann Felix = newMann("Felix");
+   private static Mann Calvin = mann("Calvin");
+   private static Mann Martin = mann("Martin");
+   private static Mann Lukas = mann("Lukas");
+   private static Mann Maurice = mann("Maurice");
+   private static Mann Amadu = mann("Amadu");
+   private static Mann Pharrell = mann("Pharrell");
+   private static Mann Fabio = mann("Fabio");
+   private static Mann Max = mann("Max");
+   private static Mann Michael = mann("Michael");
+   private static Mann Luca = mann("Luca");
+   private static Mann Felix = mann("Felix");
 
    public AYTO_VIP02() {
-      super("VIP_02");
+      super("VIP_02", AYTO_Permutator.ZUSATZTYPE.LAST);
 
       add(false, pair(Zoe, Martin), 3, pair(Franziska, Max), pair(Anna, Michael), pair(Celina, Martin),
             pair(Ricarda, Maurice), pair(Gina, Calvin), pair(Cecilia, Amadu), pair(Karina, Pharrell),

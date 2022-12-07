@@ -49,7 +49,7 @@ public class MatchFinder {
 
   private AYTO_Result calculate(AYTO_Data data, TagDef tagDef, boolean info) {
     long start = System.currentTimeMillis();
-    AYTO_Result result = new AYTO_Result();
+    AYTO_Result result = new AYTO_Result(data);
     if (tagDef.tagNr == 0) {
       return result;
     }
@@ -61,7 +61,7 @@ public class MatchFinder {
     boolean debug = false;
 
     AYTO_Permutator<Frau, Mann, Pair> permutator = AYTO_Permutator.create(data.getFrauen(tagDef.tagNr),
-          data.getMaenner(tagDef.tagNr), Pair::pair);
+          data.getMaenner(tagDef.tagNr), data.getZusatztype(), Pair::pair);
     permutator.permutate(constellation -> result.addResult(data.test(constellation, tagDef, debug), constellation));
     if (info) {
       out.accept("-- Combinations: " + result.totalConstellations + " Yes: " + result.yes + " No: " + result.no
@@ -321,7 +321,9 @@ public class MatchFinder {
   private double getPossibility(AYTO_Result result, Mann mann, Frau frauX, List<Frau> frauen) {
     int gesamt = 0;
     for (Frau frau : frauen) {
-      if (frauen.indexOf(frau) <= 9) {
+      AYTO_Permutator.ZUSATZTYPE zusatztype = result.getData()
+            .getZusatztype();
+      if (zusatztype == AYTO_Permutator.ZUSATZTYPE.UNKNOWN || frauen.indexOf(frau) <= 9) {
         gesamt += result.getCount(frau, mann);
       }
     }

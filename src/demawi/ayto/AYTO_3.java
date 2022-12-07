@@ -9,31 +9,31 @@ import static demawi.ayto.modell.Pair.pair;
 public class AYTO_3
       extends AYTO_Data {
 
-  private static Frau Jessica = new Frau("Jessica");
-  private static Frau Joelina = new Frau("Joelina");
-  private static Frau Kerstin = new Frau("Kerstin");
-  private static Frau Monami = new Frau("Monami");
-  private static Frau Marie = new Frau("Marie");
-  private static Frau Zaira = new Frau("Zaira");
-  private static Frau Dana = new Frau("Dana");
-  private static Frau Isabelle = new Frau("Isabelle");
-  private static Frau Raphaela = new Frau("Raphaela");
-  private static Frau Estelle = new Frau("Estelle");
-  private static Frau Desiree = new Frau("Desiree");
+  private static Frau Jessica = frau("Jessica");
+  private static Frau Joelina = frau("Joelina");
+  private static Frau Kerstin = frau("Kerstin");
+  private static Frau Monami = frau("Monami");
+  private static Frau Marie = frau("Marie");
+  private static Frau Zaira = frau("Zaira");
+  private static Frau Dana = frau("Dana");
+  private static Frau Isabelle = frau("Isabelle");
+  private static Frau Raphaela = frau("Raphaela");
+  private static Frau Estelle = frau("Estelle");
+  private static Frau Desiree = frau("Desiree");
 
-  private static Mann Leon = new Mann("Leon");
-  private static Mann Mike = new Mann("Mike");
-  private static Mann Max = new Mann("Max");
-  private static Mann Antonino = new Mann("Antonino");
-  private static Mann Tim = new Mann("Tim");
-  private static Mann Dustin = new Mann("Dustin");
-  private static Mann William = new Mann("William");
-  private static Mann Marius = new Mann("Marius");
-  private static Mann Andre = new Mann("Andre");
-  private static Mann Jordi = new Mann("Jordi");
+  private static Mann Leon = mann("Leon");
+  private static Mann Mike = mann("Mike");
+  private static Mann Max = mann("Max");
+  private static Mann Antonino = mann("Antonino");
+  private static Mann Tim = mann("Tim");
+  private static Mann Dustin = mann("Dustin");
+  private static Mann William = mann("William");
+  private static Mann Marius = mann("Marius");
+  private static Mann Andre = mann("Andre");
+  private static Mann Jordi = mann("Jordi");
 
   public AYTO_3() {
-    super("03");
+    super("03", AYTO_Permutator.ZUSATZTYPE.LAST);
     add(false, pair(Jessica, Mike), 3, pair(Jessica, Leon), pair(Joelina, Mike), pair(Kerstin, Max),
           pair(Monami, Antonino), pair(Marie, Tim), pair(Zaira, Dustin), pair(Dana, William), pair(Isabelle, Marius),
           pair(Raphaela, Andre), pair(Estelle, Jordi));

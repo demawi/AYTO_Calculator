@@ -7,22 +7,26 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
+import demawi.ayto.AYTO_Permutator;
+
 public class AYTO_Data {
 
   public String name;
+  private AYTO_Permutator.ZUSATZTYPE zusatztype;
   public List<Tag> tage = new ArrayList<>();
   public List<Pair> pairsToTrack;
 
-  public static Frau newFrau(String name) {
+  protected static Frau frau(String name) {
     return new Frau(name);
   }
 
-  public static Mann newMann(String name) {
+  protected static Mann mann(String name) {
     return new Mann(name);
   }
 
-  public AYTO_Data(String name) {
+  public AYTO_Data(String name, AYTO_Permutator.ZUSATZTYPE zusatztype) {
     this.name = name;
+    this.zusatztype = zusatztype;
   }
 
   public void track(Pair... pairs) {
@@ -115,6 +119,10 @@ public class AYTO_Data {
       }
     }
     return lights;
+  }
+
+  public AYTO_Permutator.ZUSATZTYPE getZusatztype() {
+    return zusatztype;
   }
 
 }

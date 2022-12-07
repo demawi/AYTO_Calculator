@@ -9,6 +9,7 @@ import java.util.Set;
 
 public class AYTO_Result {
 
+  private AYTO_Data data;
   public List<Set<Pair>> possibleConstellations = new ArrayList<>();
   public Map<Pair, Integer> pairCount = new HashMap<Pair, Integer>();
   public Map<Frau, Set<Mann>> frauCount = new HashMap<>();
@@ -17,7 +18,12 @@ public class AYTO_Result {
   public int no = 0;
   public int totalConstellations = 0;
 
-  public AYTO_Result() {
+  public AYTO_Result(AYTO_Data data) {
+    this.data = data;
+  }
+
+  public AYTO_Data getData() {
+    return data;
   }
 
   public int getYes() {
