@@ -7,15 +7,15 @@ import java.util.Set;
 
 public class MatchingNight {
 
-  public int lights;
+  public Integer lights;
   public Set<Pair> constellation;
 
-  public MatchingNight(int lights, Pair... constellation) {
+  public MatchingNight(Integer lights, Pair... constellation) {
     this(lights, Arrays.asList(constellation));
   }
 
-  public MatchingNight(int lights, Collection<Pair> constellation) {
-    if (lights < 0 || lights > 10) {
+  public MatchingNight(Integer lights, Collection<Pair> constellation) {
+    if (lights != null && (lights < 0 || lights > 10)) {
       throw new RuntimeException("Falsche Anzahl an Lichtern: " + lights);
     }
     if (constellation.size() != 10) {

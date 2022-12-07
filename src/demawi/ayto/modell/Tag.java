@@ -35,7 +35,7 @@ public class Tag {
       return this;
    }
 
-   public Tag matchNight(int lights, Pair... pairs) {
+   public Tag matchNight(Integer lights, Pair... pairs) {
       this.matchingNight = new MatchingNight(lights, pairs);
       return this;
    }

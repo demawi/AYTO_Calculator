@@ -34,7 +34,7 @@ public class MatchFinder {
     return String.format("%5s", String.format("%.2f", number));
   }
 
-  private static String minSecs(long mills) {
+  public static String minSecs(long mills) {
     long min = Math.floorDiv(mills, 60 * 1000);
     long secs = Math.floorDiv(mills - min * 60 * 1000, 1000);
     return min + " min " + secs + " secs";
@@ -127,47 +127,52 @@ public class MatchFinder {
     Tag letzterTag = data.getTag(tagNr);
     AYTO_Result resultVorMatchingNight = resultVorMatchBox_X;
     for (int i = 0, l = letzterTag.boxPairs.size(); i < l; i++) {
-      resultVorMatchBox_X = resultVorMatchingNight;
-      resultVorMatchingNight = calculate(data, new CalculationOptions(tagNr, i + 1, false), info);
       MatchBoxResult matchBoxResult = letzterTag.boxPairs.get(i);
       Pair boxPair = matchBoxResult.pair;
       Boolean boxResult = matchBoxResult.result;
-      out.accept("MatchBox: " + boxPair + (boxResult == null ? " verkauft." : "...")
-            + " (Wahrscheinlichkeit für das Ausgang des Ergebnisses)");
-      String yesMarker = "";
-      String noMarker = "";
-      if (boxResult != null) {
-        if (boxResult) {
-          yesMarker = " <==";
-        }
-        else {
-          noMarker = " <==";
-        }
+      if (boxResult == null) {
+        out.accept("MatchBox: " + boxPair + " verkauft.");
       }
-      out.accept("Ja   => " + prozent(resultVorMatchBox_X.getCount(boxPair),
-            resultVorMatchBox_X.getPossibleConstellationSize()) + "% [" + resultVorMatchBox_X.getCount(boxPair) + "]"
-            + yesMarker);
-      out.accept("Nein => " + prozent(
-            resultVorMatchBox_X.getPossibleConstellationSize() - resultVorMatchBox_X.getCount(boxPair),
-            resultVorMatchBox_X.getPossibleConstellationSize()) + "% [" + (
-            resultVorMatchBox_X.getPossibleConstellationSize() - resultVorMatchBox_X.getCount(boxPair)) + "]"
-            + noMarker);
-      out.accept("Die Kombinationen reduzieren sich: " + resultVorMatchBox_X.getPossibleConstellationSize() + " => "
-            + resultVorMatchingNight.getPossibleConstellationSize());
+      else {
+        resultVorMatchBox_X = resultVorMatchingNight;
+        resultVorMatchingNight = calculate(data, new CalculationOptions(tagNr, i + 1, false), info);
+        out.accept("MatchBox: " + boxPair + "... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)");
+        String yesMarker = "";
+        String noMarker = "";
+        if (boxResult != null) {
+          if (boxResult) {
+            yesMarker = " <==";
+          }
+          else {
+            noMarker = " <==";
+          }
+        }
+        out.accept("Ja   => " + prozent(resultVorMatchBox_X.getCount(boxPair),
+              resultVorMatchBox_X.getPossibleConstellationSize()) + "% [" + resultVorMatchBox_X.getCount(boxPair) + "]"
+              + yesMarker);
+        out.accept("Nein => " + prozent(
+              resultVorMatchBox_X.getPossibleConstellationSize() - resultVorMatchBox_X.getCount(boxPair),
+              resultVorMatchBox_X.getPossibleConstellationSize()) + "% [" + (
+              resultVorMatchBox_X.getPossibleConstellationSize() - resultVorMatchBox_X.getCount(boxPair)) + "]"
+              + noMarker);
+        out.accept("Die Kombinationen reduzieren sich: " + resultVorMatchBox_X.getPossibleConstellationSize() + " => "
+              + resultVorMatchingNight.getPossibleConstellationSize());
+      }
     }
 
     MatchingNight matchingNight = letzterTag.matchingNight;
-    if (matchingNight == null) {
+    if (matchingNight == null || matchingNight.lights == null) {
       out.accept("");
       out.accept("Es hat keine Matching Night stattgefunden!");
     }
     else {
       printLightChances(resultVorMatchingNight, matchingNight.constellation, matchingNight.lights);
+      // Ende des Tages Result
+      AYTO_Result resultNachMatchingNight = calculate(data, new CalculationOptions(tagNr, Integer.MAX_VALUE, true),
+            info);
+      printResult(data, resultNachMatchingNight, frauen, maenner);
     }
 
-    // Ende des Tages Result
-    AYTO_Result resultNachMatchingNight = calculate(data, new CalculationOptions(tagNr, Integer.MAX_VALUE, true), info);
-    printResult(data, resultNachMatchingNight, frauen, maenner);
   }
 
   /**
