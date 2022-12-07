@@ -52,7 +52,7 @@ public class AYTO_2 extends AYTO_Data {
 
     add(true, pair(Leonie, Marcel), 3, pair(Leonie, Marcel), pair(Christin, Germain), pair(Laura, Maximilian),
           pair(Kathleen, Marvin), pair(Jill, Sascha), pair(Melissa, Marc), pair(Vanessa, Dominic),
-          pair(Victoria, Dario), pair(Mirjam, Aaron), pair(VanessaM, Marko)).addImplicit(false, pair(VanessaM, Marcel));
+          pair(Victoria, Dario), pair(Mirjam, Aaron), pair(VanessaM, Marko)).implicit(false, pair(VanessaM, Marcel));
 
     add(null, pair(Laura, Dario), 4, pair(Leonie, Marcel), pair(Melissa, Aaron), pair(Victoria, Germain),
           pair(Christin, Maximilian), pair(Vanessa, Dominic), pair(Mirjam, Marc), pair(Sabrina, Marko),

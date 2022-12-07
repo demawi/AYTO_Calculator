@@ -33,6 +33,11 @@ public class AYTO_Data {
     this.pairsToTrack = Arrays.asList(pairs);
   }
 
+  public Tag add(Tag tag) {
+    tage.add(tag);
+    return tag;
+  }
+
   public Tag add(Boolean b, Pair pair, int i, Pair... pairs) {
     Tag tag = new Tag(pair, b, pairs == null ? null : new MatchingNight(i, Arrays.asList(pairs)));
     tage.add(tag);
@@ -62,7 +67,7 @@ public class AYTO_Data {
   private void getPairs(int tagNr, Consumer<Pair> consumer) {
     for (int i = 0; i < tagNr; i++) {
       Tag tag = tage.get(i);
-      consumer.accept(tag.matchingPair);
+      tag.boxPairs.forEach((pair, result) -> consumer.accept(pair));
       if (tag.matchingNight != null) {
         for (Pair pair : tag.matchingNight.constellation) {
           consumer.accept(pair);
@@ -80,13 +85,14 @@ public class AYTO_Data {
 
       boolean aktuell = i == tagDef.tagNr - 1;
       if (!aktuell || tagDef.mitMatchbox) {
-        if (tag.perfectMatch != null) {
-          if (tag.perfectMatch != constellation.contains(tag.matchingPair)) {
+        for (Map.Entry<Pair, Boolean> cur : tag.boxPairs.entrySet()) {
+          Boolean result = cur.getValue();
+          if (result != null && result != constellation.contains(cur.getKey())) {
             return false;
           }
         }
-        for(Map.Entry<Pair, Boolean> entry : tag.implicits.entrySet()) {
-          if(entry.getValue() != constellation.contains(entry.getKey())) {
+        for (Map.Entry<Pair, Boolean> entry : tag.implicits.entrySet()) {
+          if (entry.getValue() != constellation.contains(entry.getKey())) {
             return false;
           }
         }

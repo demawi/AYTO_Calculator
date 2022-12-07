@@ -1,17 +1,31 @@
 package demawi.ayto.modell;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class Pair {
 
+  private static final Map<Frau, Map<Mann, Pair>> pairCache = new LinkedHashMap<>();
   public Frau frau;
   public Mann mann;
 
-  public Pair(Frau frau, Mann mann) {
+  private Pair(Frau frau, Mann mann) {
     this.frau = frau;
     this.mann = mann;
   }
 
   public static Pair pair(Frau frau, Mann mann) {
-    return new Pair(frau, mann);
+    Map<Mann, Pair> mannPairMap = pairCache.get(frau);
+    if (mannPairMap == null) {
+      mannPairMap = new LinkedHashMap<>();
+      pairCache.put(frau, mannPairMap);
+    }
+    Pair pair = mannPairMap.get(mann);
+    if (pair == null) {
+      pair = new Pair(frau, mann);
+      mannPairMap.put(mann, pair);
+    }
+    return pair;
   }
 
   @Override

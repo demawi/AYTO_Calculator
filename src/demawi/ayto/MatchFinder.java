@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
@@ -47,6 +48,7 @@ public class MatchFinder {
     this.out = out;
   }
 
+  int resultAdded = 0;
   private AYTO_Result calculate(AYTO_Data data, TagDef tagDef, boolean info) {
     long start = System.currentTimeMillis();
     AYTO_Result result = new AYTO_Result(data);
@@ -62,7 +64,14 @@ public class MatchFinder {
 
     AYTO_Permutator<Frau, Mann, Pair> permutator = AYTO_Permutator.create(data.getFrauen(tagDef.tagNr),
           data.getMaenner(tagDef.tagNr), data.getZusatztype(), Pair::pair);
-    permutator.permutate(constellation -> result.addResult(data.test(constellation, tagDef, debug), constellation));
+    resultAdded = 0;
+    permutator.permutate(constellation -> {
+      result.addResult(data.test(constellation, tagDef, debug), constellation);
+      resultAdded++;
+      if (resultAdded % 1000 == 0) {
+        System.out.println("ResultAdded: " + resultAdded);
+      }
+    });
     if (info) {
       out.accept("-- Combinations: " + result.totalConstellations + " Yes: " + result.yes + " No: " + result.no
             + " Calculation time: " + minSecs(System.currentTimeMillis() - start) + " (Tested intern iterations: "
@@ -108,24 +117,29 @@ public class MatchFinder {
 
     AYTO_Result result2 = calculate(data, new TagDef(tagNr, true, false), info);
     Tag tag = data.tage.get(tagNr - 1);
-    out.accept("MatchBox: " + tag.matchingPair + (tag.perfectMatch == null ? " verkauft." : "...")
-          + " (Wahrscheinlichkeit für das Ausgang des Ergebnisses)");
-    String yesMarker = "";
-    String noMarker = "";
-    if (tag.perfectMatch != null) {
-      if (tag.perfectMatch) {
-        yesMarker = " <==";
+    for (Map.Entry<Pair, Boolean> entry : tag.boxPairs.entrySet()) {
+      Pair boxPair = entry.getKey();
+      Boolean boxResult = entry.getValue();
+      out.accept("MatchBox: " + boxPair + (boxResult == null ? " verkauft." : "...")
+            + " (Wahrscheinlichkeit für das Ausgang des Ergebnisses)");
+      String yesMarker = "";
+      String noMarker = "";
+      if (boxResult != null) {
+        if (boxResult) {
+          yesMarker = " <==";
+        }
+        else {
+          noMarker = " <==";
+        }
       }
-      else {
-        noMarker = " <==";
-      }
+      out.accept("Ja   => " + prozent(result1.getCount(boxPair), result1.possibleConstellations.size()) + "% ["
+            + result1.getCount(boxPair) + "]" + yesMarker);
+      out.accept("Nein => " + prozent(result1.possibleConstellations.size() - result1.getCount(boxPair),
+            result1.possibleConstellations.size()) + "% [" + (result1.possibleConstellations.size() - result1.getCount(
+            boxPair)) + "]" + noMarker);
+      out.accept("Die Kombinationen reduzieren sich: " + result1.getYes() + " => " + result2.getYes());
     }
-    out.accept("Ja   => " + prozent(result1.getCount(tag.matchingPair), result1.possibleConstellations.size()) + "% ["
-          + result1.getCount(tag.matchingPair) + "]" + yesMarker);
-    out.accept("Nein => " + prozent(result1.possibleConstellations.size() - result1.getCount(tag.matchingPair),
-          result1.possibleConstellations.size()) + "% [" + (result1.possibleConstellations.size() - result1.getCount(
-          tag.matchingPair)) + "]" + noMarker);
-    out.accept("Die Kombinationen reduzieren sich: " + result1.getYes() + " => " + result2.getYes());
+
     MatchingNight matchingNight = tag.matchingNight;
     if (matchingNight == null) {
       out.accept("");
@@ -179,7 +193,7 @@ public class MatchFinder {
       table.add(line);
       line.add(mann.name);
       for (Frau frau : sortedFrauen) {
-        Pair pair = new Pair(frau, mann);
+        Pair pair = Pair.pair(frau, mann);
         int count = 0;
         for (Tag tag : data.tage) {
           MatchingNight night = tag.matchingNight;
@@ -270,18 +284,20 @@ public class MatchFinder {
 
   }
 
-  private String getRanking(AYTO_Result resulter, Frau frau, List<Mann> maenner) {
+  private String getRanking(AYTO_Result result, Frau frau, List<Mann> maenner) {
     int gesamt = 0;
+    AYTO_Permutator.ZUSATZTYPE zusatztype = result.getData()
+          .getZusatztype();
     for (Mann mann : maenner) {
-      if (maenner.indexOf(mann) <= 9) {
-        gesamt += resulter.getCount(frau, mann);
+      if (zusatztype == AYTO_Permutator.ZUSATZTYPE.UNKNOWN || maenner.indexOf(mann) <= 9) {
+        gesamt += result.getCount(frau, mann);
       }
     }
     List<Mann> sortedPartner = new ArrayList<>(maenner);
-    sortedPartner.sort((o1, o2) -> resulter.getCount(frau, o2)
-          .compareTo(resulter.getCount(frau, o1)));
+    sortedPartner.sort((o1, o2) -> result.getCount(frau, o2)
+          .compareTo(result.getCount(frau, o1)));
     sortedPartner = sortedPartner.stream()
-          .filter(mann -> resulter.getCount(frau, mann) > 0)
+          .filter(mann -> result.getCount(frau, mann) > 0)
           .collect(Collectors.toList());
 
     StringBuffer stringBuffer = new StringBuffer();
@@ -289,15 +305,17 @@ public class MatchFinder {
       if (stringBuffer.length() > 0) {
         stringBuffer.append(", ");
       }
-      stringBuffer.append(mann + " (" + prozent(resulter.getCount(frau, mann), gesamt) + ")");
+      stringBuffer.append(mann + " (" + prozent(result.getCount(frau, mann), gesamt) + ")");
     }
     return "[" + stringBuffer.toString() + "]";
   }
 
   private String getRanking(AYTO_Result result, Mann mann, List<Frau> frauen) {
     int gesamt = 0;
+    AYTO_Permutator.ZUSATZTYPE zusatztype = result.getData()
+          .getZusatztype();
     for (Frau frau : frauen) {
-      if (frauen.indexOf(frau) <= 9) {
+      if (zusatztype == AYTO_Permutator.ZUSATZTYPE.UNKNOWN || frauen.indexOf(frau) <= 9) {
         gesamt += result.getCount(frau, mann);
       }
     }
@@ -323,7 +341,7 @@ public class MatchFinder {
     for (Frau frau : frauen) {
       AYTO_Permutator.ZUSATZTYPE zusatztype = result.getData()
             .getZusatztype();
-      if (zusatztype == AYTO_Permutator.ZUSATZTYPE.UNKNOWN || frauen.indexOf(frau) <= 9) {
+      if (zusatztype == AYTO_Permutator.ZUSATZTYPE.UNKNOWN && frauen.size() > 10 || frauen.indexOf(frau) <= 9) {
         gesamt += result.getCount(frau, mann);
       }
     }

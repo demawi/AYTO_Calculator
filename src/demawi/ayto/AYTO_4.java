@@ -3,6 +3,7 @@ package demawi.ayto;
 import demawi.ayto.modell.AYTO_Data;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
+import demawi.ayto.modell.Tag;
 
 import static demawi.ayto.modell.Pair.pair;
 
@@ -33,12 +34,11 @@ public class AYTO_4
   private static Mann Marwin = mann("Marwin");
 
   public AYTO_4() {
-    super("04", AYTO_Permutator.ZUSATZTYPE.UNKNOWN);
-
-
-
-    add(false, pair(Valeria, Marwin), 3, null);
-
+    super("04", AYTO_Permutator.ZUSATZTYPE.LAST);
+    add(new Tag().matchBox(pair(Valeria, Marwin), false)
+          .matchNight(4, pair(Aurelia, Barkin), pair(Carina, Burim), pair(Caroline, Christopher), pair(Dorna, Deniz),
+                pair(Henna, Joel), pair(Juliette, Ken), pair(Larissa, Kenneth), pair(Stefanie, Maximilian),
+                pair(Vanessa, Pascal), pair(Valeria, Sasa)));
 
   }
 

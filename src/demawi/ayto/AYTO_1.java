@@ -9,31 +9,31 @@ import static demawi.ayto.modell.Pair.pair;
 public class AYTO_1
       extends AYTO_Data {
 
-   private Frau Luisa = new Frau("Luisa");
-   private Frau Katharina = new Frau("Katharina");
-   private Frau Nadine = new Frau("Nadine");
-   private Frau Laura = new Frau("Laura");
-   private Frau Maddie = new Frau("Maddie");
-   private Frau Michelle = new Frau("Michelle");
-   private Frau Aline = new Frau("Aline");
-   private Frau Ivana = new Frau("Ivana");
-   private Frau Melissa = new Frau("Melissa");
-   private Frau Sabrina = new Frau("Sabrina");
+   private Frau Luisa = frau("Luisa");
+   private Frau Katharina = frau("Katharina");
+   private Frau Nadine = frau("Nadine");
+   private Frau Laura = frau("Laura");
+   private Frau Maddie = frau("Maddie");
+   private Frau Michelle = frau("Michelle");
+   private Frau Aline = frau("Aline");
+   private Frau Ivana = frau("Ivana");
+   private Frau Melissa = frau("Melissa");
+   private Frau Sabrina = frau("Sabrina");
 
-   private Mann Axel = new Mann("Axel");
-   private Mann Rene = new Mann("René");
-   private Mann Elisha = new Mann("Elisha");
-   private Mann Ferhat = new Mann("Ferhat");
-   private Mann Laurin = new Mann("Laurin");
-   private Mann Mo = new Mann("Mo");
-   private Mann Kevin = new Mann("Kevin");
-   private Mann Juliano = new Mann("Juliano");
-   private Mann Dominic = new Mann("Dominic");
-   private Mann Aleks = new Mann("Aleks");
-   private Mann Edin = new Mann("Edin");
+   private Mann Axel = mann("Axel");
+   private Mann Rene = mann("René");
+   private Mann Elisha = mann("Elisha");
+   private Mann Ferhat = mann("Ferhat");
+   private Mann Laurin = mann("Laurin");
+   private Mann Mo = mann("Mo");
+   private Mann Kevin = mann("Kevin");
+   private Mann Juliano = mann("Juliano");
+   private Mann Dominic = mann("Dominic");
+   private Mann Aleks = mann("Aleks");
+   private Mann Edin = mann("Edin");
 
    public AYTO_1() {
-      super("01");
+      super("01", AYTO_Permutator.ZUSATZTYPE.LAST);
 
       add(false, pair(Ivana, Mo), 1, pair(Luisa, Axel), pair(Katharina, Rene), pair(Nadine, Elisha),
             pair(Laura, Ferhat), pair(Maddie, Laurin), pair(Michelle, Mo), pair(Aline, Kevin), pair(Ivana, Juliano),
@@ -57,8 +57,8 @@ public class AYTO_1
 
       add(true, pair(Michelle, Rene), 5, pair(Aline, Mo), pair(Melissa, Laurin), pair(Michelle, Rene),
             pair(Nadine, Elisha), pair(Luisa, Axel), pair(Laura, Edin), pair(Katharina, Kevin), pair(Ivana, Juliano),
-            pair(Maddie, Aleks), pair(Sabrina, Dominic)).addImplicit(false, pair(Aline, Edin)).addImplicit(false, pair(Melissa, Edin))
-            .addImplicit(false, pair(Michelle, Edin)); // Ferhat
+            pair(Maddie, Aleks), pair(Sabrina, Dominic)).implicit(false, pair(Aline, Edin)).implicit(false, pair(Melissa, Edin))
+            .implicit(false, pair(Michelle, Edin)); // Ferhat
 
       // 7ter Tag
       add(false, pair(Ivana, Edin), 5, pair(Aline, Mo), pair(Melissa, Laurin), pair(Michelle, Rene),
