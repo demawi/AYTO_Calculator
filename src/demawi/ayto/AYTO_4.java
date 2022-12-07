@@ -38,10 +38,7 @@ public class AYTO_4
 
     add(Tag.create()
           .matchBox(pair(Valeria, Marwin), false)
-          .matchBox(pair(Dorna, Kenneth), false)
-          .matchNight(2, pair(Aurelia, Barkin), pair(Carina, Burim), pair(Caroline, Christopher), pair(Dorna, Deniz),
-                pair(Henna, Joel), pair(Juliette, Ken), pair(Larissa, Kenneth), pair(Stefanie, Maximilian),
-                pair(Vanessa, Pascal), pair(Valeria, Sasa)));
+          .matchBox(pair(Dorna, Kenneth), false));
 
   }
 

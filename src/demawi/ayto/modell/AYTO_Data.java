@@ -13,7 +13,7 @@ public class AYTO_Data {
 
   public String name;
   private AYTO_Permutator.ZUSATZTYPE zusatztype;
-  public List<Tag> tage = new ArrayList<>();
+  private List<Tag> tage = new ArrayList<>();
   public List<Pair> pairsToTrack;
 
   protected static Frau frau(String name) {
@@ -40,6 +40,18 @@ public class AYTO_Data {
 
   public Tag getTag(int index) {
     return tage.get(index - 1);
+  }
+
+  public Tag getTag(CalculationOptions opt) {
+    return getTag(opt.tagNr);
+  }
+
+  public int getAnzahlTage() {
+    return tage.size();
+  }
+
+  public List<Tag> getTage() {
+    return tage;
   }
 
   public Tag add(Boolean b, Pair pair, int i, Pair... pairs) {
@@ -84,14 +96,13 @@ public class AYTO_Data {
    * Testet ob die übergebene Paar-Konstellation zu einem Widerspruch führt.
    */
   public boolean test(Collection<Pair> constellation, CalculationOptions calcOptions, boolean debug) {
-    for (int tagNr = 0; tagNr < calcOptions.tagNr; tagNr++) {
-      Tag tag = tage.get(tagNr);
+    for (int tagNr = 1; tagNr < calcOptions.tagNr + 1; tagNr++) {
+      Tag tag = getTag(tagNr);
 
-      boolean aktuell = tagNr == calcOptions.tagNr - 1;
-      int matchBoxes = calcOptions.getAnzahlMatchBoxen(tag.boxPairs.size());
-      if (!aktuell || matchBoxes > 0) {
-        for (int matchBoxNr = 0, l = calcOptions.getAnzahlMatchBoxen(tag.boxPairs.size());
-             matchBoxNr < l; matchBoxNr++) {
+      boolean vorherigerTag = tagNr < calcOptions.tagNr; // wird komplett abgearbeitet
+      int matchBoxes = vorherigerTag ? tag.boxPairs.size() : calcOptions.getAnzahlMatchBoxen(tag.boxPairs.size());
+      if (matchBoxes > 0) {
+        for (int matchBoxNr = 0; matchBoxNr < matchBoxes; matchBoxNr++) {
           MatchBoxResult matchBoxResult = tag.boxPairs.get(matchBoxNr);
           Boolean result = matchBoxResult.result;
           if (result != null && result != constellation.contains(matchBoxResult.pair)) {
@@ -104,7 +115,7 @@ public class AYTO_Data {
           }
         }
       }
-      if (!aktuell || calcOptions.mitMatchingNight) {
+      if (vorherigerTag || calcOptions.mitMatchingNight) {
         MatchingNight night = tag.matchingNight;
         if (night != null) {
           for (int nightNr = 0, l = night.constellation.size(); nightNr < l; nightNr++) {

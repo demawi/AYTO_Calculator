@@ -1,25 +1,29 @@
+
+==================================================================================================================================================
 -- Berechne 01 - Nacht 2...
--- Combinations: 3628800 Yes: 1201464 No: 2427336 Calculation time: 0 min 14 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Possible: 1201464 Not possible: 2427336 Calculation time: 0 min 5 secs (Intern constellation-add-pair checks: 62353010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
 
--- Berechne 01 - Nacht 2 inkl. Matchbox...
--- Combinations: 3628800 Yes: 1084655 No: 2544145 Calculation time: 0 min 12 secs (Tested intern iterations: 62353010)
-
+==================================================================================================================================================
+-- Berechne 01 - Nacht 2 inkl. 1 Matchbox(en)...
+-- Combinations: 3628800 Possible: 1084655 Not possible: 2544145 Calculation time: 0 min 5 secs (Intern constellation-add-pair checks: 62353010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Melissa & Dominic... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 9,72% [116809]
 Nein => 90,28% [1084655] <==
 Die Kombinationen reduzieren sich: 1201464 => 1084655
 
-Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Sabrina & Dominic: 10,96%
-Luisa & René: 9,65%
-Maddie & Axel: 9,65%
-Katharina & Kevin: 9,65%
+Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Ivana & Elisha: 10,77%
 Aline & Ferhat: 9,65%
-Michelle & Mo: 12,31%
-Laura & Juliano: 9,60%
 Nadine & Aleks: 9,65%
+Luisa & René: 9,65%
+Sabrina & Dominic: 10,96%
+Laura & Juliano: 9,60%
+Michelle & Mo: 12,31%
+Maddie & Axel: 9,65%
 Melissa & Laurin: 10,96%
+Katharina & Kevin: 9,65%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 36,07% [391210]
@@ -35,10 +39,11 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 10 => 0,00% [1]
 Die Kombinationen reduzieren sich: 1084655 => 202933
 
--- Berechne 01 - Nacht 2 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 3628800 Yes: 202933 No: 3425867 Calculation time: 0 min 12 secs (Tested intern iterations: 62353010)
-
-==== Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights)
+==================================================================================================================================================
+-- Berechne 01 - Nacht 2 inkl. 1 Matchbox(en) inkl. Matchingnight...
+-- Combinations: 3628800 Possible: 202933 Not possible: 3425867 Calculation time: 0 min 4 secs (Intern constellation-add-pair checks: 62353010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
 
          Aline        Ivana        Katharina    Laura        Luisa        Maddie       Melissa      Michelle     Nadine       Sabrina      
 Aleks     8,85 % (0)   9,62 % (0)   8,84 % (2)   8,87 % (1)   8,85 % (0)   8,81 % (3)   9,72 % (0)   8,33 % (0)  18,73 % (2)   9,36 % (2)  
@@ -53,245 +58,3 @@ Mo        9,37 % (8)    -     (0)   9,37 % (0)   9,37 % (0)   9,37 % (0)   9,34 
 René      8,84 % (0)   9,68 % (0)   9,37 % (1)   8,89 % (0)  18,74 % (3)   8,83 % (0)   9,75 % (0)   8,36 % (5)   8,88 % (1)   8,66 % (0)  
 
 Mögliche Paare: 98/100
-
-==== Beste Konstellationen ====
-> Platz 1 mit 238960 Punkten (Summe der Vorkommen der Einzelpaare)
-Katharina & Elisha
-Luisa & Juliano
-Michelle & Mo
-Maddie & Ferhat
-Laura & Axel
-Sabrina & René
-Ivana & Dominic
-Aline & Aleks
-Melissa & Laurin
-Nadine & Kevin
-
-> Platz 2 mit 238951 Punkten (Summe der Vorkommen der Einzelpaare)
-Katharina & Elisha
-Aline & Axel
-Luisa & Juliano
-Laura & Aleks
-Michelle & Mo
-Maddie & Ferhat
-Sabrina & René
-Ivana & Dominic
-Melissa & Laurin
-Nadine & Kevin
-
-> Platz 3 mit 238949 Punkten (Summe der Vorkommen der Einzelpaare)
-Michelle & Mo
-Katharina & Juliano
-Aline & Elisha
-Maddie & Ferhat
-Laura & Axel
-Sabrina & René
-Ivana & Dominic
-Luisa & Aleks
-Melissa & Laurin
-Nadine & Kevin
-
-> Platz 4 mit 238946 Punkten (Summe der Vorkommen der Einzelpaare)
-Katharina & Elisha
-Luisa & Juliano
-Maddie & Kevin
-Sabrina & Ferhat
-Michelle & Mo
-Nadine & Axel
-Ivana & Dominic
-Aline & Aleks
-Laura & René
-Melissa & Laurin
-
-> Platz 5 mit 238944 Punkten (Summe der Vorkommen der Einzelpaare)
-Michelle & Mo
-Katharina & Juliano
-Maddie & Ferhat
-Laura & Axel
-Luisa & Elisha
-Sabrina & René
-Ivana & Dominic
-Aline & Aleks
-Melissa & Laurin
-Nadine & Kevin
-
-> Platz 6 mit 238942 Punkten (Summe der Vorkommen der Einzelpaare)
-Katharina & Elisha
-Luisa & Juliano
-Maddie & Kevin
-Sabrina & Ferhat
-Michelle & Mo
-Laura & Axel
-Ivana & Dominic
-Nadine & René
-Aline & Aleks
-Melissa & Laurin
-
-> Platz 7 mit 238941 Punkten (Summe der Vorkommen der Einzelpaare)
-Katharina & Elisha
-Luisa & Juliano
-Michelle & Mo
-Maddie & Ferhat
-Ivana & Dominic
-Aline & Aleks
-Sabrina & Axel
-Laura & René
-Melissa & Laurin
-Nadine & Kevin
-
-> Platz 8 mit 238940 Punkten (Summe der Vorkommen der Einzelpaare)
-Katharina & Elisha
-Nadine & Ferhat
-Luisa & Juliano
-Maddie & Kevin
-Michelle & Mo
-Laura & Axel
-Sabrina & René
-Ivana & Dominic
-Aline & Aleks
-Melissa & Laurin
-
-> Platz 9 mit 238938 Punkten (Summe der Vorkommen der Einzelpaare)
-Katharina & Elisha
-Luisa & Ferhat
-Michelle & Mo
-Laura & Axel
-Sabrina & René
-Ivana & Dominic
-Maddie & Juliano
-Aline & Aleks
-Melissa & Laurin
-Nadine & Kevin
-
-> Platz 10 mit 238936 Punkten (Summe der Vorkommen der Einzelpaare)
-Katharina & Elisha
-Luisa & Juliano
-Michelle & Mo
-Maddie & Ferhat
-Nadine & Axel
-Ivana & Dominic
-Sabrina & Kevin
-Aline & Aleks
-Laura & René
-Melissa & Laurin
-
-> Platz 11 mit 238935 Punkten (Summe der Vorkommen der Einzelpaare)
-Aline & Axel
-Laura & Aleks
-Michelle & Mo
-Katharina & Juliano
-Maddie & Ferhat
-Luisa & Elisha
-Sabrina & René
-Ivana & Dominic
-Melissa & Laurin
-Nadine & Kevin
-
-> Platz 12 mit 238935 Punkten (Summe der Vorkommen der Einzelpaare)
-Maddie & Kevin
-Laura & Aleks
-Luisa & Ferhat
-Michelle & Mo
-Katharina & Juliano
-Aline & Elisha
-Sabrina & René
-Nadine & Axel
-Ivana & Dominic
-Melissa & Laurin
-
-> Platz 13 mit 238935 Punkten (Summe der Vorkommen der Einzelpaare)
-Maddie & Kevin
-Sabrina & Ferhat
-Michelle & Mo
-Katharina & Juliano
-Aline & Elisha
-Nadine & Axel
-Ivana & Dominic
-Luisa & Aleks
-Laura & René
-Melissa & Laurin
-
-> Platz 14 mit 238933 Punkten (Summe der Vorkommen der Einzelpaare)
-Katharina & Elisha
-Aline & Axel
-Luisa & Juliano
-Maddie & Kevin
-Laura & Aleks
-Sabrina & Ferhat
-Michelle & Mo
-Ivana & Dominic
-Nadine & René
-Melissa & Laurin
-
-> Platz 15 mit 238932 Punkten (Summe der Vorkommen der Einzelpaare)
-Katharina & Elisha
-Luisa & Juliano
-Michelle & Mo
-Maddie & Ferhat
-Laura & Axel
-Ivana & Dominic
-Nadine & René
-Sabrina & Kevin
-Aline & Aleks
-Melissa & Laurin
-
-> Platz 16 mit 238932 Punkten (Summe der Vorkommen der Einzelpaare)
-Luisa & Ferhat
-Michelle & Mo
-Katharina & Juliano
-Laura & Axel
-Sabrina & René
-Ivana & Dominic
-Aline & Aleks
-Melissa & Laurin
-Nadine & Kevin
-Maddie & Elisha
-
-> Platz 17 mit 238931 Punkten (Summe der Vorkommen der Einzelpaare)
-Katharina & Elisha
-Aline & Axel
-Nadine & Ferhat
-Luisa & Juliano
-Maddie & Kevin
-Laura & Aleks
-Michelle & Mo
-Sabrina & René
-Ivana & Dominic
-Melissa & Laurin
-
-> Platz 18 mit 238931 Punkten (Summe der Vorkommen der Einzelpaare)
-Katharina & Aleks
-Luisa & Juliano
-Michelle & Mo
-Aline & Elisha
-Maddie & Ferhat
-Laura & Axel
-Sabrina & René
-Ivana & Dominic
-Melissa & Laurin
-Nadine & Kevin
-
-> Platz 19 mit 238931 Punkten (Summe der Vorkommen der Einzelpaare)
-Maddie & Kevin
-Sabrina & Ferhat
-Michelle & Mo
-Katharina & Juliano
-Aline & Elisha
-Laura & Axel
-Ivana & Dominic
-Nadine & René
-Luisa & Aleks
-Melissa & Laurin
-
-> Platz 20 mit 238930 Punkten (Summe der Vorkommen der Einzelpaare)
-Maddie & Kevin
-Sabrina & Ferhat
-Michelle & Mo
-Katharina & Juliano
-Luisa & Elisha
-Nadine & Axel
-Ivana & Dominic
-Aline & Aleks
-Laura & René
-Melissa & Laurin
-

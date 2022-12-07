@@ -53,7 +53,7 @@ public class MatchFinder {
     if (info) {
       out.accept("");
       breakLine(out);
-      Tag tag = data.tage.get(calcOptions.tagNr - 1);
+      Tag tag = data.getTag(calcOptions);
       int anzahlMatchBoxen = calcOptions.getAnzahlMatchBoxen(tag.boxPairs.size());
       out.accept("-- Berechne " + data.name + " - Nacht " + calcOptions.tagNr + (
             anzahlMatchBoxen > 0 ? " inkl. " + anzahlMatchBoxen + " Matchbox(en)" : "")
@@ -69,7 +69,7 @@ public class MatchFinder {
     if (info) {
       out.accept("-- Combinations: " + result.totalConstellations + " Possible: " + result.possible + " Not possible: "
             + result.notPossible + " Calculation time: " + minSecs(System.currentTimeMillis() - start)
-            + " (Tested intern iterations: " + permutator.testCount + ")");
+            + " (Intern constellation-add-pair checks: " + permutator.testCount + ")");
       breakLine2(out);
     }
     return result;
@@ -86,7 +86,7 @@ public class MatchFinder {
   }
 
   public void printDayResults(AYTO_Data data) {
-    printDayResults(data, data.tage.size());
+    printDayResults(data, data.getAnzahlTage());
   }
 
   /**
@@ -124,7 +124,7 @@ public class MatchFinder {
     }
 
     // Zwischen Result
-    Tag letzterTag = data.tage.get(tagNr - 1);
+    Tag letzterTag = data.getTag(tagNr);
     AYTO_Result resultVorMatchingNight = resultVorMatchBox_X;
     for (int i = 0, l = letzterTag.boxPairs.size(); i < l; i++) {
       resultVorMatchBox_X = resultVorMatchingNight;
@@ -210,7 +210,7 @@ public class MatchFinder {
       for (Frau frau : sortedFrauen) {
         Pair pair = Pair.pair(frau, mann);
         int count = 0;
-        for (Tag tag : data.tage) {
+        for (Tag tag : data.getTage()) {
           MatchingNight night = tag.matchingNight;
           if (night != null && night.constellation.contains(pair)) {
             count++;

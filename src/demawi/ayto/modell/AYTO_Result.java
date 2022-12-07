@@ -24,11 +24,13 @@ public class AYTO_Result {
     this.data = data;
 
     if (calcOptions.tagNr > 0) {
-      matchingNightConstellation = data.tage.get(calcOptions.tagNr - 1).matchingNight.constellation;
-
-      lightResults = new int[11];
-      for (int i = 0, l = 11; i < l; i++) {
-        lightResults[i] = 0;
+      MatchingNight matchingNight = data.getTag(calcOptions).matchingNight;
+      if (matchingNight != null) {
+        matchingNightConstellation = matchingNight.constellation;
+        lightResults = new int[11];
+        for (int i = 0, l = 11; i < l; i++) {
+          lightResults[i] = 0;
+        }
       }
     }
 

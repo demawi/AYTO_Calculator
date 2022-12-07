@@ -1,25 +1,29 @@
+
+==================================================================================================================================================
 -- Berechne 03 - Nacht 2...
--- Combinations: 3628800 Yes: 205176 No: 3423624 Calculation time: 0 min 11 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Possible: 205176 Not possible: 3423624 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
 
--- Berechne 03 - Nacht 2 inkl. Matchbox...
--- Combinations: 3628800 Yes: 189727 No: 3439073 Calculation time: 0 min 8 secs (Tested intern iterations: 62353010)
-
+==================================================================================================================================================
+-- Berechne 03 - Nacht 2 inkl. 1 Matchbox(en)...
+-- Combinations: 3628800 Possible: 189727 Not possible: 3439073 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Monami & Leon... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 7,53% [15449]
 Nein => 92,47% [189727] <==
 Die Kombinationen reduzieren sich: 205176 => 189727
 
-Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Jessica & Tim: 8,14%
-Estelle & Leon: 8,14%
-Isabelle & Dustin: 7,84%
-Joelina & Mike: 31,76%
-Monami & Antonino: 31,76%
-Zaira & Jordi: 7,84%
-Raphaela & William: 7,84%
+Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Marie & Marius: 7,84%
-Dana & Andre: 7,84%
+Raphaela & William: 7,84%
 Kerstin & Max: 28,76%
+Zaira & Jordi: 7,84%
+Dana & Andre: 7,84%
+Isabelle & Dustin: 7,84%
+Jessica & Tim: 8,14%
+Joelina & Mike: 31,76%
+Estelle & Leon: 8,14%
+Monami & Antonino: 31,76%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 19,68% [37338]
@@ -35,10 +39,11 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 10 => 0,00% [1]
 Die Kombinationen reduzieren sich: 189727 => 50721
 
--- Berechne 03 - Nacht 2 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 3628800 Yes: 50721 No: 3578079 Calculation time: 0 min 9 secs (Tested intern iterations: 62353010)
-
-==== Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights)
+==================================================================================================================================================
+-- Berechne 03 - Nacht 2 inkl. 1 Matchbox(en) inkl. Matchingnight...
+-- Combinations: 3628800 Possible: 50721 Not possible: 3578079 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
 
           Dana         Estelle      Isabelle     Jessica      Joelina      Kerstin      Marie        Monami       Raphaela     Zaira        
 Andre     10,56 % (1)   8,70 % (0)   8,67 % (2)   9,17 % (0)   6,66 % (1)   7,08 % (0)   8,70 % (2)   7,51 % (0)  24,25 % (2)   8,69 % (0)  
@@ -65,245 +70,3 @@ Raphaela & William => 10,56%
 Marie & Dustin => 8,58%
 Kerstin & Tim => 7,12%
 Jessica & Leon => 28,95%
-
-==== Beste Konstellationen ====
-> Platz 1 mit 88072 Punkten (Summe der Vorkommen der Einzelpaare)
-Dana & Dustin
-Isabelle & Andre
-Estelle & Marius
-Joelina & Mike
-Monami & Antonino
-Jessica & Leon
-Marie & Jordi
-Kerstin & William
-Zaira & Tim
-Raphaela & Max
-
-> Platz 2 mit 88072 Punkten (Summe der Vorkommen der Einzelpaare)
-Isabelle & Andre
-Estelle & Marius
-Joelina & Mike
-Monami & Antonino
-Raphaela & Dustin
-Jessica & Leon
-Marie & Jordi
-Dana & Max
-Kerstin & William
-Zaira & Tim
-
-> Platz 3 mit 88072 Punkten (Summe der Vorkommen der Einzelpaare)
-Dana & Dustin
-Estelle & Marius
-Joelina & Mike
-Monami & Antonino
-Jessica & Leon
-Marie & Jordi
-Isabelle & William
-Zaira & Tim
-Raphaela & Max
-Kerstin & Andre
-
-> Platz 4 mit 88072 Punkten (Summe der Vorkommen der Einzelpaare)
-Estelle & Marius
-Joelina & Mike
-Monami & Antonino
-Raphaela & Dustin
-Jessica & Leon
-Marie & Jordi
-Dana & Max
-Isabelle & William
-Zaira & Tim
-Kerstin & Andre
-
-> Platz 5 mit 88059 Punkten (Summe der Vorkommen der Einzelpaare)
-Dana & Dustin
-Isabelle & Andre
-Joelina & Mike
-Monami & Antonino
-Jessica & Leon
-Marie & Jordi
-Estelle & William
-Kerstin & Marius
-Zaira & Tim
-Raphaela & Max
-
-> Platz 6 mit 88059 Punkten (Summe der Vorkommen der Einzelpaare)
-Isabelle & Andre
-Joelina & Mike
-Monami & Antonino
-Raphaela & Dustin
-Jessica & Leon
-Marie & Jordi
-Estelle & William
-Dana & Max
-Kerstin & Marius
-Zaira & Tim
-
-> Platz 7 mit 88059 Punkten (Summe der Vorkommen der Einzelpaare)
-Dana & Dustin
-Estelle & Andre
-Joelina & Mike
-Monami & Antonino
-Jessica & Leon
-Marie & Jordi
-Kerstin & Marius
-Isabelle & William
-Zaira & Tim
-Raphaela & Max
-
-> Platz 8 mit 88059 Punkten (Summe der Vorkommen der Einzelpaare)
-Estelle & Andre
-Joelina & Mike
-Monami & Antonino
-Raphaela & Dustin
-Jessica & Leon
-Marie & Jordi
-Dana & Max
-Kerstin & Marius
-Isabelle & William
-Zaira & Tim
-
-> Platz 9 mit 88059 Punkten (Summe der Vorkommen der Einzelpaare)
-Isabelle & Andre
-Estelle & Marius
-Zaira & Max
-Joelina & Mike
-Monami & Antonino
-Raphaela & Dustin
-Jessica & Leon
-Marie & Jordi
-Dana & Tim
-Kerstin & William
-
-> Platz 10 mit 88059 Punkten (Summe der Vorkommen der Einzelpaare)
-Dana & Dustin
-Isabelle & Andre
-Estelle & Marius
-Zaira & Max
-Joelina & Mike
-Monami & Antonino
-Jessica & Leon
-Marie & Jordi
-Raphaela & Tim
-Kerstin & William
-
-> Platz 11 mit 88059 Punkten (Summe der Vorkommen der Einzelpaare)
-Estelle & Marius
-Zaira & Max
-Joelina & Mike
-Monami & Antonino
-Raphaela & Dustin
-Jessica & Leon
-Marie & Jordi
-Dana & Tim
-Isabelle & William
-Kerstin & Andre
-
-> Platz 12 mit 88059 Punkten (Summe der Vorkommen der Einzelpaare)
-Dana & Dustin
-Estelle & Marius
-Zaira & Max
-Joelina & Mike
-Monami & Antonino
-Jessica & Leon
-Marie & Jordi
-Raphaela & Tim
-Isabelle & William
-Kerstin & Andre
-
-> Platz 13 mit 88048 Punkten (Summe der Vorkommen der Einzelpaare)
-Raphaela & Marius
-Isabelle & Andre
-Joelina & Mike
-Monami & Antonino
-Jessica & Leon
-Kerstin & Dustin
-Marie & Jordi
-Estelle & William
-Dana & Max
-Zaira & Tim
-
-> Platz 14 mit 88048 Punkten (Summe der Vorkommen der Einzelpaare)
-Isabelle & Andre
-Joelina & Mike
-Monami & Antonino
-Jessica & Leon
-Kerstin & Dustin
-Marie & Jordi
-Estelle & William
-Dana & Marius
-Zaira & Tim
-Raphaela & Max
-
-> Platz 15 mit 88048 Punkten (Summe der Vorkommen der Einzelpaare)
-Dana & Dustin
-Raphaela & Marius
-Joelina & Mike
-Monami & Antonino
-Jessica & Leon
-Marie & Jordi
-Estelle & William
-Isabelle & Max
-Zaira & Tim
-Kerstin & Andre
-
-> Platz 16 mit 88048 Punkten (Summe der Vorkommen der Einzelpaare)
-Joelina & Mike
-Monami & Antonino
-Raphaela & Dustin
-Jessica & Leon
-Marie & Jordi
-Estelle & William
-Isabelle & Max
-Dana & Marius
-Zaira & Tim
-Kerstin & Andre
-
-> Platz 17 mit 88048 Punkten (Summe der Vorkommen der Einzelpaare)
-Raphaela & Marius
-Estelle & Andre
-Joelina & Mike
-Monami & Antonino
-Jessica & Leon
-Kerstin & Dustin
-Marie & Jordi
-Dana & Max
-Isabelle & William
-Zaira & Tim
-
-> Platz 18 mit 88048 Punkten (Summe der Vorkommen der Einzelpaare)
-Estelle & Andre
-Joelina & Mike
-Monami & Antonino
-Jessica & Leon
-Kerstin & Dustin
-Marie & Jordi
-Dana & Marius
-Isabelle & William
-Zaira & Tim
-Raphaela & Max
-
-> Platz 19 mit 88048 Punkten (Summe der Vorkommen der Einzelpaare)
-Dana & Dustin
-Raphaela & Marius
-Estelle & Andre
-Joelina & Mike
-Monami & Antonino
-Jessica & Leon
-Marie & Jordi
-Kerstin & William
-Isabelle & Max
-Zaira & Tim
-
-> Platz 20 mit 88048 Punkten (Summe der Vorkommen der Einzelpaare)
-Estelle & Andre
-Joelina & Mike
-Monami & Antonino
-Raphaela & Dustin
-Jessica & Leon
-Marie & Jordi
-Kerstin & William
-Isabelle & Max
-Dana & Marius
-Zaira & Tim
-

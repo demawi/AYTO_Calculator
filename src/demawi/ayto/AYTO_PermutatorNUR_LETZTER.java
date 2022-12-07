@@ -26,7 +26,6 @@ public class AYTO_PermutatorNUR_LETZTER<F, M, R>
     * Nur für ZUSATZTYPE.LAST
     */
    protected Object[] canAdd(int frau, int mann, Object[] constellation) {
-      testCount++;
       addedFrauen.clear();
       addedMaenner.clear();
       for (Object current : constellation) {

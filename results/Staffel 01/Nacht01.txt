@@ -1,46 +1,50 @@
 Eine Frau ist hinzugekommen: Ivana. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Luisa. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Melissa. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Michelle. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Nadine. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Katharina. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Laura. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Maddie. Die Anzahl der Kombinationen erhöht sich damit!
 Eine Frau ist hinzugekommen: Aline. Die Anzahl der Kombinationen erhöht sich damit!
 Eine Frau ist hinzugekommen: Sabrina. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Laura. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Michelle. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Luisa. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Katharina. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Nadine. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Maddie. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Melissa. Die Anzahl der Kombinationen erhöht sich damit!
 Ein Mann ist hinzugekommen: Mo. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Axel. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Juliano. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Dominic. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Elisha. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: René. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Ferhat. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Laurin. Die Anzahl der Kombinationen erhöht sich damit!
 Ein Mann ist hinzugekommen: Kevin. Die Anzahl der Kombinationen erhöht sich damit!
 Ein Mann ist hinzugekommen: Aleks. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Juliano. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Ferhat. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Axel. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: René. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Elisha. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Laurin. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Dominic. Die Anzahl der Kombinationen erhöht sich damit!
+
+==================================================================================================================================================
 -- Berechne 01 - Nacht 1...
--- Combinations: 3628800 Yes: 3628800 No: 0 Calculation time: 0 min 12 secs (Tested intern iterations: 62353010)
-
+-- Combinations: 3628800 Possible: 3628800 Not possible: 0 Calculation time: 0 min 5 secs (Intern constellation-add-pair checks: 62353010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
 Die Anzahl der Kombinationen hat sich verändert: 0 => 3628800
--- Berechne 01 - Nacht 1 inkl. Matchbox...
--- Combinations: 3628800 Yes: 3265920 No: 362880 Calculation time: 0 min 16 secs (Tested intern iterations: 62353010)
 
+==================================================================================================================================================
+-- Berechne 01 - Nacht 1 inkl. 1 Matchbox(en)...
+-- Combinations: 3628800 Possible: 3265920 Not possible: 362880 Calculation time: 0 min 5 secs (Intern constellation-add-pair checks: 62353010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Ivana & Mo... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 10,00% [362880]
 Nein => 90,00% [3265920] <==
 Die Kombinationen reduzieren sich: 3628800 => 3265920
 
-Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Luisa & Axel: 9,88%
-Ivana & Juliano: 11,11%
-Melissa & Dominic: 9,88%
-Michelle & Mo: 11,11%
-Nadine & Elisha: 9,88%
-Katharina & René: 9,88%
-Laura & Ferhat: 9,88%
-Maddie & Laurin: 9,88%
+Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Aline & Kevin: 9,88%
 Sabrina & Aleks: 9,88%
+Ivana & Juliano: 11,11%
+Laura & Ferhat: 9,88%
+Michelle & Mo: 11,11%
+Luisa & Axel: 9,88%
+Katharina & René: 9,88%
+Nadine & Elisha: 9,88%
+Maddie & Laurin: 9,88%
+Melissa & Dominic: 9,88%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 36,33% [1186632]
@@ -56,10 +60,11 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 10 => 0,00% [1]
 Die Kombinationen reduzieren sich: 3265920 => 1201464
 
--- Berechne 01 - Nacht 1 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 3628800 Yes: 1201464 No: 2427336 Calculation time: 0 min 19 secs (Tested intern iterations: 62353010)
-
-==== Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights)
+==================================================================================================================================================
+-- Berechne 01 - Nacht 1 inkl. 1 Matchbox(en) inkl. Matchingnight...
+-- Combinations: 3628800 Possible: 1201464 Not possible: 2427336 Calculation time: 0 min 4 secs (Intern constellation-add-pair checks: 62353010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
 
          Aline        Ivana        Katharina    Laura        Luisa        Maddie       Melissa      Michelle     Nadine       Sabrina      
 Aleks     9,90 % (0)  11,11 % (0)   9,90 % (2)   9,90 % (1)   9,90 % (0)   9,90 % (3)   9,90 % (0)   9,88 % (0)   9,90 % (2)   9,72 % (2)  
@@ -74,245 +79,3 @@ Mo       11,11 % (8)    -     (0)  11,11 % (0)  11,11 % (0)  11,11 % (0)  11,11 
 René      9,90 % (0)  11,11 % (0)   9,72 % (1)   9,90 % (0)   9,90 % (3)   9,90 % (0)   9,90 % (0)   9,88 % (5)   9,90 % (1)   9,90 % (0)  
 
 Mögliche Paare: 99/100
-
-==== Beste Konstellationen ====
-> Platz 1 mit 1218151 Punkten (Summe der Vorkommen der Einzelpaare)
-Luisa & Juliano
-Sabrina & Laurin
-Maddie & Kevin
-Michelle & Mo
-Ivana & Axel
-Katharina & Ferhat
-Melissa & Elisha
-Aline & Aleks
-Laura & René
-Nadine & Dominic
-
-> Platz 2 mit 1218151 Punkten (Summe der Vorkommen der Einzelpaare)
-Maddie & Aleks
-Luisa & Juliano
-Michelle & Mo
-Ivana & Axel
-Aline & Laurin
-Katharina & Ferhat
-Melissa & Elisha
-Sabrina & Kevin
-Laura & René
-Nadine & Dominic
-
-> Platz 3 mit 1218151 Punkten (Summe der Vorkommen der Einzelpaare)
-Maddie & René
-Luisa & Juliano
-Laura & Laurin
-Michelle & Mo
-Ivana & Axel
-Katharina & Ferhat
-Melissa & Elisha
-Sabrina & Kevin
-Aline & Aleks
-Nadine & Dominic
-
-> Platz 4 mit 1218151 Punkten (Summe der Vorkommen der Einzelpaare)
-Luisa & Juliano
-Maddie & Kevin
-Laura & Laurin
-Michelle & Mo
-Ivana & Axel
-Sabrina & René
-Katharina & Ferhat
-Melissa & Elisha
-Aline & Aleks
-Nadine & Dominic
-
-> Platz 5 mit 1218151 Punkten (Summe der Vorkommen der Einzelpaare)
-Maddie & Aleks
-Luisa & Juliano
-Aline & René
-Laura & Laurin
-Michelle & Mo
-Ivana & Axel
-Katharina & Ferhat
-Melissa & Elisha
-Sabrina & Kevin
-Nadine & Dominic
-
-> Platz 6 mit 1218151 Punkten (Summe der Vorkommen der Einzelpaare)
-Maddie & René
-Luisa & Juliano
-Sabrina & Laurin
-Michelle & Mo
-Ivana & Axel
-Katharina & Ferhat
-Laura & Kevin
-Melissa & Elisha
-Aline & Aleks
-Nadine & Dominic
-
-> Platz 7 mit 1218151 Punkten (Summe der Vorkommen der Einzelpaare)
-Maddie & Aleks
-Luisa & Juliano
-Aline & René
-Sabrina & Laurin
-Michelle & Mo
-Ivana & Axel
-Katharina & Ferhat
-Laura & Kevin
-Melissa & Elisha
-Nadine & Dominic
-
-> Platz 8 mit 1218151 Punkten (Summe der Vorkommen der Einzelpaare)
-Maddie & Aleks
-Luisa & Juliano
-Michelle & Mo
-Ivana & Axel
-Sabrina & René
-Aline & Laurin
-Katharina & Ferhat
-Laura & Kevin
-Melissa & Elisha
-Nadine & Dominic
-
-> Platz 9 mit 1218151 Punkten (Summe der Vorkommen der Einzelpaare)
-Maddie & René
-Luisa & Juliano
-Laura & Aleks
-Michelle & Mo
-Ivana & Axel
-Aline & Laurin
-Katharina & Ferhat
-Melissa & Elisha
-Sabrina & Kevin
-Nadine & Dominic
-
-> Platz 10 mit 1218151 Punkten (Summe der Vorkommen der Einzelpaare)
-Luisa & Juliano
-Aline & René
-Sabrina & Laurin
-Maddie & Kevin
-Laura & Aleks
-Michelle & Mo
-Ivana & Axel
-Katharina & Ferhat
-Melissa & Elisha
-Nadine & Dominic
-
-> Platz 11 mit 1218151 Punkten (Summe der Vorkommen der Einzelpaare)
-Luisa & Juliano
-Maddie & Kevin
-Laura & Aleks
-Michelle & Mo
-Ivana & Axel
-Sabrina & René
-Aline & Laurin
-Katharina & Ferhat
-Melissa & Elisha
-Nadine & Dominic
-
-> Platz 12 mit 1218151 Punkten (Summe der Vorkommen der Einzelpaare)
-Katharina & Laurin
-Luisa & Juliano
-Michelle & Mo
-Ivana & Axel
-Maddie & Ferhat
-Melissa & Elisha
-Sabrina & Kevin
-Aline & Aleks
-Laura & René
-Nadine & Dominic
-
-> Platz 13 mit 1218151 Punkten (Summe der Vorkommen der Einzelpaare)
-Katharina & Laurin
-Luisa & Juliano
-Maddie & Kevin
-Sabrina & Ferhat
-Michelle & Mo
-Ivana & Axel
-Melissa & Elisha
-Aline & Aleks
-Laura & René
-Nadine & Dominic
-
-> Platz 14 mit 1218151 Punkten (Summe der Vorkommen der Einzelpaare)
-Katharina & Laurin
-Maddie & Aleks
-Luisa & Juliano
-Aline & Ferhat
-Michelle & Mo
-Ivana & Axel
-Melissa & Elisha
-Sabrina & Kevin
-Laura & René
-Nadine & Dominic
-
-> Platz 15 mit 1218151 Punkten (Summe der Vorkommen der Einzelpaare)
-Maddie & René
-Katharina & Laurin
-Luisa & Juliano
-Sabrina & Ferhat
-Michelle & Mo
-Ivana & Axel
-Laura & Kevin
-Melissa & Elisha
-Aline & Aleks
-Nadine & Dominic
-
-> Platz 16 mit 1218151 Punkten (Summe der Vorkommen der Einzelpaare)
-Katharina & Laurin
-Luisa & Juliano
-Michelle & Mo
-Ivana & Axel
-Maddie & Ferhat
-Sabrina & René
-Laura & Kevin
-Melissa & Elisha
-Aline & Aleks
-Nadine & Dominic
-
-> Platz 17 mit 1218151 Punkten (Summe der Vorkommen der Einzelpaare)
-Katharina & Laurin
-Maddie & Aleks
-Luisa & Juliano
-Aline & René
-Sabrina & Ferhat
-Michelle & Mo
-Ivana & Axel
-Laura & Kevin
-Melissa & Elisha
-Nadine & Dominic
-
-> Platz 18 mit 1218151 Punkten (Summe der Vorkommen der Einzelpaare)
-Katharina & Laurin
-Maddie & Aleks
-Luisa & Juliano
-Aline & Ferhat
-Michelle & Mo
-Ivana & Axel
-Sabrina & René
-Laura & Kevin
-Melissa & Elisha
-Nadine & Dominic
-
-> Platz 19 mit 1218151 Punkten (Summe der Vorkommen der Einzelpaare)
-Maddie & René
-Katharina & Laurin
-Luisa & Juliano
-Laura & Aleks
-Aline & Ferhat
-Michelle & Mo
-Ivana & Axel
-Melissa & Elisha
-Sabrina & Kevin
-Nadine & Dominic
-
-> Platz 20 mit 1218151 Punkten (Summe der Vorkommen der Einzelpaare)
-Katharina & Laurin
-Luisa & Juliano
-Aline & René
-Laura & Aleks
-Michelle & Mo
-Ivana & Axel
-Maddie & Ferhat
-Melissa & Elisha
-Sabrina & Kevin
-Nadine & Dominic
-

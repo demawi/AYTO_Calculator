@@ -22,7 +22,6 @@ public class AYTO_PermutatorJEDER<F, M, R>
     * Nur für ZUSATZTYPE.UNKNOWN
     */
    protected Object[] canAdd(int frau, int mann, Object[] constellation) {
-      testCount++;
       boolean foundDouble = (Boolean) constellation[0];
       for (int i = 1, l = constellation.length; i < l; i++) {
          Integer current = (Integer) constellation[i];

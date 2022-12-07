@@ -19,7 +19,7 @@ public abstract class AYTO_Permutator<F, M, R> {
   protected final int maxSize;
   private final ZUSATZTYPE zusatzType;
   private final BiFunction<F, M, R> packingFunction;
-  public long testCount = 0;
+  public long testCount = 0; // wie oft die canAdd-Methode aufgerufen wurde
 
   /**
    * -1: man weiß nicht wer der Zusatzmann/frau ist
@@ -64,7 +64,8 @@ public abstract class AYTO_Permutator<F, M, R> {
   public abstract Object[] createInitialConstellation();
 
   /**
-   * Optimized iteration only over one list.
+   * Wie viele currentConstellations gleichzeitig angelegt sind. Wir nutzen hier die Tiefensuche, um
+   * Speicherplatz zu sparen.
    */
   private int openInts = 0;
 
@@ -75,6 +76,7 @@ public abstract class AYTO_Permutator<F, M, R> {
 
     if (anzahlFrauen >= anzahlMaenner) { // jede Frau ist nur einmal vorhanden, somit frauAktuell immer + 1
       for (int mann = 0; mann < anzahlMaenner; mann++) {
+        testCount++;
         Object[] newSet = canAdd(frauAktuell, mann, currentConstellation);
         if (newSet != null) {
           Set<R> result = decodePairs(newSet);
@@ -89,6 +91,7 @@ public abstract class AYTO_Permutator<F, M, R> {
     }
     else { // jeder Mann ist nur einmal vorhanden, somit mannAktuell immer +1.
       for (int frau = 0; frau < anzahlFrauen; frau++) {
+        testCount++;
         Object[] newSet = canAdd(frau, mannAktuell, currentConstellation);
         if (newSet != null) {
           Set<R> result = decodePairs(newSet);

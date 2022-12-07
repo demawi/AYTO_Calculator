@@ -1,30 +1,36 @@
 Ein Mann ist hinzugekommen: Felix. Die Anzahl der Kombinationen erhöht sich damit!
--- Berechne VIP_02 - Nacht 4 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 3628800 Yes: 300 No: 3628500 Calculation time: 0 min 9 secs (Tested intern iterations: 62353010)
 
+==================================================================================================================================================
+-- Berechne VIP_02 - Nacht 4 inkl. 1 Matchbox(en) inkl. Matchingnight...
+-- Combinations: 3628800 Possible: 300 Not possible: 3628500 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+==================================================================================================================================================
 -- Berechne VIP_02 - Nacht 5...
--- Combinations: 36288000 Yes: 2700 No: 36285300 Calculation time: 0 min 48 secs (Tested intern iterations: 98641010)
-
+-- Combinations: 36288000 Possible: 2700 Not possible: 36285300 Calculation time: 0 min 22 secs (Intern constellation-add-pair checks: 98641010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
 Die Anzahl der Kombinationen hat sich verändert: 300 => 2700
--- Berechne VIP_02 - Nacht 5 inkl. Matchbox...
--- Combinations: 36288000 Yes: 2400 No: 36285600 Calculation time: 0 min 49 secs (Tested intern iterations: 98641010)
 
+==================================================================================================================================================
+-- Berechne VIP_02 - Nacht 5 inkl. 1 Matchbox(en)...
+-- Combinations: 36288000 Possible: 2400 Not possible: 36285600 Calculation time: 0 min 22 secs (Intern constellation-add-pair checks: 98641010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Ricarda & Felix... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 11,11% [300]
 Nein => 88,89% [2400] <==
 Die Kombinationen reduzieren sich: 2700 => 2400
 
-Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Anna & Pharrell: 13,33%
-Zoe & Luca: 25,33%
-Karina & Martin: 13,67%
-Gina & Felix: 12,50%
+Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Isabelle & Maurice: 1,00%
 Cecilia & Amadu: 68,67%
+Karina & Martin: 13,67%
+Gina & Felix: 12,50%
+Celina & Fabio: 23,67%
+Franziska & Michael: 8,33%
+Zoe & Luca: 25,33%
 Luisa & Lukas: 100,00%
 Ricarda & Max: 0,67%
-Franziska & Michael: 8,33%
-Celina & Fabio: 23,67%
+Anna & Pharrell: 13,33%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 0,00% [0]
@@ -40,284 +46,23 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 10 => 0,00% [0]
 Die Kombinationen reduzieren sich: 2400 => 806
 
--- Berechne VIP_02 - Nacht 5 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 36288000 Yes: 806 No: 36287194 Calculation time: 0 min 50 secs (Tested intern iterations: 98641010)
-
-==== Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights)
+==================================================================================================================================================
+-- Berechne VIP_02 - Nacht 5 inkl. 1 Matchbox(en) inkl. Matchingnight...
+-- Combinations: 36288000 Possible: 806 Not possible: 36287194 Calculation time: 0 min 22 secs (Intern constellation-add-pair checks: 98641010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
 
           Anna         Cecilia      Celina       Franziska    Gina         Isabelle     Karina       Luisa        Ricarda      Zoe          
-Amadu      2,85 % (0)  80,15 % (5)   1,24 % (0)   6,82 % (0)   1,49 % (1)   4,34 % (0)   0,74 % (0)    -     (0)    -     (0)   2,36 % (0)  
-Calvin     6,33 % (0)   2,23 % (0)   9,31 % (0)  12,03 % (1)  24,07 % (1)  11,29 % (0)  25,56 % (3)    -     (1)   0,25 % (0)   8,93 % (0)  
-Fabio      9,80 % (0)   1,61 % (0)  32,13 % (4)   9,93 % (0)   9,31 % (1)   7,82 % (0)  19,48 % (1)    -     (1)   0,99 % (0)   8,93 % (0)  
-Felix     12,16 % (0)  12,16 % (0)  12,16 % (0)  12,16 % (0)  14,89 % (3)  12,16 % (1)  12,16 % (0)    -     (0)    -     (0)  12,16 % (0)  
-Luca       3,72 % (0)   2,11 % (0)   8,31 % (1)  12,16 % (1)  11,04 % (0)  17,00 % (1)  13,65 % (0)    -     (0)   2,61 % (0)  29,40 % (4)  
-Lukas       -     (0)    -     (0)    -     (0)    -     (1)    -     (0)    -     (1)    -     (0)    ✓     (4)    -     (0)    -     (1)  
-Martin    16,50 % (1)   3,47 % (0)  16,38 % (1)  12,78 % (0)   8,81 % (0)  22,46 % (3)  18,49 % (2)    -     (0)   1,12 % (0)    -     (0)  
-Maurice     -     (0)    -     (1)   0,25 % (0)   1,12 % (0)   1,36 % (0)   1,74 % (1)   1,74 % (0)    -     (0)  92,06 % (3)   1,74 % (1)  
-Max        6,33 % (0)   4,47 % (0)   9,31 % (1)  19,60 % (3)  15,38 % (0)   9,31 % (0)   9,93 % (0)    -     (0)    -     (1)  25,68 % (1)  
-Michael   38,34 % (5)   1,24 % (0)  10,30 % (0)   7,07 % (1)  10,92 % (1)  10,55 % (0)  10,42 % (0)    -     (0)    -     (0)  11,17 % (0)  
-Pharrell  16,13 % (1)   4,71 % (1)  12,78 % (0)  18,49 % (0)  17,62 % (0)  15,51 % (0)    -     (1)    -     (1)   2,98 % (3)  11,79 % (0)  
+Amadu      2,85 % (0)  80,15 % (7)   1,24 % (0)   6,82 % (0)   1,49 % (1)   4,34 % (0)   0,74 % (0)    -     (0)    -     (0)   2,36 % (0)  
+Calvin     6,33 % (0)   2,23 % (0)   9,31 % (0)  12,03 % (2)  24,07 % (2)  11,29 % (0)  25,56 % (3)    -     (1)   0,25 % (0)   8,93 % (0)  
+Fabio      9,80 % (0)   1,61 % (0)  32,13 % (6)   9,93 % (0)   9,31 % (1)   7,82 % (0)  19,48 % (1)    -     (1)   0,99 % (0)   8,93 % (0)  
+Felix     12,16 % (0)  12,16 % (0)  12,16 % (0)  12,16 % (0)  14,89 % (3)  12,16 % (3)  12,16 % (0)    -     (0)    -     (0)  12,16 % (0)  
+Luca       3,72 % (0)   2,11 % (0)   8,31 % (1)  12,16 % (1)  11,04 % (0)  17,00 % (1)  13,65 % (1)    -     (0)   2,61 % (0)  29,40 % (4)  
+Lukas       -     (0)    -     (0)    -     (0)    -     (1)    -     (0)    -     (1)    -     (0)    ✓     (6)    -     (0)    -     (1)  
+Martin    16,50 % (1)   3,47 % (0)  16,38 % (1)  12,78 % (0)   8,81 % (1)  22,46 % (3)  18,49 % (3)    -     (0)   1,12 % (0)    -     (0)  
+Maurice     -     (0)    -     (1)   0,25 % (0)   1,12 % (0)   1,36 % (0)   1,74 % (1)   1,74 % (0)    -     (0)  92,06 % (5)   1,74 % (1)  
+Max        6,33 % (0)   4,47 % (0)   9,31 % (1)  19,60 % (4)  15,38 % (0)   9,31 % (0)   9,93 % (0)    -     (0)    -     (1)  25,68 % (1)  
+Michael   38,34 % (7)   1,24 % (0)  10,30 % (0)   7,07 % (1)  10,92 % (1)  10,55 % (0)  10,42 % (0)    -     (0)    -     (0)  11,17 % (0)  
+Pharrell  16,13 % (1)   4,71 % (1)  12,78 % (0)  18,49 % (0)  17,62 % (0)  15,51 % (0)    -     (1)    -     (1)   2,98 % (3)  11,79 % (2)  
 
 Mögliche Paare: 83/110
-
-==== Beste Konstellationen ====
-> Platz 1 mit 3394 Punkten (Summe der Vorkommen der Einzelpaare)
-Ricarda & Maurice
-Zoe & Calvin
-Karina & Luca
-Zoe & Felix
-Isabelle & Pharrell
-Cecilia & Amadu
-Anna & Michael
-Gina & Max
-Luisa & Lukas
-Franziska & Martin
-Celina & Fabio
-
-> Platz 2 mit 3394 Punkten (Summe der Vorkommen der Einzelpaare)
-Ricarda & Maurice
-Zoe & Calvin
-Karina & Luca
-Isabelle & Felix
-Isabelle & Pharrell
-Cecilia & Amadu
-Anna & Michael
-Gina & Max
-Luisa & Lukas
-Franziska & Martin
-Celina & Fabio
-
-> Platz 3 mit 3394 Punkten (Summe der Vorkommen der Einzelpaare)
-Ricarda & Maurice
-Zoe & Calvin
-Karina & Luca
-Isabelle & Pharrell
-Cecilia & Amadu
-Anna & Michael
-Gina & Max
-Karina & Felix
-Luisa & Lukas
-Franziska & Martin
-Celina & Fabio
-
-> Platz 4 mit 3394 Punkten (Summe der Vorkommen der Einzelpaare)
-Ricarda & Maurice
-Zoe & Calvin
-Karina & Luca
-Cecilia & Felix
-Isabelle & Pharrell
-Cecilia & Amadu
-Anna & Michael
-Gina & Max
-Luisa & Lukas
-Franziska & Martin
-Celina & Fabio
-
-> Platz 5 mit 3394 Punkten (Summe der Vorkommen der Einzelpaare)
-Ricarda & Maurice
-Zoe & Calvin
-Karina & Luca
-Isabelle & Pharrell
-Cecilia & Amadu
-Anna & Michael
-Gina & Max
-Luisa & Lukas
-Franziska & Martin
-Anna & Felix
-Celina & Fabio
-
-> Platz 6 mit 3394 Punkten (Summe der Vorkommen der Einzelpaare)
-Ricarda & Maurice
-Zoe & Calvin
-Celina & Felix
-Karina & Luca
-Isabelle & Pharrell
-Cecilia & Amadu
-Anna & Michael
-Gina & Max
-Luisa & Lukas
-Franziska & Martin
-Celina & Fabio
-
-> Platz 7 mit 3394 Punkten (Summe der Vorkommen der Einzelpaare)
-Ricarda & Maurice
-Zoe & Calvin
-Karina & Luca
-Isabelle & Pharrell
-Cecilia & Amadu
-Anna & Michael
-Gina & Max
-Franziska & Felix
-Luisa & Lukas
-Franziska & Martin
-Celina & Fabio
-
-> Platz 8 mit 3383 Punkten (Summe der Vorkommen der Einzelpaare)
-Ricarda & Maurice
-Karina & Luca
-Isabelle & Calvin
-Zoe & Felix
-Cecilia & Amadu
-Zoe & Pharrell
-Anna & Michael
-Gina & Max
-Luisa & Lukas
-Franziska & Martin
-Celina & Fabio
-
-> Platz 9 mit 3383 Punkten (Summe der Vorkommen der Einzelpaare)
-Ricarda & Maurice
-Karina & Luca
-Isabelle & Calvin
-Isabelle & Felix
-Cecilia & Amadu
-Zoe & Pharrell
-Anna & Michael
-Gina & Max
-Luisa & Lukas
-Franziska & Martin
-Celina & Fabio
-
-> Platz 10 mit 3383 Punkten (Summe der Vorkommen der Einzelpaare)
-Ricarda & Maurice
-Karina & Luca
-Isabelle & Calvin
-Cecilia & Amadu
-Zoe & Pharrell
-Anna & Michael
-Gina & Max
-Karina & Felix
-Luisa & Lukas
-Franziska & Martin
-Celina & Fabio
-
-> Platz 11 mit 3383 Punkten (Summe der Vorkommen der Einzelpaare)
-Ricarda & Maurice
-Karina & Luca
-Isabelle & Calvin
-Cecilia & Felix
-Cecilia & Amadu
-Zoe & Pharrell
-Anna & Michael
-Gina & Max
-Luisa & Lukas
-Franziska & Martin
-Celina & Fabio
-
-> Platz 12 mit 3383 Punkten (Summe der Vorkommen der Einzelpaare)
-Ricarda & Maurice
-Karina & Luca
-Isabelle & Calvin
-Cecilia & Amadu
-Zoe & Pharrell
-Anna & Michael
-Gina & Max
-Luisa & Lukas
-Franziska & Martin
-Anna & Felix
-Celina & Fabio
-
-> Platz 13 mit 3383 Punkten (Summe der Vorkommen der Einzelpaare)
-Ricarda & Maurice
-Celina & Felix
-Karina & Luca
-Isabelle & Calvin
-Cecilia & Amadu
-Zoe & Pharrell
-Anna & Michael
-Gina & Max
-Luisa & Lukas
-Franziska & Martin
-Celina & Fabio
-
-> Platz 14 mit 3383 Punkten (Summe der Vorkommen der Einzelpaare)
-Ricarda & Maurice
-Karina & Luca
-Isabelle & Calvin
-Cecilia & Amadu
-Zoe & Pharrell
-Anna & Michael
-Gina & Max
-Franziska & Felix
-Luisa & Lukas
-Franziska & Martin
-Celina & Fabio
-
-> Platz 15 mit 3362 Punkten (Summe der Vorkommen der Einzelpaare)
-Ricarda & Maurice
-Zoe & Calvin
-Karina & Luca
-Zoe & Felix
-Gina & Pharrell
-Cecilia & Amadu
-Anna & Michael
-Luisa & Lukas
-Isabelle & Max
-Franziska & Martin
-Celina & Fabio
-
-> Platz 16 mit 3362 Punkten (Summe der Vorkommen der Einzelpaare)
-Ricarda & Maurice
-Zoe & Calvin
-Karina & Luca
-Isabelle & Felix
-Gina & Pharrell
-Cecilia & Amadu
-Anna & Michael
-Luisa & Lukas
-Isabelle & Max
-Franziska & Martin
-Celina & Fabio
-
-> Platz 17 mit 3362 Punkten (Summe der Vorkommen der Einzelpaare)
-Ricarda & Maurice
-Zoe & Calvin
-Karina & Luca
-Gina & Pharrell
-Cecilia & Amadu
-Anna & Michael
-Karina & Felix
-Luisa & Lukas
-Isabelle & Max
-Franziska & Martin
-Celina & Fabio
-
-> Platz 18 mit 3362 Punkten (Summe der Vorkommen der Einzelpaare)
-Ricarda & Maurice
-Zoe & Calvin
-Karina & Luca
-Cecilia & Felix
-Gina & Pharrell
-Cecilia & Amadu
-Anna & Michael
-Luisa & Lukas
-Isabelle & Max
-Franziska & Martin
-Celina & Fabio
-
-> Platz 19 mit 3362 Punkten (Summe der Vorkommen der Einzelpaare)
-Ricarda & Maurice
-Zoe & Calvin
-Karina & Luca
-Gina & Pharrell
-Cecilia & Amadu
-Anna & Michael
-Luisa & Lukas
-Isabelle & Max
-Franziska & Martin
-Anna & Felix
-Celina & Fabio
-
-> Platz 20 mit 3362 Punkten (Summe der Vorkommen der Einzelpaare)
-Ricarda & Maurice
-Zoe & Calvin
-Celina & Felix
-Karina & Luca
-Gina & Pharrell
-Cecilia & Amadu
-Anna & Michael
-Luisa & Lukas
-Isabelle & Max
-Franziska & Martin
-Celina & Fabio
-

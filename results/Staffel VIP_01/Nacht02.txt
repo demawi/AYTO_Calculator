@@ -1,9 +1,13 @@
+
+==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 2...
--- Combinations: 3628800 Yes: 205176 No: 3423624 Calculation time: 0 min 10 secs (Tested intern iterations: 62353010)
+-- Combinations: 3628800 Possible: 205176 Not possible: 3423624 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
 
--- Berechne VIP_01 - Nacht 2 inkl. Matchbox...
--- Combinations: 3628800 Yes: 15449 No: 3613351 Calculation time: 0 min 9 secs (Tested intern iterations: 62353010)
-
+==================================================================================================================================================
+-- Berechne VIP_01 - Nacht 2 inkl. 1 Matchbox(en)...
+-- Combinations: 3628800 Possible: 15449 Not possible: 3613351 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Jules & Francesco... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 7,53% [15449] <==
 Nein => 92,47% [189727]
@@ -11,10 +15,11 @@ Die Kombinationen reduzieren sich: 205176 => 15449
 
 Es hat keine Matching Night stattgefunden!
 
--- Berechne VIP_01 - Nacht 2 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 3628800 Yes: 15449 No: 3613351 Calculation time: 0 min 9 secs (Tested intern iterations: 62353010)
-
-==== Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights)
+==================================================================================================================================================
+-- Berechne VIP_01 - Nacht 2 inkl. 1 Matchbox(en) inkl. Matchingnight...
+-- Combinations: 3628800 Possible: 15449 Not possible: 3613351 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
 
            Aurelia      Finnja       Jacky        Jill         Jules        Kathleen     Melina       Sarah        Steffi       Walentina    
 Alex       10,58 % (0)  15,95 % (1)  10,58 % (1)  10,58 % (0)    -     (1)  10,58 % (0)  10,58 % (1)  10,58 % (2)   9,97 % (2)  10,58 % (0)  
@@ -29,245 +34,3 @@ Salvatore   7,38 % (0)  12,01 % (0)  36,86 % (4)   7,38 % (1)    -     (0)   7,3
 Tommy       7,38 % (0)  12,01 % (2)   7,38 % (0)   7,38 % (1)    -     (0)   7,38 % (0)  36,86 % (5)   7,38 % (0)   6,86 % (1)   7,38 % (0)  
 
 Mögliche Paare: 81/100
-
-==== Beste Konstellationen ====
-> Platz 1 mit 41490 Punkten (Summe der Vorkommen der Einzelpaare)
-Melina & Tommy
-Aurelia & Josua
-Sarah & Jamie
-Finnja & Alex
-Jacky & Manuel
-Walentina & Eugen
-Kathleen & Salvatore
-Steffi & Danilo
-Jill & Diogo
-Jules & Francesco
-
-> Platz 2 mit 41490 Punkten (Summe der Vorkommen der Einzelpaare)
-Melina & Tommy
-Aurelia & Jamie
-Sarah & Diogo
-Finnja & Alex
-Jacky & Manuel
-Walentina & Eugen
-Kathleen & Salvatore
-Jill & Josua
-Steffi & Danilo
-Jules & Francesco
-
-> Platz 3 mit 41490 Punkten (Summe der Vorkommen der Einzelpaare)
-Melina & Tommy
-Aurelia & Manuel
-Sarah & Jamie
-Finnja & Alex
-Walentina & Eugen
-Kathleen & Salvatore
-Jill & Josua
-Jacky & Diogo
-Steffi & Danilo
-Jules & Francesco
-
-> Platz 4 mit 41490 Punkten (Summe der Vorkommen der Einzelpaare)
-Melina & Tommy
-Aurelia & Josua
-Sarah & Jamie
-Finnja & Alex
-Walentina & Eugen
-Kathleen & Salvatore
-Jacky & Diogo
-Jill & Manuel
-Steffi & Danilo
-Jules & Francesco
-
-> Platz 5 mit 41490 Punkten (Summe der Vorkommen der Einzelpaare)
-Melina & Tommy
-Aurelia & Jamie
-Finnja & Alex
-Walentina & Eugen
-Sarah & Manuel
-Kathleen & Salvatore
-Jill & Josua
-Jacky & Diogo
-Steffi & Danilo
-Jules & Francesco
-
-> Platz 6 mit 41490 Punkten (Summe der Vorkommen der Einzelpaare)
-Melina & Tommy
-Aurelia & Manuel
-Sarah & Jamie
-Finnja & Alex
-Walentina & Eugen
-Kathleen & Salvatore
-Steffi & Danilo
-Jill & Diogo
-Jules & Francesco
-Jacky & Josua
-
-> Platz 7 mit 41490 Punkten (Summe der Vorkommen der Einzelpaare)
-Melina & Tommy
-Aurelia & Jamie
-Finnja & Alex
-Walentina & Eugen
-Sarah & Manuel
-Kathleen & Salvatore
-Steffi & Danilo
-Jill & Diogo
-Jules & Francesco
-Jacky & Josua
-
-> Platz 8 mit 41490 Punkten (Summe der Vorkommen der Einzelpaare)
-Melina & Tommy
-Aurelia & Jamie
-Sarah & Diogo
-Finnja & Alex
-Walentina & Eugen
-Kathleen & Salvatore
-Jill & Manuel
-Steffi & Danilo
-Jules & Francesco
-Jacky & Josua
-
-> Platz 9 mit 41490 Punkten (Summe der Vorkommen der Einzelpaare)
-Melina & Tommy
-Sarah & Diogo
-Aurelia & Manuel
-Finnja & Alex
-Jacky & Jamie
-Walentina & Eugen
-Kathleen & Salvatore
-Jill & Josua
-Steffi & Danilo
-Jules & Francesco
-
-> Platz 10 mit 41490 Punkten (Summe der Vorkommen der Einzelpaare)
-Melina & Tommy
-Aurelia & Josua
-Finnja & Alex
-Jacky & Jamie
-Walentina & Eugen
-Sarah & Manuel
-Kathleen & Salvatore
-Steffi & Danilo
-Jill & Diogo
-Jules & Francesco
-
-> Platz 11 mit 41490 Punkten (Summe der Vorkommen der Einzelpaare)
-Melina & Tommy
-Sarah & Diogo
-Aurelia & Josua
-Finnja & Alex
-Jacky & Jamie
-Walentina & Eugen
-Kathleen & Salvatore
-Jill & Manuel
-Steffi & Danilo
-Jules & Francesco
-
-> Platz 12 mit 41490 Punkten (Summe der Vorkommen der Einzelpaare)
-Melina & Tommy
-Sarah & Jamie
-Finnja & Alex
-Jacky & Manuel
-Kathleen & Diogo
-Walentina & Eugen
-Jill & Josua
-Aurelia & Salvatore
-Steffi & Danilo
-Jules & Francesco
-
-> Platz 13 mit 41490 Punkten (Summe der Vorkommen der Einzelpaare)
-Melina & Tommy
-Aurelia & Josua
-Sarah & Jamie
-Finnja & Alex
-Jacky & Manuel
-Kathleen & Diogo
-Walentina & Eugen
-Jill & Salvatore
-Steffi & Danilo
-Jules & Francesco
-
-> Platz 14 mit 41490 Punkten (Summe der Vorkommen der Einzelpaare)
-Melina & Tommy
-Aurelia & Jamie
-Finnja & Alex
-Jacky & Manuel
-Kathleen & Diogo
-Walentina & Eugen
-Sarah & Salvatore
-Jill & Josua
-Steffi & Danilo
-Jules & Francesco
-
-> Platz 15 mit 41490 Punkten (Summe der Vorkommen der Einzelpaare)
-Melina & Tommy
-Aurelia & Manuel
-Sarah & Jamie
-Finnja & Alex
-Kathleen & Diogo
-Walentina & Eugen
-Jill & Salvatore
-Steffi & Danilo
-Jules & Francesco
-Jacky & Josua
-
-> Platz 16 mit 41490 Punkten (Summe der Vorkommen der Einzelpaare)
-Melina & Tommy
-Sarah & Jamie
-Finnja & Alex
-Kathleen & Diogo
-Walentina & Eugen
-Jill & Manuel
-Aurelia & Salvatore
-Steffi & Danilo
-Jules & Francesco
-Jacky & Josua
-
-> Platz 17 mit 41490 Punkten (Summe der Vorkommen der Einzelpaare)
-Melina & Tommy
-Aurelia & Jamie
-Finnja & Alex
-Kathleen & Diogo
-Walentina & Eugen
-Sarah & Manuel
-Jill & Salvatore
-Steffi & Danilo
-Jules & Francesco
-Jacky & Josua
-
-> Platz 18 mit 41490 Punkten (Summe der Vorkommen der Einzelpaare)
-Melina & Tommy
-Aurelia & Jamie
-Finnja & Alex
-Kathleen & Diogo
-Walentina & Eugen
-Sarah & Salvatore
-Jill & Manuel
-Steffi & Danilo
-Jules & Francesco
-Jacky & Josua
-
-> Platz 19 mit 41490 Punkten (Summe der Vorkommen der Einzelpaare)
-Melina & Tommy
-Aurelia & Manuel
-Finnja & Alex
-Kathleen & Diogo
-Jacky & Jamie
-Walentina & Eugen
-Sarah & Salvatore
-Jill & Josua
-Steffi & Danilo
-Jules & Francesco
-
-> Platz 20 mit 41490 Punkten (Summe der Vorkommen der Einzelpaare)
-Melina & Tommy
-Finnja & Alex
-Kathleen & Diogo
-Jacky & Jamie
-Walentina & Eugen
-Sarah & Manuel
-Jill & Josua
-Aurelia & Salvatore
-Steffi & Danilo
-Jules & Francesco
-

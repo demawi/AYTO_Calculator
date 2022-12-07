@@ -1,25 +1,29 @@
+
+==================================================================================================================================================
 -- Berechne VIP_02 - Nacht 10...
--- Combinations: 36288000 Yes: 1 No: 36287999 Calculation time: 0 min 48 secs (Tested intern iterations: 98641010)
+-- Combinations: 36288000 Possible: 1 Not possible: 36287999 Calculation time: 0 min 22 secs (Intern constellation-add-pair checks: 98641010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
 
--- Berechne VIP_02 - Nacht 10 inkl. Matchbox...
--- Combinations: 36288000 Yes: 1 No: 36287999 Calculation time: 0 min 47 secs (Tested intern iterations: 98641010)
-
+==================================================================================================================================================
+-- Berechne VIP_02 - Nacht 10 inkl. 1 Matchbox(en)...
+-- Combinations: 36288000 Possible: 1 Not possible: 36287999 Calculation time: 0 min 22 secs (Intern constellation-add-pair checks: 98641010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Franziska & Max... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 0,00% [0]
 Nein => 100,00% [1] <==
 Die Kombinationen reduzieren sich: 1 => 1
 
-Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Ricarda & Maurice: 100,00%
-Karina & Luca: 100,00%
-Isabelle & Felix: 100,00%
-Franziska & Calvin: 100,00%
-Gina & Martin: 100,00%
-Cecilia & Amadu: 100,00%
-Zoe & Pharrell: 100,00%
+Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Anna & Michael: 100,00%
-Luisa & Lukas: 100,00%
+Cecilia & Amadu: 100,00%
+Ricarda & Maurice: 100,00%
+Gina & Martin: 100,00%
+Isabelle & Felix: 100,00%
 Celina & Fabio: 100,00%
+Franziska & Calvin: 100,00%
+Zoe & Pharrell: 100,00%
+Luisa & Lukas: 100,00%
+Karina & Luca: 100,00%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 0,00% [0]
@@ -35,10 +39,11 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 10 => 100,00% [1] <==
 Die Kombinationen reduzieren sich: 1 => 1
 
--- Berechne VIP_02 - Nacht 10 inkl. Matchbox inkl. Matchingnight...
--- Combinations: 36288000 Yes: 1 No: 36287999 Calculation time: 0 min 48 secs (Tested intern iterations: 98641010)
-
-==== Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights)
+==================================================================================================================================================
+-- Berechne VIP_02 - Nacht 10 inkl. 1 Matchbox(en) inkl. Matchingnight...
+-- Combinations: 36288000 Possible: 1 Not possible: 36287999 Calculation time: 0 min 22 secs (Intern constellation-add-pair checks: 98641010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
 
           Anna         Cecilia      Celina       Franziska    Gina         Isabelle     Karina       Luisa        Ricarda      Zoe          
 Amadu       -     (0)    ✓     (7)    -     (0)    -     (0)    -     (1)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)  
@@ -54,18 +59,3 @@ Michael     ✓     (7)    -     (0)    -     (0)    -     (1)    -     (1)    -
 Pharrell    -     (1)    -     (1)    -     (0)    -     (0)    -     (0)    -     (0)    -     (1)    -     (1)    -     (3)    ✓     (2)  
 
 Mögliche Paare: 11/110
-
-==== Beste Konstellationen ====
-> Platz 1 mit 11 Punkten (Summe der Vorkommen der Einzelpaare)
-Ricarda & Maurice
-Karina & Luca
-Isabelle & Felix
-Franziska & Calvin
-Gina & Martin
-Cecilia & Amadu
-Zoe & Pharrell
-Anna & Michael
-Luisa & Lukas
-Isabelle & Max
-Celina & Fabio
-
