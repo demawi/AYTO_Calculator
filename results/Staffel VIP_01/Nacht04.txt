@@ -2,34 +2,30 @@ Eine Frau ist hinzugekommen: Vanessa. Die Anzahl der Kombinationen erhöht sich 
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 3 inkl. 1 Matchbox(en) inkl. Matchingnight...
--- Combinations: 3628800 Possible: 5522 Not possible: 3623278 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 5522 Not possible: 3623278 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
+Implizite Annahme durch neue Person: Vanessa & Francesco => No match!
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 4...
--- Combinations: 36288000 Possible: 55220 Not possible: 36232780 Calculation time: 0 min 22 secs (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 49698 Not possible: 36238302 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Die Anzahl der Kombinationen hat sich verändert: 5522 => 55220
+Die Anzahl der Kombinationen hat sich verändert: 5522 => 49698
 
-==================================================================================================================================================
--- Berechne VIP_01 - Nacht 4 inkl. 1 Matchbox(en)...
--- Combinations: 36288000 Possible: 49698 Not possible: 36238302 Calculation time: 0 min 22 secs (Intern constellation-add-pair checks: 98641010)
---------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Aurelia & Diogo verkauft. (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
-Ja   => 36,82% [20330]
-Nein => 63,18% [34890]
-Die Kombinationen reduzieren sich: 55220 => 49698
+Ja   => 36,82% [18297]
+Nein => 63,18% [31401]
 
 Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Walentina & Salvatore: 9,92%
 Steffi & Alex: 12,75%
+Vanessa & Jamie: 11,11%
 Jill & Tommy: 6,85%
 Jules & Francesco: 100,00%
 Kathleen & Manuel: 36,82%
 Aurelia & Diogo: 36,82%
 Finnja & Eugen: 14,81%
 Sarah & Josua: 34,59%
-Vanessa & Jamie: 11,11%
 Melina & Danilo: 10,14%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
@@ -48,7 +44,7 @@ Die Kombinationen reduzieren sich: 49698 => 7703
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 4 inkl. 1 Matchbox(en) inkl. Matchingnight...
--- Combinations: 36288000 Possible: 7703 Not possible: 36280297 Calculation time: 0 min 22 secs (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 7703 Not possible: 36280297 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
 

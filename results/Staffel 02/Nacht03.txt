@@ -1,12 +1,12 @@
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 3...
--- Combinations: 3628800 Possible: 170886 Not possible: 3457914 Calculation time: 0 min 4 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 170886 Not possible: 3457914 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 3 inkl. 1 Matchbox(en)...
--- Combinations: 3628800 Possible: 125268 Not possible: 3503532 Calculation time: 0 min 4 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 125268 Not possible: 3503532 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Kathleen & Aaron... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 26,69% [45618]
@@ -14,16 +14,16 @@ Nein => 73,31% [125268] <==
 Die Kombinationen reduzieren sich: 170886 => 125268
 
 Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Melissa & Aaron: 10,13%
 Vanessa & Dominic: 7,68%
-Jill & Maximilian: 0,00%
-Leonie & Marc: 7,90%
-Kathleen & Marvin: 11,50%
 Christin & Germain: 7,54%
 Laura & Marcel: 13,61%
-Sabrina & Sascha: 7,58%
-Victoria & Dario: 13,61%
+Melissa & Aaron: 10,13%
 Mirjam & Marko: 6,34%
+Leonie & Marc: 7,90%
+Jill & Maximilian: 0,00%
+Victoria & Dario: 13,61%
+Sabrina & Sascha: 7,58%
+Kathleen & Marvin: 11,50%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 41,59% [52095]
@@ -41,7 +41,7 @@ Die Kombinationen reduzieren sich: 125268 => 5406
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 3 inkl. 1 Matchbox(en) inkl. Matchingnight...
--- Combinations: 3628800 Possible: 5406 Not possible: 3623394 Calculation time: 0 min 4 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 5406 Not possible: 3623394 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
 

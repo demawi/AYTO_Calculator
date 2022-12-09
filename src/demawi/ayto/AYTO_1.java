@@ -3,6 +3,8 @@ package demawi.ayto;
 import demawi.ayto.modell.AYTO_Data;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
+import demawi.ayto.perm.AYTO_Permutator;
+import demawi.ayto.service.StandardMatchFinder;
 
 import static demawi.ayto.modell.Pair.pair;
 
@@ -55,10 +57,11 @@ public class AYTO_1
             pair(Sabrina, Elisha), pair(Nadine, Rene), pair(Katharina, Kevin), pair(Laura, Juliano),
             pair(Maddie, Aleks), pair(Michelle, Axel), pair(Ivana, Dominic));
 
-      add(true, pair(Michelle, Rene), 5, pair(Aline, Mo), pair(Melissa, Laurin), pair(Michelle, Rene),
-            pair(Nadine, Elisha), pair(Luisa, Axel), pair(Laura, Edin), pair(Katharina, Kevin), pair(Ivana, Juliano),
-            pair(Maddie, Aleks), pair(Sabrina, Dominic)).implicit(false, pair(Aline, Edin)).implicit(false, pair(Melissa, Edin))
-            .implicit(false, pair(Michelle, Edin)); // Ferhat
+      addTag().matchBox(pair(Michelle, Rene), true)
+            .matchNight(5, pair(Aline, Mo), pair(Melissa, Laurin), pair(Michelle, Rene), pair(Nadine, Elisha),
+                  pair(Luisa, Axel), pair(Laura, Edin), pair(Katharina, Kevin), pair(Ivana, Juliano),
+                  pair(Maddie, Aleks), pair(Sabrina, Dominic))
+            .addNew(Edin); // Ferhat
 
       // 7ter Tag
       add(false, pair(Ivana, Edin), 5, pair(Aline, Mo), pair(Melissa, Laurin), pair(Michelle, Rene),
@@ -83,7 +86,7 @@ public class AYTO_1
    }
 
    public static void main(String[] args) {
-      new MatchFinder().printDayResults(new AYTO_1());
+      new StandardMatchFinder().printDayResults(new AYTO_1());
    }
 
 }

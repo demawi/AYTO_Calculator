@@ -1,4 +1,4 @@
-package demawi.ayto;
+package demawi.ayto.print;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -6,7 +6,14 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
+import demawi.ayto.AYTO_1;
+import demawi.ayto.AYTO_2;
+import demawi.ayto.AYTO_3;
+import demawi.ayto.AYTO_4;
+import demawi.ayto.AYTO_VIP01;
+import demawi.ayto.AYTO_VIP02;
 import demawi.ayto.modell.AYTO_Data;
+import demawi.ayto.service.StandardMatchFinder;
 
 public class AllOutPrinter {
 
@@ -18,7 +25,7 @@ public class AllOutPrinter {
          File directory = new File("./results/Staffel " + staffel.name);
          System.out.println(directory.getAbsoluteFile());
          directory.mkdirs();
-         MatchFinder finder = new MatchFinder();
+         StandardMatchFinder finder = new StandardMatchFinder();
 
          for (int i = 0, l = staffel.getAnzahlTage(); i < l; i++) {
             File file = new File(directory.getAbsoluteFile() + "/Nacht" + numberFormat.format(i + 1) + ".txt");

@@ -3,6 +3,8 @@ package demawi.ayto;
 import demawi.ayto.modell.AYTO_Data;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
+import demawi.ayto.perm.AYTO_Permutator;
+import demawi.ayto.service.StandardMatchFinder;
 
 import static demawi.ayto.modell.Pair.pair;
 
@@ -47,7 +49,9 @@ public class AYTO_VIP02
             pair(Zoe, Max), pair(Isabelle, Luca), pair(Luisa, Pharrell), pair(Cecilia, Amadu), pair(Ricarda, Maurice),
             pair(Anna, Martin), pair(Gina, Michael));
 
-      add(true, pair(Luisa, Lukas), 2, null).implicit(false, pair(Luisa, Felix));
+      addTag().matchBox(pair(Luisa, Lukas), true)
+            .noMatchingNight()
+            .addNew(Felix);
 
       add(false, pair(Ricarda, Felix), 3, pair(Luisa, Lukas), pair(Cecilia, Amadu), pair(Anna, Pharrell),
             pair(Franziska, Michael), pair(Ricarda, Max), pair(Zoe, Luca), pair(Celina, Fabio), pair(Karina, Martin),
@@ -76,7 +80,7 @@ public class AYTO_VIP02
    }
 
    public static void main(String[] args) {
-      new MatchFinder().printDayResults(new AYTO_VIP02());
+      new StandardMatchFinder().printDayResults(new AYTO_VIP02());
    }
 
 }

@@ -1,33 +1,33 @@
 Eine Frau ist hinzugekommen: Jill. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Mirjam. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Kathleen. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Vanessa. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Laura. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Victoria. Die Anzahl der Kombinationen erhöht sich damit!
 Eine Frau ist hinzugekommen: Sabrina. Die Anzahl der Kombinationen erhöht sich damit!
 Eine Frau ist hinzugekommen: Christin. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Leonie. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Kathleen. Die Anzahl der Kombinationen erhöht sich damit!
 Eine Frau ist hinzugekommen: Melissa. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Laura. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Leonie. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Mirjam. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Victoria. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Vanessa. Die Anzahl der Kombinationen erhöht sich damit!
 Ein Mann ist hinzugekommen: Maximilian. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Marvin. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Marc. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Aaron. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Sascha. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Marcel. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Dario. Die Anzahl der Kombinationen erhöht sich damit!
 Ein Mann ist hinzugekommen: Marko. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Germain. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Aaron. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Marvin. Die Anzahl der Kombinationen erhöht sich damit!
 Ein Mann ist hinzugekommen: Dominic. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Marcel. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Germain. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Marc. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Dario. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Sascha. Die Anzahl der Kombinationen erhöht sich damit!
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 1...
--- Combinations: 3628800 Possible: 3628800 Not possible: 0 Calculation time: 0 min 5 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 3628800 Not possible: 0 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Die Anzahl der Kombinationen hat sich verändert: 0 => 3628800
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 1 inkl. 1 Matchbox(en)...
--- Combinations: 3628800 Possible: 3265920 Not possible: 362880 Calculation time: 0 min 5 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 3265920 Not possible: 362880 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Jill & Maximilian... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 10,00% [362880]
@@ -35,16 +35,16 @@ Nein => 90,00% [3265920] <==
 Die Kombinationen reduzieren sich: 3628800 => 3265920
 
 Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Jill & Marvin: 11,11%
-Mirjam & Marc: 9,88%
-Kathleen & Aaron: 9,88%
-Vanessa & Sascha: 9,88%
-Laura & Marcel: 9,88%
-Victoria & Dario: 9,88%
 Sabrina & Marko: 9,88%
 Christin & Maximilian: 11,11%
-Leonie & Germain: 9,88%
+Kathleen & Aaron: 9,88%
+Jill & Marvin: 11,11%
 Melissa & Dominic: 9,88%
+Laura & Marcel: 9,88%
+Leonie & Germain: 9,88%
+Mirjam & Marc: 9,88%
+Victoria & Dario: 9,88%
+Vanessa & Sascha: 9,88%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 36,33% [1186632]
@@ -62,7 +62,7 @@ Die Kombinationen reduzieren sich: 3265920 => 608153
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 1 inkl. 1 Matchbox(en) inkl. Matchingnight...
--- Combinations: 3628800 Possible: 608153 Not possible: 3020647 Calculation time: 0 min 4 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 608153 Not possible: 3020647 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
 

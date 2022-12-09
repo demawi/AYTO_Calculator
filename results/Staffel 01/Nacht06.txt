@@ -2,35 +2,38 @@ Ein Mann ist hinzugekommen: Edin. Die Anzahl der Kombinationen erhöht sich dami
 
 ==================================================================================================================================================
 -- Berechne 01 - Nacht 5 inkl. 1 Matchbox(en) inkl. Matchingnight...
--- Combinations: 3628800 Possible: 144 Not possible: 3628656 Calculation time: 0 min 4 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 144 Not possible: 3628656 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
+Implizite Annahme durch neue Person: Aline & Edin => No match!
+Implizite Annahme durch neue Person: Melissa & Edin => No match!
+Implizite Annahme durch neue Person: Michelle & Edin => No match!
 
 ==================================================================================================================================================
 -- Berechne 01 - Nacht 6...
--- Combinations: 36288000 Possible: 1440 Not possible: 36286560 Calculation time: 0 min 33 secs (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 1008 Not possible: 36286992 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Die Anzahl der Kombinationen hat sich verändert: 144 => 1440
+Die Anzahl der Kombinationen hat sich verändert: 144 => 1008
 
 ==================================================================================================================================================
 -- Berechne 01 - Nacht 6 inkl. 1 Matchbox(en)...
--- Combinations: 36288000 Possible: 140 Not possible: 36287860 Calculation time: 0 min 33 secs (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 140 Not possible: 36287860 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Michelle & René... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
-Ja   => 13,89% [200] <==
-Nein => 86,11% [1240]
-Die Kombinationen reduzieren sich: 1440 => 140
+Ja   => 13,89% [140] <==
+Nein => 86,11% [868]
+Die Kombinationen reduzieren sich: 1008 => 140
 
 Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Maddie & Aleks: 70,00%
-Michelle & René: 100,00%
-Ivana & Juliano: 10,00%
-Sabrina & Dominic: 0,00%
-Aline & Mo: 100,00%
-Luisa & Axel: 45,00%
 Nadine & Elisha: 30,00%
-Melissa & Laurin: 100,00%
+Ivana & Juliano: 10,00%
+Maddie & Aleks: 70,00%
+Aline & Mo: 100,00%
 Laura & Edin: 14,29%
+Luisa & Axel: 45,00%
 Katharina & Kevin: 55,00%
+Sabrina & Dominic: 0,00%
+Michelle & René: 100,00%
+Melissa & Laurin: 100,00%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 0,00% [0]
@@ -48,7 +51,7 @@ Die Kombinationen reduzieren sich: 140 => 75
 
 ==================================================================================================================================================
 -- Berechne 01 - Nacht 6 inkl. 1 Matchbox(en) inkl. Matchingnight...
--- Combinations: 36288000 Possible: 75 Not possible: 36287925 Calculation time: 0 min 33 secs (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 75 Not possible: 36287925 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
 

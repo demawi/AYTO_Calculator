@@ -1,30 +1,34 @@
+Ein Mann ist hinzugekommen: Felix. Die Anzahl der Kombinationen erhöht sich damit!
+
+==================================================================================================================================================
+-- Berechne VIP_02 - Nacht 3 inkl. 1 Matchbox(en) inkl. Matchingnight...
+-- Combinations: 3628800 Possible: 3586 Not possible: 3625214 (Intern constellation-add-pair checks: 62353010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Implizite Annahme durch neue Person: Luisa & Felix => No match!
 
 ==================================================================================================================================================
 -- Berechne VIP_02 - Nacht 4...
--- Combinations: 3628800 Possible: 3586 Not possible: 3625214 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 36288000 Possible: 32274 Not possible: 36255726 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
+Die Anzahl der Kombinationen hat sich verändert: 3586 => 32274
 
 ==================================================================================================================================================
 -- Berechne VIP_02 - Nacht 4 inkl. 1 Matchbox(en)...
--- Combinations: 3628800 Possible: 300 Not possible: 3628500 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 36288000 Possible: 2700 Not possible: 36285300 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Luisa & Lukas... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
-Ja   => 8,37% [300] <==
-Nein => 91,63% [3286]
-Die Kombinationen reduzieren sich: 3586 => 300
+Ja   => 8,37% [2700] <==
+Nein => 91,63% [29574]
+Die Kombinationen reduzieren sich: 32274 => 2700
 
 Es hat keine Matching Night stattgefunden!
-
-==================================================================================================================================================
--- Berechne VIP_02 - Nacht 4 inkl. 1 Matchbox(en) inkl. Matchingnight...
--- Combinations: 3628800 Possible: 300 Not possible: 3628500 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
---------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
 
           Anna         Cecilia      Celina       Franziska    Gina         Isabelle     Karina       Luisa        Ricarda      Zoe          
 Amadu      3,33 % (0)  68,67 % (7)   3,00 % (0)   6,67 % (0)   2,67 % (1)   5,67 % (0)   5,33 % (0)    -     (0)    -     (0)   4,67 % (0)  
 Calvin     7,00 % (0)   3,33 % (0)   8,33 % (0)   8,33 % (2)  25,67 % (2)   8,00 % (0)  31,33 % (3)    -     (1)   0,67 % (0)   7,33 % (0)  
 Fabio     11,00 % (0)   5,00 % (0)  23,67 % (6)  10,33 % (0)  10,33 % (1)   9,00 % (0)  19,67 % (1)    -     (1)   0,67 % (0)  10,33 % (0)  
+Felix     11,11 % (0)  11,11 % (0)  11,11 % (0)  11,11 % (0)  11,11 % (3)  11,11 % (3)  11,11 % (0)    -     (0)  11,11 % (0)  11,11 % (0)  
 Luca       5,00 % (0)   3,00 % (0)   6,33 % (1)  12,33 % (1)   9,67 % (0)  26,33 % (1)  11,00 % (1)    -     (0)   1,00 % (0)  25,33 % (4)  
 Lukas       -     (0)    -     (0)    -     (0)    -     (1)    -     (0)    -     (1)    -     (0)    ✓     (6)    -     (0)    -     (1)  
 Martin    17,33 % (1)   5,00 % (0)  25,00 % (1)  11,33 % (0)   9,33 % (1)  17,33 % (3)  13,67 % (3)    -     (0)   1,00 % (0)    -     (0)  
@@ -33,4 +37,4 @@ Max        6,67 % (0)   3,33 % (0)   9,33 % (1)  25,67 % (4)  10,67 % (0)   9,00
 Michael   36,33 % (7)   2,67 % (0)   8,67 % (0)   8,33 % (1)  14,67 % (1)   9,67 % (0)   8,33 % (0)    -     (0)    -     (0)  11,33 % (0)  
 Pharrell  13,33 % (1)   9,00 % (1)  15,00 % (0)  15,33 % (0)  15,00 % (0)  14,00 % (0)    -     (1)    -     (1)   2,67 % (3)  15,67 % (2)  
 
-Mögliche Paare: 76/100
+Mögliche Paare: 85/110

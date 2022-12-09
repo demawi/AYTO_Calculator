@@ -5,13 +5,22 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import demawi.ayto.events.Event;
+import demawi.ayto.events.MatchBoxResult;
+import demawi.ayto.events.MatchingNight;
+import demawi.ayto.events.NewPerson;
+
 public class Tag {
 
-   public List<MatchBoxResult> boxPairs = new ArrayList<>();
+   private List<Event> events = new ArrayList<>();
+
+   // TODO: Die nachfolgenden Attribute können entfernt werden, wenn auf Eventverarbeitung umgestellt wurde..
+   public List<MatchBoxResult> boxResults = new ArrayList<>();
    public MatchingNight matchingNight;
    public Map<Pair, Boolean> implicits = new LinkedHashMap<>();
+   public Person newExtraPerson;
 
-   public Tag() {
+   private Tag() {
    }
 
    public static Tag create() {
@@ -23,20 +32,34 @@ public class Tag {
       this.matchingNight = matchingNight;
    }
 
-   public Tag implicit(boolean b, Pair pair) {
+   public Tag implicitDerived(boolean b, Pair pair) {
       implicits.put(pair, b);
+      return this;
+   }
+
+   public Tag addNew(Person person) {
+      this.newExtraPerson = person;
+      events.add(new NewPerson(person));
       return this;
    }
 
    public Tag matchBox(Pair matchingPair, Boolean perfectMatch) {
       if (matchingPair != null) {
-         boxPairs.add(new MatchBoxResult(matchingPair, perfectMatch));
+         MatchBoxResult matchBoxResult = new MatchBoxResult(matchingPair, perfectMatch);
+         boxResults.add(matchBoxResult);
+         events.add(matchBoxResult);
       }
       return this;
    }
 
    public Tag matchNight(Integer lights, Pair... pairs) {
-      this.matchingNight = new MatchingNight(lights, pairs);
+      matchingNight = new MatchingNight(lights, pairs);
+      events.add(matchingNight);
+      return this;
+   }
+
+   public Tag noMatchingNight() {
+      // Nothing to do
       return this;
    }
 }

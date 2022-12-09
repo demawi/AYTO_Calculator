@@ -1,11 +1,15 @@
-package demawi.ayto.modell;
+package demawi.ayto.events;
 
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-public class MatchingNight {
+import demawi.ayto.modell.Frau;
+import demawi.ayto.modell.Mann;
+import demawi.ayto.modell.Pair;
+
+public class MatchingNight implements Event {
 
   public Integer lights;
   public Set<Pair> constellation;

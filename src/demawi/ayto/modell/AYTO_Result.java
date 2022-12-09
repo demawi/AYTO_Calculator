@@ -6,38 +6,35 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import demawi.ayto.AYTO_Permutator;
+import demawi.ayto.perm.AYTO_Permutator;
+import demawi.ayto.events.MatchingNight;
 
 public class AYTO_Result {
 
-  private AYTO_Data data;
-  public Map<Pair, Integer> pairCount = new HashMap<>();
-  public Map<Frau, Set<Mann>> frauCount = new HashMap<>();
-  public Map<Mann, Set<Frau>> mannCount = new HashMap<>();
+  private final CalculationOptions calcOptions;
+  public final Map<Pair, Integer> pairCount = new HashMap<>();
+  public final Map<Frau, Set<Mann>> frauCount = new HashMap<>();
+  public final Map<Mann, Set<Frau>> mannCount = new HashMap<>();
   public int totalConstellations = 0;
   public int possible = 0;
   public int notPossible = 0;
   private Set<Pair> matchingNightConstellation;
   private int[] lightResults;
 
-  public AYTO_Result(AYTO_Data data, CalculationOptions calcOptions) {
-    this.data = data;
-
-    if (calcOptions.tagNr > 0) {
-      MatchingNight matchingNight = data.getTag(calcOptions).matchingNight;
-      if (matchingNight != null) {
-        matchingNightConstellation = matchingNight.constellation;
-        lightResults = new int[11];
-        for (int i = 0, l = 11; i < l; i++) {
-          lightResults[i] = 0;
-        }
+  public AYTO_Result(CalculationOptions calcOptions) {
+    this.calcOptions = calcOptions;
+    MatchingNight matchingNight = calcOptions.getMatchingNight();
+    if (matchingNight != null) {
+      matchingNightConstellation = matchingNight.constellation;
+      lightResults = new int[11];
+      for (int i = 0, l = 11; i < l; i++) {
+        lightResults[i] = 0;
       }
     }
-
   }
 
   public AYTO_Data getData() {
-    return data;
+    return calcOptions.getData();
   }
 
   public int getPossibleConstellationSize() {
@@ -84,7 +81,8 @@ public class AYTO_Result {
    */
   public void addPossible(Set<Pair> pairs) {
     if(lightResults != null) {
-      lightResults[data.getLights(pairs, matchingNightConstellation)]++;
+      lightResults[calcOptions.getData()
+            .getLights(pairs, matchingNightConstellation)]++;
     }
 
     // directly update pair-,frau-,mannCount

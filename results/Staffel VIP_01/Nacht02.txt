@@ -1,12 +1,12 @@
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 2...
--- Combinations: 3628800 Possible: 205176 Not possible: 3423624 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 205176 Not possible: 3423624 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 2 inkl. 1 Matchbox(en)...
--- Combinations: 3628800 Possible: 15449 Not possible: 3613351 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 15449 Not possible: 3613351 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Jules & Francesco... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 7,53% [15449] <==
@@ -14,11 +14,6 @@ Nein => 92,47% [189727]
 Die Kombinationen reduzieren sich: 205176 => 15449
 
 Es hat keine Matching Night stattgefunden!
-
-==================================================================================================================================================
--- Berechne VIP_01 - Nacht 2 inkl. 1 Matchbox(en) inkl. Matchingnight...
--- Combinations: 3628800 Possible: 15449 Not possible: 3613351 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
---------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
 
            Aurelia      Finnja       Jacky        Jill         Jules        Kathleen     Melina       Sarah        Steffi       Walentina    

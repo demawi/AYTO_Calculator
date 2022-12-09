@@ -1,4 +1,4 @@
-package demawi.ayto;
+package demawi.ayto.perm;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -17,7 +17,6 @@ public abstract class AYTO_Permutator<F, M, R> {
   protected final List<M> maenner;
   protected final int minSize;
   protected final int maxSize;
-  private final ZUSATZTYPE zusatzType;
   private final BiFunction<F, M, R> packingFunction;
   public long testCount = 0; // wie oft die canAdd-Methode aufgerufen wurde
 
@@ -25,22 +24,21 @@ public abstract class AYTO_Permutator<F, M, R> {
    * -1: man weiß nicht wer der Zusatzmann/frau ist
    * >0:
    */
-  protected AYTO_Permutator(List<F> frauen, List<M> maenner, ZUSATZTYPE zusatzType, BiFunction<F, M, R> packingFunction) {
+  protected AYTO_Permutator(List<F> frauen, List<M> maenner, BiFunction<F, M, R> packingFunction) {
     this.frauen = frauen;
     this.maenner = maenner;
     minSize = Math.min(frauen.size(), maenner.size());
     maxSize = Math.max(frauen.size(), maenner.size());
-    this.zusatzType = zusatzType;
     this.packingFunction = packingFunction;
   }
 
   public static <F, M, R> AYTO_Permutator<F, M, R> create(List<F> setA, List<M> setB, ZUSATZTYPE zusatzType,
     BiFunction<F, M, R> packingFunction) {
     if (zusatzType == ZUSATZTYPE.JEDER) {
-      return new AYTO_PermutatorJEDER<>(setA, setB, zusatzType, packingFunction);
+      return new AYTO_PermutatorJEDER<>(setA, setB, packingFunction);
     }
     else {
-      return new AYTO_PermutatorNUR_LETZTER<>(setA, setB, zusatzType, packingFunction);
+      return new AYTO_PermutatorNUR_LETZTER<>(setA, setB, packingFunction);
     }
   }
 

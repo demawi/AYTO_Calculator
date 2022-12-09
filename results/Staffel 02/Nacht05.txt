@@ -1,67 +1,60 @@
-Eine Frau ist hinzugekommen: VanessaM. Die Anzahl der Kombinationen erhöht sich damit!
-
-==================================================================================================================================================
--- Berechne 02 - Nacht 4 inkl. 1 Matchbox(en) inkl. Matchingnight...
--- Combinations: 3628800 Possible: 381 Not possible: 3628419 Calculation time: 0 min 4 secs (Intern constellation-add-pair checks: 62353010)
---------------------------------------------------------------------------------------------------------------------------------------------------
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 5...
--- Combinations: 36288000 Possible: 3810 Not possible: 36284190 Calculation time: 0 min 27 secs (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 3810 Not possible: 36284190 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Die Anzahl der Kombinationen hat sich verändert: 381 => 3810
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 5 inkl. 1 Matchbox(en)...
--- Combinations: 36288000 Possible: 1476 Not possible: 36286524 Calculation time: 0 min 27 secs (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 1640 Not possible: 36286360 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Leonie & Marcel... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 43,04% [1640] <==
 Nein => 56,96% [2170]
-Die Kombinationen reduzieren sich: 3810 => 1476
+Die Kombinationen reduzieren sich: 3810 => 1640
 
 Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Jill & Sascha: 0,00%
-Melissa & Marc: 0,61%
 Vanessa & Dominic: 34,15%
-Laura & Maximilian: 16,46%
-Kathleen & Marvin: 36,59%
+Leonie & Marcel: 100,00%
 Christin & Germain: 33,54%
+Jill & Sascha: 0,00%
+VanessaM & Marko: 10,00%
+Melissa & Marc: 0,61%
 Victoria & Dario: 73,17%
 Mirjam & Aaron: 0,61%
-Leonie & Marcel: 100,00%
-VanessaM & Marko: 11,11%
+Laura & Maximilian: 16,46%
+Kathleen & Marvin: 36,59%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 0,00% [0]
-1 => 1,63% [24]
-2 => 20,26% [299]
-3 => 51,83% [765] <==
-4 => 22,97% [339]
-5 => 3,18% [47]
-6 => 0,14% [2]
+1 => 1,65% [27]
+2 => 20,49% [336]
+3 => 52,20% [856] <==
+4 => 22,56% [370]
+5 => 2,99% [49]
+6 => 0,12% [2]
 7 => 0,00% [0]
 8 => 0,00% [0]
 9 => 0,00% [0]
 10 => 0,00% [0]
-Die Kombinationen reduzieren sich: 1476 => 765
+Die Kombinationen reduzieren sich: 1640 => 856
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 5 inkl. 1 Matchbox(en) inkl. Matchingnight...
--- Combinations: 36288000 Possible: 765 Not possible: 36287235 Calculation time: 0 min 27 secs (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 856 Not possible: 36287144 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
 
             Christin     Jill         Kathleen     Laura        Leonie       Melissa      Mirjam       Sabrina      Vanessa      VanessaM     Victoria     
-Aaron        4,18 % (0)   8,37 % (0)    -     (2)   6,27 % (0)    -     (0)  78,04 % (6)    -     (1)    -     (0)   2,09 % (1)  11,90 % (0)   1,05 % (0)  
-Dario        1,44 % (0)   0,39 % (0)   3,79 % (2)   0,78 % (1)    -     (0)    -     (0)   4,18 % (0)   4,58 % (2)   2,35 % (0)  11,90 % (1)  82,48 % (4)  
-Dominic      8,89 % (0)  22,35 % (0)   4,71 % (0)  15,69 % (2)    -     (0)    -     (3)   4,18 % (0)   4,58 % (1)  37,65 % (4)  11,90 % (0)   1,96 % (0)  
-Germain     33,46 % (3)  23,92 % (1)   5,88 % (0)  11,37 % (1)    -     (1)   4,18 % (0)   4,44 % (0)   6,67 % (0)  10,07 % (0)  11,90 % (1)    -     (3)  
-Marc         7,32 % (0)  12,03 % (0)   4,71 % (0)   8,89 % (0)    -     (1)    -     (1)  55,95 % (7)   2,61 % (0)   6,67 % (0)  11,90 % (1)   1,83 % (0)  
-Marcel        -     (0)    -     (0)    -     (0)    -     (2)    ✓     (8)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)  
-Marko        8,76 % (0)  16,21 % (0)   7,84 % (1)  10,98 % (1)    -     (0)   4,18 % (0)   2,22 % (1)  36,60 % (4)   8,76 % (0)   4,84 % (1)   4,44 % (2)  
-Marvin       8,37 % (1)  16,73 % (2)  38,43 % (4)  17,65 % (1)    -     (0)   3,14 % (0)   8,10 % (0)   7,58 % (0)    -     (2)  11,90 % (0)    -     (0)  
-Maximilian   6,67 % (5)    -     (2)  23,92 % (0)   3,14 % (1)    -     (0)  10,46 % (0)   9,41 % (1)   9,67 % (0)  30,85 % (0)  11,90 % (0)   5,88 % (1)  
-Sascha      20,92 % (0)    -     (5)  10,72 % (0)  25,23 % (1)    -     (0)    -     (0)  11,50 % (0)  27,71 % (2)   1,57 % (2)  11,90 % (0)   2,35 % (0)  
+Aaron        4,21 % (0)   8,41 % (0)    -     (2)   6,31 % (0)    -     (0)  77,92 % (6)    -     (1)    -     (0)   2,10 % (1)  10,63 % (0)   1,05 % (0)  
+Dario        1,40 % (0)   0,35 % (0)   3,74 % (2)   0,70 % (1)    -     (0)    -     (0)   4,21 % (0)   4,56 % (2)   2,34 % (0)  10,63 % (1)  82,71 % (4)  
+Dominic      8,88 % (0)  22,43 % (0)   4,67 % (0)  15,65 % (2)    -     (0)    -     (3)   4,21 % (0)   4,56 % (1)  37,73 % (4)  10,63 % (0)   1,87 % (0)  
+Germain     33,53 % (3)  23,95 % (1)   5,84 % (0)  11,33 % (1)    -     (1)   4,21 % (0)   4,44 % (0)   6,66 % (0)  10,05 % (0)  10,63 % (1)    -     (3)  
+Marc         7,36 % (0)  12,03 % (0)   4,67 % (0)   8,88 % (0)    -     (1)    -     (1)  56,07 % (7)   2,57 % (0)   6,66 % (0)  10,63 % (1)   1,75 % (0)  
+Marcel        -     (0)    -     (0)    -     (0)    -     (2)    ✓     (8)    -     (0)    -     (0)    -     (0)    -     (0)  10,63 % (0)    -     (0)  
+Marko        8,76 % (0)  16,24 % (0)   7,83 % (1)  10,98 % (1)    -     (0)   4,21 % (0)   1,99 % (1)  36,80 % (4)   8,76 % (0)   4,32 % (1)   4,44 % (2)  
+Marvin       8,41 % (1)  16,59 % (2)  38,55 % (4)  17,64 % (1)    -     (0)   3,15 % (0)   8,06 % (0)   7,59 % (0)    -     (2)  10,63 % (0)    -     (0)  
+Maximilian   6,43 % (5)    -     (2)  23,95 % (0)   3,15 % (1)    -     (0)  10,51 % (0)   9,46 % (1)   9,70 % (0)  30,96 % (0)  10,63 % (0)   5,84 % (1)  
+Sascha      21,03 % (0)    -     (5)  10,75 % (0)  25,35 % (1)    -     (0)    -     (0)  11,57 % (0)  27,57 % (2)   1,40 % (2)  10,63 % (0)   2,34 % (0)  
 
-Mögliche Paare: 79/110
+Mögliche Paare: 80/110

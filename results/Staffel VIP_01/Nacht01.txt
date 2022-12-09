@@ -21,13 +21,13 @@ Ein Mann ist hinzugekommen: Jamie. Die Anzahl der Kombinationen erhöht sich dam
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 1...
--- Combinations: 3628800 Possible: 3628800 Not possible: 0 Calculation time: 0 min 5 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 3628800 Not possible: 0 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Die Anzahl der Kombinationen hat sich verändert: 0 => 3628800
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 1 inkl. 1 Matchbox(en)...
--- Combinations: 3628800 Possible: 3265920 Not possible: 362880 Calculation time: 0 min 5 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 3265920 Not possible: 362880 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Finnja & Danilo... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 10,00% [362880]
@@ -62,7 +62,7 @@ Die Kombinationen reduzieren sich: 3265920 => 205176
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 1 inkl. 1 Matchbox(en) inkl. Matchingnight...
--- Combinations: 3628800 Possible: 205176 Not possible: 3423624 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 205176 Not possible: 3423624 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
 

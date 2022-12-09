@@ -1,60 +1,60 @@
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 8...
--- Combinations: 36288000 Possible: 43 Not possible: 36287957 Calculation time: 0 min 27 secs (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 47 Not possible: 36287953 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 8 inkl. 1 Matchbox(en)...
--- Combinations: 36288000 Possible: 43 Not possible: 36287957 Calculation time: 0 min 28 secs (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 47 Not possible: 36287953 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Sabrina & Marko... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 0,00% [0]
-Nein => 100,00% [43] <==
-Die Kombinationen reduzieren sich: 43 => 43
+Nein => 100,00% [47] <==
+Die Kombinationen reduzieren sich: 47 => 47
 
 Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Kathleen & Marvin: 25,58%
-VanessaM & Marc: 9,30%
-Sabrina & Sascha: 20,93%
-Victoria & Dario: 37,21%
-Laura & Marko: 37,21%
-Leonie & Marcel: 100,00%
-Jill & Germain: 11,63%
-Melissa & Dominic: 0,00%
-Mirjam & Maximilian: 0,00%
+Laura & Marko: 38,30%
 Vanessa & Aaron: 0,00%
+Leonie & Marcel: 100,00%
+Melissa & Dominic: 0,00%
+VanessaM & Marc: 8,51%
+Jill & Germain: 10,64%
+Mirjam & Maximilian: 0,00%
+Victoria & Dario: 34,04%
+Sabrina & Sascha: 21,28%
+Kathleen & Marvin: 23,40%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 0,00% [0]
-1 => 11,63% [5] <==
-2 => 51,16% [22]
-3 => 23,26% [10]
-4 => 11,63% [5]
-5 => 2,33% [1]
+1 => 12,77% [6] <==
+2 => 53,19% [25]
+3 => 21,28% [10]
+4 => 10,64% [5]
+5 => 2,13% [1]
 6 => 0,00% [0]
 7 => 0,00% [0]
 8 => 0,00% [0]
 9 => 0,00% [0]
 10 => 0,00% [0]
-Die Kombinationen reduzieren sich: 43 => 5
+Die Kombinationen reduzieren sich: 47 => 6
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 8 inkl. 1 Matchbox(en) inkl. Matchingnight...
--- Combinations: 36288000 Possible: 5 Not possible: 36287995 Calculation time: 0 min 27 secs (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 6 Not possible: 36287994 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
 
             Christin     Jill         Kathleen     Laura        Leonie       Melissa      Mirjam       Sabrina      Vanessa      VanessaM     Victoria     
-Aaron         -     (0)    -     (0)    -     (2)    -     (0)    -     (0)    ✓     (6)    -     (1)    -     (0)    -     (1)  20,00 % (0)    -     (0)  
+Aaron         -     (0)    -     (0)    -     (2)    -     (0)    -     (0)    ✓     (6)    -     (1)    -     (0)    -     (1)  16,67 % (0)    -     (0)  
 Dario         -     (0)    -     (0)    -     (2)    -     (1)    -     (0)    -     (0)    -     (0)    ✓     (2)    -     (0)    -     (1)    -     (4)  
-Dominic       -     (0)    -     (0)    -     (0)    -     (2)    -     (0)    -     (3)    -     (0)    -     (1)    ✓     (4)  20,00 % (0)    -     (0)  
+Dominic       -     (0)    -     (0)    -     (0)    -     (2)    -     (0)    -     (3)    -     (0)    -     (1)    ✓     (4)  16,67 % (0)    -     (0)  
 Germain       ✓     (3)    -     (1)    -     (0)    -     (1)    -     (1)    -     (0)    -     (0)    -     (0)    -     (0)    -     (1)    -     (3)  
 Marc          -     (0)    -     (0)    -     (0)    -     (0)    -     (1)    -     (1)    ✓     (7)    -     (0)    -     (0)    -     (1)    -     (0)  
-Marcel        -     (0)    -     (0)    -     (0)    -     (2)    ✓     (8)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)  
+Marcel        -     (0)    -     (0)    -     (0)    -     (2)    ✓     (8)    -     (0)    -     (0)    -     (0)    -     (0)  16,67 % (0)    -     (0)  
 Marko         -     (0)    -     (0)    ✓     (1)    -     (1)    -     (0)    -     (0)    -     (1)    -     (4)    -     (0)    -     (1)    -     (2)  
-Marvin        -     (1)    ✓     (2)    -     (4)    -     (1)    -     (0)    -     (0)    -     (0)    -     (0)    -     (2)  20,00 % (0)    -     (0)  
-Maximilian    -     (5)    -     (2)    -     (0)    -     (1)    -     (0)    -     (0)    -     (1)    -     (0)    -     (0)  20,00 % (0)    ✓     (1)  
-Sascha        -     (0)    -     (5)    -     (0)    ✓     (1)    -     (0)    -     (0)    -     (0)    -     (2)    -     (2)  20,00 % (0)    -     (0)  
+Marvin        -     (1)    ✓     (2)    -     (4)    -     (1)    -     (0)    -     (0)    -     (0)    -     (0)    -     (2)  16,67 % (0)    -     (0)  
+Maximilian    -     (5)    -     (2)    -     (0)    -     (1)    -     (0)    -     (0)    -     (1)    -     (0)    -     (0)  16,67 % (0)    ✓     (1)  
+Sascha        -     (0)    -     (5)    -     (0)    ✓     (1)    -     (0)    -     (0)    -     (0)    -     (2)    -     (2)  16,67 % (0)    -     (0)  
 
-Mögliche Paare: 15/110
+Mögliche Paare: 16/110

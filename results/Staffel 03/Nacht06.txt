@@ -1,12 +1,12 @@
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 6...
--- Combinations: 36288000 Possible: 1924 Not possible: 36286076 Calculation time: 0 min 22 secs (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 1924 Not possible: 36286076 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 6 inkl. 1 Matchbox(en)...
--- Combinations: 36288000 Possible: 1859 Not possible: 36286141 Calculation time: 0 min 22 secs (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 1859 Not possible: 36286141 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Jessica & Max... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 3,38% [65]
@@ -14,16 +14,16 @@ Nein => 96,62% [1859] <==
 Die Kombinationen reduzieren sich: 1924 => 1859
 
 Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Dana & Antonino: 3,77%
+Joelina & Tim: 1,08%
+Isabelle & Dustin: 16,46%
 Raphaela & William: 7,80%
 Estelle & Mike: 8,93%
-Joelina & Tim: 1,08%
-Kerstin & Max: 33,03%
+Dana & Antonino: 3,77%
 Marie & Andre: 5,16%
-Desiree & Jordi: 8,34%
-Isabelle & Dustin: 16,46%
-Jessica & Leon: 46,21%
 Zaira & Marius: 5,65%
+Jessica & Leon: 46,21%
+Desiree & Jordi: 8,34%
+Kerstin & Max: 33,03%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 5,43% [101]
@@ -41,7 +41,7 @@ Die Kombinationen reduzieren sich: 1859 => 19
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 6 inkl. 1 Matchbox(en) inkl. Matchingnight...
--- Combinations: 36288000 Possible: 19 Not possible: 36287981 Calculation time: 0 min 22 secs (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 19 Not possible: 36287981 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
 

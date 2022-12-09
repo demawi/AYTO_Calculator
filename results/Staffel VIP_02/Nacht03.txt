@@ -1,12 +1,12 @@
 
 ==================================================================================================================================================
 -- Berechne VIP_02 - Nacht 3...
--- Combinations: 3628800 Possible: 34595 Not possible: 3594205 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 34595 Not possible: 3594205 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 ==================================================================================================================================================
 -- Berechne VIP_02 - Nacht 3 inkl. 1 Matchbox(en)...
--- Combinations: 3628800 Possible: 31980 Not possible: 3596820 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 31980 Not possible: 3596820 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Celina & Lukas... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 7,56% [2615]
@@ -14,16 +14,16 @@ Nein => 92,44% [31980] <==
 Die Kombinationen reduzieren sich: 34595 => 31980
 
 Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Zoe & Max: 8,47%
-Isabelle & Luca: 7,45%
-Cecilia & Amadu: 26,49%
-Ricarda & Maurice: 48,98%
-Anna & Martin: 5,88%
+Karina & Calvin: 10,83%
 Franziska & Lukas: 8,39%
+Luisa & Pharrell: 10,90%
+Ricarda & Maurice: 48,98%
+Zoe & Max: 8,47%
+Anna & Martin: 5,88%
+Isabelle & Luca: 7,45%
 Celina & Fabio: 7,77%
 Gina & Michael: 5,69%
-Luisa & Pharrell: 10,90%
-Karina & Calvin: 10,83%
+Cecilia & Amadu: 26,49%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 22,64% [7240]
@@ -41,7 +41,7 @@ Die Kombinationen reduzieren sich: 31980 => 3586
 
 ==================================================================================================================================================
 -- Berechne VIP_02 - Nacht 3 inkl. 1 Matchbox(en) inkl. Matchingnight...
--- Combinations: 3628800 Possible: 3586 Not possible: 3625214 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 3586 Not possible: 3625214 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
 

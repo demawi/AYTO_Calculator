@@ -1,12 +1,12 @@
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 3...
--- Combinations: 3628800 Possible: 15449 Not possible: 3613351 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 15449 Not possible: 3613351 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 3 inkl. 1 Matchbox(en)...
--- Combinations: 3628800 Possible: 14309 Not possible: 3614491 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 14309 Not possible: 3614491 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Walentina & Tommy... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 7,38% [1140]
@@ -41,7 +41,7 @@ Die Kombinationen reduzieren sich: 14309 => 5522
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 3 inkl. 1 Matchbox(en) inkl. Matchingnight...
--- Combinations: 3628800 Possible: 5522 Not possible: 3623278 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 5522 Not possible: 3623278 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
 

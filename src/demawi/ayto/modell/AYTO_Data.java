@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 import java.util.function.Consumer;
 
-import demawi.ayto.AYTO_Permutator;
+import demawi.ayto.events.MatchBoxResult;
+import demawi.ayto.events.MatchingNight;
+import demawi.ayto.perm.AYTO_Permutator;
 
 public class AYTO_Data {
 
@@ -38,12 +39,14 @@ public class AYTO_Data {
     return tag;
   }
 
-  public Tag getTag(int index) {
-    return tage.get(index - 1);
+  public Tag addTag() {
+    Tag tag = Tag.create();
+    tage.add(tag);
+    return tag;
   }
 
-  public Tag getTag(CalculationOptions opt) {
-    return getTag(opt.tagNr);
+  public Tag getTag(int index) {
+    return tage.get(index - 1);
   }
 
   public int getAnzahlTage() {
@@ -67,6 +70,12 @@ public class AYTO_Data {
         result.add(pair.frau);
       }
     });
+    if (tag > 0) {
+      Person newExtraPerson = getTag(tag).newExtraPerson;
+      if (newExtraPerson instanceof Frau && !result.contains(newExtraPerson)) {
+        result.add((Frau) newExtraPerson);
+      }
+    }
     return result;
   }
 
@@ -77,62 +86,25 @@ public class AYTO_Data {
         result.add(pair.mann);
       }
     });
+    if (tag > 0) {
+      Person newExtraPerson = getTag(tag).newExtraPerson;
+      if (newExtraPerson instanceof Mann && !result.contains(newExtraPerson)) {
+        result.add((Mann) newExtraPerson);
+      }
+    }
     return result;
   }
 
   private void getPairs(int tagNr, Consumer<Pair> consumer) {
     for (int i = 0; i < tagNr; i++) {
       Tag tag = tage.get(i);
-      tag.boxPairs.forEach((matchBoxResult) -> consumer.accept(matchBoxResult.pair));
+      tag.boxResults.forEach((matchBoxResult) -> consumer.accept(matchBoxResult.pair));
       if (tag.matchingNight != null) {
         for (Pair pair : tag.matchingNight.constellation) {
           consumer.accept(pair);
         }
       }
     }
-  }
-
-  /**
-   * Testet ob die übergebene Paar-Konstellation zu einem Widerspruch führt.
-   */
-  public boolean test(Collection<Pair> constellation, CalculationOptions calcOptions, boolean debug) {
-    for (int tagNr = 1; tagNr < calcOptions.tagNr + 1; tagNr++) {
-      Tag tag = getTag(tagNr);
-
-      boolean vorherigerTag = tagNr < calcOptions.tagNr; // wird komplett abgearbeitet
-      int matchBoxes = vorherigerTag ? tag.boxPairs.size() : calcOptions.getAnzahlMatchBoxen(tag.boxPairs.size());
-      if (matchBoxes > 0) {
-        for (int matchBoxNr = 0; matchBoxNr < matchBoxes; matchBoxNr++) {
-          MatchBoxResult matchBoxResult = tag.boxPairs.get(matchBoxNr);
-          Boolean result = matchBoxResult.result;
-          if (result != null && result != constellation.contains(matchBoxResult.pair)) {
-            return false;
-          }
-        }
-        for (Map.Entry<Pair, Boolean> entry : tag.implicits.entrySet()) {
-          if (entry.getValue() != constellation.contains(entry.getKey())) {
-            return false;
-          }
-        }
-      }
-      if (vorherigerTag || calcOptions.mitMatchingNight) {
-        MatchingNight night = tag.matchingNight;
-        if (night != null) {
-          for (int nightNr = 0, l = night.constellation.size(); nightNr < l; nightNr++) {
-            int lights = getLights(constellation, night.constellation);
-            if (lights != night.lights) {
-              if (debug) {
-                System.out.println(
-                      "Falsch aufgrund von Matching Night Nr. " + (nightNr + 1) + " Erwartete Lichter: " + lights
-                            + ". Es waren aber: " + night.lights);
-              }
-              return false;
-            }
-          }
-        }
-      }
-    }
-    return true;
   }
 
   public int getLights(Collection<Pair> assumptionModell, Collection<Pair> testConstellation) {
@@ -149,4 +121,42 @@ public class AYTO_Data {
     return zusatztype;
   }
 
+  public void preProcess(Consumer<String> out, int tagNr) {
+    List<Pair> previousPerfectMatches = new ArrayList<>();
+    for (int i = 1; i <= tagNr; i++) {
+      Tag tag = getTag(i);
+      for (MatchBoxResult boxResult : tag.boxResults) {
+        Boolean result = boxResult.result;
+        if (result != null && result) {
+          previousPerfectMatches.add(boxResult.pair);
+        }
+      }
+    }
+
+    Tag tag = getTag(tagNr);
+    Person extraPerson = tag.newExtraPerson;
+    if (extraPerson != null) {
+      if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER) {
+        // Annahme, dass eine Person die neu hinzukommt auch ein Perfect Match noch hat.
+        if (extraPerson instanceof Frau) {
+          for (Pair perfectMatch : previousPerfectMatches) {
+            Pair implicitPair = Pair.pair((Frau) extraPerson, perfectMatch.mann);
+            tag.implicitDerived(false, implicitPair);
+            out.accept("Implizite Annahme durch neue Person: " + implicitPair + " => No match!");
+          }
+        }
+        else {
+          for (Pair perfectMatch : previousPerfectMatches) {
+            Pair implicitPair = Pair.pair(perfectMatch.frau, (Mann) extraPerson);
+            tag.implicitDerived(false, implicitPair);
+            out.accept("Implizite Annahme durch neue Person: " + implicitPair + " => No match!");
+          }
+        }
+      }
+      else { // AYTO_Permutator.ZUSATZTYPE.JEDER
+        // Currently nothing to do
+      }
+    }
+  }
 }
+

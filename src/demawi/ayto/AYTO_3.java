@@ -3,6 +3,8 @@ package demawi.ayto;
 import demawi.ayto.modell.AYTO_Data;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
+import demawi.ayto.perm.AYTO_Permutator;
+import demawi.ayto.service.StandardMatchFinder;
 
 import static demawi.ayto.modell.Pair.pair;
 
@@ -34,6 +36,7 @@ public class AYTO_3
 
   public AYTO_3() {
     super("03", AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER);
+
     add(false, pair(Jessica, Mike), 3, pair(Jessica, Leon), pair(Joelina, Mike), pair(Kerstin, Max),
           pair(Monami, Antonino), pair(Marie, Tim), pair(Zaira, Dustin), pair(Dana, William), pair(Isabelle, Marius),
           pair(Raphaela, Andre), pair(Estelle, Jordi));
@@ -56,9 +59,9 @@ public class AYTO_3
           pair(Zaira, Jordi), pair(Dana, William));
 
     // 6ter Tag
-    add(false, pair(Jessica, Max), 4, pair(Dana, Antonino), pair(Estelle, Mike), pair(Isabelle, Dustin),
+    addTag().matchBox(pair(Jessica, Max), false).matchNight(4, pair(Dana, Antonino), pair(Estelle, Mike), pair(Isabelle, Dustin),
           pair(Jessica, Leon), pair(Joelina, Tim), pair(Kerstin, Max), pair(Marie, Andre), pair(Raphaela, William),
-          pair(Zaira, Marius), pair(Desiree, Jordi));
+          pair(Zaira, Marius), pair(Desiree, Jordi)).addNew(Desiree);
 
     // 7ter Tag
     add(true, pair(Zaira, Marius), 6, pair(Zaira, Marius), pair(Raphaela, William), pair(Dana, Antonino),
@@ -88,7 +91,7 @@ public class AYTO_3
   }
 
   public static void main(String[] args) {
-    new MatchFinder().printDayResults(new AYTO_3());
+    new StandardMatchFinder().printDayResults(new AYTO_3());
   }
 
 }

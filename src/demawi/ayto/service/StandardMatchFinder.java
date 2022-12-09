@@ -1,4 +1,4 @@
-package demawi.ayto;
+package demawi.ayto.service;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,18 +9,20 @@ import java.util.Set;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
+import demawi.ayto.perm.AYTO_Permutator;
 import demawi.ayto.modell.AYTO_Data;
 import demawi.ayto.modell.AYTO_Result;
 import demawi.ayto.modell.CalculationOptions;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
-import demawi.ayto.modell.MatchBoxResult;
-import demawi.ayto.modell.MatchingNight;
+import demawi.ayto.events.MatchBoxResult;
+import demawi.ayto.events.MatchingNight;
 import demawi.ayto.modell.Pair;
-import demawi.ayto.modell.TablePrinter;
+import demawi.ayto.print.TablePrinter;
 import demawi.ayto.modell.Tag;
 
-public class MatchFinder {
+public class StandardMatchFinder
+      implements IMatchFinder {
 
   private Consumer<String> out = (str) -> {
     System.out.println(str);
@@ -44,17 +46,18 @@ public class MatchFinder {
     this.out = out;
   }
 
-  private AYTO_Result calculate(AYTO_Data data, CalculationOptions calcOptions, boolean info) {
+  private AYTO_Result calculate(CalculationOptions calcOptions, boolean info) {
     long start = System.currentTimeMillis();
-    AYTO_Result result = new AYTO_Result(data, calcOptions);
+    AYTO_Result result = new AYTO_Result(calcOptions);
     if (calcOptions.tagNr == 0) {
       return result;
     }
+    AYTO_Data data = calcOptions.getData();
     if (info) {
       out.accept("");
       breakLine(out);
-      Tag tag = data.getTag(calcOptions);
-      int anzahlMatchBoxen = calcOptions.getAnzahlMatchBoxen(tag.boxPairs.size());
+      Tag tag = calcOptions.getTag();
+      int anzahlMatchBoxen = calcOptions.getAnzahlMatchBoxen(tag.boxResults.size());
       out.accept("-- Berechne " + data.name + " - Nacht " + calcOptions.tagNr + (
             anzahlMatchBoxen > 0 ? " inkl. " + anzahlMatchBoxen + " Matchbox(en)" : "")
             + (calcOptions.mitMatchingNight ? " inkl. Matchingnight" : "") + "...");
@@ -62,14 +65,14 @@ public class MatchFinder {
 
     boolean debug = false;
 
-    AYTO_Permutator<Frau, Mann, Pair> permutator = AYTO_Permutator.create(data.getFrauen(calcOptions.tagNr),
-          data.getMaenner(calcOptions.tagNr), data.getZusatztype(), Pair::pair);
+    AYTO_Permutator<Frau, Mann, Pair> permutator = AYTO_Permutator.create(calcOptions.getFrauen(),
+          calcOptions.getMaenner(), calcOptions.getZusatztype(), Pair::pair);
     permutator.permutate(
-          constellation -> result.addResult(data.test(constellation, calcOptions, debug), constellation));
+          constellation -> result.addResult(calcOptions.test(constellation, debug), constellation));
     if (info) {
       out.accept("-- Combinations: " + result.totalConstellations + " Possible: " + result.possible + " Not possible: "
-            + result.notPossible + " Calculation time: " + minSecs(System.currentTimeMillis() - start)
-            + " (Intern constellation-add-pair checks: " + permutator.testCount + ")");
+            + result.notPossible + " (Intern constellation-add-pair checks: " + permutator.testCount + ")");
+      System.out.println(" Calculation time: " + minSecs(System.currentTimeMillis() - start));
       breakLine2(out);
     }
     return result;
@@ -96,12 +99,11 @@ public class MatchFinder {
     boolean info = true;
     List<Frau> frauenBefore = data.getFrauen(tagNr - 1);
     List<Mann> maennerBefore = data.getMaenner(tagNr - 1);
-
     List<Frau> frauen = data.getFrauen(tagNr);
     List<Mann> maenner = data.getMaenner(tagNr);
 
     // Kombinationsänderungen, wenn Leute hinzugekommen sind
-    AYTO_Result result0 = null;
+    AYTO_Result resultDesVortages = null;
     if (frauen.size() > frauenBefore.size() || maenner.size() > maennerBefore.size()) {
       for (Frau frau : frauen) {
         if (!frauenBefore.contains(frau)) {
@@ -113,66 +115,69 @@ public class MatchFinder {
           out.accept("Ein Mann ist hinzugekommen: " + mann + ". Die Anzahl der Kombinationen erhöht sich damit!");
         }
       }
-      result0 = calculate(data, new CalculationOptions(tagNr - 1, Integer.MAX_VALUE, true), info);
+      resultDesVortages = calculate(new CalculationOptions(data, tagNr - 1, Integer.MAX_VALUE, true), info);
     }
 
-    // Vorher Result
-    AYTO_Result resultVorMatchBox_X = calculate(data, new CalculationOptions(tagNr, 0, false), info);
-    if (result0 != null) {
-      out.accept("Die Anzahl der Kombinationen hat sich verändert: " + result0.getPossibleConstellationSize() + " => "
-            + resultVorMatchBox_X.getPossibleConstellationSize());
+    data.preProcess(out, tagNr);
+
+    // Tages Anfang mit Prüfug zum Vortag falls neue Personen hinzugekommen sind
+    AYTO_Result letztesResultat = calculate(new CalculationOptions(data, tagNr, 0, false), info);
+    if (resultDesVortages != null) {
+      out.accept("Die Anzahl der Kombinationen hat sich verändert: " + resultDesVortages.getPossibleConstellationSize()
+            + " => " + letztesResultat.getPossibleConstellationSize());
     }
 
-    // Zwischen Result
-    Tag letzterTag = data.getTag(tagNr);
-    AYTO_Result resultVorMatchingNight = resultVorMatchBox_X;
-    for (int i = 0, l = letzterTag.boxPairs.size(); i < l; i++) {
-      MatchBoxResult matchBoxResult = letzterTag.boxPairs.get(i);
+    // Matchboxen
+    Tag tag = data.getTag(tagNr);
+    for (int i = 0, l = tag.boxResults.size(); i < l; i++) {
+      MatchBoxResult matchBoxResult = tag.boxResults.get(i);
       Pair boxPair = matchBoxResult.pair;
       Boolean boxResult = matchBoxResult.result;
-      if (boxResult == null) {
-        out.accept("MatchBox: " + boxPair + " verkauft.");
+      AYTO_Result aktuellesResultat = null;
+      if (boxResult != null) {
+        aktuellesResultat = calculate(new CalculationOptions(data, tagNr, i + 1, false), info);
       }
-      else {
-        resultVorMatchBox_X = resultVorMatchingNight;
-        resultVorMatchingNight = calculate(data, new CalculationOptions(tagNr, i + 1, false), info);
-        out.accept("MatchBox: " + boxPair + "... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)");
-        String yesMarker = "";
-        String noMarker = "";
-        if (boxResult != null) {
-          if (boxResult) {
-            yesMarker = " <==";
-          }
-          else {
-            noMarker = " <==";
-          }
+      if(boxResult == null) {
+        out.accept("");
+      }
+      out.accept("MatchBox: " + boxPair + (boxResult == null ? " verkauft." : "...")
+            + " (Wahrscheinlichkeit für das Ausgang des Ergebnisses)");
+      String yesMarker = "";
+      String noMarker = "";
+      if (boxResult != null) {
+        if (boxResult) {
+          yesMarker = " <==";
         }
-        out.accept("Ja   => " + prozent(resultVorMatchBox_X.getCount(boxPair),
-              resultVorMatchBox_X.getPossibleConstellationSize()) + "% [" + resultVorMatchBox_X.getCount(boxPair) + "]"
-              + yesMarker);
-        out.accept("Nein => " + prozent(
-              resultVorMatchBox_X.getPossibleConstellationSize() - resultVorMatchBox_X.getCount(boxPair),
-              resultVorMatchBox_X.getPossibleConstellationSize()) + "% [" + (
-              resultVorMatchBox_X.getPossibleConstellationSize() - resultVorMatchBox_X.getCount(boxPair)) + "]"
-              + noMarker);
-        out.accept("Die Kombinationen reduzieren sich: " + resultVorMatchBox_X.getPossibleConstellationSize() + " => "
-              + resultVorMatchingNight.getPossibleConstellationSize());
+        else {
+          noMarker = " <==";
+        }
       }
+      out.accept("Ja   => " + prozent(letztesResultat.getCount(boxPair), letztesResultat.getPossibleConstellationSize())
+            + "% [" + letztesResultat.getCount(boxPair) + "]" + yesMarker);
+      out.accept(
+            "Nein => " + prozent(letztesResultat.getPossibleConstellationSize() - letztesResultat.getCount(boxPair),
+                  letztesResultat.getPossibleConstellationSize()) + "% [" + (
+                  letztesResultat.getPossibleConstellationSize() - letztesResultat.getCount(boxPair)) + "]" + noMarker);
+      if (aktuellesResultat != null) {
+        out.accept("Die Kombinationen reduzieren sich: " + letztesResultat.getPossibleConstellationSize() + " => "
+              + aktuellesResultat.getPossibleConstellationSize());
+        letztesResultat = aktuellesResultat;
+      }
+
     }
 
-    MatchingNight matchingNight = letzterTag.matchingNight;
+    // Matching night
+    MatchingNight matchingNight = tag.matchingNight;
     if (matchingNight == null || matchingNight.lights == null) {
       out.accept("");
       out.accept("Es hat keine Matching Night stattgefunden!");
     }
     else {
-      printLightChances(resultVorMatchingNight, matchingNight.constellation, matchingNight.lights);
-      // Ende des Tages Result
-      AYTO_Result resultNachMatchingNight = calculate(data, new CalculationOptions(tagNr, Integer.MAX_VALUE, true),
-            info);
-      printResult(data, resultNachMatchingNight, frauen, maenner);
+      printLightChances(letztesResultat, matchingNight.constellation, matchingNight.lights);
+      // Ende des Tages Resultat
+      letztesResultat = calculate(new CalculationOptions(data, tagNr, Integer.MAX_VALUE, true), info);
     }
-
+    printResult(data, letztesResultat, frauen, maenner);
   }
 
   /**
@@ -296,58 +301,6 @@ public class MatchFinder {
     }
     out.accept("Die Kombinationen reduzieren sich: " + result.getPossibleConstellationSize() + " => "
           + lightResults[spotsReached]);
-  }
-
-  private String getRanking(AYTO_Result result, Frau frau, List<Mann> maenner) {
-    int gesamt = 0;
-    AYTO_Permutator.ZUSATZTYPE zusatztype = result.getData()
-          .getZusatztype();
-    for (Mann mann : maenner) {
-      if (zusatztype == AYTO_Permutator.ZUSATZTYPE.JEDER || maenner.indexOf(mann) <= 9) {
-        gesamt += result.getCount(frau, mann);
-      }
-    }
-    List<Mann> sortedPartner = new ArrayList<>(maenner);
-    sortedPartner.sort((o1, o2) -> result.getCount(frau, o2)
-          .compareTo(result.getCount(frau, o1)));
-    sortedPartner = sortedPartner.stream()
-          .filter(mann -> result.getCount(frau, mann) > 0)
-          .collect(Collectors.toList());
-
-    StringBuffer stringBuffer = new StringBuffer();
-    for (Mann mann : sortedPartner) {
-      if (stringBuffer.length() > 0) {
-        stringBuffer.append(", ");
-      }
-      stringBuffer.append(mann + " (" + prozent(result.getCount(frau, mann), gesamt) + ")");
-    }
-    return "[" + stringBuffer.toString() + "]";
-  }
-
-  private String getRanking(AYTO_Result result, Mann mann, List<Frau> frauen) {
-    int gesamt = 0;
-    AYTO_Permutator.ZUSATZTYPE zusatztype = result.getData()
-          .getZusatztype();
-    for (Frau frau : frauen) {
-      if (zusatztype == AYTO_Permutator.ZUSATZTYPE.JEDER || frauen.indexOf(frau) <= 9) {
-        gesamt += result.getCount(frau, mann);
-      }
-    }
-    List<Frau> sortedPartner = new ArrayList<>(frauen);
-    sortedPartner.sort((o1, o2) -> result.getCount(o2, mann)
-          .compareTo(result.getCount(o1, mann)));
-    sortedPartner = sortedPartner.stream()
-          .filter(frau -> result.getCount(frau, mann) > 0)
-          .collect(Collectors.toList());
-
-    StringBuffer stringBuffer = new StringBuffer();
-    for (Frau frau : sortedPartner) {
-      if (stringBuffer.length() > 0) {
-        stringBuffer.append(", ");
-      }
-      stringBuffer.append(frau + " (" + prozent(result.getCount(frau, mann), gesamt) + ")");
-    }
-    return "[" + stringBuffer.toString() + "]";
   }
 
 }

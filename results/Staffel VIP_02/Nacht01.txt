@@ -1,33 +1,33 @@
 Eine Frau ist hinzugekommen: Zoe. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Anna. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Ricarda. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Cecilia. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Gina. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Luisa. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Celina. Die Anzahl der Kombinationen erhöht sich damit!
 Eine Frau ist hinzugekommen: Franziska. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Gina. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Ricarda. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Celina. Die Anzahl der Kombinationen erhöht sich damit!
 Eine Frau ist hinzugekommen: Isabelle. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Luisa. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Anna. Die Anzahl der Kombinationen erhöht sich damit!
 Eine Frau ist hinzugekommen: Karina. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Cecilia. Die Anzahl der Kombinationen erhöht sich damit!
 Ein Mann ist hinzugekommen: Martin. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Michael. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Maurice. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Amadu. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Max. Die Anzahl der Kombinationen erhöht sich damit!
 Ein Mann ist hinzugekommen: Calvin. Die Anzahl der Kombinationen erhöht sich damit!
 Ein Mann ist hinzugekommen: Luca. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Fabio. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Max. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Maurice. Die Anzahl der Kombinationen erhöht sich damit!
 Ein Mann ist hinzugekommen: Lukas. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Fabio. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Michael. Die Anzahl der Kombinationen erhöht sich damit!
 Ein Mann ist hinzugekommen: Pharrell. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Amadu. Die Anzahl der Kombinationen erhöht sich damit!
 
 ==================================================================================================================================================
 -- Berechne VIP_02 - Nacht 1...
--- Combinations: 3628800 Possible: 3628800 Not possible: 0 Calculation time: 0 min 5 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 3628800 Not possible: 0 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Die Anzahl der Kombinationen hat sich verändert: 0 => 3628800
 
 ==================================================================================================================================================
 -- Berechne VIP_02 - Nacht 1 inkl. 1 Matchbox(en)...
--- Combinations: 3628800 Possible: 3265920 Not possible: 362880 Calculation time: 0 min 5 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 3265920 Not possible: 362880 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Zoe & Martin... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 10,00% [362880]
@@ -35,16 +35,16 @@ Nein => 90,00% [3265920] <==
 Die Kombinationen reduzieren sich: 3628800 => 3265920
 
 Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Anna & Michael: 9,88%
-Ricarda & Maurice: 9,88%
-Cecilia & Amadu: 9,88%
+Franziska & Max: 9,88%
 Gina & Calvin: 9,88%
 Zoe & Luca: 11,11%
-Luisa & Fabio: 9,88%
+Ricarda & Maurice: 9,88%
 Celina & Martin: 11,11%
-Franziska & Max: 9,88%
 Isabelle & Lukas: 9,88%
+Luisa & Fabio: 9,88%
+Anna & Michael: 9,88%
 Karina & Pharrell: 9,88%
+Cecilia & Amadu: 9,88%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 36,33% [1186632]
@@ -62,7 +62,7 @@ Die Kombinationen reduzieren sich: 3265920 => 205176
 
 ==================================================================================================================================================
 -- Berechne VIP_02 - Nacht 1 inkl. 1 Matchbox(en) inkl. Matchingnight...
--- Combinations: 3628800 Possible: 205176 Not possible: 3423624 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 205176 Not possible: 3423624 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
 

@@ -3,6 +3,8 @@ package demawi.ayto;
 import demawi.ayto.modell.AYTO_Data;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
+import demawi.ayto.perm.AYTO_Permutator;
+import demawi.ayto.service.StandardMatchFinder;
 
 import static demawi.ayto.modell.Pair.pair;
 
@@ -46,9 +48,11 @@ public class AYTO_VIP01
           pair(Walentina, Josua), pair(Kathleen, Manuel), pair(Finnja, Alex), pair(Aurelia, Diogo),
           pair(Jacky, Salvatore), pair(Sarah, Danilo), pair(Melina, Tommy));
 
-    add(null, pair(Aurelia, Diogo), 4, pair(Jules, Francesco), pair(Aurelia, Diogo), pair(Finnja, Eugen),
-          pair(Jill, Tommy), pair(Kathleen, Manuel), pair(Melina, Danilo), pair(Sarah, Josua), pair(Steffi, Alex),
-          pair(Walentina, Salvatore), pair(Vanessa, Jamie)).implicit(false, pair(Vanessa, Francesco));
+    addTag().matchBox(pair(Aurelia, Diogo), null)
+          .matchNight(4, pair(Jules, Francesco), pair(Aurelia, Diogo), pair(Finnja, Eugen), pair(Jill, Tommy),
+                pair(Kathleen, Manuel), pair(Melina, Danilo), pair(Sarah, Josua), pair(Steffi, Alex),
+                pair(Walentina, Salvatore), pair(Vanessa, Jamie))
+          .addNew(Vanessa);
 
     add(false, pair(Melina, Tommy), 3, pair(Jules, Francesco), pair(Aurelia, Danilo), pair(Finnja, Eugen),
           pair(Jill, Manuel), pair(Kathleen, Salvatore), pair(Melina, Tommy), pair(Sarah, Alex), pair(Steffi, Jamie),
@@ -73,6 +77,7 @@ public class AYTO_VIP01
     add(true, pair(Aurelia, Josua), 7, pair(Jules, Francesco), pair(Aurelia, Josua), pair(Finnja, Tommy),
           pair(Jill, Diogo), pair(Kathleen, Manuel), pair(Sarah, Danilo), pair(Walentina, Eugen), pair(Vanessa, Alex),
           pair(Steffi, Jamie), pair(Jacky, Salvatore));
+
     // falsch: Finnja&Tommy, Jill&Diogo, Sarah&Danilo... Richtig: Finnja&Diogo, Jill&Tommy, Sara&Alex, Melina&Danilo
 
     // coming
@@ -84,7 +89,7 @@ public class AYTO_VIP01
   }
 
   public static void main(String[] args) {
-    new MatchFinder().printDayResults(new AYTO_VIP01());
+    new StandardMatchFinder().printDayResults(new AYTO_VIP01());
   }
 
 }

@@ -1,29 +1,24 @@
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 4...
--- Combinations: 3628800 Possible: 12166 Not possible: 3616634 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 12166 Not possible: 3616634 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-==================================================================================================================================================
--- Berechne 03 - Nacht 4 inkl. 1 Matchbox(en)...
--- Combinations: 3628800 Possible: 12166 Not possible: 3616634 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
---------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Dana & William verkauft. (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 31,10% [3784]
 Nein => 68,90% [8382]
-Die Kombinationen reduzieren sich: 12166 => 12166
 
 Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Raphaela & Jordi: 14,58%
 Isabelle & Andre: 9,56%
-Kerstin & Tim: 7,45%
-Jessica & Marius: 10,00%
-Joelina & Mike: 64,38%
 Estelle & Leon: 0,00%
+Jessica & Marius: 10,00%
+Marie & Max: 7,63%
 Monami & Antonino: 41,16%
 Dana & William: 31,10%
+Joelina & Mike: 64,38%
+Raphaela & Jordi: 14,58%
 Zaira & Dustin: 31,93%
-Marie & Max: 7,63%
+Kerstin & Tim: 7,45%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 3,23% [393]
@@ -41,7 +36,7 @@ Die Kombinationen reduzieren sich: 12166 => 2699
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 4 inkl. 1 Matchbox(en) inkl. Matchingnight...
--- Combinations: 3628800 Possible: 2699 Not possible: 3626101 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 2699 Not possible: 3626101 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
 

@@ -1,6 +1,8 @@
-package demawi.ayto.modell;
+package demawi.ayto.events;
 
-public class MatchBoxResult {
+import demawi.ayto.modell.Pair;
+
+public class MatchBoxResult implements Event {
 
    public Pair pair;
    public Boolean result;

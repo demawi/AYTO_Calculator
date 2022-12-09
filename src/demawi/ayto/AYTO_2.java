@@ -3,6 +3,8 @@ package demawi.ayto;
 import demawi.ayto.modell.AYTO_Data;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
+import demawi.ayto.perm.AYTO_Permutator;
+import demawi.ayto.service.StandardMatchFinder;
 
 import static demawi.ayto.modell.Pair.pair;
 
@@ -46,13 +48,15 @@ public class AYTO_2 extends AYTO_Data {
           pair(Vanessa, Dominic), pair(Kathleen, Marvin), pair(Christin, Germain), pair(Jill, Maximilian),
           pair(Leonie, Marc), pair(Mirjam, Marko), pair(Victoria, Dario));
 
-    add(false, pair(Laura, Marcel), 3, pair(Sabrina, Marko), pair(Jill, Maximilian), pair(Kathleen, Dario),
-          pair(Vanessa, Sascha), pair(Victoria, Germain), pair(Mirjam, Marc), pair(Laura, Dominic),
-          pair(Melissa, Aaron), pair(Leonie, Marcel), pair(Christin, Marvin));
+    addTag().matchBox(pair(Laura, Marcel), false)
+          .matchNight(3, pair(Sabrina, Marko), pair(Jill, Maximilian), pair(Kathleen, Dario), pair(Vanessa, Sascha),
+                pair(Victoria, Germain), pair(Mirjam, Marc), pair(Laura, Dominic), pair(Melissa, Aaron),
+                pair(Leonie, Marcel), pair(Christin, Marvin))
+          .addNew(VanessaM);
 
     add(true, pair(Leonie, Marcel), 3, pair(Leonie, Marcel), pair(Christin, Germain), pair(Laura, Maximilian),
           pair(Kathleen, Marvin), pair(Jill, Sascha), pair(Melissa, Marc), pair(Vanessa, Dominic),
-          pair(Victoria, Dario), pair(Mirjam, Aaron), pair(VanessaM, Marko)).implicit(false, pair(VanessaM, Marcel));
+          pair(Victoria, Dario), pair(Mirjam, Aaron), pair(VanessaM, Marko));
 
     add(null, pair(Laura, Dario), 4, pair(Leonie, Marcel), pair(Melissa, Aaron), pair(Victoria, Germain),
           pair(Christin, Maximilian), pair(Vanessa, Dominic), pair(Mirjam, Marc), pair(Sabrina, Marko),
@@ -76,7 +80,7 @@ public class AYTO_2 extends AYTO_Data {
   }
 
   public static void main(String[] args) {
-    new MatchFinder().printDayResults(new AYTO_2());
+    new StandardMatchFinder().printDayResults(new AYTO_2());
   }
 
 }

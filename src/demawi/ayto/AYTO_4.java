@@ -3,7 +3,8 @@ package demawi.ayto;
 import demawi.ayto.modell.AYTO_Data;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
-import demawi.ayto.modell.Tag;
+import demawi.ayto.perm.AYTO_Permutator;
+import demawi.ayto.service.StandardMatchFinder;
 
 import static demawi.ayto.modell.Pair.pair;
 
@@ -36,17 +37,16 @@ public class AYTO_4
   public AYTO_4() {
     super("04", AYTO_Permutator.ZUSATZTYPE.JEDER);
 
-    add(Tag.create()
-          .matchBox(pair(Valeria, Marwin), false)
+    addTag().matchBox(pair(Valeria, Marwin), false)
           .matchBox(pair(Dorna, Kenneth), false)
           .matchNight(null, pair(Aurelia, Barkin), pair(Carina, Burim), pair(Caroline, Christopher), pair(Dorna, Deniz),
                 pair(Henna, Joel), pair(Juliette, Ken), pair(Larissa, Kenneth), pair(Stefanie, Maximilian),
-                pair(Vanessa, Pascal), pair(Valeria, Sasa)));
+                pair(Vanessa, Pascal), pair(Valeria, Sasa));
 
   }
 
   public static void main(String[] args) {
-    new MatchFinder().printDayResults(new AYTO_4());
+    new StandardMatchFinder().printDayResults(new AYTO_4());
   }
 
 }

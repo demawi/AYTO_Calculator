@@ -1,12 +1,12 @@
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 6...
--- Combinations: 36288000 Possible: 658 Not possible: 36287342 Calculation time: 0 min 21 secs (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 658 Not possible: 36287342 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 6 inkl. 1 Matchbox(en)...
--- Combinations: 36288000 Possible: 633 Not possible: 36287367 Calculation time: 0 min 22 secs (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 633 Not possible: 36287367 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Finnja & Salvatore... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 3,80% [25]
@@ -41,7 +41,7 @@ Die Kombinationen reduzieren sich: 633 => 319
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 6 inkl. 1 Matchbox(en) inkl. Matchingnight...
--- Combinations: 36288000 Possible: 319 Not possible: 36287681 Calculation time: 0 min 23 secs (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 319 Not possible: 36287681 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
 

@@ -1,33 +1,33 @@
 Eine Frau ist hinzugekommen: Jessica. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Estelle. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Kerstin. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Joelina. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Monami. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Marie. Die Anzahl der Kombinationen erhöht sich damit!
 Eine Frau ist hinzugekommen: Raphaela. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Kerstin. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Monami. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Isabelle. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Estelle. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Joelina. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Marie. Die Anzahl der Kombinationen erhöht sich damit!
 Eine Frau ist hinzugekommen: Zaira. Die Anzahl der Kombinationen erhöht sich damit!
 Eine Frau ist hinzugekommen: Dana. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Isabelle. Die Anzahl der Kombinationen erhöht sich damit!
 Ein Mann ist hinzugekommen: Mike. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Jordi. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Max. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Leon. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Antonino. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Tim. Die Anzahl der Kombinationen erhöht sich damit!
 Ein Mann ist hinzugekommen: Andre. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Leon. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Max. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Antonino. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Marius. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Jordi. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Tim. Die Anzahl der Kombinationen erhöht sich damit!
 Ein Mann ist hinzugekommen: Dustin. Die Anzahl der Kombinationen erhöht sich damit!
 Ein Mann ist hinzugekommen: William. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Marius. Die Anzahl der Kombinationen erhöht sich damit!
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 1...
--- Combinations: 3628800 Possible: 3628800 Not possible: 0 Calculation time: 0 min 5 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 3628800 Not possible: 0 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Die Anzahl der Kombinationen hat sich verändert: 0 => 3628800
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 1 inkl. 1 Matchbox(en)...
--- Combinations: 3628800 Possible: 3265920 Not possible: 362880 Calculation time: 0 min 5 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 3265920 Not possible: 362880 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Jessica & Mike... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 10,00% [362880]
@@ -35,16 +35,16 @@ Nein => 90,00% [3265920] <==
 Die Kombinationen reduzieren sich: 3628800 => 3265920
 
 Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Estelle & Jordi: 9,88%
-Kerstin & Max: 9,88%
-Joelina & Mike: 11,11%
-Jessica & Leon: 11,11%
-Monami & Antonino: 9,88%
-Marie & Tim: 9,88%
 Raphaela & Andre: 9,88%
+Jessica & Leon: 11,11%
+Kerstin & Max: 9,88%
+Monami & Antonino: 9,88%
+Isabelle & Marius: 9,88%
+Estelle & Jordi: 9,88%
+Joelina & Mike: 11,11%
+Marie & Tim: 9,88%
 Zaira & Dustin: 9,88%
 Dana & William: 9,88%
-Isabelle & Marius: 9,88%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 36,33% [1186632]
@@ -62,7 +62,7 @@ Die Kombinationen reduzieren sich: 3265920 => 205176
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 1 inkl. 1 Matchbox(en) inkl. Matchingnight...
--- Combinations: 3628800 Possible: 205176 Not possible: 3423624 Calculation time: 0 min 3 secs (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 205176 Not possible: 3423624 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
 
