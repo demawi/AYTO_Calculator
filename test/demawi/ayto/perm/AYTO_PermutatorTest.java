@@ -6,7 +6,7 @@ import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 
-import demawi.ayto.service.StandardMatchFinder;
+import demawi.ayto.print.DefaultMatchPrinter;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -44,7 +44,7 @@ public class AYTO_PermutatorTest {
          count++;
       });
       System.out.println(
-            "JEDER 11:10 PERMUTATION Taken time: " + StandardMatchFinder.minSecs(System.currentTimeMillis() - start));
+            "JEDER 11:10 PERMUTATION Taken time: " + DefaultMatchPrinter.minSecs(System.currentTimeMillis() - start));
       System.out.println("Anzahl erzeugter Permutationen: " + count);
    }
 
@@ -57,7 +57,7 @@ public class AYTO_PermutatorTest {
       permutator.permutate(result -> {
          count++;
       });
-      System.out.println("NUR_LETZTER 11:10 PERMUTATION Taken time: " + StandardMatchFinder.minSecs(
+      System.out.println("NUR_LETZTER 11:10 PERMUTATION Taken time: " + DefaultMatchPrinter.minSecs(
             System.currentTimeMillis() - start));
       System.out.println("Anzahl erzeugter Permutationen: " + count);
    }

@@ -3,17 +3,17 @@
 -- Berechne VIP_01 - Nacht 5...
 -- Combinations: 36288000 Possible: 7703 Not possible: 36280297 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
-
-==================================================================================================================================================
--- Berechne VIP_01 - Nacht 5 inkl. 1 Matchbox(en)...
--- Combinations: 36288000 Possible: 5587 Not possible: 36282413 (Intern constellation-add-pair checks: 98641010)
---------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Melina & Tommy... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 27,47% [2116]
 Nein => 72,53% [5587] <==
 Die Kombinationen reduzieren sich: 7703 => 5587
 
-Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+==================================================================================================================================================
+-- Berechne VIP_01 - Nacht 5 inkl. 1 Matchbox(en)...
+-- Combinations: 36288000 Possible: 5587 Not possible: 36282413 (Intern constellation-add-pair checks: 98641010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Sarah & Alex: 9,34%
 Steffi & Jamie: 9,68%
 Walentina & Josua: 0,00%

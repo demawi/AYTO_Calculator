@@ -16,7 +16,7 @@ MatchBox: Aurelia & Diogo verkauft. (Wahrscheinlichkeit für das Ausgang des Erg
 Ja   => 36,82% [18297]
 Nein => 63,18% [31401]
 
-Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Walentina & Salvatore: 9,92%
 Steffi & Alex: 12,75%
 Vanessa & Jamie: 11,11%

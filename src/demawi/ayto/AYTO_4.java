@@ -4,7 +4,7 @@ import demawi.ayto.modell.AYTO_Data;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
 import demawi.ayto.perm.AYTO_Permutator;
-import demawi.ayto.service.StandardMatchFinder;
+import demawi.ayto.print.DefaultMatchPrinter;
 
 import static demawi.ayto.modell.Pair.pair;
 
@@ -46,7 +46,7 @@ public class AYTO_4
   }
 
   public static void main(String[] args) {
-    new StandardMatchFinder().printDayResults(new AYTO_4());
+    new DefaultMatchPrinter().printDayResults(new AYTO_4());
   }
 
 }
