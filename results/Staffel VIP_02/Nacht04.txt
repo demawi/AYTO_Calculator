@@ -1,9 +1,9 @@
-Ein Mann ist hinzugekommen: Felix. Die Anzahl der Kombinationen erhöht sich damit!
 
 ==================================================================================================================================================
 -- Berechne VIP_02 - Nacht 3 inkl. 1 Matchbox(en) inkl. Matchingnight...
 -- Combinations: 3628800 Possible: 3586 Not possible: 3625214 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
+Ein Mann ist hinzugekommen: Felix. Die Anzahl der Kombinationen erhöht sich damit!
 Implizite Annahme durch neue Person: Luisa & Felix => No match!
 
 ==================================================================================================================================================
@@ -12,14 +12,15 @@ Implizite Annahme durch neue Person: Luisa & Felix => No match!
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Die Anzahl der Kombinationen hat sich verändert: 3586 => 32274
 
-==================================================================================================================================================
--- Berechne VIP_02 - Nacht 4 inkl. 1 Matchbox(en)...
--- Combinations: 36288000 Possible: 2700 Not possible: 36285300 (Intern constellation-add-pair checks: 98641010)
---------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Luisa & Lukas... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 8,37% [2700] <==
 Nein => 91,63% [29574]
 Die Kombinationen reduzieren sich: 32274 => 2700
+
+==================================================================================================================================================
+-- Berechne VIP_02 - Nacht 4 inkl. 1 Matchbox(en)...
+-- Combinations: 36288000 Possible: 2700 Not possible: 36285300 (Intern constellation-add-pair checks: 98641010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
 
 Es hat keine Matching Night stattgefunden!
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======

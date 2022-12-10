@@ -1,7 +1,6 @@
-package demawi.ayto.perm;
+package demawi.ayto.permutation;
 
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.function.BiFunction;
@@ -130,13 +129,5 @@ public abstract class AYTO_Permutator<F, M, R> {
   }
 
   protected abstract Set<R> decodePairs(Object[] constellation);
-
-  private Set<R> decodePairs(Integer[] setting) {
-    Set<R> result = new HashSet<>();
-    for (Integer number : setting) {
-      result.add(decodePair(number));
-    }
-    return result;
-  }
 
 }

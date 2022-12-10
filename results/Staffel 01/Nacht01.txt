@@ -1,49 +1,29 @@
-Eine Frau ist hinzugekommen: Ivana. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Aline. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Melissa. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Maddie. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Nadine. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Luisa. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Katharina. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Laura. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Michelle. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Sabrina. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Mo. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Kevin. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Dominic. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Laurin. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Elisha. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Juliano. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Axel. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: René. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Ferhat. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Aleks. Die Anzahl der Kombinationen erhöht sich damit!
 
 ==================================================================================================================================================
 -- Berechne 01 - Nacht 1...
 -- Combinations: 3628800 Possible: 3628800 Not possible: 0 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Die Anzahl der Kombinationen hat sich verändert: 0 => 3628800
 
-==================================================================================================================================================
--- Berechne 01 - Nacht 1 inkl. 1 Matchbox(en)...
--- Combinations: 3628800 Possible: 3265920 Not possible: 362880 (Intern constellation-add-pair checks: 62353010)
---------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Ivana & Mo... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 10,00% [362880]
 Nein => 90,00% [3265920] <==
 Die Kombinationen reduzieren sich: 3628800 => 3265920
 
-Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Aline & Kevin: 9,88%
-Melissa & Dominic: 9,88%
-Maddie & Laurin: 9,88%
-Nadine & Elisha: 9,88%
-Ivana & Juliano: 11,11%
+==================================================================================================================================================
+-- Berechne 01 - Nacht 1 inkl. 1 Matchbox(en)...
+-- Combinations: 3628800 Possible: 3265920 Not possible: 362880 (Intern constellation-add-pair checks: 62353010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Luisa & Axel: 9,88%
 Katharina & René: 9,88%
+Nadine & Elisha: 9,88%
 Laura & Ferhat: 9,88%
+Maddie & Laurin: 9,88%
 Michelle & Mo: 11,11%
+Aline & Kevin: 9,88%
+Ivana & Juliano: 11,11%
+Melissa & Dominic: 9,88%
 Sabrina & Aleks: 9,88%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:

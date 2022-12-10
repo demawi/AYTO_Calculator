@@ -5,7 +5,7 @@ import demawi.ayto.modell.Person;
 public class NewPerson
       implements Event {
 
-   private Person person;
+   public final Person person;
 
    public NewPerson(Person person) {
       this.person = person;

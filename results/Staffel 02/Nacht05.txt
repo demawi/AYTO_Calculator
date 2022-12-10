@@ -4,26 +4,27 @@
 -- Combinations: 36288000 Possible: 3810 Not possible: 36284190 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-==================================================================================================================================================
--- Berechne 02 - Nacht 5 inkl. 1 Matchbox(en)...
--- Combinations: 36288000 Possible: 1640 Not possible: 36286360 (Intern constellation-add-pair checks: 98641010)
---------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Leonie & Marcel... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 43,04% [1640] <==
 Nein => 56,96% [2170]
 Die Kombinationen reduzieren sich: 3810 => 1640
 
-Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Vanessa & Dominic: 34,15%
+==================================================================================================================================================
+-- Berechne 02 - Nacht 5 inkl. 1 Matchbox(en)...
+-- Combinations: 36288000 Possible: 1640 Not possible: 36286360 (Intern constellation-add-pair checks: 98641010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Leonie & Marcel: 100,00%
 Christin & Germain: 33,54%
-Jill & Sascha: 0,00%
-VanessaM & Marko: 10,00%
-Melissa & Marc: 0,61%
-Victoria & Dario: 73,17%
-Mirjam & Aaron: 0,61%
 Laura & Maximilian: 16,46%
 Kathleen & Marvin: 36,59%
+Jill & Sascha: 0,00%
+Melissa & Marc: 0,61%
+Vanessa & Dominic: 34,15%
+Victoria & Dario: 73,17%
+Mirjam & Aaron: 0,61%
+VanessaM & Marko: 10,00%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 0,00% [0]

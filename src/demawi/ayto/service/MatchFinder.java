@@ -1,7 +1,6 @@
 package demawi.ayto.service;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
@@ -14,11 +13,11 @@ import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
 import demawi.ayto.modell.Pair;
 import demawi.ayto.modell.Tag;
-import demawi.ayto.perm.AYTO_Permutator;
+import demawi.ayto.permutation.AYTO_Permutator;
 
 public class MatchFinder {
 
-   private CalculationOptions calcOptions;
+   private final CalculationOptions calcOptions;
 
    public MatchFinder(CalculationOptions calcOptions) {
       this.calcOptions = calcOptions;
@@ -27,7 +26,7 @@ public class MatchFinder {
    public AYTO_Result calculate(Consumer<String> out, boolean info) {
       long start = System.currentTimeMillis();
       AYTO_Result result = new AYTO_Result(calcOptions);
-      if (calcOptions.tagNr == 0) {
+      if (calcOptions.getTagNr() == 0) {
          return result;
       }
       AYTO_Data data = calcOptions.getData();
@@ -36,16 +35,14 @@ public class MatchFinder {
          breakLine(out);
          Tag tag = calcOptions.getTag();
          int anzahlMatchBoxen = calcOptions.getAnzahlMatchBoxen(tag.boxResults.size());
-         out.accept("-- Berechne " + data.name + " - Nacht " + calcOptions.tagNr + (
+         out.accept("-- Berechne " + data.name + " - Nacht " + calcOptions.getTagNr() + (
                anzahlMatchBoxen > 0 ? " inkl. " + anzahlMatchBoxen + " Matchbox(en)" : "")
-               + (calcOptions.mitMatchingNight ? " inkl. Matchingnight" : "") + "...");
+               + (calcOptions.isMitMatchingNight() ? " inkl. Matchingnight" : "") + "...");
       }
-
-      boolean debug = false;
 
       AYTO_Permutator<Frau, Mann, Pair> permutator = AYTO_Permutator.create(calcOptions.getFrauen(),
             calcOptions.getMaenner(), calcOptions.getZusatztype(), Pair::pair);
-      permutator.permutate(constellation -> result.addResult(test(constellation, debug), constellation));
+      permutator.permutate(constellation -> result.addResult(test(constellation), constellation));
       if (info) {
          out.accept(
                "-- Combinations: " + result.totalConstellations + " Possible: " + result.possible + " Not possible: "
@@ -69,12 +66,14 @@ public class MatchFinder {
    /**
     * Testet ob die übergebene Paar-Konstellation zu einem Widerspruch führt.
     */
-   public boolean test(Collection<Pair> constellation, boolean debug) {
-      for (int tagNr = 1; tagNr < calcOptions.tagNr + 1; tagNr++) {
-         Tag tag = calcOptions.getData().getTag(tagNr);
-         boolean istVorherigerTag = tagNr < calcOptions.tagNr; // wird komplett abgearbeitet
+   public boolean test(Collection<Pair> constellation) {
+      for (int tagNr = 1; tagNr <= calcOptions.getTagNr(); tagNr++) {
+         Tag tag = calcOptions.getData()
+               .getTag(tagNr);
+         boolean istVorherigerTag = tagNr < calcOptions.getTagNr(); // wird komplett abgearbeitet
 
-         int matchBoxes = istVorherigerTag ? tag.boxResults.size() : calcOptions.getAnzahlMatchBoxen(tag.boxResults.size());
+         int matchBoxes = istVorherigerTag ? tag.boxResults.size() : calcOptions.getAnzahlMatchBoxen(
+               tag.boxResults.size());
          if (matchBoxes > 0) {
             for (int matchBoxNr = 0; matchBoxNr < matchBoxes; matchBoxNr++) {
                MatchBoxResult matchBoxResult = tag.boxResults.get(matchBoxNr);
@@ -93,17 +92,13 @@ public class MatchFinder {
             }
          }
 
-         if (istVorherigerTag || calcOptions.mitMatchingNight) {
+         if (istVorherigerTag || calcOptions.isMitMatchingNight()) {
             MatchingNight night = tag.matchingNight;
             if (night != null) {
+               // TODO: this should not be necessary
                for (int nightNr = 0, l = night.constellation.size(); nightNr < l; nightNr++) {
-                  int lights = calcOptions.getData().getLights(constellation, night.constellation);
+                  int lights = AYTO_Result.getLights(constellation, night.constellation);
                   if (lights != night.lights) {
-                     if (debug) {
-                        System.out.println(
-                              "Falsch aufgrund von Matching Night Nr. " + (nightNr + 1) + " Erwartete Lichter: "
-                                    + lights + ". Es waren aber: " + night.lights);
-                     }
                      return false;
                   }
                }

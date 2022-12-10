@@ -27,11 +27,6 @@ public class Tag {
       return new Tag();
    }
 
-   public Tag(Pair boxPair, Boolean boxResult, MatchingNight matchingNight) {
-      matchBox(boxPair, boxResult);
-      this.matchingNight = matchingNight;
-   }
-
    public Tag implicitDerived(boolean b, Pair pair) {
       implicits.put(pair, b);
       return this;
@@ -50,6 +45,10 @@ public class Tag {
          events.add(matchBoxResult);
       }
       return this;
+
+   }
+   public Tag matchBox(Boolean perfectMatch, Pair matchingPair) {
+      return matchBox(matchingPair, perfectMatch);
    }
 
    public Tag matchNight(Integer lights, Pair... pairs) {
@@ -61,5 +60,9 @@ public class Tag {
    public Tag noMatchingNight() {
       // Nothing to do
       return this;
+   }
+
+   public List<Event> getEvents() {
+      return events;
    }
 }

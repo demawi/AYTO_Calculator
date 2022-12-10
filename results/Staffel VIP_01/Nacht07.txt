@@ -4,25 +4,26 @@
 -- Combinations: 36288000 Possible: 319 Not possible: 36287681 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-==================================================================================================================================================
--- Berechne VIP_01 - Nacht 7 inkl. 1 Matchbox(en)...
--- Combinations: 36288000 Possible: 134 Not possible: 36287866 (Intern constellation-add-pair checks: 98641010)
---------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Finnja & Eugen... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 57,99% [185]
 Nein => 42,01% [134] <==
 Die Kombinationen reduzieren sich: 319 => 134
 
-Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Jill & Eugen: 8,96%
-Walentina & Salvatore: 5,22%
-Melina & Tommy: 0,00%
+==================================================================================================================================================
+-- Berechne VIP_01 - Nacht 7 inkl. 1 Matchbox(en)...
+-- Combinations: 36288000 Possible: 134 Not possible: 36287866 (Intern constellation-add-pair checks: 98641010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Jules & Francesco: 100,00%
-Kathleen & Manuel: 66,42%
 Aurelia & Danilo: 13,43%
-Sarah & Josua: 35,07%
-Jacky & Alex: 2,99%
 Finnja & Jamie: 11,19%
+Jacky & Alex: 2,99%
+Jill & Eugen: 8,96%
+Kathleen & Manuel: 66,42%
+Melina & Tommy: 0,00%
+Sarah & Josua: 35,07%
+Walentina & Salvatore: 5,22%
 Vanessa & Diogo: 44,03%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:

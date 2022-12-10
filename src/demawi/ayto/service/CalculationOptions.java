@@ -2,26 +2,21 @@ package demawi.ayto.service;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Map;
-import java.util.function.Consumer;
 
-import demawi.ayto.Formatter;
-import demawi.ayto.events.MatchBoxResult;
 import demawi.ayto.events.MatchingNight;
 import demawi.ayto.modell.AYTO_Data;
-import demawi.ayto.modell.AYTO_Result;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
 import demawi.ayto.modell.Pair;
 import demawi.ayto.modell.Tag;
-import demawi.ayto.perm.AYTO_Permutator;
+import demawi.ayto.permutation.AYTO_Permutator;
 
 public class CalculationOptions {
 
    private final AYTO_Data data;
-   public final int tagNr;
+   private final int tagNr;
    private final int mitAnzahlMatchBoxen;
-   public final boolean mitMatchingNight;
+   private final boolean mitMatchingNight;
 
    public CalculationOptions(AYTO_Data data, int tagNr, int mitAnzahlMatchBoxen, boolean mitMatchingNight) {
       this.data = data;
@@ -36,6 +31,14 @@ public class CalculationOptions {
 
    public int getAnzahlMatchBoxen(int maxMatchBoxResults) {
       return Math.min(mitAnzahlMatchBoxen, maxMatchBoxResults);
+   }
+
+   public boolean isMitMatchingNight() {
+      return mitMatchingNight;
+   }
+
+   public int getTagNr() {
+      return tagNr;
    }
 
    public Tag getTag() {

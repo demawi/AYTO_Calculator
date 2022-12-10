@@ -21,6 +21,7 @@ public class AllOutPrinter {
    public static void print(AYTO_Data... staffeln)
          throws Exception {
       for (AYTO_Data staffel : staffeln) {
+         staffel.checkAllDayConsistency();
          File directory = new File("./results/Staffel " + staffel.name);
          System.out.println(directory.getAbsoluteFile());
          directory.mkdirs();

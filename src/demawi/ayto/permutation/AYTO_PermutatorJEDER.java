@@ -1,6 +1,7 @@
-package demawi.ayto.perm;
+package demawi.ayto.permutation;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.function.BiFunction;
@@ -56,7 +57,7 @@ public class AYTO_PermutatorJEDER<F, M, R>
       if (constellation.length < maxSize + 1) {
          return null;
       }
-      Set<R> result = new HashSet<>();
+      Set<R> result = new LinkedHashSet<>();
       for (int i = 1, l = constellation.length; i < l; i++) {
          result.add(decodePair((Integer) constellation[i]));
       }

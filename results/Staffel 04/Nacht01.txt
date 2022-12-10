@@ -1,48 +1,28 @@
-Eine Frau ist hinzugekommen: Valeria. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Dorna. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Aurelia. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Henna. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Juliette. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Larissa. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Carina. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Stefanie. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Vanessa. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Caroline. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Marwin. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Kenneth. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Barkin. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Joel. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Ken. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Deniz. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Sasa. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Burim. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Maximilian. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Pascal. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Christopher. Die Anzahl der Kombinationen erhöht sich damit!
 
 ==================================================================================================================================================
 -- Berechne 04 - Nacht 1...
 -- Combinations: 199584000 Possible: 199584000 Not possible: 0 (Intern constellation-add-pair checks: 2590967010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Die Anzahl der Kombinationen hat sich verändert: 0 => 199584000
 
-==================================================================================================================================================
--- Berechne 04 - Nacht 1 inkl. 1 Matchbox(en)...
--- Combinations: 199584000 Possible: 179625600 Not possible: 19958400 (Intern constellation-add-pair checks: 2590967010)
---------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Valeria & Marwin... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 10,00% [19958400]
 Nein => 90,00% [179625600] <==
 Die Kombinationen reduzieren sich: 199584000 => 179625600
 
 ==================================================================================================================================================
--- Berechne 04 - Nacht 1 inkl. 2 Matchbox(en)...
--- Combinations: 199584000 Possible: 161844480 Not possible: 37739520 (Intern constellation-add-pair checks: 2590967010)
+-- Berechne 04 - Nacht 1 inkl. 1 Matchbox(en)...
+-- Combinations: 199584000 Possible: 179625600 Not possible: 19958400 (Intern constellation-add-pair checks: 2590967010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
+
 MatchBox: Dorna & Kenneth... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 9,90% [17781120]
 Nein => 90,10% [161844480] <==
 Die Kombinationen reduzieren sich: 179625600 => 161844480
+
+==================================================================================================================================================
+-- Berechne 04 - Nacht 1 inkl. 2 Matchbox(en)...
+-- Combinations: 199584000 Possible: 161844480 Not possible: 37739520 (Intern constellation-add-pair checks: 2590967010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
 
 Es hat keine Matching Night stattgefunden!
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======

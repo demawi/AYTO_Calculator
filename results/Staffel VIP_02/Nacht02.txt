@@ -4,26 +4,27 @@
 -- Combinations: 3628800 Possible: 205176 Not possible: 3423624 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-==================================================================================================================================================
--- Berechne VIP_02 - Nacht 2 inkl. 1 Matchbox(en)...
--- Combinations: 3628800 Possible: 144921 Not possible: 3483879 (Intern constellation-add-pair checks: 62353010)
---------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Karina & Pharrell... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 29,37% [60255]
 Nein => 70,63% [144921] <==
 Die Kombinationen reduzieren sich: 205176 => 144921
 
-Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Zoe & Lukas: 7,46%
-Celina & Max: 6,73%
-Gina & Amadu: 7,02%
-Luisa & Calvin: 7,02%
-Karina & Fabio: 11,06%
+==================================================================================================================================================
+-- Berechne VIP_02 - Nacht 2 inkl. 1 Matchbox(en)...
+-- Combinations: 3628800 Possible: 144921 Not possible: 3483879 (Intern constellation-add-pair checks: 62353010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Ricarda & Maurice: 32,62%
 Isabelle & Martin: 7,46%
-Cecilia & Pharrell: 11,06%
-Franziska & Luca: 6,73%
 Anna & Michael: 32,62%
+Gina & Amadu: 7,02%
+Luisa & Calvin: 7,02%
+Franziska & Luca: 6,73%
+Celina & Max: 6,73%
+Zoe & Lukas: 7,46%
+Karina & Fabio: 11,06%
+Cecilia & Pharrell: 11,06%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 25,67% [37196]

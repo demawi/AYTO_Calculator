@@ -8,17 +8,17 @@ MatchBox: Jill & Maximilian verkauft. (Wahrscheinlichkeit für das Ausgang des E
 Ja   => 0,00% [0]
 Nein => 100,00% [608153]
 
-Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Sabrina & Marko: 19,51%
-Christin & Maximilian: 21,95%
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Leonie & Marcel: 8,86%
 Kathleen & Aaron: 19,51%
 Jill & Sascha: 9,76%
-Victoria & Germain: 8,86%
 Melissa & Dominic: 19,51%
-Mirjam & Marc: 19,51%
-Laura & Dario: 8,86%
 Vanessa & Marvin: 8,69%
+Victoria & Germain: 8,86%
+Christin & Maximilian: 21,95%
+Mirjam & Marc: 19,51%
+Sabrina & Marko: 19,51%
+Laura & Dario: 8,86%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 17,68% [107522]

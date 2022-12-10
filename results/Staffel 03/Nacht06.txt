@@ -4,26 +4,27 @@
 -- Combinations: 36288000 Possible: 1924 Not possible: 36286076 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-==================================================================================================================================================
--- Berechne 03 - Nacht 6 inkl. 1 Matchbox(en)...
--- Combinations: 36288000 Possible: 1859 Not possible: 36286141 (Intern constellation-add-pair checks: 98641010)
---------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Jessica & Max... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 3,38% [65]
 Nein => 96,62% [1859] <==
 Die Kombinationen reduzieren sich: 1924 => 1859
 
-Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Joelina & Tim: 1,08%
-Isabelle & Dustin: 16,46%
-Raphaela & William: 7,80%
-Estelle & Mike: 8,93%
+==================================================================================================================================================
+-- Berechne 03 - Nacht 6 inkl. 1 Matchbox(en)...
+-- Combinations: 36288000 Possible: 1859 Not possible: 36286141 (Intern constellation-add-pair checks: 98641010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Dana & Antonino: 3,77%
-Marie & Andre: 5,16%
-Zaira & Marius: 5,65%
+Estelle & Mike: 8,93%
+Isabelle & Dustin: 16,46%
 Jessica & Leon: 46,21%
-Desiree & Jordi: 8,34%
+Joelina & Tim: 1,08%
 Kerstin & Max: 33,03%
+Marie & Andre: 5,16%
+Raphaela & William: 7,80%
+Zaira & Marius: 5,65%
+Desiree & Jordi: 8,34%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 5,43% [101]
@@ -58,15 +59,3 @@ Tim        5,26 % (0)  15,79 % (1)    -     (0)    -     (0)  10,53 % (1)  10,53
 William   21,05 % (4)   5,26 % (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (1)    -     (0)  78,95 % (5)    -     (0)  
 
 Mögliche Paare: 53/110
-
-==== Tracking der Perfect Matches im Verlauf ====
-Estelle & Jordi => 57,89%
-Zaira & Marius => 57,89%
-Monami & Max => 47,37%
-Isabelle & Andre => 68,42%
-Dana & Antonino => 57,89%
-Joelina & Mike => 68,42%
-Raphaela & William => 78,95%
-Marie & Dustin => 42,11%
-Kerstin & Tim => 63,16%
-Jessica & Leon => 73,68%

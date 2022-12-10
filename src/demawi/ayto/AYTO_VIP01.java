@@ -3,80 +3,88 @@ package demawi.ayto;
 import demawi.ayto.modell.AYTO_Data;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
-import demawi.ayto.perm.AYTO_Permutator;
+import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.print.DefaultMatchPrinter;
 
 import static demawi.ayto.modell.Pair.pair;
 
 public class AYTO_VIP01
       extends AYTO_Data {
-  
-  private static Frau Steffi = frau("Steffi");
-  private static Frau Jill = frau("Jill");
-  private static Frau Walentina = frau("Walentina");
-  private static Frau Kathleen = frau("Kathleen");
-  private static Frau Finnja = frau("Finnja");
-  private static Frau Aurelia = frau("Aurelia");
-  private static Frau Jacky = frau("Jacky");
-  private static Frau Jules = frau("Jules");
-  private static Frau Melina = frau("Melina");
-  private static Frau Sarah = frau("Sarah");
-  private static Frau Vanessa = frau("Vanessa");
 
-  private static Mann Danilo = mann("Danilo");
-  private static Mann Jamie = mann("Jamie");
-  private static Mann Eugen = mann("Eugen");
-  private static Mann Manuel = mann("Manuel");
-  private static Mann Francesco = mann("Francesco");
-  private static Mann Diogo = mann("Diogo");
-  private static Mann Salvatore = mann("Salvatore");
-  private static Mann Alex = mann("Alex");
-  private static Mann Tommy = mann("Tommy");
-  private static Mann Josua = mann("Josua");
+  private final Frau Steffi = frau("Steffi");
+  private final Frau Jill = frau("Jill");
+  private final Frau Walentina = frau("Walentina");
+  private final Frau Kathleen = frau("Kathleen");
+  private final Frau Finnja = frau("Finnja");
+  private final Frau Aurelia = frau("Aurelia");
+  private final Frau Jacky = frau("Jacky");
+  private final Frau Jules = frau("Jules");
+  private final Frau Melina = frau("Melina");
+  private final Frau Sarah = frau("Sarah");
+  private final Frau Vanessa = frau("Vanessa");
+
+  private final Mann Danilo = mann("Danilo");
+  private final Mann Jamie = mann("Jamie");
+  private final Mann Eugen = mann("Eugen");
+  private final Mann Manuel = mann("Manuel");
+  private final Mann Francesco = mann("Francesco");
+  private final Mann Diogo = mann("Diogo");
+  private final Mann Salvatore = mann("Salvatore");
+  private final Mann Alex = mann("Alex");
+  private final Mann Tommy = mann("Tommy");
+  private final Mann Josua = mann("Josua");
 
   public AYTO_VIP01() {
     super("VIP_01", AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER);
 
-    add(false, pair(Finnja, Danilo), 3, pair(Steffi, Danilo), pair(Jill, Jamie), pair(Walentina, Eugen),
-          pair(Kathleen, Manuel), pair(Finnja, Francesco), pair(Aurelia, Diogo), pair(Jacky, Salvatore),
-          pair(Jules, Alex), pair(Melina, Tommy), pair(Sarah, Josua));
+    newTag().matchBox(pair(Finnja, Danilo), false)
+          .matchNight(3, pair(Steffi, Danilo), pair(Jill, Jamie), pair(Walentina, Eugen), pair(Kathleen, Manuel),
+                pair(Finnja, Francesco), pair(Aurelia, Diogo), pair(Jacky, Salvatore), pair(Jules, Alex),
+                pair(Melina, Tommy), pair(Sarah, Josua));
 
     // Keine Matching Night
-    add(true, pair(Jules, Francesco), 0, null);
+    newTag().matchBox(pair(Jules, Francesco), true);
 
-    add(false, pair(Walentina, Tommy), 3, pair(Jules, Francesco), pair(Steffi, Eugen), pair(Jill, Jamie),
-          pair(Walentina, Josua), pair(Kathleen, Manuel), pair(Finnja, Alex), pair(Aurelia, Diogo),
-          pair(Jacky, Salvatore), pair(Sarah, Danilo), pair(Melina, Tommy));
+    newTag().matchBox(pair(Walentina, Tommy), false)
+          .matchNight(3, pair(Jules, Francesco), pair(Steffi, Eugen), pair(Jill, Jamie), pair(Walentina, Josua),
+                pair(Kathleen, Manuel), pair(Finnja, Alex), pair(Aurelia, Diogo), pair(Jacky, Salvatore),
+                pair(Sarah, Danilo), pair(Melina, Tommy));
 
-    addTag().matchBox(pair(Aurelia, Diogo), null)
+    newTag().addNew(Vanessa)
+          .matchBox(pair(Aurelia, Diogo), null)
           .matchNight(4, pair(Jules, Francesco), pair(Aurelia, Diogo), pair(Finnja, Eugen), pair(Jill, Tommy),
                 pair(Kathleen, Manuel), pair(Melina, Danilo), pair(Sarah, Josua), pair(Steffi, Alex),
-                pair(Walentina, Salvatore), pair(Vanessa, Jamie))
-          .addNew(Vanessa);
+                pair(Walentina, Salvatore), pair(Vanessa, Jamie));
 
-    add(false, pair(Melina, Tommy), 3, pair(Jules, Francesco), pair(Aurelia, Danilo), pair(Finnja, Eugen),
-          pair(Jill, Manuel), pair(Kathleen, Salvatore), pair(Melina, Tommy), pair(Sarah, Alex), pair(Steffi, Jamie),
-          pair(Walentina, Josua), pair(Vanessa, Diogo));
+    newTag().matchBox(pair(Melina, Tommy), false)
+          .matchNight(3, pair(Jules, Francesco), pair(Aurelia, Danilo), pair(Finnja, Eugen), pair(Jill, Manuel),
+                pair(Kathleen, Salvatore), pair(Melina, Tommy), pair(Sarah, Alex), pair(Steffi, Jamie),
+                pair(Walentina, Josua), pair(Vanessa, Diogo));
 
-    add(false, pair(Finnja, Salvatore), 3, pair(Jules, Francesco), pair(Finnja, Eugen), pair(Jacky, Salvatore),
-          pair(Kathleen, Manuel), pair(Steffi, Alex), pair(Jill, Danilo), pair(Sarah, Jamie), pair(Walentina, Josua),
-          pair(Melina, Tommy), pair(Aurelia, Diogo));
+    newTag().matchBox(false, pair(Finnja, Salvatore))
+          .matchNight(3, pair(Jules, Francesco), pair(Finnja, Eugen), pair(Jacky, Salvatore), pair(Kathleen, Manuel),
+                pair(Steffi, Alex), pair(Jill, Danilo), pair(Sarah, Jamie), pair(Walentina, Josua), pair(Melina, Tommy),
+                pair(Aurelia, Diogo));
 
-    add(false, pair(Finnja, Eugen), 2, pair(Jules, Francesco), pair(Aurelia, Danilo), pair(Finnja, Jamie),
-          pair(Jacky, Alex), pair(Jill, Eugen), pair(Kathleen, Manuel), pair(Melina, Tommy), pair(Sarah, Josua),
-          pair(Walentina, Salvatore), pair(Vanessa, Diogo));
+    newTag().matchBox(false, pair(Finnja, Eugen))
+          .matchNight(2, pair(Jules, Francesco), pair(Aurelia, Danilo), pair(Finnja, Jamie), pair(Jacky, Alex),
+                pair(Jill, Eugen), pair(Kathleen, Manuel), pair(Melina, Tommy), pair(Sarah, Josua),
+                pair(Walentina, Salvatore), pair(Vanessa, Diogo));
 
-    add(false, pair(Steffi, Eugen), 1, pair(Jules, Francesco), pair(Aurelia, Danilo), pair(Finnja, Manuel),
-          pair(Jacky, Eugen), pair(Jill, Salvatore), pair(Melina, Alex), pair(Sarah, Jamie), pair(Walentina, Josua),
-          pair(Vanessa, Diogo), pair(Steffi, Tommy));
+    newTag().matchBox(false, pair(Steffi, Eugen))
+          .matchNight(1, pair(Jules, Francesco), pair(Aurelia, Danilo), pair(Finnja, Manuel), pair(Jacky, Eugen),
+                pair(Jill, Salvatore), pair(Melina, Alex), pair(Sarah, Jamie), pair(Walentina, Josua),
+                pair(Vanessa, Diogo), pair(Steffi, Tommy));
 
-    add(false, pair(Melina, Tommy), 4, pair(Jules, Francesco), pair(Aurelia, Diogo), pair(Finnja, Tommy),
-          pair(Jill, Danilo), pair(Kathleen, Manuel), pair(Melina, Eugen), pair(Sarah, Alex),
-          pair(Walentina, Salvatore), pair(Vanessa, Josua), pair(Steffi, Jamie));
+    newTag().matchBox(false, pair(Melina, Tommy))
+          .matchNight(4, pair(Jules, Francesco), pair(Aurelia, Diogo), pair(Finnja, Tommy), pair(Jill, Danilo),
+                pair(Kathleen, Manuel), pair(Melina, Eugen), pair(Sarah, Alex), pair(Walentina, Salvatore),
+                pair(Vanessa, Josua), pair(Steffi, Jamie));
 
-    add(true, pair(Aurelia, Josua), 7, pair(Jules, Francesco), pair(Aurelia, Josua), pair(Finnja, Tommy),
-          pair(Jill, Diogo), pair(Kathleen, Manuel), pair(Sarah, Danilo), pair(Walentina, Eugen), pair(Vanessa, Alex),
-          pair(Steffi, Jamie), pair(Jacky, Salvatore));
+    newTag().matchBox(true, pair(Aurelia, Josua))
+          .matchNight(7, pair(Jules, Francesco), pair(Aurelia, Josua), pair(Finnja, Tommy), pair(Jill, Diogo),
+                pair(Kathleen, Manuel), pair(Sarah, Danilo), pair(Walentina, Eugen), pair(Vanessa, Alex),
+                pair(Steffi, Jamie), pair(Jacky, Salvatore));
 
     // falsch: Finnja&Tommy, Jill&Diogo, Sarah&Danilo... Richtig: Finnja&Diogo, Jill&Tommy, Sara&Alex, Melina&Danilo
 

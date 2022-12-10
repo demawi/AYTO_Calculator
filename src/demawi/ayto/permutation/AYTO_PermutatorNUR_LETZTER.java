@@ -1,6 +1,7 @@
-package demawi.ayto.perm;
+package demawi.ayto.permutation;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.function.BiFunction;
@@ -16,8 +17,8 @@ public class AYTO_PermutatorNUR_LETZTER<F, M, R>
    }
 
    // these will be reused
-   private Set<Integer> addedFrauen = new HashSet<>();
-   private Set<Integer> addedMaenner = new HashSet<>();
+   private final Set<Integer> addedFrauen = new LinkedHashSet<>();
+   private final Set<Integer> addedMaenner = new LinkedHashSet<>();
 
    /**
     * Prüft, ob ein Paar wirklich zu der bisherigen Konstellation hinzugefügt werden kann.
@@ -69,7 +70,7 @@ public class AYTO_PermutatorNUR_LETZTER<F, M, R>
       if (constellation.length < maxSize) {
          return null;
       }
-      Set<R> result = new HashSet<>();
+      Set<R> result = new LinkedHashSet<>();
       for (Object number : constellation) {
          result.add(decodePair((Integer) number));
       }

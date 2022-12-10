@@ -1,15 +1,16 @@
 package demawi.ayto.modell;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import demawi.ayto.perm.AYTO_Permutator;
+import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.events.MatchingNight;
 import demawi.ayto.service.CalculationOptions;
-import demawi.ayto.service.MatchFinder;
 
 public class AYTO_Result {
 
@@ -79,12 +80,15 @@ public class AYTO_Result {
   }
 
   /**
-   * Fügt die Konsteallation als gültig ein.
+   * Fügt die Konstellation als gültig ein.
+   *
+   * Diese werden nur noch für die Aggregations-Statistiken eingefügt und nicht
+   * mehr komplett in einer Liste gehalten, da es bei 199mio Einträgen zu viel
+   * Speicher kostet.
    */
-  public void addPossible(Set<Pair> pairs) {
+  private void addPossible(Set<Pair> pairs) {
     if(lightResults != null) {
-      lightResults[calcOptions.getData()
-            .getLights(pairs, matchingNightConstellation)]++;
+      lightResults[AYTO_Result.getLights(pairs, matchingNightConstellation)]++;
     }
 
     // directly update pair-,frau-,mannCount
@@ -98,18 +102,28 @@ public class AYTO_Result {
 
       Set<Mann> frauSet = frauCount.get(current.frau);
       if (frauSet == null) {
-        frauSet = new HashSet<>();
+        frauSet = new LinkedHashSet<>();
         frauCount.put(current.frau, frauSet);
       }
       frauSet.add(current.mann);
 
       Set<Frau> mannSet = mannCount.get(current.mann);
       if (mannSet == null) {
-        mannSet = new HashSet<>();
+        mannSet = new LinkedHashSet<>();
         mannCount.put(current.mann, mannSet);
       }
       mannSet.add(current.frau);
     }
+  }
+
+  public static int getLights(Collection<Pair> assumptionModell, Collection<Pair> testConstellation) {
+    int lights = 0;
+    for (Pair pair : testConstellation) {
+      if (assumptionModell.contains(pair)) {
+        lights++;
+      }
+    }
+    return lights;
   }
 
   public int[] getLightResultsForLastMatchingNight() {

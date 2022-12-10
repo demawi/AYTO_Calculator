@@ -8,16 +8,16 @@ MatchBox: Laura & Dario verkauft. (Wahrscheinlichkeit für das Ausgang des Ergeb
 Ja   => 0,70% [6]
 Nein => 99,30% [850]
 
-Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Sabrina & Marko: 36,80%
-Laura & Marvin: 17,64%
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Leonie & Marcel: 100,00%
+Melissa & Aaron: 77,92%
+Victoria & Germain: 0,00%
 Christin & Maximilian: 6,43%
 Vanessa & Dominic: 37,73%
-Leonie & Marcel: 100,00%
-Jill & Sascha: 0,00%
-Victoria & Germain: 0,00%
-Melissa & Aaron: 77,92%
 Mirjam & Marc: 56,07%
+Sabrina & Marko: 36,80%
+Laura & Marvin: 17,64%
+Jill & Sascha: 0,00%
 VanessaM & Dario: 10,63%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:

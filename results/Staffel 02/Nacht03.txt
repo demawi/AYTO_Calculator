@@ -4,26 +4,27 @@
 -- Combinations: 3628800 Possible: 170886 Not possible: 3457914 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-==================================================================================================================================================
--- Berechne 02 - Nacht 3 inkl. 1 Matchbox(en)...
--- Combinations: 3628800 Possible: 125268 Not possible: 3503532 (Intern constellation-add-pair checks: 62353010)
---------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Kathleen & Aaron... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 26,69% [45618]
 Nein => 73,31% [125268] <==
 Die Kombinationen reduzieren sich: 170886 => 125268
 
-Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Vanessa & Dominic: 7,68%
-Christin & Germain: 7,54%
+==================================================================================================================================================
+-- Berechne 02 - Nacht 3 inkl. 1 Matchbox(en)...
+-- Combinations: 3628800 Possible: 125268 Not possible: 3503532 (Intern constellation-add-pair checks: 62353010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Laura & Marcel: 13,61%
 Melissa & Aaron: 10,13%
-Mirjam & Marko: 6,34%
-Leonie & Marc: 7,90%
-Jill & Maximilian: 0,00%
-Victoria & Dario: 13,61%
 Sabrina & Sascha: 7,58%
+Vanessa & Dominic: 7,68%
 Kathleen & Marvin: 11,50%
+Christin & Germain: 7,54%
+Jill & Maximilian: 0,00%
+Leonie & Marc: 7,90%
+Mirjam & Marko: 6,34%
+Victoria & Dario: 13,61%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 41,59% [52095]

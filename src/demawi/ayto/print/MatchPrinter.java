@@ -13,6 +13,7 @@ public abstract class MatchPrinter {
    }
 
    public void printDayResults(AYTO_Data data) {
+      data.checkAllDayConsistency();
       printDayResults(data, data.getAnzahlTage());
    }
 

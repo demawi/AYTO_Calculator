@@ -1,4 +1,4 @@
-package demawi.ayto.perm;
+package demawi.ayto.permutation;
 
 import java.util.Arrays;
 import java.util.List;

@@ -4,25 +4,26 @@
 -- Combinations: 36288000 Possible: 15 Not possible: 36287985 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-==================================================================================================================================================
--- Berechne VIP_01 - Nacht 10 inkl. 1 Matchbox(en)...
--- Combinations: 36288000 Possible: 6 Not possible: 36287994 (Intern constellation-add-pair checks: 98641010)
---------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Aurelia & Josua... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 40,00% [6] <==
 Nein => 60,00% [9]
 Die Kombinationen reduzieren sich: 15 => 6
 
-Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Jill & Diogo: 0,00%
-Sarah & Danilo: 0,00%
+==================================================================================================================================================
+-- Berechne VIP_01 - Nacht 10 inkl. 1 Matchbox(en)...
+-- Combinations: 36288000 Possible: 6 Not possible: 36287994 (Intern constellation-add-pair checks: 98641010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Jules & Francesco: 100,00%
 Aurelia & Josua: 100,00%
+Finnja & Tommy: 0,00%
+Jill & Diogo: 0,00%
+Kathleen & Manuel: 100,00%
+Sarah & Danilo: 0,00%
+Walentina & Eugen: 100,00%
 Vanessa & Alex: 16,67%
 Steffi & Jamie: 100,00%
-Jules & Francesco: 100,00%
-Finnja & Tommy: 0,00%
-Kathleen & Manuel: 100,00%
-Walentina & Eugen: 100,00%
 Jacky & Salvatore: 100,00%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:

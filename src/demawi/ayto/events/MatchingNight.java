@@ -3,6 +3,7 @@ package demawi.ayto.events;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import demawi.ayto.modell.Frau;
@@ -27,12 +28,12 @@ public class MatchingNight implements Event {
     }
     validatePairs(constellation);
     this.lights = lights;
-    this.constellation = new HashSet<>(constellation);
+    this.constellation = new LinkedHashSet<>(constellation);
   }
 
   public static void validatePairs(Pair... constellation) {
-    Set<Frau> frauen = new HashSet<>();
-    Set<Mann> maenner = new HashSet<>();
+    Set<Frau> frauen = new LinkedHashSet<>();
+    Set<Mann> maenner = new LinkedHashSet<>();
     for (Pair pair : constellation) {
       frauen.add(pair.frau);
       maenner.add(pair.mann);
@@ -46,8 +47,8 @@ public class MatchingNight implements Event {
   }
 
   public static void validatePairs(Collection<Pair> constellation) {
-    Set<Frau> frauen = new HashSet<>();
-    Set<Mann> maenner = new HashSet<>();
+    Set<Frau> frauen = new LinkedHashSet<>();
+    Set<Mann> maenner = new LinkedHashSet<>();
     for (Pair pair : constellation) {
       frauen.add(pair.frau);
       maenner.add(pair.mann);

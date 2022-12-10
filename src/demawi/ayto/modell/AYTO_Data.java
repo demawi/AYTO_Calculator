@@ -2,13 +2,14 @@ package demawi.ayto.modell;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 import java.util.function.Consumer;
 
+import demawi.ayto.events.Event;
 import demawi.ayto.events.MatchBoxResult;
 import demawi.ayto.events.MatchingNight;
-import demawi.ayto.perm.AYTO_Permutator;
+import demawi.ayto.events.NewPerson;
+import demawi.ayto.permutation.AYTO_Permutator;
 
 public class AYTO_Data {
 
@@ -16,13 +17,24 @@ public class AYTO_Data {
   private AYTO_Permutator.ZUSATZTYPE zusatztype;
   private List<Tag> tage = new ArrayList<>();
   public List<Pair> pairsToTrack;
+  public List<Frau> initialFrauen = new ArrayList<>();
+  public List<Mann> initialMaenner = new ArrayList<>();
+  private boolean checkedConsistency = false;
 
-  protected static Frau frau(String name) {
-    return new Frau(name);
+  protected Frau frau(String name) {
+    Frau frau = new Frau(name);
+    if (initialFrauen.size() < 10) {
+      initialFrauen.add(frau);
+    }
+    return frau;
   }
 
-  protected static Mann mann(String name) {
-    return new Mann(name);
+  protected Mann mann(String name) {
+    Mann mann = new Mann(name);
+    if (initialMaenner.size() < 10) {
+      initialMaenner.add(mann);
+    }
+    return mann;
   }
 
   public AYTO_Data(String name, AYTO_Permutator.ZUSATZTYPE zusatztype) {
@@ -30,19 +42,14 @@ public class AYTO_Data {
     this.zusatztype = zusatztype;
   }
 
-  public void track(Pair... pairs) {
-    this.pairsToTrack = Arrays.asList(pairs);
-  }
-
-  public Tag add(Tag tag) {
-    tage.add(tag);
-    return tag;
-  }
-
-  public Tag addTag() {
+  protected Tag newTag() {
     Tag tag = Tag.create();
     tage.add(tag);
     return tag;
+  }
+
+  public AYTO_Permutator.ZUSATZTYPE getZusatztype() {
+    return zusatztype;
   }
 
   public Tag getTag(int index) {
@@ -57,10 +64,68 @@ public class AYTO_Data {
     return tage;
   }
 
-  public Tag add(Boolean b, Pair pair, int i, Pair... pairs) {
-    Tag tag = new Tag(pair, b, pairs == null ? null : new MatchingNight(i, Arrays.asList(pairs)));
-    tage.add(tag);
-    return tag;
+  public void track(Pair... pairs) {
+    this.pairsToTrack = Arrays.asList(pairs);
+  }
+
+  private int currentConsistenceDay = 0;
+
+  public void checkAllDayConsistency() {
+    if (checkedConsistency) {
+      return;
+    }
+    checkedConsistency = true;
+    List<Frau> curFrauen = new ArrayList<>(initialFrauen);
+    List<Mann> curMaenner = new ArrayList<>(initialMaenner);
+    Consumer<Person> checkPerson = (person) -> {
+      if (person != null) {
+        if (person instanceof Frau) {
+          if (!curFrauen.contains(person)) {
+            throw new IllegalStateException(
+                  "Frau existiert noch nicht rechtzeitig: " + person + " an Tag " + (currentConsistenceDay + 1));
+          }
+        }
+        else { // Mann
+          if (!curMaenner.contains(person)) {
+            throw new IllegalStateException(
+                  "Mann existiert noch nicht rechtzeitig: " + person + " an Tag " + (currentConsistenceDay + 1));
+          }
+        }
+      }
+    };
+    for (int i = 0, l = tage.size(); i < l; i++) {
+      Tag tag = tage.get(i);
+      currentConsistenceDay = i;
+      for (Event evt : tag.getEvents()) {
+        if (evt instanceof NewPerson) {
+          NewPerson event = (NewPerson) evt;
+          if (event.person != null) {
+            if (event.person instanceof Frau) {
+              curFrauen.add((Frau) event.person);
+            }
+            else {
+              curMaenner.add((Mann) event.person);
+            }
+          }
+        }
+        else if (evt instanceof MatchBoxResult) {
+          MatchBoxResult event = (MatchBoxResult) evt;
+          checkPerson.accept(event.pair.frau);
+          checkPerson.accept(event.pair.mann);
+        }
+        else if (evt instanceof MatchingNight) {
+          MatchingNight event = (MatchingNight) evt;
+          for (Pair pair : event.constellation) {
+            checkPerson.accept(pair.frau);
+            checkPerson.accept(pair.mann);
+          }
+        }
+        else {
+          throw new IllegalArgumentException("Event-Klasse kann noch nicht verarbeitet werden: " + evt.getClass()
+                .getSimpleName());
+        }
+      }
+    }
   }
 
   public List<Frau> getFrauen(int tag) {
@@ -105,20 +170,6 @@ public class AYTO_Data {
         }
       }
     }
-  }
-
-  public int getLights(Collection<Pair> assumptionModell, Collection<Pair> testConstellation) {
-    int lights = 0;
-    for (Pair pair : testConstellation) {
-      if (assumptionModell.contains(pair)) {
-        lights++;
-      }
-    }
-    return lights;
-  }
-
-  public AYTO_Permutator.ZUSATZTYPE getZusatztype() {
-    return zusatztype;
   }
 
   public void preProcess(Consumer<String> out, int tagNr) {

@@ -33,7 +33,10 @@ public class DefaultMatchPrinter
 
     // Kombinationsänderungen, wenn Leute hinzugekommen sind
     AYTO_Result resultDesVortages = null;
-    if (frauen.size() > frauenBefore.size() || maenner.size() > maennerBefore.size()) {
+    if (tagNr > 1 && (frauen.size() > frauenBefore.size() || maenner.size() > maennerBefore.size())) {
+      // Falls neue Personen hinzugekommen sind: Berechnung des Ende des Vortages
+      resultDesVortages = calculate(data, tagNr - 1, Integer.MAX_VALUE, true);
+
       for (Frau frau : frauen) {
         if (!frauenBefore.contains(frau)) {
           out.accept("Eine Frau ist hinzugekommen: " + frau + ". Die Anzahl der Kombinationen erhöht sich damit!");
@@ -44,8 +47,6 @@ public class DefaultMatchPrinter
           out.accept("Ein Mann ist hinzugekommen: " + mann + ". Die Anzahl der Kombinationen erhöht sich damit!");
         }
       }
-      // Falls neue Personen hinzugekommen sind: Berechnung des Ende des Vortages
-      resultDesVortages = calculate(data, tagNr - 1, Integer.MAX_VALUE, true);
     }
 
     data.preProcess(out, tagNr);
@@ -63,9 +64,7 @@ public class DefaultMatchPrinter
       MatchBoxResult matchBoxResult = tag.boxResults.get(i);
       Pair boxPair = matchBoxResult.pair;
       Boolean boxResult = matchBoxResult.result;
-      if (boxResult == null) {
-        out.accept("");
-      }
+      out.accept("");
       out.accept("MatchBox: " + boxPair + (boxResult == null ? " verkauft." : "...")
             + " (Wahrscheinlichkeit für das Ausgang des Ergebnisses)");
       String yesMarker = "";

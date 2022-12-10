@@ -1,50 +1,30 @@
-Eine Frau ist hinzugekommen: Finnja. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Jules. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Melina. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Walentina. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Kathleen. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Aurelia. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Jacky. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Sarah. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Steffi. Die Anzahl der Kombinationen erhöht sich damit!
-Eine Frau ist hinzugekommen: Jill. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Danilo. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Alex. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Tommy. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Eugen. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Manuel. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Francesco. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Diogo. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Salvatore. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Josua. Die Anzahl der Kombinationen erhöht sich damit!
-Ein Mann ist hinzugekommen: Jamie. Die Anzahl der Kombinationen erhöht sich damit!
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 1...
 -- Combinations: 3628800 Possible: 3628800 Not possible: 0 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Die Anzahl der Kombinationen hat sich verändert: 0 => 3628800
 
-==================================================================================================================================================
--- Berechne VIP_01 - Nacht 1 inkl. 1 Matchbox(en)...
--- Combinations: 3628800 Possible: 3265920 Not possible: 362880 (Intern constellation-add-pair checks: 62353010)
---------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Finnja & Danilo... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 10,00% [362880]
 Nein => 90,00% [3265920] <==
 Die Kombinationen reduzieren sich: 3628800 => 3265920
 
-Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Jules & Alex: 9,88%
-Melina & Tommy: 9,88%
+==================================================================================================================================================
+-- Berechne VIP_01 - Nacht 1 inkl. 1 Matchbox(en)...
+-- Combinations: 3628800 Possible: 3265920 Not possible: 362880 (Intern constellation-add-pair checks: 62353010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Steffi & Danilo: 11,11%
+Jill & Jamie: 9,88%
 Walentina & Eugen: 9,88%
 Kathleen & Manuel: 9,88%
 Finnja & Francesco: 11,11%
 Aurelia & Diogo: 9,88%
 Jacky & Salvatore: 9,88%
+Jules & Alex: 9,88%
+Melina & Tommy: 9,88%
 Sarah & Josua: 9,88%
-Steffi & Danilo: 11,11%
-Jill & Jamie: 9,88%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 36,33% [1186632]

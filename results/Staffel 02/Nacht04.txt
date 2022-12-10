@@ -1,9 +1,9 @@
-Eine Frau ist hinzugekommen: VanessaM. Die Anzahl der Kombinationen erhöht sich damit!
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 3 inkl. 1 Matchbox(en) inkl. Matchingnight...
 -- Combinations: 3628800 Possible: 5406 Not possible: 3623394 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
+Eine Frau ist hinzugekommen: VanessaM. Die Anzahl der Kombinationen erhöht sich damit!
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 4...
@@ -11,26 +11,27 @@ Eine Frau ist hinzugekommen: VanessaM. Die Anzahl der Kombinationen erhöht sich
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Die Anzahl der Kombinationen hat sich verändert: 5406 => 54060
 
-==================================================================================================================================================
--- Berechne 02 - Nacht 4 inkl. 1 Matchbox(en)...
--- Combinations: 36288000 Possible: 32170 Not possible: 36255830 (Intern constellation-add-pair checks: 98641010)
---------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Laura & Marcel... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 40,49% [21890]
 Nein => 59,51% [32170] <==
 Die Kombinationen reduzieren sich: 54060 => 32170
 
-Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+==================================================================================================================================================
+-- Berechne 02 - Nacht 4 inkl. 1 Matchbox(en)...
+-- Combinations: 36288000 Possible: 32170 Not possible: 36255830 (Intern constellation-add-pair checks: 98641010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Sabrina & Marko: 24,84%
+Jill & Maximilian: 0,00%
+Kathleen & Dario: 2,83%
+Vanessa & Sascha: 6,15%
+Victoria & Germain: 4,01%
+Mirjam & Marc: 24,03%
+Laura & Dominic: 9,70%
+Melissa & Aaron: 39,88%
 Leonie & Marcel: 25,92%
 Christin & Marvin: 3,29%
-Victoria & Germain: 4,01%
-Melissa & Aaron: 39,88%
-Mirjam & Marc: 24,03%
-Kathleen & Dario: 2,83%
-Jill & Maximilian: 0,00%
-Laura & Dominic: 9,70%
-Vanessa & Sascha: 6,15%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 22,91% [7370]

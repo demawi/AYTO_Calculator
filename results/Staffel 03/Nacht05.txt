@@ -1,9 +1,9 @@
-Eine Frau ist hinzugekommen: Desiree. Die Anzahl der Kombinationen erhöht sich damit!
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 4 inkl. 1 Matchbox(en) inkl. Matchingnight...
 -- Combinations: 3628800 Possible: 2699 Not possible: 3626101 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
+Eine Frau ist hinzugekommen: Desiree. Die Anzahl der Kombinationen erhöht sich damit!
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 5...
@@ -11,26 +11,27 @@ Eine Frau ist hinzugekommen: Desiree. Die Anzahl der Kombinationen erhöht sich 
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Die Anzahl der Kombinationen hat sich verändert: 2699 => 26990
 
-==================================================================================================================================================
--- Berechne 03 - Nacht 5 inkl. 1 Matchbox(en)...
--- Combinations: 36288000 Possible: 11320 Not possible: 36276680 (Intern constellation-add-pair checks: 98641010)
---------------------------------------------------------------------------------------------------------------------------------------------------
 MatchBox: Monami & Antonino... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 58,06% [15670]
 Nein => 41,94% [11320] <==
 Die Kombinationen reduzieren sich: 26990 => 11320
 
-Anstehende Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Isabelle & Dustin: 9,19%
-Kerstin & Antonino: 0,35%
-Estelle & Mike: 2,74%
-Zaira & Jordi: 5,57%
+==================================================================================================================================================
+-- Berechne 03 - Nacht 5 inkl. 1 Matchbox(en)...
+-- Combinations: 36288000 Possible: 11320 Not possible: 36276680 (Intern constellation-add-pair checks: 98641010)
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Jessica & Leon: 30,83%
-Joelina & Andre: 0,80%
-Desiree & Tim: 10,00%
+Estelle & Mike: 2,74%
 Raphaela & Marius: 7,86%
-Dana & William: 47,35%
+Desiree & Tim: 10,00%
+Joelina & Andre: 0,80%
+Isabelle & Dustin: 9,19%
 Monami & Max: 0,53%
+Kerstin & Antonino: 0,35%
+Zaira & Jordi: 5,57%
+Dana & William: 47,35%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 29,66% [3357]
@@ -65,15 +66,3 @@ Tim        1,40 % (0)  24,69 % (1)  10,81 % (0)   6,34 % (0)  14,09 % (1)   1,04
 William   76,35 % (4)   8,37 % (0)   3,07 % (0)   1,82 % (0)   0,31 % (0)    -     (0)   2,96 % (0)   1,40 % (1)   5,41 % (0)   7,54 % (5)   1,14 % (0)  
 
 Mögliche Paare: 102/110
-
-==== Tracking der Perfect Matches im Verlauf ====
-Estelle & Jordi => 28,12%
-Zaira & Marius => 6,39%
-Monami & Max => 2,81%
-Isabelle & Andre => 29,99%
-Dana & Antonino => 3,64%
-Joelina & Mike => 80,67%
-Raphaela & William => 7,54%
-Marie & Dustin => 3,43%
-Kerstin & Tim => 25,94%
-Jessica & Leon => 44,65%

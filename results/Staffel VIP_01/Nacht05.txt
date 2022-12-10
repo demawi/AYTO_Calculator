@@ -3,6 +3,7 @@
 -- Berechne VIP_01 - Nacht 5...
 -- Combinations: 36288000 Possible: 7703 Not possible: 36280297 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
+
 MatchBox: Melina & Tommy... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 27,47% [2116]
 Nein => 72,53% [5587] <==
@@ -14,15 +15,15 @@ Die Kombinationen reduzieren sich: 7703 => 5587
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Sarah & Alex: 9,34%
-Steffi & Jamie: 9,68%
-Walentina & Josua: 0,00%
-Kathleen & Salvatore: 4,03%
-Melina & Tommy: 0,00%
 Jules & Francesco: 100,00%
 Aurelia & Danilo: 5,69%
 Finnja & Eugen: 22,96%
 Jill & Manuel: 3,99%
+Kathleen & Salvatore: 4,03%
+Melina & Tommy: 0,00%
+Sarah & Alex: 9,34%
+Steffi & Jamie: 9,68%
+Walentina & Josua: 0,00%
 Vanessa & Diogo: 10,18%
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:

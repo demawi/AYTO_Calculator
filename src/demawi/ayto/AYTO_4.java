@@ -3,7 +3,7 @@ package demawi.ayto;
 import demawi.ayto.modell.AYTO_Data;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
-import demawi.ayto.perm.AYTO_Permutator;
+import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.print.DefaultMatchPrinter;
 
 import static demawi.ayto.modell.Pair.pair;
@@ -11,33 +11,34 @@ import static demawi.ayto.modell.Pair.pair;
 public class AYTO_4
       extends AYTO_Data {
 
-  private static Frau Aurelia = frau("Aurelia");
-  private static Frau Carina = frau("Carina");
-  private static Frau Caroline = frau("Caroline");
-  private static Frau Dorna = frau("Dorna");
-  private static Frau Henna = frau("Henna");
-  private static Frau Juliette = frau("Juliette");
-  private static Frau Larissa = frau("Larissa");
-  private static Frau Stefanie = frau("Stefanie");
-  private static Frau Valeria = frau("Valeria");
-  private static Frau Vanessa = frau("Vanessa");
+  private final Frau Aurelia = frau("Aurelia");
+  private final Frau Carina = frau("Carina");
+  private final Frau Caroline = frau("Caroline");
+  private final Frau Dorna = frau("Dorna");
+  private final Frau Henna = frau("Henna");
+  private final Frau Juliette = frau("Juliette");
+  private final Frau Larissa = frau("Larissa");
+  private final Frau Stefanie = frau("Stefanie");
+  private final Frau Valeria = frau("Valeria");
+  private final Frau Vanessa = frau("Vanessa");
 
-  private static Mann Barkin = mann("Barkin");
-  private static Mann Burim = mann("Burim");
-  private static Mann Christopher = mann("Christopher");
-  private static Mann Deniz = mann("Deniz");
-  private static Mann Joel = mann("Joel");
-  private static Mann Ken = mann("Ken");
-  private static Mann Kenneth = mann("Kenneth");
-  private static Mann Maximilian = mann("Maximilian");
-  private static Mann Pascal = mann("Pascal");
-  private static Mann Sasa = mann("Sasa");
-  private static Mann Marwin = mann("Marwin");
+  private final Mann Barkin = mann("Barkin");
+  private final Mann Burim = mann("Burim");
+  private final Mann Christopher = mann("Christopher");
+  private final Mann Deniz = mann("Deniz");
+  private final Mann Joel = mann("Joel");
+  private final Mann Ken = mann("Ken");
+  private final Mann Kenneth = mann("Kenneth");
+  private final Mann Maximilian = mann("Maximilian");
+  private final Mann Pascal = mann("Pascal");
+  private final Mann Sasa = mann("Sasa");
+  private final Mann Marwin = mann("Marwin");
 
   public AYTO_4() {
     super("04", AYTO_Permutator.ZUSATZTYPE.JEDER);
 
-    addTag().matchBox(pair(Valeria, Marwin), false)
+    newTag().addNew(Marwin)
+          .matchBox(pair(Valeria, Marwin), false)
           .matchBox(pair(Dorna, Kenneth), false)
           .matchNight(null, pair(Aurelia, Barkin), pair(Carina, Burim), pair(Caroline, Christopher), pair(Dorna, Deniz),
                 pair(Henna, Joel), pair(Juliette, Ken), pair(Larissa, Kenneth), pair(Stefanie, Maximilian),
