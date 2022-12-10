@@ -95,12 +95,9 @@ public class MatchFinder {
          if (istVorherigerTag || calcOptions.isMitMatchingNight()) {
             MatchingNight night = tag.matchingNight;
             if (night != null) {
-               // TODO: this should not be necessary
-               for (int nightNr = 0, l = night.constellation.size(); nightNr < l; nightNr++) {
-                  int lights = AYTO_Result.getLights(constellation, night.constellation);
-                  if (lights != night.lights) {
-                     return false;
-                  }
+               int lights = night.getLights(constellation);
+               if (lights != night.lights) {
+                  return false;
                }
             }
          }

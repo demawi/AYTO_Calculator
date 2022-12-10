@@ -4,8 +4,8 @@ import demawi.ayto.modell.Pair;
 
 public class MatchBoxResult implements Event {
 
-   public Pair pair;
-   public Boolean result;
+   public final Pair pair;
+   public final Boolean result;
 
    public MatchBoxResult(Pair pair, Boolean result) {
       this.pair = pair;

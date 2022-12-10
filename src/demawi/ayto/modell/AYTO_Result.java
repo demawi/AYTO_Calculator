@@ -1,15 +1,13 @@
 package demawi.ayto.modell;
 
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.events.MatchingNight;
+import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.service.CalculationOptions;
 
 public class AYTO_Result {
@@ -21,17 +19,15 @@ public class AYTO_Result {
   public int totalConstellations = 0;
   public int possible = 0;
   public int notPossible = 0;
-  private Set<Pair> matchingNightConstellation;
-  private int[] lightResults;
+  private int[] lightPossibilities; // wird nur gesetzt, wenn auch eine Matching Night stattgefunden hat.
 
   public AYTO_Result(CalculationOptions calcOptions) {
     this.calcOptions = calcOptions;
     MatchingNight matchingNight = calcOptions.getMatchingNight();
     if (matchingNight != null) {
-      matchingNightConstellation = matchingNight.constellation;
-      lightResults = new int[11];
+      lightPossibilities = new int[11];
       for (int i = 0, l = 11; i < l; i++) {
-        lightResults[i] = 0;
+        lightPossibilities[i] = 0;
       }
     }
   }
@@ -87,8 +83,9 @@ public class AYTO_Result {
    * Speicher kostet.
    */
   private void addPossible(Set<Pair> pairs) {
-    if(lightResults != null) {
-      lightResults[AYTO_Result.getLights(pairs, matchingNightConstellation)]++;
+    if (lightPossibilities != null) {
+      lightPossibilities[calcOptions.getMatchingNight()
+            .getLights(pairs)]++;
     }
 
     // directly update pair-,frau-,mannCount
@@ -100,33 +97,14 @@ public class AYTO_Result {
       count++;
       pairCount.put(current, count);
 
-      Set<Mann> frauSet = frauCount.get(current.frau);
-      if (frauSet == null) {
-        frauSet = new LinkedHashSet<>();
-        frauCount.put(current.frau, frauSet);
-      }
-      frauSet.add(current.mann);
-
-      Set<Frau> mannSet = mannCount.get(current.mann);
-      if (mannSet == null) {
-        mannSet = new LinkedHashSet<>();
-        mannCount.put(current.mann, mannSet);
-      }
-      mannSet.add(current.frau);
+      frauCount.computeIfAbsent(current.frau, k -> new LinkedHashSet<>())
+            .add(current.mann);
+      mannCount.computeIfAbsent(current.mann, k -> new LinkedHashSet<>())
+            .add(current.frau);
     }
-  }
-
-  public static int getLights(Collection<Pair> assumptionModell, Collection<Pair> testConstellation) {
-    int lights = 0;
-    for (Pair pair : testConstellation) {
-      if (assumptionModell.contains(pair)) {
-        lights++;
-      }
-    }
-    return lights;
   }
 
   public int[] getLightResultsForLastMatchingNight() {
-    return lightResults;
+    return lightPossibilities;
   }
 }
