@@ -45,7 +45,6 @@ Die Kombinationen reduzieren sich: 3265920 => 1201464
 -- Combinations: 3628800 Possible: 1201464 Not possible: 2427336 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
-
          Aline        Ivana        Katharina    Laura        Luisa        Maddie       Melissa      Michelle     Nadine       Sabrina      
 Aleks     9,90 % (0)  11,11 % (0)   9,90 % (2)   9,90 % (1)   9,90 % (0)   9,90 % (3)   9,90 % (0)   9,88 % (0)   9,90 % (2)   9,72 % (2)  
 Axel      9,90 % (0)  11,11 % (1)   9,90 % (0)   9,90 % (0)   9,72 % (6)   9,90 % (2)   9,90 % (0)   9,88 % (1)   9,90 % (0)   9,90 % (0)  

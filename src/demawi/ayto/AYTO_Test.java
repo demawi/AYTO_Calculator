@@ -12,18 +12,27 @@ public class AYTO_Test
       extends AYTO_Data {
 
   private final Frau Aurelia = frau("Aurelia");
-  private final Frau Carina = frau("Carina");
-  private final Frau Caroline = frau("Caroline");
+  private final Frau Karo = frau("Karo");
+  private final Frau Marina = frau("Marina");
 
   private final Mann Barkin = mann("Barkin");
   private final Mann Burim = mann("Burim");
   private final Mann Christopher = mann("Christopher");
-  private final Mann Deniz = mann("Deniz");
 
   public AYTO_Test() {
-    super("04", AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER);
+    super("04", AYTO_Permutator.ZUSATZTYPE.JEDER);
 
-    newTag().addNew(Deniz);
+    if (false) {
+      Frau newFrau = new Frau("Sarah");
+      newTag().addNew(newFrau)
+            .matchBox(pair(Aurelia, Barkin), true);
+    }
+    else {
+      Mann newMann = new Mann("Deniz");
+      newTag().addNew(newMann)
+            .matchBox(pair(Aurelia, Barkin), true)
+            .matchBox(pair(Aurelia, Burim), true);
+    }
   }
 
   public static void main(String[] args) {

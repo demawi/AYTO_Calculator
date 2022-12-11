@@ -45,12 +45,11 @@ Die Kombinationen reduzieren sich: 15 => 1
 -- Combinations: 36288000 Possible: 1 Not possible: 36287999 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
-
          Aline        Ivana        Katharina    Laura        Luisa        Maddie       Melissa      Michelle     Nadine       Sabrina      
 Aleks      -     (0)    -     (0)    -     (2)    ✓     (1)    -     (0)    -     (3)    -     (0)    -     (0)    -     (2)    -     (2)  
 Axel       -     (0)    -     (1)    -     (0)    -     (0)    ✓     (6)    -     (2)    -     (0)    -     (1)    -     (0)    -     (0)  
 Dominic    -     (0)    ✓     (3)    -     (0)    -     (0)    -     (0)    -     (0)    -     (1)    -     (0)    -     (1)    -     (5)  
-Edin       -     (0)    -     (0)    -     (0)    -     (1)    -     (0)    ✓     (1)    -     (0)    -     (0)    -     (0)    -     (0)  
+Edin*      -     (0)    -     (0)    -     (0)    -     (1)    -     (0)    ✓     (1)    -     (0)    -     (0)    -     (0)    -     (0)  
 Elisha     -     (0)    -     (2)    -     (1)    -     (0)    -     (0)    -     (0)    -     (0)    -     (1)    -     (2)    ✓     (3)  
 Ferhat     -     (1)    -     (0)    -     (0)    -     (1)    -     (1)    -     (1)    -     (0)    -     (1)    ✓     (4)    -     (0)  
 Juliano    -     (0)    -     (2)    -     (1)    -     (6)    -     (0)    ✓     (1)    -     (0)    -     (0)    -     (0)    -     (0)  
@@ -60,3 +59,4 @@ Mo         ✓     (8)    -     (0)    -     (0)    -     (0)    -     (0)    - 
 René       -     (0)    -     (0)    -     (1)    -     (0)    -     (3)    -     (0)    -     (0)    ✓     (5)    -     (1)    -     (0)  
 
 Mögliche Paare: 11/110
+*: Diese Person teilt sich ein Match.

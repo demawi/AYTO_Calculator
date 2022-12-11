@@ -45,7 +45,6 @@ Die Kombinationen reduzieren sich: 31980 => 3586
 -- Combinations: 3628800 Possible: 3586 Not possible: 3625214 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
-
           Anna         Cecilia      Celina       Franziska    Gina         Isabelle     Karina       Luisa        Ricarda      Zoe          
 Amadu      4,49 % (0)  53,65 % (7)   5,24 % (0)   5,58 % (0)   6,36 % (1)   5,58 % (0)   7,42 % (0)   5,16 % (0)   0,64 % (0)   5,88 % (0)  
 Calvin     7,19 % (0)   5,38 % (0)   8,23 % (0)   7,14 % (2)  20,86 % (2)   7,00 % (0)  25,21 % (3)   9,54 % (1)   1,62 % (0)   7,84 % (0)  

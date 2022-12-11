@@ -2,6 +2,8 @@ package demawi.ayto.modell;
 
 public class Person {
 
+  public static final String MARK1 = "*";
+
   private String name;
   public String marked = "";
 
@@ -27,7 +29,7 @@ public class Person {
 
   @Override
   public String toString() {
-    return "Use getName or getNamePlusMark";
+    return "@@@" + getNamePlusMark();
   }
 
 }

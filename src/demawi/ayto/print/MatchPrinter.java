@@ -48,7 +48,8 @@ public abstract class MatchPrinter {
       out.accept("Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)");
       for (Pair pair : pairs) {
          out.accept(
-               pair + ": " + Formatter.prozent(result.getCount(pair), result.getPossibleConstellationSize()) + "%");
+               pair + ": " + Formatter.prozent(result.getPossibleCount(pair), result.getPossibleConstellationSize())
+                     + "%");
       }
       out.accept("");
       out.accept("Wahrscheinlichkeit für entsprechende Spotanzahl:");
@@ -70,15 +71,6 @@ public abstract class MatchPrinter {
     */
    public void printPossibilitiesAsTable(AYTO_Data data, AYTO_Result result, List<Frau> frauen, List<Mann> maenner) {
       out.accept("======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======");
-      for (Frau frau : frauen) {
-         Set<Mann> set = result.frauCount.get(frau);
-         //out.accept(frau + ": " + (set == null ? "-" : set.size() + " " + getRanking(result, frau, maenner)));
-      }
-      out.accept("");
-      for (Mann mann : maenner) {
-         Set<Frau> set = result.mannCount.get(mann);
-         //out.accept(mann + ": " + (set == null ? "-" : set.size() + " " + getRanking(result, mann, frauen)));
-      }
 
       List<List<String>> table = new ArrayList<>();
       table.add(new ArrayList<>());
@@ -112,7 +104,7 @@ public abstract class MatchPrinter {
                   count++;
                }
             }
-            double possibility = result.getBasePossibility(mann, frau, frauen);
+            double possibility = result.getBasePossibility(pair, frauen, maenner);
             String possOut;
             if (possibility == 0d) {
                possOut = "  -    ";
@@ -127,13 +119,13 @@ public abstract class MatchPrinter {
          }
       }
       out.accept(TableFormatter.formatAsTable(table));
-      out.accept("Mögliche Paare: " + result.pairCount.size() + "/" + (frauen.size() * maenner.size()));
+      out.accept("Mögliche Paare: " + result.possiblePairCount.size() + "/" + (frauen.size() * maenner.size()));
       if (markedPerson) {
          if (data.getZusatztype() == AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER) {
-            out.accept("*: Diese Person hat zwei Matches");
+            out.accept("*: Diese Person teilt sich ein Match.");
          }
          else {
-            out.accept("*: Diese Personen können zwei Matches haben");
+            out.accept("*: Diese Personen müssen sich ggf. ein Match teilen.");
          }
       }
 
@@ -141,8 +133,8 @@ public abstract class MatchPrinter {
          out.accept("");
          out.accept("==== Tracking der Perfect Matches im Verlauf ====");
          for (Pair pair : data.pairsToTrack) {
-            out.accept(pair + " => " + Formatter.prozent(result.getCount(pair), result.getPossibleConstellationSize())
-                  + "%");
+            out.accept(pair + " => " + Formatter.prozent(result.getPossibleCount(pair),
+                  result.getPossibleConstellationSize()) + "%");
          }
       }
 
@@ -150,10 +142,10 @@ public abstract class MatchPrinter {
          List<Set<Pair>> sortedConstellations = new ArrayList<>(result.getAllPossibleConstellations());
          sortedConstellations.sort((pairs1, pairs2) -> {
             Integer o1Count = pairs1.stream()
-                  .mapToInt(result.pairCount::get)
+                  .mapToInt(result.possiblePairCount::get)
                   .sum();
             Integer o2Count = pairs2.stream()
-                  .mapToInt(result.pairCount::get)
+                  .mapToInt(result.possiblePairCount::get)
                   .sum();
             return o2Count.compareTo(o1Count);
          });
@@ -162,7 +154,7 @@ public abstract class MatchPrinter {
          for (int i = 0, l = Math.min(20, sortedConstellations.size()); i < l; i++) {
             Set<Pair> constellation = sortedConstellations.get(i);
             out.accept("> Platz " + (i + 1) + " mit " + constellation.stream()
-                  .mapToInt(result.pairCount::get)
+                  .mapToInt(result.possiblePairCount::get)
                   .sum() + " Punkten (Summe der Vorkommen der Einzelpaare)");
             for (Pair pair : constellation) {
                out.accept(pair.toString());

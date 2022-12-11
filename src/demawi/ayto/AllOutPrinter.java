@@ -8,6 +8,7 @@ import java.text.NumberFormat;
 
 import demawi.ayto.modell.AYTO_Data;
 import demawi.ayto.print.DefaultMatchPrinter;
+import demawi.ayto.print.Formatter;
 
 public class AllOutPrinter {
 
@@ -45,7 +46,9 @@ public class AllOutPrinter {
 
    public static void main(String[] args)
          throws Exception {
-      print(new AYTO_VIP01(), new AYTO_1(), new AYTO_2(), new AYTO_3(), new AYTO_VIP02(), new AYTO_4());
+      long start = System.currentTimeMillis();
+      print(new AYTO_VIP01(), new AYTO_VIP02(), new AYTO_1(), new AYTO_2(), new AYTO_3(), new AYTO_4());
+      System.out.println("AllOutPrinter time: " + Formatter.minSecs(System.currentTimeMillis() - start));
    }
 
 }

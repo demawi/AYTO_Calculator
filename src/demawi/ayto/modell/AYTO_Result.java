@@ -13,7 +13,8 @@ import demawi.ayto.service.CalculationOptions;
 public class AYTO_Result {
 
   private final CalculationOptions calcOptions;
-  public final Map<Pair, Integer> pairCount = new HashMap<>();
+  public final Map<Pair, Integer> possiblePairCount = new HashMap<>();
+  public final Map<Pair, Integer> allPairCount = new HashMap<>();
   public final Map<Frau, Set<Mann>> frauCount = new HashMap<>();
   public final Map<Mann, Set<Frau>> mannCount = new HashMap<>();
   public int totalConstellations = 0;
@@ -44,18 +45,25 @@ public class AYTO_Result {
     throw new IllegalStateException("Wird nicht mehr geliefert!");
   }
 
-  public Integer getCount(Frau frau, Mann mann) {
-    return getCount(Pair.pair(frau, mann));
+  public Integer getPossibleCount(Frau frau, Mann mann) {
+    return getPossibleCount(Pair.pair(frau, mann));
   }
 
-  public Integer getCount(Pair pair) {
-    Integer result = pairCount.get(pair);
+  public Integer getPossibleCount(Pair pair) {
+    Integer result = possiblePairCount.get(pair);
     return result == null ? 0 : result;
   }
 
+  public Integer getAllCount(Pair pair) {
+    Integer result = allPairCount.get(pair);
+    return result == null ? 0 : result;
+  }
+
+  /**
+   * Gilt unabhängig vom Zusatztype
+   */
   public boolean isBasePerson(Person person) {
-    if (getData().getZusatztype() == AYTO_Permutator.ZUSATZTYPE.JEDER)
-      return true;
+
     if (person instanceof Frau) {
       return getData().initialFrauen.contains(person);
     }
@@ -64,18 +72,38 @@ public class AYTO_Result {
     }
   }
 
-  public double getBasePossibility(Mann mann, Frau frauX, List<Frau> frauen) {
-    int gesamt = 0;
-    for (Frau frau : frauen) {
-      if (isBasePerson(frau)) {
-        gesamt += getCount(frau, mann);
+  public double getBasePossibility(Pair pair, List<Frau> frauen, List<Mann> maenner) {
+    if (getData().getZusatztype() == AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER) {
+      int gesamt = 0;
+      for (Frau curFrau : frauen) {
+        if (isBasePerson(curFrau)) {
+          gesamt += getPossibleCount(curFrau, pair.mann);
+        }
       }
+      return 1d * getPossibleCount(pair) / gesamt;
     }
-    return 1d * getCount(frauX, mann) / gesamt;
+    else {
+      int gesamt = 0;
+      if (maenner.size() >= frauen.size()) {
+        for (Frau curFrau : frauen) {
+          gesamt += getPossibleCount(curFrau, pair.mann);
+        }
+      }
+      else {
+        for (Mann curMann : maenner) {
+          gesamt += getPossibleCount(pair.frau, curMann);
+        }
+      }
+      return 1d * getPossibleCount(pair) / gesamt;
+    }
   }
 
   public void addResult(boolean result, Set<Pair> pairs) {
     totalConstellations++;
+    for (Pair current : pairs) {
+      incrementCountMap(allPairCount, current);
+    }
+
     if (result) {
       addPossible(pairs);
       possible++;
@@ -100,18 +128,21 @@ public class AYTO_Result {
 
     // directly update pair-,frau-,mannCount
     for (Pair current : pairs) {
-      Integer count = pairCount.get(current);
-      if (count == null) {
-        count = 0;
-      }
-      count++;
-      pairCount.put(current, count);
-
+      incrementCountMap(possiblePairCount, current);
       frauCount.computeIfAbsent(current.frau, k -> new LinkedHashSet<>())
             .add(current.mann);
       mannCount.computeIfAbsent(current.mann, k -> new LinkedHashSet<>())
             .add(current.frau);
     }
+  }
+
+  private static void incrementCountMap(Map<Pair, Integer> pairCountMap, Pair pair) {
+    Integer count = pairCountMap.get(pair);
+    if (count == null) {
+      count = 0;
+    }
+    count++;
+    pairCountMap.put(pair, count);
   }
 
   public int[] getLightResultsForLastMatchingNight() {

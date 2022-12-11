@@ -45,12 +45,11 @@ Die Kombinationen reduzieren sich: 1 => 1
 -- Combinations: 36288000 Possible: 1 Not possible: 36287999 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
-
           Anna         Cecilia      Celina       Franziska    Gina         Isabelle     Karina       Luisa        Ricarda      Zoe          
 Amadu       -     (0)    ✓     (7)    -     (0)    -     (0)    -     (1)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)  
 Calvin      -     (0)    -     (0)    -     (0)    ✓     (2)    -     (2)    -     (0)    -     (3)    -     (1)    -     (0)    -     (0)  
 Fabio       -     (0)    -     (0)    ✓     (6)    -     (0)    -     (1)    -     (0)    -     (1)    -     (1)    -     (0)    -     (0)  
-Felix       -     (0)    -     (0)    -     (0)    -     (0)    -     (3)    ✓     (3)    -     (0)    -     (0)    -     (0)    -     (0)  
+Felix*      -     (0)    -     (0)    -     (0)    -     (0)    -     (3)    ✓     (3)    -     (0)    -     (0)    -     (0)    -     (0)  
 Luca        -     (0)    -     (0)    -     (1)    -     (1)    -     (0)    -     (1)    ✓     (1)    -     (0)    -     (0)    -     (4)  
 Lukas       -     (0)    -     (0)    -     (0)    -     (1)    -     (0)    -     (1)    -     (0)    ✓     (6)    -     (0)    -     (1)  
 Martin      -     (1)    -     (0)    -     (1)    -     (0)    ✓     (1)    -     (3)    -     (3)    -     (0)    -     (0)    -     (0)  
@@ -60,3 +59,4 @@ Michael     ✓     (7)    -     (0)    -     (0)    -     (1)    -     (1)    -
 Pharrell    -     (1)    -     (1)    -     (0)    -     (0)    -     (0)    -     (0)    -     (1)    -     (1)    -     (3)    ✓     (2)  
 
 Mögliche Paare: 11/110
+*: Diese Person teilt sich ein Match.

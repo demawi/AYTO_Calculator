@@ -45,8 +45,7 @@ Die Kombinationen reduzieren sich: 3265920 => 608153
 -- Combinations: 3628800 Possible: 608153 Not possible: 3020647 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
-
-            Christin     Jill         Kathleen     Laura        Leonie       Melissa      Mirjam       Sabrina      Vanessa      Victoria     
+            Christin     Jill         Kathleen     Laura*       Leonie       Melissa      Mirjam       Sabrina      Vanessa      Victoria     
 Aaron        8,69 % (0)   9,76 % (0)  19,51 % (2)   8,86 % (0)   8,86 % (0)   8,86 % (6)   8,86 % (1)   8,86 % (0)   8,86 % (1)   8,86 % (0)  
 Dario        8,69 % (0)   9,76 % (0)   8,86 % (2)   8,86 % (1)   8,86 % (0)   8,86 % (0)   8,86 % (0)   8,86 % (2)   8,86 % (0)  19,51 % (4)  
 Dominic      8,69 % (0)   9,76 % (0)   8,86 % (0)   8,86 % (2)   8,86 % (0)  19,51 % (3)   8,86 % (0)   8,86 % (1)   8,86 % (4)   8,86 % (0)  
@@ -59,3 +58,4 @@ Maximilian  21,95 % (5)    -     (2)   9,76 % (0)   9,76 % (1)   9,76 % (0)   9,
 Sascha       8,69 % (0)   9,76 % (5)   8,86 % (0)   8,86 % (1)   8,86 % (0)   8,86 % (0)   8,86 % (0)   8,86 % (2)  19,51 % (2)   8,86 % (0)  
 
 Mögliche Paare: 99/100
+*: Diese Person teilt sich ein Match.

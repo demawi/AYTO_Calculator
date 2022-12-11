@@ -63,8 +63,8 @@ public class DefaultMatchPrinter
             + " (Wahrscheinlichkeit für das Ausgang des Ergebnisses)");
       String yesMarker = "";
       String noMarker = "";
-      int yesCombinations = letztesResultat.getCount(boxPair);
-      int noCombinations = letztesResultat.getPossibleConstellationSize() - letztesResultat.getCount(boxPair);
+      int yesCombinations = letztesResultat.getPossibleCount(boxPair);
+      int noCombinations = letztesResultat.getPossibleConstellationSize() - letztesResultat.getPossibleCount(boxPair);
       int newCombinationCount = 0;
       if (boxResult != null) {
         if (boxResult) {
@@ -76,10 +76,10 @@ public class DefaultMatchPrinter
           newCombinationCount = noCombinations;
         }
       }
-      out.accept("Ja   => " + Formatter.prozent(letztesResultat.getCount(boxPair),
+      out.accept("Ja   => " + Formatter.prozent(letztesResultat.getPossibleCount(boxPair),
             letztesResultat.getPossibleConstellationSize()) + "% [" + yesCombinations + "]" + yesMarker);
       out.accept("Nein => " + Formatter.prozent(
-            letztesResultat.getPossibleConstellationSize() - letztesResultat.getCount(boxPair),
+            letztesResultat.getPossibleConstellationSize() - letztesResultat.getPossibleCount(boxPair),
             letztesResultat.getPossibleConstellationSize()) + "% [" + noCombinations + "]" + noMarker);
       if (boxResult != null) {
         out.accept("Die Kombinationen reduzieren sich: " + letztesResultat.getPossibleConstellationSize() + " => "

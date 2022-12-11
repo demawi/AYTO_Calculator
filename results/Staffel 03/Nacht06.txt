@@ -45,8 +45,7 @@ Die Kombinationen reduzieren sich: 1859 => 19
 -- Combinations: 36288000 Possible: 19 Not possible: 36287981 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
-
-          Dana         Desiree      Estelle      Isabelle     Jessica      Joelina      Kerstin      Marie        Monami       Raphaela     Zaira        
+          Dana         Desiree*     Estelle*     Isabelle     Jessica      Joelina      Kerstin      Marie        Monami       Raphaela     Zaira        
 Andre      5,26 % (1)   5,26 % (2)    -     (0)  68,42 % (2)    -     (0)    -     (1)    -     (0)  21,05 % (2)   5,26 % (0)    -     (2)    -     (0)  
 Antonino  57,89 % (4)   5,26 % (0)    -     (0)   5,26 % (1)  10,53 % (0)  10,53 % (0)  10,53 % (2)   5,26 % (0)    -     (3)    -     (0)    -     (0)  
 Dustin    10,53 % (1)   5,26 % (0)    -     (0)    -     (5)    -     (0)    -     (0)    -     (0)  42,11 % (1)   5,26 % (0)    -     (0)  42,11 % (3)  
@@ -59,3 +58,4 @@ Tim        5,26 % (0)  15,79 % (1)    -     (0)    -     (0)  10,53 % (1)  10,53
 William   21,05 % (4)   5,26 % (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (1)    -     (0)  78,95 % (5)    -     (0)  
 
 Mögliche Paare: 53/110
+*: Diese Person teilt sich ein Match.

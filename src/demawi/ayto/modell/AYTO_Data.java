@@ -81,20 +81,16 @@ public class AYTO_Data {
     if (closed)
       return;
     closed = true;
-    boolean markAll = getZusatztype() == AYTO_Permutator.ZUSATZTYPE.JEDER;
+
+    getZusatztype().getAdditionals(initialFrauen, initialMaenner)
+          .forEach(p -> p.mark(Person.MARK1));
+
+    // Zusatz-Person erstmal wieder entfernen und markieren. Diese Person muss später per NewPerson-Event wieder reinkommen.
     if (initialMaenner.size() > initialFrauen.size()) {
-      Mann mann = initialMaenner.remove(initialMaenner.size() - 1);
-      mann.mark("*");
-      if (markAll) {
-        initialMaenner.forEach(p -> p.mark("*"));
-      }
+      initialMaenner.remove(initialMaenner.size() - 1);
     }
     else if (initialMaenner.size() < initialFrauen.size()) {
-      Frau frau = initialFrauen.remove(initialFrauen.size() - 1);
-      frau.mark("*");
-      if (markAll) {
-        initialFrauen.forEach(p -> p.mark("*"));
-      }
+      initialFrauen.remove(initialFrauen.size() - 1);
     }
     basePairCount = initialFrauen.size();
     assert initialMaenner.size() == initialFrauen.size();
@@ -106,7 +102,7 @@ public class AYTO_Data {
   private void validateDays() {
     List<Frau> curFrauen = new ArrayList<>(initialFrauen);
     List<Mann> curMaenner = new ArrayList<>(initialMaenner);
-    Consumer<Person> checkPerson = (person) -> {
+    Consumer<Person> checkPersonAlreadyKnown = (person) -> {
       if (person != null) {
         if (person instanceof Frau) {
           if (!curFrauen.contains(person)) {
@@ -129,24 +125,31 @@ public class AYTO_Data {
         if (evt instanceof NewPerson) {
           NewPerson event = (NewPerson) evt;
           if (event.person != null) {
+            event.person.mark(Person.MARK1);
             if (event.person instanceof Frau) {
               curFrauen.add((Frau) event.person);
+              if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.JEDER) {
+                initialFrauen.forEach(f -> f.mark(Person.MARK1));
+              }
             }
             else {
               curMaenner.add((Mann) event.person);
+              if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.JEDER) {
+                initialMaenner.forEach(f -> f.mark(Person.MARK1));
+              }
             }
           }
         }
         else if (evt instanceof MatchBoxResult) {
           MatchBoxResult event = (MatchBoxResult) evt;
-          checkPerson.accept(event.pair.frau);
-          checkPerson.accept(event.pair.mann);
+          checkPersonAlreadyKnown.accept(event.pair.frau);
+          checkPersonAlreadyKnown.accept(event.pair.mann);
         }
         else if (evt instanceof MatchingNight) {
           MatchingNight event = (MatchingNight) evt;
           for (Pair pair : event.constellation) {
-            checkPerson.accept(pair.frau);
-            checkPerson.accept(pair.mann);
+            checkPersonAlreadyKnown.accept(pair.frau);
+            checkPersonAlreadyKnown.accept(pair.mann);
             validateMatchingPairs(event.constellation);
           }
         }
@@ -176,15 +179,10 @@ public class AYTO_Data {
   }
 
   public List<Frau> getFrauen(int tag) {
-    List<Frau> result = new ArrayList<>();
-    getPairs(tag, pair -> {
-      if (!result.contains(pair.frau)) {
-        result.add(pair.frau);
-      }
-    });
-    if (tag > 0) {
-      Person newExtraPerson = getTag(tag).newExtraPerson;
-      if (newExtraPerson instanceof Frau && !result.contains(newExtraPerson)) {
+    List<Frau> result = new ArrayList<>(initialFrauen);
+    for (int i = 0; i < tag; i++) {
+      Person newExtraPerson = tage.get(i).newExtraPerson;
+      if (newExtraPerson != null && newExtraPerson instanceof Frau) {
         result.add((Frau) newExtraPerson);
       }
     }
@@ -192,31 +190,14 @@ public class AYTO_Data {
   }
 
   public List<Mann> getMaenner(int tag) {
-    List<Mann> result = new ArrayList<>();
-    getPairs(tag, pair -> {
-      if (!result.contains(pair.mann)) {
-        result.add(pair.mann);
-      }
-    });
-    if (tag > 0) {
-      Person newExtraPerson = getTag(tag).newExtraPerson;
-      if (newExtraPerson instanceof Mann && !result.contains(newExtraPerson)) {
+    List<Mann> result = new ArrayList<>(initialMaenner);
+    for (int i = 0; i < tag; i++) {
+      Person newExtraPerson = tage.get(i).newExtraPerson;
+      if (newExtraPerson != null && newExtraPerson instanceof Mann) {
         result.add((Mann) newExtraPerson);
       }
     }
     return result;
-  }
-
-  private void getPairs(int tagNr, Consumer<Pair> consumer) {
-    for (int i = 0; i < tagNr; i++) {
-      Tag tag = tage.get(i);
-      tag.boxResults.forEach((matchBoxResult) -> consumer.accept(matchBoxResult.pair));
-      if (tag.matchingNight != null) {
-        for (Pair pair : tag.matchingNight.constellation) {
-          consumer.accept(pair);
-        }
-      }
-    }
   }
 
   public void preProcess(Consumer<String> out, int tagNr) {

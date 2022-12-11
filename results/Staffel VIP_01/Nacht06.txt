@@ -45,8 +45,7 @@ Die Kombinationen reduzieren sich: 633 => 319
 -- Combinations: 36288000 Possible: 319 Not possible: 36287681 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
-
-           Aurelia      Finnja       Jacky        Jill         Jules        Kathleen     Melina       Sarah        Steffi       Vanessa      Walentina    
+           Aurelia      Finnja       Jacky        Jill         Jules        Kathleen     Melina       Sarah*       Steffi       Vanessa*     Walentina    
 Alex        4,08 % (0)   0,31 % (1)   9,09 % (1)   1,88 % (0)    -     (1)   5,33 % (0)  16,61 % (1)  37,93 % (2)   2,82 % (2)   7,21 % (1)  21,94 % (0)  
 Danilo     19,12 % (3)    -     (0)  12,54 % (0)   0,31 % (2)    -     (0)   2,82 % (0)  26,02 % (1)    -     (2)  23,82 % (1)   7,21 % (0)  15,36 % (0)  
 Diogo      57,05 % (5)   6,27 % (0)   5,96 % (0)   1,25 % (1)    -     (0)   1,57 % (0)  10,03 % (0)   1,88 % (0)   6,58 % (0)  35,74 % (3)   9,40 % (0)  
@@ -59,3 +58,4 @@ Salvatore   1,88 % (0)    -     (0)  28,21 % (4)   7,21 % (1)    -     (0)  15,3
 Tommy       9,09 % (0)  15,36 % (2)  23,20 % (0)  16,93 % (1)    -     (0)  10,34 % (0)    -     (5)   5,02 % (0)  20,06 % (1)   7,21 % (0)    -     (0)  
 
 Mögliche Paare: 82/110
+*: Diese Person teilt sich ein Match.

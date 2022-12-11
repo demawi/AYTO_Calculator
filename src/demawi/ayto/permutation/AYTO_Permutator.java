@@ -1,5 +1,6 @@
 package demawi.ayto.permutation;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
@@ -9,7 +10,28 @@ import java.util.function.Consumer;
 public abstract class AYTO_Permutator<F, M, R> {
 
   public static enum ZUSATZTYPE {
-    JEDER, NUR_LETZTER
+    JEDER, NUR_LETZTER;
+
+    public <P, F extends P, M extends P> List<P> getAdditionals(List<F> frauen, List<M> maenner) {
+      List<P> result = new ArrayList<>();
+      if (this == JEDER) {
+        if (frauen.size() < maenner.size()) {
+          result.addAll(maenner);
+        }
+        else if (maenner.size() < frauen.size()) {
+          result.addAll(frauen);
+        }
+      }
+      else { // NUR_LETZTER
+        if (frauen.size() < maenner.size()) {
+          result.add(maenner.get(maenner.size() - 1));
+        }
+        else if (maenner.size() < frauen.size()) {
+          result.add(frauen.get(maenner.size() - 1));
+        }
+      }
+      return result;
+    }
   }
 
   protected final List<F> frauen;
