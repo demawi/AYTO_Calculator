@@ -47,19 +47,17 @@ public class Tag {
       return this;
 
    }
+
    public Tag matchBox(Boolean perfectMatch, Pair matchingPair) {
       return matchBox(matchingPair, perfectMatch);
    }
 
-   public Tag matchNight(Integer lights, Pair... pairs) {
+   /**
+    * Schließt den Tag ab, insofern keine this-Rückgabe.
+    */
+   public void matchNight(Integer lights, Pair... pairs) {
       matchingNight = new MatchingNight(lights, pairs);
       events.add(matchingNight);
-      return this;
-   }
-
-   public Tag noMatchingNight() {
-      // Nothing to do
-      return this;
    }
 
    public List<Event> getEvents() {

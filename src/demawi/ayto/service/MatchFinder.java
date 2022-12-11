@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.function.Consumer;
 
-import demawi.ayto.Formatter;
+import demawi.ayto.print.Formatter;
 import demawi.ayto.events.MatchBoxResult;
 import demawi.ayto.events.MatchingNight;
 import demawi.ayto.modell.AYTO_Data;

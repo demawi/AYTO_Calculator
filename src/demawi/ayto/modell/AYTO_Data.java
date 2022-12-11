@@ -2,7 +2,11 @@ package demawi.ayto.modell;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.function.Consumer;
 
 import demawi.ayto.events.Event;
@@ -14,26 +18,24 @@ import demawi.ayto.permutation.AYTO_Permutator;
 public class AYTO_Data {
 
   public String name;
-  private AYTO_Permutator.ZUSATZTYPE zusatztype;
-  private List<Tag> tage = new ArrayList<>();
+  private final AYTO_Permutator.ZUSATZTYPE zusatztype;
+  private final List<Tag> tage = new ArrayList<>();
   public List<Pair> pairsToTrack;
   public List<Frau> initialFrauen = new ArrayList<>();
   public List<Mann> initialMaenner = new ArrayList<>();
-  private boolean checkedConsistency = false;
+  private int basePairCount = 0;
+
+  private boolean closed = false;
 
   protected Frau frau(String name) {
     Frau frau = new Frau(name);
-    if (initialFrauen.size() < 10) {
-      initialFrauen.add(frau);
-    }
+    initialFrauen.add(frau);
     return frau;
   }
 
   protected Mann mann(String name) {
     Mann mann = new Mann(name);
-    if (initialMaenner.size() < 10) {
-      initialMaenner.add(mann);
-    }
+    initialMaenner.add(mann);
     return mann;
   }
 
@@ -46,6 +48,10 @@ public class AYTO_Data {
     Tag tag = Tag.create();
     tage.add(tag);
     return tag;
+  }
+
+  public int getBasePairCount() {
+    return basePairCount;
   }
 
   public AYTO_Permutator.ZUSATZTYPE getZusatztype() {
@@ -61,20 +67,43 @@ public class AYTO_Data {
   }
 
   public List<Tag> getTage() {
-    return tage;
+    return Collections.unmodifiableList(tage);
   }
 
   public void track(Pair... pairs) {
     this.pairsToTrack = Arrays.asList(pairs);
   }
 
+  /**
+   * Close for input and validate all given data.
+   */
+  public void closeForInput() {
+    if (closed)
+      return;
+    closed = true;
+    boolean markAll = getZusatztype() == AYTO_Permutator.ZUSATZTYPE.JEDER;
+    if (initialMaenner.size() > initialFrauen.size()) {
+      Mann mann = initialMaenner.remove(initialMaenner.size() - 1);
+      mann.mark("*");
+      if (markAll) {
+        initialMaenner.forEach(p -> p.mark("*"));
+      }
+    }
+    else if (initialMaenner.size() < initialFrauen.size()) {
+      Frau frau = initialFrauen.remove(initialFrauen.size() - 1);
+      frau.mark("*");
+      if (markAll) {
+        initialFrauen.forEach(p -> p.mark("*"));
+      }
+    }
+    basePairCount = initialFrauen.size();
+    assert initialMaenner.size() == initialFrauen.size();
+    validateDays();
+  }
+
   private int currentConsistenceDay = 0;
 
-  public void checkAllDayConsistency() {
-    if (checkedConsistency) {
-      return;
-    }
-    checkedConsistency = true;
+  private void validateDays() {
     List<Frau> curFrauen = new ArrayList<>(initialFrauen);
     List<Mann> curMaenner = new ArrayList<>(initialMaenner);
     Consumer<Person> checkPerson = (person) -> {
@@ -118,6 +147,7 @@ public class AYTO_Data {
           for (Pair pair : event.constellation) {
             checkPerson.accept(pair.frau);
             checkPerson.accept(pair.mann);
+            validateMatchingPairs(event.constellation);
           }
         }
         else {
@@ -125,6 +155,23 @@ public class AYTO_Data {
                 .getSimpleName());
         }
       }
+    }
+  }
+
+  private void validateMatchingPairs(Collection<Pair> constellation) {
+    Set<Frau> frauen = new LinkedHashSet<>();
+    Set<Mann> maenner = new LinkedHashSet<>();
+    for (Pair pair : constellation) {
+      frauen.add(pair.frau);
+      maenner.add(pair.mann);
+    }
+    if (frauen.size() != basePairCount) {
+      throw new RuntimeException(
+            "Falsche Anzahl an Frauen in Matching Night: " + frauen.size() + " benötigt: " + basePairCount);
+    }
+    if (maenner.size() != basePairCount) {
+      throw new RuntimeException(
+            "Falsche Anzahl an Männern in Matching Night: " + maenner.size() + " benötigt: " + basePairCount);
     }
   }
 

@@ -53,8 +53,7 @@ public class AYTO_VIP02
                   pair(Anna, Martin), pair(Gina, Michael));
 
       newTag().addNew(Felix)
-            .matchBox(pair(Luisa, Lukas), true)
-            .noMatchingNight();
+            .matchBox(pair(Luisa, Lukas), true);
 
       newTag().matchBox(false, pair(Ricarda, Felix))
             .matchNight(3, pair(Luisa, Lukas), pair(Cecilia, Amadu), pair(Anna, Pharrell), pair(Franziska, Michael),

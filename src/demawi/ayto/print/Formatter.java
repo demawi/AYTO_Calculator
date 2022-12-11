@@ -1,4 +1,4 @@
-package demawi.ayto;
+package demawi.ayto.print;
 
 public class Formatter {
 

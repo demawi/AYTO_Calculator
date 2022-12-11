@@ -53,11 +53,21 @@ public class AYTO_Result {
     return result == null ? 0 : result;
   }
 
-  public double getPossibility(Mann mann, Frau frauX, List<Frau> frauen) {
+  public boolean isBasePerson(Person person) {
+    if (getData().getZusatztype() == AYTO_Permutator.ZUSATZTYPE.JEDER)
+      return true;
+    if (person instanceof Frau) {
+      return getData().initialFrauen.contains(person);
+    }
+    else {
+      return getData().initialMaenner.contains(person);
+    }
+  }
+
+  public double getBasePossibility(Mann mann, Frau frauX, List<Frau> frauen) {
     int gesamt = 0;
     for (Frau frau : frauen) {
-      AYTO_Permutator.ZUSATZTYPE zusatztype = getData().getZusatztype();
-      if (zusatztype == AYTO_Permutator.ZUSATZTYPE.JEDER && frauen.size() > 10 || frauen.indexOf(frau) <= 9) {
+      if (isBasePerson(frau)) {
         gesamt += getCount(frau, mann);
       }
     }

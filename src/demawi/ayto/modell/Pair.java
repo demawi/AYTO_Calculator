@@ -30,7 +30,7 @@ public class Pair {
 
   @Override
   public String toString() {
-    return frau + " & " + mann;
+    return frau.getName() + " & " + mann.getName();
   }
 
   @Override

@@ -1,10 +1,8 @@
 package demawi.ayto.print;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class TablePrinter {
+public class TableFormatter {
 
    public static String formatAsTable(List<List<String>> rows) {
       int[] maxLengths = new int[rows.get(0)
