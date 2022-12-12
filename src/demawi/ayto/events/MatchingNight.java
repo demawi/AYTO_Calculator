@@ -42,4 +42,13 @@ public class MatchingNight
     return lights;
   }
 
+  /**
+   * Gibt true zurück sofern es keinen Widerspruch gibt und
+   * die Konstellation somit weiterhin als valide eingestuft
+   * werden kann.
+   */
+  public boolean test(Collection<Pair> constellation) {
+    return lights == getLights(constellation);
+  }
+
 }

@@ -4,7 +4,6 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.function.Consumer;
 
-import demawi.ayto.print.Formatter;
 import demawi.ayto.events.MatchBoxResult;
 import demawi.ayto.events.MatchingNight;
 import demawi.ayto.modell.AYTO_Data;
@@ -14,6 +13,7 @@ import demawi.ayto.modell.Mann;
 import demawi.ayto.modell.Pair;
 import demawi.ayto.modell.Tag;
 import demawi.ayto.permutation.AYTO_Permutator;
+import demawi.ayto.print.Formatter;
 
 public class MatchFinder {
 
@@ -23,14 +23,14 @@ public class MatchFinder {
       this.calcOptions = calcOptions;
    }
 
-   public AYTO_Result calculate(Consumer<String> out, boolean info) {
+   public AYTO_Result calculate(Consumer<String> out) {
       long start = System.currentTimeMillis();
       AYTO_Result result = new AYTO_Result(calcOptions);
       if (calcOptions.getTagNr() == 0) {
          return result;
       }
       AYTO_Data data = calcOptions.getData();
-      if (info) {
+      if (out != null) {
          out.accept("");
          breakLine(out);
          Tag tag = calcOptions.getTag();
@@ -43,7 +43,7 @@ public class MatchFinder {
       AYTO_Permutator<Frau, Mann, Pair> permutator = AYTO_Permutator.create(calcOptions.getFrauen(),
             calcOptions.getMaenner(), calcOptions.getZusatztype(), Pair::pair);
       permutator.permutate(constellation -> result.addResult(test(constellation), constellation));
-      if (info) {
+      if (out != null) {
          out.accept(
                "-- Combinations: " + result.totalConstellations + " Possible: " + result.possible + " Not possible: "
                      + result.notPossible + " (Intern constellation-add-pair checks: " + permutator.testCount + ")");
@@ -66,7 +66,7 @@ public class MatchFinder {
    /**
     * Testet ob die übergebene Paar-Konstellation zu einem Widerspruch führt.
     */
-   public boolean test(Collection<Pair> constellation) {
+   private boolean test(Collection<Pair> constellation) {
       for (int tagNr = 1; tagNr <= calcOptions.getTagNr(); tagNr++) {
          Tag tag = calcOptions.getData()
                .getTag(tagNr);
@@ -77,11 +77,8 @@ public class MatchFinder {
          if (matchBoxes > 0) {
             for (int matchBoxNr = 0; matchBoxNr < matchBoxes; matchBoxNr++) {
                MatchBoxResult matchBoxResult = tag.boxResults.get(matchBoxNr);
-               Boolean result = matchBoxResult.result;
-               if (result != null) {
-                  if (result != constellation.contains(matchBoxResult.pair)) {
-                     return false;
-                  }
+               if (!matchBoxResult.test(constellation)) {
+                  return false;
                }
             }
          }
@@ -94,11 +91,8 @@ public class MatchFinder {
 
          if (istVorherigerTag || calcOptions.isMitMatchingNight()) {
             MatchingNight night = tag.matchingNight;
-            if (night != null) {
-               int lights = night.getLights(constellation);
-               if (lights != night.lights) {
-                  return false;
-               }
+            if (night != null && !night.test(constellation)) {
+               return false;
             }
          }
       }

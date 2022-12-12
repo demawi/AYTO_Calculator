@@ -34,8 +34,7 @@ public abstract class MatchPrinter {
    public abstract void printDayResults(AYTO_Data data, int tagNr);
 
    protected AYTO_Result calculateSingle(AYTO_Data data, int tagNr, int mitAnzahlMatchBoxen, boolean mitMatchingNight) {
-      return new MatchFinder(new CalculationOptions(data, tagNr, mitAnzahlMatchBoxen, mitMatchingNight)).calculate(out,
-            true);
+      return new MatchFinder(new CalculationOptions(data, tagNr, mitAnzahlMatchBoxen, mitMatchingNight)).calculate(out);
    }
 
    /**
@@ -69,16 +68,17 @@ public abstract class MatchPrinter {
    /**
     * Prints all pair probabilities
     */
-   public void printPossibilitiesAsTable(AYTO_Data data, AYTO_Result result, List<Frau> frauen, List<Mann> maenner) {
+   public void printPossibilitiesAsTable(AYTO_Result result) {
       out.accept("======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======");
+
 
       List<List<String>> table = new ArrayList<>();
       table.add(new ArrayList<>());
       table.get(0)
             .add("");
       boolean markedPerson = false;
-      List<Frau> sortedFrauen = new ArrayList<>(frauen);
-      List<Mann> sortedMaenner = new ArrayList<>(maenner);
+      List<Frau> sortedFrauen = new ArrayList<>(result.getFrauen());
+      List<Mann> sortedMaenner = new ArrayList<>(result.getMaenner());
       sortedFrauen.sort(Comparator.comparing(a -> a.getNamePlusMark()));
       sortedMaenner.sort(Comparator.comparing(a -> a.getNamePlusMark()));
       for (Frau frau : sortedFrauen) {
@@ -98,13 +98,13 @@ public abstract class MatchPrinter {
          for (Frau frau : sortedFrauen) {
             Pair pair = Pair.pair(frau, mann);
             int count = 0;
-            for (Tag tag : data.getTage()) {
+            for (Tag tag : result.getData().getTage()) {
                MatchingNight night = tag.matchingNight;
                if (night != null && night.constellation.contains(pair)) {
                   count++;
                }
             }
-            double possibility = result.getBasePossibility(pair, frauen, maenner);
+            double possibility = result.getBasePossibility(pair);
             String possOut;
             if (possibility == 0d) {
                possOut = "  -    ";
@@ -115,13 +115,13 @@ public abstract class MatchPrinter {
             else {
                possOut = Formatter.numberFormat(possibility * 100) + " %";
             }
-            line.add(possOut + " (" + count + ")"); //  + "/" + data.tage.size()+
+            line.add(possOut + " (" + count + ")");
          }
       }
       out.accept(TableFormatter.formatAsTable(table));
-      out.accept("Mögliche Paare: " + result.possiblePairCount.size() + "/" + (frauen.size() * maenner.size()));
+      out.accept("Mögliche Paare: " + result.possiblePairCount.size() + "/" + (sortedFrauen.size() * sortedMaenner.size()));
       if (markedPerson) {
-         if (data.getZusatztype() == AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER) {
+         if (result.getData().getZusatztype() == AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER) {
             out.accept("*: Diese Person teilt sich ein Match.");
          }
          else {
@@ -129,10 +129,10 @@ public abstract class MatchPrinter {
          }
       }
 
-      if (data.pairsToTrack != null) {
+      if (result.getData().pairsToTrack != null) {
          out.accept("");
          out.accept("==== Tracking der Perfect Matches im Verlauf ====");
-         for (Pair pair : data.pairsToTrack) {
+         for (Pair pair : result.getData().pairsToTrack) {
             out.accept(pair + " => " + Formatter.prozent(result.getPossibleCount(pair),
                   result.getPossibleConstellationSize()) + "%");
          }

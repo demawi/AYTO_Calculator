@@ -32,6 +32,26 @@ public class Tag {
       return this;
    }
 
+   public List<Event> getEvents(int matchBoxes, boolean withMatchingNight) {
+      List<Event> result = new ArrayList<>();
+      int addedMatchBoxes = 0;
+      for (Event event : events) {
+         if (event instanceof MatchBoxResult) {
+            if (addedMatchBoxes == matchBoxes) { // bereits genug matchboxes
+               return result;
+            }
+         }
+         else if (event instanceof MatchingNight) {
+            if (withMatchingNight) {
+               result.add(event);
+               return result;
+            }
+         }
+         result.add(event);
+      }
+      return result;
+   }
+
    public Tag addNew(Person person) {
       this.newExtraPerson = person;
       events.add(new NewPerson(person));

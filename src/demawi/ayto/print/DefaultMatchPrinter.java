@@ -100,7 +100,7 @@ public class DefaultMatchPrinter
       // Ende des Tages Resultat
       letztesResultat = calculateSingle(data, tagNr, Integer.MAX_VALUE, true);
     }
-    printPossibilitiesAsTable(data, letztesResultat, frauen, maenner);
+    printPossibilitiesAsTable(letztesResultat);
   }
 
 
