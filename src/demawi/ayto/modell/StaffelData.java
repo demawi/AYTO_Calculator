@@ -10,12 +10,13 @@ import java.util.Set;
 import java.util.function.Consumer;
 
 import demawi.ayto.events.Event;
+import demawi.ayto.events.EventWithImplicits;
 import demawi.ayto.events.MatchBoxResult;
 import demawi.ayto.events.MatchingNight;
 import demawi.ayto.events.NewPerson;
 import demawi.ayto.permutation.AYTO_Permutator;
 
-public class AYTO_Data {
+public class StaffelData {
 
   public String name;
   private final AYTO_Permutator.ZUSATZTYPE zusatztype;
@@ -39,7 +40,7 @@ public class AYTO_Data {
     return mann;
   }
 
-  public AYTO_Data(String name, AYTO_Permutator.ZUSATZTYPE zusatztype) {
+  public StaffelData(String name, AYTO_Permutator.ZUSATZTYPE zusatztype) {
     this.name = name;
     this.zusatztype = zusatztype;
   }
@@ -178,64 +179,113 @@ public class AYTO_Data {
     }
   }
 
-  public List<Frau> getFrauen(int tag) {
+  public List<Frau> getFrauen(int tagNr, int eventCount) {
     List<Frau> result = new ArrayList<>(initialFrauen);
-    for (int i = 0; i < tag; i++) {
-      Person newExtraPerson = tage.get(i).newExtraPerson;
-      if (newExtraPerson != null && newExtraPerson instanceof Frau) {
-        result.add((Frau) newExtraPerson);
+    for (Event event : getEvents(tagNr, eventCount)) {
+      if (event instanceof NewPerson && ((NewPerson) event).person instanceof Frau) {
+        result.add((Frau) ((NewPerson) event).person);
       }
     }
     return result;
   }
 
-  public List<Mann> getMaenner(int tag) {
+  public List<Mann> getMaenner(int tagNr, int eventCount) {
     List<Mann> result = new ArrayList<>(initialMaenner);
-    for (int i = 0; i < tag; i++) {
-      Person newExtraPerson = tage.get(i).newExtraPerson;
-      if (newExtraPerson != null && newExtraPerson instanceof Mann) {
-        result.add((Mann) newExtraPerson);
+    for (Event event : getEvents(tagNr, eventCount)) {
+      if (event instanceof NewPerson && ((NewPerson) event).person instanceof Mann) {
+        result.add((Mann) ((NewPerson) event).person);
       }
     }
     return result;
   }
 
-  public void preProcess(Consumer<String> out, int tagNr) {
-    List<Pair> previousPerfectMatches = new ArrayList<>();
-    for (int i = 1; i <= tagNr; i++) {
-      Tag tag = getTag(i);
-      for (MatchBoxResult boxResult : tag.boxResults) {
-        Boolean result = boxResult.result;
-        if (result != null && result) {
-          previousPerfectMatches.add(boxResult.pair);
-        }
+  public List<Event> getEvents(int tagNr) {
+    return getEvents(tagNr, getTag(tagNr).getEvents()
+          .size());
+  }
+
+  public List<Event> getEvents(int tagNr, int eventCount) {
+    List<Event> result = new ArrayList<>();
+    for (int i = 0; i < tagNr; i++) {
+      Tag tag = tage.get(i);
+      List<Event> curEvents = tag.getEvents();
+      for (int j = 0, l = (i == tagNr - 1) ? eventCount : curEvents.size(); j < l; j++) {
+        result.add(curEvents.get(j));
       }
     }
+    return result;
+  }
 
-    Tag tag = getTag(tagNr);
-    Person extraPerson = tag.newExtraPerson;
-    if (extraPerson != null) {
-      if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER) {
-        // Annahme, dass eine Person die neu hinzukommt auch ein Perfect Match noch hat.
-        if (extraPerson instanceof Frau) {
-          for (Pair perfectMatch : previousPerfectMatches) {
-            Pair implicitPair = Pair.pair((Frau) extraPerson, perfectMatch.mann);
-            tag.implicitDerived(false, implicitPair);
-            out.accept("Implizite Annahme durch neue Person: " + implicitPair + " => No match!");
+  /**
+   * Wenn es ein PerfectMatch gibt, zieht das Paar aus. Wenn es jemand geben sollte der nun
+   * kein PerfectMatch mehr hat, zieht dieser ebenfalls aus.
+   * <p>
+   * Bei ZUSATZTYPE.NUR_LETZTER heißt dies im Umkehrschluss, dass es definitiv auch kein
+   * PerfektMatch zwischen der ZusatzPerson geben kann.
+   */
+  public void checkForImplicits(int tagNr) {
+    if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.JEDER) {
+      // Keine impliziten Annahmen
+      return;
+    }
+    List<Pair> previousPerfectMatches = new ArrayList<>();
+    List<Pair> previousNoMatches = new ArrayList<>();
+    Person newPerson = null;
+    for (Event event : getEvents(tagNr)) {
+      if (event instanceof MatchBoxResult) {
+        MatchBoxResult result = (MatchBoxResult) event;
+        if (result.result != null) {
+          if (result.result) {
+            previousPerfectMatches.add(result.pair);
+
+            if (newPerson != null) {
+              if (newPerson instanceof Frau) {
+                addImplicit(result, (Frau) newPerson, result.pair.mann, previousNoMatches);
+              }
+              else {
+                addImplicit(result, result.pair.frau, (Mann) newPerson, previousNoMatches);
+              }
+            }
           }
-        }
-        else {
-          for (Pair perfectMatch : previousPerfectMatches) {
-            Pair implicitPair = Pair.pair(perfectMatch.frau, (Mann) extraPerson);
-            tag.implicitDerived(false, implicitPair);
-            out.accept("Implizite Annahme durch neue Person: " + implicitPair + " => No match!");
+          else {
+            previousNoMatches.add(result.pair);
           }
         }
       }
-      else { // AYTO_Permutator.ZUSATZTYPE.JEDER
-        // Currently nothing to do
+      else if (event instanceof NewPerson) {
+        NewPerson personEvent = (NewPerson) event;
+        newPerson = personEvent.person;
+        if (personEvent.implicits.isEmpty()) {
+          // Annahme, dass eine Person die neu hinzukommt auch noch ein Perfect Match hat.
+          if (newPerson instanceof Frau) {
+            for (Pair perfectMatch : previousPerfectMatches) {
+              addImplicit(personEvent, (Frau) newPerson, perfectMatch.mann, previousNoMatches);
+            }
+          }
+          else {
+            for (Pair perfectMatch : previousPerfectMatches) {
+              addImplicit(personEvent, perfectMatch.frau, (Mann) newPerson, previousNoMatches);
+            }
+          }
+        }
       }
     }
   }
+
+  private void getZusatzPersonen() {
+
+  }
+
+  private void addImplicit(EventWithImplicits implicitEvent, Frau frau, Mann mann, List<Pair> previousNoMatches) {
+    if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER) {
+      Pair implicitPair = Pair.pair(frau, mann);
+      if (!previousNoMatches.contains(implicitPair)) {
+        implicitEvent.implicits.add(new MatchBoxResult(implicitPair, false));
+      }
+    } else {
+
+    }
+  }
+
 }
 

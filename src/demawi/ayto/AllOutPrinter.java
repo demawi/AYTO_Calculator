@@ -6,27 +6,28 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
-import demawi.ayto.modell.AYTO_Data;
-import demawi.ayto.print.DefaultMatchPrinter;
+import demawi.ayto.modell.StaffelData;
+import demawi.ayto.print.EventbasedMatchPrinter;
 import demawi.ayto.print.Formatter;
+import demawi.ayto.print.MatchPrinter;
 
 public class AllOutPrinter {
 
    private static NumberFormat numberFormat = new DecimalFormat("00");
 
-   public static void print(AYTO_Data... staffeln)
+   public static void print(StaffelData... staffeln)
          throws Exception {
-      for (AYTO_Data staffel : staffeln) {
+      for (StaffelData staffel : staffeln) {
          staffel.closeForInput();
          File directory = new File("./results/Staffel " + staffel.name);
          System.out.println(directory.getAbsoluteFile());
          directory.mkdirs();
-         DefaultMatchPrinter finder = new DefaultMatchPrinter();
+         MatchPrinter finder = new EventbasedMatchPrinter();
 
          for (int i = 0, l = staffel.getAnzahlTage(); i < l; i++) {
             File file = new File(directory.getAbsoluteFile() + "/Nacht" + numberFormat.format(i + 1) + ".txt");
             System.out.println("Write file " + file.getAbsoluteFile() + "...");
-            if(!file.exists()) {
+            if (!file.exists()) {
                FileWriter out = new FileWriter(file);
                finder.setOut(str -> {
                   try {

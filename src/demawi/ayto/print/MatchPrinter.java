@@ -8,11 +8,11 @@ import java.util.Set;
 import java.util.function.Consumer;
 
 import demawi.ayto.events.MatchingNight;
-import demawi.ayto.modell.AYTO_Data;
 import demawi.ayto.modell.AYTO_Result;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
 import demawi.ayto.modell.Pair;
+import demawi.ayto.modell.StaffelData;
 import demawi.ayto.modell.Tag;
 import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.service.CalculationOptions;
@@ -26,15 +26,15 @@ public abstract class MatchPrinter {
       this.out = out;
    }
 
-   public void printDayResults(AYTO_Data data) {
+   public void printDayResults(StaffelData data) {
       data.closeForInput();
       printDayResults(data, data.getAnzahlTage());
    }
 
-   public abstract void printDayResults(AYTO_Data data, int tagNr);
+   public abstract void printDayResults(StaffelData data, int tagNr);
 
-   protected AYTO_Result calculateSingle(AYTO_Data data, int tagNr, int mitAnzahlMatchBoxen, boolean mitMatchingNight) {
-      return new MatchFinder(new CalculationOptions(data, tagNr, mitAnzahlMatchBoxen, mitMatchingNight)).calculate(out);
+   protected AYTO_Result calculateSingle(StaffelData data, int tagNr, int eventCount) {
+      return new MatchFinder(new CalculationOptions(data, tagNr, eventCount)).calculate(out);
    }
 
    /**

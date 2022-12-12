@@ -1,15 +1,15 @@
 package demawi.ayto;
 
-import demawi.ayto.modell.AYTO_Data;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
+import demawi.ayto.modell.StaffelData;
 import demawi.ayto.permutation.AYTO_Permutator;
-import demawi.ayto.print.DefaultMatchPrinter;
+import demawi.ayto.print.EventbasedMatchPrinter;
 
 import static demawi.ayto.modell.Pair.pair;
 
 public class AYTO_VIP02
-      extends AYTO_Data {
+      extends StaffelData {
 
    private final Frau Ricarda = frau("Ricarda");
    private final Frau Luisa = frau("Luisa");
@@ -88,7 +88,7 @@ public class AYTO_VIP02
    }
 
    public static void main(String[] args) {
-      new DefaultMatchPrinter().printDayResults(new AYTO_VIP02());
+      new EventbasedMatchPrinter().printDayResults(new AYTO_VIP02());
    }
 
 }

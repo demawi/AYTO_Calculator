@@ -13,6 +13,8 @@ Die Kombinationen reduzieren sich: 1 => 1
 -- Berechne 01 - Nacht 10 inkl. 1 Matchbox(en)...
 -- Combinations: 36288000 Possible: 1 Not possible: 36287999 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
+Implizite Annahme durch neue Person: Katharina & Edin => No match!
+Die Kombinationen reduzieren sich: 1 => 1
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Katharina & Kevin: 100,00%

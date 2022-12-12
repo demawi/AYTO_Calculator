@@ -47,7 +47,7 @@ public class MatchingNight
    * die Konstellation somit weiterhin als valide eingestuft
    * werden kann.
    */
-  public boolean test(Collection<Pair> constellation) {
+  public boolean isValid(Collection<Pair> constellation) {
     return lights == getLights(constellation);
   }
 

@@ -14,7 +14,6 @@ public class AYTO_Result {
 
   private final CalculationOptions calcOptions;
   public final Map<Pair, Integer> possiblePairCount = new HashMap<>();
-  public final Map<Pair, Integer> allPairCount = new HashMap<>();
   public final Map<Frau, Set<Mann>> frauCount = new HashMap<>();
   public final Map<Mann, Set<Frau>> mannCount = new HashMap<>();
   public int totalConstellations = 0;
@@ -33,7 +32,7 @@ public class AYTO_Result {
     }
   }
 
-  public AYTO_Data getData() {
+  public StaffelData getData() {
     return calcOptions.getData();
   }
 
@@ -54,16 +53,10 @@ public class AYTO_Result {
     return result == null ? 0 : result;
   }
 
-  public Integer getAllCount(Pair pair) {
-    Integer result = allPairCount.get(pair);
-    return result == null ? 0 : result;
-  }
-
   /**
    * Gilt unabhängig vom Zusatztype
    */
   public boolean isBasePerson(Person person) {
-
     if (person instanceof Frau) {
       return getData().initialFrauen.contains(person);
     }
@@ -72,10 +65,10 @@ public class AYTO_Result {
     }
   }
 
-  public double getBasePossibility(Pair pair, List<Frau> frauen, List<Mann> maenner) {
+  public double getBasePossibility(Pair pair) {
     if (getData().getZusatztype() == AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER) {
       int gesamt = 0;
-      for (Frau curFrau : frauen) {
+      for (Frau curFrau : getFrauen()) {
         if (isBasePerson(curFrau)) {
           gesamt += getPossibleCount(curFrau, pair.mann);
         }
@@ -84,6 +77,8 @@ public class AYTO_Result {
     }
     else {
       int gesamt = 0;
+      List<Frau> frauen = getFrauen();
+      List<Mann> maenner = getMaenner();
       if (maenner.size() >= frauen.size()) {
         for (Frau curFrau : frauen) {
           gesamt += getPossibleCount(curFrau, pair.mann);
@@ -98,14 +93,11 @@ public class AYTO_Result {
     }
   }
 
-  public void addResult(boolean result, Set<Pair> pairs) {
+  public void addResult(Set<Pair> constellation, boolean result) {
     totalConstellations++;
-    for (Pair current : pairs) {
-      incrementCountMap(allPairCount, current);
-    }
 
     if (result) {
-      addPossible(pairs);
+      addPossible(constellation);
       possible++;
     }
     else {
@@ -147,5 +139,18 @@ public class AYTO_Result {
 
   public int[] getLightResultsForLastMatchingNight() {
     return lightPossibilities;
+  }
+
+  public List<Frau> getFrauen() {
+    return calcOptions.getFrauen();
+  }
+
+  public List<Mann> getMaenner() {
+    return calcOptions.getMaenner();
+  }
+
+  public void fixTotalPossibilities(int totalConstellations) {
+    this.totalConstellations = totalConstellations;
+    notPossible = totalConstellations - possible;
   }
 }

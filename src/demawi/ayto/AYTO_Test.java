@@ -1,15 +1,15 @@
 package demawi.ayto;
 
-import demawi.ayto.modell.AYTO_Data;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
+import demawi.ayto.modell.StaffelData;
 import demawi.ayto.permutation.AYTO_Permutator;
-import demawi.ayto.print.DefaultMatchPrinter;
+import demawi.ayto.print.EventbasedMatchPrinter;
 
 import static demawi.ayto.modell.Pair.pair;
 
 public class AYTO_Test
-      extends AYTO_Data {
+      extends StaffelData {
 
   private final Frau Aurelia = frau("Aurelia");
   private final Frau Karo = frau("Karo");
@@ -30,13 +30,12 @@ public class AYTO_Test
     else {
       Mann newMann = new Mann("Deniz");
       newTag().addNew(newMann)
-            .matchBox(pair(Aurelia, Barkin), true)
-            .matchBox(pair(Aurelia, Burim), true);
+            .matchBox(pair(Aurelia, Barkin), true);
     }
   }
 
   public static void main(String[] args) {
-    new DefaultMatchPrinter().printDayResults(new AYTO_Test());
+    new EventbasedMatchPrinter().printDayResults(new AYTO_Test());
   }
 
 }

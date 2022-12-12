@@ -1,26 +1,27 @@
 
 ==================================================================================================================================================
--- Berechne VIP_02 - Nacht 3 inkl. 1 Matchbox(en) inkl. Matchingnight...
+-- Berechne VIP_02 - Nacht 4...
 -- Combinations: 3628800 Possible: 3586 Not possible: 3625214 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Ein Mann ist hinzugekommen: Felix. Die Anzahl der Kombinationen erhöht sich damit!
-Implizite Annahme durch neue Person: Luisa & Felix => No match!
 
 ==================================================================================================================================================
--- Berechne VIP_02 - Nacht 4...
--- Combinations: 36288000 Possible: 32274 Not possible: 36255726 (Intern constellation-add-pair checks: 98641010)
+-- Berechne VIP_02 - Nacht 4 inkl. 1 neuer Person(en)...
+-- Combinations: 36288000 Possible: 35860 Not possible: 36252140 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Die Anzahl der Kombinationen hat sich verändert: 3586 => 32274
+Die Anzahl der Kombinationen hat sich verändert: 3586 => 35860
 
 MatchBox: Luisa & Lukas... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
-Ja   => 8,37% [2700] <==
-Nein => 91,63% [29574]
-Die Kombinationen reduzieren sich: 32274 => 2700
+Ja   => 8,37% [3000] <==
+Nein => 91,63% [32860]
+Die Kombinationen reduzieren sich: 35860 => 3000
 
 ==================================================================================================================================================
--- Berechne VIP_02 - Nacht 4 inkl. 1 Matchbox(en)...
+-- Berechne VIP_02 - Nacht 4 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en)...
 -- Combinations: 36288000 Possible: 2700 Not possible: 36285300 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
+Implizite Annahme durch neue Person: Luisa & Felix => No match!
+Die Kombinationen reduzieren sich: 3000 => 2700
 
 Es hat keine Matching Night stattgefunden!
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======

@@ -5,6 +5,7 @@ import java.util.Collection;
 import demawi.ayto.modell.Pair;
 
 public class MatchBoxResult
+      extends EventWithImplicits
       implements Event {
 
    public final Pair pair;
@@ -20,7 +21,9 @@ public class MatchBoxResult
     * die Konstellation somit weiterhin als valide eingestuft
     * werden kann.
     */
-   public boolean test(Collection<Pair> constellation) {
+   public boolean isValid(Collection<Pair> constellation) {
+      if (!super.isValid(constellation))
+         return false;
       if (result == null)
          return true;
       return result == constellation.contains(pair);

@@ -15,11 +15,7 @@ public class Pair {
   }
 
   public static Pair pair(Frau frau, Mann mann) {
-    Map<Mann, Pair> mannPairMap = pairCache.get(frau);
-    if (mannPairMap == null) {
-      mannPairMap = new LinkedHashMap<>();
-      pairCache.put(frau, mannPairMap);
-    }
+    Map<Mann, Pair> mannPairMap = pairCache.computeIfAbsent(frau, k -> new LinkedHashMap<>());
     Pair pair = mannPairMap.get(mann);
     if (pair == null) {
       pair = new Pair(frau, mann);
