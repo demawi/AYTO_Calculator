@@ -13,7 +13,8 @@ Die Kombinationen reduzieren sich: 175 => 130
 -- Berechne VIP_02 - Nacht 7 inkl. 1 Matchbox(en)...
 -- Combinations: 36288000 Possible: 116 Not possible: 36287884 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Implizite Annahme durch neue Person: Cecilia & Felix => No match!
+Kein weiteres Paar zieht aus!
+Implizite Annahme aufgrund Nicht-Auszug: Cecilia & Felix => No Match!
 Die Kombinationen reduzieren sich: 130 => 116
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)

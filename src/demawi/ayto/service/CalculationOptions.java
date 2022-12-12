@@ -109,7 +109,7 @@ public class CalculationOptions
    }
 
    public List<Event> getEvents() {
-      return getData().getEvents(tagNr, eventCount);
+      return getData().getAllEventsTill(tagNr, eventCount);
    }
 
    public boolean isValid(Collection<Pair> constellation) {

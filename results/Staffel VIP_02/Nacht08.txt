@@ -13,7 +13,8 @@ Die Kombinationen reduzieren sich: 116 => 52
 -- Berechne VIP_02 - Nacht 8 inkl. 1 Matchbox(en)...
 -- Combinations: 36288000 Possible: 46 Not possible: 36287954 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Implizite Annahme durch neue Person: Anna & Felix => No match!
+Kein weiteres Paar zieht aus!
+Implizite Annahme aufgrund Nicht-Auszug: Anna & Felix => No Match!
 Die Kombinationen reduzieren sich: 52 => 46
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)

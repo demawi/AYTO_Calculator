@@ -10,10 +10,25 @@ public class MatchBoxResult
 
    public final Pair pair;
    public final Boolean result;
+   public Pair pairWeitererAuszug;
 
    public MatchBoxResult(Pair pair, Boolean result) {
       this.pair = pair;
       this.result = result;
+   }
+
+   public MatchBoxResult(Pair pair, Boolean result, Pair pairWeitererAuszug) {
+      this(pair, result);
+      assert result; // Wenn es einen weiteren Auszug gibt, muss das erste ein Perfect Match sein
+      this.pairWeitererAuszug = pairWeitererAuszug;
+   }
+
+   public boolean isTrue() {
+      return result != null && result;
+   }
+
+   public boolean isFalse() {
+      return result != null && !result;
    }
 
    /**
@@ -26,6 +41,9 @@ public class MatchBoxResult
          return false;
       if (result == null)
          return true;
+      if (pairWeitererAuszug != null && result != constellation.contains(pair)) {
+         return false;
+      }
       return result == constellation.contains(pair);
    }
 }

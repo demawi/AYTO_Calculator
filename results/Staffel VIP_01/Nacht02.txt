@@ -13,6 +13,7 @@ Die Kombinationen reduzieren sich: 205176 => 15449
 -- Berechne VIP_01 - Nacht 2 inkl. 1 Matchbox(en)...
 -- Combinations: 3628800 Possible: 15449 Not possible: 3613351 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
+Kein weiteres Paar zieht aus!
 
 Es hat keine Matching Night stattgefunden!
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======

@@ -13,6 +13,7 @@ Die Kombinationen reduzieren sich: 16682 => 4720
 -- Berechne 01 - Nacht 4 inkl. 1 Matchbox(en)...
 -- Combinations: 3628800 Possible: 4720 Not possible: 3624080 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
+Kein weiteres Paar zieht aus!
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Aline & Mo: 100,00%

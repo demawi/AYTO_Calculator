@@ -13,7 +13,8 @@ Die Kombinationen reduzieren sich: 19 => 11
 -- Berechne 03 - Nacht 7 inkl. 1 Matchbox(en)...
 -- Combinations: 36288000 Possible: 10 Not possible: 36287990 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Implizite Annahme durch neue Person: Desiree & Marius => No match!
+Kein weiteres Paar zieht aus!
+Implizite Annahme aufgrund Nicht-Auszug: Desiree & Marius => No Match!
 Die Kombinationen reduzieren sich: 11 => 10
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)

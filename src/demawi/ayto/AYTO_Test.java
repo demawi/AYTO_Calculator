@@ -22,7 +22,7 @@ public class AYTO_Test
   public AYTO_Test() {
     super("04", AYTO_Permutator.ZUSATZTYPE.JEDER);
 
-    if (false) {
+    if (true) {
       Frau newFrau = new Frau("Sarah");
       newTag().addNew(newFrau)
             .matchBox(pair(Aurelia, Barkin), true);
@@ -30,7 +30,7 @@ public class AYTO_Test
     else {
       Mann newMann = new Mann("Deniz");
       newTag().addNew(newMann)
-            .matchBox(pair(Aurelia, Barkin), true);
+            .matchBox(pair(Aurelia, Barkin), true, pair(Aurelia, Burim));
     }
   }
 

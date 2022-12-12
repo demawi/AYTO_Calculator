@@ -1,9 +1,7 @@
 package demawi.ayto.modell;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 import demawi.ayto.events.Event;
 import demawi.ayto.events.MatchBoxResult;
@@ -31,13 +29,17 @@ public class Tag {
    }
 
    public Tag matchBox(Pair matchingPair, Boolean perfectMatch) {
-      if (matchingPair != null) {
-         MatchBoxResult matchBoxResult = new MatchBoxResult(matchingPair, perfectMatch);
-         boxResults.add(matchBoxResult);
-         events.add(matchBoxResult);
-      }
+      MatchBoxResult matchBoxResult = new MatchBoxResult(matchingPair, perfectMatch);
+      boxResults.add(matchBoxResult);
+      events.add(matchBoxResult);
       return this;
+   }
 
+   public Tag matchBox(Pair matchingPair, Boolean perfectMatch, Pair weitererAuszug) {
+      MatchBoxResult matchBoxResult = new MatchBoxResult(matchingPair, perfectMatch, weitererAuszug);
+      boxResults.add(matchBoxResult);
+      events.add(matchBoxResult);
+      return this;
    }
 
    public Tag matchBox(Boolean perfectMatch, Pair matchingPair) {

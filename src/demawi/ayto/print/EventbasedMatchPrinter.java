@@ -3,7 +3,6 @@ package demawi.ayto.print;
 import java.util.List;
 
 import demawi.ayto.events.Event;
-import demawi.ayto.events.EventWithImplicits;
 import demawi.ayto.events.MatchBoxResult;
 import demawi.ayto.events.MatchingNight;
 import demawi.ayto.events.NewPerson;
@@ -63,9 +62,28 @@ public class EventbasedMatchPrinter
       return calculateSingle(previousResult.getData(), tagNr, eventCount);
    }
 
-   private void checkPrintImplicit(EventWithImplicits event) {
+   private void checkPrintImplicit(MatchBoxResult event) {
+      if (event.isTrue()) {
+         if (event.pairWeitererAuszug == null) {
+            out.accept("Kein weiteres Paar zieht aus!");
+         }
+         else {
+            out.accept("Zusätzlich zieht auch das Perfect Match " + event.pairWeitererAuszug + " aus!");
+         }
+      }
+
       for (MatchBoxResult implicit : event.implicits) {
-         out.accept("Implizite Annahme durch neue Person: " + implicit.pair + " => No match!");
+         if (!implicit.result) {
+            out.accept("Implizite Annahme aufgrund Nicht-Auszug: " + implicit.pair + " => No Match!");
+         }
+      }
+   }
+
+   private void checkPrintImplicit(NewPerson event) {
+      for (MatchBoxResult implicit : event.implicits) {
+         if (!implicit.result) {
+            out.accept("Implizite Annahme für die neue Person durch vorherige Auszüge: " + implicit.pair + " => No Match!");
+         }
       }
    }
 

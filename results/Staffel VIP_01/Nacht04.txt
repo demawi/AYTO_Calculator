@@ -4,7 +4,7 @@
 -- Combinations: 3628800 Possible: 5522 Not possible: 3623278 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Eine Frau ist hinzugekommen: Vanessa. Die Anzahl der Kombinationen erhöht sich damit!
-Implizite Annahme durch neue Person: Vanessa & Francesco => No match!
+Implizite Annahme für die neue Person durch vorherige Auszüge: Vanessa & Francesco => No Match!
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 4 inkl. 1 neuer Person(en)...

@@ -13,7 +13,8 @@ Die Kombinationen reduzieren sich: 3810 => 1640
 -- Berechne 02 - Nacht 5 inkl. 1 Matchbox(en)...
 -- Combinations: 36288000 Possible: 1476 Not possible: 36286524 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Implizite Annahme durch neue Person: VanessaM & Marcel => No match!
+Kein weiteres Paar zieht aus!
+Implizite Annahme aufgrund Nicht-Auszug: VanessaM & Marcel => No Match!
 Die Kombinationen reduzieren sich: 1640 => 1476
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)

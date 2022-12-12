@@ -4,8 +4,8 @@
 -- Combinations: 3628800 Possible: 144 Not possible: 3628656 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Ein Mann ist hinzugekommen: Edin. Die Anzahl der Kombinationen erhöht sich damit!
-Implizite Annahme durch neue Person: Aline & Edin => No match!
-Implizite Annahme durch neue Person: Melissa & Edin => No match!
+Implizite Annahme für die neue Person durch vorherige Auszüge: Aline & Edin => No Match!
+Implizite Annahme für die neue Person durch vorherige Auszüge: Melissa & Edin => No Match!
 
 ==================================================================================================================================================
 -- Berechne 01 - Nacht 6 inkl. 1 neuer Person(en)...
@@ -22,7 +22,8 @@ Die Kombinationen reduzieren sich: 1152 => 160
 -- Berechne 01 - Nacht 6 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en)...
 -- Combinations: 36288000 Possible: 140 Not possible: 36287860 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Implizite Annahme durch neue Person: Michelle & Edin => No match!
+Kein weiteres Paar zieht aus!
+Implizite Annahme aufgrund Nicht-Auszug: Michelle & Edin => No Match!
 Die Kombinationen reduzieren sich: 160 => 140
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)

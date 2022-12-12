@@ -20,7 +20,8 @@ Die Kombinationen reduzieren sich: 35860 => 3000
 -- Berechne VIP_02 - Nacht 4 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en)...
 -- Combinations: 36288000 Possible: 2700 Not possible: 36285300 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Implizite Annahme durch neue Person: Luisa & Felix => No match!
+Kein weiteres Paar zieht aus!
+Implizite Annahme aufgrund Nicht-Auszug: Luisa & Felix => No Match!
 Die Kombinationen reduzieren sich: 3000 => 2700
 
 Es hat keine Matching Night stattgefunden!

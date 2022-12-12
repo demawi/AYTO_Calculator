@@ -13,7 +13,8 @@ Die Kombinationen reduzieren sich: 15 => 6
 -- Berechne VIP_01 - Nacht 10 inkl. 1 Matchbox(en)...
 -- Combinations: 36288000 Possible: 6 Not possible: 36287994 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Implizite Annahme durch neue Person: Vanessa & Josua => No match!
+Kein weiteres Paar zieht aus!
+Implizite Annahme aufgrund Nicht-Auszug: Vanessa & Josua => No Match!
 Die Kombinationen reduzieren sich: 6 => 6
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)

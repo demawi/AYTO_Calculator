@@ -179,9 +179,14 @@ public class StaffelData {
     }
   }
 
+  public List<Frau> getFrauen(int tagNr) {
+    return getFrauen(tagNr, getTag(tagNr).getEvents()
+          .size());
+  }
+
   public List<Frau> getFrauen(int tagNr, int eventCount) {
     List<Frau> result = new ArrayList<>(initialFrauen);
-    for (Event event : getEvents(tagNr, eventCount)) {
+    for (Event event : getAllEventsTill(tagNr, eventCount)) {
       if (event instanceof NewPerson && ((NewPerson) event).person instanceof Frau) {
         result.add((Frau) ((NewPerson) event).person);
       }
@@ -189,9 +194,14 @@ public class StaffelData {
     return result;
   }
 
+  public List<Mann> getMaenner(int tagNr) {
+    return getMaenner(tagNr, getTag(tagNr).getEvents()
+          .size());
+  }
+
   public List<Mann> getMaenner(int tagNr, int eventCount) {
     List<Mann> result = new ArrayList<>(initialMaenner);
-    for (Event event : getEvents(tagNr, eventCount)) {
+    for (Event event : getAllEventsTill(tagNr, eventCount)) {
       if (event instanceof NewPerson && ((NewPerson) event).person instanceof Mann) {
         result.add((Mann) ((NewPerson) event).person);
       }
@@ -199,12 +209,12 @@ public class StaffelData {
     return result;
   }
 
-  public List<Event> getEvents(int tagNr) {
-    return getEvents(tagNr, getTag(tagNr).getEvents()
+  public List<Event> getAllEventsTill(int tagNr) {
+    return getAllEventsTill(tagNr, getTag(tagNr).getEvents()
           .size());
   }
 
-  public List<Event> getEvents(int tagNr, int eventCount) {
+  public List<Event> getAllEventsTill(int tagNr, int eventCount) {
     List<Event> result = new ArrayList<>();
     for (int i = 0; i < tagNr; i++) {
       Tag tag = tage.get(i);
@@ -216,6 +226,30 @@ public class StaffelData {
     return result;
   }
 
+  public List<Person> getZusatzpersonen(int tagNr) {
+    List<Mann> maenner = getMaenner(tagNr);
+    List<Frau> frauen = getFrauen(tagNr);
+    if (maenner.size() == frauen.size()) {
+      return Collections.emptyList();
+    }
+    else if (maenner.size() > frauen.size()) {
+      if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER) {
+        return List.of(maenner.get(maenner.size() - 1));
+      }
+      else {
+        return (List<Person>) (Object) maenner;
+      }
+    }
+    else {
+      if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER) {
+        return List.of(frauen.get(frauen.size() - 1));
+      }
+      else {
+        return (List<Person>) (Object) frauen;
+      }
+    }
+  }
+
   /**
    * Wenn es ein PerfectMatch gibt, zieht das Paar aus. Wenn es jemand geben sollte der nun
    * kein PerfectMatch mehr hat, zieht dieser ebenfalls aus.
@@ -224,31 +258,25 @@ public class StaffelData {
    * PerfektMatch zwischen der ZusatzPerson geben kann.
    */
   public void checkForImplicits(int tagNr) {
-    if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.JEDER) {
-      // Keine impliziten Annahmen
-      return;
-    }
     List<Pair> previousPerfectMatches = new ArrayList<>();
-    List<Pair> previousNoMatches = new ArrayList<>();
     Person newPerson = null;
-    for (Event event : getEvents(tagNr)) {
+    for (Event event : getAllEventsTill(tagNr)) {
       if (event instanceof MatchBoxResult) {
         MatchBoxResult result = (MatchBoxResult) event;
-        if (result.result != null) {
-          if (result.result) {
-            previousPerfectMatches.add(result.pair);
+        if (result.result != null && result.result) {
+          previousPerfectMatches.add(result.pair);
 
-            if (newPerson != null) {
-              if (newPerson instanceof Frau) {
-                addImplicit(result, (Frau) newPerson, result.pair.mann, previousNoMatches);
-              }
-              else {
-                addImplicit(result, result.pair.frau, (Mann) newPerson, previousNoMatches);
+          if (newPerson != null) {
+            if (newPerson instanceof Frau) {
+              for (Person frau : getZusatzpersonen(tagNr)) {
+                addImplicitForPerfectMatchEvent(result, (Frau) frau, result.pair.mann, result.pairWeitererAuszug);
               }
             }
-          }
-          else {
-            previousNoMatches.add(result.pair);
+            else {
+              for (Person mann : getZusatzpersonen(tagNr)) {
+                addImplicitForPerfectMatchEvent(result, result.pair.frau, (Mann) mann, result.pairWeitererAuszug);
+              }
+            }
           }
         }
       }
@@ -256,15 +284,16 @@ public class StaffelData {
         NewPerson personEvent = (NewPerson) event;
         newPerson = personEvent.person;
         if (personEvent.implicits.isEmpty()) {
-          // Annahme, dass eine Person die neu hinzukommt auch noch ein Perfect Match hat.
+          // Annahme: alle vorherigen PerfectMatches sind kein Partner zu der neuen Person.
+          // tritt bei ZusatzType.JEDER nicht auf, da die Person von vornherein dabei ist.
           if (newPerson instanceof Frau) {
             for (Pair perfectMatch : previousPerfectMatches) {
-              addImplicit(personEvent, (Frau) newPerson, perfectMatch.mann, previousNoMatches);
+              addImplicitForPerfectMatchEvent(personEvent, (Frau) newPerson, perfectMatch.mann, null);
             }
           }
           else {
             for (Pair perfectMatch : previousPerfectMatches) {
-              addImplicit(personEvent, perfectMatch.frau, (Mann) newPerson, previousNoMatches);
+              addImplicitForPerfectMatchEvent(personEvent, perfectMatch.frau, (Mann) newPerson, null);
             }
           }
         }
@@ -272,18 +301,18 @@ public class StaffelData {
     }
   }
 
-  private void getZusatzPersonen() {
+  private void addImplicitForPerfectMatchEvent(EventWithImplicits implicitEvent, Frau frau, Mann mann,
+        Pair pairWeitererAuszug) {
+    Pair implicitPair = Pair.pair(frau, mann);
+    if (implicitEvent instanceof MatchBoxResult && ((MatchBoxResult) implicitEvent).pair.equals(implicitPair)) {
+      return;
+    }
 
-  }
-
-  private void addImplicit(EventWithImplicits implicitEvent, Frau frau, Mann mann, List<Pair> previousNoMatches) {
-    if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER) {
-      Pair implicitPair = Pair.pair(frau, mann);
-      if (!previousNoMatches.contains(implicitPair)) {
-        implicitEvent.implicits.add(new MatchBoxResult(implicitPair, false));
-      }
-    } else {
-
+    if (pairWeitererAuszug != null && pairWeitererAuszug.equals(implicitPair)) {
+      implicitEvent.implicits.add(new MatchBoxResult(implicitPair, true));
+    }
+    else {
+      implicitEvent.implicits.add(new MatchBoxResult(implicitPair, false));
     }
   }
 
