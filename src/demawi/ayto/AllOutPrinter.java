@@ -1,8 +1,14 @@
 package demawi.ayto;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.nio.ByteBuffer;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
@@ -24,25 +30,52 @@ public class AllOutPrinter {
          directory.mkdirs();
          MatchPrinter finder = new EventbasedMatchPrinter();
 
-         for (int i = 0, l = staffel.getAnzahlTage(); i < l; i++) {
-            File file = new File(directory.getAbsoluteFile() + "/Nacht" + numberFormat.format(i + 1) + ".txt");
+         for (int tagNr = 1, l = staffel.getAnzahlTage(); tagNr <= l; tagNr++) {
+            File file = new File(directory.getAbsoluteFile() + "/Nacht" + numberFormat.format(tagNr) + ".txt");
             System.out.println("Write file " + file.getAbsoluteFile() + "...");
             if (!file.exists()) {
-               FileWriter out = new FileWriter(file);
-               finder.setOut(str -> {
-                  try {
-                     out.write(str + "\n");
-                  }
-                  catch (IOException e) {
-                     e.printStackTrace();
-                  }
-               });
-               finder.printDayResults(staffel, i + 1);
-               out.flush();
-               out.close();
+               writeViaMemoryBuffer(staffel, tagNr, finder, file);
             }
          }
       }
+   }
+
+   private static void writeViaMemoryBuffer(StaffelData staffel, int tagNr, MatchPrinter finder, File file)
+         throws IOException {
+      ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+      Writer writer = new OutputStreamWriter(buffer);
+      finder.setOut(str -> {
+         try {
+            writer.write(str + "\n");
+         }
+         catch (IOException e) {
+            e.printStackTrace();
+         }
+      });
+      finder.printDayResults(staffel, tagNr);
+      writer.flush();
+      writer.close();
+
+      OutputStream out = new FileOutputStream(file);
+      out.write(buffer.toByteArray());
+      out.flush();
+      out.close();
+   }
+
+   private static void writeDirect(StaffelData staffel, int tagNr, MatchPrinter finder, File file)
+         throws IOException {
+      Writer out = new FileWriter(file);
+      finder.setOut(str -> {
+         try {
+            out.write(str + "\n");
+         }
+         catch (IOException e) {
+            e.printStackTrace();
+         }
+      });
+      finder.printDayResults(staffel, tagNr);
+      out.flush();
+      out.close();
    }
 
    public static void main(String[] args)

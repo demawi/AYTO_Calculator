@@ -26,9 +26,6 @@ public class EventbasedMatchPrinter
          AYTO_Result newResult;
          if (event instanceof NewPerson) {
             newResult = printNewPerson((NewPerson) event, tagNr, i + 1, result);
-            out.accept(
-                  "Die Anzahl der Kombinationen hat sich verändert: " + result.getPossibleConstellationSize() + " => "
-                        + newResult.getPossibleConstellationSize());
          }
          else if (event instanceof MatchBoxResult) {
             newResult = printMatchBox((MatchBoxResult) event, tagNr, i + 1, result);
@@ -42,7 +39,7 @@ public class EventbasedMatchPrinter
          }
          result = newResult;
       }
-      if (tag.matchingNight == null || tag.matchingNight.lights == null) {
+      if (tag.getMatchingNight() == null) {
          out.accept("");
          out.accept("Es hat keine Matching Night stattgefunden!");
       }
@@ -59,32 +56,11 @@ public class EventbasedMatchPrinter
                + ". Die Anzahl der Kombinationen erhöht sich damit!");
       }
       checkPrintImplicit(event);
-      return calculateSingle(previousResult.getData(), tagNr, eventCount);
-   }
-
-   private void checkPrintImplicit(MatchBoxResult event) {
-      if (event.isTrue()) {
-         if (event.pairWeitererAuszug == null) {
-            out.accept("Kein weiteres Paar zieht aus!");
-         }
-         else {
-            out.accept("Zusätzlich zieht auch das Perfect Match " + event.pairWeitererAuszug + " aus!");
-         }
-      }
-
-      for (MatchBoxResult implicit : event.implicits) {
-         if (!implicit.result) {
-            out.accept("Implizite Annahme aufgrund Nicht-Auszug: " + implicit.pair + " => No Match!");
-         }
-      }
-   }
-
-   private void checkPrintImplicit(NewPerson event) {
-      for (MatchBoxResult implicit : event.implicits) {
-         if (!implicit.result) {
-            out.accept("Implizite Annahme für die neue Person durch vorherige Auszüge: " + implicit.pair + " => No Match!");
-         }
-      }
+      AYTO_Result newResult = calculateSingle(previousResult.getData(), tagNr, eventCount);
+      out.accept(
+            "Die Anzahl der Kombinationen hat sich verändert: " + previousResult.getPossibleConstellationSize() + " => "
+                  + newResult.getPossibleConstellationSize());
+      return newResult;
    }
 
    private AYTO_Result printMatchBox(MatchBoxResult event, int tagNr, int eventCount, AYTO_Result previousResult) {
@@ -126,6 +102,32 @@ public class EventbasedMatchPrinter
       }
       // Ansonsten keine Neuberechnung erforderlich
       return previousResult;
+   }
+
+   private void checkPrintImplicit(MatchBoxResult event) {
+      if (event.isTrue()) {
+         if (event.pairWeitererAuszug == null) {
+            out.accept("Kein weiteres Paar zieht aus!");
+         }
+         else {
+            out.accept("Zusätzlich zieht auch das Perfect Match " + event.pairWeitererAuszug + " aus!");
+         }
+      }
+
+      for (MatchBoxResult implicit : event.implicits) {
+         if (!implicit.result) {
+            out.accept("Implizite Annahme aufgrund Nicht-Auszug: " + implicit.pair + " => No Match!");
+         }
+      }
+   }
+
+   private void checkPrintImplicit(NewPerson event) {
+      for (MatchBoxResult implicit : event.implicits) {
+         if (!implicit.result) {
+            out.accept(
+                  "Implizite Annahme für die neue Person durch vorherige Auszüge: " + implicit.pair + " => No Match!");
+         }
+      }
    }
 
    private AYTO_Result printMatchNight(MatchingNight event, int tagNr, int eventCount, AYTO_Result previousResult) {

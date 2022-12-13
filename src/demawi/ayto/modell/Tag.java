@@ -10,11 +10,8 @@ import demawi.ayto.events.NewPerson;
 
 public class Tag {
 
-   private List<Event> events = new ArrayList<>();
-
-   // TODO: Die nachfolgenden Attribute können entfernt werden, wenn auf Eventverarbeitung umgestellt wurde..
-   public List<MatchBoxResult> boxResults = new ArrayList<>();
-   public MatchingNight matchingNight;
+   private final List<Event> events = new ArrayList<>();
+   private MatchingNight matchingNight;
 
    private Tag() {
    }
@@ -29,21 +26,13 @@ public class Tag {
    }
 
    public Tag matchBox(Pair matchingPair, Boolean perfectMatch) {
-      MatchBoxResult matchBoxResult = new MatchBoxResult(matchingPair, perfectMatch);
-      boxResults.add(matchBoxResult);
-      events.add(matchBoxResult);
+      events.add(new MatchBoxResult(matchingPair, perfectMatch));
       return this;
    }
 
    public Tag matchBox(Pair matchingPair, Boolean perfectMatch, Pair weitererAuszug) {
-      MatchBoxResult matchBoxResult = new MatchBoxResult(matchingPair, perfectMatch, weitererAuszug);
-      boxResults.add(matchBoxResult);
-      events.add(matchBoxResult);
+      events.add(new MatchBoxResult(matchingPair, perfectMatch, weitererAuszug));
       return this;
-   }
-
-   public Tag matchBox(Boolean perfectMatch, Pair matchingPair) {
-      return matchBox(matchingPair, perfectMatch);
    }
 
    /**
@@ -52,6 +41,10 @@ public class Tag {
    public void matchNight(Integer lights, Pair... pairs) {
       matchingNight = new MatchingNight(lights, pairs);
       events.add(matchingNight);
+   }
+
+   public MatchingNight getMatchingNight() {
+      return matchingNight;
    }
 
    public List<Event> getEvents() {

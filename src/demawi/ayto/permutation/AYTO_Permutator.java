@@ -1,7 +1,7 @@
 package demawi.ayto.permutation;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.function.BiFunction;
@@ -13,24 +13,21 @@ public abstract class AYTO_Permutator<F, M, R> {
     JEDER, NUR_LETZTER;
 
     public <P, F extends P, M extends P> List<P> getAdditionals(List<F> frauen, List<M> maenner) {
-      List<P> result = new ArrayList<>();
+      if (frauen.size() == maenner.size()) {
+        return Collections.emptyList();
+      }
       if (this == JEDER) {
-        if (frauen.size() < maenner.size()) {
-          result.addAll(maenner);
-        }
-        else if (maenner.size() < frauen.size()) {
-          result.addAll(frauen);
-        }
+        if (frauen.size() < maenner.size())
+          return (List<P>) maenner;
+        else
+          return (List<P>) frauen;
       }
       else { // NUR_LETZTER
-        if (frauen.size() < maenner.size()) {
-          result.add(maenner.get(maenner.size() - 1));
-        }
-        else if (maenner.size() < frauen.size()) {
-          result.add(frauen.get(maenner.size() - 1));
-        }
+        if (frauen.size() < maenner.size())
+          return List.of(maenner.get(maenner.size() - 1));
+        else
+          return List.of(frauen.get(frauen.size() - 1));
       }
-      return result;
     }
   }
 

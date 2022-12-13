@@ -4,7 +4,7 @@ public class Person {
 
   public static final String MARK1 = "*";
 
-  private String name;
+  private final String name;
   public String marked = "";
 
   public Person(String name) {

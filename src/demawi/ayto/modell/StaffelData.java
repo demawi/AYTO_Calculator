@@ -227,27 +227,7 @@ public class StaffelData {
   }
 
   public List<Person> getZusatzpersonen(int tagNr) {
-    List<Mann> maenner = getMaenner(tagNr);
-    List<Frau> frauen = getFrauen(tagNr);
-    if (maenner.size() == frauen.size()) {
-      return Collections.emptyList();
-    }
-    else if (maenner.size() > frauen.size()) {
-      if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER) {
-        return List.of(maenner.get(maenner.size() - 1));
-      }
-      else {
-        return (List<Person>) (Object) maenner;
-      }
-    }
-    else {
-      if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER) {
-        return List.of(frauen.get(frauen.size() - 1));
-      }
-      else {
-        return (List<Person>) (Object) frauen;
-      }
-    }
+    return getZusatztype().getAdditionals(getFrauen(tagNr), getMaenner(tagNr));
   }
 
   /**

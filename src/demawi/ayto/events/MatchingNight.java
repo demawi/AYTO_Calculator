@@ -48,6 +48,8 @@ public class MatchingNight
    * werden kann.
    */
   public boolean isValid(Collection<Pair> constellation) {
+    if (lights == null) // Ergebnis steht noch nicht fest
+      return true;
     return lights == getLights(constellation);
   }
 

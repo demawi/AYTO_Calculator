@@ -22,19 +22,20 @@ public class CalculationOptions
    private final int tagNr;
    private final int eventCount;
 
-   // old selector
-   private final int mitAnzahlMatchBoxen;
+   // abgeleitete Informationen aus den Events
+   private final int anzahlNeuerPersonen;
+   private final int anzahlMatchBoxen;
    private final boolean mitMatchingNight;
-   private final int mitAnzahlNeuePersonen;
 
    public CalculationOptions(StaffelData data, int tagNr, int eventCount) {
       this.data = data;
       this.tagNr = tagNr;
       this.eventCount = eventCount;
 
-      // lookup for mitAnzahlMatchBoxen and mitMatchingNight
+      // lookup for anzahlNeuerPersonen, anzahlMatchBoxen, mitMatchingNight
       int matchBoxCount = 0;
       int matchingNightCount = 0;
+      int neuePersonenCount = 0;
       List<Event> events = getTag().getEvents();
       for (int i = 0; i < eventCount; i++) {
          Event evt = events.get(i);
@@ -44,34 +45,25 @@ public class CalculationOptions
          else if (evt instanceof MatchingNight) {
             matchingNightCount++;
          }
-      }
-      mitAnzahlMatchBoxen = matchBoxCount;
-      mitMatchingNight = matchingNightCount > 0;
-      mitAnzahlNeuePersonen = checkMitAnzahlNeuePersonen();
-   }
-
-   private int checkMitAnzahlNeuePersonen() {
-      int result = 0;
-      List<Event> events = getTag().getEvents();
-      for (int i = 0; i < eventCount; i++) {
-         Event evt = events.get(i);
-         if (evt instanceof NewPerson) {
-            result++;
+         else if (evt instanceof NewPerson) {
+            neuePersonenCount++;
          }
       }
-      return result;
+      anzahlMatchBoxen = matchBoxCount;
+      mitMatchingNight = matchingNightCount > 0;
+      anzahlNeuerPersonen = neuePersonenCount;
    }
 
    public StaffelData getData() {
       return data;
    }
 
-   public int getAnzahlMatchBoxen(int maxMatchBoxResults) {
-      return Math.min(mitAnzahlMatchBoxen, maxMatchBoxResults);
+   public int getAnzahlMatchBoxen() {
+      return anzahlMatchBoxen;
    }
 
    public int getAnzahlNeuePersonen() {
-      return mitAnzahlNeuePersonen;
+      return anzahlNeuerPersonen;
    }
 
    public boolean isMitMatchingNight() {
@@ -101,7 +93,7 @@ public class CalculationOptions
    public MatchingNight getMatchingNight() {
       if (tagNr == 0)
          return null;
-      return getTag().matchingNight;
+      return getTag().getMatchingNight();
    }
 
    public AYTO_Permutator.ZUSATZTYPE getZusatztype() {

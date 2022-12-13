@@ -39,6 +39,8 @@ public abstract class MatchPrinter {
 
    /**
     * Prints the spot probabilities 0..10 for the given constellation.
+    *
+    * @spotsReached kann null sein, wenn die Entscheidung noch nicht stattgefunden hat.
     */
    public void printLightChances(AYTO_Result result, Collection<Pair> pairs, Integer spotsReached) {
       int[] lightResults = result.getLightResultsForLastMatchingNight();
@@ -55,14 +57,19 @@ public abstract class MatchPrinter {
       for (int i = 0, l = result.getData()
             .getBasePairCount(); i <= l; i++) {
          String marker = "";
-         if (i == spotsReached) {
+         if (spotsReached != null && i == spotsReached) {
             marker = " <==";
          }
          out.accept(i + " => " + Formatter.prozent(lightResults[i], result.getPossibleConstellationSize()) + "% ["
                + lightResults[i] + "]" + marker);
       }
-      out.accept("Die Kombinationen reduzieren sich: " + result.getPossibleConstellationSize() + " => "
-            + lightResults[spotsReached]);
+      if (spotsReached != null) {
+         out.accept("Die Kombinationen reduzieren sich: " + result.getPossibleConstellationSize() + " => "
+               + lightResults[spotsReached]);
+      }
+      else {
+         out.accept("Das Ergebnis steht noch nicht fest.");
+      }
    }
 
    /**
@@ -70,7 +77,6 @@ public abstract class MatchPrinter {
     */
    public void printPossibilitiesAsTable(AYTO_Result result) {
       out.accept("======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======");
-
 
       List<List<String>> table = new ArrayList<>();
       table.add(new ArrayList<>());
@@ -99,7 +105,7 @@ public abstract class MatchPrinter {
             Pair pair = Pair.pair(frau, mann);
             int count = 0;
             for (Tag tag : result.getData().getTage()) {
-               MatchingNight night = tag.matchingNight;
+               MatchingNight night = tag.getMatchingNight();
                if (night != null && night.constellation.contains(pair)) {
                   count++;
                }

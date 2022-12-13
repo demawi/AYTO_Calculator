@@ -7,7 +7,6 @@ import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
 import demawi.ayto.modell.Pair;
 import demawi.ayto.modell.StaffelData;
-import demawi.ayto.modell.Tag;
 import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.print.Formatter;
 
@@ -29,14 +28,13 @@ public class MatchFinder {
       if (out != null) {
          out.accept("");
          breakLine(out);
-         Tag tag = calcOptions.getTag();
-         int anzahlMatchBoxen = calcOptions.getAnzahlMatchBoxen(tag.boxResults.size());
+         int anzahlMatchBoxen = calcOptions.getAnzahlMatchBoxen();
          out.accept("-- Berechne " + data.name + " - Nacht " + calcOptions.getTagNr() + (
                calcOptions.getAnzahlNeuePersonen() > 0 ?
                      " inkl. " + calcOptions.getAnzahlNeuePersonen() + " neuer Person(en)" : "") + (
                anzahlMatchBoxen > 0 ? " inkl. " + anzahlMatchBoxen + " Matchbox(en)" : "")
-               + (calcOptions.isMitMatchingNight() ? " inkl. Matchingnight" : "")
-               + "..."); // + " [Ereignis#"+ calcOptions.getEventCount() + "]"
+               + (calcOptions.isMitMatchingNight() ? " inkl. Matchingnight" : "") + "..." + " [Ereignis#"
+               + calcOptions.getEventCount() + "]");
       }
 
       AYTO_Permutator<Frau, Mann, Pair> permutator = AYTO_Permutator.create(calcOptions.getFrauen(),
@@ -46,7 +44,8 @@ public class MatchFinder {
          out.accept(
                "-- Combinations: " + result.totalConstellations + " Possible: " + result.possible + " Not possible: "
                      + result.notPossible + " (Intern constellation-add-pair checks: " + permutator.testCount + ")");
-         System.out.println(" Calculation time: " + Formatter.minSecs(System.currentTimeMillis() - start));
+         System.out.println(" Calculation time: " + Formatter.minSecs(System.currentTimeMillis() - start) + " ["
+               + calcOptions.getTagNr() + "." + calcOptions.getEventCount() + "]");
          breakLine2(out);
       }
       return result;

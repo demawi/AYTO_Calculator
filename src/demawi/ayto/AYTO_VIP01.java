@@ -61,27 +61,27 @@ public class AYTO_VIP01
                 pair(Kathleen, Salvatore), pair(Melina, Tommy), pair(Sarah, Alex), pair(Steffi, Jamie),
                 pair(Walentina, Josua), pair(Vanessa, Diogo));
 
-    newTag().matchBox(false, pair(Finnja, Salvatore))
+    newTag().matchBox(pair(Finnja, Salvatore), false)
           .matchNight(3, pair(Jules, Francesco), pair(Finnja, Eugen), pair(Jacky, Salvatore), pair(Kathleen, Manuel),
                 pair(Steffi, Alex), pair(Jill, Danilo), pair(Sarah, Jamie), pair(Walentina, Josua), pair(Melina, Tommy),
                 pair(Aurelia, Diogo));
 
-    newTag().matchBox(false, pair(Finnja, Eugen))
+    newTag().matchBox(pair(Finnja, Eugen), false)
           .matchNight(2, pair(Jules, Francesco), pair(Aurelia, Danilo), pair(Finnja, Jamie), pair(Jacky, Alex),
                 pair(Jill, Eugen), pair(Kathleen, Manuel), pair(Melina, Tommy), pair(Sarah, Josua),
                 pair(Walentina, Salvatore), pair(Vanessa, Diogo));
 
-    newTag().matchBox(false, pair(Steffi, Eugen))
+    newTag().matchBox(pair(Steffi, Eugen), false)
           .matchNight(1, pair(Jules, Francesco), pair(Aurelia, Danilo), pair(Finnja, Manuel), pair(Jacky, Eugen),
                 pair(Jill, Salvatore), pair(Melina, Alex), pair(Sarah, Jamie), pair(Walentina, Josua),
                 pair(Vanessa, Diogo), pair(Steffi, Tommy));
 
-    newTag().matchBox(false, pair(Melina, Tommy))
+    newTag().matchBox(pair(Melina, Tommy), false)
           .matchNight(4, pair(Jules, Francesco), pair(Aurelia, Diogo), pair(Finnja, Tommy), pair(Jill, Danilo),
                 pair(Kathleen, Manuel), pair(Melina, Eugen), pair(Sarah, Alex), pair(Walentina, Salvatore),
                 pair(Vanessa, Josua), pair(Steffi, Jamie));
 
-    newTag().matchBox(true, pair(Aurelia, Josua))
+    newTag().matchBox(pair(Aurelia, Josua), true)
           .matchNight(7, pair(Jules, Francesco), pair(Aurelia, Josua), pair(Finnja, Tommy), pair(Jill, Diogo),
                 pair(Kathleen, Manuel), pair(Sarah, Danilo), pair(Walentina, Eugen), pair(Vanessa, Alex),
                 pair(Steffi, Jamie), pair(Jacky, Salvatore));
