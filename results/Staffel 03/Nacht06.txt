@@ -1,6 +1,6 @@
 
 ==================================================================================================================================================
--- Berechne 03 - Nacht 6...
+-- Berechne 03 - Nacht 6... [Ereignis#0]
 -- Combinations: 36288000 Possible: 1924 Not possible: 36286076 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -10,7 +10,7 @@ Nein => 96,62% [1859] <==
 Die Kombinationen reduzieren sich: 1924 => 1859
 
 ==================================================================================================================================================
--- Berechne 03 - Nacht 6 inkl. 1 Matchbox(en)...
+-- Berechne 03 - Nacht 6 inkl. 1 Matchbox(en)... [Ereignis#1]
 -- Combinations: 36288000 Possible: 1859 Not possible: 36286141 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 Die Kombinationen reduzieren sich: 1859 => 19
 
 ==================================================================================================================================================
--- Berechne 03 - Nacht 6 inkl. 1 Matchbox(en) inkl. Matchingnight...
+-- Berechne 03 - Nacht 6 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
 -- Combinations: 36288000 Possible: 19 Not possible: 36287981 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======

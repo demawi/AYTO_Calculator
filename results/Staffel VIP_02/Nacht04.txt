@@ -1,12 +1,12 @@
 
 ==================================================================================================================================================
--- Berechne VIP_02 - Nacht 4...
+-- Berechne VIP_02 - Nacht 4... [Ereignis#0]
 -- Combinations: 3628800 Possible: 3586 Not possible: 3625214 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Ein Mann ist hinzugekommen: Felix. Die Anzahl der Kombinationen erhöht sich damit!
 
 ==================================================================================================================================================
--- Berechne VIP_02 - Nacht 4 inkl. 1 neuer Person(en)...
+-- Berechne VIP_02 - Nacht 4 inkl. 1 neuer Person(en)... [Ereignis#1]
 -- Combinations: 36288000 Possible: 35860 Not possible: 36252140 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Die Anzahl der Kombinationen hat sich verändert: 3586 => 35860
@@ -17,7 +17,7 @@ Nein => 91,63% [32860]
 Die Kombinationen reduzieren sich: 35860 => 3000
 
 ==================================================================================================================================================
--- Berechne VIP_02 - Nacht 4 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en)...
+-- Berechne VIP_02 - Nacht 4 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en)... [Ereignis#2]
 -- Combinations: 36288000 Possible: 2700 Not possible: 36285300 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Kein weiteres Paar zieht aus!

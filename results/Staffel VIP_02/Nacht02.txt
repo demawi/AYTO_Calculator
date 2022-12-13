@@ -1,6 +1,6 @@
 
 ==================================================================================================================================================
--- Berechne VIP_02 - Nacht 2...
+-- Berechne VIP_02 - Nacht 2... [Ereignis#0]
 -- Combinations: 3628800 Possible: 205176 Not possible: 3423624 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -10,7 +10,7 @@ Nein => 70,63% [144921] <==
 Die Kombinationen reduzieren sich: 205176 => 144921
 
 ==================================================================================================================================================
--- Berechne VIP_02 - Nacht 2 inkl. 1 Matchbox(en)...
+-- Berechne VIP_02 - Nacht 2 inkl. 1 Matchbox(en)... [Ereignis#1]
 -- Combinations: 3628800 Possible: 144921 Not possible: 3483879 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 Die Kombinationen reduzieren sich: 144921 => 34595
 
 ==================================================================================================================================================
--- Berechne VIP_02 - Nacht 2 inkl. 1 Matchbox(en) inkl. Matchingnight...
+-- Berechne VIP_02 - Nacht 2 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
 -- Combinations: 3628800 Possible: 34595 Not possible: 3594205 (Intern constellation-add-pair checks: 62353010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======

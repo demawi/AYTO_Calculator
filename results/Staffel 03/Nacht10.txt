@@ -1,6 +1,6 @@
 
 ==================================================================================================================================================
--- Berechne 03 - Nacht 10...
+-- Berechne 03 - Nacht 10... [Ereignis#0]
 -- Combinations: 36288000 Possible: 6 Not possible: 36287994 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -10,7 +10,7 @@ Nein => 100,00% [6] <==
 Die Kombinationen reduzieren sich: 6 => 6
 
 ==================================================================================================================================================
--- Berechne 03 - Nacht 10 inkl. 1 Matchbox(en)...
+-- Berechne 03 - Nacht 10 inkl. 1 Matchbox(en)... [Ereignis#1]
 -- Combinations: 36288000 Possible: 6 Not possible: 36287994 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 Die Kombinationen reduzieren sich: 6 => 6
 
 ==================================================================================================================================================
--- Berechne 03 - Nacht 10 inkl. 1 Matchbox(en) inkl. Matchingnight...
+-- Berechne 03 - Nacht 10 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
 -- Combinations: 36288000 Possible: 6 Not possible: 36287994 (Intern constellation-add-pair checks: 98641010)
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
