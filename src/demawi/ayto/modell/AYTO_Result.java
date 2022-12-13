@@ -1,7 +1,6 @@
 package demawi.ayto.modell;
 
 import java.util.HashMap;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -14,8 +13,6 @@ public class AYTO_Result {
 
   private final CalculationOptions calcOptions;
   public final Map<Pair, Integer> possiblePairCount = new HashMap<>();
-  public final Map<Frau, Set<Mann>> frauCount = new HashMap<>();
-  public final Map<Mann, Set<Frau>> mannCount = new HashMap<>();
   public int totalConstellations = 0;
   public int possible = 0;
   public int notPossible = 0;
@@ -94,37 +91,30 @@ public class AYTO_Result {
   }
 
   public void addResult(Set<Pair> constellation, boolean result) {
-    totalConstellations++;
-
-    if (result) {
-      addPossible(constellation);
-      possible++;
-    }
-    else {
-      notPossible++;
-    }
+    Integer lights = result && lightPossibilities != null ? calcOptions.getMatchingNight()
+          .getLights(constellation) : null;
+    registerResults(constellation, result, lights);
   }
 
   /**
-   * Fügt die Konstellation als gültig ein.
-   *
-   * Diese werden nur noch für die Aggregations-Statistiken eingefügt und nicht
-   * mehr komplett in einer Liste gehalten, da es bei 199mio Einträgen zu viel
+   * Eintragen der Ergebnisse.
+   * <p>
+   * Es werden keine kompletten Constellations mehr gespeichert, da es bei 199mio Einträgen zu viel
    * Speicher kostet.
    */
-  private void addPossible(Set<Pair> pairs) {
-    if (lightPossibilities != null) {
-      lightPossibilities[calcOptions.getMatchingNight()
-            .getLights(pairs)]++;
+  private synchronized void registerResults(Set<Pair> constellation, boolean result, Integer lights) {
+    totalConstellations++;
+    if (lights != null) {
+      lightPossibilities[lights]++;
     }
-
-    // directly update pair-,frau-,mannCount
-    for (Pair current : pairs) {
-      incrementCountMap(possiblePairCount, current);
-      frauCount.computeIfAbsent(current.frau, k -> new LinkedHashSet<>())
-            .add(current.mann);
-      mannCount.computeIfAbsent(current.mann, k -> new LinkedHashSet<>())
-            .add(current.frau);
+    if (result) {
+      possible++;
+      for (Pair current : constellation) {
+        incrementCountMap(possiblePairCount, current);
+      }
+    }
+    else {
+      notPossible++;
     }
   }
 

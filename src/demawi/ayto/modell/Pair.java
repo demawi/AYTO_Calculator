@@ -5,7 +5,6 @@ import java.util.Map;
 
 public class Pair {
 
-  private static final Map<Frau, Map<Mann, Pair>> pairCache = new LinkedHashMap<>();
   public Frau frau;
   public Mann mann;
 
@@ -15,8 +14,7 @@ public class Pair {
   }
 
   public static Pair pair(Frau frau, Mann mann) {
-    Map<Mann, Pair> mannPairMap = pairCache.computeIfAbsent(frau, k -> new LinkedHashMap<>());
-    return mannPairMap.computeIfAbsent(mann, k -> new Pair(frau, mann));
+    return new Pair(frau, mann);
   }
 
   @Override

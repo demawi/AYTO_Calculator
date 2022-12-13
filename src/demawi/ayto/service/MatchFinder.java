@@ -25,6 +25,7 @@ public class MatchFinder {
          return result;
       }
       StaffelData data = calcOptions.getData();
+      data.ensureDataIsClosed();
       if (out != null) {
          out.accept("");
          breakLine(out);

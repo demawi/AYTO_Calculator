@@ -4,6 +4,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
 
@@ -35,8 +38,11 @@ public abstract class AYTO_Permutator<F, M, R> {
   protected final List<M> maenner;
   protected final int minSize;
   protected final int maxSize;
+  protected final int anzahlFrauen;
+  protected final int anzahlMaenner;
   private final BiFunction<F, M, R> packingFunction;
   public long testCount = 0; // wie oft die canAdd-Methode aufgerufen wurde
+  private final ExecutorService executorService;
 
   /**
    * -1: man weiß nicht wer der Zusatzmann/frau ist
@@ -45,9 +51,12 @@ public abstract class AYTO_Permutator<F, M, R> {
   protected AYTO_Permutator(List<F> frauen, List<M> maenner, BiFunction<F, M, R> packingFunction) {
     this.frauen = frauen;
     this.maenner = maenner;
+    anzahlFrauen = frauen.size();
+    anzahlMaenner = maenner.size();
     minSize = Math.min(frauen.size(), maenner.size());
     maxSize = Math.max(frauen.size(), maenner.size());
     this.packingFunction = packingFunction;
+    executorService = Executors.newCachedThreadPool();
   }
 
   public static <F, M, R> AYTO_Permutator<F, M, R> create(List<F> setA, List<M> setB, ZUSATZTYPE zusatzType,
@@ -60,13 +69,18 @@ public abstract class AYTO_Permutator<F, M, R> {
     }
   }
 
-  int count = 0;
-
   public void permutate(Consumer<Set<R>> pairConsumer) {
-    int anzahlFrauen = frauen.size();
-    int anzahlMaenner = maenner.size();
     Object[] current = createInitialConstellation();
-    permutateInternImpl(anzahlFrauen, anzahlMaenner, 0, 0, current, pairConsumer);
+    permutateInternImpl(0, 0, current, pairConsumer, 0);
+    // System.out.println("ActiveThreads: " + ((ThreadPoolExecutor) executorService).getActiveCount());
+    executorService.shutdown();
+    try {
+      executorService.awaitTermination(10, TimeUnit.MINUTES);
+    }
+    catch (InterruptedException e) {
+      executorService.shutdownNow();
+      throw new RuntimeException(e);
+    }
   }
 
   public abstract Object[] createInitialConstellation();
@@ -77,10 +91,9 @@ public abstract class AYTO_Permutator<F, M, R> {
    */
   private int openInts = 0;
 
-  private void permutateInternImpl(int anzahlFrauen, int anzahlMaenner, int frauAktuell, int mannAktuell,
-        Object[] currentConstellation, Consumer<Set<R>> pairConsumer) {
+  private void permutateInternImpl(int frauAktuell, int mannAktuell, Object[] currentConstellation,
+        Consumer<Set<R>> pairConsumer, int branchLevel) {
     openInts++;
-    // System.out.println("openInts: "+openInts);
 
     if (anzahlFrauen >= anzahlMaenner) { // jede Frau ist nur einmal vorhanden, somit frauAktuell immer + 1
       for (int mann = 0; mann < anzahlMaenner; mann++) {
@@ -92,7 +105,13 @@ public abstract class AYTO_Permutator<F, M, R> {
             pairConsumer.accept(result);
           }
           else {
-            permutateInternImpl(anzahlFrauen, anzahlMaenner, frauAktuell + 1, 0, newSet, pairConsumer);
+            if (branchLevel == 0) {
+              executorService.submit(
+                    () -> permutateInternImpl(frauAktuell + 1, 0, newSet, pairConsumer, branchLevel - 1));
+            }
+            else {
+              permutateInternImpl(frauAktuell + 1, 0, newSet, pairConsumer, branchLevel - 1);
+            }
           }
         }
       }
@@ -107,7 +126,13 @@ public abstract class AYTO_Permutator<F, M, R> {
             pairConsumer.accept(result);
           }
           else {
-            permutateInternImpl(anzahlFrauen, anzahlMaenner, 0, mannAktuell + 1, newSet, pairConsumer);
+            if (branchLevel == 0) {
+              executorService.submit(
+                    () -> permutateInternImpl(0, mannAktuell + 1, newSet, pairConsumer, branchLevel - 1));
+            }
+            else {
+              permutateInternImpl(0, mannAktuell + 1, newSet, pairConsumer, branchLevel - 1);
+            }
           }
         }
       }

@@ -41,7 +41,9 @@ public class AYTO_PermutatorTest {
       long start = System.currentTimeMillis();
       count = 0;
       permutator.permutate(result -> {
-         count++;
+         synchronized (this) {
+            count++;
+         }
       });
       System.out.println(
             "JEDER 11:10 PERMUTATION Taken time: " + Formatter.minSecs(System.currentTimeMillis() - start));
