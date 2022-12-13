@@ -13,6 +13,11 @@ import java.util.function.Consumer;
 public abstract class AYTO_Permutator<F, M, R> {
 
   private static final ExecutorService executorService = Executors.newCachedThreadPool();
+  /**
+   * -1: Multi-threading deactivated
+   * 0: branch on root (10 Threads)
+   */
+  private static final int BRANCH_LEVEL = 0;
 
   public enum ZUSATZTYPE {
     JEDER, NUR_LETZTER;
@@ -71,7 +76,7 @@ public abstract class AYTO_Permutator<F, M, R> {
 
   public void permutate(Consumer<Set<R>> pairConsumer) {
     Object[] current = createInitialConstellation();
-    permutateInternImpl(0, 0, current, pairConsumer, 0);
+    permutateInternImpl(0, 0, current, pairConsumer, BRANCH_LEVEL);
     executorService.shutdown();
     try {
       executorService.awaitTermination(10, TimeUnit.MINUTES);
