@@ -25,7 +25,7 @@ public class MultiMatchFinder {
       AYTO_Permutator<Frau, Mann, Pair> permutator = AYTO_Permutator.create(calcOptions.getFrauen(),
             calcOptions.getMaenner(), calcOptions.getZusatztype(), Pair::pair);
 
-      permutator.permutate(constellation -> {
+      permutator.permutate(() -> constellation -> {
          totalConstellations++;
          for (Map.Entry<Event, AYTO_Result> entry : eventResults.entrySet()) {
             if (entry.getKey()

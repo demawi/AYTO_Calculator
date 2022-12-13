@@ -9,6 +9,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public abstract class AYTO_Permutator<F, M, R> {
 
@@ -69,9 +70,9 @@ public abstract class AYTO_Permutator<F, M, R> {
     }
   }
 
-  public void permutate(Consumer<Set<R>> pairConsumer) {
+  public void permutate(Supplier<Consumer<Set<R>>> pairConsumer) {
     Object[] current = createInitialConstellation();
-    permutateInternImpl(0, 0, current, pairConsumer, 0);
+    permutateInternImpl(0, 0, current, pairConsumer, null,0);
     // System.out.println("ActiveThreads: " + ((ThreadPoolExecutor) executorService).getActiveCount());
     executorService.shutdown();
     try {
@@ -92,7 +93,7 @@ public abstract class AYTO_Permutator<F, M, R> {
   private int openInts = 0;
 
   private void permutateInternImpl(int frauAktuell, int mannAktuell, Object[] currentConstellation,
-        Consumer<Set<R>> pairConsumer, int branchLevel) {
+        Supplier<Consumer<Set<R>>> pairConsumerCreator, Consumer<Set<R>> pairConsumer, int branchLevel) {
     openInts++;
 
     if (anzahlFrauen >= anzahlMaenner) { // jede Frau ist nur einmal vorhanden, somit frauAktuell immer + 1
@@ -107,10 +108,10 @@ public abstract class AYTO_Permutator<F, M, R> {
           else {
             if (branchLevel == 0) {
               executorService.submit(
-                    () -> permutateInternImpl(frauAktuell + 1, 0, newSet, pairConsumer, branchLevel - 1));
+                    () -> permutateInternImpl(frauAktuell + 1, 0, newSet, pairConsumerCreator, pairConsumerCreator.get(), branchLevel - 1));
             }
             else {
-              permutateInternImpl(frauAktuell + 1, 0, newSet, pairConsumer, branchLevel - 1);
+              permutateInternImpl(frauAktuell + 1, 0, newSet, pairConsumerCreator, pairConsumerCreator.get(), branchLevel - 1);
             }
           }
         }
@@ -128,10 +129,10 @@ public abstract class AYTO_Permutator<F, M, R> {
           else {
             if (branchLevel == 0) {
               executorService.submit(
-                    () -> permutateInternImpl(0, mannAktuell + 1, newSet, pairConsumer, branchLevel - 1));
+                    () -> permutateInternImpl(0, mannAktuell + 1, newSet, pairConsumerCreator, pairConsumerCreator.get(), branchLevel - 1));
             }
             else {
-              permutateInternImpl(0, mannAktuell + 1, newSet, pairConsumer, branchLevel - 1);
+              permutateInternImpl(0, mannAktuell + 1, newSet, pairConsumerCreator, pairConsumerCreator.get(), branchLevel - 1);
             }
           }
         }
