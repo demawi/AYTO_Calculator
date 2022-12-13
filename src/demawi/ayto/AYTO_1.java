@@ -94,7 +94,8 @@ public class AYTO_1
    }
 
    public static void main(String[] args) {
-      new EventbasedMatchPrinter().printDayResults(new AYTO_1());
+      // new EventbasedMatchPrinter().printDayResults(new AYTO_1());
+      new EventbasedMatchPrinter().printEventPlusTable(new AYTO_1(), 1, 2);
    }
 
 }

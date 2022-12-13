@@ -66,15 +66,7 @@ public abstract class AYTO_Permutator<F, M, R> {
     int anzahlFrauen = frauen.size();
     int anzahlMaenner = maenner.size();
     Object[] current = createInitialConstellation();
-    count = 0;
-    permutateInternImpl(anzahlFrauen, anzahlMaenner, 0, 0, current, (a -> {
-      count++;
-      if ((count % 1000000) == 0) {
-        //System.out.println("Count: " + count / 1000000 + "mio");
-      }
-      pairConsumer.accept(a);
-    }));
-    //System.out.println("Permutations: " + count);
+    permutateInternImpl(anzahlFrauen, anzahlMaenner, 0, 0, current, pairConsumer);
   }
 
   public abstract Object[] createInitialConstellation();

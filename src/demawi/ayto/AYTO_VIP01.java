@@ -97,7 +97,8 @@ public class AYTO_VIP01
   }
 
   public static void main(String[] args) {
-    new EventbasedMatchPrinter().printDayResults(new AYTO_VIP01());
+    //new EventbasedMatchPrinter().printDayResults(new AYTO_VIP01());
+    new EventbasedMatchPrinter().printEventPlusTable(new AYTO_VIP01(), 1, 2);
   }
 
 }

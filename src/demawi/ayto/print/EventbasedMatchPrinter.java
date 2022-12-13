@@ -1,7 +1,5 @@
 package demawi.ayto.print;
 
-import java.util.List;
-
 import demawi.ayto.events.Event;
 import demawi.ayto.events.MatchBoxResult;
 import demawi.ayto.events.MatchingNight;
@@ -17,32 +15,53 @@ public class EventbasedMatchPrinter
 
    @Override
    public void printDayResults(StaffelData data, int tagNr) {
-      data.checkForImplicits(tagNr);
       AYTO_Result result = calculateSingle(data, tagNr, 0);
       Tag tag = data.getTag(tagNr);
-      List<Event> events = tag.getEvents();
-      for (int i = 0, l = events.size(); i < l; i++) {
-         Event event = events.get(i);
-         AYTO_Result newResult;
-         if (event instanceof NewPerson) {
-            newResult = printNewPerson((NewPerson) event, tagNr, i + 1, result);
-         }
-         else if (event instanceof MatchBoxResult) {
-            newResult = printMatchBox((MatchBoxResult) event, tagNr, i + 1, result);
-         }
-         else if (event instanceof MatchingNight) {
-            newResult = printMatchNight((MatchingNight) event, tagNr, i + 1, result);
-         }
-         else {
-            throw new IllegalArgumentException("Event-Klasse kann noch nicht verarbeitet werden: " + event.getClass()
-                  .getSimpleName());
-         }
-         result = newResult;
+      for (int eventCount = 1, l = tag.getEvents()
+            .size(); eventCount <= l; eventCount++) {
+         result = printEvent(tagNr, eventCount, result);
       }
       if (tag.getMatchingNight() == null) {
          out.accept("");
          out.accept("Es hat keine Matching Night stattgefunden!");
       }
+      printPossibilitiesAsTable(result);
+   }
+
+   private AYTO_Result printEvent(int tagNr, int eventCount, AYTO_Result previousResult) {
+      Event event = previousResult.getData()
+            .getTag(tagNr)
+            .getEvent(eventCount);
+      if (event instanceof NewPerson) {
+         return printNewPerson((NewPerson) event, tagNr, eventCount, previousResult);
+      }
+      else if (event instanceof MatchBoxResult) {
+         return printMatchBox((MatchBoxResult) event, tagNr, eventCount, previousResult);
+      }
+      else if (event instanceof MatchingNight) {
+         return printMatchNight((MatchingNight) event, tagNr, eventCount, previousResult);
+      }
+      else {
+         throw new IllegalArgumentException("Event-Klasse kann noch nicht verarbeitet werden: " + event.getClass()
+               .getSimpleName());
+      }
+   }
+
+   /**
+    * Wenn tagNr und/oder eventCount null sind, wird jeweils der letzte Eintrag verwendet.
+    */
+   public void printEventPlusTable(StaffelData data, Integer tagNr, Integer eventCount) {
+      if (tagNr == null) {
+         tagNr = data.getTage()
+               .size();
+      }
+      if (eventCount == null) {
+         eventCount = data.getTag(tagNr)
+               .getEvents()
+               .size();
+      }
+      AYTO_Result result = calculateSingle(data, tagNr, eventCount - 1);
+      result = printEvent(tagNr, eventCount, result);
       printPossibilitiesAsTable(result);
    }
 

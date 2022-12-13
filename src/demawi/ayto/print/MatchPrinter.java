@@ -27,7 +27,6 @@ public abstract class MatchPrinter {
    }
 
    public void printDayResults(StaffelData data) {
-      data.closeForInput();
       printDayResults(data, data.getAnzahlTage());
    }
 

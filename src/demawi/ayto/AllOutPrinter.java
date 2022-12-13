@@ -24,7 +24,6 @@ public class AllOutPrinter {
    public static void print(StaffelData... staffeln)
          throws Exception {
       for (StaffelData staffel : staffeln) {
-         staffel.closeForInput();
          File directory = new File("./results/Staffel " + staffel.name);
          System.out.println(directory.getAbsoluteFile());
          directory.mkdirs();

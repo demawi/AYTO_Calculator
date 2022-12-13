@@ -43,11 +43,13 @@ public class AYTO_4
           .matchNight(null, pair(Aurelia, Barkin), pair(Carina, Burim), pair(Caroline, Christopher), pair(Dorna, Deniz),
                 pair(Henna, Joel), pair(Juliette, Ken), pair(Larissa, Kenneth), pair(Stefanie, Maximilian),
                 pair(Vanessa, Pascal), pair(Valeria, Sasa));
+          //.matchNight(null, pair(Vanessa, Sasa), pair(Carina, Ken), pair(Henna, null));
 
   }
 
   public static void main(String[] args) {
-    new EventbasedMatchPrinter().printDayResults(new AYTO_4());
+    //new EventbasedMatchPrinter().printDayResults(new AYTO_4());
+    new EventbasedMatchPrinter().printEventPlusTable(new AYTO_4(), null, null);
   }
 
 }

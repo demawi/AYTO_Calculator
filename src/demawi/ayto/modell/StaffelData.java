@@ -59,8 +59,8 @@ public class StaffelData {
     return zusatztype;
   }
 
-  public Tag getTag(int index) {
-    return tage.get(index - 1);
+  public Tag getTag(int tagNr) {
+    return tage.get(tagNr - 1);
   }
 
   public int getAnzahlTage() {
@@ -75,14 +75,66 @@ public class StaffelData {
     this.pairsToTrack = Arrays.asList(pairs);
   }
 
+  public List<Frau> getFrauen(int tagNr) {
+    return getFrauen(tagNr, getTag(tagNr).getEvents()
+          .size());
+  }
+
+  public List<Frau> getFrauen(int tagNr, int eventCount) {
+    List<Frau> result = new ArrayList<>(initialFrauen);
+    for (Event event : getAllEventsTill(tagNr, eventCount)) {
+      if (event instanceof NewPerson && ((NewPerson) event).person instanceof Frau) {
+        result.add((Frau) ((NewPerson) event).person);
+      }
+    }
+    return result;
+  }
+
+  public List<Mann> getMaenner(int tagNr) {
+    return getMaenner(tagNr, getTag(tagNr).getEvents()
+          .size());
+  }
+
+  public List<Mann> getMaenner(int tagNr, int eventCount) {
+    List<Mann> result = new ArrayList<>(initialMaenner);
+    for (Event event : getAllEventsTill(tagNr, eventCount)) {
+      if (event instanceof NewPerson && ((NewPerson) event).person instanceof Mann) {
+        result.add((Mann) ((NewPerson) event).person);
+      }
+    }
+    return result;
+  }
+
+  public List<Event> getAllEventsTill(int tagNr) {
+    return getAllEventsTill(tagNr, getTag(tagNr).getEvents()
+          .size());
+  }
+
+  public List<Event> getAllEventsTill(int tagNr, int eventCount) {
+    List<Event> result = new ArrayList<>();
+    for (int i = 0; i < tagNr; i++) {
+      Tag tag = tage.get(i);
+      List<Event> curEvents = tag.getEvents();
+      for (int j = 0, l = (i == tagNr - 1) ? eventCount : curEvents.size(); j < l; j++) {
+        result.add(curEvents.get(j));
+      }
+    }
+    return result;
+  }
+
+  public List<Person> getZusatzpersonen(int tagNr) {
+    return getZusatztype().getAdditionals(getFrauen(tagNr), getMaenner(tagNr));
+  }
+
   /**
    * Close for input and validate all given data.
    */
-  public void closeForInput() {
+  public void ensureDataIsClosed() {
     if (closed)
       return;
     closed = true;
 
+    // Aktuell alle Frauen und Männer, Zusatzpersonen werden gleich erst entfernt.
     getZusatztype().getAdditionals(initialFrauen, initialMaenner)
           .forEach(p -> p.mark(Person.MARK1));
 
@@ -96,6 +148,7 @@ public class StaffelData {
     basePairCount = initialFrauen.size();
     assert initialMaenner.size() == initialFrauen.size();
     validateDays();
+    checkForImplicits();
   }
 
   private int currentConsistenceDay = 0;
@@ -179,57 +232,6 @@ public class StaffelData {
     }
   }
 
-  public List<Frau> getFrauen(int tagNr) {
-    return getFrauen(tagNr, getTag(tagNr).getEvents()
-          .size());
-  }
-
-  public List<Frau> getFrauen(int tagNr, int eventCount) {
-    List<Frau> result = new ArrayList<>(initialFrauen);
-    for (Event event : getAllEventsTill(tagNr, eventCount)) {
-      if (event instanceof NewPerson && ((NewPerson) event).person instanceof Frau) {
-        result.add((Frau) ((NewPerson) event).person);
-      }
-    }
-    return result;
-  }
-
-  public List<Mann> getMaenner(int tagNr) {
-    return getMaenner(tagNr, getTag(tagNr).getEvents()
-          .size());
-  }
-
-  public List<Mann> getMaenner(int tagNr, int eventCount) {
-    List<Mann> result = new ArrayList<>(initialMaenner);
-    for (Event event : getAllEventsTill(tagNr, eventCount)) {
-      if (event instanceof NewPerson && ((NewPerson) event).person instanceof Mann) {
-        result.add((Mann) ((NewPerson) event).person);
-      }
-    }
-    return result;
-  }
-
-  public List<Event> getAllEventsTill(int tagNr) {
-    return getAllEventsTill(tagNr, getTag(tagNr).getEvents()
-          .size());
-  }
-
-  public List<Event> getAllEventsTill(int tagNr, int eventCount) {
-    List<Event> result = new ArrayList<>();
-    for (int i = 0; i < tagNr; i++) {
-      Tag tag = tage.get(i);
-      List<Event> curEvents = tag.getEvents();
-      for (int j = 0, l = (i == tagNr - 1) ? eventCount : curEvents.size(); j < l; j++) {
-        result.add(curEvents.get(j));
-      }
-    }
-    return result;
-  }
-
-  public List<Person> getZusatzpersonen(int tagNr) {
-    return getZusatztype().getAdditionals(getFrauen(tagNr), getMaenner(tagNr));
-  }
-
   /**
    * Wenn es ein PerfectMatch gibt, zieht das Paar aus. Wenn es jemand geben sollte der nun
    * kein PerfectMatch mehr hat, zieht dieser ebenfalls aus.
@@ -237,43 +239,45 @@ public class StaffelData {
    * Bei ZUSATZTYPE.NUR_LETZTER heißt dies im Umkehrschluss, dass es definitiv auch kein
    * PerfektMatch zwischen der ZusatzPerson geben kann.
    */
-  public void checkForImplicits(int tagNr) {
+  private void checkForImplicits() {
     List<Pair> previousPerfectMatches = new ArrayList<>();
     Person newPerson = null;
-    for (Event event : getAllEventsTill(tagNr)) {
-      if (event instanceof MatchBoxResult) {
-        MatchBoxResult result = (MatchBoxResult) event;
-        if (result.result != null && result.result) {
-          previousPerfectMatches.add(result.pair);
+    for (int tagNr = 1, l = tage.size(); tagNr <= l; tagNr++) {
+      for (Event event : getTag(tagNr).getEvents()) {
+        if (event instanceof MatchBoxResult) {
+          MatchBoxResult result = (MatchBoxResult) event;
+          if (result.result != null && result.result) {
+            previousPerfectMatches.add(result.pair);
 
-          if (newPerson != null) {
-            if (newPerson instanceof Frau) {
-              for (Person frau : getZusatzpersonen(tagNr)) {
-                addImplicitForPerfectMatchEvent(result, (Frau) frau, result.pair.mann, result.pairWeitererAuszug);
+            if (newPerson != null) {
+              if (newPerson instanceof Frau) {
+                for (Person frau : getZusatzpersonen(tagNr)) {
+                  addImplicitForPerfectMatchEvent(result, (Frau) frau, result.pair.mann, result.pairWeitererAuszug);
+                }
               }
-            }
-            else {
-              for (Person mann : getZusatzpersonen(tagNr)) {
-                addImplicitForPerfectMatchEvent(result, result.pair.frau, (Mann) mann, result.pairWeitererAuszug);
+              else {
+                for (Person mann : getZusatzpersonen(tagNr)) {
+                  addImplicitForPerfectMatchEvent(result, result.pair.frau, (Mann) mann, result.pairWeitererAuszug);
+                }
               }
             }
           }
         }
-      }
-      else if (event instanceof NewPerson) {
-        NewPerson personEvent = (NewPerson) event;
-        newPerson = personEvent.person;
-        if (personEvent.implicits.isEmpty()) {
-          // Annahme: alle vorherigen PerfectMatches sind kein Partner zu der neuen Person.
-          // tritt bei ZusatzType.JEDER nicht auf, da die Person von vornherein dabei ist.
-          if (newPerson instanceof Frau) {
-            for (Pair perfectMatch : previousPerfectMatches) {
-              addImplicitForPerfectMatchEvent(personEvent, (Frau) newPerson, perfectMatch.mann, null);
+        else if (event instanceof NewPerson) {
+          NewPerson personEvent = (NewPerson) event;
+          newPerson = personEvent.person;
+          if (personEvent.implicits.isEmpty()) {
+            // Annahme: alle vorherigen PerfectMatches sind kein Partner zu der neuen Person.
+            // tritt bei ZusatzType.JEDER nicht auf, da die Person von vornherein dabei ist.
+            if (newPerson instanceof Frau) {
+              for (Pair perfectMatch : previousPerfectMatches) {
+                addImplicitForPerfectMatchEvent(personEvent, (Frau) newPerson, perfectMatch.mann, null);
+              }
             }
-          }
-          else {
-            for (Pair perfectMatch : previousPerfectMatches) {
-              addImplicitForPerfectMatchEvent(personEvent, perfectMatch.frau, (Mann) newPerson, null);
+            else {
+              for (Pair perfectMatch : previousPerfectMatches) {
+                addImplicitForPerfectMatchEvent(personEvent, perfectMatch.frau, (Mann) newPerson, null);
+              }
             }
           }
         }
