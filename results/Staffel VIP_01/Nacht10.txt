@@ -1,7 +1,7 @@
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 10... [Ereignis#0]
--- Combinations: 36288000 Possible: 15 Not possible: 36287985 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 15 Not possible: 36287985
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 MatchBox: Aurelia & Josua... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
@@ -11,7 +11,7 @@ Die Kombinationen reduzieren sich: 15 => 6
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 10 inkl. 1 Matchbox(en)... [Ereignis#1]
--- Combinations: 36288000 Possible: 6 Not possible: 36287994 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 6 Not possible: 36287994
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Kein weiteres Paar zieht aus!
 Implizite Annahme aufgrund Nicht-Auszug: Vanessa & Josua => No Match!
@@ -45,7 +45,7 @@ Die Kombinationen reduzieren sich: 6 => 1
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 10 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
--- Combinations: 36288000 Possible: 1 Not possible: 36287999 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 1 Not possible: 36287999
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
            Aurelia      Finnja       Jacky        Jill         Jules        Kathleen     Melina       Sarah        Steffi       Vanessa*     Walentina    

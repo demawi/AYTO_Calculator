@@ -1,7 +1,7 @@
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 10... [Ereignis#0]
--- Combinations: 36288000 Possible: 6 Not possible: 36287994 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 6 Not possible: 36287994
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 MatchBox: Isabelle & Dustin... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
@@ -11,7 +11,7 @@ Die Kombinationen reduzieren sich: 6 => 6
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 10 inkl. 1 Matchbox(en)... [Ereignis#1]
--- Combinations: 36288000 Possible: 6 Not possible: 36287994 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 6 Not possible: 36287994
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
@@ -42,10 +42,10 @@ Die Kombinationen reduzieren sich: 6 => 6
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 10 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
--- Combinations: 36288000 Possible: 6 Not possible: 36287994 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 6 Not possible: 36287994
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
-          Dana         Desiree*     Estelle*     Isabelle     Jessica      Joelina      Kerstin      Marie        Monami       Raphaela     Zaira        
+          Dana         Desiree*     Estelle      Isabelle     Jessica      Joelina      Kerstin      Marie        Monami       Raphaela     Zaira        
 Andre       -     (1)    -     (2)    -     (0)    ✓     (2)    -     (0)    -     (1)    -     (0)    -     (2)    -     (0)    -     (2)    -     (0)  
 Antonino    ✓     (4)  16,67 % (0)    -     (0)    -     (1)    -     (0)    -     (0)    -     (2)    -     (0)    -     (3)    -     (0)    -     (0)  
 Dustin      -     (1)  16,67 % (0)    -     (0)    -     (5)    -     (0)    -     (0)    -     (0)    ✓     (1)    -     (0)    -     (0)    -     (3)  

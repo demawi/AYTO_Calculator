@@ -1,14 +1,14 @@
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 4... [Ereignis#0]
--- Combinations: 3628800 Possible: 5522 Not possible: 3623278 (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 5522 Not possible: 3623278
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Eine Frau ist hinzugekommen: Vanessa. Die Anzahl der Kombinationen erhöht sich damit!
 Implizite Annahme für die neue Person durch vorherige Auszüge: Vanessa & Francesco => No Match!
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 4 inkl. 1 neuer Person(en)... [Ereignis#1]
--- Combinations: 36288000 Possible: 49698 Not possible: 36238302 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 49698 Not possible: 36238302
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Die Anzahl der Kombinationen hat sich verändert: 5522 => 49698
 
@@ -44,7 +44,7 @@ Die Kombinationen reduzieren sich: 49698 => 7703
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 4 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#3]
--- Combinations: 36288000 Possible: 7703 Not possible: 36280297 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 7703 Not possible: 36280297
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
            Aurelia      Finnja       Jacky        Jill         Jules        Kathleen     Melina       Sarah        Steffi       Vanessa*     Walentina    

@@ -1,7 +1,7 @@
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 1... [Ereignis#0]
--- Combinations: 3628800 Possible: 3628800 Not possible: 0 (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 3628800 Not possible: 0
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 MatchBox: Finnja & Danilo... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
@@ -11,7 +11,7 @@ Die Kombinationen reduzieren sich: 3628800 => 3265920
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 1 inkl. 1 Matchbox(en)... [Ereignis#1]
--- Combinations: 3628800 Possible: 3265920 Not possible: 362880 (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 3265920 Not possible: 362880
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
@@ -42,7 +42,7 @@ Die Kombinationen reduzieren sich: 3265920 => 205176
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 1 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
--- Combinations: 3628800 Possible: 205176 Not possible: 3423624 (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 205176 Not possible: 3423624
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
            Aurelia      Finnja       Jacky        Jill         Jules        Kathleen     Melina       Sarah        Steffi       Walentina    

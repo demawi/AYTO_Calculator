@@ -1,7 +1,7 @@
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 2... [Ereignis#0]
--- Combinations: 3628800 Possible: 205176 Not possible: 3423624 (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 205176 Not possible: 3423624
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 MatchBox: Jules & Francesco... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
@@ -11,7 +11,7 @@ Die Kombinationen reduzieren sich: 205176 => 15449
 
 ==================================================================================================================================================
 -- Berechne VIP_01 - Nacht 2 inkl. 1 Matchbox(en)... [Ereignis#1]
--- Combinations: 3628800 Possible: 15449 Not possible: 3613351 (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 15449 Not possible: 3613351
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Kein weiteres Paar zieht aus!
 

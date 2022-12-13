@@ -1,7 +1,7 @@
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 3... [Ereignis#0]
--- Combinations: 3628800 Possible: 50721 Not possible: 3578079 (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 50721 Not possible: 3578079
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 MatchBox: Raphaela & Andre... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
@@ -11,7 +11,7 @@ Die Kombinationen reduzieren sich: 50721 => 38419
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 3 inkl. 1 Matchbox(en)... [Ereignis#1]
--- Combinations: 3628800 Possible: 38419 Not possible: 3590381 (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 38419 Not possible: 3590381
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
@@ -42,10 +42,10 @@ Die Kombinationen reduzieren sich: 38419 => 12166
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 3 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
--- Combinations: 3628800 Possible: 12166 Not possible: 3616634 (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 12166 Not possible: 3616634
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
-          Dana         Estelle*     Isabelle     Jessica      Joelina      Kerstin      Marie        Monami       Raphaela     Zaira        
+          Dana         Estelle      Isabelle     Jessica      Joelina      Kerstin      Marie        Monami       Raphaela     Zaira        
 Andre     12,58 % (1)  15,80 % (0)   9,56 % (2)  15,30 % (0)   5,29 % (1)  10,41 % (0)  10,02 % (2)  11,20 % (0)    -     (2)   9,85 % (0)  
 Antonino   6,46 % (4)   9,04 % (0)   6,77 % (1)   9,00 % (0)   2,77 % (0)   1,43 % (2)   6,92 % (0)  41,16 % (3)   9,47 % (0)   6,98 % (0)  
 Dustin     6,10 % (1)  10,58 % (0)   6,56 % (5)  10,23 % (0)   3,00 % (0)   7,48 % (0)   6,18 % (1)   8,12 % (0)   9,82 % (0)  31,93 % (3)  
@@ -58,4 +58,3 @@ Tim        6,31 % (0)  10,36 % (0)   6,21 % (0)  11,70 % (1)   2,30 % (3)   7,45
 William   31,10 % (4)  10,45 % (0)   5,89 % (0)  10,32 % (0)   2,67 % (0)   7,03 % (0)   6,14 % (1)   7,59 % (0)  12,58 % (5)   6,25 % (0)  
 
 Mögliche Paare: 96/100
-*: Diese Person teilt sich ein Match.

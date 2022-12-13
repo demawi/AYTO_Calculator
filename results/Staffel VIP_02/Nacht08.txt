@@ -1,7 +1,7 @@
 
 ==================================================================================================================================================
 -- Berechne VIP_02 - Nacht 8... [Ereignis#0]
--- Combinations: 36288000 Possible: 116 Not possible: 36287884 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 116 Not possible: 36287884
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 MatchBox: Anna & Michael... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
@@ -11,7 +11,7 @@ Die Kombinationen reduzieren sich: 116 => 52
 
 ==================================================================================================================================================
 -- Berechne VIP_02 - Nacht 8 inkl. 1 Matchbox(en)... [Ereignis#1]
--- Combinations: 36288000 Possible: 46 Not possible: 36287954 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 46 Not possible: 36287954
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Kein weiteres Paar zieht aus!
 Implizite Annahme aufgrund Nicht-Auszug: Anna & Felix => No Match!
@@ -45,7 +45,7 @@ Die Kombinationen reduzieren sich: 46 => 1
 
 ==================================================================================================================================================
 -- Berechne VIP_02 - Nacht 8 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
--- Combinations: 36288000 Possible: 1 Not possible: 36287999 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 1 Not possible: 36287999
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
           Anna         Cecilia      Celina       Franziska    Gina         Isabelle     Karina       Luisa        Ricarda      Zoe          

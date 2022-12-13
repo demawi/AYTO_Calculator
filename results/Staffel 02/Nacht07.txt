@@ -1,7 +1,7 @@
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 7... [Ereignis#0]
--- Combinations: 36288000 Possible: 219 Not possible: 36287781 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 219 Not possible: 36287781
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 MatchBox: Laura & Dario... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
@@ -11,7 +11,7 @@ Die Kombinationen reduzieren sich: 219 => 219
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 7 inkl. 1 Matchbox(en)... [Ereignis#1]
--- Combinations: 36288000 Possible: 219 Not possible: 36287781 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 219 Not possible: 36287781
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
@@ -42,10 +42,10 @@ Die Kombinationen reduzieren sich: 219 => 43
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 7 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
--- Combinations: 36288000 Possible: 43 Not possible: 36287957 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 43 Not possible: 36287957
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
-            Christin     Jill         Kathleen     Laura*       Leonie       Melissa      Mirjam       Sabrina      Vanessa      VanessaM*    Victoria     
+            Christin     Jill         Kathleen     Laura        Leonie       Melissa      Mirjam       Sabrina      Vanessa      VanessaM*    Victoria     
 Aaron         -     (0)    -     (0)    -     (2)    -     (0)    -     (0)    ✓     (6)    -     (1)    -     (0)    -     (1)   9,30 % (0)    -     (0)  
 Dario       16,28 % (0)    -     (0)   2,33 % (2)    -     (1)    -     (0)    -     (0)    -     (0)  41,86 % (2)   2,33 % (0)  27,91 % (1)  37,21 % (4)  
 Dominic      6,98 % (0)  13,95 % (0)   2,33 % (0)    -     (2)    -     (0)    -     (3)    -     (0)   9,30 % (1)  67,44 % (4)   9,30 % (0)    -     (0)  
