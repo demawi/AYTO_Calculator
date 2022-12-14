@@ -18,6 +18,26 @@ public class AYTO_Result {
   public int notPossible = 0;
   private int[] lightPossibilities; // wird nur gesetzt, wenn auch eine Matching Night stattgefunden hat.
 
+  /**
+   * Add all subresults
+   */
+  public void addAll(List<AYTO_Result> results) {
+    for (AYTO_Result cur : results) {
+      totalConstellations += cur.totalConstellations;
+      possible += cur.possible;
+      notPossible += cur.notPossible;
+      if (lightPossibilities != null) {
+        for (int i = 0, l = calcOptions.getData()
+              .getBasePairCount(); i <= l; i++) {
+          lightPossibilities[i] += cur.lightPossibilities[i];
+        }
+      }
+      for (Map.Entry<Pair, Integer> pairEntry : cur.possiblePairCount.entrySet()) {
+        addPairToCountMap(possiblePairCount, pairEntry.getKey(), pairEntry.getValue());
+      }
+    }
+  }
+
   public AYTO_Result(CalculationOptions calcOptions) {
     this.calcOptions = calcOptions;
     MatchingNight matchingNight = calcOptions.getMatchingNight();
@@ -102,7 +122,7 @@ public class AYTO_Result {
    * Es werden keine kompletten Constellations mehr gespeichert, da es bei 199mio Einträgen zu viel
    * Speicher kostet.
    */
-  private synchronized void registerResults(Set<Pair> constellation, boolean result, Integer lights) {
+  private void registerResults(Set<Pair> constellation, boolean result, Integer lights) {
     totalConstellations++;
     if (lights != null) {
       lightPossibilities[lights]++;
@@ -110,7 +130,7 @@ public class AYTO_Result {
     if (result) {
       possible++;
       for (Pair current : constellation) {
-        incrementCountMap(possiblePairCount, current);
+        addPairToCountMap(possiblePairCount, current);
       }
     }
     else {
@@ -118,12 +138,16 @@ public class AYTO_Result {
     }
   }
 
-  private static void incrementCountMap(Map<Pair, Integer> pairCountMap, Pair pair) {
+  private static void addPairToCountMap(Map<Pair, Integer> pairCountMap, Pair pair) {
+    addPairToCountMap(pairCountMap, pair, 1);
+  }
+
+  private static void addPairToCountMap(Map<Pair, Integer> pairCountMap, Pair pair, int value) {
     Integer count = pairCountMap.get(pair);
     if (count == null) {
       count = 0;
     }
-    count++;
+    count += value;
     pairCountMap.put(pair, count);
   }
 
@@ -143,4 +167,5 @@ public class AYTO_Result {
     this.totalConstellations = totalConstellations;
     notPossible = totalConstellations - possible;
   }
+
 }

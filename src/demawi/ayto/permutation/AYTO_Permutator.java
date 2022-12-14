@@ -113,11 +113,11 @@ public abstract class AYTO_Permutator<F, M, R> {
           }
           else {
             if (branchLevel == 0) {
-              executorService.submit(
-                    () -> permutateInternImpl(frauAktuell + 1, 0, newSet, pairConsumerCreator, pairConsumerCreator.get(), branchLevel - 1));
+              executorService.submit(() -> permutateInternImpl(frauAktuell + 1, 0, newSet, pairConsumerCreator,
+                    pairConsumer == null ? pairConsumerCreator.get() : pairConsumer, branchLevel - 1));
             }
             else {
-              permutateInternImpl(frauAktuell + 1, 0, newSet, pairConsumerCreator, pairConsumerCreator.get(), branchLevel - 1);
+              permutateInternImpl(frauAktuell + 1, 0, newSet, pairConsumerCreator, pairConsumer, branchLevel - 1);
             }
           }
         }
@@ -134,11 +134,11 @@ public abstract class AYTO_Permutator<F, M, R> {
           }
           else {
             if (branchLevel == 0) {
-              executorService.submit(
-                    () -> permutateInternImpl(0, mannAktuell + 1, newSet, pairConsumerCreator, pairConsumerCreator.get(), branchLevel - 1));
+              executorService.submit(() -> permutateInternImpl(0, mannAktuell + 1, newSet, pairConsumerCreator,
+                    pairConsumer == null ? pairConsumerCreator.get() : pairConsumer, branchLevel - 1));
             }
             else {
-              permutateInternImpl(0, mannAktuell + 1, newSet, pairConsumerCreator, pairConsumerCreator.get(), branchLevel - 1);
+              permutateInternImpl(0, mannAktuell + 1, newSet, pairConsumerCreator, pairConsumer, branchLevel - 1);
             }
           }
         }

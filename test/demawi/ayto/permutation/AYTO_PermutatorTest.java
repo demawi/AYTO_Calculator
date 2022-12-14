@@ -21,13 +21,13 @@ public class AYTO_PermutatorTest {
    public void testSmall() {
       AYTO_Permutator<String, String, String> permutator = AYTO_Permutator.create(frauen(4), maenner(3),
             AYTO_Permutator.ZUSATZTYPE.JEDER, (a, b) -> "" + a + b);
-      permutator.permutate(result -> {
+      permutator.permutate(() -> result -> {
          //check(result, frauen, maenner);
          System.out.println(result);
       });
       AYTO_Permutator<String, String, String> permutator2 = AYTO_Permutator.create(frauen(4), maenner(3),
             AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER, (a, b) -> "" + a + b);
-      permutator2.permutate(result -> {
+      permutator2.permutate(() -> result -> {
          //check(result, frauen, maenner);
          System.out.println(result);
       });
@@ -40,7 +40,7 @@ public class AYTO_PermutatorTest {
             AYTO_Permutator.ZUSATZTYPE.JEDER, (a, b) -> "" + a + b);
       long start = System.currentTimeMillis();
       count = 0;
-      permutator.permutate(result -> {
+      permutator.permutate(() -> result -> {
          synchronized (this) {
             count++;
          }
@@ -56,7 +56,7 @@ public class AYTO_PermutatorTest {
             AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER, (a, b) -> "" + a + b);
       long start = System.currentTimeMillis();
       count = 0;
-      permutator.permutate(result -> {
+      permutator.permutate(() -> result -> {
          count++;
       });
       System.out.println(

@@ -64,7 +64,7 @@ public class MatchFinder {
 
    private AYTO_Result sum(CalculationOptions calcOptions, List<AYTO_Result> results) {
       AYTO_Result result = new AYTO_Result(calcOptions);
-
+      result.addAll(results);
       return result;
    }
 
