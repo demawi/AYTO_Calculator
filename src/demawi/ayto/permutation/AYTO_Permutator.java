@@ -12,12 +12,12 @@ import java.util.function.Consumer;
 
 public abstract class AYTO_Permutator<F, M, R> {
 
-  private static final ExecutorService executorService = Executors.newCachedThreadPool();
   /**
    * -1: Multi-threading deactivated
    * 0: branch on root (10 Threads)
    */
   private static final int BRANCH_LEVEL = 0;
+  private final ExecutorService executorService;
 
   public enum ZUSATZTYPE {
     JEDER, NUR_LETZTER;
@@ -62,6 +62,7 @@ public abstract class AYTO_Permutator<F, M, R> {
     minSize = Math.min(anzahlFrauen, anzahlMaenner);
     maxSize = Math.max(anzahlFrauen, anzahlMaenner);
     this.packingFunction = packingFunction;
+    executorService = Executors.newCachedThreadPool();
   }
 
   public static <F, M, R> AYTO_Permutator<F, M, R> create(List<F> setA, List<M> setB, ZUSATZTYPE zusatzType,
