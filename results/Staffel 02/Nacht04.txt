@@ -1,13 +1,13 @@
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 4... [Ereignis#0]
--- Combinations: 3628800 Possible: 5406 Not possible: 3623394 (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 5406 Not possible: 3623394
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Eine Frau ist hinzugekommen: VanessaM. Die Anzahl der Kombinationen erhöht sich damit!
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 4 inkl. 1 neuer Person(en)... [Ereignis#1]
--- Combinations: 36288000 Possible: 54060 Not possible: 36233940 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 54060 Not possible: 36233940
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Die Anzahl der Kombinationen hat sich verändert: 5406 => 54060
 
@@ -18,7 +18,7 @@ Die Kombinationen reduzieren sich: 54060 => 32170
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 4 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en)... [Ereignis#2]
--- Combinations: 36288000 Possible: 32170 Not possible: 36255830 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 32170 Not possible: 36255830
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
@@ -49,10 +49,10 @@ Die Kombinationen reduzieren sich: 32170 => 3810
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 4 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#3]
--- Combinations: 36288000 Possible: 3810 Not possible: 36284190 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 3810 Not possible: 36284190
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
-            Christin     Jill         Kathleen     Laura*       Leonie       Melissa      Mirjam       Sabrina      Vanessa      VanessaM*    Victoria     
+            Christin     Jill         Kathleen     Laura        Leonie       Melissa      Mirjam       Sabrina      Vanessa      VanessaM*    Victoria     
 Aaron        1,05 % (0)   4,20 % (0)    -     (2)   1,57 % (0)    -     (0)  90,03 % (6)   0,26 % (1)   0,79 % (0)   1,57 % (1)  10,00 % (0)   0,52 % (0)  
 Dario        3,67 % (0)   8,14 % (0)   8,66 % (2)  12,07 % (1)   6,04 % (0)   0,52 % (0)   3,94 % (0)   4,20 % (2)   4,46 % (0)  10,00 % (1)  48,29 % (4)  
 Dominic      4,99 % (0)  12,34 % (0)   4,46 % (0)  27,82 % (2)   3,67 % (0)    -     (3)   4,46 % (0)   4,72 % (1)  32,28 % (4)  10,00 % (0)   5,25 % (0)  

@@ -13,7 +13,14 @@ import java.util.function.Supplier;
 
 public abstract class AYTO_Permutator<F, M, R> {
 
-  public static enum ZUSATZTYPE {
+  /**
+   * -1: Multi-threading deactivated
+   * 0: branch on root (10 Threads)
+   */
+  private static final int BRANCH_LEVEL = 0;
+  private final ExecutorService executorService;
+
+  public enum ZUSATZTYPE {
     JEDER, NUR_LETZTER;
 
     public <P, F extends P, M extends P> List<P> getAdditionals(List<F> frauen, List<M> maenner) {
@@ -43,7 +50,6 @@ public abstract class AYTO_Permutator<F, M, R> {
   protected final int anzahlMaenner;
   private final BiFunction<F, M, R> packingFunction;
   public long testCount = 0; // wie oft die canAdd-Methode aufgerufen wurde
-  private final ExecutorService executorService;
 
   /**
    * -1: man weiß nicht wer der Zusatzmann/frau ist
@@ -54,8 +60,8 @@ public abstract class AYTO_Permutator<F, M, R> {
     this.maenner = maenner;
     anzahlFrauen = frauen.size();
     anzahlMaenner = maenner.size();
-    minSize = Math.min(frauen.size(), maenner.size());
-    maxSize = Math.max(frauen.size(), maenner.size());
+    minSize = Math.min(anzahlFrauen, anzahlMaenner);
+    maxSize = Math.max(anzahlFrauen, anzahlMaenner);
     this.packingFunction = packingFunction;
     executorService = Executors.newCachedThreadPool();
   }
@@ -72,7 +78,7 @@ public abstract class AYTO_Permutator<F, M, R> {
 
   public void permutate(Supplier<Consumer<Set<R>>> pairConsumer) {
     Object[] current = createInitialConstellation();
-    permutateInternImpl(0, 0, current, pairConsumer, null,0);
+    permutateInternImpl(0, 0, current, pairConsumer, null, BRANCH_LEVEL);
     // System.out.println("ActiveThreads: " + ((ThreadPoolExecutor) executorService).getActiveCount());
     executorService.shutdown();
     try {

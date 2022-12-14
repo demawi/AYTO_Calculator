@@ -1,7 +1,7 @@
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 5... [Ereignis#0]
--- Combinations: 36288000 Possible: 3810 Not possible: 36284190 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 3810 Not possible: 36284190
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 MatchBox: Leonie & Marcel... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
@@ -11,7 +11,7 @@ Die Kombinationen reduzieren sich: 3810 => 1640
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 5 inkl. 1 Matchbox(en)... [Ereignis#1]
--- Combinations: 36288000 Possible: 1476 Not possible: 36286524 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 1476 Not possible: 36286524
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Kein weiteres Paar zieht aus!
 Implizite Annahme aufgrund Nicht-Auszug: VanessaM & Marcel => No Match!
@@ -45,10 +45,10 @@ Die Kombinationen reduzieren sich: 1476 => 765
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 5 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
--- Combinations: 36288000 Possible: 765 Not possible: 36287235 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 765 Not possible: 36287235
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
-            Christin     Jill         Kathleen     Laura*       Leonie       Melissa      Mirjam       Sabrina      Vanessa      VanessaM*    Victoria     
+            Christin     Jill         Kathleen     Laura        Leonie       Melissa      Mirjam       Sabrina      Vanessa      VanessaM*    Victoria     
 Aaron        4,18 % (0)   8,37 % (0)    -     (2)   6,27 % (0)    -     (0)  78,04 % (6)    -     (1)    -     (0)   2,09 % (1)  11,90 % (0)   1,05 % (0)  
 Dario        1,44 % (0)   0,39 % (0)   3,79 % (2)   0,78 % (1)    -     (0)    -     (0)   4,18 % (0)   4,58 % (2)   2,35 % (0)  11,90 % (1)  82,48 % (4)  
 Dominic      8,89 % (0)  22,35 % (0)   4,71 % (0)  15,69 % (2)    -     (0)    -     (3)   4,18 % (0)   4,58 % (1)  37,65 % (4)  11,90 % (0)   1,96 % (0)  

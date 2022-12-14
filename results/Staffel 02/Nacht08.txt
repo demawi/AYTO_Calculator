@@ -1,7 +1,7 @@
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 8... [Ereignis#0]
--- Combinations: 36288000 Possible: 43 Not possible: 36287957 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 43 Not possible: 36287957
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 MatchBox: Sabrina & Marko... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
@@ -11,7 +11,7 @@ Die Kombinationen reduzieren sich: 43 => 43
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 8 inkl. 1 Matchbox(en)... [Ereignis#1]
--- Combinations: 36288000 Possible: 43 Not possible: 36287957 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 43 Not possible: 36287957
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
@@ -42,10 +42,10 @@ Die Kombinationen reduzieren sich: 43 => 5
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 8 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
--- Combinations: 36288000 Possible: 5 Not possible: 36287995 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 5 Not possible: 36287995
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
-            Christin     Jill         Kathleen     Laura*       Leonie       Melissa      Mirjam       Sabrina      Vanessa      VanessaM*    Victoria     
+            Christin     Jill         Kathleen     Laura        Leonie       Melissa      Mirjam       Sabrina      Vanessa      VanessaM*    Victoria     
 Aaron         -     (0)    -     (0)    -     (2)    -     (0)    -     (0)    ✓     (6)    -     (1)    -     (0)    -     (1)  20,00 % (0)    -     (0)  
 Dario         -     (0)    -     (0)    -     (2)    -     (1)    -     (0)    -     (0)    -     (0)    ✓     (2)    -     (0)    -     (1)    -     (4)  
 Dominic       -     (0)    -     (0)    -     (0)    -     (2)    -     (0)    -     (3)    -     (0)    -     (1)    ✓     (4)  20,00 % (0)    -     (0)  

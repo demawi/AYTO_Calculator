@@ -1,7 +1,7 @@
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 2... [Ereignis#0]
--- Combinations: 3628800 Possible: 608153 Not possible: 3020647 (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 608153 Not possible: 3020647
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 MatchBox: Jill & Maximilian verkauft. (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
@@ -36,10 +36,10 @@ Die Kombinationen reduzieren sich: 608153 => 170886
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 2 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
--- Combinations: 3628800 Possible: 170886 Not possible: 3457914 (Intern constellation-add-pair checks: 62353010)
+-- Combinations: 3628800 Possible: 170886 Not possible: 3457914
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
-            Christin     Jill         Kathleen     Laura*       Leonie       Melissa      Mirjam       Sabrina      Vanessa      Victoria     
+            Christin     Jill         Kathleen     Laura        Leonie       Melissa      Mirjam       Sabrina      Vanessa      Victoria     
 Aaron        7,14 % (0)   9,25 % (0)  26,69 % (2)   8,70 % (0)   8,70 % (0)   7,43 % (6)   7,43 % (1)   7,43 % (0)   8,52 % (1)   8,70 % (0)  
 Dario        8,39 % (0)  11,65 % (0)   8,70 % (2)  12,32 % (1)   9,84 % (0)   8,70 % (0)   8,70 % (0)   8,70 % (2)  10,68 % (0)  12,32 % (4)  
 Dominic      7,14 % (0)   9,25 % (0)   7,43 % (0)   8,70 % (2)   8,70 % (0)  26,69 % (3)   7,43 % (0)   7,43 % (1)   8,52 % (4)   8,70 % (0)  
@@ -52,4 +52,3 @@ Maximilian  29,94 % (5)    -     (2)   8,05 % (0)   9,54 % (1)   9,54 % (0)   8,
 Sascha       8,16 % (0)  14,03 % (5)   8,43 % (0)  10,59 % (1)  10,59 % (0)   8,43 % (0)   8,43 % (0)   8,43 % (2)  12,31 % (2)  10,59 % (0)  
 
 Mögliche Paare: 99/100
-*: Diese Person teilt sich ein Match.

@@ -1,7 +1,7 @@
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 6... [Ereignis#0]
--- Combinations: 36288000 Possible: 1924 Not possible: 36286076 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 1924 Not possible: 36286076
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 MatchBox: Jessica & Max... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
@@ -11,7 +11,7 @@ Die Kombinationen reduzieren sich: 1924 => 1859
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 6 inkl. 1 Matchbox(en)... [Ereignis#1]
--- Combinations: 36288000 Possible: 1859 Not possible: 36286141 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 1859 Not possible: 36286141
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
@@ -42,10 +42,10 @@ Die Kombinationen reduzieren sich: 1859 => 19
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 6 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
--- Combinations: 36288000 Possible: 19 Not possible: 36287981 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 19 Not possible: 36287981
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
-          Dana         Desiree*     Estelle*     Isabelle     Jessica      Joelina      Kerstin      Marie        Monami       Raphaela     Zaira        
+          Dana         Desiree*     Estelle      Isabelle     Jessica      Joelina      Kerstin      Marie        Monami       Raphaela     Zaira        
 Andre      5,26 % (1)   5,26 % (2)    -     (0)  68,42 % (2)    -     (0)    -     (1)    -     (0)  21,05 % (2)   5,26 % (0)    -     (2)    -     (0)  
 Antonino  57,89 % (4)   5,26 % (0)    -     (0)   5,26 % (1)  10,53 % (0)  10,53 % (0)  10,53 % (2)   5,26 % (0)    -     (3)    -     (0)    -     (0)  
 Dustin    10,53 % (1)   5,26 % (0)    -     (0)    -     (5)    -     (0)    -     (0)    -     (0)  42,11 % (1)   5,26 % (0)    -     (0)  42,11 % (3)  

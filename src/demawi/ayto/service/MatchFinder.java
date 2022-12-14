@@ -53,7 +53,8 @@ public class MatchFinder {
       if (out != null) {
          out.accept(
                "-- Combinations: " + result.totalConstellations + " Possible: " + result.possible + " Not possible: "
-                     + result.notPossible + " (Intern constellation-add-pair checks: " + permutator.testCount + ")");
+                     + result.notPossible);
+
          System.out.println(" Calculation time: " + Formatter.minSecs(System.currentTimeMillis() - start) + " ["
                + calcOptions.getTagNr() + "." + calcOptions.getEventCount() + "]");
          breakLine2(out);

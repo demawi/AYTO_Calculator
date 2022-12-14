@@ -1,7 +1,7 @@
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 6... [Ereignis#0]
--- Combinations: 36288000 Possible: 765 Not possible: 36287235 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 765 Not possible: 36287235
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 MatchBox: Laura & Dario verkauft. (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
@@ -36,10 +36,10 @@ Die Kombinationen reduzieren sich: 765 => 219
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 6 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
--- Combinations: 36288000 Possible: 219 Not possible: 36287781 (Intern constellation-add-pair checks: 98641010)
+-- Combinations: 36288000 Possible: 219 Not possible: 36287781
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
-            Christin     Jill         Kathleen     Laura*       Leonie       Melissa      Mirjam       Sabrina      Vanessa      VanessaM*    Victoria     
+            Christin     Jill         Kathleen     Laura        Leonie       Melissa      Mirjam       Sabrina      Vanessa      VanessaM*    Victoria     
 Aaron         -     (0)   1,83 % (0)    -     (2)   2,74 % (0)    -     (0)  94,98 % (6)    -     (1)    -     (0)    -     (1)  10,05 % (0)   0,46 % (0)  
 Dario        4,57 % (0)    -     (0)   3,65 % (2)    -     (1)    -     (0)    -     (0)  12,79 % (0)  12,79 % (2)   0,91 % (0)  22,83 % (1)  65,30 % (4)  
 Dominic      5,48 % (0)  21,46 % (0)   5,02 % (0)   1,83 % (2)    -     (0)    -     (3)   4,57 % (0)   4,57 % (1)  56,62 % (4)  10,05 % (0)   0,46 % (0)  
