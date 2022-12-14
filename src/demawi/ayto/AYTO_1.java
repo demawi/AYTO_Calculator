@@ -6,7 +6,7 @@ import demawi.ayto.modell.StaffelData;
 import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.print.EventbasedMatchPrinter;
 
-import static demawi.ayto.modell.Pair.pair;
+import static demawi.ayto.modell.AYTO_Pair.pair;
 
 public class AYTO_1
       extends StaffelData {

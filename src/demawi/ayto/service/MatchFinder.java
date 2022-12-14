@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
+import demawi.ayto.modell.AYTO_Pair;
 import demawi.ayto.modell.AYTO_Result;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
-import demawi.ayto.modell.Pair;
 import demawi.ayto.modell.StaffelData;
 import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.print.Formatter;
@@ -39,15 +39,16 @@ public class MatchFinder {
                + calcOptions.getEventCount() + "]");
       }
 
+      AYTO_Permutator<Frau, Mann, AYTO_Pair> permutator = AYTO_Permutator.create(calcOptions.getFrauen(),
+            calcOptions.getMaenner(), calcOptions.getZusatztype(), AYTO_Pair::pair);
+
       List<AYTO_Result> results = new ArrayList<>();
-      AYTO_Permutator<Frau, Mann, Pair> permutator = AYTO_Permutator.create(calcOptions.getFrauen(),
-            calcOptions.getMaenner(), calcOptions.getZusatztype(), Pair::pair);
       permutator.permutate(() -> {
          AYTO_Result result = new AYTO_Result(calcOptions);
          results.add(result);
          return constellation -> result.addResult(constellation, calcOptions.isValid(constellation));
       });
-      AYTO_Result result = sum(calcOptions, results);
+      AYTO_Result result = sum(results);
       if (out != null) {
          out.accept(
                "-- Combinations: " + result.totalConstellations + " Possible: " + result.possible + " Not possible: "
@@ -60,7 +61,7 @@ public class MatchFinder {
       return result;
    }
 
-   private AYTO_Result sum(CalculationOptions calcOptions, List<AYTO_Result> results) {
+   private AYTO_Result sum(List<AYTO_Result> results) {
       AYTO_Result result = new AYTO_Result(calcOptions);
       result.addAll(results);
       return result;

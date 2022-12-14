@@ -12,7 +12,7 @@ import demawi.ayto.service.CalculationOptions;
 public class AYTO_Result {
 
   private final CalculationOptions calcOptions;
-  public final Map<Pair, Integer> possiblePairCount = new HashMap<>();
+  public final Map<AYTO_Pair, Integer> possiblePairCount = new HashMap<>();
   public int totalConstellations = 0;
   public int possible = 0;
   public int notPossible = 0;
@@ -21,20 +21,28 @@ public class AYTO_Result {
   /**
    * Add all subresults
    */
+  public void add(AYTO_Result cur) {
+    totalConstellations += cur.totalConstellations;
+    possible += cur.possible;
+    notPossible += cur.notPossible;
+    if (lightPossibilities != null) {
+      for (int i = 0, l = calcOptions.getData()
+            .getBasePairCount(); i <= l; i++) {
+        lightPossibilities[i] += cur.lightPossibilities[i];
+      }
+    }
+    for (Map.Entry<AYTO_Pair, Integer> pairEntry : cur.possiblePairCount.entrySet()) {
+      addPairToCountMap(possiblePairCount, pairEntry.getKey(), pairEntry.getValue());
+    }
+  }
+
+  public CalculationOptions getCalcOptions() {
+    return calcOptions;
+  }
+
   public void addAll(List<AYTO_Result> results) {
     for (AYTO_Result cur : results) {
-      totalConstellations += cur.totalConstellations;
-      possible += cur.possible;
-      notPossible += cur.notPossible;
-      if (lightPossibilities != null) {
-        for (int i = 0, l = calcOptions.getData()
-              .getBasePairCount(); i <= l; i++) {
-          lightPossibilities[i] += cur.lightPossibilities[i];
-        }
-      }
-      for (Map.Entry<Pair, Integer> pairEntry : cur.possiblePairCount.entrySet()) {
-        addPairToCountMap(possiblePairCount, pairEntry.getKey(), pairEntry.getValue());
-      }
+      add(cur);
     }
   }
 
@@ -57,15 +65,15 @@ public class AYTO_Result {
     return possible;
   }
 
-  public List<Set<Pair>> getAllPossibleConstellations() {
+  public List<Set<AYTO_Pair>> getAllPossibleConstellations() {
     throw new IllegalStateException("Wird nicht mehr geliefert!");
   }
 
   public Integer getPossibleCount(Frau frau, Mann mann) {
-    return getPossibleCount(Pair.pair(frau, mann));
+    return getPossibleCount(AYTO_Pair.pair(frau, mann));
   }
 
-  public Integer getPossibleCount(Pair pair) {
+  public Integer getPossibleCount(AYTO_Pair pair) {
     Integer result = possiblePairCount.get(pair);
     return result == null ? 0 : result;
   }
@@ -82,7 +90,7 @@ public class AYTO_Result {
     }
   }
 
-  public double getBasePossibility(Pair pair) {
+  public double getBasePossibility(AYTO_Pair pair) {
     if (getData().getZusatztype() == AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER) {
       int gesamt = 0;
       for (Frau curFrau : getFrauen()) {
@@ -110,7 +118,7 @@ public class AYTO_Result {
     }
   }
 
-  public void addResult(Set<Pair> constellation, boolean result) {
+  public void addResult(Set<AYTO_Pair> constellation, boolean result) {
     Integer lights = result && lightPossibilities != null ? calcOptions.getMatchingNight()
           .getLights(constellation) : null;
     registerResults(constellation, result, lights);
@@ -122,14 +130,14 @@ public class AYTO_Result {
    * Es werden keine kompletten Constellations mehr gespeichert, da es bei 199mio Einträgen zu viel
    * Speicher kostet.
    */
-  private void registerResults(Set<Pair> constellation, boolean result, Integer lights) {
+  private void registerResults(Set<AYTO_Pair> constellation, boolean result, Integer lights) {
     totalConstellations++;
     if (lights != null) {
       lightPossibilities[lights]++;
     }
     if (result) {
       possible++;
-      for (Pair current : constellation) {
+      for (AYTO_Pair current : constellation) {
         addPairToCountMap(possiblePairCount, current);
       }
     }
@@ -138,11 +146,11 @@ public class AYTO_Result {
     }
   }
 
-  private static void addPairToCountMap(Map<Pair, Integer> pairCountMap, Pair pair) {
+  private static void addPairToCountMap(Map<AYTO_Pair, Integer> pairCountMap, AYTO_Pair pair) {
     addPairToCountMap(pairCountMap, pair, 1);
   }
 
-  private static void addPairToCountMap(Map<Pair, Integer> pairCountMap, Pair pair, int value) {
+  private static void addPairToCountMap(Map<AYTO_Pair, Integer> pairCountMap, AYTO_Pair pair, int value) {
     Integer count = pairCountMap.get(pair);
     if (count == null) {
       count = 0;

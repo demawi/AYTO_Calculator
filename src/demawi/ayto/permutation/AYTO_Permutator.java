@@ -49,7 +49,6 @@ public abstract class AYTO_Permutator<F, M, R> {
   protected final int anzahlFrauen;
   protected final int anzahlMaenner;
   private final BiFunction<F, M, R> packingFunction;
-  public long testCount = 0; // wie oft die canAdd-Methode aufgerufen wurde
 
   /**
    * -1: man weiß nicht wer der Zusatzmann/frau ist
@@ -96,15 +95,12 @@ public abstract class AYTO_Permutator<F, M, R> {
    * Wie viele currentConstellations gleichzeitig angelegt sind. Wir nutzen hier die Tiefensuche, um
    * Speicherplatz zu sparen.
    */
-  private int openInts = 0;
 
   private void permutateInternImpl(int frauAktuell, int mannAktuell, Object[] currentConstellation,
         Supplier<Consumer<Set<R>>> pairConsumerCreator, Consumer<Set<R>> pairConsumer, int branchLevel) {
-    openInts++;
 
     if (anzahlFrauen >= anzahlMaenner) { // jede Frau ist nur einmal vorhanden, somit frauAktuell immer + 1
       for (int mann = 0; mann < anzahlMaenner; mann++) {
-        testCount++;
         Object[] newSet = canAdd(frauAktuell, mann, currentConstellation);
         if (newSet != null) {
           Set<R> result = decodePairs(newSet);
@@ -113,8 +109,10 @@ public abstract class AYTO_Permutator<F, M, R> {
           }
           else {
             if (branchLevel == 0) {
-              executorService.submit(() -> permutateInternImpl(frauAktuell + 1, 0, newSet, pairConsumerCreator,
-                    pairConsumer == null ? pairConsumerCreator.get() : pairConsumer, branchLevel - 1));
+              final Consumer<Set<R>> pairConsumerF = (pairConsumer == null ? pairConsumerCreator.get() : pairConsumer);
+              executorService.submit(
+                    () -> permutateInternImpl(frauAktuell + 1, 0, newSet, pairConsumerCreator, pairConsumerF,
+                          branchLevel - 1));
             }
             else {
               permutateInternImpl(frauAktuell + 1, 0, newSet, pairConsumerCreator, pairConsumer, branchLevel - 1);
@@ -125,7 +123,6 @@ public abstract class AYTO_Permutator<F, M, R> {
     }
     else { // jeder Mann ist nur einmal vorhanden, somit mannAktuell immer +1.
       for (int frau = 0; frau < anzahlFrauen; frau++) {
-        testCount++;
         Object[] newSet = canAdd(frau, mannAktuell, currentConstellation);
         if (newSet != null) {
           Set<R> result = decodePairs(newSet);
@@ -134,8 +131,10 @@ public abstract class AYTO_Permutator<F, M, R> {
           }
           else {
             if (branchLevel == 0) {
-              executorService.submit(() -> permutateInternImpl(0, mannAktuell + 1, newSet, pairConsumerCreator,
-                    pairConsumer == null ? pairConsumerCreator.get() : pairConsumer, branchLevel - 1));
+              final Consumer<Set<R>> pairConsumerF = (pairConsumer == null ? pairConsumerCreator.get() : pairConsumer);
+              executorService.submit(
+                    () -> permutateInternImpl(0, mannAktuell + 1, newSet, pairConsumerCreator, pairConsumerF,
+                          branchLevel - 1));
             }
             else {
               permutateInternImpl(0, mannAktuell + 1, newSet, pairConsumerCreator, pairConsumer, branchLevel - 1);
@@ -144,7 +143,6 @@ public abstract class AYTO_Permutator<F, M, R> {
         }
       }
     }
-    openInts--;
   }
 
   protected Object[] increment(Object[] array, Integer value) {

@@ -16,18 +16,14 @@ public class AYTO_PermutatorNUR_LETZTER<F, M, R>
       super(frauen, maenner, packingFunction);
    }
 
-   // these will be reused
-   private final Set<Integer> addedFrauen = new LinkedHashSet<>();
-   private final Set<Integer> addedMaenner = new LinkedHashSet<>();
-
    /**
     * Prüft, ob ein Paar wirklich zu der bisherigen Konstellation hinzugefügt werden kann.
     * <p>
     * Nur für ZUSATZTYPE.LAST
     */
    protected Object[] canAdd(int frau, int mann, Object[] constellation) {
-      addedFrauen.clear();
-      addedMaenner.clear();
+      Set<Integer> addedFrauen = new LinkedHashSet<>();
+      Set<Integer> addedMaenner = new LinkedHashSet<>();
       for (Object current : constellation) {
          int decodedFrau = decodeFrau((Integer) current);
          if (decodedFrau == frau) {

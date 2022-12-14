@@ -10,7 +10,7 @@ import demawi.ayto.events.MatchingNight;
 import demawi.ayto.events.NewPerson;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
-import demawi.ayto.modell.Pair;
+import demawi.ayto.modell.AYTO_Pair;
 import demawi.ayto.modell.StaffelData;
 import demawi.ayto.modell.Tag;
 import demawi.ayto.permutation.AYTO_Permutator;
@@ -78,6 +78,11 @@ public class CalculationOptions
       return eventCount;
    }
 
+   public Event getEvent() {
+      if(eventCount == 0) return null;
+      return getTag().getEvent(eventCount);
+   }
+
    public Tag getTag() {
       return data.getTag(tagNr);
    }
@@ -104,7 +109,7 @@ public class CalculationOptions
       return getData().getAllEventsTill(tagNr, eventCount);
    }
 
-   public boolean isValid(Collection<Pair> constellation) {
+   public boolean isValid(Collection<AYTO_Pair> constellation) {
       for (Event event : getEvents()) {
          if (!event.isValid(constellation)) {
             return false;

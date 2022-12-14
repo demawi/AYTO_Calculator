@@ -6,7 +6,7 @@ import demawi.ayto.modell.Mann;
 import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.print.EventbasedMatchPrinter;
 
-import static demawi.ayto.modell.Pair.pair;
+import static demawi.ayto.modell.AYTO_Pair.pair;
 
 public class AYTO_VIP01
       extends StaffelData {

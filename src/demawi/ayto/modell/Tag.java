@@ -25,12 +25,12 @@ public class Tag {
       return this;
    }
 
-   public Tag matchBox(Pair matchingPair, Boolean perfectMatch) {
+   public Tag matchBox(AYTO_Pair matchingPair, Boolean perfectMatch) {
       events.add(new MatchBoxResult(matchingPair, perfectMatch));
       return this;
    }
 
-   public Tag matchBox(Pair matchingPair, Boolean perfectMatch, Pair weitererAuszug) {
+   public Tag matchBox(AYTO_Pair matchingPair, Boolean perfectMatch, AYTO_Pair weitererAuszug) {
       events.add(new MatchBoxResult(matchingPair, perfectMatch, weitererAuszug));
       return this;
    }
@@ -38,7 +38,7 @@ public class Tag {
    /**
     * Schließt den Tag ab, insofern keine this-Rückgabe.
     */
-   public void matchNight(Integer lights, Pair... pairs) {
+   public void matchNight(Integer lights, AYTO_Pair... pairs) {
       matchingNight = new MatchingNight(lights, pairs);
       events.add(matchingNight);
    }

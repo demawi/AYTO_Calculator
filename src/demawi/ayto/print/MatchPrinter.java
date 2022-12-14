@@ -8,15 +8,16 @@ import java.util.Set;
 import java.util.function.Consumer;
 
 import demawi.ayto.events.MatchingNight;
+import demawi.ayto.modell.AYTO_Pair;
 import demawi.ayto.modell.AYTO_Result;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
-import demawi.ayto.modell.Pair;
 import demawi.ayto.modell.StaffelData;
 import demawi.ayto.modell.Tag;
 import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.service.CalculationOptions;
 import demawi.ayto.service.MatchFinder;
+import demawi.ayto.service.MultiMatchFinder;
 
 public abstract class MatchPrinter {
 
@@ -36,17 +37,22 @@ public abstract class MatchPrinter {
       return new MatchFinder(new CalculationOptions(data, tagNr, eventCount)).calculate(out);
    }
 
+   protected List<AYTO_Result> calculateMulti(StaffelData data, int fromTag, int fromEventCount, int toTag,
+         int toEventCount) {
+      return new MultiMatchFinder(data, fromTag, fromEventCount, toTag, toEventCount).calculate(out);
+   }
+
    /**
     * Prints the spot probabilities 0..10 for the given constellation.
     *
     * @spotsReached kann null sein, wenn die Entscheidung noch nicht stattgefunden hat.
     */
-   public void printLightChances(AYTO_Result result, Collection<Pair> pairs, Integer spotsReached) {
+   public void printLightChances(AYTO_Result result, Collection<AYTO_Pair> pairs, Integer spotsReached) {
       int[] lightResults = result.getLightResultsForLastMatchingNight();
 
       out.accept("");
       out.accept("Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)");
-      for (Pair pair : pairs) {
+      for (AYTO_Pair pair : pairs) {
          out.accept(
                pair + ": " + Formatter.prozent(result.getPossibleCount(pair), result.getPossibleConstellationSize())
                      + "%");
@@ -101,7 +107,7 @@ public abstract class MatchPrinter {
          table.add(line);
          line.add(mann.getNamePlusMark());
          for (Frau frau : sortedFrauen) {
-            Pair pair = Pair.pair(frau, mann);
+            AYTO_Pair pair = AYTO_Pair.pair(frau, mann);
             int count = 0;
             for (Tag tag : result.getData().getTage()) {
                MatchingNight night = tag.getMatchingNight();
@@ -137,14 +143,14 @@ public abstract class MatchPrinter {
       if (result.getData().pairsToTrack != null) {
          out.accept("");
          out.accept("==== Tracking der Perfect Matches im Verlauf ====");
-         for (Pair pair : result.getData().pairsToTrack) {
+         for (AYTO_Pair pair : result.getData().pairsToTrack) {
             out.accept(pair + " => " + Formatter.prozent(result.getPossibleCount(pair),
                   result.getPossibleConstellationSize()) + "%");
          }
       }
 
       if (false) { // result.getAllPossibleConstellations() geht aktuell nicht, um Arbeitsspeicher zu sparen
-         List<Set<Pair>> sortedConstellations = new ArrayList<>(result.getAllPossibleConstellations());
+         List<Set<AYTO_Pair>> sortedConstellations = new ArrayList<>(result.getAllPossibleConstellations());
          sortedConstellations.sort((pairs1, pairs2) -> {
             Integer o1Count = pairs1.stream()
                   .mapToInt(result.possiblePairCount::get)
@@ -157,11 +163,11 @@ public abstract class MatchPrinter {
          out.accept("");
          out.accept("==== Beste Konstellationen ====");
          for (int i = 0, l = Math.min(20, sortedConstellations.size()); i < l; i++) {
-            Set<Pair> constellation = sortedConstellations.get(i);
+            Set<AYTO_Pair> constellation = sortedConstellations.get(i);
             out.accept("> Platz " + (i + 1) + " mit " + constellation.stream()
                   .mapToInt(result.possiblePairCount::get)
                   .sum() + " Punkten (Summe der Vorkommen der Einzelpaare)");
-            for (Pair pair : constellation) {
+            for (AYTO_Pair pair : constellation) {
                out.accept(pair.toString());
             }
             out.accept("");

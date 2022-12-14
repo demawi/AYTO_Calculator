@@ -1,45 +1,56 @@
 package demawi.ayto.print;
 
+import java.util.List;
+import java.util.function.Consumer;
+
 import demawi.ayto.events.Event;
 import demawi.ayto.events.MatchBoxResult;
 import demawi.ayto.events.MatchingNight;
 import demawi.ayto.events.NewPerson;
+import demawi.ayto.modell.AYTO_Pair;
 import demawi.ayto.modell.AYTO_Result;
 import demawi.ayto.modell.Frau;
-import demawi.ayto.modell.AYTO_Pair;
 import demawi.ayto.modell.StaffelData;
 import demawi.ayto.modell.Tag;
+import demawi.ayto.service.CalculationOptions;
 
-public class EventbasedMatchPrinter
+public class MultiMatchPrinter
       extends MatchPrinter {
+
+   public static boolean withPrintCalculationFake = true;
 
    @Override
    public void printDayResults(StaffelData data, int tagNr) {
-      AYTO_Result result = calculateSingle(data, tagNr, 0);
+      // Pre-calculate everything
       Tag tag = data.getTag(tagNr);
+      List<AYTO_Result> results = calculateMulti(data, tagNr, 0, tagNr, tag.getEvents()
+            .size());
+
+      printCalculationFake(results.get(0));
+
       for (int eventCount = 1, l = tag.getEvents()
             .size(); eventCount <= l; eventCount++) {
-         result = printEvent(tagNr, eventCount, result);
+         printEvent(tagNr, eventCount, results.get(eventCount - 1), results.get(eventCount));
       }
       if (tag.getMatchingNight() == null) {
          out.accept("");
          out.accept("Es hat keine Matching Night stattgefunden!");
       }
-      printPossibilitiesAsTable(result);
+      printPossibilitiesAsTable(results.get(results.size() - 1));
    }
 
-   private AYTO_Result printEvent(int tagNr, int eventCount, AYTO_Result previousResult) {
-      Event event = previousResult.getData()
+   private void printEvent(int tagNr, int eventCount, AYTO_Result beforeResult, AYTO_Result afterResult) {
+      Event event = beforeResult.getData()
             .getTag(tagNr)
             .getEvent(eventCount);
       if (event instanceof NewPerson) {
-         return printNewPerson((NewPerson) event, tagNr, eventCount, previousResult);
+         printNewPerson((NewPerson) event, tagNr, eventCount, beforeResult, afterResult);
       }
       else if (event instanceof MatchBoxResult) {
-         return printMatchBox((MatchBoxResult) event, tagNr, eventCount, previousResult);
+         printMatchBox((MatchBoxResult) event, tagNr, eventCount, beforeResult, afterResult);
       }
       else if (event instanceof MatchingNight) {
-         return printMatchNight((MatchingNight) event, tagNr, eventCount, previousResult);
+         printMatchNight((MatchingNight) event, tagNr, eventCount, beforeResult, afterResult);
       }
       else {
          throw new IllegalArgumentException("Event-Klasse kann noch nicht verarbeitet werden: " + event.getClass()
@@ -47,25 +58,8 @@ public class EventbasedMatchPrinter
       }
    }
 
-   /**
-    * Wenn tagNr und/oder eventCount null sind, wird jeweils der letzte Eintrag verwendet.
-    */
-   public void printEventPlusTable(StaffelData data, Integer tagNr, Integer eventCount) {
-      if (tagNr == null) {
-         tagNr = data.getTage()
-               .size();
-      }
-      if (eventCount == null) {
-         eventCount = data.getTag(tagNr)
-               .getEvents()
-               .size();
-      }
-      AYTO_Result result = calculateSingle(data, tagNr, eventCount - 1);
-      result = printEvent(tagNr, eventCount, result);
-      printPossibilitiesAsTable(result);
-   }
-
-   private AYTO_Result printNewPerson(NewPerson event, int tagNr, int eventCount, AYTO_Result previousResult) {
+   private void printNewPerson(NewPerson event, int tagNr, int eventCount, AYTO_Result previousResult,
+         AYTO_Result afterResult) {
       if (event.person instanceof Frau) {
          out.accept("Eine Frau ist hinzugekommen: " + event.person.getName()
                + ". Die Anzahl der Kombinationen erhöht sich damit!");
@@ -75,14 +69,14 @@ public class EventbasedMatchPrinter
                + ". Die Anzahl der Kombinationen erhöht sich damit!");
       }
       checkPrintImplicit(event);
-      AYTO_Result newResult = calculateSingle(previousResult.getData(), tagNr, eventCount);
+      printCalculationFake(afterResult);
       out.accept(
             "Die Anzahl der Kombinationen hat sich verändert: " + previousResult.getPossibleConstellationSize() + " => "
-                  + newResult.getPossibleConstellationSize());
-      return newResult;
+                  + afterResult.getPossibleConstellationSize());
    }
 
-   private AYTO_Result printMatchBox(MatchBoxResult event, int tagNr, int eventCount, AYTO_Result previousResult) {
+   private void printMatchBox(MatchBoxResult event, int tagNr, int eventCount, AYTO_Result previousResult,
+         AYTO_Result afterResult) {
       AYTO_Pair boxPair = event.pair;
       Boolean boxResult = event.result;
       out.accept("");
@@ -111,16 +105,13 @@ public class EventbasedMatchPrinter
       if (boxResult != null) {
          out.accept("Die Kombinationen reduzieren sich: " + previousResult.getPossibleConstellationSize() + " => "
                + newCombinationCount);
-         AYTO_Result result = calculateSingle(previousResult.getData(), tagNr, eventCount);
+         printCalculationFake(afterResult);
          checkPrintImplicit(event);
          if (!event.implicits.isEmpty()) {
             out.accept("Die Kombinationen reduzieren sich: " + newCombinationCount + " => "
-                  + result.getPossibleConstellationSize());
+                  + afterResult.getPossibleConstellationSize());
          }
-         return result;
       }
-      // Ansonsten keine Neuberechnung erforderlich
-      return previousResult;
    }
 
    private void checkPrintImplicit(MatchBoxResult event) {
@@ -149,9 +140,39 @@ public class EventbasedMatchPrinter
       }
    }
 
-   private AYTO_Result printMatchNight(MatchingNight event, int tagNr, int eventCount, AYTO_Result previousResult) {
+   private void printMatchNight(MatchingNight event, int tagNr, int eventCount, AYTO_Result previousResult,
+         AYTO_Result afterResult) {
       printLightChances(previousResult, event.constellation, event.lights);
-      return calculateSingle(previousResult.getData(), tagNr, eventCount);
+      printCalculationFake(afterResult);
+   }
+
+   private void printCalculationFake(AYTO_Result result) {
+      if (!withPrintCalculationFake)
+         return;
+      out.accept("");
+      breakLine(out);
+      StaffelData data = result.getData();
+      CalculationOptions calcOptions = result.getCalcOptions();
+      out.accept("-- Berechne " + data.name + " - Nacht " + calcOptions.getTagNr() + (
+            calcOptions.getAnzahlNeuePersonen() > 0 ?
+                  " inkl. " + calcOptions.getAnzahlNeuePersonen() + " neuer Person(en)" : "") + (
+            calcOptions.getAnzahlMatchBoxen() > 0 ?
+                  " inkl. " + calcOptions.getAnzahlMatchBoxen() + " Matchbox(en)" : "")
+            + (calcOptions.isMitMatchingNight() ? " inkl. Matchingnight" : "") + "..." + " [Ereignis#"
+            + calcOptions.getEventCount() + "]");
+      out.accept("-- Combinations: " + result.totalConstellations + " Possible: " + result.possible + " Not possible: "
+            + result.notPossible);
+      breakLine2(out);
+   }
+
+   public void breakLine(Consumer<String> out) {
+      out.accept(
+            "==================================================================================================================================================");
+   }
+
+   public void breakLine2(Consumer<String> out) {
+      out.accept(
+            "--------------------------------------------------------------------------------------------------------------------------------------------------");
    }
 
 }

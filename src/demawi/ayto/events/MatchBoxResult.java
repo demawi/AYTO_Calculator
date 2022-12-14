@@ -2,22 +2,22 @@ package demawi.ayto.events;
 
 import java.util.Collection;
 
-import demawi.ayto.modell.Pair;
+import demawi.ayto.modell.AYTO_Pair;
 
 public class MatchBoxResult
       extends EventWithImplicits
       implements Event {
 
-   public final Pair pair;
+   public final AYTO_Pair pair;
    public final Boolean result;
-   public Pair pairWeitererAuszug;
+   public AYTO_Pair pairWeitererAuszug;
 
-   public MatchBoxResult(Pair pair, Boolean result) {
+   public MatchBoxResult(AYTO_Pair pair, Boolean result) {
       this.pair = pair;
       this.result = result;
    }
 
-   public MatchBoxResult(Pair pair, Boolean result, Pair pairWeitererAuszug) {
+   public MatchBoxResult(AYTO_Pair pair, Boolean result, AYTO_Pair pairWeitererAuszug) {
       this(pair, result);
       assert result; // Wenn es einen weiteren Auszug gibt, muss das erste ein Perfect Match sein
       this.pairWeitererAuszug = pairWeitererAuszug;
@@ -36,7 +36,7 @@ public class MatchBoxResult
     * die Konstellation somit weiterhin als valide eingestuft
     * werden kann.
     */
-   public boolean isValid(Collection<Pair> constellation) {
+   public boolean isValid(Collection<AYTO_Pair> constellation) {
       if (!super.isValid(constellation))
          return false;
       if (result == null)

@@ -21,7 +21,7 @@ public class StaffelData {
   public String name;
   private final AYTO_Permutator.ZUSATZTYPE zusatztype;
   private final List<Tag> tage = new ArrayList<>();
-  public List<Pair> pairsToTrack;
+  public List<AYTO_Pair> pairsToTrack;
   public List<Frau> initialFrauen = new ArrayList<>();
   public List<Mann> initialMaenner = new ArrayList<>();
   private int basePairCount = 0;
@@ -71,7 +71,7 @@ public class StaffelData {
     return Collections.unmodifiableList(tage);
   }
 
-  public void track(Pair... pairs) {
+  public void track(AYTO_Pair... pairs) {
     this.pairsToTrack = Arrays.asList(pairs);
   }
 
@@ -201,7 +201,7 @@ public class StaffelData {
         }
         else if (evt instanceof MatchingNight) {
           MatchingNight event = (MatchingNight) evt;
-          for (Pair pair : event.constellation) {
+          for (AYTO_Pair pair : event.constellation) {
             checkPersonAlreadyKnown.accept(pair.frau);
             checkPersonAlreadyKnown.accept(pair.mann);
             validateMatchingPairs(event.constellation);
@@ -215,10 +215,10 @@ public class StaffelData {
     }
   }
 
-  private void validateMatchingPairs(Collection<Pair> constellation) {
+  private void validateMatchingPairs(Collection<AYTO_Pair> constellation) {
     Set<Frau> frauen = new LinkedHashSet<>();
     Set<Mann> maenner = new LinkedHashSet<>();
-    for (Pair pair : constellation) {
+    for (AYTO_Pair pair : constellation) {
       frauen.add(pair.frau);
       maenner.add(pair.mann);
     }
@@ -240,7 +240,7 @@ public class StaffelData {
    * PerfektMatch zwischen der ZusatzPerson geben kann.
    */
   private void checkForImplicits() {
-    List<Pair> previousPerfectMatches = new ArrayList<>();
+    List<AYTO_Pair> previousPerfectMatches = new ArrayList<>();
     Person newPerson = null;
     for (int tagNr = 1, l = tage.size(); tagNr <= l; tagNr++) {
       for (Event event : getTag(tagNr).getEvents()) {
@@ -270,12 +270,12 @@ public class StaffelData {
             // Annahme: alle vorherigen PerfectMatches sind kein Partner zu der neuen Person.
             // tritt bei ZusatzType.JEDER nicht auf, da die Person von vornherein dabei ist.
             if (newPerson instanceof Frau) {
-              for (Pair perfectMatch : previousPerfectMatches) {
+              for (AYTO_Pair perfectMatch : previousPerfectMatches) {
                 addImplicitForPerfectMatchEvent(personEvent, (Frau) newPerson, perfectMatch.mann, null);
               }
             }
             else {
-              for (Pair perfectMatch : previousPerfectMatches) {
+              for (AYTO_Pair perfectMatch : previousPerfectMatches) {
                 addImplicitForPerfectMatchEvent(personEvent, perfectMatch.frau, (Mann) newPerson, null);
               }
             }
@@ -286,8 +286,8 @@ public class StaffelData {
   }
 
   private void addImplicitForPerfectMatchEvent(EventWithImplicits implicitEvent, Frau frau, Mann mann,
-        Pair pairWeitererAuszug) {
-    Pair implicitPair = Pair.pair(frau, mann);
+        AYTO_Pair pairWeitererAuszug) {
+    AYTO_Pair implicitPair = AYTO_Pair.pair(frau, mann);
     if (implicitEvent instanceof MatchBoxResult && ((MatchBoxResult) implicitEvent).pair.equals(implicitPair)) {
       return;
     }

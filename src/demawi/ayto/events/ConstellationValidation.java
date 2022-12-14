@@ -2,10 +2,10 @@ package demawi.ayto.events;
 
 import java.util.Collection;
 
-import demawi.ayto.modell.Pair;
+import demawi.ayto.modell.AYTO_Pair;
 
 public interface ConstellationValidation {
 
-   boolean isValid(Collection<Pair> constellation);
+   boolean isValid(Collection<AYTO_Pair> constellation);
 
 }
