@@ -14,11 +14,8 @@ import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
 import demawi.ayto.modell.StaffelData;
 import demawi.ayto.modell.Tag;
-import demawi.ayto.modell.Zeitpunkt;
 import demawi.ayto.permutation.AYTO_Permutator;
-import demawi.ayto.service.CalculationOptions;
 import demawi.ayto.service.MatchFinder;
-import demawi.ayto.service.MultiMatchFinder;
 
 public abstract class MatchPrinter {
 
@@ -34,13 +31,9 @@ public abstract class MatchPrinter {
 
    public abstract void printDayResults(StaffelData data, int tagNr);
 
-   protected AYTO_Result calculateSingle(StaffelData data, int tagNr, int eventCount) {
-      return new MatchFinder(new CalculationOptions(data, new Zeitpunkt(tagNr, eventCount))).calculate(out);
-   }
-
-   protected List<AYTO_Result> calculateMulti(StaffelData data, int fromTag, int fromEventCount, int toTag,
+   protected List<AYTO_Result> calculate(StaffelData data, int fromTag, int fromEventCount, int toTag,
          int toEventCount) {
-      return new MultiMatchFinder(data, fromTag, fromEventCount, toTag, toEventCount).calculate(out);
+      return new MatchFinder(data, fromTag, fromEventCount, toTag, toEventCount).calculate(out);
    }
 
    /**

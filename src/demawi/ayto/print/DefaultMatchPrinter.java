@@ -12,21 +12,21 @@ import demawi.ayto.modell.AYTO_Result;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.StaffelData;
 import demawi.ayto.modell.Tag;
-import demawi.ayto.service.CalculationOptions;
+import demawi.ayto.modell.CalculationOptions;
 
 public class DefaultMatchPrinter
       extends MatchPrinter {
 
-   public static boolean withPrintCalculationFake = true;
+   public static boolean withCalculationSummary = true;
 
    @Override
    public void printDayResults(StaffelData data, int tagNr) {
       // Pre-calculate everything
       Tag tag = data.getTag(tagNr);
-      List<AYTO_Result> results = calculateMulti(data, tagNr, 0, tagNr, tag.getEvents()
+      List<AYTO_Result> results = calculate(data, tagNr, 0, tagNr, tag.getEvents()
             .size());
 
-      printCalculationFake(results.get(0));
+      printCalculationSummary(results.get(0));
 
       for (int eventCount = 1, l = tag.getEvents()
             .size(); eventCount <= l; eventCount++) {
@@ -69,7 +69,7 @@ public class DefaultMatchPrinter
                + ". Die Anzahl der Kombinationen erhöht sich damit!");
       }
       checkPrintImplicit(event);
-      printCalculationFake(afterResult);
+      printCalculationSummary(afterResult);
       out.accept(
             "Die Anzahl der Kombinationen hat sich verändert: " + previousResult.getPossibleConstellationSize() + " => "
                   + afterResult.getPossibleConstellationSize());
@@ -105,7 +105,7 @@ public class DefaultMatchPrinter
       if (boxResult != null) {
          out.accept("Die Kombinationen reduzieren sich: " + previousResult.getPossibleConstellationSize() + " => "
                + newCombinationCount);
-         printCalculationFake(afterResult);
+         printCalculationSummary(afterResult);
          checkPrintImplicit(event);
          if (!event.implicits.isEmpty()) {
             out.accept("Die Kombinationen reduzieren sich: " + newCombinationCount + " => "
@@ -143,11 +143,11 @@ public class DefaultMatchPrinter
    private void printMatchNight(MatchingNight event, int tagNr, int eventCount, AYTO_Result previousResult,
          AYTO_Result afterResult) {
       printLightChances(previousResult, event.constellation, event.lights);
-      printCalculationFake(afterResult);
+      printCalculationSummary(afterResult);
    }
 
-   private void printCalculationFake(AYTO_Result result) {
-      if (!withPrintCalculationFake)
+   private void printCalculationSummary(AYTO_Result result) {
+      if (!withCalculationSummary)
          return;
       out.accept("");
       breakLine(out);

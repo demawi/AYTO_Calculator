@@ -1,4 +1,4 @@
-package demawi.ayto.service;
+package demawi.ayto.modell;
 
 import java.util.List;
 

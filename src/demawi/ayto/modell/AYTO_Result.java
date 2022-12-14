@@ -7,7 +7,6 @@ import java.util.Set;
 
 import demawi.ayto.events.MatchingNight;
 import demawi.ayto.permutation.AYTO_Permutator;
-import demawi.ayto.service.CalculationOptions;
 
 public class AYTO_Result {
 

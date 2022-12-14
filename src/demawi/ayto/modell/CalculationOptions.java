@@ -1,4 +1,4 @@
-package demawi.ayto.service;
+package demawi.ayto.modell;
 
 import java.util.Collection;
 import java.util.List;
@@ -8,12 +8,6 @@ import demawi.ayto.events.Event;
 import demawi.ayto.events.MatchBoxResult;
 import demawi.ayto.events.MatchingNight;
 import demawi.ayto.events.NewPerson;
-import demawi.ayto.modell.Frau;
-import demawi.ayto.modell.Mann;
-import demawi.ayto.modell.AYTO_Pair;
-import demawi.ayto.modell.StaffelData;
-import demawi.ayto.modell.Tag;
-import demawi.ayto.modell.Zeitpunkt;
 import demawi.ayto.permutation.AYTO_Permutator;
 
 public class CalculationOptions

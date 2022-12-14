@@ -1,5 +1,8 @@
-package demawi.ayto.modell;
+package demawi.ayto.util;
 
+/**
+ * Utility class for two objects.
+ */
 public class Pair<A, B> {
 
    public static <A, B> Pair<A, B> pair(A a, B b) {
