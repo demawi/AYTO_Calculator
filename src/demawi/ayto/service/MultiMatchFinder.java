@@ -91,7 +91,7 @@ public class MultiMatchFinder {
          results.add(eventResults);
          for (CalculationOptions opt : calcOptions) {
             if (eventResults.size() == 0) {
-               eventResults.add(Pair.pair(new NewDayEvent(opt), new AYTO_Result(opt)));
+               eventResults.add(Pair.pair(new NewPermutationEvent(opt), new AYTO_Result(opt)));
             }
             else {
                eventResults.add(Pair.pair(opt.getEvent(), new AYTO_Result(opt)));
@@ -122,12 +122,16 @@ public class MultiMatchFinder {
       return sum(calcOptions, results);
    }
 
-   private static class NewDayEvent
+   /**
+    * Ein synthetisches Event, welches genutzt wird, um bis zu einem gewissen Zeitpunkt die Events zu aggregieren
+    * und gemeinsam zu testen.
+    */
+   private static class NewPermutationEvent
          implements Event {
 
       private CalculationOptions options;
 
-      public NewDayEvent(CalculationOptions options) {
+      public NewPermutationEvent(CalculationOptions options) {
          this.options = options;
       }
 
