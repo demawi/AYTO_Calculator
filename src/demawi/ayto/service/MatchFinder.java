@@ -44,9 +44,7 @@ public class MatchFinder {
             calcOptions.getMaenner(), calcOptions.getZusatztype(), Pair::pair);
       permutator.permutate(() -> {
          AYTO_Result result = new AYTO_Result(calcOptions);
-         synchronized (results) {
-            results.add(result);
-         }
+         results.add(result);
          return constellation -> result.addResult(constellation, calcOptions.isValid(constellation));
       });
       AYTO_Result result = sum(calcOptions, results);
