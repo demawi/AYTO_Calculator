@@ -15,6 +15,7 @@ import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
 import demawi.ayto.modell.Pair;
 import demawi.ayto.modell.StaffelData;
+import demawi.ayto.modell.Zeitpunkt;
 import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.print.Formatter;
 
@@ -47,7 +48,7 @@ public class MultiMatchFinder {
          }
 
          for (int curEvent = curEventFrom; curEvent <= curEventTo; curEvent++) {
-            calcOptions.add(new CalculationOptions(data, curTag, curEvent));
+            calcOptions.add(new CalculationOptions(data, new Zeitpunkt(curTag, curEvent)));
          }
       }
    }

@@ -21,7 +21,8 @@ public class MatchFinder {
    }
 
    public AYTO_Result calculate(Consumer<String> out) {
-      if (calcOptions.getTagNr() == 0) {
+      if (calcOptions.getZeitpunkt()
+            .getTagNr() == 0) {
          return new AYTO_Result(calcOptions);
       }
       long start = System.currentTimeMillis();
@@ -31,12 +32,14 @@ public class MatchFinder {
          out.accept("");
          breakLine(out);
          int anzahlMatchBoxen = calcOptions.getAnzahlMatchBoxen();
-         out.accept("-- Berechne " + data.name + " - Nacht " + calcOptions.getTagNr() + (
+         out.accept("-- Berechne " + data.name + " - Nacht " + calcOptions.getZeitpunkt()
+               .getTagNr() + (
                calcOptions.getAnzahlNeuePersonen() > 0 ?
                      " inkl. " + calcOptions.getAnzahlNeuePersonen() + " neuer Person(en)" : "") + (
                anzahlMatchBoxen > 0 ? " inkl. " + anzahlMatchBoxen + " Matchbox(en)" : "")
                + (calcOptions.isMitMatchingNight() ? " inkl. Matchingnight" : "") + "..." + " [Ereignis#"
-               + calcOptions.getEventCount() + "]");
+               + calcOptions.getZeitpunkt()
+               .getEventCount() + "]");
       }
 
       AYTO_Permutator<Frau, Mann, AYTO_Pair> permutator = AYTO_Permutator.create(calcOptions.getFrauen(),
@@ -55,7 +58,7 @@ public class MatchFinder {
                      + result.notPossible);
 
          System.out.println(" Calculation time: " + Formatter.minSecs(System.currentTimeMillis() - start) + " ["
-               + calcOptions.getTagNr() + "." + calcOptions.getEventCount() + "]");
+               + calcOptions.getZeitpunkt().getTagNr() + "." + calcOptions.getZeitpunkt().getEventCount() + "]");
          breakLine2(out);
       }
       return result;

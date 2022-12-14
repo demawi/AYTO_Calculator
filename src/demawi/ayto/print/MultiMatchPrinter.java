@@ -153,13 +153,13 @@ public class MultiMatchPrinter
       breakLine(out);
       StaffelData data = result.getData();
       CalculationOptions calcOptions = result.getCalcOptions();
-      out.accept("-- Berechne " + data.name + " - Nacht " + calcOptions.getTagNr() + (
+      out.accept("-- Berechne " + data.name + " - Nacht " + calcOptions.getZeitpunkt().getTagNr() + (
             calcOptions.getAnzahlNeuePersonen() > 0 ?
                   " inkl. " + calcOptions.getAnzahlNeuePersonen() + " neuer Person(en)" : "") + (
             calcOptions.getAnzahlMatchBoxen() > 0 ?
                   " inkl. " + calcOptions.getAnzahlMatchBoxen() + " Matchbox(en)" : "")
             + (calcOptions.isMitMatchingNight() ? " inkl. Matchingnight" : "") + "..." + " [Ereignis#"
-            + calcOptions.getEventCount() + "]");
+            + calcOptions.getZeitpunkt().getEventCount() + "]");
       out.accept("-- Combinations: " + result.totalConstellations + " Possible: " + result.possible + " Not possible: "
             + result.notPossible);
       breakLine2(out);
