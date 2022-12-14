@@ -12,10 +12,9 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
 import demawi.ayto.modell.StaffelData;
-import demawi.ayto.print.EventbasedMatchPrinter;
 import demawi.ayto.print.Formatter;
 import demawi.ayto.print.MatchPrinter;
-import demawi.ayto.print.MultiMatchPrinter;
+import demawi.ayto.print.DefaultMatchPrinter;
 
 public class AllOutPrinter {
 
@@ -28,7 +27,7 @@ public class AllOutPrinter {
          System.out.println(directory.getAbsoluteFile());
          directory.mkdirs();
          //MatchPrinter finder = new EventbasedMatchPrinter();
-         MatchPrinter finder = new MultiMatchPrinter();
+         MatchPrinter finder = new DefaultMatchPrinter();
 
          for (int tagNr = 1, l = staffel.getAnzahlTage(); tagNr <= l; tagNr++) {
             File file = new File(directory.getAbsoluteFile() + "/Nacht" + numberFormat.format(tagNr) + ".txt");

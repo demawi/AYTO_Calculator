@@ -14,7 +14,7 @@ import demawi.ayto.modell.StaffelData;
 import demawi.ayto.modell.Tag;
 import demawi.ayto.service.CalculationOptions;
 
-public class MultiMatchPrinter
+public class DefaultMatchPrinter
       extends MatchPrinter {
 
    public static boolean withPrintCalculationFake = true;

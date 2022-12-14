@@ -1,10 +1,10 @@
 package demawi.ayto;
 
-import demawi.ayto.modell.StaffelData;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
+import demawi.ayto.modell.StaffelData;
 import demawi.ayto.permutation.AYTO_Permutator;
-import demawi.ayto.print.EventbasedMatchPrinter;
+import demawi.ayto.print.DefaultMatchPrinter;
 
 import static demawi.ayto.modell.AYTO_Pair.pair;
 
@@ -86,19 +86,10 @@ public class AYTO_VIP01
                 pair(Kathleen, Manuel), pair(Sarah, Danilo), pair(Walentina, Eugen), pair(Vanessa, Alex),
                 pair(Steffi, Jamie), pair(Jacky, Salvatore));
 
-    // falsch: Finnja&Tommy, Jill&Diogo, Sarah&Danilo... Richtig: Finnja&Diogo, Jill&Tommy, Sara&Alex, Melina&Danilo
-
-    // coming
-    // add(false, pair(Kerstin, Max)); // 26.32
-    // add(false, pair(Isabelle, Dustin)); // 0
-    // add(false, pair(Zaira, Marius)); // 57.89
-    // add(false, pair(Raphaela, Jordi)); // 15.79
-
   }
 
   public static void main(String[] args) {
-    //new EventbasedMatchPrinter().printDayResults(new AYTO_VIP01());
-    new EventbasedMatchPrinter().printEventPlusTable(new AYTO_VIP01(), 1, 2);
+    new DefaultMatchPrinter().printDayResults(new AYTO_VIP01());
   }
 
 }
