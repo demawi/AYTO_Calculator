@@ -29,7 +29,7 @@ public class AYTO_PermutatorNUR_LETZTER<F, M, R>
       addedFrauen.clear();
       addedMaenner.clear();
       for (Object current : constellation) {
-         Integer decodedFrau = decodeFrau((Integer) current);
+         int decodedFrau = decodeFrau((Integer) current);
          if (decodedFrau == frau) {
             if (mann < minSize) {
                return null;
