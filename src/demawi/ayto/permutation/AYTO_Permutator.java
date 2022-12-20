@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
@@ -77,7 +78,7 @@ public abstract class AYTO_Permutator<F, M, R> {
 
   public void permutate(Supplier<Consumer<Set<R>>> pairConsumer) {
     Object[] current = createInitialConstellation();
-    permutateInternImpl(0, 0, current, pairConsumer, null, BRANCH_LEVEL);
+    permutateInternImpl(current, pairConsumer, null, BRANCH_LEVEL);
     // System.out.println("ActiveThreads: " + ((ThreadPoolExecutor) executorService).getActiveCount());
     executorService.shutdown();
     try {
@@ -95,50 +96,56 @@ public abstract class AYTO_Permutator<F, M, R> {
    * Wie viele currentConstellations gleichzeitig angelegt sind. Wir nutzen hier die Tiefensuche, um
    * Speicherplatz zu sparen.
    */
+  private void permutateInternImpl(Object[] currentConstellation, Supplier<Consumer<Set<R>>> pairConsumerCreator,
+        Consumer<Set<R>> pairConsumer, int branchLevel) {
+    if (anzahlFrauen >= anzahlMaenner) { // jede Frau ist nur einmal vorhanden, somit iterieren wir über Frauen->Männer
+      permutateInternImplFrau(0, currentConstellation, pairConsumerCreator, pairConsumer, branchLevel);
+    }
+    else { // jeder Mann ist nur einmal vorhanden, somit iterieren wir über Männer->Frauen
+      permutateInternImplMann(0, currentConstellation, pairConsumerCreator, pairConsumer, branchLevel);
+    }
+  }
 
-  private void permutateInternImpl(int frauAktuell, int mannAktuell, Object[] currentConstellation,
+  private void permutateInternImplFrau(int frau, Object[] currentConstellation,
         Supplier<Consumer<Set<R>>> pairConsumerCreator, Consumer<Set<R>> pairConsumer, int branchLevel) {
-
-    if (anzahlFrauen >= anzahlMaenner) { // jede Frau ist nur einmal vorhanden, somit frauAktuell immer + 1
-      for (int mann = 0; mann < anzahlMaenner; mann++) {
-        Object[] newSet = canAdd(frauAktuell, mann, currentConstellation);
-        if (newSet != null) {
-          Set<R> result = decodePairs(newSet);
-          if (result != null) {
-            pairConsumer.accept(result);
+    for (int mann = 0; mann < anzahlMaenner; mann++) {
+      Object[] newSet = canAdd(frau, mann, currentConstellation);
+      if (newSet != null) {
+        Set<R> result = decodeResultPairs(newSet);
+        if (result != null) {
+          pairConsumer.accept(result);
+        }
+        else {
+          if (branchLevel == 0) {
+            final Consumer<Set<R>> pairConsumerF = (pairConsumer == null ? pairConsumerCreator.get() : pairConsumer);
+            executorService.submit(
+                  () -> permutateInternImplFrau(frau + 1, newSet, pairConsumerCreator, pairConsumerF, branchLevel - 1));
           }
           else {
-            if (branchLevel == 0) {
-              final Consumer<Set<R>> pairConsumerF = (pairConsumer == null ? pairConsumerCreator.get() : pairConsumer);
-              executorService.submit(
-                    () -> permutateInternImpl(frauAktuell + 1, 0, newSet, pairConsumerCreator, pairConsumerF,
-                          branchLevel - 1));
-            }
-            else {
-              permutateInternImpl(frauAktuell + 1, 0, newSet, pairConsumerCreator, pairConsumer, branchLevel - 1);
-            }
+            permutateInternImplFrau(frau + 1, newSet, pairConsumerCreator, pairConsumer, branchLevel - 1);
           }
         }
       }
     }
-    else { // jeder Mann ist nur einmal vorhanden, somit mannAktuell immer +1.
-      for (int frau = 0; frau < anzahlFrauen; frau++) {
-        Object[] newSet = canAdd(frau, mannAktuell, currentConstellation);
-        if (newSet != null) {
-          Set<R> result = decodePairs(newSet);
-          if (result != null) {
-            pairConsumer.accept(result);
+  }
+
+  private void permutateInternImplMann(int mann, Object[] currentConstellation,
+        Supplier<Consumer<Set<R>>> pairConsumerCreator, Consumer<Set<R>> pairConsumer, int branchLevel) {
+    for (int frau = 0; frau < anzahlFrauen; frau++) {
+      Object[] newSet = canAdd(frau, mann, currentConstellation);
+      if (newSet != null) {
+        Set<R> result = decodeResultPairs(newSet);
+        if (result != null) {
+          pairConsumer.accept(result);
+        }
+        else {
+          if (branchLevel == 0) {
+            final Consumer<Set<R>> pairConsumerF = (pairConsumer == null ? pairConsumerCreator.get() : pairConsumer);
+            executorService.submit(
+                  () -> permutateInternImplMann(mann + 1, newSet, pairConsumerCreator, pairConsumerF, branchLevel - 1));
           }
           else {
-            if (branchLevel == 0) {
-              final Consumer<Set<R>> pairConsumerF = (pairConsumer == null ? pairConsumerCreator.get() : pairConsumer);
-              executorService.submit(
-                    () -> permutateInternImpl(0, mannAktuell + 1, newSet, pairConsumerCreator, pairConsumerF,
-                          branchLevel - 1));
-            }
-            else {
-              permutateInternImpl(0, mannAktuell + 1, newSet, pairConsumerCreator, pairConsumer, branchLevel - 1);
-            }
+            permutateInternImplMann(mann + 1, newSet, pairConsumerCreator, pairConsumer, branchLevel - 1);
           }
         }
       }
@@ -169,6 +176,6 @@ public abstract class AYTO_Permutator<F, M, R> {
     return packingFunction.apply(frauen.get(decodeFrau(number)), maenner.get(decodeMann(number)));
   }
 
-  protected abstract Set<R> decodePairs(Object[] constellation);
+  protected abstract Set<R> decodeResultPairs(Object[] constellation);
 
 }

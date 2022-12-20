@@ -1,12 +1,12 @@
 package demawi.ayto.service;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
+import demawi.ayto.events.ConstellationValidation;
 import demawi.ayto.events.Event;
 import demawi.ayto.events.NewPerson;
 import demawi.ayto.modell.AYTO_Pair;
@@ -14,17 +14,17 @@ import demawi.ayto.modell.AYTO_Result;
 import demawi.ayto.modell.CalculationOptions;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
-import demawi.ayto.util.Pair;
 import demawi.ayto.modell.StaffelData;
 import demawi.ayto.modell.Zeitpunkt;
 import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.print.Formatter;
+import demawi.ayto.util.Pair;
 
-public class MatchFinder {
+public class MatchCalculator {
 
    private final List<CalculationOptions> calcOptions = new ArrayList<>();
 
-   public MatchFinder(StaffelData data, int fromTag, int fromEventCount, int toTag, int toEventCount) {
+   public MatchCalculator(StaffelData data, int fromTag, int fromEventCount, int toTag, int toEventCount) {
       for (int curTag = fromTag; curTag <= toTag; curTag++) {
          int curEventFrom = 0;
          int curEventTo = 0;
@@ -83,21 +83,23 @@ public class MatchFinder {
       AYTO_Permutator<Frau, Mann, AYTO_Pair> permutator = AYTO_Permutator.create(calcPrimaryOptions.getFrauen(),
             calcPrimaryOptions.getMaenner(), calcPrimaryOptions.getZusatztype(), AYTO_Pair::pair);
 
-      List<List<Pair<Event, AYTO_Result>>> results = new ArrayList<>();
+      List<List<Pair<ConstellationValidation, AYTO_Result>>> results = new ArrayList<>();
       permutator.permutate(() -> {
-         List<Pair<Event, AYTO_Result>> eventResults = new ArrayList<>();
+         List<Pair<ConstellationValidation, AYTO_Result>> eventResults = new ArrayList<>();
          results.add(eventResults);
          for (CalculationOptions opt : calcOptions) {
             if (eventResults.size() == 0) {
-               eventResults.add(Pair.pair(new NewPermutationEvent(opt), new AYTO_Result(opt)));
+               // Die erste Validation ist alles von Anfang an bis zu diesem Ereignis
+               eventResults.add(Pair.pair(opt, new AYTO_Result(opt)));
             }
             else {
+               // Fortführend sind es nur noch Einzelereignisse
                eventResults.add(Pair.pair(opt.getEvent(), new AYTO_Result(opt)));
             }
          }
          final AtomicInteger totalConstellations = new AtomicInteger(0);
          return constellation -> {
-            for (Pair<Event, AYTO_Result> entry : eventResults) {
+            for (Pair<ConstellationValidation, AYTO_Result> entry : eventResults) {
                if (entry.getFirst()
                      .isValid(constellation)) {
                   entry.getSecond()
@@ -120,34 +122,15 @@ public class MatchFinder {
       return sum(calcOptions, results);
    }
 
-   /**
-    * Ein synthetisches Event, welches genutzt wird, um bis zu einem gewissen Zeitpunkt die Events zu aggregieren
-    * und gemeinsam zu testen.
-    */
-   private static class NewPermutationEvent
-         implements Event {
-
-      private CalculationOptions options;
-
-      public NewPermutationEvent(CalculationOptions options) {
-         this.options = options;
-      }
-
-      public boolean isValid(Collection<AYTO_Pair> constellation) {
-         return options.isValid(constellation);
-      }
-
-   }
-
    private static List<AYTO_Result> sum(List<CalculationOptions> calcOptions,
-         List<List<Pair<Event, AYTO_Result>>> results) {
+         List<List<Pair<ConstellationValidation, AYTO_Result>>> results) {
       List<AYTO_Result> finalResultList = new ArrayList<>();
       int totalConstellations = 0;
       for (int i = 0, l = calcOptions.size(); i < l; i++) {
          CalculationOptions opt = calcOptions.get(i);
          AYTO_Result curResult = new AYTO_Result(opt);
          finalResultList.add(curResult);
-         for (List<Pair<Event, AYTO_Result>> entryList : results) {
+         for (List<Pair<ConstellationValidation, AYTO_Result>> entryList : results) {
             curResult.add(entryList.get(i)
                   .getSecond());
          }

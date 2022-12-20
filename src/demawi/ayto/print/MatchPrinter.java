@@ -15,7 +15,7 @@ import demawi.ayto.modell.Mann;
 import demawi.ayto.modell.StaffelData;
 import demawi.ayto.modell.Tag;
 import demawi.ayto.permutation.AYTO_Permutator;
-import demawi.ayto.service.MatchFinder;
+import demawi.ayto.service.MatchCalculator;
 
 public abstract class MatchPrinter {
 
@@ -25,6 +25,9 @@ public abstract class MatchPrinter {
       this.out = out;
    }
 
+   /**
+    * Druckt den letzten Tag der Staffel.
+    */
    public void printDayResults(StaffelData data) {
       printDayResults(data, data.getAnzahlTage());
    }
@@ -33,7 +36,7 @@ public abstract class MatchPrinter {
 
    protected List<AYTO_Result> calculate(StaffelData data, int fromTag, int fromEventCount, int toTag,
          int toEventCount) {
-      return new MatchFinder(data, fromTag, fromEventCount, toTag, toEventCount).calculate(out);
+      return new MatchCalculator(data, fromTag, fromEventCount, toTag, toEventCount).calculate(out);
    }
 
    /**

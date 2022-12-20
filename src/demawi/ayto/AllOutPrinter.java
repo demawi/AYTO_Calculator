@@ -18,7 +18,7 @@ import demawi.ayto.print.DefaultMatchPrinter;
 
 public class AllOutPrinter {
 
-   private static NumberFormat numberFormat = new DecimalFormat("00");
+   private static final NumberFormat numberFormat = new DecimalFormat("00");
 
    public static void print(StaffelData... staffeln)
          throws Exception {
@@ -26,7 +26,6 @@ public class AllOutPrinter {
          File directory = new File("./results/Staffel " + staffel.name);
          System.out.println(directory.getAbsoluteFile());
          directory.mkdirs();
-         //MatchPrinter finder = new EventbasedMatchPrinter();
          MatchPrinter finder = new DefaultMatchPrinter();
 
          for (int tagNr = 1, l = staffel.getAnzahlTage(); tagNr <= l; tagNr++) {
@@ -57,22 +56,6 @@ public class AllOutPrinter {
 
       OutputStream out = new FileOutputStream(file);
       out.write(buffer.toByteArray());
-      out.flush();
-      out.close();
-   }
-
-   private static void writeDirect(StaffelData staffel, int tagNr, MatchPrinter finder, File file)
-         throws IOException {
-      Writer out = new FileWriter(file);
-      finder.setOut(str -> {
-         try {
-            out.write(str + "\n");
-         }
-         catch (IOException e) {
-            e.printStackTrace();
-         }
-      });
-      finder.printDayResults(staffel, tagNr);
       out.flush();
       out.close();
    }

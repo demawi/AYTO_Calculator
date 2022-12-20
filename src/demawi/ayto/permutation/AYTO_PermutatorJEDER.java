@@ -27,7 +27,7 @@ public class AYTO_PermutatorJEDER<F, M, R>
          Integer current = (Integer) constellation[i];
          int decodedFrau = decodeFrau(current);
          if (decodedFrau == frau) {
-            if (foundDouble || frauen.size() > minSize) {
+            if (foundDouble || anzahlFrauen > minSize) {
                return null;
             }
             foundDouble = true;
@@ -35,7 +35,7 @@ public class AYTO_PermutatorJEDER<F, M, R>
 
          int decodedMann = decodeMann(current);
          if (decodedMann == mann) {
-            if (foundDouble || maenner.size() > minSize) {
+            if (foundDouble || anzahlMaenner > minSize) {
                return null;
             }
             foundDouble = true;
@@ -49,11 +49,11 @@ public class AYTO_PermutatorJEDER<F, M, R>
 
    @Override
    public Object[] createInitialConstellation() {
-      return new Object[] { false };
+      return new Object[] { frauen.size() == maenner.size() };
    }
 
    @Override
-   protected Set<R> decodePairs(Object[] constellation) {
+   protected Set<R> decodeResultPairs(Object[] constellation) {
       if (constellation.length < maxSize + 1) {
          return null;
       }

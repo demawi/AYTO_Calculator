@@ -62,7 +62,7 @@ public class AYTO_PermutatorNUR_LETZTER<F, M, R>
    }
 
    @Override
-   protected Set<R> decodePairs(Object[] constellation) {
+   protected Set<R> decodeResultPairs(Object[] constellation) {
       if (constellation.length < maxSize) {
          return null;
       }

@@ -3,6 +3,7 @@ package demawi.ayto.permutation;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,44 +11,62 @@ import demawi.ayto.print.Formatter;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AYTO_PermutatorTest {
+
+   private AtomicInteger atomicCount = new AtomicInteger(0);
 
    /**
     * Kleiner 4:3 Test mit kompletter Ausgabe
     */
    @Test
    public void testSmall() {
-      AYTO_Permutator<String, String, String> permutator = AYTO_Permutator.create(frauen(4), maenner(3),
-            AYTO_Permutator.ZUSATZTYPE.JEDER, (a, b) -> "" + a + b);
+      int frauenAnzahl = 12;
+      int maennerAnzahl = 12;
+      boolean withFullOutput = frauenAnzahl + maennerAnzahl < 10;
+      boolean withFullCheck = true;
+      long start = System.currentTimeMillis();
+      AYTO_Permutator<String, String, String> permutator = AYTO_Permutator.create(frauen(frauenAnzahl),
+            maenner(maennerAnzahl), AYTO_Permutator.ZUSATZTYPE.JEDER, (a, b) -> "" + a + b);
+      atomicCount.set(0);
       permutator.permutate(() -> result -> {
-         //check(result, frauen, maenner);
-         System.out.println(result);
+         atomicCount.incrementAndGet();
+         if (withFullCheck) {
+            check(result, frauen(frauenAnzahl), maenner(maennerAnzahl));
+         }
+         if (withFullOutput) {
+            System.out.println(result);
+         }
       });
-      AYTO_Permutator<String, String, String> permutator2 = AYTO_Permutator.create(frauen(4), maenner(3),
-            AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER, (a, b) -> "" + a + b);
+      System.out.println("Count: " + atomicCount + " in " + Formatter.minSecs(System.currentTimeMillis() - start));
+      start = System.currentTimeMillis();
+      AYTO_Permutator<String, String, String> permutator2 = AYTO_Permutator.create(frauen(frauenAnzahl),
+            maenner(maennerAnzahl), AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER, (a, b) -> "" + a + b);
+      atomicCount.set(0);
       permutator2.permutate(() -> result -> {
-         //check(result, frauen, maenner);
-         System.out.println(result);
+         atomicCount.incrementAndGet();
+         if (withFullCheck) {
+            check(result, frauen(frauenAnzahl), maenner(maennerAnzahl));
+         }
+         if (withFullOutput) {
+            System.out.println(result);
+         }
       });
+      System.out.println("Count: " + atomicCount + " in " + Formatter.minSecs(System.currentTimeMillis() - start));
    }
 
-   private int count;
    @Test
    public void testBigJEDER() {
       AYTO_Permutator<String, String, String> permutator = AYTO_Permutator.create(frauen(11), maenner(10),
             AYTO_Permutator.ZUSATZTYPE.JEDER, (a, b) -> "" + a + b);
       long start = System.currentTimeMillis();
-      count = 0;
+      atomicCount.set(0);
       permutator.permutate(() -> result -> {
-         synchronized (this) {
-            count++;
-         }
+         atomicCount.incrementAndGet();
       });
       System.out.println(
             "JEDER 11:10 PERMUTATION Taken time: " + Formatter.minSecs(System.currentTimeMillis() - start));
-      System.out.println("Anzahl erzeugter Permutationen: " + count);
+      System.out.println("Anzahl erzeugter Permutationen: " + atomicCount);
    }
 
    @Test
@@ -55,13 +74,13 @@ public class AYTO_PermutatorTest {
       AYTO_Permutator<String, String, String> permutator = AYTO_Permutator.create(frauen(11), maenner(10),
             AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER, (a, b) -> "" + a + b);
       long start = System.currentTimeMillis();
-      count = 0;
+      atomicCount.set(0);
       permutator.permutate(() -> result -> {
-         count++;
+         atomicCount.incrementAndGet();
       });
       System.out.println(
             "NUR_LETZTER 11:10 PERMUTATION Taken time: " + Formatter.minSecs(System.currentTimeMillis() - start));
-      System.out.println("Anzahl erzeugter Permutationen: " + count);
+      System.out.println("Anzahl erzeugter Permutationen: " + atomicCount);
    }
 
    @Test
@@ -107,13 +126,15 @@ public class AYTO_PermutatorTest {
       return result;
    }
 
-   private static final List<String> allFrauen = Arrays.asList("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K");
+   private static final List<String> allFrauen = Arrays.asList("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
+         "L", "M", "N");
 
    private static List<String> frauen(int anzahl) {
       return allFrauen.subList(0, anzahl);
    }
 
-   private static final List<String> allMaenner = Arrays.asList("1", "2", "3", "4", "5", "6", "7", "8", "9", "0");
+   private static final List<String> allMaenner = Arrays.asList("1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "X",
+         "Y", "Z");
 
    private static List<String> maenner(int anzahl) {
       return allMaenner.subList(0, anzahl);
@@ -145,17 +166,24 @@ public class AYTO_PermutatorTest {
 
    private void check(Set<String> result, List<String> frauen, List<String> maenner) {
       for (String frau : frauen) {
-         assertTrue(result.stream()
-                     .filter(r -> r.contains(frau))
-                     .count() > 0,
-               "Frau '" + frau + "' ist nicht vorhanden im Resultat: " + Arrays.deepToString(result.toArray()));
+         if (result.stream()
+               .filter(r -> r.contains(frau))
+               .count() == 0) {
+            System.out.println(
+                  "Frau '" + frau + "' ist nicht vorhanden im Resultat: " + Arrays.deepToString(result.toArray()));
+            throw new RuntimeException(
+                  "Frau '" + frau + "' ist nicht vorhanden im Resultat: " + Arrays.deepToString(result.toArray()));
+         }
       }
       for (String mann : maenner) {
-         assertTrue(result.stream()
-                     .filter(r -> r.contains(mann))
-                     .count() > 0,
-               "Mann '" + mann + "' ist nicht vorhanden im Resultat: " + Arrays.deepToString(result.toArray()));
+         if (result.stream()
+               .filter(r -> r.contains(mann))
+               .count() == 0) {
+            System.out.println(
+                  "Mann '" + mann + "' ist nicht vorhanden im Resultat: " + Arrays.deepToString(result.toArray()));
+            throw new RuntimeException(
+                  "Mann '" + mann + "' ist nicht vorhanden im Resultat: " + Arrays.deepToString(result.toArray()));
+         }
       }
    }
-
 }
