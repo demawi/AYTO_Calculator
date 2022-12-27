@@ -1,7 +1,7 @@
 
 ==================================================================================================================================================
 -- Berechne 04 - Nacht 1... [Ereignis#0]
--- Combinations: 166924800 Possible: 166924800 Not possible: 0
+-- Combinations: 3628800 Possible: 3628800 Not possible: 0
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Ein Mann ist hinzugekommen: Marwin. Die Anzahl der Kombinationen erhöht sich damit!
 
@@ -9,7 +9,7 @@ Ein Mann ist hinzugekommen: Marwin. Die Anzahl der Kombinationen erhöht sich da
 -- Berechne 04 - Nacht 1 inkl. 1 neuer Person(en)... [Ereignis#1]
 -- Combinations: 199584000 Possible: 199584000 Not possible: 0
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Die Anzahl der Kombinationen hat sich verändert: 166924800 => 199584000
+Die Anzahl der Kombinationen hat sich verändert: 3628800 => 199584000
 
 MatchBox: Valeria & Marwin... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 10,00% [19958400]
@@ -61,7 +61,7 @@ Die Kombinationen reduzieren sich: 161844480 => 10334811
 -- Berechne 04 - Nacht 1 inkl. 1 neuer Person(en) inkl. 2 Matchbox(en) inkl. Matchingnight... [Ereignis#4]
 -- Combinations: 199584000 Possible: 10334811 Not possible: 189249189
 --------------------------------------------------------------------------------------------------------------------------------------------------
-======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
               Aurelia      Carina       Caroline     Dorna        Henna        Juliette     Larissa      Stefanie     Valeria      Vanessa      
 Barkin*        7,84 % (0)   7,84 % (0)  28,88 % (1)   8,09 % (0)   7,63 % (0)   7,84 % (0)   7,84 % (0)   7,84 % (0)   8,34 % (0)   7,84 % (0)  
 Burim*         7,84 % (0)   7,84 % (0)   7,84 % (0)   8,09 % (0)   7,63 % (0)  28,88 % (1)   7,84 % (0)   7,84 % (0)   8,34 % (0)   7,84 % (0)  

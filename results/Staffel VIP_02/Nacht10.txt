@@ -44,7 +44,7 @@ Die Kombinationen reduzieren sich: 1 => 1
 -- Berechne VIP_02 - Nacht 10 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
 -- Combinations: 36288000 Possible: 1 Not possible: 36287999
 --------------------------------------------------------------------------------------------------------------------------------------------------
-======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
           Anna         Cecilia      Celina       Franziska    Gina         Isabelle     Karina       Luisa        Ricarda      Zoe          
 Amadu       -     (0)    ✓     (7)    -     (0)    -     (0)    -     (1)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)  
 Calvin      -     (0)    -     (0)    -     (0)    ✓     (2)    -     (2)    -     (0)    -     (3)    -     (1)    -     (0)    -     (0)  

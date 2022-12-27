@@ -106,4 +106,9 @@ public class CalculationOptions
       }
       return true;
    }
+
+   public List<Tag> getTageBisher() {
+      return data.getTage()
+            .subList(0, zeitpunkt.getTagNr());
+   }
 }

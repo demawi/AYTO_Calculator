@@ -9,10 +9,10 @@ import demawi.ayto.events.MatchingNight;
 import demawi.ayto.events.NewPerson;
 import demawi.ayto.modell.AYTO_Pair;
 import demawi.ayto.modell.AYTO_Result;
+import demawi.ayto.modell.CalculationOptions;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.StaffelData;
 import demawi.ayto.modell.Tag;
-import demawi.ayto.modell.CalculationOptions;
 
 public class DefaultMatchPrinter
       extends MatchPrinter {
@@ -153,16 +153,24 @@ public class DefaultMatchPrinter
       breakLine(out);
       StaffelData data = result.getData();
       CalculationOptions calcOptions = result.getCalcOptions();
-      out.accept("-- Berechne " + data.name + " - Nacht " + calcOptions.getZeitpunkt().getTagNr() + (
+      out.accept("-- Berechne " + data.name + " - Nacht " + calcOptions.getZeitpunkt()
+            .getTagNr() + (
             calcOptions.getAnzahlNeuePersonen() > 0 ?
                   " inkl. " + calcOptions.getAnzahlNeuePersonen() + " neuer Person(en)" : "") + (
             calcOptions.getAnzahlMatchBoxen() > 0 ?
                   " inkl. " + calcOptions.getAnzahlMatchBoxen() + " Matchbox(en)" : "")
             + (calcOptions.isMitMatchingNight() ? " inkl. Matchingnight" : "") + "..." + " [Ereignis#"
-            + calcOptions.getZeitpunkt().getEventCount() + "]");
+            + calcOptions.getZeitpunkt()
+            .getEventCount() + "]");
+      String fortschritt = " Fortschritt: " + Formatter.prozent(
+            Math.pow(1.0 * result.notPossible / (result.totalConstellations - 1), 100));
       out.accept("-- Combinations: " + result.totalConstellations + " Possible: " + result.possible + " Not possible: "
             + result.notPossible);
       breakLine2(out);
+   }
+
+   public static void main(String[] args) {
+      System.out.println(Math.pow(0.9889, 100));
    }
 
    public void breakLine(Consumer<String> out) {

@@ -44,7 +44,7 @@ Die Kombinationen reduzieren sich: 6 => 6
 -- Berechne 03 - Nacht 10 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
 -- Combinations: 36288000 Possible: 6 Not possible: 36287994
 --------------------------------------------------------------------------------------------------------------------------------------------------
-======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
           Dana         Desiree*     Estelle      Isabelle     Jessica      Joelina      Kerstin      Marie        Monami       Raphaela     Zaira        
 Andre       -     (1)    -     (2)    -     (0)    ✓     (2)    -     (0)    -     (1)    -     (0)    -     (2)    -     (0)    -     (2)    -     (0)  
 Antonino    ✓     (4)  16,67 % (0)    -     (0)    -     (1)    -     (0)    -     (0)    -     (2)    -     (0)    -     (3)    -     (0)    -     (0)  

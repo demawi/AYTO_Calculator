@@ -47,7 +47,7 @@ Die Kombinationen reduzieren sich: 4 => 4
 -- Berechne 02 - Nacht 10 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
 -- Combinations: 36288000 Possible: 4 Not possible: 36287996
 --------------------------------------------------------------------------------------------------------------------------------------------------
-======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
             Christin     Jill         Kathleen     Laura        Leonie       Melissa      Mirjam       Sabrina      Vanessa      VanessaM*    Victoria     
 Aaron         -     (0)    -     (0)    -     (2)    -     (0)    -     (0)    ✓     (6)    -     (1)    -     (0)    -     (1)    -     (0)    -     (0)  
 Dario         -     (0)    -     (0)    -     (2)    -     (1)    -     (0)    -     (0)    -     (0)    ✓     (2)    -     (0)    -     (1)    -     (4)  

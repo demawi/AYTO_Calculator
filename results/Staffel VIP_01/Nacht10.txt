@@ -47,7 +47,7 @@ Die Kombinationen reduzieren sich: 6 => 1
 -- Berechne VIP_01 - Nacht 10 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
 -- Combinations: 36288000 Possible: 1 Not possible: 36287999
 --------------------------------------------------------------------------------------------------------------------------------------------------
-======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
            Aurelia      Finnja       Jacky        Jill         Jules        Kathleen     Melina       Sarah        Steffi       Vanessa*     Walentina    
 Alex         -     (0)    -     (1)    -     (1)    -     (0)    -     (1)    -     (0)    -     (1)    ✓     (2)    -     (2)    ✓     (1)    -     (0)  
 Danilo       -     (3)    -     (0)    -     (0)    -     (2)    -     (0)    -     (0)    ✓     (1)    -     (2)    -     (1)    -     (0)    -     (0)  

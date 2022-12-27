@@ -9,7 +9,11 @@ public class Formatter {
    }
 
    public static String prozent(double anteil, double von) {
-      return String.format("%.2f", 100 * anteil / von);
+      return prozent(anteil / von);
+   }
+
+   public static String prozent(double prozent) {
+      return String.format("%.2f", 100 * prozent);
    }
 
    public static String numberFormat(double number) {

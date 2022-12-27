@@ -56,6 +56,10 @@ public class AYTO_Result {
     }
   }
 
+  public List<Tag> getTageBisher() {
+    return calcOptions.getTageBisher();
+  }
+
   public StaffelData getData() {
     return calcOptions.getData();
   }

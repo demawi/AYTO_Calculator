@@ -78,7 +78,7 @@ public abstract class MatchPrinter {
     * Prints all pair probabilities
     */
    public void printPossibilitiesAsTable(AYTO_Result result) {
-      out.accept("======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights) =======");
+      out.accept("======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======");
 
       List<List<String>> table = new ArrayList<>();
       table.add(new ArrayList<>());
@@ -106,7 +106,7 @@ public abstract class MatchPrinter {
          for (Frau frau : sortedFrauen) {
             AYTO_Pair pair = AYTO_Pair.pair(frau, mann);
             int count = 0;
-            for (Tag tag : result.getData().getTage()) {
+            for (Tag tag : result.getTageBisher()) {
                MatchingNight night = tag.getMatchingNight();
                if (night != null && night.constellation.contains(pair)) {
                   count++;
