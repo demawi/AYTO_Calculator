@@ -4,24 +4,70 @@
 -- Combinations: 199584000 Possible: 45583 Not possible: 199538417
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-MatchBox: Caroline & Ken verkauft. (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
-Ja   => 8,83% [4026]
+MatchBox: Caroline & Ken... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 8,83% [4026] <==
 Nein => 91,17% [41557]
+Die Kombinationen reduzieren sich: 45583 => 4026
 
-Es hat keine Matching Night stattgefunden!
+==================================================================================================================================================
+-- Berechne 04 - Nacht 5 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Combinations: 199584000 Possible: 199 Not possible: 199583801
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Zusätzlich zieht auch das Perfect Match Caroline & Maximilian aus!
+Implizite Annahme aufgrund Nicht-Auszug: Caroline & Barkin => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Caroline & Burim => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Caroline & Christopher => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Caroline & Deniz => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Caroline & Joel => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Caroline & Kenneth => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Caroline & Pascal => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Caroline & Sasa => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Caroline & Marwin => No Match!
+Die Kombinationen reduzieren sich: 4026 => 199
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Stefanie & Christopher: 100,00%
+Caroline & Ken: 100,00%
+Vanessa & Sasa: 16,58%
+Juliette & Barkin: 0,00%
+Carina & Pascal: 16,58%
+Henna & Kenneth: 27,64%
+Aurelia & Marwin: 17,09%
+Dorna & Burim: 11,06%
+Valeria & Joel: 18,59%
+Larissa & Deniz: 9,55%
+
+Wahrscheinlichkeit für entsprechende Spotanzahl:
+0 => 0,00% [0]
+1 => 0,00% [0]
+2 => 10,55% [21]
+3 => 61,81% [123]
+4 => 27,64% [55] <==
+5 => 0,00% [0]
+6 => 0,00% [0]
+7 => 0,00% [0]
+8 => 0,00% [0]
+9 => 0,00% [0]
+10 => 0,00% [0]
+Die Kombinationen reduzieren sich: 199 => 55
+
+==================================================================================================================================================
+-- Berechne 04 - Nacht 5 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
+-- Combinations: 199584000 Possible: 55 Not possible: 199583945
+--------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
               Aurelia      Carina       Caroline     Dorna        Henna        Juliette     Larissa      Stefanie     Valeria      Vanessa      
-Barkin*       12,71 % (0)  11,97 % (0)  11,76 % (1)  10,84 % (0)  10,90 % (0)   6,01 % (2)  10,19 % (0)    -     (0)  16,90 % (0)   8,72 % (0)  
-Burim*         5,74 % (1)    -     (0)  13,40 % (0)  21,91 % (1)  10,63 % (0)  17,20 % (1)   9,89 % (0)    -     (0)  14,47 % (0)   6,77 % (0)  
-Christopher*    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    ✓     (4)    -     (0)    -     (0)  
-Deniz*        15,99 % (1)   9,63 % (0)   9,72 % (0)  11,96 % (1)   8,84 % (0)   9,62 % (0)  14,46 % (1)    -     (0)  13,04 % (0)   6,73 % (0)  
-Joel*          7,83 % (0)   8,36 % (0)   6,84 % (0)   6,80 % (0)   7,22 % (0)   8,52 % (0)  29,76 % (3)    -     (0)  19,25 % (1)   5,43 % (0)  
-Ken*           8,87 % (0)  24,81 % (2)   8,83 % (0)   8,68 % (0)  12,95 % (2)   9,17 % (0)   7,63 % (0)    -     (0)  12,45 % (0)   6,60 % (0)  
-Kenneth*      12,07 % (1)   9,80 % (0)   8,82 % (0)    -     (0)  23,96 % (2)  19,44 % (1)   7,75 % (0)    -     (0)  12,28 % (0)   5,88 % (0)  
-Marwin*       20,10 % (1)   9,43 % (0)   9,37 % (0)  26,36 % (2)   9,32 % (0)   9,50 % (0)   8,24 % (0)    -     (0)    -     (0)   7,68 % (1)  
-Maximilian*   12,38 % (0)  11,35 % (0)  22,72 % (2)  10,42 % (0)  11,10 % (0)  13,72 % (0)   9,96 % (0)    -     (0)    -     (2)   8,36 % (0)  
-Pascal*        9,29 % (0)  18,99 % (1)  13,47 % (1)   9,03 % (0)  10,62 % (0)  11,43 % (0)   9,09 % (0)    -     (0)  10,48 % (1)   7,60 % (0)  
-Sasa*          5,73 % (0)   6,09 % (1)   6,29 % (0)   5,52 % (0)   6,00 % (0)   5,92 % (0)   5,59 % (0)    -     (0)   8,68 % (0)  50,18 % (3)  
+Barkin*       12,73 % (0)  12,73 % (0)    -     (1)  20,00 % (0)    -     (0)    -     (3)  21,82 % (0)    -     (0)  21,82 % (0)  10,91 % (0)  
+Burim*          -     (1)    -     (0)    -     (0)  12,73 % (2)    -     (0)  63,64 % (1)  12,73 % (0)    -     (0)   5,45 % (0)   5,45 % (0)  
+Christopher*    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    ✓     (5)    -     (0)    -     (0)  
+Deniz*        36,36 % (1)  10,91 % (0)    -     (0)  21,82 % (1)    -     (0)    -     (0)  10,91 % (2)    -     (0)  14,55 % (0)   5,45 % (0)  
+Joel*          7,27 % (0)  18,18 % (0)    -     (0)  14,55 % (0)    -     (0)  10,91 % (0)    -     (3)    -     (0)  36,36 % (2)  12,73 % (0)  
+Ken*            -     (0)    -     (2)    ✓     (1)    -     (0)    -     (2)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)  
+Kenneth*        -     (1)    -     (0)    -     (0)    -     (0)    ✓     (3)    -     (1)    -     (0)    -     (0)    -     (0)    -     (0)  
+Marwin*       16,36 % (2)   7,27 % (0)    -     (0)    -     (2)    -     (0)   9,09 % (0)  16,36 % (0)    -     (0)    -     (0)  50,91 % (1)  
+Maximilian*     -     (0)    -     (0)    ✓     (2)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (2)    -     (0)  
+Pascal*       12,73 % (0)  23,64 % (2)    -     (1)  18,18 % (0)    -     (0)   9,09 % (0)  21,82 % (0)    -     (0)    -     (1)  14,55 % (0)  
+Sasa*         14,55 % (0)  27,27 % (1)    -     (0)  12,73 % (0)    -     (0)   7,27 % (0)  16,36 % (0)    -     (0)  21,82 % (0)    -     (4)  
 
-Mögliche Paare: 87/110
+Mögliche Paare: 44/110
 *: Diese Personen müssen sich ggf. ein Match teilen.
