@@ -65,9 +65,14 @@ public class AYTO_4
                 pair(Valeria, Joel), pair(Larissa, Deniz)); // Maximilian
 
     newTag().matchBox(pair(Dorna, Burim), false)
-          .matchNight(4, pair(Stefanie, Christopher), pair(Caroline, Ken), pair(Vanessa, Joel), pair(Carina, Sasa),
+          .matchNight(3, pair(Stefanie, Christopher), pair(Caroline, Ken), pair(Vanessa, Joel), pair(Carina, Sasa),
                 pair(Juliette, Barkin), pair(Henna, Kenneth), pair(Dorna, Deniz), pair(Larissa, Marwin),
                 pair(Aurelia, Burim), pair(Valeria, Pascal)); // Maximilian
+
+    newTag().matchBox(pair(Juliette, Joel), false)
+          .matchNight(2, pair(Stefanie, Christopher), pair(Caroline, Ken), pair(Juliette, Kenneth),
+                pair(Vanessa, Deniz), pair(Dorna, Barkin), pair(Henna, Burim), pair(Carina, Marwin),
+                pair(Aurelia, Joel), pair(Valeria, Pascal), pair(Larissa, Sasa));
 
   }
 
