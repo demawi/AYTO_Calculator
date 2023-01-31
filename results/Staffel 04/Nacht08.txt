@@ -1,0 +1,62 @@
+
+==================================================================================================================================================
+-- Berechne 04 - Nacht 8... [Ereignis#0]
+-- Combinations: 199584000 Possible: 12 Not possible: 199583988
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+MatchBox: Dorna & Marwin... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 0,00% [0]
+Nein => 100,00% [12] <==
+Die Kombinationen reduzieren sich: 12 => 12
+
+==================================================================================================================================================
+-- Berechne 04 - Nacht 8 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Combinations: 199584000 Possible: 12 Not possible: 199583988
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Stefanie & Christopher: 100,00%
+Caroline & Ken: 100,00%
+Valeria & Burim: 8,33%
+Carina & Kenneth: 0,00%
+Juliette & Barkin: 0,00%
+Larissa & Pascal: 8,33%
+Henna & Deniz: 0,00%
+Dorna & Joel: 33,33%
+Vanessa & Sasa: 0,00%
+Aurelia & Marwin: 0,00%
+
+Wahrscheinlichkeit für entsprechende Spotanzahl:
+0 => 0,00% [0]
+1 => 0,00% [0]
+2 => 58,33% [7] <==
+3 => 33,33% [4]
+4 => 8,33% [1]
+5 => 0,00% [0]
+6 => 0,00% [0]
+7 => 0,00% [0]
+8 => 0,00% [0]
+9 => 0,00% [0]
+10 => 0,00% [0]
+Die Kombinationen reduzieren sich: 12 => 7
+
+==================================================================================================================================================
+-- Berechne 04 - Nacht 8 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
+-- Combinations: 199584000 Possible: 7 Not possible: 199583993
+--------------------------------------------------------------------------------------------------------------------------------------------------
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+              Aurelia      Carina       Caroline     Dorna        Henna        Juliette     Larissa      Stefanie     Valeria      Vanessa      
+Barkin*       14,29 % (0)  28,57 % (0)    -     (1)    -     (1)    -     (0)    -     (5)  28,57 % (0)    -     (0)  28,57 % (0)    -     (0)  
+Burim*          -     (2)    -     (0)    -     (0)    -     (2)    -     (1)  71,43 % (1)  28,57 % (0)    -     (0)    -     (1)    -     (0)  
+Christopher*    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    ✓     (8)    -     (0)    -     (0)  
+Deniz*        28,57 % (1)  28,57 % (0)    -     (0)    -     (2)    -     (1)    -     (0)  42,86 % (2)    -     (0)    -     (0)    -     (1)  
+Joel*           -     (1)  42,86 % (0)    -     (0)    -     (1)    -     (0)    -     (0)    -     (3)    -     (0)  57,14 % (2)    -     (1)  
+Ken*            -     (0)    -     (2)    ✓     (4)    -     (0)    -     (2)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)  
+Kenneth*        -     (1)    -     (1)    -     (0)    -     (0)    ✓     (4)    -     (2)    -     (0)    -     (0)    -     (0)    -     (0)  
+Marwin*         -     (3)    -     (1)    -     (0)    -     (2)    -     (0)    -     (0)    -     (1)    -     (0)    -     (0)    ✓     (1)  
+Maximilian*     -     (0)    -     (0)    ✓     (2)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (2)    -     (0)  
+Pascal*       28,57 % (0)    -     (2)    -     (1)  57,14 % (0)    -     (0)  14,29 % (0)    -     (1)    -     (0)    -     (3)    -     (0)  
+Sasa*         28,57 % (0)    -     (2)    -     (0)  42,86 % (0)    -     (0)  14,29 % (0)    -     (1)    -     (0)  14,29 % (0)    -     (5)  
+
+Mögliche Paare: 23/110
+*: Diese Personen müssen sich ggf. ein Match teilen.
