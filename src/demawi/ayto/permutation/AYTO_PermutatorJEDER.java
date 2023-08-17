@@ -46,6 +46,9 @@ public class AYTO_PermutatorJEDER<F, M, R>
       return result;
    }
 
+   /**
+    * Die erste Stelle wird zur Algorithmus-Optimierung mit einem Boolean belegt, ob die doppelte Person bereits eingetragen ist.
+    */
    @Override
    public Object[] createInitialConstellation() {
       return new Object[] { frauen.size() == maenner.size() };

@@ -55,20 +55,4 @@ public class AYTO_PermutatorNUR_LETZTER<F, M, R>
       return increment(constellation, number);
    }
 
-   @Override
-   public Object[] createInitialConstellation() {
-      return new Object[0];
-   }
-
-   @Override
-   protected Set<R> decodeResultPairs(Object[] constellation) {
-      if (constellation.length < maxSize) {
-         return null;
-      }
-      Set<R> result = new LinkedHashSet<>();
-      for (Object number : constellation) {
-         result.add(decodePair((Integer) number));
-      }
-      return result;
-   }
 }

@@ -2,6 +2,7 @@ package demawi.ayto.permutation;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
@@ -94,8 +95,6 @@ public abstract class AYTO_Permutator<F, M, R> {
     }
   }
 
-  public abstract Object[] createInitialConstellation();
-
   /**
    * Wie viele currentConstellations gleichzeitig angelegt sind. Wir nutzen hier die Tiefensuche, um
    * Speicherplatz zu sparen.
@@ -180,6 +179,19 @@ public abstract class AYTO_Permutator<F, M, R> {
     return packingFunction.apply(frauen.get(decodeFrau(number)), maenner.get(decodeMann(number)));
   }
 
-  protected abstract Set<R> decodeResultPairs(Object[] constellation);
+  public Object[] createInitialConstellation() {
+    return new Object[0];
+  }
+
+  protected Set<R> decodeResultPairs(Object[] constellation) {
+    if (constellation.length < maxSize) {
+      return null;
+    }
+    Set<R> result = new LinkedHashSet<>();
+    for (Object number : constellation) {
+      result.add(decodePair((Integer) number));
+    }
+    return result;
+  }
 
 }
