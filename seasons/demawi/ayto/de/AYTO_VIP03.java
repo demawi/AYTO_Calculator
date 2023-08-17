@@ -1,4 +1,4 @@
-package demawi.ayto;
+package demawi.ayto.de;
 
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
@@ -33,7 +33,7 @@ public class AYTO_VIP03
    private final Mann Fabio = mann("Fabio");
 
    public AYTO_VIP03() {
-      super("04", AYTO_Permutator.ZUSATZTYPE.JEDER);
+      super("VIP_03", AYTO_Permutator.ZUSATZTYPE.JEDER);
 
       newTag().matchBox(pair(Jennifer, Danilo), null);
 

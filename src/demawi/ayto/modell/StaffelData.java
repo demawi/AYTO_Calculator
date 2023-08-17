@@ -123,7 +123,7 @@ public class StaffelData {
   }
 
   public List<Person> getZusatzpersonen(int tagNr) {
-    return getZusatztype().getAdditionals(getFrauen(tagNr), getMaenner(tagNr));
+    return getZusatztype().getZusatzpersonen(getFrauen(tagNr), getMaenner(tagNr));
   }
 
   /**
@@ -133,9 +133,6 @@ public class StaffelData {
     if (closed)
       return;
     closed = true;
-
-    // Aktuell alle Frauen und Männer, Zusatzpersonen werden gleich erst entfernt.
-    getZusatztype().getAdditionals(initialFrauen, initialMaenner).forEach(p -> p.mark(Person.MARK1));
 
     // Zusatz-Person erstmal wieder entfernen und markieren. Diese Person muss später per NewPerson-Event wieder reinkommen.
     if (initialMaenner.size() > initialFrauen.size()) {
@@ -178,17 +175,22 @@ public class StaffelData {
         if (evt instanceof NewPerson) {
           NewPerson event = (NewPerson) evt;
           Person newPerson = event.person;
-          newPerson.mark(Person.MARK1);
           if (newPerson instanceof Frau) {
             curFrauen.add((Frau) newPerson);
-            if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.JEDER) {
-              initialFrauen.forEach(f -> f.mark(Person.MARK1));
+            if (curFrauen.size() > 10) {
+              if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.JEDER) {
+                initialFrauen.forEach(f -> f.mark(Person.MARK1));
+              }
+              newPerson.mark(Person.MARK1);
             }
           }
           else {
             curMaenner.add((Mann) newPerson);
-            if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.JEDER) {
-              initialMaenner.forEach(f -> f.mark(Person.MARK1));
+            if (curMaenner.size() > 10) {
+              if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.JEDER) {
+                initialMaenner.forEach(f -> f.mark(Person.MARK1));
+              }
+              newPerson.mark(Person.MARK1);
             }
           }
         }

@@ -24,7 +24,7 @@ public abstract class AYTO_Permutator<F, M, R> {
     JEDER, // Jeder der Geschlechtsgruppe mit 11 Leuten kann der Doppelpartner zu jemand anderem sein
     NUR_LETZTER; // Nur der letzte der Geschlechtsgruppe mit 11 Leuten kann der Doppelpartner zu jemand anderem sein
 
-    public <P, F extends P, M extends P> List<P> getAdditionals(List<F> frauen, List<M> maenner) {
+    public <P, F extends P, M extends P> List<P> getZusatzpersonen(List<F> frauen, List<M> maenner) {
       if (frauen.size() == maenner.size() || frauen.size() < 10 || maenner.size() < 10) {
         return Collections.emptyList();
       }

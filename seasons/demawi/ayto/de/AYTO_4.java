@@ -1,4 +1,4 @@
-package demawi.ayto;
+package demawi.ayto.de;
 
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
