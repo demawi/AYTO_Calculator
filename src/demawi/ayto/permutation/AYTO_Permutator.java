@@ -21,11 +21,12 @@ public abstract class AYTO_Permutator<F, M, R> {
   private final ExecutorService executorService;
 
   public enum ZUSATZTYPE {
+    KEINER, // Jeder hat genau einen Partner zugewiesen es gibt keine Doppelpartner.
     JEDER, // Jeder der Geschlechtsgruppe mit 11 Leuten kann der Doppelpartner zu jemand anderem sein
     NUR_LETZTER; // Nur der letzte der Geschlechtsgruppe mit 11 Leuten kann der Doppelpartner zu jemand anderem sein
 
     public <P, F extends P, M extends P> List<P> getZusatzpersonen(List<F> frauen, List<M> maenner) {
-      if (frauen.size() == maenner.size() || frauen.size() < 10 || maenner.size() < 10) {
+      if (this == KEINER || frauen.size() == maenner.size() || frauen.size() < 10 || maenner.size() < 10) {
         return Collections.emptyList();
       }
       if (this == JEDER) {
@@ -68,6 +69,9 @@ public abstract class AYTO_Permutator<F, M, R> {
 
   public static <F, M, R> AYTO_Permutator<F, M, R> create(List<F> setA, List<M> setB, ZUSATZTYPE zusatzType,
     BiFunction<F, M, R> packingFunction) {
+    if (zusatzType == ZUSATZTYPE.KEINER) {
+      return new AYTO_PermutatorKEINER<>(setA, setB, packingFunction);
+    }
     if (zusatzType == ZUSATZTYPE.JEDER) {
       return new AYTO_PermutatorJEDER<>(setA, setB, packingFunction);
     }

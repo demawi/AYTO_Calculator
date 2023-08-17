@@ -13,15 +13,15 @@ public class MatchingNight
   public final Integer lights;
   public final Set<AYTO_Pair> constellation;
 
-  public MatchingNight(Integer lights, AYTO_Pair... constellation) {
-    this(lights, Arrays.asList(constellation));
+  public MatchingNight(Integer lights, int matchingNightCount, AYTO_Pair... constellation) {
+    this(lights, matchingNightCount, Arrays.asList(constellation));
   }
 
-  private MatchingNight(Integer lights, Collection<AYTO_Pair> constellation) {
+  private MatchingNight(Integer lights, int matchingNightCount, Collection<AYTO_Pair> constellation) {
     if (lights != null && (lights < 0 || lights > 10)) {
       throw new RuntimeException("Falsche Anzahl an Lichtern: " + lights);
     }
-    if (constellation.size() != 10) {
+    if (constellation.size() != matchingNightCount) {
       throw new RuntimeException("Falsche Anzahl an Paaren: " + constellation.size());
     }
     this.lights = lights;

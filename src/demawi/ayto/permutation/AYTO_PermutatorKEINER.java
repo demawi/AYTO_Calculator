@@ -8,17 +8,17 @@ import java.util.function.BiFunction;
 /**
  * Nur der übschüssige Kandidat, kann sich zu jemand anderem doppeln.
  */
-public class AYTO_PermutatorNUR_LETZTER<F, M, R>
+public class AYTO_PermutatorKEINER<F, M, R>
       extends AYTO_Permutator<F, M, R> {
 
-   public AYTO_PermutatorNUR_LETZTER(List<F> frauen, List<M> maenner, BiFunction<F, M, R> packingFunction) {
+   public AYTO_PermutatorKEINER(List<F> frauen, List<M> maenner, BiFunction<F, M, R> packingFunction) {
       super(frauen, maenner, packingFunction);
    }
 
    /**
     * Prüft, ob ein Paar wirklich zu der bisherigen Konstellation hinzugefügt werden kann.
     * <p>
-    * Nur für ZUSATZTYPE.NUR_LETZTER
+    * Nur für ZUSATZTYPE.KEINER
     */
    protected Object[] canAdd(int frau, int mann, Object[] constellation) {
       Set<Integer> addedFrauen = new LinkedHashSet<>();

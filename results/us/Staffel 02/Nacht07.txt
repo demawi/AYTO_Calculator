@@ -1,0 +1,64 @@
+
+==================================================================================================================================================
+-- Berechne 02 - Nacht 7... [Ereignis#0]
+-- Combinations: 36288000 Possible: 249 Not possible: 36287751
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+MatchBox: Jenni & John... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 12,05% [30] <==
+Nein => 87,95% [219]
+Die Kombinationen reduzieren sich: 249 => 30
+
+==================================================================================================================================================
+-- Berechne 02 - Nacht 7 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Combinations: 36288000 Possible: 30 Not possible: 36287970
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Kein weiteres Paar zieht aus!
+Implizite Annahme aufgrund Nicht-Auszug: Christina & John => No Match!
+Die Kombinationen reduzieren sich: 30 => 30
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Ashley & Dario: 50,00%
+Briana & Anthony: 33,33%
+Christina & Nathan: 20,00%
+Ellie & Layton: 50,00%
+Jasmine & Alex: 50,00%
+Jenni & John: 100,00%
+Jessica & Garland: 50,00%
+Paris & Pratt: 100,00%
+Shelby & Curtis: 100,00%
+Tyler & Brandon: 83,33%
+
+Wahrscheinlichkeit für entsprechende Spotanzahl:
+0 => 0,00% [0]
+1 => 0,00% [0]
+2 => 0,00% [0]
+3 => 0,00% [0]
+4 => 0,00% [0]
+5 => 26,67% [8]
+6 => 33,33% [10] <==
+7 => 20,00% [6]
+8 => 16,67% [5]
+9 => 3,33% [1]
+10 => 0,00% [0]
+Die Kombinationen reduzieren sich: 30 => 10
+
+==================================================================================================================================================
+-- Berechne 02 - Nacht 7 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
+-- Combinations: 36288000 Possible: 10 Not possible: 36287990
+--------------------------------------------------------------------------------------------------------------------------------------------------
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+         Alexandria   Ashley       Briana       Christina*   Ellie        Jasmine      Jenni        Jessica      Paris        Shelby       Tyler        
+Alex       -     (0)  10,00 % (0)  10,00 % (0)    -     (2)    -     (1)  80,00 % (2)    -     (0)    -     (1)    -     (0)    -     (0)    -     (1)  
+Anthony  40,00 % (1)    -     (1)  40,00 % (1)  20,00 % (0)    -     (1)  20,00 % (0)    -     (2)    -     (1)    -     (0)    -     (0)    -     (0)  
+Brandon    -     (0)    -     (1)  40,00 % (0)    -     (1)    -     (1)    -     (1)    -     (0)    -     (0)    -     (0)    -     (1)  60,00 % (2)  
+Curtis     -     (0)    -     (0)    -     (4)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    ✓     (3)    -     (0)  
+Dario      -     (1)  40,00 % (3)    -     (1)  20,00 % (0)    -     (0)    -     (0)    -     (0)  60,00 % (0)    -     (0)    -     (2)    -     (0)  
+Garland  60,00 % (2)    -     (0)    -     (0)  20,00 % (0)    -     (0)    -     (2)    -     (0)  40,00 % (1)    -     (0)    -     (0)    -     (2)  
+John       -     (1)    -     (1)    -     (0)    -     (2)    -     (0)    -     (1)    ✓     (2)    -     (0)    -     (0)    -     (0)    -     (0)  
+Layton     -     (0)  40,00 % (0)    -     (1)  20,00 % (0)  20,00 % (2)    -     (0)    -     (2)    -     (2)    -     (0)    -     (0)  40,00 % (0)  
+Nathan     -     (1)  10,00 % (0)  10,00 % (0)  20,00 % (1)  80,00 % (0)    -     (1)    -     (1)    -     (2)    -     (0)    -     (1)    -     (0)  
+Pratt      -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    ✓     (7)    -     (0)    -     (0)  
+
+Mögliche Paare: 26/110
+*: Diese Person teilt sich ein Match.

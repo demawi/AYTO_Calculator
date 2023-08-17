@@ -18,7 +18,7 @@ public class AYTO_PermutatorJEDER<F, M, R>
    /**
     * Prüft, ob ein Paar wirklich zu der bisherigen Konstellation hinzugefügt werden kann.
     * <p>
-    * Nur für ZUSATZTYPE.UNKNOWN
+    * Nur für ZUSATZTYPE.JEDER
     */
    protected Object[] canAdd(int frau, int mann, Object[] constellation) {
       boolean foundDouble = (Boolean) constellation[0];

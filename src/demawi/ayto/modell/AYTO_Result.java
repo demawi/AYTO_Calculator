@@ -49,8 +49,10 @@ public class AYTO_Result {
     this.calcOptions = calcOptions;
     MatchingNight matchingNight = calcOptions.getMatchingNight();
     if (matchingNight != null) {
-      lightPossibilities = new int[11];
-      for (int i = 0, l = 11; i < l; i++) {
+      int lightArrayLength = calcOptions.getTag()
+            .getMatchingNightCount() + 1;
+      lightPossibilities = new int[lightArrayLength];
+      for (int i = 0; i < lightArrayLength; i++) {
         lightPossibilities[i] = 0;
       }
     }

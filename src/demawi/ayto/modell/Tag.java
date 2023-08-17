@@ -12,12 +12,18 @@ public class Tag {
 
    private final List<Event> events = new ArrayList<>();
    private MatchingNight matchingNight;
+   private int matchingNightCount;
 
-   private Tag() {
+   private Tag(int matchingNightCount) {
+      this.matchingNightCount = matchingNightCount;
    }
 
-   public static Tag create() {
-      return new Tag();
+   public int getMatchingNightCount() {
+      return matchingNightCount;
+   }
+
+   public static Tag create(int matchingNightCount) {
+      return new Tag(matchingNightCount);
    }
 
    public Tag addNew(Person person) {
@@ -39,7 +45,7 @@ public class Tag {
     * Schließt den Tag ab, insofern keine this-Rückgabe.
     */
    public void matchNight(Integer lights, AYTO_Pair... pairs) {
-      matchingNight = new MatchingNight(lights, pairs);
+      matchingNight = new MatchingNight(lights, matchingNightCount, pairs);
       events.add(matchingNight);
    }
 
