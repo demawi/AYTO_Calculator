@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
@@ -22,10 +21,11 @@ public abstract class AYTO_Permutator<F, M, R> {
   private final ExecutorService executorService;
 
   public enum ZUSATZTYPE {
-    JEDER, NUR_LETZTER;
+    JEDER, // Jeder der Geschlechtsgruppe mit 11 Leuten kann der Doppelpartner zu jemand anderem sein
+    NUR_LETZTER; // Nur der letzte der Geschlechtsgruppe mit 11 Leuten kann der Doppelpartner zu jemand anderem sein
 
     public <P, F extends P, M extends P> List<P> getAdditionals(List<F> frauen, List<M> maenner) {
-      if (frauen.size() == maenner.size()) {
+      if (frauen.size() == maenner.size() || frauen.size() < 10 || maenner.size() < 10) {
         return Collections.emptyList();
       }
       if (this == JEDER) {

@@ -135,8 +135,7 @@ public class StaffelData {
     closed = true;
 
     // Aktuell alle Frauen und Männer, Zusatzpersonen werden gleich erst entfernt.
-    getZusatztype().getAdditionals(initialFrauen, initialMaenner)
-          .forEach(p -> p.mark(Person.MARK1));
+    getZusatztype().getAdditionals(initialFrauen, initialMaenner).forEach(p -> p.mark(Person.MARK1));
 
     // Zusatz-Person erstmal wieder entfernen und markieren. Diese Person muss später per NewPerson-Event wieder reinkommen.
     if (initialMaenner.size() > initialFrauen.size()) {
@@ -178,33 +177,34 @@ public class StaffelData {
       for (Event evt : tag.getEvents()) {
         if (evt instanceof NewPerson) {
           NewPerson event = (NewPerson) evt;
-          if (event.person != null) {
-            event.person.mark(Person.MARK1);
-            if (event.person instanceof Frau) {
-              curFrauen.add((Frau) event.person);
-              if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.JEDER) {
-                initialFrauen.forEach(f -> f.mark(Person.MARK1));
-              }
+          Person newPerson = event.person;
+          newPerson.mark(Person.MARK1);
+          if (newPerson instanceof Frau) {
+            curFrauen.add((Frau) newPerson);
+            if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.JEDER) {
+              initialFrauen.forEach(f -> f.mark(Person.MARK1));
             }
-            else {
-              curMaenner.add((Mann) event.person);
-              if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.JEDER) {
-                initialMaenner.forEach(f -> f.mark(Person.MARK1));
-              }
+          }
+          else {
+            curMaenner.add((Mann) newPerson);
+            if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.JEDER) {
+              initialMaenner.forEach(f -> f.mark(Person.MARK1));
             }
           }
         }
         else if (evt instanceof MatchBoxResult) {
           MatchBoxResult event = (MatchBoxResult) evt;
-          checkPersonAlreadyKnown.accept(event.pair.frau);
-          checkPersonAlreadyKnown.accept(event.pair.mann);
+          AYTO_Pair pair = event.pair;
+          checkPersonAlreadyKnown.accept(pair.frau);
+          checkPersonAlreadyKnown.accept(pair.mann);
         }
         else if (evt instanceof MatchingNight) {
           MatchingNight event = (MatchingNight) evt;
-          for (AYTO_Pair pair : event.constellation) {
+          Set<AYTO_Pair> constellation = event.constellation;
+          for (AYTO_Pair pair : constellation) {
             checkPersonAlreadyKnown.accept(pair.frau);
             checkPersonAlreadyKnown.accept(pair.mann);
-            validateMatchingPairs(event.constellation);
+            validateMatchingPairs(constellation);
           }
         }
         else {
