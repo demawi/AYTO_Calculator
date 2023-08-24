@@ -37,12 +37,10 @@ public class AYTO_Pair {
     if (frau == null) {
       if (other.frau != null) return false;
     }
-    else if (!frau.equals(other.frau)) return false;
     if (mann == null) {
       if (other.mann != null) return false;
     }
-    else if (!mann.equals(other.mann)) return false;
-    return true;
+    return frau.equals(other.frau) && mann.equals(other.mann) || frau.equals(other.mann) && mann.equals(other.frau);
   }
 
 }
