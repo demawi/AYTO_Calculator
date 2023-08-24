@@ -10,8 +10,6 @@ import java.util.function.Consumer;
 import demawi.ayto.events.MatchingNight;
 import demawi.ayto.modell.AYTO_Pair;
 import demawi.ayto.modell.AYTO_Result;
-import demawi.ayto.modell.Frau;
-import demawi.ayto.modell.Mann;
 import demawi.ayto.modell.Person;
 import demawi.ayto.modell.StaffelData;
 import demawi.ayto.modell.Tag;
@@ -58,7 +56,7 @@ public abstract class MatchPrinter {
       out.accept("");
       out.accept("Wahrscheinlichkeit für entsprechende Spotanzahl:");
       for (int i = 0, l = result.getData()
-            .getBasePairCount(); i <= l; i++) {
+            .getMatchingPairCount(); i <= l; i++) {
          String marker = "";
          if (spotsReached != null && i == spotsReached) {
             marker = " <==";

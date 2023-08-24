@@ -1,5 +1,6 @@
 package demawi.ayto.permutation;
 
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedHashSet;
@@ -116,11 +117,13 @@ public abstract class AYTO_Permutator<F, M, R> {
     }
   }
 
-  protected void permutateInternImplFrau(int frau, Object[] currentConstellation,
+  protected boolean permutateInternImplFrau(int frau, Object[] currentConstellation,
         Supplier<Consumer<Set<R>>> pairConsumerCreator, Consumer<Set<R>> pairConsumer, int branchLevel) {
+    boolean addFound = false;
     for (int mann = 0; mann < anzahlMaenner; mann++) {
       Object[] newSet = canAdd(frau, mann, currentConstellation);
       if (newSet != null) {
+        addFound = true;
         Set<R> result = decodeResultPairs(newSet);
         if (result != null) {
           pairConsumer.accept(result);
@@ -137,13 +140,16 @@ public abstract class AYTO_Permutator<F, M, R> {
         }
       }
     }
+    return addFound;
   }
 
-  private void permutateInternImplMann(int mann, Object[] currentConstellation,
+  private boolean permutateInternImplMann(int mann, Object[] currentConstellation,
         Supplier<Consumer<Set<R>>> pairConsumerCreator, Consumer<Set<R>> pairConsumer, int branchLevel) {
+    boolean addFound = false;
     for (int frau = 0; frau < anzahlFrauen; frau++) {
       Object[] newSet = canAdd(frau, mann, currentConstellation);
       if (newSet != null) {
+        addFound = true;
         Set<R> result = decodeResultPairs(newSet);
         if (result != null) {
           pairConsumer.accept(result);
@@ -160,6 +166,7 @@ public abstract class AYTO_Permutator<F, M, R> {
         }
       }
     }
+    return addFound;
   }
 
   protected Object[] increment(Object[] array, Integer value) {

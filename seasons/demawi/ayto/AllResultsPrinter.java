@@ -68,7 +68,7 @@ public class AllResultsPrinter {
       Writer writer = new OutputStreamWriter(buffer);
       finder.setOut(str -> {
          try {
-            writer.write(str + "\n");
+            writer.write(str + "\r\n");
          }
          catch (IOException e) {
             e.printStackTrace();

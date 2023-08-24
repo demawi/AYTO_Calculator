@@ -26,7 +26,7 @@ public class AYTO_Result {
     notPossible += cur.notPossible;
     if (lightPossibilities != null) {
       for (int i = 0, l = calcOptions.getData()
-            .getBasePairCount(); i <= l; i++) {
+            .getMatchingPairCount(); i <= l; i++) {
         lightPossibilities[i] += cur.lightPossibilities[i];
       }
     }

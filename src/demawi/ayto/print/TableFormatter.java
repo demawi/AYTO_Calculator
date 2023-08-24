@@ -25,7 +25,7 @@ public class TableFormatter {
       StringBuilder result = new StringBuilder();
       for (List<String> row : rows) {
          result.append(String.format(format, row.toArray(new String[row.size()])))
-               .append("\n");
+               .append("\r\n");
       }
       return result.toString();
    }

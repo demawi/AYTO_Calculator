@@ -20,13 +20,12 @@ public class StaffelData {
 
   public String name;
   private final AYTO_Permutator.ZUSATZTYPE zusatztype;
-  private final int matchingNightCount;
+  private final int matchingPairCount;
 
   private final List<Tag> tage = new ArrayList<>();
   public List<AYTO_Pair> pairsToTrack;
   public List<Person> initialFrauen = new ArrayList<>();
   public List<Person> initialMaenner = new ArrayList<>();
-  private int basePairCount = 0;
 
   private boolean closed = false;
 
@@ -65,9 +64,9 @@ public class StaffelData {
     this(zusatztype, 10);
   }
 
-  public StaffelData(AYTO_Permutator.ZUSATZTYPE zusatztype, int matchingNightCount) {
+  public StaffelData(AYTO_Permutator.ZUSATZTYPE zusatztype, int matchingPairCount) {
     this.zusatztype = zusatztype;
-    this.matchingNightCount = matchingNightCount;
+    this.matchingPairCount = matchingPairCount;
   }
 
   public void setName(String name) {
@@ -75,13 +74,13 @@ public class StaffelData {
   }
 
   protected Tag newTag() {
-    Tag tag = Tag.create(matchingNightCount);
+    Tag tag = Tag.create(matchingPairCount);
     tage.add(tag);
     return tag;
   }
 
-  public int getBasePairCount() {
-    return basePairCount;
+  public int getMatchingPairCount() {
+    return matchingPairCount;
   }
 
   public AYTO_Permutator.ZUSATZTYPE getZusatztype() {
@@ -170,7 +169,6 @@ public class StaffelData {
     else if (initialMaenner.size() < initialFrauen.size()) {
       initialFrauen.remove(initialFrauen.size() - 1);
     }
-    basePairCount = initialFrauen.size();
     assert initialMaenner.size() == initialFrauen.size();
     validateDays();
     checkForImplicits();
@@ -259,14 +257,14 @@ public class StaffelData {
       frauen.add(pair.frau);
       maenner.add(pair.mann);
     }
-    if (frauen.size() != basePairCount) {
+    if (frauen.size() != matchingPairCount) {
       throw new RuntimeException(
-            "Falsche Anzahl an Frauen in Matching Night: " + frauen.size() + " benötigt: " + basePairCount + " sind: "
+            "Falsche Anzahl an Frauen in Matching Night: " + frauen.size() + " benötigt: " + matchingPairCount + " sind: "
                   + frauen.size() + " " + frauen);
     }
-    if (maenner.size() != basePairCount) {
+    if (maenner.size() != matchingPairCount) {
       throw new RuntimeException(
-            "Falsche Anzahl an Männern in Matching Night: " + maenner.size() + " benötigt: " + basePairCount + " sind: "
+            "Falsche Anzahl an Männern in Matching Night: " + maenner.size() + " benötigt: " + matchingPairCount + " sind: "
                   + maenner.size() + " " + maenner);
     }
   }

@@ -1,6 +1,6 @@
 
 ==================================================================================================================================================
--- Berechne VIP_03 - Nacht 1... [Ereignis#0]
+-- Berechne VIP03 - Nacht 1... [Ereignis#0]
 -- Combinations: 3628800 Possible: 3628800 Not possible: 0
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -10,12 +10,12 @@ Nein => 90,00% [3265920] <==
 Die Kombinationen reduzieren sich: 3628800 => 3265920
 
 ==================================================================================================================================================
--- Berechne VIP_03 - Nacht 1 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Berechne VIP03 - Nacht 1 inkl. 1 Matchbox(en)... [Ereignis#1]
 -- Combinations: 3628800 Possible: 3265920 Not possible: 362880
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
-Daria & Danilo: 11,11%
+Darya & Danilo: 11,11%
 Sandra & Paco: 9,88%
 Paulina & Steffen: 9,88%
 Shakira & Marvin: 9,88%
@@ -41,11 +41,11 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 Die Kombinationen reduzieren sich: 3265920 => 608153
 
 ==================================================================================================================================================
--- Berechne VIP_03 - Nacht 1 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
+-- Berechne VIP03 - Nacht 1 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
 -- Combinations: 3628800 Possible: 608153 Not possible: 3020647
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
-          Alicia       Daria        Jennifer     Kim          Marie        Paulina      Sabrina      Sandra       Shakira      Stefanie     
+          Alicia       Darya        Jennifer     Kim          Marie        Paulina      Sabrina      Sandra       Shakira      Stefanie     
 Danilo     9,76 % (0)  21,95 % (1)    -     (0)   9,76 % (0)   9,76 % (0)   9,76 % (0)   9,76 % (0)   9,76 % (0)   9,76 % (0)   9,76 % (0)  
 Elia       8,69 % (0)   8,54 % (0)  21,95 % (1)   8,69 % (0)   8,69 % (0)   8,69 % (0)   8,69 % (0)   8,69 % (0)   8,69 % (0)   8,69 % (0)  
 Emanuell   8,86 % (0)   8,69 % (0)   9,76 % (0)   8,86 % (0)   8,86 % (0)   8,86 % (0)  19,51 % (1)   8,86 % (0)   8,86 % (0)   8,86 % (0)  
