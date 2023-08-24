@@ -2,8 +2,8 @@ package demawi.ayto.modell;
 
 public class AYTO_Pair {
 
-  public Person frau;
-  public Person mann;
+  public final Person frau;
+  public final Person mann;
 
   private AYTO_Pair(Person frau, Person mann) {
     this.frau = frau;
