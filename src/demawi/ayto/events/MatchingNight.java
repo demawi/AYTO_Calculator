@@ -1,5 +1,6 @@
 package demawi.ayto.events;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.LinkedHashSet;
@@ -18,14 +19,25 @@ public class MatchingNight
   }
 
   private MatchingNight(Integer lights, int matchingNightCount, Collection<AYTO_Pair> constellation) {
-    if (lights != null && (lights < 0 || lights > 10)) {
-      throw new RuntimeException("Falsche Anzahl an Lichtern: " + lights);
+    constellation = cleanDoubles(constellation);
+    if (lights != null && (lights < 0 || lights > matchingNightCount)) {
+      throw new RuntimeException("Falsche Anzahl an Lichtern: " + lights + " Max: " + matchingNightCount);
     }
     if (constellation.size() != matchingNightCount) {
       throw new RuntimeException("Falsche Anzahl an Paaren: " + constellation.size());
     }
     this.lights = lights;
     this.constellation = new LinkedHashSet<>(constellation);
+  }
+
+  private Collection<AYTO_Pair> cleanDoubles(Collection<AYTO_Pair> constellation) {
+    Collection<AYTO_Pair> result = new ArrayList<>();
+    constellation.forEach(pair -> {
+      if (!result.contains(pair) && !result.contains(AYTO_Pair.pair(pair.mann, pair.frau))) {
+        result.add(pair);
+      }
+    });
+    return result;
   }
 
   public int getLights(Collection<AYTO_Pair> assumptionModell) {
