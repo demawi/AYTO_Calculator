@@ -24,8 +24,8 @@ public class StaffelData {
 
   private final List<Tag> tage = new ArrayList<>();
   public List<AYTO_Pair> pairsToTrack;
-  public List<Frau> initialFrauen = new ArrayList<>();
-  public List<Mann> initialMaenner = new ArrayList<>();
+  public List<Person> initialFrauen = new ArrayList<>();
+  public List<Person> initialMaenner = new ArrayList<>();
   private int basePairCount = 0;
 
   private boolean closed = false;
@@ -172,8 +172,8 @@ public class StaffelData {
   private int currentConsistenceDay = 0;
 
   private void validateDays() {
-    List<Frau> curFrauen = new ArrayList<>(initialFrauen);
-    List<Mann> curMaenner = new ArrayList<>(initialMaenner);
+    List<Person> curFrauen = new ArrayList<>(initialFrauen);
+    List<Person> curMaenner = new ArrayList<>(initialMaenner);
     Consumer<Person> checkPersonAlreadyKnown = (person) -> {
       if (person != null) {
         if (person instanceof Frau) {
