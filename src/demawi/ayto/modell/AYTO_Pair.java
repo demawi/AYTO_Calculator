@@ -21,11 +21,7 @@ public class AYTO_Pair {
 
   @Override
   public int hashCode() {
-    final int prime = 31;
-    int result = 1;
-    result = prime * result + ((frau == null) ? 0 : frau.hashCode());
-    result = prime * result + ((mann == null) ? 0 : mann.hashCode());
-    return result;
+    return frau.hashCode() + mann.hashCode();
   }
 
   @Override
