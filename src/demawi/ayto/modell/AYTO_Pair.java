@@ -2,15 +2,19 @@ package demawi.ayto.modell;
 
 public class AYTO_Pair {
 
-  public Frau frau;
-  public Mann mann;
+  public Person frau;
+  public Person mann;
 
-  private AYTO_Pair(Frau frau, Mann mann) {
+  private AYTO_Pair(Person frau, Person mann) {
     this.frau = frau;
     this.mann = mann;
   }
 
   public static AYTO_Pair pair(Frau frau, Mann mann) {
+    return new AYTO_Pair(frau, mann);
+  }
+
+  public static AYTO_Pair pair(Person frau, Person mann) {
     return new AYTO_Pair(frau, mann);
   }
 

@@ -74,7 +74,7 @@ public class AYTO_Result {
     throw new IllegalStateException("Wird nicht mehr geliefert!");
   }
 
-  public Integer getPossibleCount(Frau frau, Mann mann) {
+  public Integer getPossibleCount(Person frau, Person mann) {
     return getPossibleCount(AYTO_Pair.pair(frau, mann));
   }
 

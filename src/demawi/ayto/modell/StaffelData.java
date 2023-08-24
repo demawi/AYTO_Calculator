@@ -244,8 +244,8 @@ public class StaffelData {
   }
 
   private void validateMatchingPairs(Collection<AYTO_Pair> constellation) {
-    Set<Frau> frauen = new LinkedHashSet<>();
-    Set<Mann> maenner = new LinkedHashSet<>();
+    Set<Person> frauen = new LinkedHashSet<>();
+    Set<Person> maenner = new LinkedHashSet<>();
     for (AYTO_Pair pair : constellation) {
       frauen.add(pair.frau);
       maenner.add(pair.mann);
@@ -315,7 +315,7 @@ public class StaffelData {
     }
   }
 
-  private void addImplicitForPerfectMatchEvent(EventWithImplicits implicitEvent, Frau frau, Mann mann,
+  private void addImplicitForPerfectMatchEvent(EventWithImplicits implicitEvent, Person frau, Person mann,
         AYTO_Pair pairWeitererAuszug) {
     AYTO_Pair implicitPair = AYTO_Pair.pair(frau, mann);
     if (implicitEvent instanceof MatchBoxResult && ((MatchBoxResult) implicitEvent).pair.equals(implicitPair)) {
