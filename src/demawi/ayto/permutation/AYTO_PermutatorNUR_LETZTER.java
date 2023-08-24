@@ -21,8 +21,8 @@ public class AYTO_PermutatorNUR_LETZTER<F, M, R>
     * Nur für ZUSATZTYPE.NUR_LETZTER
     */
    protected Object[] canAdd(int frau, int mann, Object[] constellation) {
-      Set<Integer> addedFrauen = new LinkedHashSet<>();
-      Set<Integer> addedMaenner = new LinkedHashSet<>();
+      boolean[] addedFrauen = new boolean[anzahlFrauen];
+      boolean[] addedMaenner = new boolean[anzahlMaenner];
       for (Object current : constellation) {
          int decodedFrau = decodeFrau((Integer) current);
          if (decodedFrau == frau) {
@@ -31,10 +31,10 @@ public class AYTO_PermutatorNUR_LETZTER<F, M, R>
             }
             // die Frau ist bereits enthalten
             // Könnte erlaubt sein, wenn der Mann ein Zusatzmann ist
-            if (addedMaenner.contains(mann)) { // aber auch nur einmal
+            if (addedMaenner[mann]) { // aber auch nur einmal
                return null;
             }
-            addedMaenner.add(mann);
+            addedMaenner[mann] = true;
          }
          if (decodeMann((Integer) current) == mann) {
             if (decodedFrau == frau) {
@@ -45,10 +45,10 @@ public class AYTO_PermutatorNUR_LETZTER<F, M, R>
             }
             // der Mann ist bereits enthalten
             // Könnte erlaubt sein, wenn die Frau eine Zusatzfrau ist
-            if (addedFrauen.contains(frau)) { // aber auch nur einmal
+            if (addedFrauen[frau]) { // aber auch nur einmal
                return null;
             }
-            addedFrauen.add(frau);
+            addedFrauen[frau] = true;
          }
       }
       int number = encodePair(frau, mann);

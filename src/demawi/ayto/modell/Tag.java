@@ -31,6 +31,11 @@ public class Tag {
       return this;
    }
 
+   public Tag addNew(Person person, boolean zusatzperson) {
+      events.add(new NewPerson(person, zusatzperson));
+      return this;
+   }
+
    public Tag matchBox(AYTO_Pair matchingPair, Boolean perfectMatch) {
       events.add(new MatchBoxResult(matchingPair, perfectMatch));
       return this;

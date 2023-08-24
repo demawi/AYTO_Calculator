@@ -11,7 +11,7 @@ import static demawi.ayto.modell.AYTO_Pair.pair;
 public class AYTO_VIP03
       extends StaffelData {
 
-   private final Frau Christina = frau("Christina");
+   private final Frau Shakira = frau("Shakira");
    private final Frau Sandra = frau("Sandra");
    private final Frau Alicia = frau("Alicia");
    private final Frau Sabrina = frau("Sabrina");
@@ -20,6 +20,7 @@ public class AYTO_VIP03
    private final Frau Paulina = frau("Paulina");
    private final Frau Kim = frau("Kim");
    private final Frau Marie = frau("Marie");
+   private final Frau Daria = frau("Daria");
 
    private final Mann Paco = mann("Paco");
    private final Mann Mike = mann("Mike");
@@ -33,9 +34,12 @@ public class AYTO_VIP03
    private final Mann Fabio = mann("Fabio");
 
    public AYTO_VIP03() {
-      super("VIP_03", AYTO_Permutator.ZUSATZTYPE.JEDER);
+      super("VIP_03", AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER);
 
-      newTag().matchBox(pair(Jennifer, Danilo), null);
+      newTag().matchBox(pair(Jennifer, Danilo), false)
+            .matchNight(2, pair(Daria, Danilo), pair(Sandra, Paco), pair(Paulina, Steffen), pair(Shakira, Marvin),
+                  pair(Kim, Mike), pair(Sabrina, Emanuell), pair(Jennifer, Elia), pair(Marie, Fabio),
+                  pair(Stefanie, Martini_Teezy), pair(Alicia, Peter));
 
    }
 

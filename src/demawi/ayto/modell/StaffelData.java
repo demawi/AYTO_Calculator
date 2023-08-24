@@ -196,7 +196,9 @@ public class StaffelData {
               if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.JEDER) {
                 initialFrauen.forEach(f -> f.mark(Person.MARK1));
               }
-              newPerson.mark(Person.MARK1);
+              if (event.zusatzperson) {
+                newPerson.mark(Person.MARK1);
+              }
             }
           }
           else {
@@ -205,7 +207,9 @@ public class StaffelData {
               if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.JEDER) {
                 initialMaenner.forEach(f -> f.mark(Person.MARK1));
               }
-              newPerson.mark(Person.MARK1);
+              if (event.zusatzperson) {
+                newPerson.mark(Person.MARK1);
+              }
             }
           }
         }
