@@ -13,6 +13,7 @@ import demawi.ayto.modell.CalculationOptions;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.StaffelData;
 import demawi.ayto.modell.Tag;
+import demawi.ayto.util.Language;
 
 public class DefaultMatchPrinter
       extends MatchPrinter {
@@ -33,8 +34,8 @@ public class DefaultMatchPrinter
          printEvent(tagNr, eventCount, results.get(eventCount - 1), results.get(eventCount));
       }
       if (tag.getMatchingNight() == null) {
-         out.accept("");
-         out.accept("Es hat keine Matching Night stattgefunden!");
+         print("");
+         print("Es hat keine Matching Night stattgefunden!");
       }
       printPossibilitiesAsTable(results.get(results.size() - 1));
    }
@@ -61,16 +62,16 @@ public class DefaultMatchPrinter
    private void printNewPerson(NewPerson event, int tagNr, int eventCount, AYTO_Result previousResult,
          AYTO_Result afterResult) {
       if (event.person instanceof Frau) {
-         out.accept("Eine Frau ist hinzugekommen: " + event.person.getName()
+         print("Eine Frau ist hinzugekommen: " + event.person.getName()
                + ". Die Anzahl der Kombinationen erhöht sich damit!");
       }
       else {
-         out.accept("Ein Mann ist hinzugekommen: " + event.person.getName()
+         print("Ein Mann ist hinzugekommen: " + event.person.getName()
                + ". Die Anzahl der Kombinationen erhöht sich damit!");
       }
       checkPrintImplicit(event);
       printCalculationSummary(afterResult);
-      out.accept(
+      print(
             "Die Anzahl der Kombinationen hat sich verändert: " + previousResult.getPossibleConstellationSize() + " => "
                   + afterResult.getPossibleConstellationSize());
    }
@@ -79,8 +80,8 @@ public class DefaultMatchPrinter
          AYTO_Result afterResult) {
       AYTO_Pair boxPair = event.pair;
       Boolean boxResult = event.result;
-      out.accept("");
-      out.accept("MatchBox: " + boxPair + (boxResult == null ? " verkauft." : "...")
+      print("");
+      print("MatchBox: " + boxPair + (boxResult == null ? " verkauft." : "...")
             + " (Wahrscheinlichkeit für das Ausgang des Ergebnisses)");
       String yesMarker = "";
       String noMarker = "";
@@ -97,18 +98,18 @@ public class DefaultMatchPrinter
             newCombinationCount = noCombinations;
          }
       }
-      out.accept("Ja   => " + Formatter.prozent(previousResult.getPossibleCount(boxPair),
+      print("Ja   => " + Formatter.prozent(previousResult.getPossibleCount(boxPair),
             previousResult.getPossibleConstellationSize()) + "% [" + yesCombinations + "]" + yesMarker);
-      out.accept("Nein => " + Formatter.prozent(
+      print("Nein => " + Formatter.prozent(
             previousResult.getPossibleConstellationSize() - previousResult.getPossibleCount(boxPair),
             previousResult.getPossibleConstellationSize()) + "% [" + noCombinations + "]" + noMarker);
       if (boxResult != null) {
-         out.accept("Die Kombinationen reduzieren sich: " + previousResult.getPossibleConstellationSize() + " => "
+         print("Die Kombinationen reduzieren sich: " + previousResult.getPossibleConstellationSize() + " => "
                + newCombinationCount);
          printCalculationSummary(afterResult);
          checkPrintImplicit(event);
          if (!event.implicits.isEmpty()) {
-            out.accept("Die Kombinationen reduzieren sich: " + newCombinationCount + " => "
+            print("Die Kombinationen reduzieren sich: " + newCombinationCount + " => "
                   + afterResult.getPossibleConstellationSize());
          }
       }
@@ -117,16 +118,16 @@ public class DefaultMatchPrinter
    private void checkPrintImplicit(MatchBoxResult event) {
       if (event.isTrue()) {
          if (event.pairWeitererAuszug == null) {
-            out.accept("Kein weiteres Paar zieht aus!");
+            print("Kein weiteres Paar zieht aus!");
          }
          else {
-            out.accept("Zusätzlich zieht auch das Perfect Match " + event.pairWeitererAuszug + " aus!");
+            print("Zusätzlich zieht auch das Perfect Match " + event.pairWeitererAuszug + " aus!");
          }
       }
 
       for (MatchBoxResult implicit : event.implicits) {
          if (!implicit.result) {
-            out.accept("Implizite Annahme aufgrund Nicht-Auszug: " + implicit.pair + " => No Match!");
+            print("Implizite Annahme aufgrund Nicht-Auszug: " + implicit.pair + " => No Match!");
          }
       }
    }
@@ -134,7 +135,7 @@ public class DefaultMatchPrinter
    private void checkPrintImplicit(NewPerson event) {
       for (MatchBoxResult implicit : event.implicits) {
          if (!implicit.result) {
-            out.accept(
+            print(
                   "Implizite Annahme für die neue Person durch vorherige Auszüge: " + implicit.pair + " => No Match!");
          }
       }
@@ -149,11 +150,11 @@ public class DefaultMatchPrinter
    private void printCalculationSummary(AYTO_Result result) {
       if (!withCalculationSummary)
          return;
-      out.accept("");
-      breakLine(out);
+      print("");
+      breakLine();
       StaffelData data = result.getData();
       CalculationOptions calcOptions = result.getCalcOptions();
-      out.accept("-- Berechne " + data.name + " - Nacht " + calcOptions.getZeitpunkt()
+      print("-- Berechne " + data.name + " - Nacht " + calcOptions.getZeitpunkt()
             .getTagNr() + (
             calcOptions.getAnzahlNeuePersonen() > 0 ?
                   " inkl. " + calcOptions.getAnzahlNeuePersonen() + " neuer Person(en)" : "") + (
@@ -164,22 +165,22 @@ public class DefaultMatchPrinter
             .getEventCount() + "]");
       String fortschritt = " Fortschritt: " + Formatter.prozent(
             Math.pow(1.0 * result.notPossible / (result.totalConstellations - 1), 100));
-      out.accept("-- Combinations: " + result.totalConstellations + " Possible: " + result.possible + " Not possible: "
+      print("-- Combinations: " + result.totalConstellations + " Possible: " + result.possible + " Not possible: "
             + result.notPossible);
-      breakLine2(out);
+      breakLine2();
    }
 
    public static void main(String[] args) {
       System.out.println(Math.pow(0.9889, 100));
    }
 
-   public void breakLine(Consumer<String> out) {
-      out.accept(
+   public void breakLine() {
+      print(
             "==================================================================================================================================================");
    }
 
-   public void breakLine2(Consumer<String> out) {
-      out.accept(
+   public void breakLine2() {
+      print(
             "--------------------------------------------------------------------------------------------------------------------------------------------------");
    }
 

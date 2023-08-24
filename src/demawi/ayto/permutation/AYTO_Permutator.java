@@ -1,6 +1,5 @@
 package demawi.ayto.permutation;
 
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedHashSet;
@@ -91,7 +90,7 @@ public abstract class AYTO_Permutator<F, M, R> {
 
   public void permutate(Supplier<Consumer<Set<R>>> pairConsumer) {
     Object[] current = createInitialConstellation();
-    permutateInternImpl(current, pairConsumer, null, BRANCH_LEVEL);
+    permutateInternImpl(current, pairConsumer, BRANCH_LEVEL);
     // System.out.println("ActiveThreads: " + ((ThreadPoolExecutor) executorService).getActiveCount());
     executorService.shutdown();
     try {
@@ -108,16 +107,17 @@ public abstract class AYTO_Permutator<F, M, R> {
    * Speicherplatz zu sparen.
    */
   private void permutateInternImpl(Object[] currentConstellation, Supplier<Consumer<Set<R>>> pairConsumerCreator,
-        Consumer<Set<R>> pairConsumer, int branchLevel) {
+        int branchLevel) {
+    Consumer<Set<R>> pairConsumer = branchLevel < 0 ? pairConsumerCreator.get() : null;
     if (anzahlFrauen >= anzahlMaenner) { // jede Frau ist nur einmal vorhanden, somit iterieren wir über Frauen->Männer
-      permutateInternImplFrau(0, currentConstellation, pairConsumerCreator, pairConsumer, branchLevel);
+      iterateFirstGroup(0, currentConstellation, pairConsumerCreator, pairConsumer, branchLevel);
     }
     else { // jeder Mann ist nur einmal vorhanden, somit iterieren wir über Männer->Frauen
-      permutateInternImplMann(0, currentConstellation, pairConsumerCreator, pairConsumer, branchLevel);
+      iterateSecondGroup(0, currentConstellation, pairConsumerCreator, pairConsumer, branchLevel);
     }
   }
 
-  protected boolean permutateInternImplFrau(int frau, Object[] currentConstellation,
+  protected boolean iterateFirstGroup(int frau, Object[] currentConstellation,
         Supplier<Consumer<Set<R>>> pairConsumerCreator, Consumer<Set<R>> pairConsumer, int branchLevel) {
     boolean addFound = false;
     for (int mann = 0; mann < anzahlMaenner; mann++) {
@@ -132,10 +132,10 @@ public abstract class AYTO_Permutator<F, M, R> {
           if (branchLevel == 0) {
             final Consumer<Set<R>> pairConsumerF = (pairConsumer == null ? pairConsumerCreator.get() : pairConsumer);
             executorService.submit(
-                  () -> permutateInternImplFrau(frau + 1, newSet, pairConsumerCreator, pairConsumerF, branchLevel - 1));
+                  () -> iterateFirstGroup(frau + 1, newSet, pairConsumerCreator, pairConsumerF, branchLevel - 1));
           }
           else {
-            permutateInternImplFrau(frau + 1, newSet, pairConsumerCreator, pairConsumer, branchLevel - 1);
+            iterateFirstGroup(frau + 1, newSet, pairConsumerCreator, pairConsumer, branchLevel - 1);
           }
         }
       }
@@ -143,7 +143,7 @@ public abstract class AYTO_Permutator<F, M, R> {
     return addFound;
   }
 
-  private boolean permutateInternImplMann(int mann, Object[] currentConstellation,
+  private boolean iterateSecondGroup(int mann, Object[] currentConstellation,
         Supplier<Consumer<Set<R>>> pairConsumerCreator, Consumer<Set<R>> pairConsumer, int branchLevel) {
     boolean addFound = false;
     for (int frau = 0; frau < anzahlFrauen; frau++) {
@@ -158,10 +158,10 @@ public abstract class AYTO_Permutator<F, M, R> {
           if (branchLevel == 0) {
             final Consumer<Set<R>> pairConsumerF = (pairConsumer == null ? pairConsumerCreator.get() : pairConsumer);
             executorService.submit(
-                  () -> permutateInternImplMann(mann + 1, newSet, pairConsumerCreator, pairConsumerF, branchLevel - 1));
+                  () -> iterateSecondGroup(mann + 1, newSet, pairConsumerCreator, pairConsumerF, branchLevel - 1));
           }
           else {
-            permutateInternImplMann(mann + 1, newSet, pairConsumerCreator, pairConsumer, branchLevel - 1);
+            iterateSecondGroup(mann + 1, newSet, pairConsumerCreator, pairConsumer, branchLevel - 1);
           }
         }
       }
@@ -177,14 +177,23 @@ public abstract class AYTO_Permutator<F, M, R> {
 
   protected abstract Object[] canAdd(int frau, int mann, Object[] constellation);
 
+  /**
+   * Currently 16 is the maximum for each of the groups.
+   */
   protected static int encodePair(int frau, int mann) {
     return (frau << 4) + mann;
   }
 
+  /**
+   * Currently 16 is the maximum for each of the groups.
+   */
   protected static int decodeFrau(int number) {
     return number >> 4;
   }
 
+  /**
+   * Currently 16 is the maximum for each of the groups.
+   */
   protected static int decodeMann(int number) {
     return number & 15;
   }

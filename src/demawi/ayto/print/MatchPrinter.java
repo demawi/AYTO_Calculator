@@ -15,13 +15,32 @@ import demawi.ayto.modell.StaffelData;
 import demawi.ayto.modell.Tag;
 import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.service.MatchCalculator;
+import demawi.ayto.util.Language;
 
 public abstract class MatchPrinter {
 
-   protected Consumer<String> out = System.out::println;
+   private Consumer<String> out = System.out::println;
+   private Language lang;
 
    public void setOut(Consumer<String> out) {
       this.out = out;
+   }
+
+   public void setLanguage(Language lang) {
+      this.lang = lang;
+   }
+
+   protected void print(String overallOut) {
+      out.accept(overallOut);
+   }
+
+   protected void print(String outDE, String outEN) {
+      if (lang == Language.EN) {
+         out.accept(outEN);
+      }
+      else {
+         out.accept(outDE);
+      }
    }
 
    /**
@@ -46,30 +65,30 @@ public abstract class MatchPrinter {
    public void printLightChances(AYTO_Result result, Collection<AYTO_Pair> pairs, Integer spotsReached) {
       int[] lightResults = result.getLightResultsForLastMatchingNight();
 
-      out.accept("");
-      out.accept("Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)");
+      print("");
+      print("Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)");
       for (AYTO_Pair pair : pairs) {
-         out.accept(
+         print(
                pair + ": " + Formatter.prozent(result.getPossibleCount(pair), result.getPossibleConstellationSize())
                      + "%");
       }
-      out.accept("");
-      out.accept("Wahrscheinlichkeit für entsprechende Spotanzahl:");
+      print("");
+      print("Wahrscheinlichkeit für entsprechende Spotanzahl:");
       for (int i = 0, l = result.getData()
             .getMatchingPairCount(); i <= l; i++) {
          String marker = "";
          if (spotsReached != null && i == spotsReached) {
             marker = " <==";
          }
-         out.accept(i + " => " + Formatter.prozent(lightResults[i], result.getPossibleConstellationSize()) + "% ["
+         print(i + " => " + Formatter.prozent(lightResults[i], result.getPossibleConstellationSize()) + "% ["
                + lightResults[i] + "]" + marker);
       }
       if (spotsReached != null) {
-         out.accept("Die Kombinationen reduzieren sich: " + result.getPossibleConstellationSize() + " => "
+         print("Die Kombinationen reduzieren sich: " + result.getPossibleConstellationSize() + " => "
                + lightResults[spotsReached]);
       }
       else {
-         out.accept("Das Ergebnis steht noch nicht fest.");
+         print("Das Ergebnis steht noch nicht fest.");
       }
    }
 
@@ -77,7 +96,7 @@ public abstract class MatchPrinter {
     * Prints all pair probabilities
     */
    public void printPossibilitiesAsTable(AYTO_Result result) {
-      out.accept("======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======");
+      print("======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======");
 
       List<List<String>> table = new ArrayList<>();
       table.add(new ArrayList<>());
@@ -125,22 +144,22 @@ public abstract class MatchPrinter {
             line.add(possOut + " (" + count + ")");
          }
       }
-      out.accept(TableFormatter.formatAsTable(table));
-      out.accept("Mögliche Paare: " + result.possiblePairCount.size() + "/" + (sortedFrauen.size() * sortedMaenner.size()));
+      print(TableFormatter.formatAsTable(table));
+      print("Mögliche Paare: " + result.possiblePairCount.size() + "/" + (sortedFrauen.size() * sortedMaenner.size()));
       if (markedPerson) {
          if (result.getData().getZusatztype() == AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER) {
-            out.accept("*: Diese Person teilt sich ein Match.");
+            print("*: Diese Person teilt sich ein Match.");
          }
          else {
-            out.accept("*: Diese Personen müssen sich ggf. ein Match teilen.");
+            print("*: Diese Personen müssen sich ggf. ein Match teilen.");
          }
       }
 
       if (result.getData().pairsToTrack != null) {
-         out.accept("");
-         out.accept("==== Tracking der Perfect Matches im Verlauf ====");
+         print("");
+         print("==== Tracking der Perfect Matches im Verlauf ====");
          for (AYTO_Pair pair : result.getData().pairsToTrack) {
-            out.accept(pair + " => " + Formatter.prozent(result.getPossibleCount(pair),
+            print(pair + " => " + Formatter.prozent(result.getPossibleCount(pair),
                   result.getPossibleConstellationSize()) + "%");
          }
       }
@@ -156,17 +175,17 @@ public abstract class MatchPrinter {
                   .sum();
             return o2Count.compareTo(o1Count);
          });
-         out.accept("");
-         out.accept("==== Beste Konstellationen ====");
+         print("");
+         print("==== Beste Konstellationen ====");
          for (int i = 0, l = Math.min(20, sortedConstellations.size()); i < l; i++) {
             Set<AYTO_Pair> constellation = sortedConstellations.get(i);
-            out.accept("> Platz " + (i + 1) + " mit " + constellation.stream()
+            print("> Platz " + (i + 1) + " mit " + constellation.stream()
                   .mapToInt(result.possiblePairCount::get)
                   .sum() + " Punkten (Summe der Vorkommen der Einzelpaare)");
             for (AYTO_Pair pair : constellation) {
-               out.accept(pair.toString());
+               print(pair.toString());
             }
-            out.accept("");
+            print("");
          }
       }
    }

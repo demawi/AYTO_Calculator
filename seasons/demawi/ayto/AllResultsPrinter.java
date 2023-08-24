@@ -16,6 +16,7 @@ import demawi.ayto.modell.StaffelData;
 import demawi.ayto.print.DefaultMatchPrinter;
 import demawi.ayto.print.Formatter;
 import demawi.ayto.print.MatchPrinter;
+import demawi.ayto.util.Language;
 
 public class AllResultsPrinter {
 
@@ -26,9 +27,10 @@ public class AllResultsPrinter {
       for (StaffelData staffel : staffeln) {
          String subDir = getSubDir(staffel); // z.B. "de"
          if (subDir != null) {
+            Language lang = subDir.startsWith("/de") ? Language.DE : Language.EN;
             String season;
             String night;
-            if (subDir.startsWith("/de")) {
+            if (lang == Language.DE) {
                season = "Staffel";
                night = "Nacht";
             }
@@ -40,6 +42,7 @@ public class AllResultsPrinter {
             System.out.println(directory.getAbsoluteFile());
             directory.mkdirs();
             MatchPrinter finder = new DefaultMatchPrinter();
+            finder.setLanguage(lang);
 
             for (int tagNr = 1, l = staffel.getAnzahlTage(); tagNr <= l; tagNr++) {
                File file = new File(directory.getAbsoluteFile() + "/" + night + numberFormat.format(tagNr) + ".txt");

@@ -47,35 +47,16 @@ public class AYTO_PermutatorBISEXUAL<F, M, R>
    }
 
    @Override
-   protected void permutateInternImplFrau(int frau, Object[] currentConstellation,
+   protected boolean iterateFirstGroup(int frau, Object[] currentConstellation,
          Supplier<Consumer<Set<R>>> pairConsumerCreator, Consumer<Set<R>> pairConsumer, int branchLevel) {
-      boolean addFound = false;
-      for (int mann = 0; mann < anzahlMaenner; mann++) {
-         Object[] newSet = canAdd(frau, mann, currentConstellation);
-         if (newSet != null) {
-            addFound = true;
-            Set<R> result = decodeResultPairs(newSet);
-            if (result != null) {
-               final Consumer<Set<R>> pairConsumerF = (pairConsumer == null ? pairConsumerCreator.get() : pairConsumer);
-               pairConsumerF.accept(result);
-            }
-            else {
-               if (branchLevel == 0) {
-                  final Consumer<Set<R>> pairConsumerF = (pairConsumer == null ? pairConsumerCreator.get() : pairConsumer);
-                  executorService.submit(
-                        () -> permutateInternImplFrau(frau + 1, newSet, pairConsumerCreator, pairConsumerF, branchLevel - 1));
-               }
-               else {
-                  permutateInternImplFrau(frau + 1, newSet, pairConsumerCreator, pairConsumer, branchLevel - 1);
-               }
-            }
-         }
-      }
+      boolean addFound = super.iterateFirstGroup(frau, currentConstellation, pairConsumerCreator, pairConsumer,
+            branchLevel);
       if (!addFound) { // for bisexual-setting. Because every person is in group A and in Group B, not every Person in A can found a match.
          if (frau + 1 < frauen.size()) {
-            permutateInternImplFrau(frau + 1, currentConstellation, pairConsumerCreator, pairConsumer, branchLevel - 1);
+            iterateFirstGroup(frau + 1, currentConstellation, pairConsumerCreator, pairConsumer, branchLevel - 1);
          }
       }
+      return addFound;
    }
 
 }
