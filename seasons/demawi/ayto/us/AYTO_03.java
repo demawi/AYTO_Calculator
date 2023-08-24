@@ -8,7 +8,7 @@ import demawi.ayto.print.DefaultMatchPrinter;
 
 import static demawi.ayto.modell.AYTO_Pair.pair;
 
-public class AYTO_3
+public class AYTO_03
       extends StaffelData {
 
    private final Frau Amanda = frau("Amanda");
@@ -33,8 +33,8 @@ public class AYTO_3
    private final Mann Tyler = mann("Tyler");
    private final Mann Zak = mann("Zak");
 
-   public AYTO_3() {
-      super("03", AYTO_Permutator.ZUSATZTYPE.KEINER);
+   public AYTO_03() {
+      super(AYTO_Permutator.ZUSATZTYPE.KEINER);
 
       newTag().matchBox(pair(Kiki, Hunter), false)
             .matchNight(2, pair(Amanda, Mike), pair(Britni, Hunter), pair(Chelsey, Connor), pair(Cheyenne, Nelson),
@@ -89,7 +89,7 @@ public class AYTO_3
    }
 
    public static void main(String[] args) {
-      new DefaultMatchPrinter().printDayResults(new AYTO_3());
+      new DefaultMatchPrinter().printDayResults(new AYTO_03());
    }
 
 }

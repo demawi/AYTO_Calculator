@@ -9,6 +9,7 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import demawi.ayto.modell.StaffelData;
@@ -25,13 +26,23 @@ public class AllResultsPrinter {
       for (StaffelData staffel : staffeln) {
          String subDir = getSubDir(staffel); // z.B. "de"
          if (subDir != null) {
-            File directory = new File("results" + subDir + "/Staffel " + staffel.name);
+            String season;
+            String night;
+            if (subDir.startsWith("/de")) {
+               season = "Staffel";
+               night = "Nacht";
+            }
+            else {
+               season = "Season";
+               night = "Night";
+            }
+            File directory = new File("results" + subDir + "/" + season + " " + staffel.name);
             System.out.println(directory.getAbsoluteFile());
             directory.mkdirs();
             MatchPrinter finder = new DefaultMatchPrinter();
 
             for (int tagNr = 1, l = staffel.getAnzahlTage(); tagNr <= l; tagNr++) {
-               File file = new File(directory.getAbsoluteFile() + "/Nacht" + numberFormat.format(tagNr) + ".txt");
+               File file = new File(directory.getAbsoluteFile() + "/" + night + numberFormat.format(tagNr) + ".txt");
                System.out.println("Write file " + file.getAbsoluteFile() + "...");
                if (!file.exists()) {
                   writeViaMemoryBuffer(staffel, tagNr, finder, file);
@@ -76,8 +87,19 @@ public class AllResultsPrinter {
    public static void main(String[] args)
          throws Exception {
       long start = System.currentTimeMillis();
-      print(new InstanceFinder().findAllInstances(StaffelData.class));
+      LinkedHashSet<StaffelData> allInstances = new InstanceFinder().findAllInstances(StaffelData.class);
+      allInstances.forEach(instance -> instance.setName(getName(instance)));
+      print(allInstances);
       System.out.println("AllOutPrinter time: " + Formatter.minSecs(System.currentTimeMillis() - start));
+   }
+
+   private static String getName(StaffelData staffelData) {
+      String simpleName = staffelData.getClass()
+            .getSimpleName();
+      if (simpleName.startsWith("AYTO_")) {
+         return simpleName.substring(5);
+      }
+      return simpleName;
    }
 
 }

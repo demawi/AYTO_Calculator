@@ -35,7 +35,7 @@ public class AYTO_VIP01
   private final Mann Josua = mann("Josua");
 
   public AYTO_VIP01() {
-    super("VIP_01", AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER);
+    super(AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER);
 
     newTag().matchBox(pair(Finnja, Danilo), false)
           .matchNight(3, pair(Steffi, Danilo), pair(Jill, Jamie), pair(Walentina, Eugen), pair(Kathleen, Manuel),

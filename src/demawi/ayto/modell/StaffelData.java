@@ -18,7 +18,7 @@ import demawi.ayto.permutation.AYTO_Permutator;
 
 public class StaffelData {
 
-  public final String name;
+  public String name;
   private final AYTO_Permutator.ZUSATZTYPE zusatztype;
   private final int matchingNightCount;
 
@@ -36,7 +36,9 @@ public class StaffelData {
 
   protected Frau frau(String name, boolean late) {
     Frau frau = new Frau(name);
-    initialFrauen.add(frau);
+    if (!late) {
+      initialFrauen.add(frau);
+    }
     return frau;
   }
 
@@ -46,18 +48,23 @@ public class StaffelData {
 
   protected Mann mann(String name, boolean late) {
     Mann mann = new Mann(name);
-    initialMaenner.add(mann);
+    if (!late) {
+      initialMaenner.add(mann);
+    }
     return mann;
   }
 
-  public StaffelData(String name, AYTO_Permutator.ZUSATZTYPE zusatztype) {
-    this(name, zusatztype, 10);
+  public StaffelData(AYTO_Permutator.ZUSATZTYPE zusatztype) {
+    this(zusatztype, 10);
   }
 
-  public StaffelData(String name, AYTO_Permutator.ZUSATZTYPE zusatztype, int matchingNightCount) {
-    this.name = name;
+  public StaffelData(AYTO_Permutator.ZUSATZTYPE zusatztype, int matchingNightCount) {
     this.zusatztype = zusatztype;
     this.matchingNightCount = matchingNightCount;
+  }
+
+  public void setName(String name) {
+    this.name = name;
   }
 
   protected Tag newTag() {
