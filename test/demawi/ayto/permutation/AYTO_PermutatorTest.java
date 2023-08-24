@@ -38,7 +38,7 @@ public class AYTO_PermutatorTest {
             System.out.println(result);
          }
       });
-      System.out.println("Count: " + atomicCount + " in " + Formatter.minSecs(System.currentTimeMillis() - start));
+      System.out.println("Found " + atomicCount + " constellations in " + Formatter.minSecs(System.currentTimeMillis() - start));
       start = System.currentTimeMillis();
       AYTO_Permutator<String, String, String> permutator2 = AYTO_Permutator.create(frauen(frauenAnzahl),
             maenner(maennerAnzahl), AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER, (a, b) -> "" + a + b);
@@ -52,7 +52,7 @@ public class AYTO_PermutatorTest {
             System.out.println(result);
          }
       });
-      System.out.println("Count: " + atomicCount + " in " + Formatter.minSecs(System.currentTimeMillis() - start));
+      System.out.println("Found " + atomicCount + " constellations in " + Formatter.minSecs(System.currentTimeMillis() - start));
    }
 
    @Test

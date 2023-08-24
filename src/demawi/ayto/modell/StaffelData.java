@@ -30,6 +30,13 @@ public class StaffelData {
 
   private boolean closed = false;
 
+  protected Person person(String name) {
+    Person person = new Person(name);
+    initialFrauen.add(person);
+    initialMaenner.add(person);
+    return person;
+  }
+
   protected Frau frau(String name) {
     return frau(name, false);
   }
@@ -182,7 +189,7 @@ public class StaffelData {
                   "Frau existiert noch nicht rechtzeitig: " + person + " an Tag " + (currentConsistenceDay + 1));
           }
         }
-        else { // Mann
+        else if(person instanceof Mann) { // Mann
           if (!curMaenner.contains(person)) {
             throw new IllegalStateException(
                   "Mann existiert noch nicht rechtzeitig: " + person + " an Tag " + (currentConsistenceDay + 1));
@@ -232,7 +239,9 @@ public class StaffelData {
           for (AYTO_Pair pair : constellation) {
             checkPersonAlreadyKnown.accept(pair.frau);
             checkPersonAlreadyKnown.accept(pair.mann);
-            validateMatchingPairs(constellation);
+            if (zusatztype != AYTO_Permutator.ZUSATZTYPE.BISEXUAL) {
+              validateMatchingPairs(constellation);
+            }
           }
         }
         else {
@@ -268,6 +277,8 @@ public class StaffelData {
    * <p>
    * Bei ZUSATZTYPE.NUR_LETZTER heißt dies im Umkehrschluss, dass es definitiv auch kein
    * PerfektMatch zwischen der ZusatzPerson geben kann.
+   * <p>
+   * Keine NewPerson-Events bei {@link demawi.ayto.permutation.AYTO_Permutator.ZUSATZTYPE#BISEXUAL}
    */
   private void checkForImplicits() {
     List<AYTO_Pair> previousPerfectMatches = new ArrayList<>();
@@ -282,12 +293,12 @@ public class StaffelData {
             if (newPerson != null) {
               if (newPerson instanceof Frau) {
                 for (Person frau : getZusatzpersonen(tagNr)) {
-                  addImplicitForPerfectMatchEvent(result, (Frau) frau, result.pair.mann, result.pairWeitererAuszug);
+                  addImplicitForPerfectMatchEvent(result, frau, result.pair.mann, result.pairWeitererAuszug);
                 }
               }
               else {
                 for (Person mann : getZusatzpersonen(tagNr)) {
-                  addImplicitForPerfectMatchEvent(result, result.pair.frau, (Mann) mann, result.pairWeitererAuszug);
+                  addImplicitForPerfectMatchEvent(result, result.pair.frau, mann, result.pairWeitererAuszug);
                 }
               }
             }

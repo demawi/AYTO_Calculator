@@ -19,9 +19,10 @@ public abstract class AYTO_Permutator<F, M, R> {
    * 0: branch on root (10 Threads)
    */
   private static final int BRANCH_LEVEL = 0;
-  private final ExecutorService executorService;
+  protected final ExecutorService executorService;
 
   public enum ZUSATZTYPE {
+    BISEXUAL, // Jeder kann mit jedem
     KEINER, // Jeder hat genau einen Partner zugewiesen es gibt keine Doppelpartner.
     JEDER, // Jeder der Geschlechtsgruppe mit 11 Leuten kann der Doppelpartner zu jemand anderem sein
     NUR_LETZTER; // Nur der letzte der Geschlechtsgruppe mit 11 Leuten kann der Doppelpartner zu jemand anderem sein
@@ -76,8 +77,14 @@ public abstract class AYTO_Permutator<F, M, R> {
     if (zusatzType == ZUSATZTYPE.JEDER) {
       return new AYTO_PermutatorJEDER<>(setA, setB, packingFunction);
     }
-    else {
+    if (zusatzType == ZUSATZTYPE.BISEXUAL) {
+      return new AYTO_PermutatorBISEXUAL<>(setA, setB, packingFunction);
+    }
+    else if (zusatzType == ZUSATZTYPE.NUR_LETZTER) {
       return new AYTO_PermutatorNUR_LETZTER<>(setA, setB, packingFunction);
+    }
+    else {
+      throw new RuntimeException("Kein Permutationsalgorithmus für '" + zusatzType + "' gefunden!");
     }
   }
 
@@ -109,7 +116,7 @@ public abstract class AYTO_Permutator<F, M, R> {
     }
   }
 
-  private void permutateInternImplFrau(int frau, Object[] currentConstellation,
+  protected void permutateInternImplFrau(int frau, Object[] currentConstellation,
         Supplier<Consumer<Set<R>>> pairConsumerCreator, Consumer<Set<R>> pairConsumer, int branchLevel) {
     for (int mann = 0; mann < anzahlMaenner; mann++) {
       Object[] newSet = canAdd(frau, mann, currentConstellation);

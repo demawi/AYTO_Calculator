@@ -20,7 +20,7 @@ public class AYTO_Test
   private final Mann Christopher = mann("Christopher");
 
   public AYTO_Test() {
-    super("04", AYTO_Permutator.ZUSATZTYPE.JEDER);
+    super(AYTO_Permutator.ZUSATZTYPE.JEDER);
 
     if (true) {
       Frau newFrau = new Frau("Sarah");
