@@ -34,7 +34,7 @@ public class AYTO_1
    private final Mann Wes = mann("Wes"); // Wesley
 
    public AYTO_1() {
-      super("01", AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER);
+      super("01", AYTO_Permutator.ZUSATZTYPE.KEINER);
 
       newTag().matchBox(pair(Shanley, ChrisT), false)
             .matchNight(2, pair(Amber, Ryan), pair(Ashleigh, ChrisS), pair(Brittany, Adam), pair(Coleysia, Dillan),

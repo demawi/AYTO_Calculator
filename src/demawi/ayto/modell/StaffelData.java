@@ -245,11 +245,13 @@ public class StaffelData {
     }
     if (frauen.size() != basePairCount) {
       throw new RuntimeException(
-            "Falsche Anzahl an Frauen in Matching Night: " + frauen.size() + " benötigt: " + basePairCount);
+            "Falsche Anzahl an Frauen in Matching Night: " + frauen.size() + " benötigt: " + basePairCount + " sind: "
+                  + frauen.size() + " " + frauen);
     }
     if (maenner.size() != basePairCount) {
       throw new RuntimeException(
-            "Falsche Anzahl an Männern in Matching Night: " + maenner.size() + " benötigt: " + basePairCount);
+            "Falsche Anzahl an Männern in Matching Night: " + maenner.size() + " benötigt: " + basePairCount + " sind: "
+                  + maenner.size() + " " + maenner);
     }
   }
 

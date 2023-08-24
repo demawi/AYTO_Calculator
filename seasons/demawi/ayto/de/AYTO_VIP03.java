@@ -20,7 +20,7 @@ public class AYTO_VIP03
    private final Frau Paulina = frau("Paulina");
    private final Frau Kim = frau("Kim");
    private final Frau Marie = frau("Marie");
-   private final Frau Daria = frau("Daria");
+   private final Frau Darya = frau("Darya");
 
    private final Mann Paco = mann("Paco");
    private final Mann Mike = mann("Mike");
@@ -37,7 +37,7 @@ public class AYTO_VIP03
       super("VIP_03", AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER);
 
       newTag().matchBox(pair(Jennifer, Danilo), false)
-            .matchNight(2, pair(Daria, Danilo), pair(Sandra, Paco), pair(Paulina, Steffen), pair(Shakira, Marvin),
+            .matchNight(2, pair(Darya, Danilo), pair(Sandra, Paco), pair(Paulina, Steffen), pair(Shakira, Marvin),
                   pair(Kim, Mike), pair(Sabrina, Emanuell), pair(Jennifer, Elia), pair(Marie, Fabio),
                   pair(Stefanie, Martini_Teezy), pair(Alicia, Peter));
 
