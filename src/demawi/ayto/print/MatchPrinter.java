@@ -12,6 +12,7 @@ import demawi.ayto.modell.AYTO_Pair;
 import demawi.ayto.modell.AYTO_Result;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
+import demawi.ayto.modell.Person;
 import demawi.ayto.modell.StaffelData;
 import demawi.ayto.modell.Tag;
 import demawi.ayto.permutation.AYTO_Permutator;
@@ -85,25 +86,25 @@ public abstract class MatchPrinter {
       table.get(0)
             .add("");
       boolean markedPerson = false;
-      List<Frau> sortedFrauen = new ArrayList<>(result.getFrauen());
-      List<Mann> sortedMaenner = new ArrayList<>(result.getMaenner());
+      List<Person> sortedFrauen = new ArrayList<>(result.getFrauen());
+      List<Person> sortedMaenner = new ArrayList<>(result.getMaenner());
       sortedFrauen.sort(Comparator.comparing(a -> a.getNamePlusMark()));
       sortedMaenner.sort(Comparator.comparing(a -> a.getNamePlusMark()));
-      for (Frau frau : sortedFrauen) {
+      for (Person frau : sortedFrauen) {
          table.get(0)
                .add(frau.getNamePlusMark());
          if (frau.isMarked()) {
             markedPerson = true;
          }
       }
-      for (Mann mann : sortedMaenner) {
+      for (Person mann : sortedMaenner) {
          if (mann.isMarked()) {
             markedPerson = true;
          }
          List<String> line = new ArrayList<>();
          table.add(line);
          line.add(mann.getNamePlusMark());
-         for (Frau frau : sortedFrauen) {
+         for (Person frau : sortedFrauen) {
             AYTO_Pair pair = AYTO_Pair.pair(frau, mann);
             int count = 0;
             for (Tag tag : result.getTageBisher()) {

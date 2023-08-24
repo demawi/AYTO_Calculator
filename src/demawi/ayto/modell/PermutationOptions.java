@@ -8,9 +8,9 @@ import demawi.ayto.permutation.AYTO_Permutator;
 
 public interface PermutationOptions {
 
-   List<Frau> getFrauen();
+   List<Person> getFrauen();
 
-   List<Mann> getMaenner();
+   List<Person> getMaenner();
 
    AYTO_Permutator.ZUSATZTYPE getZusatztype();
 }

@@ -14,6 +14,7 @@ import demawi.ayto.modell.AYTO_Result;
 import demawi.ayto.modell.CalculationOptions;
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
+import demawi.ayto.modell.Person;
 import demawi.ayto.modell.StaffelData;
 import demawi.ayto.modell.Zeitpunkt;
 import demawi.ayto.permutation.AYTO_Permutator;
@@ -80,7 +81,7 @@ public class MatchCalculator {
       CalculationOptions calcPrimaryOptions = calcOptions.get(0);
       StaffelData data = calcPrimaryOptions.getData();
       data.ensureDataIsClosed();
-      AYTO_Permutator<Frau, Mann, AYTO_Pair> permutator = AYTO_Permutator.create(calcPrimaryOptions.getFrauen(),
+      AYTO_Permutator<Person, Person, AYTO_Pair> permutator = AYTO_Permutator.create(calcPrimaryOptions.getFrauen(),
             calcPrimaryOptions.getMaenner(), calcPrimaryOptions.getZusatztype(), AYTO_Pair::pair);
 
       List<List<Pair<ConstellationValidation, AYTO_Result>>> results = new ArrayList<>();

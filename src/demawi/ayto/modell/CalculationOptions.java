@@ -76,11 +76,11 @@ public class CalculationOptions
       return data.getTag(zeitpunkt.getTagNr());
    }
 
-   public List<Frau> getFrauen() {
+   public List<Person> getFrauen() {
       return data.getFrauen(zeitpunkt.getTagNr(), zeitpunkt.getEventCount());
    }
 
-   public List<Mann> getMaenner() {
+   public List<Person> getMaenner() {
       return data.getMaenner(zeitpunkt.getTagNr(), zeitpunkt.getEventCount());
    }
 

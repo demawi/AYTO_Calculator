@@ -97,13 +97,13 @@ public class StaffelData {
     this.pairsToTrack = Arrays.asList(pairs);
   }
 
-  public List<Frau> getFrauen(int tagNr) {
+  public List<Person> getFrauen(int tagNr) {
     return getFrauen(tagNr, getTag(tagNr).getEvents()
           .size());
   }
 
-  public List<Frau> getFrauen(int tagNr, int eventCount) {
-    List<Frau> result = new ArrayList<>(initialFrauen);
+  public List<Person> getFrauen(int tagNr, int eventCount) {
+    List<Person> result = new ArrayList<>(initialFrauen);
     for (Event event : getAllEventsTill(tagNr, eventCount)) {
       if (event instanceof NewPerson && ((NewPerson) event).person instanceof Frau) {
         result.add((Frau) ((NewPerson) event).person);
@@ -112,13 +112,13 @@ public class StaffelData {
     return result;
   }
 
-  public List<Mann> getMaenner(int tagNr) {
+  public List<Person> getMaenner(int tagNr) {
     return getMaenner(tagNr, getTag(tagNr).getEvents()
           .size());
   }
 
-  public List<Mann> getMaenner(int tagNr, int eventCount) {
-    List<Mann> result = new ArrayList<>(initialMaenner);
+  public List<Person> getMaenner(int tagNr, int eventCount) {
+    List<Person> result = new ArrayList<>(initialMaenner);
     for (Event event : getAllEventsTill(tagNr, eventCount)) {
       if (event instanceof NewPerson && ((NewPerson) event).person instanceof Mann) {
         result.add((Mann) ((NewPerson) event).person);

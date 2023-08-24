@@ -98,7 +98,7 @@ public class AYTO_Result {
   public double getBasePossibility(AYTO_Pair pair) {
     if (getData().getZusatztype() == AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER) {
       int gesamt = 0;
-      for (Frau curFrau : getFrauen()) {
+      for (Person curFrau : getFrauen()) {
         if (isBasePerson(curFrau)) {
           gesamt += getPossibleCount(curFrau, pair.mann);
         }
@@ -107,15 +107,15 @@ public class AYTO_Result {
     }
     else {
       int gesamt = 0;
-      List<Frau> frauen = getFrauen();
-      List<Mann> maenner = getMaenner();
+      List<Person> frauen = getFrauen();
+      List<Person> maenner = getMaenner();
       if (maenner.size() >= frauen.size()) {
-        for (Frau curFrau : frauen) {
+        for (Person curFrau : frauen) {
           gesamt += getPossibleCount(curFrau, pair.mann);
         }
       }
       else {
-        for (Mann curMann : maenner) {
+        for (Person curMann : maenner) {
           gesamt += getPossibleCount(pair.frau, curMann);
         }
       }
@@ -168,11 +168,11 @@ public class AYTO_Result {
     return lightPossibilities;
   }
 
-  public List<Frau> getFrauen() {
+  public List<Person> getFrauen() {
     return calcOptions.getFrauen();
   }
 
-  public List<Mann> getMaenner() {
+  public List<Person> getMaenner() {
     return calcOptions.getMaenner();
   }
 
