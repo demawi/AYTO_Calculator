@@ -7,6 +7,7 @@ import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.print.DefaultMatchPrinter;
 
 import static demawi.ayto.modell.AYTO_Pair.pair;
+import static demawi.ayto.modell.Person.Markierung.CAN_BE_A_DOUBLE;
 
 public class AYTO_01
       extends StaffelData {
@@ -32,7 +33,7 @@ public class AYTO_01
    private final Mann Juliano = mann("Juliano");
    private final Mann Dominic = mann("Dominic");
    private final Mann Aleks = mann("Aleks");
-   private final Mann Edin = mann("Edin");
+   private final Mann Edin = mann("Edin", CAN_BE_A_DOUBLE, true);
 
    public AYTO_01() {
       super(AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER);

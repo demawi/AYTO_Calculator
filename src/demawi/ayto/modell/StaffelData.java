@@ -41,8 +41,17 @@ public class StaffelData {
   }
 
   protected Frau frau(String name, boolean late) {
+    return frau(name, null, late);
+  }
+
+  protected Frau frau(String name, Person.Markierung mark) {
+    return frau(name, mark, false);
+  }
+
+  protected Frau frau(String name, Person.Markierung mark, boolean lateCheckin) {
     Frau frau = new Frau(name);
-    if (!late) {
+    frau.mark(mark);
+    if (!lateCheckin) {
       initialFrauen.add(frau);
     }
     return frau;
@@ -53,8 +62,17 @@ public class StaffelData {
   }
 
   protected Mann mann(String name, boolean late) {
+    return mann(name, null, late);
+  }
+
+  protected Mann mann(String name, Person.Markierung mark) {
+    return mann(name, mark, false);
+  }
+
+  protected Mann mann(String name, Person.Markierung mark, boolean lateCheckin) {
     Mann mann = new Mann(name);
-    if (!late) {
+    mann.mark(mark);
+    if (!lateCheckin) {
       initialMaenner.add(mann);
     }
     return mann;
@@ -206,10 +224,10 @@ public class StaffelData {
             curFrauen.add((Frau) newPerson);
             if (curFrauen.size() > 10) {
               if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.JEDER) {
-                initialFrauen.forEach(f -> f.mark(Person.MARK1));
+                initialFrauen.forEach(f -> f.mark(Person.Markierung.CAN_BE_A_DOUBLE));
               }
               if (event.zusatzperson) {
-                newPerson.mark(Person.MARK1);
+                newPerson.mark(Person.Markierung.CAN_BE_A_DOUBLE);
               }
             }
           }
@@ -217,10 +235,10 @@ public class StaffelData {
             curMaenner.add((Mann) newPerson);
             if (curMaenner.size() > 10) {
               if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.JEDER) {
-                initialMaenner.forEach(f -> f.mark(Person.MARK1));
+                initialMaenner.forEach(f -> f.mark(Person.Markierung.CAN_BE_A_DOUBLE));
               }
               if (event.zusatzperson) {
-                newPerson.mark(Person.MARK1);
+                newPerson.mark(Person.Markierung.CAN_BE_A_DOUBLE);
               }
             }
           }

@@ -7,6 +7,7 @@ import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.print.DefaultMatchPrinter;
 
 import static demawi.ayto.modell.AYTO_Pair.pair;
+import static demawi.ayto.modell.Person.Markierung.CAN_BE_A_DOUBLE;
 
 public class AYTO_04
       extends StaffelData {
@@ -22,17 +23,17 @@ public class AYTO_04
   private final Frau Valeria = frau("Valeria");
   private final Frau Vanessa = frau("Vanessa");
 
-  private final Mann Barkin = mann("Barkin");
-  private final Mann Burim = mann("Burim");
-  private final Mann Christopher = mann("Christopher");
-  private final Mann Deniz = mann("Deniz");
-  private final Mann Joel = mann("Joel");
-  private final Mann Ken = mann("Ken");
-  private final Mann Kenneth = mann("Kenneth");
-  private final Mann Maximilian = mann("Maximilian");
-  private final Mann Pascal = mann("Pascal");
-  private final Mann Sasa = mann("Sasa");
-  private final Mann Marwin = mann("Marwin");
+  private final Mann Barkin = mann("Barkin", CAN_BE_A_DOUBLE);
+  private final Mann Burim = mann("Burim", CAN_BE_A_DOUBLE);
+  private final Mann Christopher = mann("Christopher", CAN_BE_A_DOUBLE);
+  private final Mann Deniz = mann("Deniz", CAN_BE_A_DOUBLE);
+  private final Mann Joel = mann("Joel", CAN_BE_A_DOUBLE);
+  private final Mann Ken = mann("Ken", CAN_BE_A_DOUBLE);
+  private final Mann Kenneth = mann("Kenneth", CAN_BE_A_DOUBLE);
+  private final Mann Maximilian = mann("Maximilian", CAN_BE_A_DOUBLE);
+  private final Mann Pascal = mann("Pascal", CAN_BE_A_DOUBLE);
+  private final Mann Sasa = mann("Sasa", CAN_BE_A_DOUBLE);
+  private final Mann Marwin = mann("Marwin", CAN_BE_A_DOUBLE);
 
   public AYTO_04() {
     super(AYTO_Permutator.ZUSATZTYPE.JEDER);
