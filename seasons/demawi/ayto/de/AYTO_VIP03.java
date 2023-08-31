@@ -37,9 +37,14 @@ public class AYTO_VIP03
       super(AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER);
 
       newTag().matchBox(pair(Jennifer, Danilo), false)
-            .matchNight(2, pair(Darya, Danilo), pair(Sandra, Paco), pair(Paulina, Steffen), pair(Shakira, Marvin),
+            .matchNight(3, pair(Darya, Danilo), pair(Sandra, Paco), pair(Paulina, Steffen), pair(Shakira, Marvin),
                   pair(Kim, Mike), pair(Sabrina, Emanuell), pair(Jennifer, Elia), pair(Marie, Fabio),
                   pair(Stefanie, Martini_Teezy), pair(Alicia, Peter));
+
+      newTag().matchBox(pair(Jennifer, Elia), false)
+            .matchNight(2, pair(Sabrina, Mike), pair(Paulina, Danilo), pair(Kim, Paco), pair(Jennifer, Marvin),
+                  pair(Stefanie, Martini_Teezy), pair(Darya, Emanuell), pair(Marie, Fabio), pair(Shakira, Peter),
+                  pair(Sandra, Elia), pair(Alicia, Steffen));
 
    }
 
