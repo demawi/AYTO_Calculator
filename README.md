@@ -1,4 +1,4 @@
-## Calculate probabilities for dating show Are You The One (with german and U.S. results)
+## Calculate probabilities for dating show "Are You The One" (with german and U.S. data and results)
 
 Multi-threaded Java-based probability calculator for the series "Are you the one"
 
