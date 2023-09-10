@@ -1,23 +1,24 @@
-  # AYTO_Calculator
-Multi-Threaded Java-basierter Kalkulator der Wahrscheinlichkeiten für die Serie "Are you the one"
+## Calculate probabilities for dating show Are You The One (with german and U.S. results)
 
-Die Daten deutscher Staffeln sind eingepflegt.
+Multi-threaded Java-based probability calculator for the series "Are you the one"
+
+The probabilities for german and U.S. seasons were generated in the "results"-folder.
 
 Features:
 <ul>
-<li>Es werden verschiedene ("Permutations"-)Modi unterstützt:
-  <ul>
-    <li>Standard: keine Besonderheiten jede Person hat genau ein potenzielles Match</li>
-    <li>Nur die 11te Person ist ein Doppelmatch zu jemand anderem</li>
-    <li>Jede der größeren Personengruppe kann ein Doppelmatch zu jemand anderem sein</li>
-    <li>Jede Person kann mit jeder anderen Person lieert sein (für die Bisexuell-Staffel)</li>    
-  </ul>
-<li>Ereignisse können in beliebiger Reihenfolge auftreten und eingepflegt werden.
+<li>Various (“permutation”) modes are supported:
+   <ul>
+     <li>Standard: no special features, each person has exactly one potential match</li>
+     <li>Only the 11th person is a double match with someone else</li>
+     <li>Each of the larger group of people can be a double match to someone else</li>
+     <li>Each person can be in a relationship with any other person (for the bisexual season)</li>
+   </ul>
+<li>Different event-types can occur and be entered in any order.
 <ul>
-  <li>Ereignis "MatchBox": Wahrscheinlichkeiten für Ausgang des Ergebnisses (Ja/Nein)
-  <li>Ereignis "MatchingNight": Wahrscheinlichkeiten für Ausgang des Ergebnisses (0-11 Lichter)
-  <li>Ereignis "NeuePerson" bzw. Auszug aus der Villa bei MatchBox=true: zusäztliche Annahmen bei möglichen Doppelmatches, wenn andere Personen nicht mit ausziehen
+   <li>Event "MatchBox": Probabilities for outcome of the result (yes/no)
+   <li>Event "MatchingNight": Probabilities for outcome of the result (0-11 lights)
+   <li>Event "New Person" or moving out of the villa if MatchBox=true: additional assumptions for possible double matches if other people do not move out
 </ul>
-<li>Gesamtdarstellung inkl. Wahrscheinlichkeiten aller Paare
-<li>Multi-threading Performance Optimierung. Eine komplette Staffel inkl. aller (Zwischen-)Wahrscheinlichkeiten wird üblicherweise innerhalb einer Minute durchkalkuliert.
+<li>Overall table representation including probabilities of all potential pairs.
+<li>Multi-threading performance optimization. A complete season including all (intermediate) probabilities is usually calculated within a minute.
 </ul>
