@@ -32,6 +32,7 @@ public class AYTO_VIP03
    private final Mann Emanuell = mann("Emanuell");
    private final Mann Steffen = mann("Steffen");
    private final Mann Fabio = mann("Fabio");
+   private final Mann Max = mann("Max");
 
    public AYTO_VIP03() {
       super(AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER);
@@ -50,6 +51,14 @@ public class AYTO_VIP03
             .matchNight(2, pair(Alicia, Steffen), pair(Sabrina, Peter), pair(Sandra, Paco), pair(Shakira, Fabio),
                   pair(Marie, Elia), pair(Darya, Danilo), pair(Stefanie, Marvin), pair(Paulina, Mike),
                   pair(Kim, Martini_Teezy), pair(Jennifer, Emanuell));
+
+      newTag().addNew(Max)
+            .matchBox(pair(Kim, Mike), false)
+            .matchNight(4, pair(Sandra, Steffen), pair(Paulina, Max), pair(Marie, Elia), pair(Alicia, Martini_Teezy),
+                  pair(Darya, Danilo), pair(Shakira, Fabio), pair(Sabrina, Paco), pair(Kim, Peter),
+                  pair(Stefanie, Emanuell), pair(Jennifer, Marvin)); // Max
+
+      newTag().matchBox(pair(Darya, Danilo), true);
 
    }
 
