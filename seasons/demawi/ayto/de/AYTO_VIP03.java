@@ -56,9 +56,12 @@ public class AYTO_VIP03
             .matchBox(pair(Kim, Mike), false)
             .matchNight(4, pair(Sandra, Steffen), pair(Paulina, Max), pair(Marie, Elia), pair(Alicia, Martini_Teezy),
                   pair(Darya, Danilo), pair(Shakira, Fabio), pair(Sabrina, Paco), pair(Kim, Peter),
-                  pair(Stefanie, Emanuell), pair(Jennifer, Marvin)); // Max
+                  pair(Stefanie, Emanuell), pair(Jennifer, Marvin)); // Mike
 
-      newTag().matchBox(pair(Darya, Danilo), true);
+      newTag().matchBox(pair(Darya, Danilo), true)
+            .matchNight(3, pair(Darya, Danilo), pair(Paulina, Mike), pair(Kim, Martini_Teezy), pair(Shakira, Paco),
+                  pair(Stefanie, Elia), pair(Jennifer, Marvin), pair(Sandra, Max), pair(Alicia, Steffen),
+                  pair(Sabrina, Emanuell), pair(Marie, Fabio)); // Peter
 
    }
 
