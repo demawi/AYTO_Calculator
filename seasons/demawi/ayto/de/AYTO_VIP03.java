@@ -63,6 +63,11 @@ public class AYTO_VIP03
                   pair(Stefanie, Elia), pair(Jennifer, Marvin), pair(Sandra, Max), pair(Alicia, Steffen),
                   pair(Sabrina, Emanuell), pair(Marie, Fabio)); // Peter
 
+      newTag().matchBox(pair(Alicia, Martini_Teezy), false)
+            .matchNight(4, pair(Darya, Danilo), pair(Alicia, Paco), pair(Sandra, Steffen), pair(Paulina, Mike),
+                  pair(Jennifer, Marvin), pair(Shakira, Fabio), pair(Marie, Elia), pair(Sabrina, Peter),
+                  pair(Stefanie, Emanuell), pair(Kim, Martini_Teezy)); // Max
+
    }
 
    public static void main(String[] args) {
