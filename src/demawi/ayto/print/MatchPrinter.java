@@ -1,18 +1,10 @@
 package demawi.ayto.print;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Consumer;
 
 import demawi.ayto.events.MatchingNight;
-import demawi.ayto.modell.AYTO_Pair;
-import demawi.ayto.modell.AYTO_Result;
-import demawi.ayto.modell.Person;
-import demawi.ayto.modell.StaffelData;
-import demawi.ayto.modell.Tag;
+import demawi.ayto.modell.*;
 import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.service.MatchCalculator;
 import demawi.ayto.util.Language;
@@ -164,7 +156,7 @@ public abstract class MatchPrinter {
          }
       }
 
-      if (false) { // result.getAllPossibleConstellations() geht aktuell nicht, um Arbeitsspeicher zu sparen
+      if (result.getAllPossibleConstellations() != null) {
          List<Set<AYTO_Pair>> sortedConstellations = new ArrayList<>(result.getAllPossibleConstellations());
          sortedConstellations.sort((pairs1, pairs2) -> {
             Integer o1Count = pairs1.stream()

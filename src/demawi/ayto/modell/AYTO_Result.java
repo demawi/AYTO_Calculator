@@ -17,6 +17,8 @@ public class AYTO_Result {
   public int notPossible = 0;
   private int[] lightPossibilities; // wird nur gesetzt, wenn auch eine Matching Night stattgefunden hat.
 
+  private List<Set<AYTO_Pair>> allPossibleTrueConstellations = null; // deaktiviert wenn = null
+
   /**
    * Add all subresults
    */
@@ -29,6 +31,9 @@ public class AYTO_Result {
             .getMatchingPairCount(); i <= l; i++) {
         lightPossibilities[i] += cur.lightPossibilities[i];
       }
+    }
+    if (allPossibleTrueConstellations != null && cur.allPossibleTrueConstellations != null) {
+      allPossibleTrueConstellations.addAll(cur.allPossibleTrueConstellations);
     }
     for (Map.Entry<AYTO_Pair, Integer> pairEntry : cur.possiblePairCount.entrySet()) {
       addPairToCountMap(possiblePairCount, pairEntry.getKey(), pairEntry.getValue());
@@ -71,7 +76,7 @@ public class AYTO_Result {
   }
 
   public List<Set<AYTO_Pair>> getAllPossibleConstellations() {
-    throw new IllegalStateException("Wird nicht mehr geliefert!");
+    return allPossibleTrueConstellations;
   }
 
   public Integer getPossibleCount(Person frau, Person mann) {
@@ -142,12 +147,19 @@ public class AYTO_Result {
     }
     if (result) {
       possible++;
-      for (AYTO_Pair current : constellation) {
-        addPairToCountMap(possiblePairCount, current);
-      }
+      addPossibleTrueConstellation(constellation);
     }
     else {
       notPossible++;
+    }
+  }
+
+  private void addPossibleTrueConstellation(Set<AYTO_Pair> constellation) {
+    if (allPossibleTrueConstellations != null) {
+      allPossibleTrueConstellations.add(constellation);
+    }
+    for (AYTO_Pair current : constellation) {
+      addPairToCountMap(possiblePairCount, current);
     }
   }
 
