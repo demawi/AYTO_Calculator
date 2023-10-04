@@ -68,6 +68,11 @@ public class AYTO_VIP03
                   pair(Jennifer, Marvin), pair(Shakira, Fabio), pair(Marie, Elia), pair(Sabrina, Peter),
                   pair(Stefanie, Emanuell), pair(Kim, Martini_Teezy)); // Max
 
+      // TODO: New Event "SameMatch" Max -> Peter
+      newTag().matchNight(3, pair(Darya, Danilo), pair(Stefanie, Elia), pair(Marie, Steffen), pair(Kim, Martini_Teezy),
+            pair(Sabrina, Emanuell), pair(Max, Shakira), pair(Paulina, Marvin), pair(Jennifer, Paco),
+            pair(Alicia, Fabio), pair(Sandra, Mike)); // Peter
+
       if (false)
          newTag().matchBox(pair(Marvin, Jennifer), true)
                .matchBox(pair(Alicia, Peter), true)
