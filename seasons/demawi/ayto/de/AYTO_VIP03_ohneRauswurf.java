@@ -8,7 +8,7 @@ import demawi.ayto.print.DefaultMatchPrinter;
 
 import static demawi.ayto.modell.AYTO_Pair.pair;
 
-public class AYTO_VIP03
+public class AYTO_VIP03_ohneRauswurf
       extends StaffelData {
 
    private final Frau Shakira = frau("Shakira");
@@ -34,7 +34,7 @@ public class AYTO_VIP03
    private final Mann Fabio = mann("Fabio");
    private final Mann Max = mann("Max");
 
-   public AYTO_VIP03() {
+   public AYTO_VIP03_ohneRauswurf() {
       super(AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER);
 
       newTag().matchBox(pair(Jennifer, Danilo), false)
@@ -68,18 +68,14 @@ public class AYTO_VIP03
                   pair(Jennifer, Marvin), pair(Shakira, Fabio), pair(Marie, Elia), pair(Sabrina, Peter),
                   pair(Stefanie, Emanuell), pair(Kim, Martini_Teezy)); // Max
 
-      // MatchBoxPairs: Kim & Peter (26.73%), Mike & Jennifer (0%)
-      newTag().sameMatch(Max, Peter)
-            .matchNight(3, pair(Darya, Danilo), pair(Stefanie, Elia), pair(Marie, Steffen), pair(Kim, Martini_Teezy),
-                  pair(Sabrina, Emanuell), pair(Max, Shakira), pair(Paulina, Marvin), pair(Jennifer, Paco),
-                  pair(Alicia, Fabio), pair(Sandra, Mike)); // Peter
-
-      // MatchBoxPairs: Sabrina & Max (0%), Sandra & Mike (66%)
+      newTag().matchNight(3, pair(Darya, Danilo), pair(Stefanie, Elia), pair(Marie, Steffen), pair(Kim, Martini_Teezy),
+            pair(Sabrina, Emanuell), pair(Max, Shakira), pair(Paulina, Marvin), pair(Jennifer, Paco),
+            pair(Alicia, Fabio), pair(Sandra, Mike)); // Peter
 
    }
 
    public static void main(String[] args) {
-      new DefaultMatchPrinter().printDayResults(new AYTO_VIP03());
+      new DefaultMatchPrinter().printDayResults(new AYTO_VIP03_ohneRauswurf());
    }
 
 }

@@ -3,13 +3,13 @@
 -- Berechne 03 - Nacht 5... [Ereignis#0]
 -- Combinations: 3628800 Possible: 2699 Not possible: 3626101
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Eine Frau ist hinzugekommen: Desiree. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Desiree
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 5 inkl. 1 neuer Person(en)... [Ereignis#1]
 -- Combinations: 36288000 Possible: 26990 Not possible: 36261010
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Die Anzahl der Kombinationen hat sich verändert: 2699 => 26990
+Die Anzahl der Kombinationen hat sich erhöht: 2699 => 26990
 
 MatchBox: Monami & Antonino... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 58,06% [15670]

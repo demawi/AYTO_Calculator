@@ -7,6 +7,7 @@ import java.util.Set;
 
 import demawi.ayto.events.MatchingNight;
 import demawi.ayto.permutation.AYTO_Permutator;
+import demawi.ayto.events.PairInterpreter;
 
 public class AYTO_Result {
 
@@ -128,9 +129,9 @@ public class AYTO_Result {
     }
   }
 
-  public void addResult(Set<AYTO_Pair> constellation, boolean result) {
+  public void addResult(Set<AYTO_Pair> constellation, boolean result, PairInterpreter lookup) {
     Integer lights = result && lightPossibilities != null ? calcOptions.getMatchingNight()
-          .getLights(constellation) : null;
+          .getLights(constellation, lookup) : null;
     registerResults(constellation, result, lights);
   }
 

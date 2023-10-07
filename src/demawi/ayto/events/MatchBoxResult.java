@@ -36,14 +36,15 @@ public class MatchBoxResult
     * die Konstellation somit weiterhin als valide eingestuft
     * werden kann.
     */
-   public boolean isValid(Collection<AYTO_Pair> constellation) {
-      if (!super.isValid(constellation))
+   public boolean isValid(Collection<AYTO_Pair> constellation, PairInterpreter lookup) {
+      if (!super.isValid(constellation, lookup))
          return false;
+      AYTO_Pair lookupPair = lookup.lookup(pair);
       if (result == null)
          return true;
-      if (pairWeitererAuszug != null && result != constellation.contains(pair)) {
+      if (pairWeitererAuszug != null && result != constellation.contains(lookupPair)) {
          return false;
       }
-      return result == constellation.contains(pair);
+      return result == constellation.contains(lookupPair);
    }
 }

@@ -1,19 +1,9 @@
 package demawi.ayto.modell;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Consumer;
 
-import demawi.ayto.events.Event;
-import demawi.ayto.events.EventWithImplicits;
-import demawi.ayto.events.MatchBoxResult;
-import demawi.ayto.events.MatchingNight;
-import demawi.ayto.events.NewPerson;
+import demawi.ayto.events.*;
 import demawi.ayto.permutation.AYTO_Permutator;
 
 public class StaffelData {
@@ -21,6 +11,7 @@ public class StaffelData {
   public String name;
   private final AYTO_Permutator.ZUSATZTYPE zusatztype;
   private final int matchingPairCount;
+  private final boolean validiation;
 
   private final List<Tag> tage = new ArrayList<>();
   public List<AYTO_Pair> pairsToTrack;
@@ -44,11 +35,11 @@ public class StaffelData {
     return frau(name, null, late);
   }
 
-  protected Frau frau(String name, Person.Markierung mark) {
+  protected Frau frau(String name, Markierung mark) {
     return frau(name, mark, false);
   }
 
-  protected Frau frau(String name, Person.Markierung mark, boolean lateCheckin) {
+  protected Frau frau(String name, Markierung mark, boolean lateCheckin) {
     Frau frau = new Frau(name);
     frau.mark(mark);
     if (!lateCheckin) {
@@ -65,11 +56,11 @@ public class StaffelData {
     return mann(name, null, late);
   }
 
-  protected Mann mann(String name, Person.Markierung mark) {
+  protected Mann mann(String name, Markierung mark) {
     return mann(name, mark, false);
   }
 
-  protected Mann mann(String name, Person.Markierung mark, boolean lateCheckin) {
+  protected Mann mann(String name, Markierung mark, boolean lateCheckin) {
     Mann mann = new Mann(name);
     mann.mark(mark);
     if (!lateCheckin) {
@@ -85,6 +76,13 @@ public class StaffelData {
   public StaffelData(AYTO_Permutator.ZUSATZTYPE zusatztype, int matchingPairCount) {
     this.zusatztype = zusatztype;
     this.matchingPairCount = matchingPairCount;
+    this.validiation = true;
+  }
+
+  public StaffelData(AYTO_Permutator.ZUSATZTYPE zusatztype, int matchingPairCount, boolean validation) {
+    this.zusatztype = zusatztype;
+    this.matchingPairCount = matchingPairCount;
+    this.validiation = validation;
   }
 
   public void setName(String name) {
@@ -130,7 +128,10 @@ public class StaffelData {
     List<Person> result = new ArrayList<>(initialFrauen);
     for (Event event : getAllEventsTill(tagNr, eventCount)) {
       if (event instanceof NewPerson && ((NewPerson) event).person instanceof Frau) {
-        result.add((Frau) ((NewPerson) event).person);
+        result.add(((NewPerson) event).person);
+      }
+      if (event instanceof SameMatch && ((SameMatch) event).getSecond() instanceof Frau) {
+        result.remove(((SameMatch) event).getSecond());
       }
     }
     return result;
@@ -145,7 +146,10 @@ public class StaffelData {
     List<Person> result = new ArrayList<>(initialMaenner);
     for (Event event : getAllEventsTill(tagNr, eventCount)) {
       if (event instanceof NewPerson && ((NewPerson) event).person instanceof Mann) {
-        result.add((Mann) ((NewPerson) event).person);
+        result.add(((NewPerson) event).person);
+      }
+      if (event instanceof SameMatch && ((SameMatch) event).getSecond() instanceof Mann) {
+        result.remove(((SameMatch) event).getSecond());
       }
     }
     return result;
@@ -197,7 +201,7 @@ public class StaffelData {
   private void validateDays() {
     List<Person> curFrauen = new ArrayList<>(initialFrauen);
     List<Person> curMaenner = new ArrayList<>(initialMaenner);
-    Consumer<Person> checkPersonAlreadyKnown = (person) -> {
+    Consumer<Person> personValidationCheck = (person) -> {
       if (person != null) {
         if (person instanceof Frau) {
           if (!curFrauen.contains(person)) {
@@ -205,7 +209,7 @@ public class StaffelData {
                   "Frau existiert noch nicht rechtzeitig: " + person + " an Tag " + (currentConsistenceDay + 1));
           }
         }
-        else if(person instanceof Mann) { // Mann
+        else if (person instanceof Mann) { // Mann
           if (!curMaenner.contains(person)) {
             throw new IllegalStateException(
                   "Mann existiert noch nicht rechtzeitig: " + person + " an Tag " + (currentConsistenceDay + 1));
@@ -224,10 +228,10 @@ public class StaffelData {
             curFrauen.add((Frau) newPerson);
             if (curFrauen.size() > 10) {
               if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.JEDER) {
-                initialFrauen.forEach(f -> f.mark(Person.Markierung.CAN_BE_A_DOUBLE));
+                initialFrauen.forEach(f -> f.mark(Markierung.CAN_BE_A_DOUBLE));
               }
               if (event.zusatzperson) {
-                newPerson.mark(Person.Markierung.CAN_BE_A_DOUBLE);
+                newPerson.mark(Markierung.CAN_BE_A_DOUBLE);
               }
             }
           }
@@ -235,10 +239,10 @@ public class StaffelData {
             curMaenner.add((Mann) newPerson);
             if (curMaenner.size() > 10) {
               if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.JEDER) {
-                initialMaenner.forEach(f -> f.mark(Person.Markierung.CAN_BE_A_DOUBLE));
+                initialMaenner.forEach(f -> f.mark(Markierung.CAN_BE_A_DOUBLE));
               }
               if (event.zusatzperson) {
-                newPerson.mark(Person.Markierung.CAN_BE_A_DOUBLE);
+                newPerson.mark(Markierung.CAN_BE_A_DOUBLE);
               }
             }
           }
@@ -246,19 +250,24 @@ public class StaffelData {
         else if (evt instanceof MatchBoxResult) {
           MatchBoxResult event = (MatchBoxResult) evt;
           AYTO_Pair pair = event.pair;
-          checkPersonAlreadyKnown.accept(pair.frau);
-          checkPersonAlreadyKnown.accept(pair.mann);
+          personValidationCheck.accept(pair.frau);
+          personValidationCheck.accept(pair.mann);
         }
         else if (evt instanceof MatchingNight) {
           MatchingNight event = (MatchingNight) evt;
           Set<AYTO_Pair> constellation = event.constellation;
           for (AYTO_Pair pair : constellation) {
-            checkPersonAlreadyKnown.accept(pair.frau);
-            checkPersonAlreadyKnown.accept(pair.mann);
+            personValidationCheck.accept(pair.frau);
+            personValidationCheck.accept(pair.mann);
             if (zusatztype != AYTO_Permutator.ZUSATZTYPE.BISEXUAL) {
               validateMatchingPairs(constellation);
             }
           }
+        }
+        else if (evt instanceof SameMatch) {
+          SameMatch event = (SameMatch) evt;
+          personValidationCheck.accept(event.getFirst());
+          personValidationCheck.accept(event.getSecond());
         }
         else {
           throw new IllegalArgumentException("Event-Klasse kann noch nicht verarbeitet werden: " + evt.getClass()
@@ -275,15 +284,17 @@ public class StaffelData {
       frauen.add(pair.frau);
       maenner.add(pair.mann);
     }
-    if (frauen.size() != matchingPairCount) {
-      throw new RuntimeException(
-            "Falsche Anzahl an Frauen in Matching Night: " + frauen.size() + " benötigt: " + matchingPairCount + " sind: "
-                  + frauen.size() + " " + frauen);
-    }
-    if (maenner.size() != matchingPairCount) {
-      throw new RuntimeException(
-            "Falsche Anzahl an Männern in Matching Night: " + maenner.size() + " benötigt: " + matchingPairCount + " sind: "
-                  + maenner.size() + " " + maenner);
+    if (validiation) {
+      if (frauen.size() != matchingPairCount) {
+        throw new RuntimeException(
+              "Falsche Anzahl an Frauen in Matching Night: " + frauen.size() + " benötigt: " + matchingPairCount
+                    + " sind: " + frauen.size() + " " + frauen);
+      }
+      if (maenner.size() != matchingPairCount) {
+        throw new RuntimeException(
+              "Falsche Anzahl an Männern in Matching Night: " + maenner.size() + " benötigt: " + matchingPairCount
+                    + " sind: " + maenner.size() + " " + maenner);
+      }
     }
   }
 

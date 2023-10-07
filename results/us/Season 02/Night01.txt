@@ -3,13 +3,13 @@
 -- Berechne 02 - Nacht 1... [Ereignis#0]
 -- Combinations: 3628800 Possible: 3628800 Not possible: 0
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Eine Frau ist hinzugekommen: Christina. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Christina
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 1 inkl. 1 neuer Person(en)... [Ereignis#1]
 -- Combinations: 36288000 Possible: 36288000 Not possible: 0
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Die Anzahl der Kombinationen hat sich verändert: 3628800 => 36288000
+Die Anzahl der Kombinationen hat sich erhöht: 3628800 => 36288000
 
 MatchBox: Jessica & Brandon... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 10,00% [3628800]

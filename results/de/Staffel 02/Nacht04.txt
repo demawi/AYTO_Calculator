@@ -3,13 +3,13 @@
 -- Berechne 02 - Nacht 4... [Ereignis#0]
 -- Combinations: 3628800 Possible: 5406 Not possible: 3623394
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Eine Frau ist hinzugekommen: VanessaM. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: VanessaM
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 4 inkl. 1 neuer Person(en)... [Ereignis#1]
 -- Combinations: 36288000 Possible: 54060 Not possible: 36233940
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Die Anzahl der Kombinationen hat sich verändert: 5406 => 54060
+Die Anzahl der Kombinationen hat sich erhöht: 5406 => 54060
 
 MatchBox: Laura & Marcel... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 40,49% [21890]

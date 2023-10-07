@@ -3,14 +3,14 @@
 -- Berechne VIP01 - Nacht 4... [Ereignis#0]
 -- Combinations: 3628800 Possible: 5522 Not possible: 3623278
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Eine Frau ist hinzugekommen: Vanessa. Die Anzahl der Kombinationen erhöht sich damit!
+Eine Frau ist hinzugekommen: Vanessa
 Implizite Annahme für die neue Person durch vorherige Auszüge: Vanessa & Francesco => No Match!
 
 ==================================================================================================================================================
 -- Berechne VIP01 - Nacht 4 inkl. 1 neuer Person(en)... [Ereignis#1]
 -- Combinations: 36288000 Possible: 49698 Not possible: 36238302
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Die Anzahl der Kombinationen hat sich verändert: 5522 => 49698
+Die Anzahl der Kombinationen hat sich erhöht: 5522 => 49698
 
 MatchBox: Aurelia & Diogo verkauft. (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 36,82% [18297]

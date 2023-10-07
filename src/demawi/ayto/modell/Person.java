@@ -4,21 +4,6 @@ import java.util.Objects;
 
 public class Person {
 
-  public enum Markierung {
-    CAN_BE_A_DOUBLE("*");
-
-    private String val;
-
-    Markierung(String val) {
-      this.val = val;
-    }
-
-    @Override
-    public String toString() {
-      return val;
-    }
-  }
-
   private final String name;
   public Markierung marked;
 
@@ -38,10 +23,17 @@ public class Person {
     return name + (marked != null ? marked : "");
   }
 
+  public String getNameWithoutMark() {
+    return name;
+  }
+
   public boolean isMarked() {
     return marked != null;
   }
 
+  /**
+   * For a normal print you have to decide: getNamePlusMark or getNameWithoutMark
+   */
   @Override
   public String toString() {
     return "@@@" + getNamePlusMark();

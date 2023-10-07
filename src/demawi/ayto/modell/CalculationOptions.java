@@ -1,13 +1,11 @@
 package demawi.ayto.modell;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
-import demawi.ayto.events.ConstellationValidation;
-import demawi.ayto.events.Event;
-import demawi.ayto.events.MatchBoxResult;
-import demawi.ayto.events.MatchingNight;
-import demawi.ayto.events.NewPerson;
+import demawi.ayto.events.*;
 import demawi.ayto.permutation.AYTO_Permutator;
 
 public class CalculationOptions
@@ -20,6 +18,8 @@ public class CalculationOptions
    private final int anzahlNeuerPersonen;
    private final int anzahlMatchBoxen;
    private final boolean mitMatchingNight;
+
+   private final List<SameMatch> sameMatches = new ArrayList<>();
 
    public CalculationOptions(StaffelData data, Zeitpunkt zeitpunkt) {
       this.data = data;
@@ -67,8 +67,12 @@ public class CalculationOptions
       return zeitpunkt;
    }
 
+   /**
+    * At the beginning of the day we have event=null
+    */
    public Event getEvent() {
-      if(zeitpunkt.getEventCount() == 0) return null;
+      if (zeitpunkt.getEventCount() == 0)
+         return null;
       return getTag().getEvent(zeitpunkt.getEventCount());
    }
 
@@ -98,9 +102,9 @@ public class CalculationOptions
       return getData().getAllEventsTill(zeitpunkt.getTagNr(), zeitpunkt.getEventCount());
    }
 
-   public boolean isValid(Collection<AYTO_Pair> constellation) {
+   public boolean isValid(Collection<AYTO_Pair> constellation, PairInterpreter lookup) {
       for (Event event : getEvents()) {
-         if (!event.isValid(constellation)) {
+         if (!event.isValid(constellation, lookup)) {
             return false;
          }
       }
@@ -110,5 +114,13 @@ public class CalculationOptions
    public List<Tag> getTageBisher() {
       return data.getTage()
             .subList(0, zeitpunkt.getTagNr());
+   }
+
+   public PairInterpreter getLookup() {
+      Optional<PairInterpreter> first = getEvents().stream()
+            .filter(evt -> evt instanceof PairInterpreter)
+            .map(evt -> (PairInterpreter) evt)
+            .findFirst();
+      return first.orElseGet(PairInterpreter::create);
    }
 }

@@ -3,10 +3,7 @@ package demawi.ayto.modell;
 import java.util.ArrayList;
 import java.util.List;
 
-import demawi.ayto.events.Event;
-import demawi.ayto.events.MatchBoxResult;
-import demawi.ayto.events.MatchingNight;
-import demawi.ayto.events.NewPerson;
+import demawi.ayto.events.*;
 
 public class Tag {
 
@@ -52,6 +49,11 @@ public class Tag {
    public void matchNight(Integer lights, AYTO_Pair... pairs) {
       matchingNight = new MatchingNight(lights, matchingNightCount, pairs);
       events.add(matchingNight);
+   }
+
+   public Tag sameMatch(Person person, Person person2) {
+      events.add(new SameMatch(person, person2));
+      return this;
    }
 
    public MatchingNight getMatchingNight() {

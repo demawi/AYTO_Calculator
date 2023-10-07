@@ -1,12 +1,12 @@
 
 ==================================================================================================================================================
--- Berechne VIP03 - Nacht 4... [Ereignis#0]
+-- Berechne VIP03_ohneRauswurf - Nacht 4... [Ereignis#0]
 -- Combinations: 3628800 Possible: 6956 Not possible: 3621844
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Ein Mann ist hinzugekommen: Max
 
 ==================================================================================================================================================
--- Berechne VIP03 - Nacht 4 inkl. 1 neuer Person(en)... [Ereignis#1]
+-- Berechne VIP03_ohneRauswurf - Nacht 4 inkl. 1 neuer Person(en)... [Ereignis#1]
 -- Combinations: 36288000 Possible: 69560 Not possible: 36218440
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Die Anzahl der Kombinationen hat sich erhöht: 6956 => 69560
@@ -17,7 +17,7 @@ Nein => 77,23% [53720] <==
 Die Kombinationen reduzieren sich: 69560 => 53720
 
 ==================================================================================================================================================
--- Berechne VIP03 - Nacht 4 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en)... [Ereignis#2]
+-- Berechne VIP03_ohneRauswurf - Nacht 4 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en)... [Ereignis#2]
 -- Combinations: 36288000 Possible: 53720 Not possible: 36234280
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -48,7 +48,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 Die Kombinationen reduzieren sich: 53720 => 1587
 
 ==================================================================================================================================================
--- Berechne VIP03 - Nacht 4 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#3]
+-- Berechne VIP03_ohneRauswurf - Nacht 4 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#3]
 -- Combinations: 36288000 Possible: 1587 Not possible: 36286413
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======

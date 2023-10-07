@@ -6,4 +6,8 @@ package demawi.ayto.events;
 public interface Event
       extends ConstellationValidation {
 
+   default boolean needsRecalculation() {
+      return false;
+   }
+
 }

@@ -3,7 +3,7 @@
 -- Berechne 01 - Nacht 6... [Ereignis#0]
 -- Combinations: 3628800 Possible: 144 Not possible: 3628656
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Ein Mann ist hinzugekommen: Edin. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Edin
 Implizite Annahme für die neue Person durch vorherige Auszüge: Aline & Edin => No Match!
 Implizite Annahme für die neue Person durch vorherige Auszüge: Melissa & Edin => No Match!
 
@@ -11,7 +11,7 @@ Implizite Annahme für die neue Person durch vorherige Auszüge: Melissa & Edin 
 -- Berechne 01 - Nacht 6 inkl. 1 neuer Person(en)... [Ereignis#1]
 -- Combinations: 36288000 Possible: 1152 Not possible: 36286848
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Die Anzahl der Kombinationen hat sich verändert: 144 => 1152
+Die Anzahl der Kombinationen hat sich erhöht: 144 => 1152
 
 MatchBox: Michelle & René... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 13,89% [160] <==

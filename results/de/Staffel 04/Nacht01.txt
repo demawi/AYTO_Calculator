@@ -3,13 +3,13 @@
 -- Berechne 04 - Nacht 1... [Ereignis#0]
 -- Combinations: 3628800 Possible: 3628800 Not possible: 0
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Ein Mann ist hinzugekommen: Marwin. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Marwin
 
 ==================================================================================================================================================
 -- Berechne 04 - Nacht 1 inkl. 1 neuer Person(en)... [Ereignis#1]
 -- Combinations: 199584000 Possible: 199584000 Not possible: 0
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Die Anzahl der Kombinationen hat sich verändert: 3628800 => 199584000
+Die Anzahl der Kombinationen hat sich erhöht: 3628800 => 199584000
 
 MatchBox: Valeria & Marwin... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 10,00% [19958400]

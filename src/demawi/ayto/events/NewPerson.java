@@ -18,4 +18,8 @@ public class NewPerson
       this.zusatzperson = zusatzperson;
    }
 
+   public boolean needsRecalculation() {
+      return true;
+   }
+
 }

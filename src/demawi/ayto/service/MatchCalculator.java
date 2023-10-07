@@ -8,15 +8,8 @@ import java.util.stream.Collectors;
 
 import demawi.ayto.events.ConstellationValidation;
 import demawi.ayto.events.Event;
-import demawi.ayto.events.NewPerson;
-import demawi.ayto.modell.AYTO_Pair;
-import demawi.ayto.modell.AYTO_Result;
-import demawi.ayto.modell.CalculationOptions;
-import demawi.ayto.modell.Frau;
-import demawi.ayto.modell.Mann;
-import demawi.ayto.modell.Person;
-import demawi.ayto.modell.StaffelData;
-import demawi.ayto.modell.Zeitpunkt;
+import demawi.ayto.events.PairInterpreter;
+import demawi.ayto.modell.*;
 import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.print.Formatter;
 import demawi.ayto.util.Pair;
@@ -52,7 +45,7 @@ public class MatchCalculator {
    }
 
    /**
-    * Suche nach NeuePerson Events um entsprechende Permutation-Cuts zu setzen.
+    * Seach for recalculation events (such as NewPerson or SameMatch).
     */
    public List<AYTO_Result> calculate(Consumer<String> out) {
       List<List<CalculationOptions>> realCalcOptions = new ArrayList<>();
@@ -60,7 +53,7 @@ public class MatchCalculator {
       realCalcOptions.add(curOptions);
       for (CalculationOptions opts : calcOptions) {
          Event evt = opts.getEvent();
-         if (evt instanceof NewPerson) {
+         if (evt != null && evt.needsRecalculation()) {
             curOptions = new ArrayList<>();
             realCalcOptions.add(curOptions);
          }
@@ -73,7 +66,7 @@ public class MatchCalculator {
    }
 
    /**
-    * Events dürfen nur zu Beginn ein Event NeuePerson enthalten.
+    * Precondition: NeedRecalculation-Events (NewPerson/SameMatch) dürfen nur zu Beginn eingetragen sein. Entsprechende Cuts müssen zuvor gesetzt worden sein.
     */
    private static List<AYTO_Result> calculateSafe(List<CalculationOptions> calcOptions, Consumer<String> out) {
       long start = System.currentTimeMillis();
@@ -81,6 +74,13 @@ public class MatchCalculator {
       CalculationOptions calcPrimaryOptions = calcOptions.get(0);
       StaffelData data = calcPrimaryOptions.getData();
       data.ensureDataIsClosed();
+      PairInterpreter lookup = calcPrimaryOptions.getLookup();
+      for(Person mann : calcPrimaryOptions.getMaenner()) {
+         lookup.lookup(mann);
+      }
+      for(Person frau : calcPrimaryOptions.getFrauen()) {
+         lookup.lookup(frau);
+      }
       AYTO_Permutator<Person, Person, AYTO_Pair> permutator = AYTO_Permutator.create(calcPrimaryOptions.getFrauen(),
             calcPrimaryOptions.getMaenner(), calcPrimaryOptions.getZusatztype(), AYTO_Pair::pair);
 
@@ -90,7 +90,7 @@ public class MatchCalculator {
          results.add(eventResults);
          for (CalculationOptions opt : calcOptions) {
             if (eventResults.size() == 0) {
-               // Die erste Validation ist alles von Anfang an bis zu diesem Ereignis
+               // Die erste Validierung ist alles von Anfang an bis zu diesem Ereignis
                eventResults.add(Pair.pair(opt, new AYTO_Result(opt)));
             }
             else {
@@ -102,9 +102,9 @@ public class MatchCalculator {
          return constellation -> {
             for (Pair<ConstellationValidation, AYTO_Result> entry : eventResults) {
                if (entry.getFirst()
-                     .isValid(constellation)) {
+                     .isValid(constellation, lookup)) {
                   entry.getSecond()
-                        .addResult(constellation, true);
+                        .addResult(constellation, true, lookup);
                }
                else {
                   break;

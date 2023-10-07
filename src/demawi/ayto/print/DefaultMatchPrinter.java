@@ -1,24 +1,18 @@
 package demawi.ayto.print;
 
 import java.util.List;
-import java.util.function.Consumer;
 
-import demawi.ayto.events.Event;
-import demawi.ayto.events.MatchBoxResult;
-import demawi.ayto.events.MatchingNight;
-import demawi.ayto.events.NewPerson;
-import demawi.ayto.modell.AYTO_Pair;
-import demawi.ayto.modell.AYTO_Result;
-import demawi.ayto.modell.CalculationOptions;
-import demawi.ayto.modell.Frau;
-import demawi.ayto.modell.StaffelData;
-import demawi.ayto.modell.Tag;
-import demawi.ayto.util.Language;
+import demawi.ayto.events.*;
+import demawi.ayto.modell.*;
 
 public class DefaultMatchPrinter
       extends MatchPrinter {
 
-   public static boolean withCalculationSummary = true;
+   /**
+    * For each event but MatchingNight. If the Matching Night has taken place, it's the last event but every day prints out the table anyway.
+    */
+   private static final boolean PRINT_TABLE_AFTER_EACH_EVENT = false;
+   private static final boolean WITH_CALCULATON_SUMMARY = true;
 
    @Override
    public void printDayResults(StaffelData data, int tagNr) {
@@ -46,12 +40,21 @@ public class DefaultMatchPrinter
             .getEvent(eventCount);
       if (event instanceof NewPerson) {
          printNewPerson((NewPerson) event, tagNr, eventCount, beforeResult, afterResult);
+         if (PRINT_TABLE_AFTER_EACH_EVENT)
+            printPossibilitiesAsTable(afterResult);
       }
       else if (event instanceof MatchBoxResult) {
          printMatchBox((MatchBoxResult) event, tagNr, eventCount, beforeResult, afterResult);
+         if (PRINT_TABLE_AFTER_EACH_EVENT)
+            printPossibilitiesAsTable(afterResult);
       }
       else if (event instanceof MatchingNight) {
          printMatchNight((MatchingNight) event, tagNr, eventCount, beforeResult, afterResult);
+      }
+      else if (event instanceof SameMatch) {
+         printSameMatch((SameMatch) event, tagNr, eventCount, beforeResult, afterResult);
+         if (PRINT_TABLE_AFTER_EACH_EVENT)
+            printPossibilitiesAsTable(afterResult);
       }
       else {
          throw new IllegalArgumentException("Event-Klasse kann noch nicht verarbeitet werden: " + event.getClass()
@@ -59,21 +62,26 @@ public class DefaultMatchPrinter
       }
    }
 
+   private void printSameMatch(SameMatch event, int tagNr, int eventCount, AYTO_Result previousResult,
+         AYTO_Result afterResult) {
+      print("Ereignis: " + event.getFirst()
+            .getNameWithoutMark() + " hat " + event.getSecond()
+            .getNameWithoutMark() + " rausgeworfen!");
+      printCalculationSummary(afterResult);
+      printCombinationChange(previousResult.getPossibleConstellationSize(), afterResult.getPossibleConstellationSize());
+   }
+
    private void printNewPerson(NewPerson event, int tagNr, int eventCount, AYTO_Result previousResult,
          AYTO_Result afterResult) {
       if (event.person instanceof Frau) {
-         print("Eine Frau ist hinzugekommen: " + event.person.getName()
-               + ". Die Anzahl der Kombinationen erhöht sich damit!");
+         print("Eine Frau ist hinzugekommen: " + event.person.getName());
       }
       else {
-         print("Ein Mann ist hinzugekommen: " + event.person.getName()
-               + ". Die Anzahl der Kombinationen erhöht sich damit!");
+         print("Ein Mann ist hinzugekommen: " + event.person.getName());
       }
       checkPrintImplicit(event);
       printCalculationSummary(afterResult);
-      print(
-            "Die Anzahl der Kombinationen hat sich verändert: " + previousResult.getPossibleConstellationSize() + " => "
-                  + afterResult.getPossibleConstellationSize());
+      printCombinationChange(previousResult.getPossibleConstellationSize(), afterResult.getPossibleConstellationSize());
    }
 
    private void printMatchBox(MatchBoxResult event, int tagNr, int eventCount, AYTO_Result previousResult,
@@ -147,8 +155,20 @@ public class DefaultMatchPrinter
       printCalculationSummary(afterResult);
    }
 
+   private void printCombinationChange(int from, int to) {
+      if (from < to) {
+         print("Die Anzahl der Kombinationen hat sich erhöht: " + from + " => " + to);
+      }
+      else if (to < from) {
+         print("Die Anzahl der Kombinationen hat sich reduziert: " + from + " => " + to);
+      }
+      else {
+         print("Die Anzahl der Kombinationen bleibt unverändert: " + from + " => " + to);
+      }
+   }
+
    private void printCalculationSummary(AYTO_Result result) {
-      if (!withCalculationSummary)
+      if (!WITH_CALCULATON_SUMMARY)
          return;
       print("");
       breakLine();

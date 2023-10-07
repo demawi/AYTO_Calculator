@@ -11,9 +11,9 @@ public class EventWithImplicits
 
    public final List<MatchBoxResult> implicits = new ArrayList<>();
 
-   public boolean isValid(Collection<AYTO_Pair> constellation) {
+   public boolean isValid(Collection<AYTO_Pair> constellation, PairInterpreter lookup) {
       for (MatchBoxResult implicit : implicits) {
-         if (!implicit.isValid(constellation)) {
+         if (!implicit.isValid(constellation, lookup)) {
             return false;
          }
       }

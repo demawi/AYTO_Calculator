@@ -3,13 +3,13 @@
 -- Berechne VIP02 - Nacht 4... [Ereignis#0]
 -- Combinations: 3628800 Possible: 3586 Not possible: 3625214
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Ein Mann ist hinzugekommen: Felix. Die Anzahl der Kombinationen erhöht sich damit!
+Ein Mann ist hinzugekommen: Felix
 
 ==================================================================================================================================================
 -- Berechne VIP02 - Nacht 4 inkl. 1 neuer Person(en)... [Ereignis#1]
 -- Combinations: 36288000 Possible: 35860 Not possible: 36252140
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Die Anzahl der Kombinationen hat sich verändert: 3586 => 35860
+Die Anzahl der Kombinationen hat sich erhöht: 3586 => 35860
 
 MatchBox: Luisa & Lukas... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 8,37% [3000] <==

@@ -40,14 +40,14 @@ public class MatchingNight
     return result;
   }
 
-  public int getLights(Collection<AYTO_Pair> assumptionModell) {
-    return MatchingNight.getLights(assumptionModell, this.constellation);
+  public int getLights(Collection<AYTO_Pair> assumptionModell, PairInterpreter lookup) {
+    return MatchingNight.getLights(assumptionModell, this.constellation, lookup);
   }
 
-  private static int getLights(Collection<AYTO_Pair> assumptionModell, Collection<AYTO_Pair> testConstellation) {
+  private static int getLights(Collection<AYTO_Pair> assumptionModell, Collection<AYTO_Pair> testConstellation, PairInterpreter lookup) {
     int lights = 0;
     for (AYTO_Pair pair : testConstellation) {
-      if (assumptionModell.contains(pair)) {
+      if (assumptionModell.contains(lookup.lookup(pair))) {
         lights++;
       }
     }
@@ -59,10 +59,10 @@ public class MatchingNight
    * die Konstellation somit weiterhin als valide eingestuft
    * werden kann.
    */
-  public boolean isValid(Collection<AYTO_Pair> constellation) {
+  public boolean isValid(Collection<AYTO_Pair> constellation, PairInterpreter lookup) {
     if (lights == null) // Ergebnis steht noch nicht fest
       return true;
-    return lights == getLights(constellation);
+    return lights == getLights(constellation, lookup);
   }
 
 }

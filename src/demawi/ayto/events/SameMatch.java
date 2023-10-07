@@ -3,13 +3,14 @@ package demawi.ayto.events;
 import java.util.Collection;
 
 import demawi.ayto.modell.AYTO_Pair;
+import demawi.ayto.modell.Markierung;
 import demawi.ayto.modell.Person;
 
 public class SameMatch
-      implements Event {
+      implements Event, PairInterpreter {
 
-   private Person first;
-   private Person second;
+   private final Person first;
+   private final Person second;
 
    public SameMatch(Person first, Person second) {
       this.first = first;
@@ -17,7 +18,36 @@ public class SameMatch
    }
 
    @Override
-   public boolean isValid(Collection<AYTO_Pair> constellation) {
-      return false;
+   public boolean isValid(Collection<AYTO_Pair> constellation, PairInterpreter lookup) {
+      return true;
    }
+
+   public Person getFirst() {
+      return first;
+   }
+
+   public Person getSecond() {
+      return second;
+   }
+
+   public boolean needsRecalculation() {
+      return true;
+   }
+
+   public void lookup(Person person) {
+      if (person.equals(first)) {
+         person.mark(new Markierung("/" + second.getNamePlusMark()));
+      }
+   }
+
+   public AYTO_Pair lookup(AYTO_Pair pair) {
+      if (pair.mann.equals(second)) {
+         return AYTO_Pair.pair(first, pair.frau);
+      }
+      else if (pair.frau.equals(second)) {
+         return AYTO_Pair.pair(pair.mann, first);
+      }
+      return pair;
+   }
+
 }

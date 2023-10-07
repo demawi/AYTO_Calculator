@@ -7,7 +7,7 @@ import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.print.DefaultMatchPrinter;
 
 import static demawi.ayto.modell.AYTO_Pair.pair;
-import static demawi.ayto.modell.Person.Markierung.CAN_BE_A_DOUBLE;
+import static demawi.ayto.modell.Markierung.CAN_BE_A_DOUBLE;
 
 public class AYTO_01
       extends StaffelData {
