@@ -1,0 +1,61 @@
+
+==================================================================================================================================================
+-- Berechne VIP03 - Nacht 8... [Ereignis#0]
+-- Combinations: 3628800 Possible: 3 Not possible: 3628797
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+MatchBox: Sabrina & Max... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 0,00% [0]
+Nein => 100,00% [3] <==
+Die Kombinationen reduzieren sich: 3 => 3
+
+==================================================================================================================================================
+-- Berechne VIP03 - Nacht 8 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Combinations: 3628800 Possible: 3 Not possible: 3628797
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Darya & Danilo: 100,00%
+Sandra & Fabio: 0,00%
+Stefanie & Mike: 0,00%
+Alicia & Paco: 66,67%
+Jennifer & Marvin: 66,67%
+Kim & Max: 33,33%
+Shakira & Steffen: 66,67%
+Sabrina & Emanuell: 66,67%
+Paulina & Teezy: 0,00%
+Marie & Elia: 66,67%
+
+Wahrscheinlichkeit für entsprechende Spotanzahl:
+0 => 0,00% [0]
+1 => 33,33% [1] <==
+2 => 0,00% [0]
+3 => 0,00% [0]
+4 => 0,00% [0]
+5 => 0,00% [0]
+6 => 33,33% [1]
+7 => 33,33% [1]
+8 => 0,00% [0]
+9 => 0,00% [0]
+10 => 0,00% [0]
+Die Kombinationen reduzieren sich: 3 => 1
+
+==================================================================================================================================================
+-- Berechne VIP03 - Nacht 8 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
+-- Combinations: 3628800 Possible: 1 Not possible: 3628799
+--------------------------------------------------------------------------------------------------------------------------------------------------
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+           Alicia       Darya        Jennifer     Kim          Marie        Paulina      Sabrina      Sandra       Shakira      Stefanie     
+Danilo       -     (0)    ✓     (7)    -     (0)    -     (0)    -     (0)    -     (1)    -     (0)    -     (0)    -     (0)    -     (0)  
+Elia         ✓     (0)    -     (0)    -     (1)    -     (0)    -     (4)    -     (0)    -     (0)    -     (1)    -     (0)    -     (2)  
+Emanuell     -     (0)    -     (1)    -     (1)    -     (0)    -     (0)    -     (0)    -     (4)    -     (0)    -     (0)    ✓     (2)  
+Fabio        -     (1)    -     (0)    -     (0)    -     (0)    ✓     (3)    -     (0)    -     (0)    -     (1)    -     (3)    -     (0)  
+Marvin       -     (0)    -     (0)    -     (5)    -     (0)    -     (0)    -     (1)    -     (0)    -     (0)    ✓     (1)    -     (1)  
+Max/Peter    -     (0)    -     (0)    -     (0)    -     (1)    -     (0)    ✓     (1)    -     (0)    -     (1)    -     (1)    -     (0)  
+Mike         -     (0)    -     (0)    -     (0)    -     (1)    -     (0)    -     (3)    ✓     (1)    -     (1)    -     (0)    -     (1)  
+Paco         -     (2)    -     (0)    ✓     (1)    -     (1)    -     (0)    -     (0)    -     (1)    -     (2)    -     (1)    -     (0)  
+Steffen      -     (3)    -     (0)    -     (0)    -     (0)    -     (1)    -     (1)    -     (0)    ✓     (2)    -     (1)    -     (0)  
+Teezy        -     (1)    -     (0)    -     (0)    ✓     (4)    -     (0)    -     (1)    -     (0)    -     (0)    -     (0)    -     (2)  
+
+Mögliche Paare: 10/100
+*: Diese Person teilt sich ein Match.
