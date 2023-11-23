@@ -15,8 +15,8 @@ public class Person
   }
 
   @Override
-  public boolean isExtra() {
-    return Markierung.CAN_BE_AN_EXTRA.equals(marked);
+  public boolean isExtraMatch() {
+    return hasMark(Markierung.CAN_BE_AN_EXTRA_MATCH);
   }
 
   public void mark(Markierung mark) {

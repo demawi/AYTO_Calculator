@@ -22,9 +22,9 @@ public class AYTO_05
    private final Frau Sina = frau("Sina");
    private final Frau Shelly = frau("Shelly");
    private final Frau Tais = frau("Tais");
-   private final Frau Lina = frau("Lina", Markierung.CAN_BE_AN_EXTRA, true);
+   private final Frau Lina = frau("Lina", Markierung.CAN_BE_AN_EXTRA_MATCH, true);
 
-   private final Frau Melanie = frau("Melanie", Markierung.CAN_BE_AN_EXTRA, true);
+   private final Frau Melanie = frau("Melanie", Markierung.CAN_BE_AN_EXTRA_MATCH, true);
 
    private final Mann Eti = mann("Eti");
    private final Mann Gerrit = mann("Gerrit");
@@ -45,6 +45,8 @@ public class AYTO_05
             .matchNight(2, pair(Lina, Ryan), pair(Sina, Kevin), pair(Tais, Paolo), pair(Jana, Sidar),
                   pair(Julia, Martin), pair(Pia, Gerrit), pair(Lisa_Marie, Eti), pair(Shelly, Wilson),
                   pair(Maja, Paddy), pair(Edda, Sandro)); // Afra
+
+      newTag().matchBox(pair(Lina, Ryan), null);
 
    }
 

@@ -4,7 +4,7 @@ public class Markierung {
    /**
     * The persons marked with this, can have a shared match.
     */
-   public static final Markierung CAN_BE_AN_EXTRA = new Markierung("*");
+   public static final Markierung CAN_BE_AN_EXTRA_MATCH = new Markierung("*");
 
    private final String val;
 

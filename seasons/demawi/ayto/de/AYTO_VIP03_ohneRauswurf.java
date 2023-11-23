@@ -33,7 +33,7 @@ public class AYTO_VIP03_ohneRauswurf
    private final Mann Emanuell = mann("Emanuell");
    private final Mann Steffen = mann("Steffen");
    private final Mann Fabio = mann("Fabio");
-   private final Mann Max = mann("Max", Markierung.CAN_BE_AN_EXTRA, true);
+   private final Mann Max = mann("Max", Markierung.CAN_BE_AN_EXTRA_MATCH, true);
 
    public AYTO_VIP03_ohneRauswurf() {
       super(AYTO_Permutator.ZUSATZTYPE.MARKED);

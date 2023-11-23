@@ -36,7 +36,7 @@ public class AYTO_05
    private final Mann Tyler = mann("Tyler");
 
    public AYTO_05() {
-      super(AYTO_Permutator.ZUSATZTYPE.KEINER, 11);
+      super(AYTO_Permutator.ZUSATZTYPE.NONE, 11);
 
       newTag().matchBox(pair(Gianna, Hayden), false)
             .matchNight(2, pair(Alicia, Andre), pair(Carolina, Joey), pair(Casandra, Jaylan), pair(Gianna, Ozzy),

@@ -206,13 +206,15 @@ public class StaffelData {
         if (person instanceof Frau) {
           if (!curFrauen.contains(person)) {
             throw new IllegalStateException(
-                  "Frau existiert noch nicht rechtzeitig: " + person + " an Tag " + (currentConsistenceDay + 1));
+                  "Frau existiert noch nicht rechtzeitig: " + person + " an Tag " + (currentConsistenceDay + 1)
+                        + ". Die Person muss lateCheckIn=false aufweisen und im Nachhinein über ein NewPerson-Event hinzugefügt werden!");
           }
         }
-        else if (person instanceof Mann) { // Mann
+        else if (person instanceof Mann) {
           if (!curMaenner.contains(person)) {
             throw new IllegalStateException(
-                  "Mann existiert noch nicht rechtzeitig: " + person + " an Tag " + (currentConsistenceDay + 1));
+                  "Mann existiert noch nicht rechtzeitig: " + person + " an Tag " + (currentConsistenceDay + 1)
+                        + ". Die Person muss lateCheckIn=false aufweisen und im Nachhinein über ein NewPerson-Event hinzugefügt werden!");
           }
         }
       }

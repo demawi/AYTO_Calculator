@@ -19,7 +19,7 @@ public abstract class AYTO_Permutator<F, M, R> {
 
   public enum ZUSATZTYPE {
     BISEXUAL, // Jeder kann mit jedem
-    KEINER, // Jeder hat genau einen Partner zugewiesen es gibt keine Doppelpartner.
+    NONE, // Jeder hat genau einen Partner zugewiesen es gibt keine Doppelpartner.
     MARKED, // Die markieren Personen können der Doppelpartner zu jemand anderem sein
     ;
 
@@ -27,7 +27,7 @@ public abstract class AYTO_Permutator<F, M, R> {
           List<M> maenner) {
       List<Type> result = new ArrayList<>();
       Consumer<Type> checkZusatz = p -> {
-        if (p.isExtra())
+        if (p.isExtraMatch())
           result.add(p);
       };
       frauen.forEach(checkZusatz);
@@ -100,15 +100,15 @@ public abstract class AYTO_Permutator<F, M, R> {
 
   protected boolean canBeAnExtra(Object check) {
     if (check instanceof ExtraEntry) {
-      return ((ExtraEntry) check).isExtra();
+      return ((ExtraEntry) check).isExtraMatch();
     }
     return false;
   }
 
   public static <F, M, R> AYTO_Permutator<F, M, R> create(List<F> setA, List<M> setB, ZUSATZTYPE zusatzType,
         BiFunction<F, M, R> packingFunction) {
-    if (zusatzType == ZUSATZTYPE.KEINER) {
-      return new AYTO_PermutatorKEINER<>(setA, setB, packingFunction);
+    if (zusatzType == ZUSATZTYPE.NONE) {
+      return new AYTO_PermutatorSTANDARD<>(setA, setB, packingFunction);
     }
     else if (zusatzType == ZUSATZTYPE.BISEXUAL) {
       return new AYTO_PermutatorBISEXUAL<>(setA, setB, packingFunction);

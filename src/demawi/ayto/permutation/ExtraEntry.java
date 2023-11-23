@@ -2,6 +2,6 @@ package demawi.ayto.permutation;
 
 public interface ExtraEntry {
 
-   boolean isExtra();
+   boolean isExtraMatch();
 
 }

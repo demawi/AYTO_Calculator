@@ -131,27 +131,27 @@ public class AYTO_PermutatorTest {
    }
 
    public List<Person> markAll(List<Person> persons) {
-      persons.forEach(p -> p.mark(Markierung.CAN_BE_AN_EXTRA));
+      persons.forEach(p -> p.mark(Markierung.CAN_BE_AN_EXTRA_MATCH));
       return persons;
    }
 
    public List<Person> markAll(List<Person> persons, boolean value) {
       if (value) {
-         persons.forEach(p -> p.mark(Markierung.CAN_BE_AN_EXTRA));
+         persons.forEach(p -> p.mark(Markierung.CAN_BE_AN_EXTRA_MATCH));
       }
       return persons;
    }
 
    public List<Person> markLast(List<Person> persons) {
       persons.get(persons.size() - 1)
-            .mark(Markierung.CAN_BE_AN_EXTRA);
+            .mark(Markierung.CAN_BE_AN_EXTRA_MATCH);
       return persons;
    }
 
    public List<Person> markLast(List<Person> persons, boolean value) {
       if (value) {
          persons.get(persons.size() - 1)
-               .mark(Markierung.CAN_BE_AN_EXTRA);
+               .mark(Markierung.CAN_BE_AN_EXTRA_MATCH);
       }
       return persons;
    }
@@ -165,7 +165,7 @@ public class AYTO_PermutatorTest {
       Frau mann1 = new Frau("1");
       Frau mann2 = new Frau("2");
       Frau mann3 = new Frau("3");
-      frau4.mark(Markierung.CAN_BE_AN_EXTRA);
+      frau4.mark(Markierung.CAN_BE_AN_EXTRA_MATCH);
 
       List<Person> frauen = Arrays.asList(frau1, frau2, frau3, frau4);
       List<Person> maenner = Arrays.asList(mann1, mann2, mann3);
@@ -175,7 +175,7 @@ public class AYTO_PermutatorTest {
       assertNull(permutator.canAdd(ind("C"), ind("3"), pairs(false, "A1", "B3")));
       assertNotNull(permutator.canAdd(ind("D"), ind("1"), pairs(false, "A1", "B2")));
 
-      frau3.mark(Markierung.CAN_BE_AN_EXTRA);
+      frau3.mark(Markierung.CAN_BE_AN_EXTRA_MATCH);
       permutator = AYTO_Permutator.create(frauen, maenner, AYTO_Permutator.ZUSATZTYPE.MARKED, (a, b) -> "" + a + b);
       assertNotNull(permutator.canAdd(ind("B"), ind("3"), pairs(false, "A1")));
       assertNotNull(permutator.canAdd(ind("C"), ind("3"), pairs(false, "A1", "B3")));
