@@ -36,7 +36,7 @@ public class AYTO_04
   private final Mann Marwin = mann("Marwin", CAN_BE_A_DOUBLE);
 
   public AYTO_04() {
-    super(AYTO_Permutator.ZUSATZTYPE.JEDER);
+    super(AYTO_Permutator.ZUSATZTYPE.ALLE);
 
     newTag().addNew(Marwin)
           .matchBox(pair(Valeria, Marwin), false)

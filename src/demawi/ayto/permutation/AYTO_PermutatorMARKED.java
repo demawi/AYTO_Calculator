@@ -8,41 +8,42 @@ import java.util.function.BiFunction;
 /**
  * Jeder Kandidat, kann sich zu jemand anderem doppeln.
  */
-public class AYTO_PermutatorJEDER<F, M, R>
+public class AYTO_PermutatorMARKED<F, M, R>
       extends AYTO_Permutator<F, M, R> {
 
-   public AYTO_PermutatorJEDER(List<F> frauen, List<M> maenner, BiFunction<F, M, R> packingFunction) {
-      super(frauen, maenner, packingFunction);
+   public AYTO_PermutatorMARKED(List<F> frauen, List<M> maenner, ZUSATZTYPE zusatzType,
+         BiFunction<F, M, R> packingFunction) {
+      super(frauen, maenner, zusatzType, packingFunction);
    }
 
    /**
     * Prüft, ob ein Paar wirklich zu der bisherigen Konstellation hinzugefügt werden kann.
     * <p>
-    * Nur für ZUSATZTYPE.JEDER
+    * Nur für ZUSATZTYPE.MARKED
     */
    protected Object[] canAdd(int frau, int mann, Object[] constellation) {
-      boolean foundDouble = (Boolean) constellation[0];
+      boolean usedDouble = (Boolean) constellation[0];
       for (int i = 1, l = constellation.length; i < l; i++) {
          Integer current = (Integer) constellation[i];
          int decodedFrau = decodeFrau(current);
          if (decodedFrau == frau) {
-            if (foundDouble || anzahlFrauen > minSize) {
+            if (usedDouble || !canBeDoubleFrau(frau)) {
                return null;
             }
-            foundDouble = true;
+            usedDouble = true;
          }
 
          int decodedMann = decodeMann(current);
          if (decodedMann == mann) {
-            if (foundDouble || anzahlMaenner > minSize) {
+            if (usedDouble || !canBeDoubleMann(mann)) {
                return null;
             }
-            foundDouble = true;
+            usedDouble = true;
          }
       }
       int number = encodePair(frau, mann);
       Object[] result = increment(constellation, number);
-      result[0] = foundDouble;
+      result[0] = usedDouble;
       return result;
    }
 

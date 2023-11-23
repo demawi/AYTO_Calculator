@@ -2,6 +2,7 @@ package demawi.ayto.de;
 
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
+import demawi.ayto.modell.Markierung;
 import demawi.ayto.modell.StaffelData;
 import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.print.DefaultMatchPrinter;
@@ -32,7 +33,7 @@ public class AYTO_VIP03
    private final Mann Emanuell = mann("Emanuell");
    private final Mann Steffen = mann("Steffen");
    private final Mann Fabio = mann("Fabio");
-   private final Mann Max = mann("Max");
+   private final Mann Max = mann("Max", Markierung.CAN_BE_A_DOUBLE, true);
 
    public AYTO_VIP03() {
       super(AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER);

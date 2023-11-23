@@ -9,8 +9,8 @@ import java.util.function.BiFunction;
 public class AYTO_PermutatorKEINER<F, M, R>
       extends AYTO_Permutator<F, M, R> {
 
-   public AYTO_PermutatorKEINER(List<F> frauen, List<M> maenner, BiFunction<F, M, R> packingFunction) {
-      super(frauen, maenner, packingFunction);
+   public AYTO_PermutatorKEINER(List<F> frauen, List<M> maenner, ZUSATZTYPE zusatzType, BiFunction<F, M, R> packingFunction) {
+      super(frauen, maenner, zusatzType, packingFunction);
    }
 
    /**

@@ -27,7 +27,7 @@ public class AYTO_PermutatorTest {
       boolean withFullCheck = true;
       long start = System.currentTimeMillis();
       AYTO_Permutator<String, String, String> permutator = AYTO_Permutator.create(frauen(frauenAnzahl),
-            maenner(maennerAnzahl), AYTO_Permutator.ZUSATZTYPE.JEDER, (a, b) -> "" + a + b);
+            maenner(maennerAnzahl), AYTO_Permutator.ZUSATZTYPE.ALLE, (a, b) -> "" + a + b);
       atomicCount.set(0);
       permutator.permutate(() -> result -> {
          atomicCount.incrementAndGet();
@@ -58,7 +58,7 @@ public class AYTO_PermutatorTest {
    @Test
    public void testBigJEDER() {
       AYTO_Permutator<String, String, String> permutator = AYTO_Permutator.create(frauen(11), maenner(10),
-            AYTO_Permutator.ZUSATZTYPE.JEDER, (a, b) -> "" + a + b);
+            AYTO_Permutator.ZUSATZTYPE.ALLE, (a, b) -> "" + a + b);
       long start = System.currentTimeMillis();
       atomicCount.set(0);
       permutator.permutate(() -> result -> {
@@ -86,7 +86,7 @@ public class AYTO_PermutatorTest {
    @Test
    public void testCanAddBigJEDER() {
       AYTO_Permutator<String, String, String> permutator = AYTO_Permutator.create(frauen(11), maenner(10),
-            AYTO_Permutator.ZUSATZTYPE.JEDER, (a, b) -> "" + a + b);
+            AYTO_Permutator.ZUSATZTYPE.ALLE, (a, b) -> "" + a + b);
       // UrsprungDoppelt: 1 Es fehlt: E4
       assertNull(permutator.canAdd(ind("A"), ind("1"),
             pairs(true, "A1", "I9", "G8", "C7", "J2", "F0", "K5", "H6", "B1", "D3")));
@@ -105,7 +105,7 @@ public class AYTO_PermutatorTest {
       List<String> frauen = Arrays.asList("A", "B", "C", "D");
       List<String> maenner = Arrays.asList("1", "2", "3");
       AYTO_Permutator<String, String, String> permutator = AYTO_Permutator.create(frauen, maenner,
-            AYTO_Permutator.ZUSATZTYPE.JEDER, (a, b) -> "" + a + b);
+            AYTO_Permutator.ZUSATZTYPE.ALLE, (a, b) -> "" + a + b);
       assertNotNull(permutator.canAdd(ind("B"), ind("2"), pairs(false, "A1")));
       assertNotNull(permutator.canAdd(ind("C"), ind("1"), pairs(false, "A1", "B2")));
       assertNotNull(permutator.canAdd(ind("D"), ind("3"), pairs(true, "A1", "B2", "C1")));

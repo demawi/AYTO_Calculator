@@ -2,6 +2,7 @@ package demawi.ayto.us;
 
 import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Mann;
+import demawi.ayto.modell.Markierung;
 import demawi.ayto.modell.StaffelData;
 import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.print.DefaultMatchPrinter;
@@ -21,7 +22,7 @@ public class AYTO_02
    private final Frau Paris = frau("Paris");
    private final Frau Shelby = frau("Shelby");
    private final Frau Tyler = frau("Tyler");
-   private final Frau Christina = frau("Christina", true);
+   private final Frau Christina = frau("Christina", Markierung.CAN_BE_A_DOUBLE, true);
 
    private final Mann Alex = mann("Alex");
    private final Mann Anthony = mann("Anthony");

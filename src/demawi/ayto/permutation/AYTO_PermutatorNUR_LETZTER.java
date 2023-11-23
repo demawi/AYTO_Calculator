@@ -1,8 +1,6 @@
 package demawi.ayto.permutation;
 
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.function.BiFunction;
 
 /**
@@ -11,8 +9,9 @@ import java.util.function.BiFunction;
 public class AYTO_PermutatorNUR_LETZTER<F, M, R>
       extends AYTO_Permutator<F, M, R> {
 
-   public AYTO_PermutatorNUR_LETZTER(List<F> frauen, List<M> maenner, BiFunction<F, M, R> packingFunction) {
-      super(frauen, maenner, packingFunction);
+   public AYTO_PermutatorNUR_LETZTER(List<F> frauen, List<M> maenner, ZUSATZTYPE zusatzType,
+         BiFunction<F, M, R> packingFunction) {
+      super(frauen, maenner, zusatzType, packingFunction);
    }
 
    /**

@@ -2,13 +2,21 @@ package demawi.ayto.modell;
 
 import java.util.Objects;
 
-public class Person {
+import demawi.ayto.permutation.DoubleEntry;
+
+public class Person
+      implements DoubleEntry {
 
   private final String name;
   public Markierung marked;
 
   public Person(String name) {
     this.name = name;
+  }
+
+  @Override
+  public boolean canBeDouble() {
+    return Markierung.CAN_BE_A_DOUBLE.equals(marked);
   }
 
   public void mark(Markierung mark) {
@@ -61,4 +69,5 @@ public class Person {
   public int hashCode() {
     return Objects.hash(name);
   }
+
 }

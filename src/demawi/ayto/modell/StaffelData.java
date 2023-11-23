@@ -226,25 +226,9 @@ public class StaffelData {
           Person newPerson = event.person;
           if (newPerson instanceof Frau) {
             curFrauen.add((Frau) newPerson);
-            if (curFrauen.size() > 10) {
-              if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.JEDER) {
-                initialFrauen.forEach(f -> f.mark(Markierung.CAN_BE_A_DOUBLE));
-              }
-              if (event.zusatzperson) {
-                newPerson.mark(Markierung.CAN_BE_A_DOUBLE);
-              }
-            }
           }
           else {
             curMaenner.add((Mann) newPerson);
-            if (curMaenner.size() > 10) {
-              if (getZusatztype() == AYTO_Permutator.ZUSATZTYPE.JEDER) {
-                initialMaenner.forEach(f -> f.mark(Markierung.CAN_BE_A_DOUBLE));
-              }
-              if (event.zusatzperson) {
-                newPerson.mark(Markierung.CAN_BE_A_DOUBLE);
-              }
-            }
           }
         }
         else if (evt instanceof MatchBoxResult) {
