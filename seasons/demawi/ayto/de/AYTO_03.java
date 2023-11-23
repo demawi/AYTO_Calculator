@@ -7,7 +7,7 @@ import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.print.DefaultMatchPrinter;
 
 import static demawi.ayto.modell.AYTO_Pair.pair;
-import static demawi.ayto.modell.Markierung.CAN_BE_A_DOUBLE;
+import static demawi.ayto.modell.Markierung.CAN_BE_AN_EXTRA;
 
 public class AYTO_03
       extends StaffelData {
@@ -22,7 +22,7 @@ public class AYTO_03
   private final Frau Isabelle = frau("Isabelle");
   private final Frau Raphaela = frau("Raphaela");
   private final Frau Estelle = frau("Estelle");
-  private final Frau Desiree = frau("Desiree", CAN_BE_A_DOUBLE, true);
+  private final Frau Desiree = frau("Desiree", CAN_BE_AN_EXTRA, true);
 
   private final Mann Leon = mann("Leon");
   private final Mann Mike = mann("Mike");

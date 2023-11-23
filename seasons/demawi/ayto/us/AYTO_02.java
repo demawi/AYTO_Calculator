@@ -22,7 +22,7 @@ public class AYTO_02
    private final Frau Paris = frau("Paris");
    private final Frau Shelby = frau("Shelby");
    private final Frau Tyler = frau("Tyler");
-   private final Frau Christina = frau("Christina", Markierung.CAN_BE_A_DOUBLE, true);
+   private final Frau Christina = frau("Christina", Markierung.CAN_BE_AN_EXTRA, true);
 
    private final Mann Alex = mann("Alex");
    private final Mann Anthony = mann("Anthony");

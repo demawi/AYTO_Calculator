@@ -1,7 +1,10 @@
 package demawi.ayto.modell;
 
 public class Markierung {
-   public static final Markierung CAN_BE_A_DOUBLE = new Markierung("*");
+   /**
+    * The persons marked with this, can have a shared match.
+    */
+   public static final Markierung CAN_BE_AN_EXTRA = new Markierung("*");
 
    private final String val;
 

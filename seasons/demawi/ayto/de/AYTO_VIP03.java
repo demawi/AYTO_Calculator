@@ -33,7 +33,7 @@ public class AYTO_VIP03
    private final Mann Emanuell = mann("Emanuell");
    private final Mann Steffen = mann("Steffen");
    private final Mann Fabio = mann("Fabio");
-   private final Mann Max = mann("Max", Markierung.CAN_BE_A_DOUBLE, true);
+   private final Mann Max = mann("Max", Markierung.CAN_BE_AN_EXTRA, true);
 
    public AYTO_VIP03() {
       super(AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER);

@@ -3,14 +3,11 @@ package demawi.ayto.permutation;
 import java.util.List;
 import java.util.function.BiFunction;
 
-/**
- * Nur der übschüssige Kandidat, kann sich zu jemand anderem doppeln.
- */
 public class AYTO_PermutatorKEINER<F, M, R>
       extends AYTO_Permutator<F, M, R> {
 
-   public AYTO_PermutatorKEINER(List<F> frauen, List<M> maenner, ZUSATZTYPE zusatzType, BiFunction<F, M, R> packingFunction) {
-      super(frauen, maenner, zusatzType, packingFunction);
+   public AYTO_PermutatorKEINER(List<F> frauen, List<M> maenner, BiFunction<F, M, R> packingFunction) {
+      super(frauen, maenner, packingFunction);
    }
 
    /**

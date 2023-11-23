@@ -5,15 +5,11 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.BiFunction;
 
-/**
- * Jeder Kandidat, kann sich zu jemand anderem doppeln.
- */
 public class AYTO_PermutatorMARKED<F, M, R>
       extends AYTO_Permutator<F, M, R> {
 
-   public AYTO_PermutatorMARKED(List<F> frauen, List<M> maenner, ZUSATZTYPE zusatzType,
-         BiFunction<F, M, R> packingFunction) {
-      super(frauen, maenner, zusatzType, packingFunction);
+   public AYTO_PermutatorMARKED(List<F> frauen, List<M> maenner, BiFunction<F, M, R> packingFunction) {
+      super(frauen, maenner, packingFunction);
    }
 
    /**
@@ -22,23 +18,29 @@ public class AYTO_PermutatorMARKED<F, M, R>
     * Nur für ZUSATZTYPE.MARKED
     */
    protected Object[] canAdd(int frau, int mann, Object[] constellation) {
+      boolean[] usedExtraFrauen = new boolean[anzahlFrauen];
+      boolean[] usedExtraMaenner = new boolean[anzahlMaenner];
       boolean usedDouble = (Boolean) constellation[0];
       for (int i = 1, l = constellation.length; i < l; i++) {
          Integer current = (Integer) constellation[i];
          int decodedFrau = decodeFrau(current);
-         if (decodedFrau == frau) {
-            if (usedDouble || !canBeDoubleFrau(frau)) {
+         if (decodedFrau == frau) { // die Frau ist bereits enthalten
+            // Wenn noch kein Doppel genutzt wurde, könnte erlaubt sein, wenn der Mann ein Zusatzmann ist
+            if (usedDouble || !isAnExtraMann(mann) || usedExtraMaenner[mann]) { // aber auch nur einmal
                return null;
             }
             usedDouble = true;
+            usedExtraMaenner[mann] = true;
          }
 
          int decodedMann = decodeMann(current);
-         if (decodedMann == mann) {
-            if (usedDouble || !canBeDoubleMann(mann)) {
+         if (decodedMann == mann) { // der Mann ist bereits enthalten
+            // Wenn noch kein Doppel genutzt wurde, könnte erlaubt sein, wenn die Frau eine Zusatzfrau ist
+            if (usedDouble || !isAnExtraFrau(frau) || usedExtraFrauen[frau]) { // aber auch nur einmal
                return null;
             }
             usedDouble = true;
+            usedExtraFrauen[frau] = true;
          }
       }
       int number = encodePair(frau, mann);

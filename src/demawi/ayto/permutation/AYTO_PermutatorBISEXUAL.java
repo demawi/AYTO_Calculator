@@ -7,14 +7,11 @@ import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-/**
- * Nur der übschüssige Kandidat, kann sich zu jemand anderem doppeln.
- */
 public class AYTO_PermutatorBISEXUAL<F, M, R>
       extends AYTO_Permutator<F, M, R> {
 
-   public AYTO_PermutatorBISEXUAL(List<F> frauen, List<M> maenner, ZUSATZTYPE zusatzType, BiFunction<F, M, R> packingFunction) {
-      super(frauen, maenner, zusatzType, packingFunction);
+   public AYTO_PermutatorBISEXUAL(List<F> frauen, List<M> maenner, BiFunction<F, M, R> packingFunction) {
+      super(frauen, maenner, packingFunction);
    }
 
    /**
@@ -23,7 +20,8 @@ public class AYTO_PermutatorBISEXUAL<F, M, R>
     * Nur für {@link demawi.ayto.permutation.AYTO_Permutator.ZUSATZTYPE#BISEXUAL}
     */
    protected Object[] canAdd(int frau, int mann, Object[] constellation) {
-      if(frau == mann) return null;
+      if (frau == mann)
+         return null;
       for (Object current : constellation) {
          int curFirst = decodeFrau((Integer) current);
          int curSecond = decodeMann((Integer) current);

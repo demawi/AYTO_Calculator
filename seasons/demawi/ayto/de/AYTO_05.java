@@ -22,9 +22,9 @@ public class AYTO_05
    private final Frau Sina = frau("Sina");
    private final Frau Shelly = frau("Shelly");
    private final Frau Tais = frau("Tais");
-   private final Frau Lina = frau("Lina", Markierung.CAN_BE_A_DOUBLE);
+   private final Frau Lina = frau("Lina", Markierung.CAN_BE_AN_EXTRA);
 
-   private final Frau Melanie = frau("Melanie", Markierung.CAN_BE_A_DOUBLE, true);
+   private final Frau Melanie = frau("Melanie", Markierung.CAN_BE_AN_EXTRA, true);
 
    private final Mann Eti = mann("Eti");
    private final Mann Gerrit = mann("Gerrit");

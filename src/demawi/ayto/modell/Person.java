@@ -2,10 +2,10 @@ package demawi.ayto.modell;
 
 import java.util.Objects;
 
-import demawi.ayto.permutation.DoubleEntry;
+import demawi.ayto.permutation.ExtraEntry;
 
 public class Person
-      implements DoubleEntry {
+      implements ExtraEntry {
 
   private final String name;
   public Markierung marked;
@@ -15,8 +15,8 @@ public class Person
   }
 
   @Override
-  public boolean canBeDouble() {
-    return Markierung.CAN_BE_A_DOUBLE.equals(marked);
+  public boolean isExtra() {
+    return Markierung.CAN_BE_AN_EXTRA.equals(marked);
   }
 
   public void mark(Markierung mark) {

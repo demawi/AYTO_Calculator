@@ -7,6 +7,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.junit.jupiter.api.Test;
 
+import demawi.ayto.modell.Frau;
+import demawi.ayto.modell.Markierung;
+import demawi.ayto.modell.Person;
 import demawi.ayto.print.Formatter;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -110,6 +113,32 @@ public class AYTO_PermutatorTest {
       assertNotNull(permutator.canAdd(ind("C"), ind("1"), pairs(false, "A1", "B2")));
       assertNotNull(permutator.canAdd(ind("D"), ind("3"), pairs(true, "A1", "B2", "C1")));
       assertNull(permutator.canAdd(ind("D"), ind("2"), pairs(true, "A1", "B2", "C1")));
+   }
+
+   @Test
+   public void testCanAddSmallMARKED() {
+      Frau frau1 = new Frau("A");
+      Frau frau2 = new Frau("B");
+      Frau frau3 = new Frau("C");
+      Frau frau4 = new Frau("D");
+      Frau mann1 = new Frau("1");
+      Frau mann2 = new Frau("2");
+      Frau mann3 = new Frau("3");
+      frau4.mark(Markierung.CAN_BE_AN_EXTRA);
+
+      List<Person> frauen = Arrays.asList(frau1, frau2, frau3, frau4);
+      List<Person> maenner = Arrays.asList(mann1, mann2, mann3);
+      AYTO_Permutator<Person, Person, String> permutator = AYTO_Permutator.create(frauen, maenner,
+            AYTO_Permutator.ZUSATZTYPE.MARKED, (a, b) -> "" + a + b);
+      assertNotNull(permutator.canAdd(ind("B"), ind("3"), pairs(false, "A1")));
+      assertNull(permutator.canAdd(ind("C"), ind("3"), pairs(false, "A1", "B3")));
+      assertNotNull(permutator.canAdd(ind("D"), ind("1"), pairs(false, "A1", "B2")));
+
+      frau3.mark(Markierung.CAN_BE_AN_EXTRA);
+      permutator = AYTO_Permutator.create(frauen, maenner, AYTO_Permutator.ZUSATZTYPE.MARKED, (a, b) -> "" + a + b);
+      assertNotNull(permutator.canAdd(ind("B"), ind("3"), pairs(false, "A1")));
+      assertNotNull(permutator.canAdd(ind("C"), ind("3"), pairs(false, "A1", "B3")));
+      assertNotNull(permutator.canAdd(ind("D"), ind("1"), pairs(false, "A1", "B2")));
    }
 
    private static Object[] pairs(Object... strs) {
