@@ -36,7 +36,7 @@ public class AYTO_02
    private final Mann Pratt = mann("Pratt"); // Tyler Pratt
 
    public AYTO_02() {
-      super(AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER);
+      super(AYTO_Permutator.ZUSATZTYPE.MARKED);
 
       newTag().addNew(Christina)
             .matchBox(pair(Jessica, Brandon), false)

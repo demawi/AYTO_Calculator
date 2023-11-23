@@ -5,7 +5,6 @@ import java.util.function.Consumer;
 
 import demawi.ayto.events.MatchingNight;
 import demawi.ayto.modell.*;
-import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.service.MatchCalculator;
 import demawi.ayto.util.Language;
 
@@ -94,7 +93,7 @@ public abstract class MatchPrinter {
       table.add(new ArrayList<>());
       table.get(0)
             .add("");
-      boolean markedPerson = false;
+      int markedPerson = 0;
       List<Person> sortedFrauen = new ArrayList<>(result.getFrauen());
       List<Person> sortedMaenner = new ArrayList<>(result.getMaenner());
       sortedFrauen.sort(Comparator.comparing(a -> a.getNamePlusMark()));
@@ -103,12 +102,12 @@ public abstract class MatchPrinter {
          table.get(0)
                .add(frau.getNamePlusMark());
          if (frau.isMarked()) {
-            markedPerson = true;
+            markedPerson++;
          }
       }
       for (Person mann : sortedMaenner) {
          if (mann.isMarked()) {
-            markedPerson = true;
+            markedPerson++;
          }
          List<String> line = new ArrayList<>();
          table.add(line);
@@ -138,13 +137,11 @@ public abstract class MatchPrinter {
       }
       print(TableFormatter.formatAsTable(table));
       print("Mögliche Paare: " + result.possiblePairCount.size() + "/" + (sortedFrauen.size() * sortedMaenner.size()));
-      if (markedPerson) {
-         if (result.getData().getZusatztype() == AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER) {
-            print("*: Diese Person teilt sich ein Match.");
-         }
-         else {
-            print("*: Diese Personen müssen sich ggf. ein Match teilen.");
-         }
+      if (markedPerson == 1) {
+         print("*: Diese Person teilt sich ein Match.");
+      }
+      else if (markedPerson > 1) {
+         print("*: Diese Personen müssen sich ggf. ein Match teilen.");
       }
 
       if (result.getData().pairsToTrack != null) {

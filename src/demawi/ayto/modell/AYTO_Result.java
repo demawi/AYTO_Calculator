@@ -6,7 +6,6 @@ import java.util.Map;
 import java.util.Set;
 
 import demawi.ayto.events.MatchingNight;
-import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.events.PairInterpreter;
 
 public class AYTO_Result {
@@ -102,31 +101,20 @@ public class AYTO_Result {
   }
 
   public double getBasePossibility(AYTO_Pair pair) {
-    if (getData().getZusatztype() == AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER) {
-      int gesamt = 0;
-      for (Person curFrau : getFrauen()) {
-        if (isBasePerson(curFrau)) {
-          gesamt += getPossibleCount(curFrau, pair.mann);
-        }
+    int gesamt = 0;
+    List<Person> frauen = getFrauen();
+    List<Person> maenner = getMaenner();
+    if (maenner.size() >= frauen.size()) {
+      for (Person curFrau : frauen) {
+        gesamt += getPossibleCount(curFrau, pair.mann);
       }
-      return 1d * getPossibleCount(pair) / gesamt;
     }
     else {
-      int gesamt = 0;
-      List<Person> frauen = getFrauen();
-      List<Person> maenner = getMaenner();
-      if (maenner.size() >= frauen.size()) {
-        for (Person curFrau : frauen) {
-          gesamt += getPossibleCount(curFrau, pair.mann);
-        }
+      for (Person curMann : maenner) {
+        gesamt += getPossibleCount(pair.frau, curMann);
       }
-      else {
-        for (Person curMann : maenner) {
-          gesamt += getPossibleCount(pair.frau, curMann);
-        }
-      }
-      return 1d * getPossibleCount(pair) / gesamt;
     }
+    return 1d * getPossibleCount(pair) / gesamt;
   }
 
   public void addResult(Set<AYTO_Pair> constellation, boolean result, PairInterpreter lookup) {

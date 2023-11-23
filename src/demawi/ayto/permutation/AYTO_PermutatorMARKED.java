@@ -18,29 +18,29 @@ public class AYTO_PermutatorMARKED<F, M, R>
     * Nur für ZUSATZTYPE.MARKED
     */
    protected Object[] canAdd(int frau, int mann, Object[] constellation) {
-      boolean[] usedExtraFrauen = new boolean[anzahlFrauen];
-      boolean[] usedExtraMaenner = new boolean[anzahlMaenner];
+      int usedExtraFrauen = -1;
+      int usedExtraMaenner = -1;
       boolean usedDouble = (Boolean) constellation[0];
       for (int i = 1, l = constellation.length; i < l; i++) {
          Integer current = (Integer) constellation[i];
          int decodedFrau = decodeFrau(current);
          if (decodedFrau == frau) { // die Frau ist bereits enthalten
             // Wenn noch kein Doppel genutzt wurde, könnte erlaubt sein, wenn der Mann ein Zusatzmann ist
-            if (usedDouble || !isAnExtraMann(mann) || usedExtraMaenner[mann]) { // aber auch nur einmal
+            if (usedDouble || !isAnExtraMann(mann) || usedExtraMaenner == mann) { // aber auch nur einmal
                return null;
             }
             usedDouble = true;
-            usedExtraMaenner[mann] = true;
+            usedExtraMaenner = mann;
          }
 
          int decodedMann = decodeMann(current);
          if (decodedMann == mann) { // der Mann ist bereits enthalten
             // Wenn noch kein Doppel genutzt wurde, könnte erlaubt sein, wenn die Frau eine Zusatzfrau ist
-            if (usedDouble || !isAnExtraFrau(frau) || usedExtraFrauen[frau]) { // aber auch nur einmal
+            if (usedDouble || !isAnExtraFrau(frau) || usedExtraFrauen == frau) { // aber auch nur einmal
                return null;
             }
             usedDouble = true;
-            usedExtraFrauen[frau] = true;
+            usedExtraFrauen = frau;
          }
       }
       int number = encodePair(frau, mann);

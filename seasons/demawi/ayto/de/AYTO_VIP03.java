@@ -36,7 +36,7 @@ public class AYTO_VIP03
    private final Mann Max = mann("Max", Markierung.CAN_BE_AN_EXTRA, true);
 
    public AYTO_VIP03() {
-      super(AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER);
+      super(AYTO_Permutator.ZUSATZTYPE.MARKED);
 
       newTag().matchBox(pair(Jennifer, Danilo), false)
             .matchNight(3, pair(Darya, Danilo), pair(Sandra, Paco), pair(Paulina, Steffen), pair(Shakira, Marvin),

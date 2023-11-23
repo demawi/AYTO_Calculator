@@ -20,9 +20,8 @@ public abstract class AYTO_Permutator<F, M, R> {
   public enum ZUSATZTYPE {
     BISEXUAL, // Jeder kann mit jedem
     KEINER, // Jeder hat genau einen Partner zugewiesen es gibt keine Doppelpartner.
-    ALLE, // Alle der Geschlechtsgruppe mit 11 Leuten kann der Doppelpartner zu jemand anderem sein
-    MARKED, // Nur die markieren Personen können der Doppelpartner zu jemand anderem sein
-    NUR_LETZTER; // Nur der letzte der Geschlechtsgruppe mit 11 Leuten kann der Doppelpartner zu jemand anderem sein
+    MARKED, // Die markieren Personen können der Doppelpartner zu jemand anderem sein
+    ;
 
     public <Type extends ExtraEntry, F extends Type, M extends Type> List<Type> getZusatzpersonen(List<F> frauen,
           List<M> maenner) {
@@ -113,12 +112,6 @@ public abstract class AYTO_Permutator<F, M, R> {
     }
     else if (zusatzType == ZUSATZTYPE.BISEXUAL) {
       return new AYTO_PermutatorBISEXUAL<>(setA, setB, packingFunction);
-    }
-    else if (zusatzType == ZUSATZTYPE.ALLE) {
-      return new AYTO_PermutatorMARKED<>(setA, setB, packingFunction);
-    }
-    else if (zusatzType == ZUSATZTYPE.NUR_LETZTER) {
-      return new AYTO_PermutatorMARKED<>(setA, setB, packingFunction);
     }
     else if (zusatzType == ZUSATZTYPE.MARKED) {
       return new AYTO_PermutatorMARKED<>(setA, setB, packingFunction);

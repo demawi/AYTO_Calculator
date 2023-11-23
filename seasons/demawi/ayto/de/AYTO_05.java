@@ -22,7 +22,7 @@ public class AYTO_05
    private final Frau Sina = frau("Sina");
    private final Frau Shelly = frau("Shelly");
    private final Frau Tais = frau("Tais");
-   private final Frau Lina = frau("Lina", Markierung.CAN_BE_AN_EXTRA);
+   private final Frau Lina = frau("Lina", Markierung.CAN_BE_AN_EXTRA, true);
 
    private final Frau Melanie = frau("Melanie", Markierung.CAN_BE_AN_EXTRA, true);
 
@@ -31,7 +31,7 @@ public class AYTO_05
    private final Mann Kevin = mann("Kevin");
    private final Mann Martin = mann("Martin");
    private final Mann Paddy = mann("Paddy");
-   private final Mann Paul = mann("Paul");
+   private final Mann Paolo = mann("Paolo");
    private final Mann Ryan = mann("Ryan");
    private final Mann Sandro = mann("Sandro");
    private final Mann Sidar = mann("Sidar");
@@ -40,7 +40,11 @@ public class AYTO_05
    public AYTO_05() {
       super(AYTO_Permutator.ZUSATZTYPE.MARKED);
 
-      newTag().matchBox(pair(Jana, Paul), null);
+      newTag().addNew(Lina)
+            .matchBox(pair(Jana, Paolo), false)
+            .matchNight(2, pair(Lina, Ryan), pair(Sina, Kevin), pair(Tais, Paolo), pair(Jana, Sidar),
+                  pair(Julia, Martin), pair(Pia, Gerrit), pair(Lisa_Marie, Eti), pair(Shelly, Wilson),
+                  pair(Maja, Paddy), pair(Edda, Sandro)); // Afra
 
    }
 

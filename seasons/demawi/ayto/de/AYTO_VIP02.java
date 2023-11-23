@@ -36,7 +36,7 @@ public class AYTO_VIP02
    private final Mann Felix = mann("Felix", CAN_BE_AN_EXTRA, true);
 
    public AYTO_VIP02() {
-      super(AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER);
+      super(AYTO_Permutator.ZUSATZTYPE.MARKED);
 
       newTag().matchBox(pair(Zoe, Martin), false)
             .matchNight(3, pair(Franziska, Max), pair(Anna, Michael), pair(Celina, Martin), pair(Ricarda, Maurice),

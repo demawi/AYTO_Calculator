@@ -36,7 +36,7 @@ public class AYTO_01
    private final Mann Edin = mann("Edin", CAN_BE_AN_EXTRA, true);
 
    public AYTO_01() {
-      super(AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER);
+      super(AYTO_Permutator.ZUSATZTYPE.MARKED);
 
       newTag().matchBox(pair(Ivana, Mo), false)
             .matchNight(1, pair(Luisa, Axel), pair(Katharina, Rene), pair(Nadine, Elisha), pair(Laura, Ferhat),

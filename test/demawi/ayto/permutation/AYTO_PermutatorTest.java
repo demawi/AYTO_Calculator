@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.junit.jupiter.api.Test;
 
@@ -11,6 +13,7 @@ import demawi.ayto.modell.Frau;
 import demawi.ayto.modell.Markierung;
 import demawi.ayto.modell.Person;
 import demawi.ayto.print.Formatter;
+import demawi.ayto.util.Pair;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -29,8 +32,10 @@ public class AYTO_PermutatorTest {
       boolean withFullOutput = frauenAnzahl + maennerAnzahl < 10;
       boolean withFullCheck = true;
       long start = System.currentTimeMillis();
-      AYTO_Permutator<String, String, String> permutator = AYTO_Permutator.create(frauen(frauenAnzahl),
-            maenner(maennerAnzahl), AYTO_Permutator.ZUSATZTYPE.ALLE, (a, b) -> "" + a + b);
+      AYTO_Permutator<Person, Person, Pair> permutator = AYTO_Permutator.create(
+            markAll(frauen(frauenAnzahl), frauenAnzahl > maennerAnzahl),
+            markAll(maenner(maennerAnzahl), maennerAnzahl > frauenAnzahl), AYTO_Permutator.ZUSATZTYPE.MARKED,
+            Pair::pair);
       atomicCount.set(0);
       permutator.permutate(() -> result -> {
          atomicCount.incrementAndGet();
@@ -41,10 +46,13 @@ public class AYTO_PermutatorTest {
             System.out.println(result);
          }
       });
-      System.out.println("Found " + atomicCount + " constellations in " + Formatter.minSecs(System.currentTimeMillis() - start));
+      System.out.println(
+            "Found " + atomicCount + " constellations in " + Formatter.minSecs(System.currentTimeMillis() - start));
       start = System.currentTimeMillis();
-      AYTO_Permutator<String, String, String> permutator2 = AYTO_Permutator.create(frauen(frauenAnzahl),
-            maenner(maennerAnzahl), AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER, (a, b) -> "" + a + b);
+      AYTO_Permutator<Person, Person, Pair> permutator2 = AYTO_Permutator.create(
+            markLast(frauen(frauenAnzahl), frauenAnzahl > maennerAnzahl),
+            markLast(maenner(maennerAnzahl), maennerAnzahl > frauenAnzahl), AYTO_Permutator.ZUSATZTYPE.MARKED,
+            Pair::pair);
       atomicCount.set(0);
       permutator2.permutate(() -> result -> {
          atomicCount.incrementAndGet();
@@ -60,8 +68,8 @@ public class AYTO_PermutatorTest {
 
    @Test
    public void testBigJEDER() {
-      AYTO_Permutator<String, String, String> permutator = AYTO_Permutator.create(frauen(11), maenner(10),
-            AYTO_Permutator.ZUSATZTYPE.ALLE, (a, b) -> "" + a + b);
+      AYTO_Permutator<Person, Person, String> permutator = AYTO_Permutator.create(markAll(frauen(11)), maenner(10),
+            AYTO_Permutator.ZUSATZTYPE.MARKED, (a, b) -> "" + a + b);
       long start = System.currentTimeMillis();
       atomicCount.set(0);
       permutator.permutate(() -> result -> {
@@ -74,8 +82,8 @@ public class AYTO_PermutatorTest {
 
    @Test
    public void testBigNUR_LETZTER() {
-      AYTO_Permutator<String, String, String> permutator = AYTO_Permutator.create(frauen(11), maenner(10),
-            AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER, (a, b) -> "" + a + b);
+      AYTO_Permutator<Person, Person, String> permutator = AYTO_Permutator.create(markLast(frauen(11)), maenner(10),
+            AYTO_Permutator.ZUSATZTYPE.MARKED, (a, b) -> "" + a + b);
       long start = System.currentTimeMillis();
       atomicCount.set(0);
       permutator.permutate(() -> result -> {
@@ -88,8 +96,8 @@ public class AYTO_PermutatorTest {
 
    @Test
    public void testCanAddBigJEDER() {
-      AYTO_Permutator<String, String, String> permutator = AYTO_Permutator.create(frauen(11), maenner(10),
-            AYTO_Permutator.ZUSATZTYPE.ALLE, (a, b) -> "" + a + b);
+      AYTO_Permutator<Person, Person, String> permutator = AYTO_Permutator.create(markAll(frauen(11)), maenner(10),
+            AYTO_Permutator.ZUSATZTYPE.MARKED, (a, b) -> "" + a + b);
       // UrsprungDoppelt: 1 Es fehlt: E4
       assertNull(permutator.canAdd(ind("A"), ind("1"),
             pairs(true, "A1", "I9", "G8", "C7", "J2", "F0", "K5", "H6", "B1", "D3")));
@@ -104,15 +112,48 @@ public class AYTO_PermutatorTest {
    }
 
    @Test
-   public void testCanAddSmallJEDER() {
-      List<String> frauen = Arrays.asList("A", "B", "C", "D");
-      List<String> maenner = Arrays.asList("1", "2", "3");
-      AYTO_Permutator<String, String, String> permutator = AYTO_Permutator.create(frauen, maenner,
-            AYTO_Permutator.ZUSATZTYPE.ALLE, (a, b) -> "" + a + b);
+   public void testCanAddSmallALLE() {
+      Frau frau1 = new Frau("A");
+      Frau frau2 = new Frau("B");
+      Frau frau3 = new Frau("C");
+      Frau frau4 = new Frau("D");
+      Frau mann1 = new Frau("1");
+      Frau mann2 = new Frau("2");
+      Frau mann3 = new Frau("3");
+      List<Person> frauen = markAll(Arrays.asList(frau1, frau2, frau3, frau4));
+      List<Person> maenner = Arrays.asList(mann1, mann2, mann3);
+      AYTO_Permutator<Person, Person, Pair> permutator = AYTO_Permutator.create(markAll(frauen), maenner,
+            AYTO_Permutator.ZUSATZTYPE.MARKED, Pair::pair);
       assertNotNull(permutator.canAdd(ind("B"), ind("2"), pairs(false, "A1")));
       assertNotNull(permutator.canAdd(ind("C"), ind("1"), pairs(false, "A1", "B2")));
       assertNotNull(permutator.canAdd(ind("D"), ind("3"), pairs(true, "A1", "B2", "C1")));
       assertNull(permutator.canAdd(ind("D"), ind("2"), pairs(true, "A1", "B2", "C1")));
+   }
+
+   public List<Person> markAll(List<Person> persons) {
+      persons.forEach(p -> p.mark(Markierung.CAN_BE_AN_EXTRA));
+      return persons;
+   }
+
+   public List<Person> markAll(List<Person> persons, boolean value) {
+      if (value) {
+         persons.forEach(p -> p.mark(Markierung.CAN_BE_AN_EXTRA));
+      }
+      return persons;
+   }
+
+   public List<Person> markLast(List<Person> persons) {
+      persons.get(persons.size() - 1)
+            .mark(Markierung.CAN_BE_AN_EXTRA);
+      return persons;
+   }
+
+   public List<Person> markLast(List<Person> persons, boolean value) {
+      if (value) {
+         persons.get(persons.size() - 1)
+               .mark(Markierung.CAN_BE_AN_EXTRA);
+      }
+      return persons;
    }
 
    @Test
@@ -155,18 +196,28 @@ public class AYTO_PermutatorTest {
       return result;
    }
 
-   private static final List<String> allFrauen = Arrays.asList("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
-         "L", "M", "N");
+   private static final List<Person> allFrauen = Stream.of("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
+               "M", "N")
+         .map(Person::new)
+         .collect(Collectors.toList());
 
-   private static List<String> frauen(int anzahl) {
-      return allFrauen.subList(0, anzahl);
+   private static List<Person> frauen(int anzahl) {
+      return allFrauen.subList(0, anzahl)
+            .stream()
+            .map(a -> new Person(a.getName()))
+            .collect(Collectors.toList());
    }
 
-   private static final List<String> allMaenner = Arrays.asList("1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "X",
-         "Y", "Z");
+   private static final List<Person> allMaenner = Stream.of("1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "X", "Y",
+               "Z")
+         .map(Person::new)
+         .collect(Collectors.toList());
 
-   private static List<String> maenner(int anzahl) {
-      return allMaenner.subList(0, anzahl);
+   private static List<Person> maenner(int anzahl) {
+      return allMaenner.subList(0, anzahl)
+            .stream()
+            .map(a -> new Person(a.getName()))
+            .collect(Collectors.toList());
    }
 
    private static int pair(String combinded) {
@@ -179,24 +230,27 @@ public class AYTO_PermutatorTest {
 
    private static int ind(String f) {
       for (int i = 0, l = allFrauen.size(); i < l; i++) {
-         String frau = allFrauen.get(i);
-         if (frau.equals(f)) {
+         Person frau = allFrauen.get(i);
+         if (frau.getName()
+               .equals(f)) {
             return i;
          }
       }
       for (int i = 0, l = allMaenner.size(); i < l; i++) {
-         String frau = allMaenner.get(i);
-         if (frau.equals(f)) {
+         Person frau = allMaenner.get(i);
+         if (frau.getName()
+               .equals(f)) {
             return i;
          }
       }
       throw new IllegalStateException("Can not found: '" + f + "'");
    }
 
-   private void check(Set<String> result, List<String> frauen, List<String> maenner) {
-      for (String frau : frauen) {
+   private void check(Set<Pair> result, List<Person> frauen, List<Person> maenner) {
+      for (Person frau : frauen) {
          if (result.stream()
-               .filter(r -> r.contains(frau))
+               .filter(r -> r.getFirst()
+                     .equals(frau))
                .count() == 0) {
             System.out.println(
                   "Frau '" + frau + "' ist nicht vorhanden im Resultat: " + Arrays.deepToString(result.toArray()));
@@ -204,9 +258,10 @@ public class AYTO_PermutatorTest {
                   "Frau '" + frau + "' ist nicht vorhanden im Resultat: " + Arrays.deepToString(result.toArray()));
          }
       }
-      for (String mann : maenner) {
+      for (Person mann : maenner) {
          if (result.stream()
-               .filter(r -> r.contains(mann))
+               .filter(r -> r.getSecond()
+                     .equals(mann))
                .count() == 0) {
             System.out.println(
                   "Mann '" + mann + "' ist nicht vorhanden im Resultat: " + Arrays.deepToString(result.toArray()));

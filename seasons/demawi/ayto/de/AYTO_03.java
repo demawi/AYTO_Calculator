@@ -36,7 +36,7 @@ public class AYTO_03
   private final Mann Jordi = mann("Jordi");
 
   public AYTO_03() {
-    super(AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER);
+    super(AYTO_Permutator.ZUSATZTYPE.MARKED);
 
     newTag().matchBox(pair(Jessica, Mike), false)
           .matchNight(3, pair(Jessica, Leon), pair(Joelina, Mike), pair(Kerstin, Max), pair(Monami, Antonino),

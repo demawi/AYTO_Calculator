@@ -36,7 +36,7 @@ public class AYTO_02
   private final Mann Marcel = mann("Marcel");
 
   public AYTO_02() {
-    super(AYTO_Permutator.ZUSATZTYPE.NUR_LETZTER);
+    super(AYTO_Permutator.ZUSATZTYPE.MARKED);
 
     newTag().matchBox(pair(Jill, Maximilian), false)
           .matchNight( 2, pair(Sabrina, Marko), pair(Jill, Marvin), pair(Victoria, Dario),
