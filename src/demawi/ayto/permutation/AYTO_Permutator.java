@@ -1,16 +1,15 @@
 package demawi.ayto.permutation;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
+
+import demawi.ayto.modell.Markierung;
+import demawi.ayto.modell.Person;
 
 public abstract class AYTO_Permutator<F, M, R> {
 
@@ -27,22 +26,15 @@ public abstract class AYTO_Permutator<F, M, R> {
     JEDER, // Jeder der Geschlechtsgruppe mit 11 Leuten kann der Doppelpartner zu jemand anderem sein
     NUR_LETZTER; // Nur der letzte der Geschlechtsgruppe mit 11 Leuten kann der Doppelpartner zu jemand anderem sein
 
-    public <P, F extends P, M extends P> List<P> getZusatzpersonen(List<F> frauen, List<M> maenner) {
-      if (this == KEINER || frauen.size() == maenner.size() || frauen.size() < 10 || maenner.size() < 10) {
-        return Collections.emptyList();
-      }
-      if (this == JEDER) {
-        if (frauen.size() < maenner.size())
-          return (List<P>) maenner;
-        else
-          return (List<P>) frauen;
-      }
-      else { // NUR_LETZTER
-        if (frauen.size() < maenner.size())
-          return List.of(maenner.get(maenner.size() - 1));
-        else
-          return List.of(frauen.get(frauen.size() - 1));
-      }
+    public <F extends Person, M extends Person> List<Person> getZusatzpersonen(List<F> frauen, List<M> maenner) {
+      List<Person> result = new ArrayList<>();
+      Consumer<Person> checkZusatz = p -> {
+        if (p.hasMark(Markierung.CAN_BE_A_DOUBLE))
+          result.add(p);
+      };
+      frauen.forEach(checkZusatz);
+      maenner.forEach(checkZusatz);
+      return result;
     }
   }
 

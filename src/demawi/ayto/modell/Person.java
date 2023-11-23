@@ -15,6 +15,10 @@ public class Person {
     this.marked = mark;
   }
 
+  public boolean hasMark(Markierung mark) {
+    return marked == mark;
+  }
+
   public String getName() {
     return name;
   }
