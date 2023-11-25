@@ -1,4 +1,4 @@
-package demawi.ayto.events;
+package demawi.ayto.modell.events;
 
 import demawi.ayto.modell.Person;
 

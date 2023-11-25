@@ -10,7 +10,7 @@ public class AYTO_Pair {
     this.mann = mann;
   }
 
-  public static AYTO_Pair pair(Frau frau, Mann mann) {
+  public static AYTO_Pair pair(Woman frau, Man mann) {
     return new AYTO_Pair(frau, mann);
   }
 

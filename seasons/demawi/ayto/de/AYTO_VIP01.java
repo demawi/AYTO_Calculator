@@ -1,88 +1,89 @@
 package demawi.ayto.de;
 
-import demawi.ayto.modell.Frau;
-import demawi.ayto.modell.Mann;
-import demawi.ayto.modell.StaffelData;
+import demawi.ayto.modell.Woman;
+import demawi.ayto.modell.Man;
+import demawi.ayto.modell.SeasonData;
 import demawi.ayto.permutation.AYTO_Permutator;
+import demawi.ayto.permutation.AYTO_Permutator.MODE;
 import demawi.ayto.print.DefaultMatchPrinter;
 
 import static demawi.ayto.modell.AYTO_Pair.pair;
-import static demawi.ayto.modell.Markierung.CAN_BE_AN_EXTRA_MATCH;
+import static demawi.ayto.modell.Mark.CAN_BE_AN_EXTRA_MATCH;
 
 public class AYTO_VIP01
-      extends StaffelData {
+      extends SeasonData {
 
-  private final Frau Steffi = frau("Steffi");
-  private final Frau Jill = frau("Jill");
-  private final Frau Walentina = frau("Walentina");
-  private final Frau Kathleen = frau("Kathleen");
-  private final Frau Finnja = frau("Finnja");
-  private final Frau Aurelia = frau("Aurelia");
-  private final Frau Jacky = frau("Jacky");
-  private final Frau Jules = frau("Jules");
-  private final Frau Melina = frau("Melina");
-  private final Frau Sarah = frau("Sarah");
-  private final Frau Vanessa = frau("Vanessa", CAN_BE_AN_EXTRA_MATCH, true);
+  private final Woman Steffi = frau("Steffi");
+  private final Woman Jill = frau("Jill");
+  private final Woman Walentina = frau("Walentina");
+  private final Woman Kathleen = frau("Kathleen");
+  private final Woman Finnja = frau("Finnja");
+  private final Woman Aurelia = frau("Aurelia");
+  private final Woman Jacky = frau("Jacky");
+  private final Woman Jules = frau("Jules");
+  private final Woman Melina = frau("Melina");
+  private final Woman Sarah = frau("Sarah");
+  private final Woman Vanessa = frau("Vanessa", CAN_BE_AN_EXTRA_MATCH, true);
 
-  private final Mann Danilo = mann("Danilo");
-  private final Mann Jamie = mann("Jamie");
-  private final Mann Eugen = mann("Eugen");
-  private final Mann Manuel = mann("Manuel");
-  private final Mann Francesco = mann("Francesco");
-  private final Mann Diogo = mann("Diogo");
-  private final Mann Salvatore = mann("Salvatore");
-  private final Mann Alex = mann("Alex");
-  private final Mann Tommy = mann("Tommy");
-  private final Mann Josua = mann("Josua");
+  private final Man Danilo = mann("Danilo");
+  private final Man Jamie = mann("Jamie");
+  private final Man Eugen = mann("Eugen");
+  private final Man Manuel = mann("Manuel");
+  private final Man Francesco = mann("Francesco");
+  private final Man Diogo = mann("Diogo");
+  private final Man Salvatore = mann("Salvatore");
+  private final Man Alex = mann("Alex");
+  private final Man Tommy = mann("Tommy");
+  private final Man Josua = mann("Josua");
 
   public AYTO_VIP01() {
-    super(AYTO_Permutator.ZUSATZTYPE.MARKED);
+    super(MODE.MARKED);
 
-    newTag().matchBox(pair(Finnja, Danilo), false)
+    newDay().matchBox(pair(Finnja, Danilo), false)
           .matchNight(3, pair(Steffi, Danilo), pair(Jill, Jamie), pair(Walentina, Eugen), pair(Kathleen, Manuel),
                 pair(Finnja, Francesco), pair(Aurelia, Diogo), pair(Jacky, Salvatore), pair(Jules, Alex),
                 pair(Melina, Tommy), pair(Sarah, Josua));
 
     // Keine Matching Night
-    newTag().matchBox(pair(Jules, Francesco), true);
+    newDay().matchBox(pair(Jules, Francesco), true);
 
-    newTag().matchBox(pair(Walentina, Tommy), false)
+    newDay().matchBox(pair(Walentina, Tommy), false)
           .matchNight(3, pair(Jules, Francesco), pair(Steffi, Eugen), pair(Jill, Jamie), pair(Walentina, Josua),
                 pair(Kathleen, Manuel), pair(Finnja, Alex), pair(Aurelia, Diogo), pair(Jacky, Salvatore),
                 pair(Sarah, Danilo), pair(Melina, Tommy));
 
-    newTag().addNew(Vanessa)
+    newDay().addNew(Vanessa)
           .matchBox(pair(Aurelia, Diogo), null)
           .matchNight(4, pair(Jules, Francesco), pair(Aurelia, Diogo), pair(Finnja, Eugen), pair(Jill, Tommy),
                 pair(Kathleen, Manuel), pair(Melina, Danilo), pair(Sarah, Josua), pair(Steffi, Alex),
                 pair(Walentina, Salvatore), pair(Vanessa, Jamie));
 
-    newTag().matchBox(pair(Melina, Tommy), false)
+    newDay().matchBox(pair(Melina, Tommy), false)
           .matchNight(3, pair(Jules, Francesco), pair(Aurelia, Danilo), pair(Finnja, Eugen), pair(Jill, Manuel),
                 pair(Kathleen, Salvatore), pair(Melina, Tommy), pair(Sarah, Alex), pair(Steffi, Jamie),
                 pair(Walentina, Josua), pair(Vanessa, Diogo));
 
-    newTag().matchBox(pair(Finnja, Salvatore), false)
+    newDay().matchBox(pair(Finnja, Salvatore), false)
           .matchNight(3, pair(Jules, Francesco), pair(Finnja, Eugen), pair(Jacky, Salvatore), pair(Kathleen, Manuel),
                 pair(Steffi, Alex), pair(Jill, Danilo), pair(Sarah, Jamie), pair(Walentina, Josua), pair(Melina, Tommy),
                 pair(Aurelia, Diogo));
 
-    newTag().matchBox(pair(Finnja, Eugen), false)
+    newDay().matchBox(pair(Finnja, Eugen), false)
           .matchNight(2, pair(Jules, Francesco), pair(Aurelia, Danilo), pair(Finnja, Jamie), pair(Jacky, Alex),
                 pair(Jill, Eugen), pair(Kathleen, Manuel), pair(Melina, Tommy), pair(Sarah, Josua),
                 pair(Walentina, Salvatore), pair(Vanessa, Diogo));
 
-    newTag().matchBox(pair(Steffi, Eugen), false)
+    newDay().matchBox(pair(Steffi, Eugen), false)
           .matchNight(1, pair(Jules, Francesco), pair(Aurelia, Danilo), pair(Finnja, Manuel), pair(Jacky, Eugen),
                 pair(Jill, Salvatore), pair(Melina, Alex), pair(Sarah, Jamie), pair(Walentina, Josua),
                 pair(Vanessa, Diogo), pair(Steffi, Tommy));
 
-    newTag().matchBox(pair(Melina, Tommy), false)
+    newDay().matchBox(pair(Melina, Tommy), false)
           .matchNight(4, pair(Jules, Francesco), pair(Aurelia, Diogo), pair(Finnja, Tommy), pair(Jill, Danilo),
                 pair(Kathleen, Manuel), pair(Melina, Eugen), pair(Sarah, Alex), pair(Walentina, Salvatore),
                 pair(Vanessa, Josua), pair(Steffi, Jamie));
 
-    newTag().matchBox(pair(Aurelia, Josua), true)
+    newDay().matchBox(pair(Aurelia, Josua), true)
           .matchNight(7, pair(Jules, Francesco), pair(Aurelia, Josua), pair(Finnja, Tommy), pair(Jill, Diogo),
                 pair(Kathleen, Manuel), pair(Sarah, Danilo), pair(Walentina, Eugen), pair(Vanessa, Alex),
                 pair(Steffi, Jamie), pair(Jacky, Salvatore));
@@ -90,7 +91,7 @@ public class AYTO_VIP01
   }
 
   public static void main(String[] args) {
-    new DefaultMatchPrinter().printDayResults(new AYTO_VIP01());
+    new DefaultMatchPrinter().printLastDayResults(new AYTO_VIP01());
   }
 
 }

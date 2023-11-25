@@ -1,4 +1,4 @@
-package demawi.ayto.events;
+package demawi.ayto.modell.events;
 
 /**
  * Marker type for all events

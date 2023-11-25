@@ -17,7 +17,7 @@ public class AYTO_PermutatorBISEXUAL<F, M, R>
    /**
     * Prüft, ob ein Paar wirklich zu der bisherigen Konstellation hinzugefügt werden kann.
     * <p>
-    * Nur für {@link demawi.ayto.permutation.AYTO_Permutator.ZUSATZTYPE#BISEXUAL}
+    * Nur für {@link MODE#BISEXUAL}
     */
    protected Object[] canAdd(int frau, int mann, Object[] constellation) {
       if (frau == mann)
@@ -50,7 +50,7 @@ public class AYTO_PermutatorBISEXUAL<F, M, R>
       boolean addFound = super.iterateFirstGroup(frau, currentConstellation, pairConsumerCreator, pairConsumer,
             branchLevel);
       if (!addFound) { // for bisexual-setting. Because every person is in group A and in Group B, not every Person in A can found a match.
-         if (frau + 1 < frauen.size()) {
+         if (frau + 1 < women.size()) {
             iterateFirstGroup(frau + 1, currentConstellation, pairConsumerCreator, pairConsumer, branchLevel - 1);
          }
       }

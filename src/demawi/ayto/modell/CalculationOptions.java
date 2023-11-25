@@ -5,14 +5,14 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
-import demawi.ayto.events.*;
+import demawi.ayto.modell.events.*;
 import demawi.ayto.permutation.AYTO_Permutator;
 
 public class CalculationOptions
       implements PermutationOptions, ConstellationValidation {
 
-   private final StaffelData data;
-   private final Zeitpunkt zeitpunkt;
+   private final SeasonData seasonData;
+   private final Timepoint timepoint;
 
    // abgeleitete Informationen aus den Events
    private final int anzahlNeuerPersonen;
@@ -21,16 +21,16 @@ public class CalculationOptions
 
    private final List<SameMatch> sameMatches = new ArrayList<>();
 
-   public CalculationOptions(StaffelData data, Zeitpunkt zeitpunkt) {
-      this.data = data;
-      this.zeitpunkt = zeitpunkt;
+   public CalculationOptions(SeasonData seasonData, Timepoint timepoint) {
+      this.seasonData = seasonData;
+      this.timepoint = timepoint;
 
       // lookup for anzahlNeuerPersonen, anzahlMatchBoxen, mitMatchingNight
       int matchBoxCount = 0;
       int matchingNightCount = 0;
       int neuePersonenCount = 0;
       List<Event> events = getTag().getEvents();
-      for (int i = 0; i < zeitpunkt.getEventCount(); i++) {
+      for (int i = 0; i < timepoint.getEventCount(); i++) {
          Event evt = events.get(i);
          if (evt instanceof MatchBoxResult) {
             matchBoxCount++;
@@ -47,8 +47,8 @@ public class CalculationOptions
       anzahlNeuerPersonen = neuePersonenCount;
    }
 
-   public StaffelData getData() {
-      return data;
+   public SeasonData getSeasonData() {
+      return seasonData;
    }
 
    public int getAnzahlMatchBoxen() {
@@ -63,43 +63,43 @@ public class CalculationOptions
       return mitMatchingNight;
    }
 
-   public Zeitpunkt getZeitpunkt() {
-      return zeitpunkt;
+   public Timepoint getTimepoint() {
+      return timepoint;
    }
 
    /**
     * At the beginning of the day we have event=null
     */
    public Event getEvent() {
-      if (zeitpunkt.getEventCount() == 0)
+      if (timepoint.getEventCount() == 0)
          return null;
-      return getTag().getEvent(zeitpunkt.getEventCount());
+      return getTag().getEvent(timepoint.getEventCount());
    }
 
-   public Tag getTag() {
-      return data.getTag(zeitpunkt.getTagNr());
+   public Day getTag() {
+      return seasonData.getTag(timepoint.getDayNr());
    }
 
    public List<Person> getFrauen() {
-      return data.getFrauen(zeitpunkt.getTagNr(), zeitpunkt.getEventCount());
+      return seasonData.getFrauen(timepoint.getDayNr(), timepoint.getEventCount());
    }
 
    public List<Person> getMaenner() {
-      return data.getMaenner(zeitpunkt.getTagNr(), zeitpunkt.getEventCount());
+      return seasonData.getMaenner(timepoint.getDayNr(), timepoint.getEventCount());
    }
 
    public MatchingNight getMatchingNight() {
-      if (zeitpunkt.getTagNr() == 0)
+      if (timepoint.getDayNr() == 0)
          return null;
       return getTag().getMatchingNight();
    }
 
-   public AYTO_Permutator.ZUSATZTYPE getZusatztype() {
-      return data.getZusatztype();
+   public AYTO_Permutator.MODE getZusatztype() {
+      return seasonData.getZusatztype();
    }
 
    public List<Event> getEvents() {
-      return getData().getAllEventsTill(zeitpunkt.getTagNr(), zeitpunkt.getEventCount());
+      return getSeasonData().getAllEventsTill(timepoint.getDayNr(), timepoint.getEventCount());
    }
 
    public boolean isValid(Collection<AYTO_Pair> constellation, PairInterpreter lookup) {
@@ -111,9 +111,9 @@ public class CalculationOptions
       return true;
    }
 
-   public List<Tag> getTageBisher() {
-      return data.getTage()
-            .subList(0, zeitpunkt.getTagNr());
+   public List<Day> getTageBisher() {
+      return seasonData.getTage()
+            .subList(0, timepoint.getDayNr());
    }
 
    public PairInterpreter getLookup() {

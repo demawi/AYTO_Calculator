@@ -1,93 +1,94 @@
 package demawi.ayto.de;
 
-import demawi.ayto.modell.Frau;
-import demawi.ayto.modell.Mann;
-import demawi.ayto.modell.StaffelData;
+import demawi.ayto.modell.Woman;
+import demawi.ayto.modell.Man;
+import demawi.ayto.modell.SeasonData;
 import demawi.ayto.permutation.AYTO_Permutator;
+import demawi.ayto.permutation.AYTO_Permutator.MODE;
 import demawi.ayto.print.DefaultMatchPrinter;
 
 import static demawi.ayto.modell.AYTO_Pair.pair;
-import static demawi.ayto.modell.Markierung.CAN_BE_AN_EXTRA_MATCH;
+import static demawi.ayto.modell.Mark.CAN_BE_AN_EXTRA_MATCH;
 
 public class AYTO_04
-      extends StaffelData {
+      extends SeasonData {
 
-  private final Frau Aurelia = frau("Aurelia");
-  private final Frau Carina = frau("Carina");
-  private final Frau Caroline = frau("Caroline");
-  private final Frau Dorna = frau("Dorna");
-  private final Frau Henna = frau("Henna");
-  private final Frau Juliette = frau("Juliette");
-  private final Frau Larissa = frau("Larissa");
-  private final Frau Stefanie = frau("Stefanie");
-  private final Frau Valeria = frau("Valeria");
-  private final Frau Vanessa = frau("Vanessa");
+  private final Woman Aurelia = frau("Aurelia");
+  private final Woman Carina = frau("Carina");
+  private final Woman Caroline = frau("Caroline");
+  private final Woman Dorna = frau("Dorna");
+  private final Woman Henna = frau("Henna");
+  private final Woman Juliette = frau("Juliette");
+  private final Woman Larissa = frau("Larissa");
+  private final Woman Stefanie = frau("Stefanie");
+  private final Woman Valeria = frau("Valeria");
+  private final Woman Vanessa = frau("Vanessa");
 
-  private final Mann Barkin = mann("Barkin", CAN_BE_AN_EXTRA_MATCH);
-  private final Mann Burim = mann("Burim", CAN_BE_AN_EXTRA_MATCH);
-  private final Mann Christopher = mann("Christopher", CAN_BE_AN_EXTRA_MATCH);
-  private final Mann Deniz = mann("Deniz", CAN_BE_AN_EXTRA_MATCH);
-  private final Mann Joel = mann("Joel", CAN_BE_AN_EXTRA_MATCH);
-  private final Mann Ken = mann("Ken", CAN_BE_AN_EXTRA_MATCH);
-  private final Mann Kenneth = mann("Kenneth", CAN_BE_AN_EXTRA_MATCH);
-  private final Mann Maximilian = mann("Maximilian", CAN_BE_AN_EXTRA_MATCH);
-  private final Mann Pascal = mann("Pascal", CAN_BE_AN_EXTRA_MATCH);
-  private final Mann Sasa = mann("Sasa", CAN_BE_AN_EXTRA_MATCH);
-  private final Mann Marwin = mann("Marwin", CAN_BE_AN_EXTRA_MATCH);
+  private final Man Barkin = mann("Barkin", CAN_BE_AN_EXTRA_MATCH);
+  private final Man Burim = mann("Burim", CAN_BE_AN_EXTRA_MATCH);
+  private final Man Christopher = mann("Christopher", CAN_BE_AN_EXTRA_MATCH);
+  private final Man Deniz = mann("Deniz", CAN_BE_AN_EXTRA_MATCH);
+  private final Man Joel = mann("Joel", CAN_BE_AN_EXTRA_MATCH);
+  private final Man Ken = mann("Ken", CAN_BE_AN_EXTRA_MATCH);
+  private final Man Kenneth = mann("Kenneth", CAN_BE_AN_EXTRA_MATCH);
+  private final Man Maximilian = mann("Maximilian", CAN_BE_AN_EXTRA_MATCH);
+  private final Man Pascal = mann("Pascal", CAN_BE_AN_EXTRA_MATCH);
+  private final Man Sasa = mann("Sasa", CAN_BE_AN_EXTRA_MATCH);
+  private final Man Marwin = mann("Marwin", CAN_BE_AN_EXTRA_MATCH);
 
   public AYTO_04() {
-    super(AYTO_Permutator.ZUSATZTYPE.MARKED);
+    super(MODE.MARKED);
 
-    newTag().addNew(Marwin)
+    newDay().addNew(Marwin)
           .matchBox(pair(Valeria, Marwin), false)
           .matchBox(pair(Dorna, Kenneth), false)
           .matchNight(3, pair(Vanessa, Sasa), pair(Carina, Ken), pair(Henna, Kenneth), pair(Juliette, Burim),
                 pair(Larissa, Joel), pair(Aurelia, Deniz), pair(Dorna, Marwin), pair(Valeria, Maximilian),
                 pair(Stefanie, Christopher), pair(Caroline, Barkin)); // Pascal
 
-    newTag().matchBox(pair(Carina, Burim), false)
+    newDay().matchBox(pair(Carina, Burim), false)
           .matchNight(3, pair(Larissa, Joel), pair(Juliette, Barkin), pair(Henna, Kenneth), pair(Carina, Ken),
                 pair(Vanessa, Sasa), pair(Stefanie, Christopher), pair(Dorna, Marwin), pair(Valeria, Pascal),
                 pair(Caroline, Maximilian), pair(Aurelia, Burim)); // Deniz
 
-    newTag().matchBox(pair(Stefanie, Christopher), true)
+    newDay().matchBox(pair(Stefanie, Christopher), true)
           .matchNight(2, pair(Stefanie, Christopher), pair(Aurelia, Kenneth), pair(Valeria, Maximilian),
                 pair(Caroline, Pascal), pair(Carina, Sasa), pair(Vanessa, Marwin), pair(Dorna, Deniz),
                 pair(Larissa, Joel), pair(Juliette, Barkin), pair(Henna, Ken)); // Burim
 
-    newTag().matchBox(pair(Valeria, Maximilian), false)
+    newDay().matchBox(pair(Valeria, Maximilian), false)
           .matchNight(3, pair(Stefanie, Christopher), pair(Henna, Ken), pair(Carina, Pascal), pair(Vanessa, Sasa),
                 pair(Larissa, Deniz), pair(Dorna, Burim), pair(Juliette, Kenneth), pair(Aurelia, Marwin),
                 pair(Valeria, Joel), pair(Caroline, Maximilian)); // Barkin
 
-    newTag().matchBox(pair(Caroline, Ken), true, pair(Caroline, Maximilian))
+    newDay().matchBox(pair(Caroline, Ken), true, pair(Caroline, Maximilian))
           .matchNight(4, pair(Stefanie, Christopher), pair(Caroline, Ken), pair(Vanessa, Sasa), pair(Juliette, Barkin),
                 pair(Carina, Pascal), pair(Henna, Kenneth), pair(Aurelia, Marwin), pair(Dorna, Burim),
                 pair(Valeria, Joel), pair(Larissa, Deniz)); // Maximilian
 
-    newTag().matchBox(pair(Dorna, Burim), false)
+    newDay().matchBox(pair(Dorna, Burim), false)
           .matchNight(3, pair(Stefanie, Christopher), pair(Caroline, Ken), pair(Vanessa, Joel), pair(Carina, Sasa),
                 pair(Juliette, Barkin), pair(Henna, Kenneth), pair(Dorna, Deniz), pair(Larissa, Marwin),
                 pair(Aurelia, Burim), pair(Valeria, Pascal)); // Maximilian
 
-    newTag().matchBox(pair(Juliette, Joel), false)
+    newDay().matchBox(pair(Juliette, Joel), false)
           .matchNight(2, pair(Stefanie, Christopher), pair(Caroline, Ken), pair(Juliette, Kenneth),
                 pair(Vanessa, Deniz), pair(Dorna, Barkin), pair(Henna, Burim), pair(Carina, Marwin),
                 pair(Aurelia, Joel), pair(Valeria, Pascal), pair(Larissa, Sasa)); // Maximilian
 
-    newTag().matchBox(pair(Dorna, Marwin), false)
+    newDay().matchBox(pair(Dorna, Marwin), false)
           .matchNight(2, pair(Stefanie, Christopher), pair(Caroline, Ken), pair(Valeria, Burim), pair(Carina, Kenneth),
                 pair(Juliette, Barkin), pair(Larissa, Pascal), pair(Henna, Deniz), pair(Dorna, Joel),
                 pair(Vanessa, Sasa), pair(Aurelia, Marwin)); // Maximilian
 
-    newTag().matchBox(pair(Carina, Pascal), false)
+    newDay().matchBox(pair(Carina, Pascal), false)
           .matchNight(10, pair(Stefanie, Christopher), pair(Caroline, Ken), pair(Dorna, Sasa), pair(Vanessa, Marwin),
                 pair(Aurelia, Pascal), pair(Henna, Kenneth), pair(Juliette, Burim), pair(Larissa, Barkin),
                 pair(Valeria, Joel), pair(Carina, Deniz));
   }
 
   public static void main(String[] args) {
-    new DefaultMatchPrinter().printDayResults(new AYTO_04());
+    new DefaultMatchPrinter().printLastDayResults(new AYTO_04());
   }
 
 }

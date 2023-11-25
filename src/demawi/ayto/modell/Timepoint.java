@@ -1,16 +1,19 @@
 package demawi.ayto.modell;
 
-public class Zeitpunkt {
+/**
+ * References a specific point in time (day and event).
+ */
+public class Timepoint {
 
    private final int tagNr;
    private final int eventCount;
 
-   public Zeitpunkt(int tagNr, int eventCount) {
+   public Timepoint(int tagNr, int eventCount) {
       this.tagNr = tagNr;
       this.eventCount = eventCount;
    }
 
-   public int getTagNr() {
+   public int getDayNr() {
       return tagNr;
    }
 

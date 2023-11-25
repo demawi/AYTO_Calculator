@@ -12,8 +12,8 @@ public class AYTO_PairTest {
       Person a = new Person("a");
       Person a2 = new Person("a");
       Person b = new Person("b");
-      Frau frauC = new Frau("c");
-      Mann mannC = new Mann("c");
+      Woman frauC = new Woman("c");
+      Man mannC = new Man("c");
       assertTrue(a.equals(a2));
       assertFalse(a.equals(b));
       assertFalse(frauC.equals(mannC));

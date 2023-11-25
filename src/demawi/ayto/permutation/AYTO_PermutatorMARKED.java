@@ -54,7 +54,7 @@ public class AYTO_PermutatorMARKED<F, M, R>
     */
    @Override
    public Object[] createInitialConstellation() {
-      return new Object[] { frauen.size() == maenner.size() };
+      return new Object[] { women.size() == men.size() };
    }
 
    @Override

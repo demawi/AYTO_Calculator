@@ -1,41 +1,41 @@
 package demawi.ayto;
 
-import demawi.ayto.modell.Frau;
-import demawi.ayto.modell.Mann;
-import demawi.ayto.modell.StaffelData;
+import demawi.ayto.modell.Woman;
+import demawi.ayto.modell.Man;
+import demawi.ayto.modell.SeasonData;
 import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.print.DefaultMatchPrinter;
 
 import static demawi.ayto.modell.AYTO_Pair.pair;
 
 public class AYTO_Test
-      extends StaffelData {
+      extends SeasonData {
 
-  private final Frau Aurelia = frau("Aurelia");
-  private final Frau Karo = frau("Karo");
-  private final Frau Marina = frau("Marina");
+  private final Woman Aurelia = frau("Aurelia");
+  private final Woman Karo = frau("Karo");
+  private final Woman Marina = frau("Marina");
 
-  private final Mann Barkin = mann("Barkin");
-  private final Mann Burim = mann("Burim");
-  private final Mann Christopher = mann("Christopher");
+  private final Man Barkin = mann("Barkin");
+  private final Man Burim = mann("Burim");
+  private final Man Christopher = mann("Christopher");
 
   public AYTO_Test() {
-    super(AYTO_Permutator.ZUSATZTYPE.MARKED);
+    super(AYTO_Permutator.MODE.MARKED);
 
     if (true) {
-      Frau newFrau = new Frau("Sarah");
-      newTag().addNew(newFrau)
+      Woman newFrau = new Woman("Sarah");
+      newDay().addNew(newFrau)
             .matchBox(pair(Aurelia, Barkin), true);
     }
     else {
-      Mann newMann = new Mann("Deniz");
-      newTag().addNew(newMann)
+      Man newMann = new Man("Deniz");
+      newDay().addNew(newMann)
             .matchBox(pair(Aurelia, Barkin), true, pair(Aurelia, Burim));
     }
   }
 
   public static void main(String[] args) {
-    new DefaultMatchPrinter().printDayResults(new AYTO_Test());
+    new DefaultMatchPrinter().printLastDayResults(new AYTO_Test());
   }
 
 }

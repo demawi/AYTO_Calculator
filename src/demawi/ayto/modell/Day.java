@@ -3,15 +3,15 @@ package demawi.ayto.modell;
 import java.util.ArrayList;
 import java.util.List;
 
-import demawi.ayto.events.*;
+import demawi.ayto.modell.events.*;
 
-public class Tag {
+public class Day {
 
    private final List<Event> events = new ArrayList<>();
+   private final int matchingNightCount;
    private MatchingNight matchingNight;
-   private int matchingNightCount;
 
-   private Tag(int matchingNightCount) {
+   private Day(int matchingNightCount) {
       this.matchingNightCount = matchingNightCount;
    }
 
@@ -19,26 +19,26 @@ public class Tag {
       return matchingNightCount;
    }
 
-   public static Tag create(int matchingNightCount) {
-      return new Tag(matchingNightCount);
+   public static Day create(int matchingNightCount) {
+      return new Day(matchingNightCount);
    }
 
-   public Tag addNew(Person person) {
+   public Day addNew(Person person) {
       events.add(new NewPerson(person));
       return this;
    }
 
-   public Tag addNew(Person person, boolean zusatzperson) {
+   public Day addNew(Person person, boolean zusatzperson) {
       events.add(new NewPerson(person, zusatzperson));
       return this;
    }
 
-   public Tag matchBox(AYTO_Pair matchingPair, Boolean perfectMatch) {
+   public Day matchBox(AYTO_Pair matchingPair, Boolean perfectMatch) {
       events.add(new MatchBoxResult(matchingPair, perfectMatch));
       return this;
    }
 
-   public Tag matchBox(AYTO_Pair matchingPair, Boolean perfectMatch, AYTO_Pair weitererAuszug) {
+   public Day matchBox(AYTO_Pair matchingPair, Boolean perfectMatch, AYTO_Pair weitererAuszug) {
       events.add(new MatchBoxResult(matchingPair, perfectMatch, weitererAuszug));
       return this;
    }
@@ -51,7 +51,7 @@ public class Tag {
       events.add(matchingNight);
    }
 
-   public Tag sameMatch(Person person, Person person2) {
+   public Day sameMatch(Person person, Person person2) {
       events.add(new SameMatch(person, person2));
       return this;
    }

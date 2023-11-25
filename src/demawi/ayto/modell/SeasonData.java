@@ -3,17 +3,17 @@ package demawi.ayto.modell;
 import java.util.*;
 import java.util.function.Consumer;
 
-import demawi.ayto.events.*;
+import demawi.ayto.modell.events.*;
 import demawi.ayto.permutation.AYTO_Permutator;
 
-public class StaffelData {
+public class SeasonData {
 
   public String name;
-  private final AYTO_Permutator.ZUSATZTYPE zusatztype;
+  private final AYTO_Permutator.MODE zusatztype;
   private final int matchingPairCount;
   private final boolean validiation;
 
-  private final List<Tag> tage = new ArrayList<>();
+  private final List<Day> tage = new ArrayList<>();
   public List<AYTO_Pair> pairsToTrack;
   public List<Person> initialFrauen = new ArrayList<>();
   public List<Person> initialMaenner = new ArrayList<>();
@@ -27,20 +27,20 @@ public class StaffelData {
     return person;
   }
 
-  protected Frau frau(String name) {
+  protected Woman frau(String name) {
     return frau(name, false);
   }
 
-  protected Frau frau(String name, boolean late) {
+  protected Woman frau(String name, boolean late) {
     return frau(name, null, late);
   }
 
-  protected Frau frau(String name, Markierung mark) {
+  protected Woman frau(String name, Mark mark) {
     return frau(name, mark, false);
   }
 
-  protected Frau frau(String name, Markierung mark, boolean lateCheckin) {
-    Frau frau = new Frau(name);
+  protected Woman frau(String name, Mark mark, boolean lateCheckin) {
+    Woman frau = new Woman(name);
     frau.mark(mark);
     if (!lateCheckin) {
       initialFrauen.add(frau);
@@ -48,20 +48,20 @@ public class StaffelData {
     return frau;
   }
 
-  protected Mann mann(String name) {
+  protected Man mann(String name) {
     return mann(name, false);
   }
 
-  protected Mann mann(String name, boolean late) {
+  protected Man mann(String name, boolean late) {
     return mann(name, null, late);
   }
 
-  protected Mann mann(String name, Markierung mark) {
+  protected Man mann(String name, Mark mark) {
     return mann(name, mark, false);
   }
 
-  protected Mann mann(String name, Markierung mark, boolean lateCheckin) {
-    Mann mann = new Mann(name);
+  protected Man mann(String name, Mark mark, boolean lateCheckin) {
+    Man mann = new Man(name);
     mann.mark(mark);
     if (!lateCheckin) {
       initialMaenner.add(mann);
@@ -69,17 +69,17 @@ public class StaffelData {
     return mann;
   }
 
-  public StaffelData(AYTO_Permutator.ZUSATZTYPE zusatztype) {
+  public SeasonData(AYTO_Permutator.MODE zusatztype) {
     this(zusatztype, 10);
   }
 
-  public StaffelData(AYTO_Permutator.ZUSATZTYPE zusatztype, int matchingPairCount) {
+  public SeasonData(AYTO_Permutator.MODE zusatztype, int matchingPairCount) {
     this.zusatztype = zusatztype;
     this.matchingPairCount = matchingPairCount;
     this.validiation = true;
   }
 
-  public StaffelData(AYTO_Permutator.ZUSATZTYPE zusatztype, int matchingPairCount, boolean validation) {
+  public SeasonData(AYTO_Permutator.MODE zusatztype, int matchingPairCount, boolean validation) {
     this.zusatztype = zusatztype;
     this.matchingPairCount = matchingPairCount;
     this.validiation = validation;
@@ -89,8 +89,8 @@ public class StaffelData {
     this.name = name;
   }
 
-  protected Tag newTag() {
-    Tag tag = Tag.create(matchingPairCount);
+  protected Day newDay() {
+    Day tag = Day.create(matchingPairCount);
     tage.add(tag);
     return tag;
   }
@@ -99,11 +99,11 @@ public class StaffelData {
     return matchingPairCount;
   }
 
-  public AYTO_Permutator.ZUSATZTYPE getZusatztype() {
+  public AYTO_Permutator.MODE getZusatztype() {
     return zusatztype;
   }
 
-  public Tag getTag(int tagNr) {
+  public Day getTag(int tagNr) {
     return tage.get(tagNr - 1);
   }
 
@@ -111,7 +111,7 @@ public class StaffelData {
     return tage.size();
   }
 
-  public List<Tag> getTage() {
+  public List<Day> getTage() {
     return Collections.unmodifiableList(tage);
   }
 
@@ -127,10 +127,10 @@ public class StaffelData {
   public List<Person> getFrauen(int tagNr, int eventCount) {
     List<Person> result = new ArrayList<>(initialFrauen);
     for (Event event : getAllEventsTill(tagNr, eventCount)) {
-      if (event instanceof NewPerson && ((NewPerson) event).person instanceof Frau) {
+      if (event instanceof NewPerson && ((NewPerson) event).person instanceof Woman) {
         result.add(((NewPerson) event).person);
       }
-      if (event instanceof SameMatch && ((SameMatch) event).getSecond() instanceof Frau) {
+      if (event instanceof SameMatch && ((SameMatch) event).getSecond() instanceof Woman) {
         result.remove(((SameMatch) event).getSecond());
       }
     }
@@ -145,10 +145,10 @@ public class StaffelData {
   public List<Person> getMaenner(int tagNr, int eventCount) {
     List<Person> result = new ArrayList<>(initialMaenner);
     for (Event event : getAllEventsTill(tagNr, eventCount)) {
-      if (event instanceof NewPerson && ((NewPerson) event).person instanceof Mann) {
+      if (event instanceof NewPerson && ((NewPerson) event).person instanceof Man) {
         result.add(((NewPerson) event).person);
       }
-      if (event instanceof SameMatch && ((SameMatch) event).getSecond() instanceof Mann) {
+      if (event instanceof SameMatch && ((SameMatch) event).getSecond() instanceof Man) {
         result.remove(((SameMatch) event).getSecond());
       }
     }
@@ -163,7 +163,7 @@ public class StaffelData {
   public List<Event> getAllEventsTill(int tagNr, int eventCount) {
     List<Event> result = new ArrayList<>();
     for (int i = 0; i < tagNr; i++) {
-      Tag tag = tage.get(i);
+      Day tag = tage.get(i);
       List<Event> curEvents = tag.getEvents();
       for (int j = 0, l = (i == tagNr - 1) ? eventCount : curEvents.size(); j < l; j++) {
         result.add(curEvents.get(j));
@@ -173,7 +173,7 @@ public class StaffelData {
   }
 
   public List<Person> getZusatzpersonen(int tagNr) {
-    return getZusatztype().getZusatzpersonen(getFrauen(tagNr), getMaenner(tagNr));
+    return getZusatztype().getExtraMatchPersons(getFrauen(tagNr), getMaenner(tagNr));
   }
 
   /**
@@ -203,14 +203,14 @@ public class StaffelData {
     List<Person> curMaenner = new ArrayList<>(initialMaenner);
     Consumer<Person> personValidationCheck = (person) -> {
       if (person != null) {
-        if (person instanceof Frau) {
+        if (person instanceof Woman) {
           if (!curFrauen.contains(person)) {
             throw new IllegalStateException(
                   "Frau existiert noch nicht rechtzeitig: " + person + " an Tag " + (currentConsistenceDay + 1)
                         + ". Die Person muss lateCheckIn=false aufweisen und im Nachhinein über ein NewPerson-Event hinzugefügt werden!");
           }
         }
-        else if (person instanceof Mann) {
+        else if (person instanceof Man) {
           if (!curMaenner.contains(person)) {
             throw new IllegalStateException(
                   "Mann existiert noch nicht rechtzeitig: " + person + " an Tag " + (currentConsistenceDay + 1)
@@ -220,17 +220,17 @@ public class StaffelData {
       }
     };
     for (int i = 0, l = tage.size(); i < l; i++) {
-      Tag tag = tage.get(i);
+      Day tag = tage.get(i);
       currentConsistenceDay = i;
       for (Event evt : tag.getEvents()) {
         if (evt instanceof NewPerson) {
           NewPerson event = (NewPerson) evt;
           Person newPerson = event.person;
-          if (newPerson instanceof Frau) {
-            curFrauen.add((Frau) newPerson);
+          if (newPerson instanceof Woman) {
+            curFrauen.add(newPerson);
           }
           else {
-            curMaenner.add((Mann) newPerson);
+            curMaenner.add(newPerson);
           }
         }
         else if (evt instanceof MatchBoxResult) {
@@ -245,7 +245,7 @@ public class StaffelData {
           for (AYTO_Pair pair : constellation) {
             personValidationCheck.accept(pair.frau);
             personValidationCheck.accept(pair.mann);
-            if (zusatztype != AYTO_Permutator.ZUSATZTYPE.BISEXUAL) {
+            if (zusatztype != AYTO_Permutator.MODE.BISEXUAL) {
               validateMatchingPairs(constellation);
             }
           }
@@ -291,7 +291,7 @@ public class StaffelData {
    * Bei ZUSATZTYPE.NUR_LETZTER heißt dies im Umkehrschluss, dass es definitiv auch kein
    * PerfektMatch zwischen der ZusatzPerson geben kann.
    * <p>
-   * Keine NewPerson-Events bei {@link demawi.ayto.permutation.AYTO_Permutator.ZUSATZTYPE#BISEXUAL}
+   * Keine NewPerson-Events bei {@link AYTO_Permutator.MODE#BISEXUAL}
    */
   private void checkForImplicits() {
     List<AYTO_Pair> previousPerfectMatches = new ArrayList<>();
@@ -304,7 +304,7 @@ public class StaffelData {
             previousPerfectMatches.add(result.pair);
 
             if (newPerson != null) {
-              if (newPerson instanceof Frau) {
+              if (newPerson instanceof Woman) {
                 for (Person frau : getZusatzpersonen(tagNr)) {
                   addImplicitForPerfectMatchEvent(result, frau, result.pair.mann, result.pairWeitererAuszug);
                 }
@@ -323,14 +323,14 @@ public class StaffelData {
           if (personEvent.implicits.isEmpty()) {
             // Annahme: alle vorherigen PerfectMatches sind kein Partner zu der neuen Person.
             // tritt bei ZusatzType.JEDER nicht auf, da die Person von vornherein dabei ist.
-            if (newPerson instanceof Frau) {
+            if (newPerson instanceof Woman) {
               for (AYTO_Pair perfectMatch : previousPerfectMatches) {
-                addImplicitForPerfectMatchEvent(personEvent, (Frau) newPerson, perfectMatch.mann, null);
+                addImplicitForPerfectMatchEvent(personEvent, (Woman) newPerson, perfectMatch.mann, null);
               }
             }
             else {
               for (AYTO_Pair perfectMatch : previousPerfectMatches) {
-                addImplicitForPerfectMatchEvent(personEvent, perfectMatch.frau, (Mann) newPerson, null);
+                addImplicitForPerfectMatchEvent(personEvent, perfectMatch.frau, (Man) newPerson, null);
               }
             }
           }

@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import demawi.ayto.events.MatchingNight;
-import demawi.ayto.events.PairInterpreter;
+import demawi.ayto.modell.events.MatchingNight;
+import demawi.ayto.modell.events.PairInterpreter;
 
 public class AYTO_Result {
 
@@ -27,7 +27,7 @@ public class AYTO_Result {
     possible += cur.possible;
     notPossible += cur.notPossible;
     if (lightPossibilities != null) {
-      for (int i = 0, l = calcOptions.getData()
+      for (int i = 0, l = calcOptions.getSeasonData()
             .getMatchingPairCount(); i <= l; i++) {
         lightPossibilities[i] += cur.lightPossibilities[i];
       }
@@ -54,8 +54,7 @@ public class AYTO_Result {
     this.calcOptions = calcOptions;
     MatchingNight matchingNight = calcOptions.getMatchingNight();
     if (matchingNight != null) {
-      int lightArrayLength = calcOptions.getTag()
-            .getMatchingNightCount() + 1;
+      int lightArrayLength = matchingNight.constellation.size() + 1;
       lightPossibilities = new int[lightArrayLength];
       for (int i = 0; i < lightArrayLength; i++) {
         lightPossibilities[i] = 0;
@@ -63,12 +62,12 @@ public class AYTO_Result {
     }
   }
 
-  public List<Tag> getTageBisher() {
+  public List<Day> getTageBisher() {
     return calcOptions.getTageBisher();
   }
 
-  public StaffelData getData() {
-    return calcOptions.getData();
+  public SeasonData getData() {
+    return calcOptions.getSeasonData();
   }
 
   public int getPossibleConstellationSize() {
@@ -92,7 +91,7 @@ public class AYTO_Result {
    * Gilt unabhängig vom Zusatztype
    */
   public boolean isBasePerson(Person person) {
-    if (person instanceof Frau) {
+    if (person instanceof Woman) {
       return getData().initialFrauen.contains(person);
     }
     else {

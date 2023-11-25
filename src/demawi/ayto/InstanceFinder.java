@@ -5,7 +5,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.LinkedHashSet;
 
-import demawi.ayto.modell.StaffelData;
+import demawi.ayto.modell.SeasonData;
 
 public class InstanceFinder {
 
@@ -56,7 +56,7 @@ public class InstanceFinder {
 
    public static void main(String[] args)
          throws Exception {
-      new InstanceFinder().findAllInstances(StaffelData.class)
+      new InstanceFinder().findAllInstances(SeasonData.class)
             .forEach(c -> {
                System.out.println(c);
             });

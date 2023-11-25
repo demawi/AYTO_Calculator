@@ -2,8 +2,8 @@ package demawi.ayto.print;
 
 import java.util.List;
 
-import demawi.ayto.events.*;
 import demawi.ayto.modell.*;
+import demawi.ayto.modell.events.*;
 
 public class DefaultMatchPrinter
       extends MatchPrinter {
@@ -15,9 +15,9 @@ public class DefaultMatchPrinter
    private static final boolean WITH_CALCULATON_SUMMARY = true;
 
    @Override
-   public void printDayResults(StaffelData data, int tagNr) {
+   public void printLastDayResults(SeasonData data, int tagNr) {
       // Pre-calculate everything
-      Tag tag = data.getTag(tagNr);
+      Day tag = data.getTag(tagNr);
       List<AYTO_Result> results = calculate(data, tagNr, 0, tagNr, tag.getEvents()
             .size());
 
@@ -57,8 +57,8 @@ public class DefaultMatchPrinter
             printPossibilitiesAsTable(afterResult);
       }
       else {
-         throw new IllegalArgumentException("Event-Klasse kann noch nicht verarbeitet werden: " + event.getClass()
-               .getSimpleName());
+         throw new IllegalArgumentException("Event-Typ '" + event.getClass()
+               .getSimpleName() + "'kann noch nicht verarbeitet werden!");
       }
    }
 
@@ -73,7 +73,7 @@ public class DefaultMatchPrinter
 
    private void printNewPerson(NewPerson event, int tagNr, int eventCount, AYTO_Result previousResult,
          AYTO_Result afterResult) {
-      if (event.person instanceof Frau) {
+      if (event.person instanceof Woman) {
          print("Eine Frau ist hinzugekommen: " + event.person.getName());
       }
       else {
@@ -172,16 +172,16 @@ public class DefaultMatchPrinter
          return;
       print("");
       breakLine();
-      StaffelData data = result.getData();
+      SeasonData data = result.getData();
       CalculationOptions calcOptions = result.getCalcOptions();
-      print("-- Berechne " + data.name + " - Nacht " + calcOptions.getZeitpunkt()
-            .getTagNr() + (
+      print("-- Berechne " + data.name + " - Nacht " + calcOptions.getTimepoint()
+            .getDayNr() + (
             calcOptions.getAnzahlNeuePersonen() > 0 ?
                   " inkl. " + calcOptions.getAnzahlNeuePersonen() + " neuer Person(en)" : "") + (
             calcOptions.getAnzahlMatchBoxen() > 0 ?
                   " inkl. " + calcOptions.getAnzahlMatchBoxen() + " Matchbox(en)" : "")
             + (calcOptions.isMitMatchingNight() ? " inkl. Matchingnight" : "") + "..." + " [Ereignis#"
-            + calcOptions.getZeitpunkt()
+            + calcOptions.getTimepoint()
             .getEventCount() + "]");
       String fortschritt = " Fortschritt: " + Formatter.prozent(
             Math.pow(1.0 * result.notPossible / (result.totalConstellations - 1), 100));

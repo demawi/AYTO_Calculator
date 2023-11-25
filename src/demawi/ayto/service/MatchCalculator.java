@@ -6,9 +6,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
-import demawi.ayto.events.ConstellationValidation;
-import demawi.ayto.events.Event;
-import demawi.ayto.events.PairInterpreter;
+import demawi.ayto.modell.events.ConstellationValidation;
+import demawi.ayto.modell.events.Event;
+import demawi.ayto.modell.events.PairInterpreter;
 import demawi.ayto.modell.*;
 import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.print.Formatter;
@@ -18,7 +18,7 @@ public class MatchCalculator {
 
    private final List<CalculationOptions> calcOptions = new ArrayList<>();
 
-   public MatchCalculator(StaffelData data, int fromTag, int fromEventCount, int toTag, int toEventCount) {
+   public MatchCalculator(SeasonData data, int fromTag, int fromEventCount, int toTag, int toEventCount) {
       for (int curTag = fromTag; curTag <= toTag; curTag++) {
          int curEventFrom = 0;
          int curEventTo = 0;
@@ -39,40 +39,47 @@ public class MatchCalculator {
          }
 
          for (int curEvent = curEventFrom; curEvent <= curEventTo; curEvent++) {
-            calcOptions.add(new CalculationOptions(data, new Zeitpunkt(curTag, curEvent)));
+            calcOptions.add(new CalculationOptions(data, new Timepoint(curTag, curEvent)));
          }
       }
    }
 
    /**
-    * Seach for recalculation events (such as NewPerson or SameMatch).
+    * Calculates all results.
     */
    public List<AYTO_Result> calculate(Consumer<String> out) {
-      List<List<CalculationOptions>> realCalcOptions = new ArrayList<>();
-      List<CalculationOptions> curOptions = new ArrayList<>();
-      realCalcOptions.add(curOptions);
-      for (CalculationOptions opts : calcOptions) {
-         Event evt = opts.getEvent();
-         if (evt != null && evt.needsRecalculation()) {
-            curOptions = new ArrayList<>();
-            realCalcOptions.add(curOptions);
-         }
-         curOptions.add(opts);
-      }
-
-      return realCalcOptions.stream()
+      return createSafeCalculationOptionsLists().stream()
             .flatMap(opts -> calculateSafe(opts, out).stream())
             .collect(Collectors.toList());
    }
 
    /**
-    * Precondition: NeedRecalculation-Events (NewPerson/SameMatch) dürfen nur zu Beginn eingetragen sein. Entsprechende Cuts müssen zuvor gesetzt worden sein.
+    * This method ensures that recalculation events (like NewPerson/SameMatch) are always in the first place of a CalculationOptions-List.
+    */
+   private List<List<CalculationOptions>> createSafeCalculationOptionsLists() {
+      List<List<CalculationOptions>> result = new ArrayList<>();
+      List<CalculationOptions> curOptions = new ArrayList<>();
+      result.add(curOptions);
+      for (CalculationOptions opts : calcOptions) {
+         Event evt = opts.getEvent();
+         if (evt != null && evt.needsRecalculation()) {
+            curOptions = new ArrayList<>();
+            result.add(curOptions);
+         }
+         curOptions.add(opts);
+      }
+      return result;
+   }
+
+   /**
+    * Precondition: NeedRecalculation-Events (like NewPerson/SameMatch) have to be the first event.
+    * Appropriate cuts must be made beforehand (that's why the method is called "safe", only safe constellations regarding the preconditions are allowed.)
     */
    private static List<AYTO_Result> calculateSafe(List<CalculationOptions> calcOptions, Consumer<String> out) {
       long start = System.currentTimeMillis();
 
       CalculationOptions calcPrimaryOptions = calcOptions.get(0);
-      StaffelData data = calcPrimaryOptions.getData();
+      SeasonData data = calcPrimaryOptions.getSeasonData();
       data.ensureDataIsClosed();
       PairInterpreter lookup = calcPrimaryOptions.getLookup();
       for(Person mann : calcPrimaryOptions.getMaenner()) {

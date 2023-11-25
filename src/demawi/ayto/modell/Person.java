@@ -8,7 +8,7 @@ public class Person
       implements ExtraEntry {
 
   private final String name;
-  public Markierung marked;
+  public Mark marked;
 
   public Person(String name) {
     this.name = name;
@@ -16,14 +16,14 @@ public class Person
 
   @Override
   public boolean isExtraMatch() {
-    return hasMark(Markierung.CAN_BE_AN_EXTRA_MATCH);
+    return hasMark(Mark.CAN_BE_AN_EXTRA_MATCH);
   }
 
-  public void mark(Markierung mark) {
+  public void mark(Mark mark) {
     this.marked = mark;
   }
 
-  public boolean hasMark(Markierung mark) {
+  public boolean hasMark(Mark mark) {
     return marked == mark;
   }
 

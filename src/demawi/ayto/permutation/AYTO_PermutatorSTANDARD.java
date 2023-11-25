@@ -13,7 +13,7 @@ public class AYTO_PermutatorSTANDARD<F, M, R>
    /**
     * Prüft, ob ein Paar wirklich zu der bisherigen Konstellation hinzugefügt werden kann.
     * <p>
-    * Nur für {@link ZUSATZTYPE:NONE}
+    * Nur für {@link MODE :NONE}
     */
    protected Object[] canAdd(int frau, int mann, Object[] constellation) {
       for (Object current : constellation) {

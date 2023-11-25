@@ -3,7 +3,7 @@ package demawi.ayto.print;
 import java.util.*;
 import java.util.function.Consumer;
 
-import demawi.ayto.events.MatchingNight;
+import demawi.ayto.modell.events.MatchingNight;
 import demawi.ayto.modell.*;
 import demawi.ayto.service.MatchCalculator;
 import demawi.ayto.util.Language;
@@ -37,13 +37,13 @@ public abstract class MatchPrinter {
    /**
     * Druckt den letzten Tag der Staffel.
     */
-   public void printDayResults(StaffelData data) {
-      printDayResults(data, data.getAnzahlTage());
+   public void printLastDayResults(SeasonData data) {
+      printLastDayResults(data, data.getAnzahlTage());
    }
 
-   public abstract void printDayResults(StaffelData data, int tagNr);
+   public abstract void printLastDayResults(SeasonData data, int tagNr);
 
-   protected List<AYTO_Result> calculate(StaffelData data, int fromTag, int fromEventCount, int toTag,
+   protected List<AYTO_Result> calculate(SeasonData data, int fromTag, int fromEventCount, int toTag,
          int toEventCount) {
       return new MatchCalculator(data, fromTag, fromEventCount, toTag, toEventCount).calculate(out);
    }
@@ -115,7 +115,7 @@ public abstract class MatchPrinter {
          for (Person frau : sortedFrauen) {
             AYTO_Pair pair = AYTO_Pair.pair(frau, mann);
             int count = 0;
-            for (Tag tag : result.getTageBisher()) {
+            for (Day tag : result.getTageBisher()) {
                MatchingNight night = tag.getMatchingNight();
                if (night != null && night.constellation.contains(pair)) {
                   count++;

@@ -1,4 +1,4 @@
-package demawi.ayto.events;
+package demawi.ayto.modell.events;
 
 import java.util.ArrayList;
 import java.util.Collection;

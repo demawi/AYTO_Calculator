@@ -12,7 +12,7 @@ import java.text.NumberFormat;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-import demawi.ayto.modell.StaffelData;
+import demawi.ayto.modell.SeasonData;
 import demawi.ayto.print.DefaultMatchPrinter;
 import demawi.ayto.print.Formatter;
 import demawi.ayto.print.MatchPrinter;
@@ -22,9 +22,9 @@ public class AllResultsPrinter {
 
    private static final NumberFormat numberFormat = new DecimalFormat("00");
 
-   public static void print(Set<StaffelData> staffeln)
+   public static void print(Set<SeasonData> staffeln)
          throws Exception {
-      for (StaffelData staffel : staffeln) {
+      for (SeasonData staffel : staffeln) {
          String subDir = getSubDir(staffel); // z.B. "de"
          if (subDir != null) {
             Language lang = subDir.startsWith("/de") ? Language.DE : Language.EN;
@@ -55,7 +55,7 @@ public class AllResultsPrinter {
       }
    }
 
-   private static String getSubDir(StaffelData staffelData) {
+   private static String getSubDir(SeasonData staffelData) {
       String root = AllResultsPrinter.class.getPackageName();
       String staffel = staffelData.getClass()
             .getPackageName();
@@ -65,7 +65,7 @@ public class AllResultsPrinter {
             .replace(".", "/");
    }
 
-   private static void writeViaMemoryBuffer(StaffelData staffel, int tagNr, MatchPrinter finder, File file)
+   private static void writeViaMemoryBuffer(SeasonData staffel, int tagNr, MatchPrinter finder, File file)
          throws IOException {
       ByteArrayOutputStream buffer = new ByteArrayOutputStream();
       Writer writer = new OutputStreamWriter(buffer);
@@ -77,7 +77,7 @@ public class AllResultsPrinter {
             e.printStackTrace();
          }
       });
-      finder.printDayResults(staffel, tagNr);
+      finder.printLastDayResults(staffel, tagNr);
       writer.flush();
       writer.close();
 
@@ -90,13 +90,13 @@ public class AllResultsPrinter {
    public static void main(String[] args)
          throws Exception {
       long start = System.currentTimeMillis();
-      LinkedHashSet<StaffelData> allInstances = new InstanceFinder().findAllInstances(StaffelData.class);
+      LinkedHashSet<SeasonData> allInstances = new InstanceFinder().findAllInstances(SeasonData.class);
       allInstances.forEach(instance -> instance.setName(getName(instance)));
       print(allInstances);
       System.out.println("AllOutPrinter time: " + Formatter.minSecs(System.currentTimeMillis() - start));
    }
 
-   private static String getName(StaffelData staffelData) {
+   private static String getName(SeasonData staffelData) {
       String simpleName = staffelData.getClass()
             .getSimpleName();
       if (simpleName.startsWith("AYTO_")) {

@@ -17,85 +17,85 @@ public abstract class AYTO_Permutator<F, M, R> {
   private static final int BRANCH_LEVEL = 0;
   protected final ExecutorService executorService;
 
-  public enum ZUSATZTYPE {
-    BISEXUAL, // Jeder kann mit jedem
-    NONE, // Jeder hat genau einen Partner zugewiesen es gibt keine Doppelpartner.
+  public enum MODE {
+    STANDARD, // Jeder hat genau einen Partner zugewiesen es gibt keine Doppelpartner.
     MARKED, // Die markieren Personen können der Doppelpartner zu jemand anderem sein
+    BISEXUAL, // Every person can match with every other person. There aren't two groups.
     ;
 
-    public <Type extends ExtraEntry, F extends Type, M extends Type> List<Type> getZusatzpersonen(List<F> frauen,
+    public <Type extends ExtraEntry, F extends Type, M extends Type> List<Type> getExtraMatchPersons(List<F> frauen,
           List<M> maenner) {
       List<Type> result = new ArrayList<>();
-      Consumer<Type> checkZusatz = p -> {
+      Consumer<Type> checkExtra = p -> {
         if (p.isExtraMatch())
           result.add(p);
       };
-      frauen.forEach(checkZusatz);
-      maenner.forEach(checkZusatz);
+      frauen.forEach(checkExtra);
+      maenner.forEach(checkExtra);
       return result;
     }
 
   }
 
-  protected final List<F> frauen;
-  protected final List<M> maenner;
+  protected final List<F> women;
+  protected final List<M> men;
   protected final int minSize;
   protected final int maxSize;
-  protected final int anzahlFrauen;
-  protected final int anzahlMaenner;
+  protected final int womenCount;
+  protected final int menCount;
   private final BiFunction<F, M, R> packingFunction;
-  private final boolean frauenCanHaveTwoMatches;
-  private final boolean maennerCanHaveTwoMatches;
-  private final boolean[] extraMapFrauen;
-  private final boolean[] extraMapMaenner;
+  private final boolean womenCanHaveTwoMatches;
+  private final boolean menCanHaveTwoMatches;
+  private final boolean[] extraMapWomen;
+  private final boolean[] extraMapMen;
 
-  protected AYTO_Permutator(List<F> frauen, List<M> maenner, BiFunction<F, M, R> packingFunction) {
-    this.frauen = frauen;
-    this.maenner = maenner;
+  protected AYTO_Permutator(List<F> women, List<M> men, BiFunction<F, M, R> packingFunction) {
+    this.women = women;
+    this.men = men;
     this.packingFunction = packingFunction;
-    anzahlFrauen = frauen.size();
-    anzahlMaenner = maenner.size();
-    minSize = Math.min(anzahlFrauen, anzahlMaenner);
-    maxSize = Math.max(anzahlFrauen, anzahlMaenner);
+    womenCount = women.size();
+    menCount = men.size();
+    minSize = Math.min(womenCount, menCount);
+    maxSize = Math.max(womenCount, menCount);
     executorService = Executors.newCachedThreadPool();
 
     // Wenn die andere Seite eine Double-Markierung hat, kann die eigene Seite doppelt vorkommen.
-    frauenCanHaveTwoMatches = maenner.stream()
+    womenCanHaveTwoMatches = men.stream()
           .anyMatch(this::canBeAnExtra);
-    maennerCanHaveTwoMatches = frauen.stream()
+    menCanHaveTwoMatches = women.stream()
           .anyMatch(this::canBeAnExtra);
 
     // Pre-calculate extraMaps
-    extraMapFrauen = new boolean[frauen.size()];
-    for (int i = 0, l = frauen.size(); i < l; i++) {
-      F f = frauen.get(i);
+    extraMapWomen = new boolean[women.size()];
+    for (int i = 0, l = women.size(); i < l; i++) {
+      F f = women.get(i);
       if (canBeAnExtra(f)) {
-        extraMapFrauen[i] = true;
+        extraMapWomen[i] = true;
       }
     }
-    extraMapMaenner = new boolean[maenner.size()];
-    for (int i = 0, l = maenner.size(); i < l; i++) {
-      M m = maenner.get(i);
+    extraMapMen = new boolean[men.size()];
+    for (int i = 0, l = men.size(); i < l; i++) {
+      M m = men.get(i);
       if (canBeAnExtra(m)) {
-        extraMapMaenner[i] = true;
+        extraMapMen[i] = true;
       }
     }
   }
 
   protected boolean isAnExtraFrau(int frau) {
-    return extraMapFrauen[frau];
+    return extraMapWomen[frau];
   }
 
   protected boolean isAnExtraMann(int mann) {
-    return extraMapMaenner[mann];
+    return extraMapMen[mann];
   }
 
   protected boolean frauenCanHaveTwoMatches() {
-    return frauenCanHaveTwoMatches;
+    return womenCanHaveTwoMatches;
   }
 
   protected boolean maennerCanHaveTwoMatches() {
-    return maennerCanHaveTwoMatches;
+    return menCanHaveTwoMatches;
   }
 
   protected boolean canBeAnExtra(Object check) {
@@ -105,15 +105,15 @@ public abstract class AYTO_Permutator<F, M, R> {
     return false;
   }
 
-  public static <F, M, R> AYTO_Permutator<F, M, R> create(List<F> setA, List<M> setB, ZUSATZTYPE zusatzType,
+  public static <F, M, R> AYTO_Permutator<F, M, R> create(List<F> setA, List<M> setB, MODE zusatzType,
         BiFunction<F, M, R> packingFunction) {
-    if (zusatzType == ZUSATZTYPE.NONE) {
+    if (zusatzType == MODE.STANDARD) {
       return new AYTO_PermutatorSTANDARD<>(setA, setB, packingFunction);
     }
-    else if (zusatzType == ZUSATZTYPE.BISEXUAL) {
+    else if (zusatzType == MODE.BISEXUAL) {
       return new AYTO_PermutatorBISEXUAL<>(setA, setB, packingFunction);
     }
-    else if (zusatzType == ZUSATZTYPE.MARKED) {
+    else if (zusatzType == MODE.MARKED) {
       return new AYTO_PermutatorMARKED<>(setA, setB, packingFunction);
     }
     else {
@@ -142,7 +142,7 @@ public abstract class AYTO_Permutator<F, M, R> {
   private void permutateInternImpl(Object[] currentConstellation, Supplier<Consumer<Set<R>>> pairConsumerCreator,
         int branchLevel) {
     Consumer<Set<R>> pairConsumer = branchLevel < 0 ? pairConsumerCreator.get() : null;
-    if (anzahlFrauen >= anzahlMaenner) { // jede Frau ist nur einmal vorhanden, somit iterieren wir über Frauen->Männer
+    if (womenCount >= menCount) { // jede Frau ist nur einmal vorhanden, somit iterieren wir über Frauen->Männer
       iterateFirstGroup(0, currentConstellation, pairConsumerCreator, pairConsumer, branchLevel);
     }
     else { // jeder Mann ist nur einmal vorhanden, somit iterieren wir über Männer->Frauen
@@ -153,7 +153,7 @@ public abstract class AYTO_Permutator<F, M, R> {
   protected boolean iterateFirstGroup(int frau, Object[] currentConstellation,
         Supplier<Consumer<Set<R>>> pairConsumerCreator, Consumer<Set<R>> pairConsumer, int branchLevel) {
     boolean addFound = false;
-    for (int mann = 0; mann < anzahlMaenner; mann++) {
+    for (int mann = 0; mann < menCount; mann++) {
       Object[] newSet = canAdd(frau, mann, currentConstellation);
       if (newSet != null) {
         addFound = true;
@@ -179,7 +179,7 @@ public abstract class AYTO_Permutator<F, M, R> {
   private boolean iterateSecondGroup(int mann, Object[] currentConstellation,
         Supplier<Consumer<Set<R>>> pairConsumerCreator, Consumer<Set<R>> pairConsumer, int branchLevel) {
     boolean addFound = false;
-    for (int frau = 0; frau < anzahlFrauen; frau++) {
+    for (int frau = 0; frau < womenCount; frau++) {
       Object[] newSet = canAdd(frau, mann, currentConstellation);
       if (newSet != null) {
         addFound = true;
@@ -232,7 +232,7 @@ public abstract class AYTO_Permutator<F, M, R> {
   }
 
   protected R decodePair(Integer number) {
-    return packingFunction.apply(frauen.get(decodeFrau(number)), maenner.get(decodeMann(number)));
+    return packingFunction.apply(women.get(decodeFrau(number)), men.get(decodeMann(number)));
   }
 
   public Object[] createInitialConstellation() {

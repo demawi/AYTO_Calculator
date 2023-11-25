@@ -1,9 +1,9 @@
-package demawi.ayto.events;
+package demawi.ayto.modell.events;
 
 import java.util.Collection;
 
 import demawi.ayto.modell.AYTO_Pair;
-import demawi.ayto.modell.Markierung;
+import demawi.ayto.modell.Mark;
 import demawi.ayto.modell.Person;
 
 public class SameMatch
@@ -36,7 +36,7 @@ public class SameMatch
 
    public void lookup(Person person) {
       if (person.equals(first)) {
-         person.mark(new Markierung("/" + second.getNamePlusMark()));
+         person.mark(new Mark("/" + second.getNamePlusMark()));
       }
    }
 
