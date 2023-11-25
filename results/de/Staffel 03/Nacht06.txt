@@ -25,6 +25,7 @@ Marie & Andre: 5,16%
 Raphaela & William: 7,80%
 Zaira & Marius: 5,65%
 Desiree & Jordi: 8,34%
+Kein Partner: Monami
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 5,43% [101]

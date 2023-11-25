@@ -25,6 +25,7 @@ Jessica & Alex: 11,97%
 Paris & Pratt: 100,00%
 Shelby & Curtis: 100,00%
 Tyler & Garland: 6,16%
+No partner: Christina
 
 Probability of corresponding number of spots:
 0 => 0,00% [0]

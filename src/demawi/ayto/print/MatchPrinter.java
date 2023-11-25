@@ -87,6 +87,21 @@ public abstract class MatchPrinter {
          print(pair + ": " + Formatter.prozent(result.getPossibleCount(pair), result.getPossibleConstellationSize())
                + "%");
       }
+      List<Person> missingPersons = new ArrayList<>();
+      result.getMaenner()
+            .stream()
+            .filter(person -> pairs.stream()
+                  .noneMatch(pair -> person.equals(pair.frau) || person.equals(pair.mann)))
+            .forEach(missingPersons::add);
+      result.getFrauen()
+            .stream()
+            .filter(person -> pairs.stream()
+                  .noneMatch(pair -> person.equals(pair.frau) || person.equals(pair.mann)))
+            .forEach(missingPersons::add);
+      for (Person missingPerson : missingPersons) {
+         print("Kein Partner: %s", "No partner: %s", "" + missingPerson.getName());
+      }
+
       print("");
       print("Wahrscheinlichkeit für entsprechende Spotanzahl:", "Probability of corresponding number of spots:");
       for (int i = 0, l = result.getData()

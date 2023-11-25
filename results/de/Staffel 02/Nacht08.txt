@@ -25,6 +25,7 @@ Victoria & Dario: 37,21%
 Sabrina & Sascha: 20,93%
 Jill & Germain: 11,63%
 Laura & Marko: 37,21%
+Kein Partner: Christin
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 0,00% [0]

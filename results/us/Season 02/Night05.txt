@@ -28,6 +28,7 @@ Jessica & Nathan: 39,46%
 Paris & Pratt: 100,00%
 Shelby & Curtis: 100,00%
 Tyler & Garland: 10,29%
+No partner: Ellie
 
 Probability of corresponding number of spots:
 0 => 0,00% [0]

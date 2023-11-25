@@ -32,6 +32,7 @@ Lisa-Marie & Eti: 9,88%
 Shelly & Wilson: 9,88%
 Maja & Paddy: 9,88%
 Edda & Sandro: 9,88%
+Kein Partner: Afra
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 35,92% [11730969]

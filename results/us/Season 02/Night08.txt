@@ -25,6 +25,7 @@ Jessica & Anthony: 0,00%
 Paris & Pratt: 100,00%
 Shelby & Curtis: 100,00%
 Tyler & Brandon: 50,00%
+No partner: Christina
 
 Probability of corresponding number of spots:
 0 => 0,00% [0]

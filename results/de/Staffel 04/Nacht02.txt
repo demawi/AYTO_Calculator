@@ -25,6 +25,7 @@ Dorna & Marwin: 33,99%
 Valeria & Pascal: 10,56%
 Caroline & Maximilian: 7,66%
 Aurelia & Burim: 8,51%
+Kein Partner: Deniz
 
 Wahrscheinlichkeit für entsprechende Spotanzahl:
 0 => 3,04% [289759]

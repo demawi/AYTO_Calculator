@@ -25,6 +25,7 @@ Jenni & Anthony: 8,58%
 Jessica & Nathan: 9,84%
 Paris & Pratt: 36,06%
 Shelby & Brandon: 11,54%
+No partner: Tyler
 
 Probability of corresponding number of spots:
 0 => 11,33% [108552]

@@ -25,6 +25,7 @@ Jessica & Layton: 9,42%
 Paris & Pratt: 21,92%
 Shelby & Dario: 8,41%
 Tyler & Brandon: 12,33%
+No partner: Ellie
 
 Probability of corresponding number of spots:
 0 => 29,88% [1455984]

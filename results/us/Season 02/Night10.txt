@@ -28,6 +28,7 @@ Jenni & John: 100,00%
 Jessica & Garland: 100,00%
 Paris & Pratt: 100,00%
 Shelby & Curtis: 100,00%
+No partner: Tyler
 
 Probability of corresponding number of spots:
 0 => 0,00% [0]
