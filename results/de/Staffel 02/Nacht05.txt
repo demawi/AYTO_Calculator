@@ -7,7 +7,7 @@
 MatchBox: Leonie & Marcel... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 43,04% [1640] <==
 Nein => 56,96% [2170]
-Die Kombinationen reduzieren sich: 3810 => 1640
+Die Anzahl der Kombinationen hat sich reduziert: 3810 => 1640
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 5 inkl. 1 Matchbox(en)... [Ereignis#1]
@@ -15,7 +15,7 @@ Die Kombinationen reduzieren sich: 3810 => 1640
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Kein weiteres Paar zieht aus!
 Implizite Annahme aufgrund Nicht-Auszug: VanessaM & Marcel => No Match!
-Die Kombinationen reduzieren sich: 1640 => 1476
+Die Anzahl der Kombinationen hat sich reduziert: 1640 => 1476
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Leonie & Marcel: 100,00%
@@ -41,7 +41,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0,00% [0]
 9 => 0,00% [0]
 10 => 0,00% [0]
-Die Kombinationen reduzieren sich: 1476 => 765
+Die Anzahl der Kombinationen hat sich reduziert: 1476 => 765
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 5 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]

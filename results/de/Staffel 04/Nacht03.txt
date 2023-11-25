@@ -7,7 +7,7 @@
 MatchBox: Stefanie & Christopher... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 37,45% [832382] <==
 Nein => 62,55% [1390469]
-Die Kombinationen reduzieren sich: 2222851 => 832382
+Die Anzahl der Kombinationen hat sich reduziert: 2222851 => 832382
 
 ==================================================================================================================================================
 -- Berechne 04 - Nacht 3 inkl. 1 Matchbox(en)... [Ereignis#1]
@@ -24,7 +24,7 @@ Implizite Annahme aufgrund Nicht-Auszug: Stefanie & Maximilian => No Match!
 Implizite Annahme aufgrund Nicht-Auszug: Stefanie & Pascal => No Match!
 Implizite Annahme aufgrund Nicht-Auszug: Stefanie & Sasa => No Match!
 Implizite Annahme aufgrund Nicht-Auszug: Stefanie & Marwin => No Match!
-Die Kombinationen reduzieren sich: 832382 => 692891
+Die Anzahl der Kombinationen hat sich reduziert: 832382 => 692891
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Stefanie & Christopher: 100,00%
@@ -50,7 +50,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0,03% [180]
 9 => 0,00% [27]
 10 => 0,00% [6]
-Die Kombinationen reduzieren sich: 692891 => 246493
+Die Anzahl der Kombinationen hat sich reduziert: 692891 => 246493
 
 ==================================================================================================================================================
 -- Berechne 04 - Nacht 3 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]

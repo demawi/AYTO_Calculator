@@ -7,7 +7,7 @@
 MatchBox: Caroline & Ken... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 8,83% [4026] <==
 Nein => 91,17% [41557]
-Die Kombinationen reduzieren sich: 45583 => 4026
+Die Anzahl der Kombinationen hat sich reduziert: 45583 => 4026
 
 ==================================================================================================================================================
 -- Berechne 04 - Nacht 5 inkl. 1 Matchbox(en)... [Ereignis#1]
@@ -23,7 +23,7 @@ Implizite Annahme aufgrund Nicht-Auszug: Caroline & Kenneth => No Match!
 Implizite Annahme aufgrund Nicht-Auszug: Caroline & Pascal => No Match!
 Implizite Annahme aufgrund Nicht-Auszug: Caroline & Sasa => No Match!
 Implizite Annahme aufgrund Nicht-Auszug: Caroline & Marwin => No Match!
-Die Kombinationen reduzieren sich: 4026 => 199
+Die Anzahl der Kombinationen hat sich reduziert: 4026 => 199
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Stefanie & Christopher: 100,00%
@@ -49,7 +49,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0,00% [0]
 9 => 0,00% [0]
 10 => 0,00% [0]
-Die Kombinationen reduzieren sich: 199 => 55
+Die Anzahl der Kombinationen hat sich reduziert: 199 => 55
 
 ==================================================================================================================================================
 -- Berechne 04 - Nacht 5 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]

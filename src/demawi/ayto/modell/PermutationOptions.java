@@ -10,5 +10,5 @@ public interface PermutationOptions {
 
    List<Person> getMaenner();
 
-   AYTO_Permutator.MODE getZusatztype();
+   AYTO_Permutator.Mode getZusatztype();
 }

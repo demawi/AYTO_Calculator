@@ -1,20 +1,20 @@
 
 ==================================================================================================================================================
--- Berechne 02 - Nacht 2... [Ereignis#0]
+-- Calculate 02 - Night 2... [Event#0]
 -- Combinations: 36288000 Possible: 6074065 Not possible: 30213935
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-MatchBox: Christina & Brandon... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
-Ja   => 19,78% [1201465]
-Nein => 80,22% [4872600] <==
-Die Kombinationen reduzieren sich: 6074065 => 4872600
+TrueBooth: Christina & Brandon... (Probability of outcome)
+Yes => 19,78% [1201465]
+No  => 80,22% [4872600] <==
+The number of combinations has decreased: 6074065 => 4872600
 
 ==================================================================================================================================================
--- Berechne 02 - Nacht 2 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Calculate 02 - Night 2 with 1 true booth(s)... [Event#1]
 -- Combinations: 36288000 Possible: 4872600 Not possible: 31415400
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Matchup ceremony: (Probability that the respective pair is a perfect match.)
 Alexandria & Anthony: 8,22%
 Ashley & John: 8,41%
 Briana & Curtis: 21,92%
@@ -26,7 +26,7 @@ Paris & Pratt: 21,92%
 Shelby & Dario: 8,41%
 Tyler & Brandon: 12,33%
 
-Wahrscheinlichkeit für entsprechende Spotanzahl:
+Probability of corresponding number of spots:
 0 => 29,88% [1455984]
 1 => 36,80% [1792886]
 2 => 21,93% [1068329] <==
@@ -38,13 +38,13 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0,00% [105]
 9 => 0,00% [7]
 10 => 0,00% [0]
-Die Kombinationen reduzieren sich: 4872600 => 1068329
+The number of combinations has decreased: 4872600 => 1068329
 
 ==================================================================================================================================================
--- Berechne 02 - Nacht 2 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
+-- Calculate 02 - Night 2 with 1 true booth(s) with matchup ceremony... [Event#2]
 -- Combinations: 36288000 Possible: 1068329 Not possible: 35219671
 --------------------------------------------------------------------------------------------------------------------------------------------------
-======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+======= Pair probabilities (In brackets: number of matching nights together so far) =======
          Alexandria   Ashley       Briana       Christina*   Ellie        Jasmine      Jenni        Jessica      Paris        Shelby       Tyler        
 Alex      9,01 % (0)   8,97 % (0)   7,37 % (0)  18,85 % (1)  20,71 % (1)   9,00 % (0)   9,01 % (0)  10,04 % (0)   7,37 % (0)   9,00 % (0)   9,53 % (0)  
 Anthony  13,89 % (1)   8,77 % (0)   6,97 % (0)  10,14 % (0)   8,91 % (0)   8,73 % (0)   8,77 % (0)  19,11 % (1)   6,97 % (0)   8,79 % (0)   9,10 % (0)  
@@ -57,5 +57,5 @@ Layton    8,74 % (0)   8,77 % (0)   6,96 % (0)  10,14 % (0)   8,94 % (0)   8,78 
 Nathan    8,88 % (0)   8,79 % (0)   7,03 % (0)  10,14 % (0)   8,99 % (0)   8,82 % (0)  14,19 % (1)   9,80 % (0)   7,03 % (0)  17,31 % (1)   9,16 % (0)  
 Pratt     7,06 % (0)   7,02 % (0)   5,28 % (0)  10,14 % (0)   7,37 % (0)   7,03 % (0)   7,06 % (0)   7,77 % (0)  36,92 % (2)   7,03 % (0)   7,47 % (0)  
 
-Mögliche Paare: 108/110
-*: Diese Person teilt sich ein Match.
+Possible pairs: 108/110
+*: this person shares a match.

@@ -7,7 +7,7 @@
 MatchBox: Isabelle & Dustin... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 0,00% [0]
 Nein => 100,00% [6] <==
-Die Kombinationen reduzieren sich: 6 => 6
+Die Anzahl der Kombinationen bleibt unverändert: 6
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 10 inkl. 1 Matchbox(en)... [Ereignis#1]
@@ -38,7 +38,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0,00% [0]
 9 => 0,00% [0]
 10 => 100,00% [6] <==
-Die Kombinationen reduzieren sich: 6 => 6
+Die Anzahl der Kombinationen bleibt unverändert: 6
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 10 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]

@@ -7,7 +7,7 @@
 MatchBox: Steffi & Eugen... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 0,00% [0]
 Nein => 100,00% [53] <==
-Die Kombinationen reduzieren sich: 53 => 53
+Die Anzahl der Kombinationen bleibt unverändert: 53
 
 ==================================================================================================================================================
 -- Berechne VIP01 - Nacht 8 inkl. 1 Matchbox(en)... [Ereignis#1]
@@ -38,7 +38,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0,00% [0]
 9 => 0,00% [0]
 10 => 0,00% [0]
-Die Kombinationen reduzieren sich: 53 => 29
+Die Anzahl der Kombinationen hat sich reduziert: 53 => 29
 
 ==================================================================================================================================================
 -- Berechne VIP01 - Nacht 8 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]

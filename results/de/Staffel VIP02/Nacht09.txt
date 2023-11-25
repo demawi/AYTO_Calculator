@@ -7,7 +7,7 @@
 MatchBox: Ricarda & Pharrell... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 0,00% [0]
 Nein => 100,00% [1] <==
-Die Kombinationen reduzieren sich: 1 => 1
+Die Anzahl der Kombinationen bleibt unverändert: 1
 
 ==================================================================================================================================================
 -- Berechne VIP02 - Nacht 9 inkl. 1 Matchbox(en)... [Ereignis#1]
@@ -38,7 +38,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0,00% [0]
 9 => 0,00% [0]
 10 => 0,00% [0]
-Die Kombinationen reduzieren sich: 1 => 1
+Die Anzahl der Kombinationen bleibt unverändert: 1
 
 ==================================================================================================================================================
 -- Berechne VIP02 - Nacht 9 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]

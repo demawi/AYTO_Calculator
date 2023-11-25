@@ -7,7 +7,7 @@
 MatchBox: Anna & Michael... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 44,83% [52] <==
 Nein => 55,17% [64]
-Die Kombinationen reduzieren sich: 116 => 52
+Die Anzahl der Kombinationen hat sich reduziert: 116 => 52
 
 ==================================================================================================================================================
 -- Berechne VIP02 - Nacht 8 inkl. 1 Matchbox(en)... [Ereignis#1]
@@ -15,7 +15,7 @@ Die Kombinationen reduzieren sich: 116 => 52
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Kein weiteres Paar zieht aus!
 Implizite Annahme aufgrund Nicht-Auszug: Anna & Felix => No Match!
-Die Kombinationen reduzieren sich: 52 => 46
+Die Anzahl der Kombinationen hat sich reduziert: 52 => 46
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Luisa & Lukas: 100,00%
@@ -41,7 +41,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0,00% [0]
 9 => 0,00% [0]
 10 => 0,00% [0]
-Die Kombinationen reduzieren sich: 46 => 1
+Die Anzahl der Kombinationen hat sich reduziert: 46 => 1
 
 ==================================================================================================================================================
 -- Berechne VIP02 - Nacht 8 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]

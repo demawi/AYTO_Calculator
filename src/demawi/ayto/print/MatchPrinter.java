@@ -3,15 +3,15 @@ package demawi.ayto.print;
 import java.util.*;
 import java.util.function.Consumer;
 
-import demawi.ayto.modell.events.MatchingNight;
 import demawi.ayto.modell.*;
+import demawi.ayto.modell.events.MatchingNight;
 import demawi.ayto.service.MatchCalculator;
 import demawi.ayto.util.Language;
 
 public abstract class MatchPrinter {
 
    private Consumer<String> out = System.out::println;
-   private Language lang;
+   protected Language lang;
 
    public void setOut(Consumer<String> out) {
       this.out = out;
@@ -26,11 +26,35 @@ public abstract class MatchPrinter {
    }
 
    protected void print(String outDE, String outEN) {
-      if (lang == Language.EN) {
-         out.accept(outEN);
+      if (lang == Language.DE) {
+         out.accept(outDE);
       }
       else {
-         out.accept(outDE);
+         out.accept(outEN);
+      }
+   }
+
+   protected void print(String outDE, String outEN, String... parameters) {
+      if (lang == Language.DE) {
+         out.accept(String.format(outDE, (Object[]) parameters));
+      }
+      else {
+         out.accept(String.format(outEN, (Object[]) parameters));
+      }
+   }
+
+   protected void printCombinationChange(int before, int after) {
+      if (after < before) {
+         print("Die Anzahl der Kombinationen hat sich reduziert: %s", "The number of combinations has decreased: %s",
+               before + " => " + after);
+      }
+      else if (after > before) {
+         print("Die Anzahl der Kombinationen hat sich erhöht: %s", "The number of combinations has increased: %s",
+               before + " => " + after);
+      }
+      else {
+         print("Die Anzahl der Kombinationen bleibt unverändert: %s", "The number of combinations stays unchanged: %s",
+               "" + before);
       }
    }
 
@@ -57,14 +81,14 @@ public abstract class MatchPrinter {
       int[] lightResults = result.getLightResultsForLastMatchingNight();
 
       print("");
-      print("Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)");
+      print("Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)",
+            "Matchup ceremony: (Probability that the respective pair is a perfect match.)");
       for (AYTO_Pair pair : pairs) {
-         print(
-               pair + ": " + Formatter.prozent(result.getPossibleCount(pair), result.getPossibleConstellationSize())
-                     + "%");
+         print(pair + ": " + Formatter.prozent(result.getPossibleCount(pair), result.getPossibleConstellationSize())
+               + "%");
       }
       print("");
-      print("Wahrscheinlichkeit für entsprechende Spotanzahl:");
+      print("Wahrscheinlichkeit für entsprechende Spotanzahl:", "Probability of corresponding number of spots:");
       for (int i = 0, l = result.getData()
             .getMatchingPairCount(); i <= l; i++) {
          String marker = "";
@@ -75,11 +99,10 @@ public abstract class MatchPrinter {
                + lightResults[i] + "]" + marker);
       }
       if (spotsReached != null) {
-         print("Die Kombinationen reduzieren sich: " + result.getPossibleConstellationSize() + " => "
-               + lightResults[spotsReached]);
+         printCombinationChange(result.getPossibleConstellationSize(), lightResults[spotsReached]);
       }
       else {
-         print("Das Ergebnis steht noch nicht fest.");
+         print("Das Ergebnis steht noch nicht fest.", "The result is still pending.");
       }
    }
 
@@ -87,7 +110,8 @@ public abstract class MatchPrinter {
     * Prints all pair probabilities
     */
    public void printPossibilitiesAsTable(AYTO_Result result) {
-      print("======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======");
+      print("======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======",
+            "======= Pair probabilities (In brackets: number of matching nights together so far) =======");
 
       List<List<String>> table = new ArrayList<>();
       table.add(new ArrayList<>());
@@ -136,17 +160,18 @@ public abstract class MatchPrinter {
          }
       }
       print(TableFormatter.formatAsTable(table));
-      print("Mögliche Paare: " + result.possiblePairCount.size() + "/" + (sortedFrauen.size() * sortedMaenner.size()));
+      print("Mögliche Paare: %s", "Possible pairs: %s",
+            result.possiblePairCount.size() + "/" + (sortedFrauen.size() * sortedMaenner.size()));
       if (markedPerson == 1) {
-         print("*: Diese Person teilt sich ein Match.");
+         print("*: Diese Person teilt sich ein Match.", "*: this person shares a match.");
       }
       else if (markedPerson > 1) {
-         print("*: Diese Personen müssen sich ggf. ein Match teilen.");
+         print("*: Diese Personen müssen sich ggf. ein Match teilen.", "*: These persons may share a match.");
       }
 
       if (result.getData().pairsToTrack != null) {
          print("");
-         print("==== Tracking der Perfect Matches im Verlauf ====");
+         print("==== Tracking der Perfect Matches im Verlauf ====", "==== Tracking of perfect matches over time ====");
          for (AYTO_Pair pair : result.getData().pairsToTrack) {
             print(pair + " => " + Formatter.prozent(result.getPossibleCount(pair),
                   result.getPossibleConstellationSize()) + "%");
@@ -165,12 +190,19 @@ public abstract class MatchPrinter {
             return o2Count.compareTo(o1Count);
          });
          print("");
-         print("==== Beste Konstellationen ====");
+         print("==== Beste Konstellationen ====", "==== Best constellations ====");
          for (int i = 0, l = Math.min(20, sortedConstellations.size()); i < l; i++) {
             Set<AYTO_Pair> constellation = sortedConstellations.get(i);
-            print("> Platz " + (i + 1) + " mit " + constellation.stream()
-                  .mapToInt(result.possiblePairCount::get)
-                  .sum() + " Punkten (Summe der Vorkommen der Einzelpaare)");
+            if (lang == Language.DE) {
+               print("> Platz " + (i + 1) + " mit " + constellation.stream()
+                     .mapToInt(result.possiblePairCount::get)
+                     .sum() + " Punkten (Summe der Vorkommen der Einzelpaare)");
+            }
+            else {
+               print("> Place " + (i + 1) + " with " + constellation.stream()
+                     .mapToInt(result.possiblePairCount::get)
+                     .sum() + " points (Sum of the occurrences of the individual pairs)");
+            }
             for (AYTO_Pair pair : constellation) {
                print(pair.toString());
             }

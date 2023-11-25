@@ -7,7 +7,7 @@
 MatchBox: Karina & Pharrell... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 29,37% [60255]
 Nein => 70,63% [144921] <==
-Die Kombinationen reduzieren sich: 205176 => 144921
+Die Anzahl der Kombinationen hat sich reduziert: 205176 => 144921
 
 ==================================================================================================================================================
 -- Berechne VIP02 - Nacht 2 inkl. 1 Matchbox(en)... [Ereignis#1]
@@ -38,7 +38,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0,00% [6]
 9 => 0,00% [0]
 10 => 0,00% [0]
-Die Kombinationen reduzieren sich: 144921 => 34595
+Die Anzahl der Kombinationen hat sich reduziert: 144921 => 34595
 
 ==================================================================================================================================================
 -- Berechne VIP02 - Nacht 2 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]

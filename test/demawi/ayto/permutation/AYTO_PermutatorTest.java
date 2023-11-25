@@ -34,7 +34,7 @@ public class AYTO_PermutatorTest {
       long start = System.currentTimeMillis();
       AYTO_Permutator<Person, Person, Pair> permutator = AYTO_Permutator.create(
             markAll(frauen(frauenAnzahl), frauenAnzahl > maennerAnzahl),
-            markAll(maenner(maennerAnzahl), maennerAnzahl > frauenAnzahl), AYTO_Permutator.MODE.MARKED,
+            markAll(maenner(maennerAnzahl), maennerAnzahl > frauenAnzahl), AYTO_Permutator.Mode.MARKED,
             Pair::pair);
       atomicCount.set(0);
       permutator.permutate(() -> result -> {
@@ -51,7 +51,7 @@ public class AYTO_PermutatorTest {
       start = System.currentTimeMillis();
       AYTO_Permutator<Person, Person, Pair> permutator2 = AYTO_Permutator.create(
             markLast(frauen(frauenAnzahl), frauenAnzahl > maennerAnzahl),
-            markLast(maenner(maennerAnzahl), maennerAnzahl > frauenAnzahl), AYTO_Permutator.MODE.MARKED,
+            markLast(maenner(maennerAnzahl), maennerAnzahl > frauenAnzahl), AYTO_Permutator.Mode.MARKED,
             Pair::pair);
       atomicCount.set(0);
       permutator2.permutate(() -> result -> {
@@ -69,7 +69,7 @@ public class AYTO_PermutatorTest {
    @Test
    public void testBigJEDER() {
       AYTO_Permutator<Person, Person, String> permutator = AYTO_Permutator.create(markAll(frauen(11)), maenner(10),
-            AYTO_Permutator.MODE.MARKED, (a, b) -> "" + a + b);
+            AYTO_Permutator.Mode.MARKED, (a, b) -> "" + a + b);
       long start = System.currentTimeMillis();
       atomicCount.set(0);
       permutator.permutate(() -> result -> {
@@ -83,7 +83,7 @@ public class AYTO_PermutatorTest {
    @Test
    public void testBigNUR_LETZTER() {
       AYTO_Permutator<Person, Person, String> permutator = AYTO_Permutator.create(markLast(frauen(11)), maenner(10),
-            AYTO_Permutator.MODE.MARKED, (a, b) -> "" + a + b);
+            AYTO_Permutator.Mode.MARKED, (a, b) -> "" + a + b);
       long start = System.currentTimeMillis();
       atomicCount.set(0);
       permutator.permutate(() -> result -> {
@@ -97,7 +97,7 @@ public class AYTO_PermutatorTest {
    @Test
    public void testCanAddBigJEDER() {
       AYTO_Permutator<Person, Person, String> permutator = AYTO_Permutator.create(markAll(frauen(11)), maenner(10),
-            AYTO_Permutator.MODE.MARKED, (a, b) -> "" + a + b);
+            AYTO_Permutator.Mode.MARKED, (a, b) -> "" + a + b);
       // UrsprungDoppelt: 1 Es fehlt: E4
       assertNull(permutator.canAdd(ind("A"), ind("1"),
             pairs(true, "A1", "I9", "G8", "C7", "J2", "F0", "K5", "H6", "B1", "D3")));
@@ -123,7 +123,7 @@ public class AYTO_PermutatorTest {
       List<Person> frauen = markAll(Arrays.asList(frau1, frau2, frau3, frau4));
       List<Person> maenner = Arrays.asList(mann1, mann2, mann3);
       AYTO_Permutator<Person, Person, Pair> permutator = AYTO_Permutator.create(markAll(frauen), maenner,
-            AYTO_Permutator.MODE.MARKED, Pair::pair);
+            AYTO_Permutator.Mode.MARKED, Pair::pair);
       assertNotNull(permutator.canAdd(ind("B"), ind("2"), pairs(false, "A1")));
       assertNotNull(permutator.canAdd(ind("C"), ind("1"), pairs(false, "A1", "B2")));
       assertNotNull(permutator.canAdd(ind("D"), ind("3"), pairs(true, "A1", "B2", "C1")));
@@ -170,13 +170,13 @@ public class AYTO_PermutatorTest {
       List<Person> frauen = Arrays.asList(frau1, frau2, frau3, frau4);
       List<Person> maenner = Arrays.asList(mann1, mann2, mann3);
       AYTO_Permutator<Person, Person, String> permutator = AYTO_Permutator.create(frauen, maenner,
-            AYTO_Permutator.MODE.MARKED, (a, b) -> "" + a + b);
+            AYTO_Permutator.Mode.MARKED, (a, b) -> "" + a + b);
       assertNotNull(permutator.canAdd(ind("B"), ind("3"), pairs(false, "A1")));
       assertNull(permutator.canAdd(ind("C"), ind("3"), pairs(false, "A1", "B3")));
       assertNotNull(permutator.canAdd(ind("D"), ind("1"), pairs(false, "A1", "B2")));
 
       frau3.mark(Mark.CAN_BE_AN_EXTRA_MATCH);
-      permutator = AYTO_Permutator.create(frauen, maenner, AYTO_Permutator.MODE.MARKED, (a, b) -> "" + a + b);
+      permutator = AYTO_Permutator.create(frauen, maenner, AYTO_Permutator.Mode.MARKED, (a, b) -> "" + a + b);
       assertNotNull(permutator.canAdd(ind("B"), ind("3"), pairs(false, "A1")));
       assertNotNull(permutator.canAdd(ind("C"), ind("3"), pairs(false, "A1", "B3")));
       assertNotNull(permutator.canAdd(ind("D"), ind("1"), pairs(false, "A1", "B2")));

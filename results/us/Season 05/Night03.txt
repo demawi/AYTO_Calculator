@@ -1,20 +1,20 @@
 
 ==================================================================================================================================================
--- Berechne 05 - Nacht 3... [Ereignis#0]
+-- Calculate 05 - Night 3... [Event#0]
 -- Combinations: 39916800 Possible: 1997186 Not possible: 37919614
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-MatchBox: Carolina & Ozzy... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
-Ja   => 9,43% [188378]
-Nein => 90,57% [1808808] <==
-Die Kombinationen reduzieren sich: 1997186 => 1808808
+TrueBooth: Carolina & Ozzy... (Probability of outcome)
+Yes => 9,43% [188378]
+No  => 90,57% [1808808] <==
+The number of combinations has decreased: 1997186 => 1808808
 
 ==================================================================================================================================================
--- Berechne 05 - Nacht 3 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Calculate 05 - Night 3 with 1 true booth(s)... [Event#1]
 -- Combinations: 39916800 Possible: 1808808 Not possible: 38107992
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Matchup ceremony: (Probability that the respective pair is a perfect match.)
 Alicia & Mike: 10,72%
 Carolina & Hayden: 11,65%
 Casandra & Jaylan: 21,21%
@@ -27,7 +27,7 @@ Shannon & Tyler: 7,92%
 Taylor & Michael: 8,16%
 Tyranny & Osvaldo: 21,21%
 
-Wahrscheinlichkeit für entsprechende Spotanzahl:
+Probability of corresponding number of spots:
 0 => 16,81% [304145]
 1 => 35,49% [641938]
 2 => 28,40% [513641]
@@ -40,13 +40,13 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 9 => 0,00% [5]
 10 => 0,00% [0]
 11 => 0,00% [0]
-Die Kombinationen reduzieren sich: 1808808 => 80795
+The number of combinations has decreased: 1808808 => 80795
 
 ==================================================================================================================================================
--- Berechne 05 - Nacht 3 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
+-- Calculate 05 - Night 3 with 1 true booth(s) with matchup ceremony... [Event#2]
 -- Combinations: 39916800 Possible: 80795 Not possible: 39836005
 --------------------------------------------------------------------------------------------------------------------------------------------------
-======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+======= Pair probabilities (In brackets: number of matching nights together so far) =======
           Alicia       Carolina     Casandra     Gianna       Hannah       Kam          Kari         Kathryn      Shannon      Taylor       Tyranny      
 Andre       -     (1)   8,47 % (0)   7,74 % (0)   7,75 % (0)    -     (1)   7,63 % (0)  34,12 % (1)   8,83 % (0)   8,84 % (0)   8,85 % (0)   7,76 % (0)  
 Derrick     -     (1)   8,18 % (0)   7,17 % (0)   7,10 % (0)  31,83 % (1)   7,01 % (0)   8,16 % (0)   6,17 % (1)   8,45 % (0)   8,70 % (0)   7,23 % (0)  
@@ -60,4 +60,4 @@ Osvaldo    7,78 % (0)   7,22 % (0)   5,41 % (0)   5,15 % (0)   7,26 % (0)   5,26
 Ozzy       7,70 % (0)    -     (0)   5,22 % (0)  49,04 % (2)   7,11 % (0)   5,04 % (0)   6,43 % (0)    -     (1)   7,04 % (0)   7,17 % (0)   5,25 % (0)  
 Tyler      8,87 % (0)   8,61 % (0)   7,26 % (0)   7,10 % (0)   8,54 % (0)   7,03 % (0)   8,23 % (0)   8,45 % (0)  30,25 % (1)   5,68 % (1)    -     (1)  
 
-Mögliche Paare: 107/121
+Possible pairs: 107/121

@@ -7,7 +7,7 @@
 MatchBox: Jules & Francesco... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 7,53% [15449] <==
 Nein => 92,47% [189727]
-Die Kombinationen reduzieren sich: 205176 => 15449
+Die Anzahl der Kombinationen hat sich reduziert: 205176 => 15449
 
 ==================================================================================================================================================
 -- Berechne VIP01 - Nacht 2 inkl. 1 Matchbox(en)... [Ereignis#1]

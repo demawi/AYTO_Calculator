@@ -14,7 +14,7 @@ Die Anzahl der Kombinationen hat sich erhöht: 3586 => 35860
 MatchBox: Luisa & Lukas... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 8,37% [3000] <==
 Nein => 91,63% [32860]
-Die Kombinationen reduzieren sich: 35860 => 3000
+Die Anzahl der Kombinationen hat sich reduziert: 35860 => 3000
 
 ==================================================================================================================================================
 -- Berechne VIP02 - Nacht 4 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en)... [Ereignis#2]
@@ -22,7 +22,7 @@ Die Kombinationen reduzieren sich: 35860 => 3000
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Kein weiteres Paar zieht aus!
 Implizite Annahme aufgrund Nicht-Auszug: Luisa & Felix => No Match!
-Die Kombinationen reduzieren sich: 3000 => 2700
+Die Anzahl der Kombinationen hat sich reduziert: 3000 => 2700
 
 Es hat keine Matching Night stattgefunden!
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======

@@ -14,7 +14,7 @@ Die Anzahl der Kombinationen hat sich erhöht: 3628800 => 36288000
 MatchBox: Jana & Paolo... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 10,00% [3628800]
 Nein => 90,00% [32659200] <==
-Die Kombinationen reduzieren sich: 36288000 => 32659200
+Die Anzahl der Kombinationen hat sich reduziert: 36288000 => 32659200
 
 ==================================================================================================================================================
 -- Berechne 05 - Nacht 1 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en)... [Ereignis#2]
@@ -45,7 +45,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0,00% [187]
 9 => 0,00% [18]
 10 => 0,00% [1]
-Die Kombinationen reduzieren sich: 32659200 => 6151015
+Die Anzahl der Kombinationen hat sich reduziert: 32659200 => 6151015
 
 ==================================================================================================================================================
 -- Berechne 05 - Nacht 1 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#3]

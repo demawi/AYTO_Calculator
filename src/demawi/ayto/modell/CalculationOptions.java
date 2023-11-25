@@ -94,7 +94,7 @@ public class CalculationOptions
       return getTag().getMatchingNight();
    }
 
-   public AYTO_Permutator.MODE getZusatztype() {
+   public AYTO_Permutator.Mode getZusatztype() {
       return seasonData.getZusatztype();
    }
 

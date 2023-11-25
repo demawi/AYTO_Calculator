@@ -1,20 +1,20 @@
 
 ==================================================================================================================================================
--- Berechne 03 - Nacht 4... [Ereignis#0]
+-- Calculate 03 - Night 4... [Event#0]
 -- Combinations: 3628800 Possible: 14129 Not possible: 3614671
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-MatchBox: Britni & Chuck... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
-Ja   => 5,09% [719]
-Nein => 94,91% [13410] <==
-Die Kombinationen reduzieren sich: 14129 => 13410
+TrueBooth: Britni & Chuck... (Probability of outcome)
+Yes => 5,09% [719]
+No  => 94,91% [13410] <==
+The number of combinations has decreased: 14129 => 13410
 
 ==================================================================================================================================================
--- Berechne 03 - Nacht 4 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Calculate 03 - Night 4 with 1 true booth(s)... [Event#1]
 -- Combinations: 3628800 Possible: 13410 Not possible: 3615390
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Matchup ceremony: (Probability that the respective pair is a perfect match.)
 Amanda & Alec: 6,67%
 Britni & Nelson: 5,74%
 Chelsey & Connor: 53,77%
@@ -26,7 +26,7 @@ Melanie & Tyler: 11,98%
 Rashida & Hunter: 5,55%
 Stacey & Austin: 6,81%
 
-Wahrscheinlichkeit für entsprechende Spotanzahl:
+Probability of corresponding number of spots:
 0 => 17,94% [2406]
 1 => 34,41% [4614]
 2 => 27,61% [3702] <==
@@ -38,13 +38,13 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0,00% [0]
 9 => 0,00% [0]
 10 => 0,00% [0]
-Die Kombinationen reduzieren sich: 13410 => 3702
+The number of combinations has decreased: 13410 => 3702
 
 ==================================================================================================================================================
--- Berechne 03 - Nacht 4 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
+-- Calculate 03 - Night 4 with 1 true booth(s) with matchup ceremony... [Event#2]
 -- Combinations: 3628800 Possible: 3702 Not possible: 3625098
 --------------------------------------------------------------------------------------------------------------------------------------------------
-======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+======= Pair probabilities (In brackets: number of matching nights together so far) =======
         Amanda       Britni       Chelsey      Cheyenne     Hannah       Kayla        Kiki         Melanie      Rashida      Stacey       
 Alec     8,02 % (1)   2,46 % (0)    -     (1)   7,97 % (0)   8,16 % (0)   5,02 % (0)   8,94 % (0)   7,75 % (0)   7,86 % (0)  43,81 % (2)  
 Austin  16,32 % (1)   7,64 % (0)   4,32 % (0)  13,16 % (0)  13,26 % (0)  10,53 % (0)    -     (2)  13,24 % (0)  13,10 % (0)   8,43 % (1)  
@@ -57,4 +57,4 @@ Nelson  13,07 % (0)   6,78 % (1)   4,84 % (0)    -     (2)  13,13 % (0)  10,45 %
 Tyler   13,02 % (0)   6,62 % (0)   4,62 % (0)  13,97 % (1)  13,05 % (0)  10,56 % (0)  15,88 % (0)  14,10 % (1)    -     (2)   8,18 % (0)  
 Zak     12,97 % (0)    -     (1)   2,19 % (0)  14,83 % (1)   9,54 % (1)  26,31 % (1)    -     (0)  13,88 % (0)  13,86 % (0)   6,43 % (0)  
 
-Mögliche Paare: 86/100
+Possible pairs: 86/100

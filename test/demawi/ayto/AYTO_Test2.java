@@ -18,7 +18,7 @@ public class AYTO_Test2
    private final Man Christopher = mann("Christopher");
 
    public AYTO_Test2() {
-      super(AYTO_Permutator.MODE.MARKED);
+      super(AYTO_Permutator.Mode.MARKED);
 
       Woman newFrau = frau("Sarah");
       newDay().addNew(newFrau);

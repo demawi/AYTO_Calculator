@@ -1,20 +1,20 @@
 
 ==================================================================================================================================================
--- Berechne 01 - Nacht 4... [Ereignis#0]
+-- Calculate 01 - Night 4... [Event#0]
 -- Combinations: 3628800 Possible: 1324 Not possible: 3627476
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-MatchBox: Jessica & Dillan... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
-Ja   => 32,10% [425]
-Nein => 67,90% [899] <==
-Die Kombinationen reduzieren sich: 1324 => 899
+TrueBooth: Jessica & Dillan... (Probability of outcome)
+Yes => 32,10% [425]
+No  => 67,90% [899] <==
+The number of combinations has decreased: 1324 => 899
 
 ==================================================================================================================================================
--- Berechne 01 - Nacht 4 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Calculate 01 - Night 4 with 1 true booth(s)... [Event#1]
 -- Combinations: 3628800 Possible: 899 Not possible: 3627901
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Matchup ceremony: (Probability that the respective pair is a perfect match.)
 Amber & Adam: 5,78%
 Ashleigh & ChrisT: 4,12%
 Brittany & Ryan: 5,34%
@@ -26,7 +26,7 @@ Paige & ChrisS: 3,00%
 Shanley & John: 4,34%
 Simone & Dre: 6,45%
 
-Wahrscheinlichkeit für entsprechende Spotanzahl:
+Probability of corresponding number of spots:
 0 => 42,49% [382]
 1 => 36,71% [330]
 2 => 15,80% [142] <==
@@ -38,13 +38,13 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0,00% [0]
 9 => 0,00% [0]
 10 => 0,00% [0]
-Die Kombinationen reduzieren sich: 899 => 142
+The number of combinations has decreased: 899 => 142
 
 ==================================================================================================================================================
--- Berechne 01 - Nacht 4 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
+-- Calculate 01 - Night 4 with 1 true booth(s) with matchup ceremony... [Event#2]
 -- Combinations: 3628800 Possible: 142 Not possible: 3628658
 --------------------------------------------------------------------------------------------------------------------------------------------------
-======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+======= Pair probabilities (In brackets: number of matching nights together so far) =======
         Amber        Ashleigh     Brittany     Coleysia     Jacy         Jessica      Kayla        Paige        Shanley      Simone       
 Adam    14,08 % (1)   6,34 % (0)   1,41 % (2)   0,70 % (0)   2,82 % (0)   7,75 % (0)   7,04 % (0)   3,52 % (0)  54,23 % (1)   2,11 % (0)  
 ChrisS   5,63 % (0)  14,79 % (1)   2,82 % (0)    -     (0)   1,41 % (0)   5,63 % (0)   3,52 % (0)   3,52 % (2)   3,52 % (0)  59,15 % (1)  
@@ -57,4 +57,4 @@ John     3,52 % (0)   7,75 % (0)   4,23 % (0)   1,41 % (0)  62,68 % (1)   2,82 %
 Ryan    12,68 % (1)   7,04 % (0)  13,38 % (1)   0,70 % (0)   4,23 % (0)  12,68 % (0)  32,39 % (2)   4,93 % (0)   6,34 % (0)   5,63 % (0)  
 Wes      9,15 % (0)   6,34 % (0)   4,93 % (0)  13,38 % (1)   0,70 % (1)  29,58 % (1)  21,13 % (1)   7,75 % (0)   2,82 % (0)   4,23 % (0)  
 
-Mögliche Paare: 91/100
+Possible pairs: 91/100

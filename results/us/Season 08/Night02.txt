@@ -1,20 +1,20 @@
 
 ==================================================================================================================================================
--- Berechne 08 - Nacht 2... [Ereignis#0]
+-- Calculate 08 - Night 2... [Event#0]
 -- Combinations: 2027025 Possible: 160060 Not possible: 1866965
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-MatchBox: Remy & Brandon... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
-Ja   => 24,53% [39260]
-Nein => 75,47% [120800] <==
-Die Kombinationen reduzieren sich: 160060 => 120800
+TrueBooth: Remy & Brandon... (Probability of outcome)
+Yes => 24,53% [39260]
+No  => 75,47% [120800] <==
+The number of combinations has decreased: 160060 => 120800
 
 ==================================================================================================================================================
--- Berechne 08 - Nacht 2 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Calculate 08 - Night 2 with 1 true booth(s)... [Event#1]
 -- Combinations: 2027025 Possible: 120800 Not possible: 1906225
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Matchup ceremony: (Probability that the respective pair is a perfect match.)
 Aasha & Brandon: 7,11%
 Amber & Nour: 30,00%
 Basit & Jonathan: 28,00%
@@ -24,7 +24,7 @@ Jenna & Kai: 4,81%
 Kari & Kylie: 28,00%
 Max  & Paige: 4,66%
 
-Wahrscheinlichkeit für entsprechende Spotanzahl:
+Probability of corresponding number of spots:
 0 => 24,35% [29410]
 1 => 45,80% [55328]
 2 => 22,27% [26907] <==
@@ -34,13 +34,13 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 6 => 0,02% [29]
 7 => 0,00% [0]
 8 => 0,00% [0]
-Die Kombinationen reduzieren sich: 120800 => 26907
+The number of combinations has decreased: 120800 => 26907
 
 ==================================================================================================================================================
--- Berechne 08 - Nacht 2 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
+-- Calculate 08 - Night 2 with 1 true booth(s) with matchup ceremony... [Event#2]
 -- Combinations: 2027025 Possible: 26907 Not possible: 2000118
 --------------------------------------------------------------------------------------------------------------------------------------------------
-======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+======= Pair probabilities (In brackets: number of matching nights together so far) =======
           Aasha        Amber        Basit        Brandon      Danny        Jasmine      Jenna        Jonathan     Justin       Kai          Kari         Kylie        Max          Nour         Paige        Remy         
 Aasha       -     (0)   3,85 % (0)   4,07 % (0)  15,30 % (1)   5,89 % (0)   6,59 % (0)   6,61 % (0)   4,07 % (0)   6,65 % (0)   6,38 % (0)   4,07 % (0)   4,07 % (0)   5,96 % (0)   4,18 % (0)  15,04 % (1)   7,27 % (0)  
 Amber      3,85 % (0)    -     (0)   2,37 % (0)   4,94 % (0)   3,82 % (0)   4,11 % (0)   4,07 % (0)   2,37 % (0)   4,52 % (0)   4,06 % (0)   2,37 % (0)   2,37 % (0)   4,00 % (0)  48,15 % (2)   4,08 % (0)   4,93 % (0)  
@@ -59,4 +59,4 @@ Nour       4,18 % (0)  48,15 % (2)   2,59 % (0)   5,42 % (0)   4,18 % (0)   4,52
 Paige     15,04 % (1)   4,08 % (0)   4,32 % (0)   7,34 % (0)   6,43 % (0)   6,94 % (0)   7,09 % (0)   4,32 % (0)   6,76 % (0)   7,03 % (0)   4,32 % (0)   4,32 % (0)   9,98 % (1)   4,44 % (0)    -     (0)   7,60 % (0)  
 Remy       7,27 % (0)   4,93 % (0)   5,21 % (0)    -     (1)  15,36 % (1)   7,72 % (0)   7,60 % (0)   5,21 % (0)   8,26 % (0)   7,27 % (0)   5,21 % (0)   5,21 % (0)   7,72 % (0)   5,42 % (0)   7,60 % (0)    -     (0)  
 
-Mögliche Paare: 118/256
+Possible pairs: 118/256

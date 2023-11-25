@@ -14,7 +14,7 @@ Die Anzahl der Kombinationen hat sich erhöht: 3628800 => 199584000
 MatchBox: Valeria & Marwin... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 10,00% [19958400]
 Nein => 90,00% [179625600] <==
-Die Kombinationen reduzieren sich: 199584000 => 179625600
+Die Anzahl der Kombinationen hat sich reduziert: 199584000 => 179625600
 
 ==================================================================================================================================================
 -- Berechne 04 - Nacht 1 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en)... [Ereignis#2]
@@ -24,7 +24,7 @@ Die Kombinationen reduzieren sich: 199584000 => 179625600
 MatchBox: Dorna & Kenneth... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 9,90% [17781120]
 Nein => 90,10% [161844480] <==
-Die Kombinationen reduzieren sich: 179625600 => 161844480
+Die Anzahl der Kombinationen hat sich reduziert: 179625600 => 161844480
 
 ==================================================================================================================================================
 -- Berechne 04 - Nacht 1 inkl. 1 neuer Person(en) inkl. 2 Matchbox(en)... [Ereignis#3]
@@ -55,7 +55,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0,00% [1119]
 9 => 0,00% [88]
 10 => 0,00% [10]
-Die Kombinationen reduzieren sich: 161844480 => 10334811
+Die Anzahl der Kombinationen hat sich reduziert: 161844480 => 10334811
 
 ==================================================================================================================================================
 -- Berechne 04 - Nacht 1 inkl. 1 neuer Person(en) inkl. 2 Matchbox(en) inkl. Matchingnight... [Ereignis#4]

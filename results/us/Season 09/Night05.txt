@@ -1,20 +1,20 @@
 
 ==================================================================================================================================================
--- Berechne 09 - Nacht 5... [Ereignis#0]
+-- Calculate 09 - Night 5... [Event#0]
 -- Combinations: 39916800 Possible: 6812 Not possible: 39909988
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-MatchBox: CC & Clay... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
-Ja   => 43,04% [2932]
-Nein => 56,96% [3880] <==
-Die Kombinationen reduzieren sich: 6812 => 3880
+TrueBooth: CC & Clay... (Probability of outcome)
+Yes => 43,04% [2932]
+No  => 56,96% [3880] <==
+The number of combinations has decreased: 6812 => 3880
 
 ==================================================================================================================================================
--- Berechne 09 - Nacht 5 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Calculate 09 - Night 5 with 1 true booth(s)... [Event#1]
 -- Combinations: 39916800 Possible: 3880 Not possible: 39912920
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Matchup ceremony: (Probability that the respective pair is a perfect match.)
 Anissa & Aqel: 54,33%
 Brooke & Ollie: 64,10%
 CC & Mikey: 3,07%
@@ -27,7 +27,7 @@ Mijntje & Hamudi: 5,95%
 Roz & Clay: 13,99%
 Taylor & Samuel: 2,53%
 
-Wahrscheinlichkeit für entsprechende Spotanzahl:
+Probability of corresponding number of spots:
 0 => 0,00% [0]
 1 => 0,00% [0]
 2 => 17,58% [682]
@@ -40,13 +40,13 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 9 => 0,00% [0]
 10 => 0,00% [0]
 11 => 0,00% [0]
-Die Kombinationen reduzieren sich: 3880 => 2202
+The number of combinations has decreased: 3880 => 2202
 
 ==================================================================================================================================================
--- Berechne 09 - Nacht 5 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
+-- Calculate 09 - Night 5 with 1 true booth(s) with matchup ceremony... [Event#2]
 -- Combinations: 39916800 Possible: 2202 Not possible: 39914598
 --------------------------------------------------------------------------------------------------------------------------------------------------
-======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+======= Pair probabilities (In brackets: number of matching nights together so far) =======
          Anissa       Brooke       CC           Courtney     Danielle     Dew          Jordanne     Julia-Ruth   Mijntje      Roz          Taylor       
 Aqel     54,86 % (4)   1,14 % (0)   7,40 % (0)    -     (1)   4,81 % (0)   7,58 % (0)   4,50 % (0)    -     (0)   7,31 % (0)   5,54 % (0)   6,86 % (0)  
 Brendan    -     (0)    -     (0)    -     (1)    -     (0)    -     (0)    -     (0)    -     (1)    ✓     (3)    -     (0)    -     (0)    -     (0)  
@@ -60,4 +60,4 @@ Ollie      -     (1)  67,44 % (3)   6,27 % (0)   4,77 % (0)   3,00 % (0)    -   
 Samuel    5,54 % (0)   5,50 % (0)  12,85 % (0)   8,17 % (0)   7,27 % (0)  15,26 % (1)  10,63 % (0)    -     (1)  10,26 % (0)  23,98 % (1)   0,54 % (2)  
 Will      4,86 % (0)   9,36 % (0)  15,26 % (0)  20,48 % (3)  11,90 % (0)  10,76 % (0)    -     (1)    -     (0)  12,53 % (0)  14,85 % (0)    -     (1)  
 
-Mögliche Paare: 84/121
+Possible pairs: 84/121

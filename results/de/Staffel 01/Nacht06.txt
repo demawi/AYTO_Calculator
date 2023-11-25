@@ -16,7 +16,7 @@ Die Anzahl der Kombinationen hat sich erhöht: 144 => 1152
 MatchBox: Michelle & René... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 13,89% [160] <==
 Nein => 86,11% [992]
-Die Kombinationen reduzieren sich: 1152 => 160
+Die Anzahl der Kombinationen hat sich reduziert: 1152 => 160
 
 ==================================================================================================================================================
 -- Berechne 01 - Nacht 6 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en)... [Ereignis#2]
@@ -24,7 +24,7 @@ Die Kombinationen reduzieren sich: 1152 => 160
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Kein weiteres Paar zieht aus!
 Implizite Annahme aufgrund Nicht-Auszug: Michelle & Edin => No Match!
-Die Kombinationen reduzieren sich: 160 => 140
+Die Anzahl der Kombinationen hat sich reduziert: 160 => 140
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Aline & Mo: 100,00%
@@ -50,7 +50,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0,00% [0]
 9 => 0,00% [0]
 10 => 0,00% [0]
-Die Kombinationen reduzieren sich: 140 => 75
+Die Anzahl der Kombinationen hat sich reduziert: 140 => 75
 
 ==================================================================================================================================================
 -- Berechne 01 - Nacht 6 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#3]

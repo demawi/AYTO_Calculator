@@ -1,27 +1,27 @@
 
 ==================================================================================================================================================
--- Berechne 02 - Nacht 1... [Ereignis#0]
+-- Calculate 02 - Night 1... [Event#0]
 -- Combinations: 3628800 Possible: 3628800 Not possible: 0
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Eine Frau ist hinzugekommen: Christina
+A woman joined: Christina
 
 ==================================================================================================================================================
--- Berechne 02 - Nacht 1 inkl. 1 neuer Person(en)... [Ereignis#1]
+-- Calculate 02 - Night 1 with 1 new person(s)... [Event#1]
 -- Combinations: 36288000 Possible: 36288000 Not possible: 0
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Die Anzahl der Kombinationen hat sich erhöht: 3628800 => 36288000
+The number of combinations has increased: 3628800 => 36288000
 
-MatchBox: Jessica & Brandon... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
-Ja   => 10,00% [3628800]
-Nein => 90,00% [32659200] <==
-Die Kombinationen reduzieren sich: 36288000 => 32659200
+TrueBooth: Jessica & Brandon... (Probability of outcome)
+Yes => 10,00% [3628800]
+No  => 90,00% [32659200] <==
+The number of combinations has decreased: 36288000 => 32659200
 
 ==================================================================================================================================================
--- Berechne 02 - Nacht 1 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en)... [Ereignis#2]
+-- Calculate 02 - Night 1 with 1 new person(s) with 1 true booth(s)... [Event#2]
 -- Combinations: 36288000 Possible: 32659200 Not possible: 3628800
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Matchup ceremony: (Probability that the respective pair is a perfect match.)
 Alexandria & Garland: 9,88%
 Ashley & Dario: 9,88%
 Briana & Curtis: 9,88%
@@ -33,7 +33,7 @@ Jessica & Anthony: 11,11%
 Paris & Pratt: 9,88%
 Shelby & Nathan: 9,88%
 
-Wahrscheinlichkeit für entsprechende Spotanzahl:
+Probability of corresponding number of spots:
 0 => 36,38% [11881152]
 1 => 37,15% [12133313]
 2 => 18,60% [6074065] <==
@@ -45,13 +45,13 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0,00% [172]
 9 => 0,00% [17]
 10 => 0,00% [1]
-Die Kombinationen reduzieren sich: 32659200 => 6074065
+The number of combinations has decreased: 32659200 => 6074065
 
 ==================================================================================================================================================
--- Berechne 02 - Nacht 1 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#3]
+-- Calculate 02 - Night 1 with 1 new person(s) with 1 true booth(s) with matchup ceremony... [Event#3]
 -- Combinations: 36288000 Possible: 6074065 Not possible: 30213935
 --------------------------------------------------------------------------------------------------------------------------------------------------
-======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+======= Pair probabilities (In brackets: number of matching nights together so far) =======
          Alexandria   Ashley       Briana       Christina*   Ellie        Jasmine      Jenni        Jessica      Paris        Shelby       Tyler        
 Alex      8,68 % (0)   8,68 % (0)   8,68 % (0)   8,91 % (0)  19,75 % (1)   8,68 % (0)   8,68 % (0)   9,72 % (0)   8,68 % (0)   8,68 % (0)   9,78 % (0)  
 Anthony   8,52 % (0)   8,52 % (0)   8,52 % (0)   8,91 % (0)   8,52 % (0)   8,52 % (0)   8,52 % (0)  22,22 % (1)   8,52 % (0)   8,52 % (0)   9,65 % (0)  
@@ -64,5 +64,5 @@ Layton    8,68 % (0)   8,68 % (0)   8,68 % (0)   8,91 % (0)   8,68 % (0)   8,68 
 Nathan    8,68 % (0)   8,68 % (0)   8,68 % (0)   8,91 % (0)   8,68 % (0)   8,68 % (0)   8,68 % (0)   9,72 % (0)   8,68 % (0)  19,75 % (1)   9,78 % (0)  
 Pratt     8,68 % (0)   8,68 % (0)   8,68 % (0)   8,91 % (0)   8,68 % (0)   8,68 % (0)   8,68 % (0)   9,72 % (0)  19,75 % (1)   8,68 % (0)   9,78 % (0)  
 
-Mögliche Paare: 109/110
-*: Diese Person teilt sich ein Match.
+Possible pairs: 109/110
+*: this person shares a match.

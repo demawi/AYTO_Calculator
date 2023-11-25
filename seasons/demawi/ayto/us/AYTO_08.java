@@ -2,8 +2,7 @@ package demawi.ayto.us;
 
 import demawi.ayto.modell.Person;
 import demawi.ayto.modell.SeasonData;
-import demawi.ayto.permutation.AYTO_Permutator;
-import demawi.ayto.permutation.AYTO_Permutator.MODE;
+import demawi.ayto.permutation.AYTO_Permutator.Mode;
 import demawi.ayto.print.DefaultMatchPrinter;
 
 import static demawi.ayto.modell.AYTO_Pair.pair;
@@ -29,7 +28,7 @@ public class AYTO_08
    private final Person Remy = person("Remy");
 
    public AYTO_08() {
-      super(MODE.BISEXUAL, 8);
+      super(Mode.BISEXUAL, 8);
 
       newDay().matchBox(pair(Justin, Nour), false)
             .matchNight(2, pair(Aasha, Paige), pair(Amber, Nour), pair(Basit, Jonathan), pair(Brandon, Remy),

@@ -1,20 +1,20 @@
 
 ==================================================================================================================================================
--- Berechne 01 - Nacht 3... [Ereignis#0]
+-- Calculate 01 - Night 3... [Event#0]
 -- Combinations: 3628800 Possible: 5773 Not possible: 3623027
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-MatchBox: Simone & John... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
-Ja   => 20,02% [1156]
-Nein => 79,98% [4617] <==
-Die Kombinationen reduzieren sich: 5773 => 4617
+TrueBooth: Simone & John... (Probability of outcome)
+Yes => 20,02% [1156]
+No  => 79,98% [4617] <==
+The number of combinations has decreased: 5773 => 4617
 
 ==================================================================================================================================================
--- Berechne 01 - Nacht 3 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Calculate 01 - Night 3 with 1 true booth(s)... [Event#1]
 -- Combinations: 3628800 Possible: 4617 Not possible: 3624183
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Matchup ceremony: (Probability that the respective pair is a perfect match.)
 Amber & Ethan: 38,25%
 Ashleigh & Dre: 37,08%
 Brittany & Adam: 21,42%
@@ -26,7 +26,7 @@ Paige & ChrisS: 3,86%
 Shanley & Joey: 5,44%
 Simone & ChrisT: 6,48%
 
-Wahrscheinlichkeit für entsprechende Spotanzahl:
+Probability of corresponding number of spots:
 0 => 14,60% [674]
 1 => 30,02% [1386]
 2 => 28,68% [1324] <==
@@ -38,13 +38,13 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0,02% [1]
 9 => 0,00% [0]
 10 => 0,00% [0]
-Die Kombinationen reduzieren sich: 4617 => 1324
+The number of combinations has decreased: 4617 => 1324
 
 ==================================================================================================================================================
--- Berechne 01 - Nacht 3 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
+-- Calculate 01 - Night 3 with 1 true booth(s) with matchup ceremony... [Event#2]
 -- Combinations: 3628800 Possible: 1324 Not possible: 3627476
 --------------------------------------------------------------------------------------------------------------------------------------------------
-======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+======= Pair probabilities (In brackets: number of matching nights together so far) =======
         Amber        Ashleigh     Brittany     Coleysia     Jacy         Jessica      Kayla        Paige        Shanley      Simone       
 Adam     4,76 % (0)   3,70 % (0)  25,30 % (2)   5,82 % (0)   3,93 % (0)   4,61 % (0)   4,61 % (0)   4,91 % (0)  36,03 % (1)   6,34 % (0)  
 ChrisS   4,83 % (0)  19,56 % (1)   4,15 % (0)   4,53 % (0)   3,02 % (0)   4,15 % (0)   4,08 % (0)   3,55 % (1)   4,31 % (0)  47,81 % (1)  
@@ -57,4 +57,4 @@ John     5,66 % (0)   6,42 % (0)   6,19 % (0)   5,44 % (0)  51,36 % (1)   6,57 %
 Ryan    14,27 % (1)   4,91 % (0)   4,76 % (0)   4,68 % (0)   4,31 % (0)   6,65 % (0)  41,39 % (2)   4,68 % (0)   7,63 % (0)   6,72 % (0)  
 Wes      7,02 % (0)   5,51 % (0)   5,59 % (0)  35,20 % (1)   1,89 % (1)   7,02 % (0)  20,54 % (1)   4,91 % (0)   6,27 % (0)   6,04 % (0)  
 
-Mögliche Paare: 97/100
+Possible pairs: 97/100

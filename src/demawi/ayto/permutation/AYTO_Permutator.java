@@ -17,7 +17,7 @@ public abstract class AYTO_Permutator<F, M, R> {
   private static final int BRANCH_LEVEL = 0;
   protected final ExecutorService executorService;
 
-  public enum MODE {
+  public enum Mode {
     STANDARD, // Jeder hat genau einen Partner zugewiesen es gibt keine Doppelpartner.
     MARKED, // Die markieren Personen können der Doppelpartner zu jemand anderem sein
     BISEXUAL, // Every person can match with every other person. There aren't two groups.
@@ -39,7 +39,6 @@ public abstract class AYTO_Permutator<F, M, R> {
 
   protected final List<F> women;
   protected final List<M> men;
-  protected final int minSize;
   protected final int maxSize;
   protected final int womenCount;
   protected final int menCount;
@@ -55,7 +54,6 @@ public abstract class AYTO_Permutator<F, M, R> {
     this.packingFunction = packingFunction;
     womenCount = women.size();
     menCount = men.size();
-    minSize = Math.min(womenCount, menCount);
     maxSize = Math.max(womenCount, menCount);
     executorService = Executors.newCachedThreadPool();
 
@@ -105,15 +103,15 @@ public abstract class AYTO_Permutator<F, M, R> {
     return false;
   }
 
-  public static <F, M, R> AYTO_Permutator<F, M, R> create(List<F> setA, List<M> setB, MODE zusatzType,
+  public static <F, M, R> AYTO_Permutator<F, M, R> create(List<F> setA, List<M> setB, Mode zusatzType,
         BiFunction<F, M, R> packingFunction) {
-    if (zusatzType == MODE.STANDARD) {
+    if (zusatzType == Mode.STANDARD) {
       return new AYTO_PermutatorSTANDARD<>(setA, setB, packingFunction);
     }
-    else if (zusatzType == MODE.BISEXUAL) {
+    else if (zusatzType == Mode.BISEXUAL) {
       return new AYTO_PermutatorBISEXUAL<>(setA, setB, packingFunction);
     }
-    else if (zusatzType == MODE.MARKED) {
+    else if (zusatzType == Mode.MARKED) {
       return new AYTO_PermutatorMARKED<>(setA, setB, packingFunction);
     }
     else {

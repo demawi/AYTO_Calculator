@@ -7,7 +7,7 @@
 MatchBox: Raphaela & Andre... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 24,25% [12302]
 Nein => 75,75% [38419] <==
-Die Kombinationen reduzieren sich: 50721 => 38419
+Die Anzahl der Kombinationen hat sich reduziert: 50721 => 38419
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 3 inkl. 1 Matchbox(en)... [Ereignis#1]
@@ -38,7 +38,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0,00% [0]
 9 => 0,00% [0]
 10 => 0,00% [0]
-Die Kombinationen reduzieren sich: 38419 => 12166
+Die Anzahl der Kombinationen hat sich reduziert: 38419 => 12166
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 3 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]

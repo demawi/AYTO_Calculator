@@ -7,7 +7,7 @@
 MatchBox: Jennifer & Elia... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 32,53% [66744]
 Nein => 67,47% [138432] <==
-Die Kombinationen reduzieren sich: 205176 => 138432
+Die Anzahl der Kombinationen hat sich reduziert: 205176 => 138432
 
 ==================================================================================================================================================
 -- Berechne VIP03 - Nacht 2 inkl. 1 Matchbox(en)... [Ereignis#1]
@@ -38,7 +38,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0,01% [7]
 9 => 0,00% [0]
 10 => 0,00% [0]
-Die Kombinationen reduzieren sich: 138432 => 33356
+Die Anzahl der Kombinationen hat sich reduziert: 138432 => 33356
 
 ==================================================================================================================================================
 -- Berechne VIP03 - Nacht 2 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]

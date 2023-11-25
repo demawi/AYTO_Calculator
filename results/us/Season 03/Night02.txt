@@ -1,20 +1,20 @@
 
 ==================================================================================================================================================
--- Berechne 03 - Nacht 2... [Ereignis#0]
+-- Calculate 03 - Night 2... [Event#0]
 -- Combinations: 3628800 Possible: 608153 Not possible: 3020647
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-MatchBox: Kiki & Devin... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
-Ja   => 9,76% [59332]
-Nein => 90,24% [548821] <==
-Die Kombinationen reduzieren sich: 608153 => 548821
+TrueBooth: Kiki & Devin... (Probability of outcome)
+Yes => 9,76% [59332]
+No  => 90,24% [548821] <==
+The number of combinations has decreased: 608153 => 548821
 
 ==================================================================================================================================================
--- Berechne 03 - Nacht 2 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Calculate 03 - Night 2 with 1 true booth(s)... [Event#1]
 -- Combinations: 3628800 Possible: 548821 Not possible: 3079979
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Matchup ceremony: (Probability that the respective pair is a perfect match.)
 Amanda & Mike: 18,92%
 Britni & Zak: 8,64%
 Chelsey & Alec: 8,83%
@@ -26,7 +26,7 @@ Melanie & Devin: 21,62%
 Rashida & Tyler: 18,92%
 Stacey & Hunter: 9,82%
 
-Wahrscheinlichkeit für entsprechende Spotanzahl:
+Probability of corresponding number of spots:
 0 => 11,52% [63208] <==
 1 => 40,04% [219731]
 2 => 31,73% [174134]
@@ -38,13 +38,13 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0,00% [0]
 9 => 0,00% [0]
 10 => 0,00% [0]
-Die Kombinationen reduzieren sich: 548821 => 63208
+The number of combinations has decreased: 548821 => 63208
 
 ==================================================================================================================================================
--- Berechne 03 - Nacht 2 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
+-- Calculate 03 - Night 2 with 1 true booth(s) with matchup ceremony... [Event#2]
 -- Combinations: 3628800 Possible: 63208 Not possible: 3565592
 --------------------------------------------------------------------------------------------------------------------------------------------------
-======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+======= Pair probabilities (In brackets: number of matching nights together so far) =======
         Amanda       Britni       Chelsey      Cheyenne     Hannah       Kayla        Kiki         Melanie      Rashida      Stacey       
 Alec     7,38 % (0)   1,96 % (0)    -     (1)   7,38 % (0)   7,38 % (0)   2,78 % (0)   9,57 % (0)   7,61 % (0)   7,38 % (0)  48,57 % (1)  
 Austin  13,91 % (0)   6,93 % (0)   7,70 % (0)  13,91 % (0)  13,91 % (0)   7,77 % (0)    -     (2)  14,26 % (0)  13,91 % (0)   7,70 % (0)  
@@ -57,4 +57,4 @@ Nelson  13,26 % (0)   6,48 % (0)   7,38 % (0)    -     (2)  13,26 % (0)   7,46 %
 Tyler   13,26 % (0)   6,48 % (0)   7,38 % (0)  13,26 % (0)  13,26 % (0)   7,46 % (0)  17,82 % (0)  13,68 % (0)    -     (2)   7,38 % (0)  
 Zak      7,38 % (0)    -     (1)   2,44 % (0)   7,38 % (0)   7,38 % (0)  48,08 % (1)   9,57 % (0)   7,61 % (0)   7,38 % (0)   2,78 % (0)  
 
-Mögliche Paare: 88/100
+Possible pairs: 88/100

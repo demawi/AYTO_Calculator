@@ -9,7 +9,7 @@ import demawi.ayto.permutation.AYTO_Permutator;
 public class SeasonData {
 
   public String name;
-  private final AYTO_Permutator.MODE zusatztype;
+  private final AYTO_Permutator.Mode zusatztype;
   private final int matchingPairCount;
   private final boolean validiation;
 
@@ -69,17 +69,17 @@ public class SeasonData {
     return mann;
   }
 
-  public SeasonData(AYTO_Permutator.MODE zusatztype) {
+  public SeasonData(AYTO_Permutator.Mode zusatztype) {
     this(zusatztype, 10);
   }
 
-  public SeasonData(AYTO_Permutator.MODE zusatztype, int matchingPairCount) {
+  public SeasonData(AYTO_Permutator.Mode zusatztype, int matchingPairCount) {
     this.zusatztype = zusatztype;
     this.matchingPairCount = matchingPairCount;
     this.validiation = true;
   }
 
-  public SeasonData(AYTO_Permutator.MODE zusatztype, int matchingPairCount, boolean validation) {
+  public SeasonData(AYTO_Permutator.Mode zusatztype, int matchingPairCount, boolean validation) {
     this.zusatztype = zusatztype;
     this.matchingPairCount = matchingPairCount;
     this.validiation = validation;
@@ -99,7 +99,7 @@ public class SeasonData {
     return matchingPairCount;
   }
 
-  public AYTO_Permutator.MODE getZusatztype() {
+  public AYTO_Permutator.Mode getZusatztype() {
     return zusatztype;
   }
 
@@ -245,7 +245,7 @@ public class SeasonData {
           for (AYTO_Pair pair : constellation) {
             personValidationCheck.accept(pair.frau);
             personValidationCheck.accept(pair.mann);
-            if (zusatztype != AYTO_Permutator.MODE.BISEXUAL) {
+            if (zusatztype != AYTO_Permutator.Mode.BISEXUAL) {
               validateMatchingPairs(constellation);
             }
           }
@@ -291,7 +291,7 @@ public class SeasonData {
    * Bei ZUSATZTYPE.NUR_LETZTER heißt dies im Umkehrschluss, dass es definitiv auch kein
    * PerfektMatch zwischen der ZusatzPerson geben kann.
    * <p>
-   * Keine NewPerson-Events bei {@link AYTO_Permutator.MODE#BISEXUAL}
+   * Keine NewPerson-Events bei {@link AYTO_Permutator.Mode#BISEXUAL}
    */
   private void checkForImplicits() {
     List<AYTO_Pair> previousPerfectMatches = new ArrayList<>();

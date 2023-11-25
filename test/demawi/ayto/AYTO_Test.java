@@ -20,7 +20,7 @@ public class AYTO_Test
   private final Man Christopher = mann("Christopher");
 
   public AYTO_Test() {
-    super(AYTO_Permutator.MODE.MARKED);
+    super(AYTO_Permutator.Mode.MARKED);
 
     if (true) {
       Woman newFrau = new Woman("Sarah");

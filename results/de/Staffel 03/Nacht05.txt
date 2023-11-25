@@ -14,7 +14,7 @@ Die Anzahl der Kombinationen hat sich erhöht: 2699 => 26990
 MatchBox: Monami & Antonino... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 58,06% [15670]
 Nein => 41,94% [11320] <==
-Die Kombinationen reduzieren sich: 26990 => 11320
+Die Anzahl der Kombinationen hat sich reduziert: 26990 => 11320
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 5 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en)... [Ereignis#2]
@@ -45,7 +45,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0,00% [0]
 9 => 0,00% [0]
 10 => 0,00% [0]
-Die Kombinationen reduzieren sich: 11320 => 1924
+Die Anzahl der Kombinationen hat sich reduziert: 11320 => 1924
 
 ==================================================================================================================================================
 -- Berechne 03 - Nacht 5 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#3]

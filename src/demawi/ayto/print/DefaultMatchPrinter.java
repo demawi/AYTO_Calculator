@@ -4,6 +4,7 @@ import java.util.List;
 
 import demawi.ayto.modell.*;
 import demawi.ayto.modell.events.*;
+import demawi.ayto.util.Language;
 
 public class DefaultMatchPrinter
       extends MatchPrinter {
@@ -29,7 +30,7 @@ public class DefaultMatchPrinter
       }
       if (tag.getMatchingNight() == null) {
          print("");
-         print("Es hat keine Matching Night stattgefunden!");
+         print("Es hat keine Matching Night stattgefunden!", "No matchup ceremony took place!");
       }
       printPossibilitiesAsTable(results.get(results.size() - 1));
    }
@@ -64,9 +65,9 @@ public class DefaultMatchPrinter
 
    private void printSameMatch(SameMatch event, int tagNr, int eventCount, AYTO_Result previousResult,
          AYTO_Result afterResult) {
-      print("Ereignis: " + event.getFirst()
-            .getNameWithoutMark() + " hat " + event.getSecond()
-            .getNameWithoutMark() + " rausgeworfen!");
+      print("Ereignis: %s hat %s rausgeworfen!", "Event: %s kicked %s out!", event.getFirst()
+            .getNameWithoutMark(), event.getSecond()
+            .getNameWithoutMark());
       printCalculationSummary(afterResult);
       printCombinationChange(previousResult.getPossibleConstellationSize(), afterResult.getPossibleConstellationSize());
    }
@@ -74,10 +75,10 @@ public class DefaultMatchPrinter
    private void printNewPerson(NewPerson event, int tagNr, int eventCount, AYTO_Result previousResult,
          AYTO_Result afterResult) {
       if (event.person instanceof Woman) {
-         print("Eine Frau ist hinzugekommen: " + event.person.getName());
+         print("Eine Frau ist hinzugekommen: %s", "A woman joined: %s", event.person.getName());
       }
       else {
-         print("Ein Mann ist hinzugekommen: " + event.person.getName());
+         print("Ein Mann ist hinzugekommen: %s", "A man joined: %s", event.person.getName());
       }
       checkPrintImplicit(event);
       printCalculationSummary(afterResult);
@@ -90,7 +91,8 @@ public class DefaultMatchPrinter
       Boolean boxResult = event.result;
       print("");
       print("MatchBox: " + boxPair + (boxResult == null ? " verkauft." : "...")
-            + " (Wahrscheinlichkeit für das Ausgang des Ergebnisses)");
+                  + " (Wahrscheinlichkeit für das Ausgang des Ergebnisses)",
+            "TrueBooth: " + boxPair + (boxResult == null ? " sold." : "...") + " (Probability of outcome)");
       String yesMarker = "";
       String noMarker = "";
       int yesCombinations = previousResult.getPossibleCount(boxPair);
@@ -106,19 +108,18 @@ public class DefaultMatchPrinter
             newCombinationCount = noCombinations;
          }
       }
-      print("Ja   => " + Formatter.prozent(previousResult.getPossibleCount(boxPair),
-            previousResult.getPossibleConstellationSize()) + "% [" + yesCombinations + "]" + yesMarker);
-      print("Nein => " + Formatter.prozent(
-            previousResult.getPossibleConstellationSize() - previousResult.getPossibleCount(boxPair),
-            previousResult.getPossibleConstellationSize()) + "% [" + noCombinations + "]" + noMarker);
+      print("Ja   => %s", "Yes => %s",
+            Formatter.prozent(previousResult.getPossibleCount(boxPair), previousResult.getPossibleConstellationSize())
+                  + "% [" + yesCombinations + "]" + yesMarker);
+      print("Nein => %s", "No  => %s",
+            Formatter.prozent(previousResult.getPossibleConstellationSize() - previousResult.getPossibleCount(boxPair),
+                  previousResult.getPossibleConstellationSize()) + "% [" + noCombinations + "]" + noMarker);
       if (boxResult != null) {
-         print("Die Kombinationen reduzieren sich: " + previousResult.getPossibleConstellationSize() + " => "
-               + newCombinationCount);
+         printCombinationChange(previousResult.getPossibleConstellationSize(), newCombinationCount);
          printCalculationSummary(afterResult);
          checkPrintImplicit(event);
          if (!event.implicits.isEmpty()) {
-            print("Die Kombinationen reduzieren sich: " + newCombinationCount + " => "
-                  + afterResult.getPossibleConstellationSize());
+            printCombinationChange(newCombinationCount, afterResult.getPossibleConstellationSize());
          }
       }
    }
@@ -126,16 +127,18 @@ public class DefaultMatchPrinter
    private void checkPrintImplicit(MatchBoxResult event) {
       if (event.isTrue()) {
          if (event.pairWeitererAuszug == null) {
-            print("Kein weiteres Paar zieht aus!");
+            print("Kein weiteres Paar zieht aus!", "No other couple moves out!");
          }
          else {
-            print("Zusätzlich zieht auch das Perfect Match " + event.pairWeitererAuszug + " aus!");
+            print("Zusätzlich zieht auch das Perfect Match %s aus!", "Additionally the perfect match %s moves out!",
+                  "" + event.pairWeitererAuszug);
          }
       }
 
       for (MatchBoxResult implicit : event.implicits) {
          if (!implicit.result) {
-            print("Implizite Annahme aufgrund Nicht-Auszug: " + implicit.pair + " => No Match!");
+            print("Implizite Annahme aufgrund Nicht-Auszug: %s => No Match!",
+                  "Implicit assumption because no one else moves out: %s => No Match!", "" + implicit.pair);
          }
       }
    }
@@ -155,18 +158,6 @@ public class DefaultMatchPrinter
       printCalculationSummary(afterResult);
    }
 
-   private void printCombinationChange(int from, int to) {
-      if (from < to) {
-         print("Die Anzahl der Kombinationen hat sich erhöht: " + from + " => " + to);
-      }
-      else if (to < from) {
-         print("Die Anzahl der Kombinationen hat sich reduziert: " + from + " => " + to);
-      }
-      else {
-         print("Die Anzahl der Kombinationen bleibt unverändert: " + from + " => " + to);
-      }
-   }
-
    private void printCalculationSummary(AYTO_Result result) {
       if (!WITH_CALCULATON_SUMMARY)
          return;
@@ -174,19 +165,38 @@ public class DefaultMatchPrinter
       breakLine();
       SeasonData data = result.getData();
       CalculationOptions calcOptions = result.getCalcOptions();
-      print("-- Berechne " + data.name + " - Nacht " + calcOptions.getTimepoint()
-            .getDayNr() + (
-            calcOptions.getAnzahlNeuePersonen() > 0 ?
-                  " inkl. " + calcOptions.getAnzahlNeuePersonen() + " neuer Person(en)" : "") + (
-            calcOptions.getAnzahlMatchBoxen() > 0 ?
-                  " inkl. " + calcOptions.getAnzahlMatchBoxen() + " Matchbox(en)" : "")
-            + (calcOptions.isMitMatchingNight() ? " inkl. Matchingnight" : "") + "..." + " [Ereignis#"
-            + calcOptions.getTimepoint()
-            .getEventCount() + "]");
+      if (lang == Language.DE) {
+         print("-- Berechne " + data.name + " - Nacht " + calcOptions.getTimepoint()
+               .getDayNr() + (
+               calcOptions.getAnzahlNeuePersonen() > 0 ?
+                     " inkl. " + calcOptions.getAnzahlNeuePersonen() + " neuer Person(en)" : "") + (
+               calcOptions.getAnzahlMatchBoxen() > 0 ?
+                     " inkl. " + calcOptions.getAnzahlMatchBoxen() + " Matchbox(en)" : "")
+               + (calcOptions.isMitMatchingNight() ? " inkl. Matchingnight" : "") + "..." + " [Ereignis#"
+               + calcOptions.getTimepoint()
+               .getEventCount() + "]");
+      }
+      else {
+         print("-- Calculate " + data.name + " - Night " + calcOptions.getTimepoint()
+               .getDayNr() + (
+               calcOptions.getAnzahlNeuePersonen() > 0 ?
+                     " with " + calcOptions.getAnzahlNeuePersonen() + " new person(s)" : "") + (
+               calcOptions.getAnzahlMatchBoxen() > 0 ?
+                     " with " + calcOptions.getAnzahlMatchBoxen() + " true booth(s)" : "")
+               + (calcOptions.isMitMatchingNight() ? " with matchup ceremony" : "") + "..." + " [Event#"
+               + calcOptions.getTimepoint()
+               .getEventCount() + "]");
+      }
       String fortschritt = " Fortschritt: " + Formatter.prozent(
             Math.pow(1.0 * result.notPossible / (result.totalConstellations - 1), 100));
-      print("-- Combinations: " + result.totalConstellations + " Possible: " + result.possible + " Not possible: "
-            + result.notPossible);
+      if (lang == Language.DE) {
+         print("-- Combinations: " + result.totalConstellations + " Possible: " + result.possible + " Not possible: "
+               + result.notPossible);
+      }
+      else {
+         print("-- Combinations: " + result.totalConstellations + " Possible: " + result.possible + " Not possible: "
+               + result.notPossible);
+      }
       breakLine2();
    }
 

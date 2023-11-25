@@ -3,8 +3,7 @@ package demawi.ayto.de;
 import demawi.ayto.modell.Woman;
 import demawi.ayto.modell.Man;
 import demawi.ayto.modell.SeasonData;
-import demawi.ayto.permutation.AYTO_Permutator;
-import demawi.ayto.permutation.AYTO_Permutator.MODE;
+import demawi.ayto.permutation.AYTO_Permutator.Mode;
 import demawi.ayto.print.DefaultMatchPrinter;
 
 import static demawi.ayto.modell.AYTO_Pair.pair;
@@ -37,7 +36,7 @@ public class AYTO_VIP02
    private final Man Felix = mann("Felix", CAN_BE_AN_EXTRA_MATCH, true);
 
    public AYTO_VIP02() {
-      super(MODE.MARKED);
+      super(Mode.MARKED);
 
       newDay().matchBox(pair(Zoe, Martin), false)
             .matchNight(3, pair(Franziska, Max), pair(Anna, Michael), pair(Celina, Martin), pair(Ricarda, Maurice),

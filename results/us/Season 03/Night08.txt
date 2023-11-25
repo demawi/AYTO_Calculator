@@ -1,20 +1,20 @@
 
 ==================================================================================================================================================
--- Berechne 03 - Nacht 8... [Ereignis#0]
+-- Calculate 03 - Night 8... [Event#0]
 -- Combinations: 3628800 Possible: 65 Not possible: 3628735
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-MatchBox: Kiki & Nelson... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
-Ja   => 30,77% [20]
-Nein => 69,23% [45] <==
-Die Kombinationen reduzieren sich: 65 => 45
+TrueBooth: Kiki & Nelson... (Probability of outcome)
+Yes => 30,77% [20]
+No  => 69,23% [45] <==
+The number of combinations has decreased: 65 => 45
 
 ==================================================================================================================================================
--- Berechne 03 - Nacht 8 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Calculate 03 - Night 8 with 1 true booth(s)... [Event#1]
 -- Combinations: 3628800 Possible: 45 Not possible: 3628755
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Matchup ceremony: (Probability that the respective pair is a perfect match.)
 Amanda & Chuck: 20,00%
 Britni & Hunter: 37,78%
 Chelsey & Connor: 100,00%
@@ -26,7 +26,7 @@ Melanie & Mike: 15,56%
 Rashida & Devin: 35,56%
 Stacey & Alec: 42,22%
 
-Wahrscheinlichkeit für entsprechende Spotanzahl:
+Probability of corresponding number of spots:
 0 => 0,00% [0]
 1 => 2,22% [1]
 2 => 15,56% [7]
@@ -38,13 +38,13 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0,00% [0]
 9 => 0,00% [0]
 10 => 0,00% [0]
-Die Kombinationen reduzieren sich: 45 => 23
+The number of combinations has decreased: 45 => 23
 
 ==================================================================================================================================================
--- Berechne 03 - Nacht 8 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
+-- Calculate 03 - Night 8 with 1 true booth(s) with matchup ceremony... [Event#2]
 -- Combinations: 3628800 Possible: 23 Not possible: 3628777
 --------------------------------------------------------------------------------------------------------------------------------------------------
-======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+======= Pair probabilities (In brackets: number of matching nights together so far) =======
         Amanda       Britni       Chelsey      Cheyenne     Hannah       Kayla        Kiki         Melanie      Rashida      Stacey       
 Alec    13,04 % (1)   4,35 % (0)    -     (1)    -     (0)   8,70 % (0)   4,35 % (0)  26,09 % (0)    -     (0)   4,35 % (1)  39,13 % (5)  
 Austin   4,35 % (1)   8,70 % (0)    -     (0)  26,09 % (1)  13,04 % (1)  30,43 % (1)    -     (3)   8,70 % (0)    -     (0)   8,70 % (1)  
@@ -57,4 +57,4 @@ Nelson  26,09 % (0)  26,09 % (1)    -     (0)    -     (2)   8,70 % (0)    -    
 Tyler    8,70 % (1)   8,70 % (0)    -     (0)  26,09 % (3)    -     (1)  13,04 % (0)  30,43 % (0)   8,70 % (1)    -     (2)   4,35 % (0)  
 Zak      8,70 % (0)    -     (1)    -     (0)  34,78 % (1)  26,09 % (3)  26,09 % (3)    -     (0)   4,35 % (0)    -     (0)    -     (0)  
 
-Mögliche Paare: 56/100
+Possible pairs: 56/100

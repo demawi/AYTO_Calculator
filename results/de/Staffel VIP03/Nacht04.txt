@@ -14,7 +14,7 @@ Die Anzahl der Kombinationen hat sich erhöht: 6956 => 69560
 MatchBox: Kim & Mike... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 22,77% [15840]
 Nein => 77,23% [53720] <==
-Die Kombinationen reduzieren sich: 69560 => 53720
+Die Anzahl der Kombinationen hat sich reduziert: 69560 => 53720
 
 ==================================================================================================================================================
 -- Berechne VIP03 - Nacht 4 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en)... [Ereignis#2]
@@ -45,7 +45,7 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 0,00% [0]
 9 => 0,00% [0]
 10 => 0,00% [0]
-Die Kombinationen reduzieren sich: 53720 => 1587
+Die Anzahl der Kombinationen hat sich reduziert: 53720 => 1587
 
 ==================================================================================================================================================
 -- Berechne VIP03 - Nacht 4 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#3]

@@ -17,7 +17,7 @@ public class AYTO_PermutatorBISEXUAL<F, M, R>
    /**
     * Prüft, ob ein Paar wirklich zu der bisherigen Konstellation hinzugefügt werden kann.
     * <p>
-    * Nur für {@link MODE#BISEXUAL}
+    * Nur für {@link Mode#BISEXUAL}
     */
    protected Object[] canAdd(int frau, int mann, Object[] constellation) {
       if (frau == mann)

@@ -1,21 +1,21 @@
 
 ==================================================================================================================================================
--- Berechne 01 - Nacht 8... [Ereignis#0]
+-- Calculate 01 - Night 8... [Event#0]
 -- Combinations: 3628800 Possible: 1 Not possible: 3628799
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-MatchBox: Kayla & Wes... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
-Ja   => 100,00% [1] <==
-Nein => 0,00% [0]
-Die Kombinationen reduzieren sich: 1 => 1
+TrueBooth: Kayla & Wes... (Probability of outcome)
+Yes => 100,00% [1] <==
+No  => 0,00% [0]
+The number of combinations stays unchanged: 1
 
 ==================================================================================================================================================
--- Berechne 01 - Nacht 8 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Calculate 01 - Night 8 with 1 true booth(s)... [Event#1]
 -- Combinations: 3628800 Possible: 1 Not possible: 3628799
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Kein weiteres Paar zieht aus!
+No other couple moves out!
 
-Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Matchup ceremony: (Probability that the respective pair is a perfect match.)
 Amber & Ethan: 100,00%
 Ashleigh & ChrisS: 0,00%
 Brittany & Joey: 100,00%
@@ -27,7 +27,7 @@ Paige & ChrisT: 100,00%
 Shanley & Adam: 100,00%
 Simone & Dre: 100,00%
 
-Wahrscheinlichkeit für entsprechende Spotanzahl:
+Probability of corresponding number of spots:
 0 => 0,00% [0]
 1 => 0,00% [0]
 2 => 0,00% [0]
@@ -39,13 +39,13 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 8 => 100,00% [1] <==
 9 => 0,00% [0]
 10 => 0,00% [0]
-Die Kombinationen reduzieren sich: 1 => 1
+The number of combinations stays unchanged: 1
 
 ==================================================================================================================================================
--- Berechne 01 - Nacht 8 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
+-- Calculate 01 - Night 8 with 1 true booth(s) with matchup ceremony... [Event#2]
 -- Combinations: 3628800 Possible: 1 Not possible: 3628799
 --------------------------------------------------------------------------------------------------------------------------------------------------
-======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+======= Pair probabilities (In brackets: number of matching nights together so far) =======
         Amber        Ashleigh     Brittany     Coleysia     Jacy         Jessica      Kayla        Paige        Shanley      Simone       
 Adam      -     (1)    -     (1)    -     (2)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    ✓     (4)    -     (0)  
 ChrisS    -     (0)    -     (2)    -     (1)    -     (0)    ✓     (1)    -     (0)    -     (0)    -     (2)    -     (0)    -     (2)  
@@ -58,4 +58,4 @@ John      -     (0)    ✓     (0)    -     (1)    -     (0)    -     (4)    -  
 Ryan      -     (1)    -     (2)    -     (1)    -     (0)    -     (0)    ✓     (2)    -     (2)    -     (0)    -     (0)    -     (0)  
 Wes       -     (0)    -     (0)    -     (0)    -     (1)    -     (1)    -     (1)    ✓     (5)    -     (0)    -     (0)    -     (0)  
 
-Mögliche Paare: 10/100
+Possible pairs: 10/100

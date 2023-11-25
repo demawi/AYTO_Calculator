@@ -1,20 +1,20 @@
 
 ==================================================================================================================================================
--- Berechne 05 - Nacht 4... [Ereignis#0]
+-- Calculate 05 - Night 4... [Event#0]
 -- Combinations: 39916800 Possible: 80795 Not possible: 39836005
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-MatchBox: Tyranny & Osvaldo... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
-Ja   => 40,56% [32770]
-Nein => 59,44% [48025] <==
-Die Kombinationen reduzieren sich: 80795 => 48025
+TrueBooth: Tyranny & Osvaldo... (Probability of outcome)
+Yes => 40,56% [32770]
+No  => 59,44% [48025] <==
+The number of combinations has decreased: 80795 => 48025
 
 ==================================================================================================================================================
--- Berechne 05 - Nacht 4 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Calculate 05 - Night 4 with 1 true booth(s)... [Event#1]
 -- Combinations: 39916800 Possible: 48025 Not possible: 39868775
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Matchup ceremony: (Probability that the respective pair is a perfect match.)
 Alicia & Edward: 6,27%
 Carolina & Hayden: 37,69%
 Casandra & Andre: 6,04%
@@ -27,7 +27,7 @@ Shannon & Tyler: 32,07%
 Taylor & Osvaldo: 12,42%
 Tyranny & Jaylan: 9,01%
 
-Wahrscheinlichkeit für entsprechende Spotanzahl:
+Probability of corresponding number of spots:
 0 => 15,38% [7386]
 1 => 36,55% [17553]
 2 => 29,32% [14079]
@@ -40,13 +40,13 @@ Wahrscheinlichkeit für entsprechende Spotanzahl:
 9 => 0,00% [0]
 10 => 0,00% [0]
 11 => 0,00% [0]
-Die Kombinationen reduzieren sich: 48025 => 2067
+The number of combinations has decreased: 48025 => 2067
 
 ==================================================================================================================================================
--- Berechne 05 - Nacht 4 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
+-- Calculate 05 - Night 4 with 1 true booth(s) with matchup ceremony... [Event#2]
 -- Combinations: 39916800 Possible: 2067 Not possible: 39914733
 --------------------------------------------------------------------------------------------------------------------------------------------------
-======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+======= Pair probabilities (In brackets: number of matching nights together so far) =======
           Alicia       Carolina     Casandra     Gianna       Hannah       Kam          Kari         Kathryn      Shannon      Taylor       Tyranny      
 Andre       -     (1)   5,61 % (0)  25,74 % (1)   7,16 % (0)    -     (1)   7,45 % (0)  18,38 % (1)   6,68 % (0)   6,39 % (0)   8,85 % (0)  13,74 % (0)  
 Derrick     -     (1)   5,03 % (0)   6,43 % (0)  21,58 % (1)  16,16 % (1)   6,10 % (0)   8,32 % (0)  10,01 % (1)   5,42 % (0)   8,37 % (0)  12,58 % (0)  
@@ -60,4 +60,4 @@ Osvaldo   13,11 % (0)   4,84 % (0)   6,34 % (0)   6,29 % (0)  11,51 % (0)   7,35
 Ozzy       6,34 % (0)    -     (0)   3,19 % (0)  49,78 % (2)  19,40 % (1)   2,76 % (0)   4,16 % (0)    -     (1)   2,85 % (0)   3,97 % (0)   7,55 % (0)  
 Tyler      6,43 % (0)   2,23 % (0)   2,71 % (0)   3,14 % (0)   4,60 % (0)   3,14 % (0)   3,97 % (0)   2,13 % (0)  61,97 % (2)   9,68 % (1)    -     (1)  
 
-Mögliche Paare: 106/121
+Possible pairs: 106/121

@@ -23,7 +23,7 @@ public class AYTO_PermutatorBISEXUALTest {
    public void testCanAddSmallBISEXUAL() {
       List<String> curPersonen = Arrays.asList("A", "B", "C", "D");
       AYTO_Permutator<String, String, String> permutator = AYTO_Permutator.create(curPersonen, curPersonen,
-            AYTO_Permutator.MODE.BISEXUAL, (a, b) -> "" + a + b);
+            AYTO_Permutator.Mode.BISEXUAL, (a, b) -> "" + a + b);
       assertNull(permutator.canAdd(ind("B"), ind("A"), pairs("AB")));
       assertNull(permutator.canAdd(ind("A"), ind("B"), pairs("AB")));
       assertNull(permutator.canAdd(ind("A"), ind("C"), pairs("AB")));
@@ -40,7 +40,7 @@ public class AYTO_PermutatorBISEXUALTest {
       boolean withFullCheck = true;
       long start = System.currentTimeMillis();
       AYTO_Permutator<String, String, String> permutator = AYTO_Permutator.create(personen(anzahlPersonen),
-            personen(anzahlPersonen), AYTO_Permutator.MODE.BISEXUAL, (a, b) -> "" + a + b);
+            personen(anzahlPersonen), AYTO_Permutator.Mode.BISEXUAL, (a, b) -> "" + a + b);
       atomicCount.set(0);
       permutator.permutate(() -> result -> {
          atomicCount.incrementAndGet();
