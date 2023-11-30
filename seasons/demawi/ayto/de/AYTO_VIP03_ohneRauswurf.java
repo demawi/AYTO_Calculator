@@ -76,7 +76,7 @@ public class AYTO_VIP03_ohneRauswurf
    }
 
    public static void main(String[] args) {
-      new DefaultMatchPrinter().printLastDayResults(new AYTO_VIP03_ohneRauswurf());
+      new DefaultMatchPrinter(new AYTO_VIP03_ohneRauswurf()).printLastDayResults();
    }
 
 }

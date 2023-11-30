@@ -1,0 +1,2 @@
+1: PossiblePairs: 109 Overall progression: 12,84%
+2: PossiblePairs: 108 Overall progression: 24,49%

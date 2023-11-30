@@ -51,6 +51,8 @@ public class AYTO_05
                   pair(Shelly, Paddy), pair(Sina, Kevin), pair(Tais, Gerrit), pair(Lisa_Marie, Paolo), pair(Afra, Eti),
                   pair(Maja, Wilson));
 
+      newDay().matchBox(pair(Maja, Kevin), false);
+
    }
 
    public static void main(String[] args) {
