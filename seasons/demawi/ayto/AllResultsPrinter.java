@@ -1,22 +1,17 @@
 package demawi.ayto;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
+import java.io.*;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
 
+import demawi.ayto.modell.AYTO_Result;
 import demawi.ayto.modell.SeasonData;
 import demawi.ayto.print.DefaultMatchPrinter;
 import demawi.ayto.print.Formatter;
 import demawi.ayto.print.MatchPrinter;
 import demawi.ayto.util.Language;
+import demawi.ayto.util.LogarithmicProgression;
 
 public class AllResultsPrinter {
 
@@ -24,8 +19,11 @@ public class AllResultsPrinter {
 
    public static void print(Set<SeasonData> staffeln)
          throws Exception {
+
+      File resultsDirectory = new File("results");
+      Map<String, Map<Integer, List<AYTO_Result>>> allResults = new LinkedHashMap<>();
       for (SeasonData staffel : staffeln) {
-         String subDir = getSubDir(staffel); // z.B. "de"
+         String subDir = getCountryDirectoryName(staffel); // z.B. "de"
          if (subDir != null) {
             Language lang = subDir.startsWith("/de") ? Language.DE : Language.EN;
             String season;
@@ -38,24 +36,71 @@ public class AllResultsPrinter {
                season = "Season";
                night = "Night";
             }
-            File directory = new File("results" + subDir + "/" + season + " " + staffel.name);
-            System.out.println(directory.getAbsoluteFile());
-            directory.mkdirs();
-            MatchPrinter finder = new DefaultMatchPrinter();
+            String dirName = subDir + "/" + season + " " + staffel.name;
+            File seasonDirectory = new File("results" + dirName);
+            System.out.println(seasonDirectory.getAbsoluteFile());
+            seasonDirectory.mkdirs();
+            DefaultMatchPrinter finder = new DefaultMatchPrinter(staffel);
             finder.setLanguage(lang);
 
             for (int tagNr = 1, l = staffel.getAnzahlTage(); tagNr <= l; tagNr++) {
-               File file = new File(directory.getAbsoluteFile() + "/" + night + numberFormat.format(tagNr) + ".txt");
+               File file = new File(
+                     seasonDirectory.getAbsoluteFile() + "/" + night + numberFormat.format(tagNr) + ".txt");
                System.out.println("Write file " + file.getAbsoluteFile() + "...");
                if (!file.exists()) {
-                  writeViaMemoryBuffer(staffel, tagNr, finder, file);
+                  writeDayViaMemoryBuffer(tagNr, finder, file);
                }
+            }
+
+            Map<Integer, List<AYTO_Result>> seasonResults = finder.getAllCalculatedResults();
+            allResults.put(dirName, seasonResults);
+
+            // Print Season Summary
+            File file = new File(seasonDirectory.getAbsoluteFile() + "/_Summary.txt");
+            if (!file.exists()) {
+               FileWriter fileWriter = new FileWriter(file);
+               seasonResults.forEach((tagNr, results) -> {
+                  AYTO_Result lastDayResult = results.get(results.size() - 1);
+                  try {
+                     fileWriter.write(tagNr + ": PossiblePairs: " + lastDayResult.possiblePairCount.size()
+                           + " Overall progression: " + LogarithmicProgression.getProgression(lastDayResult.possible,
+                           lastDayResult.totalConstellations) + "\n");
+                  }
+                  catch (IOException e) {
+                     throw new RuntimeException(e);
+                  }
+               });
+               fileWriter.close();
             }
          }
       }
+
+      // Print summary over all seasons
+      File file = new File(resultsDirectory.getAbsoluteFile() + "/_SummaryAll.txt");
+      if (!file.exists()) {
+         FileWriter fileWriter = new FileWriter(file);
+         fileWriter.write("Name;1;2;3;4;5;6;7;8;9;10\n");
+         allResults.forEach((dirName, seasonResults) -> {
+            StringBuilder line = new StringBuilder();
+            line.append(dirName);
+            seasonResults.forEach((tagNr, results) -> {
+               AYTO_Result lastDayResult = results.get(results.size() - 1);
+               line.append(";");
+               line.append(
+                     LogarithmicProgression.getProgression(lastDayResult.possible, lastDayResult.totalConstellations));
+            });
+            try {
+               fileWriter.write(line + "\n");
+            }
+            catch (IOException e) {
+               throw new RuntimeException(e);
+            }
+         });
+         fileWriter.close();
+      }
    }
 
-   private static String getSubDir(SeasonData staffelData) {
+   private static String getCountryDirectoryName(SeasonData staffelData) {
       String root = AllResultsPrinter.class.getPackageName();
       String staffel = staffelData.getClass()
             .getPackageName();
@@ -65,7 +110,7 @@ public class AllResultsPrinter {
             .replace(".", "/");
    }
 
-   private static void writeViaMemoryBuffer(SeasonData staffel, int tagNr, MatchPrinter finder, File file)
+   private static void writeDayViaMemoryBuffer(int tagNr, MatchPrinter finder, File file)
          throws IOException {
       ByteArrayOutputStream buffer = new ByteArrayOutputStream();
       Writer writer = new OutputStreamWriter(buffer);
@@ -77,7 +122,7 @@ public class AllResultsPrinter {
             e.printStackTrace();
          }
       });
-      finder.printLastDayResults(staffel, tagNr);
+      finder.printLastDayResults(tagNr);
       writer.flush();
       writer.close();
 

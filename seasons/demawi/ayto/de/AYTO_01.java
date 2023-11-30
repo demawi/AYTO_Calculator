@@ -1,8 +1,8 @@
 package demawi.ayto.de;
 
-import demawi.ayto.modell.Woman;
 import demawi.ayto.modell.Man;
 import demawi.ayto.modell.SeasonData;
+import demawi.ayto.modell.Woman;
 import demawi.ayto.permutation.AYTO_Permutator.Mode;
 import demawi.ayto.print.DefaultMatchPrinter;
 
@@ -95,7 +95,7 @@ public class AYTO_01
    }
 
    public static void main(String[] args) {
-      new DefaultMatchPrinter().printLastDayResults(new AYTO_01());
+      new DefaultMatchPrinter(new AYTO_01()).printLastDayResults();
    }
 
 }

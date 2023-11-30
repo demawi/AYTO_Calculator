@@ -90,7 +90,7 @@ public class AYTO_VIP01
   }
 
   public static void main(String[] args) {
-    new DefaultMatchPrinter().printLastDayResults(new AYTO_VIP01());
+    new DefaultMatchPrinter(new AYTO_VIP01()).printLastDayResults();
   }
 
 }

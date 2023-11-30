@@ -85,7 +85,7 @@ public class AYTO_01
    }
 
    public static void main(String[] args) {
-      new DefaultMatchPrinter().printLastDayResults(new AYTO_01());
+      new DefaultMatchPrinter(new AYTO_01()).printLastDayResults();
    }
 
 }

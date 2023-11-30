@@ -1,6 +1,8 @@
 package demawi.ayto.print;
 
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import demawi.ayto.modell.*;
 import demawi.ayto.modell.events.*;
@@ -15,12 +17,35 @@ public class DefaultMatchPrinter
    private static final boolean PRINT_TABLE_AFTER_EACH_EVENT = false;
    private static final boolean WITH_CALCULATON_SUMMARY = true;
 
+   private final Map<Integer, List<AYTO_Result>> results = new LinkedHashMap<>();
+
+   public DefaultMatchPrinter(SeasonData data) {
+      super(data);
+   }
+
+   /**
+    * Calculate and cache day-results.
+    */
+   public List<AYTO_Result> getResults(int tagNr) {
+      List<AYTO_Result> dayResults = results.get(tagNr);
+      if (dayResults == null) {
+         Day tag = data.getTag(tagNr);
+         dayResults = calculate(tagNr, 0, tagNr, tag.getEvents()
+               .size());
+         results.put(tagNr, dayResults);
+      }
+      return dayResults;
+   }
+
+   public Map<Integer, List<AYTO_Result>> getAllCalculatedResults() {
+      return results;
+   }
+
    @Override
-   public void printLastDayResults(SeasonData data, int tagNr) {
+   public void printLastDayResults(int tagNr) {
       // Pre-calculate everything
       Day tag = data.getTag(tagNr);
-      List<AYTO_Result> results = calculate(data, tagNr, 0, tagNr, tag.getEvents()
-            .size());
+      List<AYTO_Result> results = getResults(tagNr);
 
       printCalculationSummary(results.get(0));
 
@@ -187,6 +212,7 @@ public class DefaultMatchPrinter
                + calcOptions.getTimepoint()
                .getEventCount() + "]");
       }
+
       String fortschritt = " Fortschritt: " + Formatter.prozent(
             Math.pow(1.0 * result.notPossible / (result.totalConstellations - 1), 100));
       if (lang == Language.DE) {

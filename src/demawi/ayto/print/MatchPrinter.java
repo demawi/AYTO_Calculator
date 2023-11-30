@@ -12,6 +12,11 @@ public abstract class MatchPrinter {
 
    private Consumer<String> out = System.out::println;
    protected Language lang;
+   protected final SeasonData data;
+
+   public MatchPrinter(SeasonData data) {
+      this.data = data;
+   }
 
    public void setOut(Consumer<String> out) {
       this.out = out;
@@ -61,13 +66,13 @@ public abstract class MatchPrinter {
    /**
     * Druckt den letzten Tag der Staffel.
     */
-   public void printLastDayResults(SeasonData data) {
-      printLastDayResults(data, data.getAnzahlTage());
+   public void printLastDayResults() {
+      printLastDayResults(data.getAnzahlTage());
    }
 
-   public abstract void printLastDayResults(SeasonData data, int tagNr);
+   public abstract void printLastDayResults(int tagNr);
 
-   protected List<AYTO_Result> calculate(SeasonData data, int fromTag, int fromEventCount, int toTag,
+   protected List<AYTO_Result> calculate(int fromTag, int fromEventCount, int toTag,
          int toEventCount) {
       return new MatchCalculator(data, fromTag, fromEventCount, toTag, toEventCount).calculate(out);
    }

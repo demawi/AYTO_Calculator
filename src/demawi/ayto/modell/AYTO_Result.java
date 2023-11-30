@@ -1,6 +1,9 @@
 package demawi.ayto.modell;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import demawi.ayto.modell.events.MatchingNight;
 import demawi.ayto.modell.events.PairInterpreter;
@@ -178,4 +181,31 @@ public class AYTO_Result {
     notPossible = totalConstellations - possible;
   }
 
+  public static double p(int current, int gesamt) {
+    return current / (double) gesamt;
+  }
+
+  public static double p2(int current, int gesamt) {
+    return Math.sqrt(current) / Math.sqrt(gesamt);
+  }
+
+  public static double a(int current, int gesamt) {
+    return Math.log10(current) / Math.log10(gesamt);
+  }
+
+  public static double b(int current, int gesamt) {
+    return Math.log(current) / Math.log(gesamt);
+  }
+
+  public static void main(String[] args) {
+    int gesamt = 36288000;
+    int current = 26990;
+    System.out.println(p(current, gesamt));
+    System.out.println(p2(current, gesamt));
+    System.out.println(a(current, gesamt));
+    System.out.println(b(current, gesamt));
+
+    System.out.println(Math.log10(1));
+    System.out.println(Math.log(1));
+  }
 }

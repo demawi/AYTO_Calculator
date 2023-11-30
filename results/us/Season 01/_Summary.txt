@@ -1,0 +1,9 @@
+1: PossiblePairs: 99 Overall progression: 12,92%
+2: PossiblePairs: 98 Overall progression: 46,63%
+3: PossiblePairs: 97 Overall progression: 57,28%
+4: PossiblePairs: 91 Overall progression: 73,32%
+5: PossiblePairs: 55 Overall progression: 85,57%
+6: PossiblePairs: 19 Overall progression: 96,82%
+7: PossiblePairs: 10 Overall progression: 100,00%
+8: PossiblePairs: 10 Overall progression: 100,00%
+9: PossiblePairs: 10 Overall progression: 100,00%

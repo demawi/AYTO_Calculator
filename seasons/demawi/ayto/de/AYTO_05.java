@@ -1,9 +1,9 @@
 package demawi.ayto.de;
 
-import demawi.ayto.modell.Woman;
 import demawi.ayto.modell.Man;
 import demawi.ayto.modell.Mark;
 import demawi.ayto.modell.SeasonData;
+import demawi.ayto.modell.Woman;
 import demawi.ayto.permutation.AYTO_Permutator.Mode;
 import demawi.ayto.print.DefaultMatchPrinter;
 
@@ -46,12 +46,15 @@ public class AYTO_05
                   pair(Julia, Martin), pair(Pia, Gerrit), pair(Lisa_Marie, Eti), pair(Shelly, Wilson),
                   pair(Maja, Paddy), pair(Edda, Sandro)); // Afra
 
-      //newTag().matchBox(pair(Lina, Ryan), null);
+      newDay().matchBox(pair(Lina, Ryan), false)
+            .matchNight(2, pair(Martin, Lina), pair(Pia, Ryan), pair(Edda, Sandro), pair(Jana, Sidar),
+                  pair(Shelly, Paddy), pair(Sina, Kevin), pair(Tais, Gerrit), pair(Lisa_Marie, Paolo), pair(Afra, Eti),
+                  pair(Maja, Wilson));
 
    }
 
    public static void main(String[] args) {
-      new DefaultMatchPrinter().printLastDayResults(new AYTO_05());
+      new DefaultMatchPrinter(new AYTO_05()).printLastDayResults();
    }
 
 }
