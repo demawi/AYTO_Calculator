@@ -41,4 +41,16 @@ public class Pair<A, B> {
    public int hashCode() {
       return Objects.hash(a, b);
    }
+
+   @Override
+   public String toString() {
+      return "(" + toString(getFirst()) + ", " + toString(getSecond()) + ")";
+   }
+
+   private String toString(Object obj) {
+      if (obj instanceof Named) {
+         return ((Named) obj).getNamePlusMark();
+      }
+      return "" + obj;
+   }
 }

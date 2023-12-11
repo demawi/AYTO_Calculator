@@ -133,7 +133,7 @@ public class MatchCalculator {
    private static List<AYTO_Result> sum(List<CalculationOptions> calcOptions,
          List<List<Pair<ConstellationValidation, AYTO_Result>>> results) {
       List<AYTO_Result> finalResultList = new ArrayList<>();
-      int totalConstellations = 0;
+      long totalConstellations = 0;
       for (int i = 0, l = calcOptions.size(); i < l; i++) {
          CalculationOptions opt = calcOptions.get(i);
          AYTO_Result curResult = new AYTO_Result(opt);

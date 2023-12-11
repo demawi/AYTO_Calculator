@@ -3,9 +3,10 @@ package demawi.ayto.modell;
 import java.util.Objects;
 
 import demawi.ayto.permutation.ExtraEntry;
+import demawi.ayto.util.Named;
 
 public class Person
-      implements ExtraEntry {
+      implements ExtraEntry, Named {
 
   private final String name;
   public Mark marked;

@@ -12,18 +12,17 @@ import static demawi.ayto.modell.AYTO_Pair.pair;
 public class AYTO_05
       extends SeasonData {
 
-   private final Woman Afra = frau("Afra");
-   private final Woman Edda = frau("Edda");
-   private final Woman Jana = frau("Jana");
-   private final Woman Julia = frau("Julia");
-   private final Woman Lisa_Marie = frau("Lisa-Marie");
-   private final Woman Maja = frau("Maja");
-   private final Woman Pia = frau("Pia");
-   private final Woman Sina = frau("Sina");
-   private final Woman Shelly = frau("Shelly");
-   private final Woman Tais = frau("Tais");
+   private final Woman Afra = frau("Afra", Mark.CAN_BE_AN_EXTRA_MATCH);
+   private final Woman Edda = frau("Edda", Mark.CAN_BE_AN_EXTRA_MATCH);
+   private final Woman Jana = frau("Jana", Mark.CAN_BE_AN_EXTRA_MATCH);
+   private final Woman Julia = frau("Julia", Mark.CAN_BE_AN_EXTRA_MATCH);
+   private final Woman Lisa_Marie = frau("Lisa-Marie", Mark.CAN_BE_AN_EXTRA_MATCH);
+   private final Woman Maja = frau("Maja", Mark.CAN_BE_AN_EXTRA_MATCH);
+   private final Woman Pia = frau("Pia", Mark.CAN_BE_AN_EXTRA_MATCH);
+   private final Woman Sina = frau("Sina", Mark.CAN_BE_AN_EXTRA_MATCH);
+   private final Woman Shelly = frau("Shelly", Mark.CAN_BE_AN_EXTRA_MATCH);
+   private final Woman Tais = frau("Tais", Mark.CAN_BE_AN_EXTRA_MATCH);
    private final Woman Lina = frau("Lina", Mark.CAN_BE_AN_EXTRA_MATCH, true);
-
    private final Woman Melanie = frau("Melanie", Mark.CAN_BE_AN_EXTRA_MATCH, true);
 
    private final Man Eti = mann("Eti");
@@ -49,9 +48,17 @@ public class AYTO_05
       newDay().matchBox(pair(Lina, Ryan), false)
             .matchNight(2, pair(Martin, Lina), pair(Pia, Ryan), pair(Edda, Sandro), pair(Jana, Sidar),
                   pair(Shelly, Paddy), pair(Sina, Kevin), pair(Tais, Gerrit), pair(Lisa_Marie, Paolo), pair(Afra, Eti),
-                  pair(Maja, Wilson));
+                  pair(Maja, Wilson)); // Julia
 
-      newDay().matchBox(pair(Maja, Kevin), false);
+      // TODO: Noch nicht umgesetzte Aussage: Ein Mann hat drei Matches. Eine davon ist Melanie. (=> der Mann der mit Melanie liiert ist, hat auch 2 andere Matches)
+      newDay().matchBox(pair(Maja, Kevin), false)
+            .addNew(Melanie, true)
+            .matchBox(pair(Melanie, Eti), false)
+            .matchNight(4, pair(Melanie, Kevin), pair(Edda, Paolo), pair(Maja, Eti), pair(Jana, Ryan),
+                  pair(Julia, Paddy), pair(Shelly, Wilson), pair(Tais, Gerrit), pair(Sina, Sandro), pair(Afra, Sidar),
+                  pair(Lisa_Marie, Martin)); // Pia, Lina
+
+      // newDay().matchBox(pair(Shelly, Wilson), false);
 
    }
 

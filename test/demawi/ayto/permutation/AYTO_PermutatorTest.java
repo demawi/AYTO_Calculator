@@ -9,9 +9,9 @@ import java.util.stream.Stream;
 
 import org.junit.jupiter.api.Test;
 
-import demawi.ayto.modell.Woman;
 import demawi.ayto.modell.Mark;
 import demawi.ayto.modell.Person;
+import demawi.ayto.modell.Woman;
 import demawi.ayto.print.Formatter;
 import demawi.ayto.util.Pair;
 
@@ -26,16 +26,15 @@ public class AYTO_PermutatorTest {
     * Kleiner 4:3 Test mit kompletter Ausgabe
     */
    @Test
-   public void testSmall() {
-      int frauenAnzahl = 12;
-      int maennerAnzahl = 12;
+   public void testSmallAll() {
+      int frauenAnzahl = 2;
+      int maennerAnzahl = 4;
       boolean withFullOutput = frauenAnzahl + maennerAnzahl < 10;
       boolean withFullCheck = true;
       long start = System.currentTimeMillis();
       AYTO_Permutator<Person, Person, Pair> permutator = AYTO_Permutator.create(
             markAll(frauen(frauenAnzahl), frauenAnzahl > maennerAnzahl),
-            markAll(maenner(maennerAnzahl), maennerAnzahl > frauenAnzahl), AYTO_Permutator.Mode.MARKED,
-            Pair::pair);
+            markAll(maenner(maennerAnzahl), maennerAnzahl > frauenAnzahl), AYTO_Permutator.Mode.MARKED, Pair::pair);
       atomicCount.set(0);
       permutator.permutate(() -> result -> {
          atomicCount.incrementAndGet();
@@ -48,11 +47,21 @@ public class AYTO_PermutatorTest {
       });
       System.out.println(
             "Found " + atomicCount + " constellations in " + Formatter.minSecs(System.currentTimeMillis() - start));
-      start = System.currentTimeMillis();
+   }
+
+   /**
+    * Kleiner 4:3 Test mit kompletter Ausgabe
+    */
+   @Test
+   public void testSmallLast() {
+      int frauenAnzahl = 2;
+      int maennerAnzahl = 4;
+      boolean withFullOutput = frauenAnzahl + maennerAnzahl < 10;
+      boolean withFullCheck = true;
+      long start = System.currentTimeMillis();
       AYTO_Permutator<Person, Person, Pair> permutator2 = AYTO_Permutator.create(
-            markLast(frauen(frauenAnzahl), frauenAnzahl > maennerAnzahl),
-            markLast(maenner(maennerAnzahl), maennerAnzahl > frauenAnzahl), AYTO_Permutator.Mode.MARKED,
-            Pair::pair);
+            markLast(frauen(frauenAnzahl), frauenAnzahl - maennerAnzahl),
+            markLast(maenner(maennerAnzahl), maennerAnzahl - frauenAnzahl), AYTO_Permutator.Mode.MARKED, Pair::pair);
       atomicCount.set(0);
       permutator2.permutate(() -> result -> {
          atomicCount.incrementAndGet();
@@ -130,6 +139,20 @@ public class AYTO_PermutatorTest {
       assertNull(permutator.canAdd(ind("D"), ind("2"), pairs(true, "A1", "B2", "C1")));
    }
 
+   @Test
+   public void testCanAddSmallLAST() {
+      int frauenAnzahl = 2; // A, B
+      int maennerAnzahl = 4; // 1, 2, 3, 4
+      AYTO_Permutator<Person, Person, Pair> permutator = AYTO_Permutator.create(
+            markLast(frauen(frauenAnzahl), frauenAnzahl - maennerAnzahl),
+            markLast(maenner(maennerAnzahl), maennerAnzahl - frauenAnzahl), AYTO_Permutator.Mode.MARKED, Pair::pair);
+      assertNotNull(permutator.canAdd(ind("B"), ind("2"), pairs(0, "A1")));
+      assertNotNull(permutator.canAdd(ind("A"), ind("3"), pairs(1, "A1", "A2")));
+      assertNull(permutator.canAdd(ind("A"), ind("4"), pairs(2, "A1", "A2", "A3")));
+      assertNotNull(permutator.canAdd(ind("B"), ind("4"), pairs(2, "A1", "A2", "A3")));
+      assertNotNull(permutator.canAdd(ind("A"), ind("4"), pairs(1, "A1", "B2", "A3")));
+   }
+
    public List<Person> markAll(List<Person> persons) {
       persons.forEach(p -> p.mark(Mark.CAN_BE_AN_EXTRA_MATCH));
       return persons;
@@ -148,10 +171,12 @@ public class AYTO_PermutatorTest {
       return persons;
    }
 
-   public List<Person> markLast(List<Person> persons, boolean value) {
-      if (value) {
-         persons.get(persons.size() - 1)
-               .mark(Mark.CAN_BE_AN_EXTRA_MATCH);
+   public List<Person> markLast(List<Person> persons, int value) {
+      if (value > 0) {
+         for (int i = persons.size() - 1; i >= persons.size() - value; i--) {
+            persons.get(i)
+                  .mark(Mark.CAN_BE_AN_EXTRA_MATCH);
+         }
       }
       return persons;
    }

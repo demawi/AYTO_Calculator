@@ -120,9 +120,9 @@ public class DefaultMatchPrinter
             "TrueBooth: " + boxPair + (boxResult == null ? " sold." : "...") + " (Probability of outcome)");
       String yesMarker = "";
       String noMarker = "";
-      int yesCombinations = previousResult.getPossibleCount(boxPair);
-      int noCombinations = previousResult.getPossibleConstellationSize() - previousResult.getPossibleCount(boxPair);
-      int newCombinationCount = 0;
+      long yesCombinations = previousResult.getPossibleCount(boxPair);
+      long noCombinations = previousResult.getPossibleConstellationSize() - previousResult.getPossibleCount(boxPair);
+      long newCombinationCount = 0;
       if (boxResult != null) {
          if (boxResult) {
             yesMarker = " <==";

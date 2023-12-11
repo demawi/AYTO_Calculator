@@ -48,7 +48,7 @@ public abstract class MatchPrinter {
       }
    }
 
-   protected void printCombinationChange(int before, int after) {
+   protected void printCombinationChange(long before, long after) {
       if (after < before) {
          print("Die Anzahl der Kombinationen hat sich reduziert: %s", "The number of combinations has decreased: %s",
                before + " => " + after);

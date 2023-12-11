@@ -16,9 +16,9 @@ public class LogarithmicProgression {
     * Over the different shows we have different total combinations. To compare the seasons we should have a unified metric. So filtering out 10% of the total combinations should have the
     * same progression output.
     */
-   public static String getProgression(int current, int max) {
+   public static String getProgression(long current, long max) {
       // First unify over all seasons (because of different max values)
-      double relativeProgression = 1 + ((current - 1) / (((double) max - 1) / PROGRESSION_VALUE)); // [1, PROGRESSION_VALUE + 1]
+      double relativeProgression = 1.0 + ((current - 1.0) / ((max - 1.0) / PROGRESSION_VALUE)); // [1, PROGRESSION_VALUE + 1]
       relativeProgression = relativeProgression / PROGRESSION_VALUE * (PROGRESSION_VALUE - 1); // [1, PROGRESSION_VALUE]
       // After that weigh with logarithmic function
       double progression = (1 - Math.log(relativeProgression) / Math.log(PROGRESSION_VALUE));

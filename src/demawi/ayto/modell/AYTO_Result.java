@@ -12,9 +12,9 @@ public class AYTO_Result {
 
   private final CalculationOptions calcOptions;
   public final Map<AYTO_Pair, Integer> possiblePairCount = new HashMap<>();
-  public int totalConstellations = 0;
-  public int possible = 0;
-  public int notPossible = 0;
+  public long totalConstellations = 0;
+  public long possible = 0;
+  public long notPossible = 0;
   private int[] lightPossibilities; // wird nur gesetzt, wenn auch eine Matching Night stattgefunden hat.
 
   private List<Set<AYTO_Pair>> allPossibleTrueConstellations = null; // deaktiviert wenn = null
@@ -70,7 +70,7 @@ public class AYTO_Result {
     return calcOptions.getSeasonData();
   }
 
-  public int getPossibleConstellationSize() {
+  public long getPossibleConstellationSize() {
     return possible;
   }
 
@@ -176,7 +176,7 @@ public class AYTO_Result {
     return calcOptions.getMaenner();
   }
 
-  public void fixTotalPossibilities(int totalConstellations) {
+  public void fixTotalPossibilities(long totalConstellations) {
     this.totalConstellations = totalConstellations;
     notPossible = totalConstellations - possible;
   }
