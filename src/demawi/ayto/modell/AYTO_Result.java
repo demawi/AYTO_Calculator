@@ -1,9 +1,6 @@
 package demawi.ayto.modell;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import demawi.ayto.modell.events.MatchingNight;
 import demawi.ayto.modell.events.PairInterpreter;
@@ -11,11 +8,11 @@ import demawi.ayto.modell.events.PairInterpreter;
 public class AYTO_Result {
 
   private final CalculationOptions calcOptions;
-  public final Map<AYTO_Pair, Integer> possiblePairCount = new HashMap<>();
+  public final Map<AYTO_Pair, Long> possiblePairCount = new LinkedHashMap<>();
   public long totalConstellations = 0;
   public long possible = 0;
   public long notPossible = 0;
-  private int[] lightPossibilities; // wird nur gesetzt, wenn auch eine Matching Night stattgefunden hat.
+  private long[] lightPossibilities; // wird nur gesetzt, wenn auch eine Matching Night stattgefunden hat.
 
   private List<Set<AYTO_Pair>> allPossibleTrueConstellations = null; // deaktiviert wenn = null
 
@@ -23,19 +20,19 @@ public class AYTO_Result {
    * Add all subresults
    */
   public void add(AYTO_Result cur) {
-    totalConstellations += cur.totalConstellations;
-    possible += cur.possible;
-    notPossible += cur.notPossible;
+    totalConstellations = Math.addExact(totalConstellations, cur.totalConstellations);
+    possible = Math.addExact(possible, cur.possible);
+    notPossible = Math.addExact(notPossible, cur.notPossible);
     if (lightPossibilities != null) {
       for (int i = 0, l = calcOptions.getSeasonData()
             .getMatchingPairCount(); i <= l; i++) {
-        lightPossibilities[i] += cur.lightPossibilities[i];
+        lightPossibilities[i] = Math.addExact(lightPossibilities[i], cur.lightPossibilities[i]);
       }
     }
     if (allPossibleTrueConstellations != null && cur.allPossibleTrueConstellations != null) {
       allPossibleTrueConstellations.addAll(cur.allPossibleTrueConstellations);
     }
-    for (Map.Entry<AYTO_Pair, Integer> pairEntry : cur.possiblePairCount.entrySet()) {
+    for (Map.Entry<AYTO_Pair, Long> pairEntry : cur.possiblePairCount.entrySet()) {
       addPairToCountMap(possiblePairCount, pairEntry.getKey(), pairEntry.getValue());
     }
   }
@@ -55,7 +52,7 @@ public class AYTO_Result {
     MatchingNight matchingNight = calcOptions.getMatchingNight();
     if (matchingNight != null) {
       int lightArrayLength = matchingNight.constellation.size() + 1;
-      lightPossibilities = new int[lightArrayLength];
+      lightPossibilities = new long[lightArrayLength];
       for (int i = 0; i < lightArrayLength; i++) {
         lightPossibilities[i] = 0;
       }
@@ -78,12 +75,12 @@ public class AYTO_Result {
     return allPossibleTrueConstellations;
   }
 
-  public Integer getPossibleCount(Person frau, Person mann) {
+  public Long getPossibleCount(Person frau, Person mann) {
     return getPossibleCount(AYTO_Pair.pair(frau, mann));
   }
 
-  public Integer getPossibleCount(AYTO_Pair pair) {
-    Integer result = possiblePairCount.get(pair);
+  public Long getPossibleCount(AYTO_Pair pair) {
+    Long result = possiblePairCount.get(pair);
     return result == null ? 0 : result;
   }
 
@@ -100,17 +97,17 @@ public class AYTO_Result {
   }
 
   public double getBasePossibility(AYTO_Pair pair) {
-    int gesamt = 0;
+    long gesamt = 0;
     List<Person> frauen = getFrauen();
     List<Person> maenner = getMaenner();
     if (maenner.size() >= frauen.size()) {
       for (Person curFrau : frauen) {
-        gesamt += getPossibleCount(curFrau, pair.mann);
+        gesamt = Math.addExact(gesamt, getPossibleCount(curFrau, pair.mann));
       }
     }
     else {
       for (Person curMann : maenner) {
-        gesamt += getPossibleCount(pair.frau, curMann);
+        gesamt = Math.addExact(gesamt, getPossibleCount(pair.frau, curMann));
       }
     }
     return 1d * getPossibleCount(pair) / gesamt;
@@ -151,20 +148,20 @@ public class AYTO_Result {
     }
   }
 
-  private static void addPairToCountMap(Map<AYTO_Pair, Integer> pairCountMap, AYTO_Pair pair) {
+  private static void addPairToCountMap(Map<AYTO_Pair, Long> pairCountMap, AYTO_Pair pair) {
     addPairToCountMap(pairCountMap, pair, 1);
   }
 
-  private static void addPairToCountMap(Map<AYTO_Pair, Integer> pairCountMap, AYTO_Pair pair, int value) {
-    Integer count = pairCountMap.get(pair);
+  private static void addPairToCountMap(Map<AYTO_Pair, Long> pairCountMap, AYTO_Pair pair, long value) {
+    Long count = pairCountMap.get(pair);
     if (count == null) {
-      count = 0;
+      count = 0L;
     }
-    count += value;
+    count = Math.addExact(count, value);
     pairCountMap.put(pair, count);
   }
 
-  public int[] getLightResultsForLastMatchingNight() {
+  public long[] getLightResultsForLastMatchingNight() {
     return lightPossibilities;
   }
 
@@ -178,7 +175,7 @@ public class AYTO_Result {
 
   public void fixTotalPossibilities(long totalConstellations) {
     this.totalConstellations = totalConstellations;
-    notPossible = totalConstellations - possible;
+    notPossible = Math.addExact(totalConstellations, -possible);
   }
 
   public static double p(int current, int gesamt) {

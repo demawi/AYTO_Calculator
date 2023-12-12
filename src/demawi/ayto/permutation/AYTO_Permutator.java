@@ -3,6 +3,7 @@ package demawi.ayto.permutation;
 import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
@@ -125,7 +126,10 @@ public abstract class AYTO_Permutator<F, M, R> {
     // System.out.println("ActiveThreads: " + ((ThreadPoolExecutor) executorService).getActiveCount());
     executorService.shutdown();
     try {
-      executorService.awaitTermination(10, TimeUnit.MINUTES);
+      while (!executorService.awaitTermination(10, TimeUnit.MINUTES)) {
+        System.out.println(((ThreadPoolExecutor) executorService).getActiveCount() + " Threads are still active!");
+        // Nothing to do, just wait
+      }
     }
     catch (InterruptedException e) {
       executorService.shutdownNow();

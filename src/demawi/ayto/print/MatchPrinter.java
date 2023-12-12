@@ -83,7 +83,7 @@ public abstract class MatchPrinter {
     * @spotsReached kann null sein, wenn die Entscheidung noch nicht stattgefunden hat.
     */
    public void printLightChances(AYTO_Result result, Collection<AYTO_Pair> pairs, Integer spotsReached) {
-      int[] lightResults = result.getLightResultsForLastMatchingNight();
+      long[] lightResults = result.getLightResultsForLastMatchingNight();
 
       print("");
       print("Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)",
@@ -140,8 +140,8 @@ public abstract class MatchPrinter {
       int markedPerson = 0;
       List<Person> sortedFrauen = new ArrayList<>(result.getFrauen());
       List<Person> sortedMaenner = new ArrayList<>(result.getMaenner());
-      sortedFrauen.sort(Comparator.comparing(a -> a.getNamePlusMark()));
-      sortedMaenner.sort(Comparator.comparing(a -> a.getNamePlusMark()));
+      sortedFrauen.sort(Comparator.comparing(Person::getNamePlusMark));
+      sortedMaenner.sort(Comparator.comparing(Person::getNamePlusMark));
       for (Person frau : sortedFrauen) {
          table.get(0)
                .add(frau.getNamePlusMark());
@@ -201,11 +201,11 @@ public abstract class MatchPrinter {
       if (result.getAllPossibleConstellations() != null) {
          List<Set<AYTO_Pair>> sortedConstellations = new ArrayList<>(result.getAllPossibleConstellations());
          sortedConstellations.sort((pairs1, pairs2) -> {
-            Integer o1Count = pairs1.stream()
-                  .mapToInt(result.possiblePairCount::get)
+            Long o1Count = pairs1.stream()
+                  .mapToLong(result.possiblePairCount::get)
                   .sum();
-            Integer o2Count = pairs2.stream()
-                  .mapToInt(result.possiblePairCount::get)
+            Long o2Count = pairs2.stream()
+                  .mapToLong(result.possiblePairCount::get)
                   .sum();
             return o2Count.compareTo(o1Count);
          });
@@ -215,12 +215,12 @@ public abstract class MatchPrinter {
             Set<AYTO_Pair> constellation = sortedConstellations.get(i);
             if (lang == Language.DE) {
                print("> Platz " + (i + 1) + " mit " + constellation.stream()
-                     .mapToInt(result.possiblePairCount::get)
+                     .mapToLong(result.possiblePairCount::get)
                      .sum() + " Punkten (Summe der Vorkommen der Einzelpaare)");
             }
             else {
                print("> Place " + (i + 1) + " with " + constellation.stream()
-                     .mapToInt(result.possiblePairCount::get)
+                     .mapToLong(result.possiblePairCount::get)
                      .sum() + " points (Sum of the occurrences of the individual pairs)");
             }
             for (AYTO_Pair pair : constellation) {
