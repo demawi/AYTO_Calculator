@@ -10,6 +10,9 @@ Features:
    <ul>
      <li>Standard: no special features, each person has exactly one potential match</li>
      <li>Marked: Additional persons can be marked, which means they can be a double match with someone else (this can be all of one group, or only one, or only two...)</li>
+      <ul>
+         <li>with additional marks to support seasons like de_05 where 12 women faced 10 men and one man matched with 3 women</li>
+      </ul>
      <li>Bisexual: Each person can be in a relationship with any other person (for the bisexual season)</li>
    </ul>
 <li>Different event-types can occur and can be entered in any order.
