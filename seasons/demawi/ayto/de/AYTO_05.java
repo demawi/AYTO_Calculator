@@ -1,29 +1,31 @@
 package demawi.ayto.de;
 
 import demawi.ayto.modell.Man;
-import demawi.ayto.modell.Mark;
 import demawi.ayto.modell.SeasonData;
 import demawi.ayto.modell.Woman;
 import demawi.ayto.permutation.AYTO_Permutator.Mode;
 import demawi.ayto.print.DefaultMatchPrinter;
 
 import static demawi.ayto.modell.AYTO_Pair.pair;
+import static demawi.ayto.permutation.Mark.CAN_BE_AN_EXTRA_MATCH;
+import static demawi.ayto.permutation.Mark.IS_AN_EXTRA_MATCH;
 
 public class AYTO_05
       extends SeasonData {
 
-   private final Woman Afra = frau("Afra", Mark.CAN_BE_AN_EXTRA_MATCH);
-   private final Woman Edda = frau("Edda", Mark.CAN_BE_AN_EXTRA_MATCH);
-   private final Woman Jana = frau("Jana", Mark.CAN_BE_AN_EXTRA_MATCH);
-   private final Woman Julia = frau("Julia", Mark.CAN_BE_AN_EXTRA_MATCH);
-   private final Woman Lisa_Marie = frau("Lisa-Marie", Mark.CAN_BE_AN_EXTRA_MATCH);
-   private final Woman Maja = frau("Maja", Mark.CAN_BE_AN_EXTRA_MATCH);
-   private final Woman Pia = frau("Pia", Mark.CAN_BE_AN_EXTRA_MATCH);
-   private final Woman Sina = frau("Sina", Mark.CAN_BE_AN_EXTRA_MATCH);
-   private final Woman Shelly = frau("Shelly", Mark.CAN_BE_AN_EXTRA_MATCH);
-   private final Woman Tais = frau("Tais", Mark.CAN_BE_AN_EXTRA_MATCH);
-   private final Woman Lina = frau("Lina", Mark.CAN_BE_AN_EXTRA_MATCH, true);
-   private final Woman Melanie = frau("Melanie", Mark.CAN_BE_AN_EXTRA_MATCH, true);
+   private final Woman Afra = frau("Afra").mark(CAN_BE_AN_EXTRA_MATCH);
+   private final Woman Edda = frau("Edda").mark(CAN_BE_AN_EXTRA_MATCH);
+   private final Woman Jana = frau("Jana").mark(CAN_BE_AN_EXTRA_MATCH);
+   private final Woman Julia = frau("Julia").mark(CAN_BE_AN_EXTRA_MATCH);
+   private final Woman Lisa_Marie = frau("Lisa-Marie").mark(CAN_BE_AN_EXTRA_MATCH);
+   private final Woman Maja = frau("Maja").mark(CAN_BE_AN_EXTRA_MATCH);
+   private final Woman Pia = frau("Pia").mark(CAN_BE_AN_EXTRA_MATCH);
+   private final Woman Sina = frau("Sina").mark(CAN_BE_AN_EXTRA_MATCH);
+   private final Woman Shelly = frau("Shelly").mark(CAN_BE_AN_EXTRA_MATCH);
+   private final Woman Tais = frau("Tais").mark(CAN_BE_AN_EXTRA_MATCH);
+   private final Woman Lina = frau("Lina", true).mark(CAN_BE_AN_EXTRA_MATCH);
+   private final Woman Melanie = frau("Melanie", true).mark(CAN_BE_AN_EXTRA_MATCH)
+         .mark(IS_AN_EXTRA_MATCH);
 
    private final Man Eti = mann("Eti");
    private final Man Gerrit = mann("Gerrit");
@@ -50,7 +52,6 @@ public class AYTO_05
                   pair(Shelly, Paddy), pair(Sina, Kevin), pair(Tais, Gerrit), pair(Lisa_Marie, Paolo), pair(Afra, Eti),
                   pair(Maja, Wilson)); // Julia
 
-      // TODO: Noch nicht umgesetzte Aussage: Ein Mann hat drei Matches. Eine davon ist Melanie. (=> der Mann der mit Melanie liiert ist, hat auch 2 andere Matches)
       newDay().matchBox(pair(Maja, Kevin), false)
             .addNew(Melanie, true)
             .matchBox(pair(Melanie, Eti), false)

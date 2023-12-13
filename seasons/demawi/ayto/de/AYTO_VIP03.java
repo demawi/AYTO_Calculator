@@ -2,7 +2,7 @@ package demawi.ayto.de;
 
 import demawi.ayto.modell.Woman;
 import demawi.ayto.modell.Man;
-import demawi.ayto.modell.Mark;
+import demawi.ayto.permutation.Mark;
 import demawi.ayto.modell.SeasonData;
 import demawi.ayto.permutation.AYTO_Permutator.Mode;
 import demawi.ayto.print.DefaultMatchPrinter;

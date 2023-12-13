@@ -3,8 +3,8 @@ package demawi.ayto.modell.events;
 import java.util.Collection;
 
 import demawi.ayto.modell.AYTO_Pair;
-import demawi.ayto.modell.Mark;
 import demawi.ayto.modell.Person;
+import demawi.ayto.permutation.Mark;
 
 public class SameMatch
       implements Event, PairInterpreter {
@@ -36,7 +36,11 @@ public class SameMatch
 
    public void lookup(Person person) {
       if (person.equals(first)) {
-         person.mark(new Mark("/" + second.getNamePlusMark()));
+         String extraMark = "/" + second.getNamePlusMark();
+         if (person.marks.stream()
+               .noneMatch(m -> extraMark.equals(m.toString()))) {
+            person.mark(new Mark(extraMark));
+         }
       }
    }
 

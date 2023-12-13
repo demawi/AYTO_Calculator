@@ -7,7 +7,7 @@ import demawi.ayto.permutation.AYTO_Permutator.Mode;
 import demawi.ayto.print.DefaultMatchPrinter;
 
 import static demawi.ayto.modell.AYTO_Pair.pair;
-import static demawi.ayto.modell.Mark.CAN_BE_AN_EXTRA_MATCH;
+import static demawi.ayto.permutation.Mark.CAN_BE_AN_EXTRA_MATCH;
 
 public class AYTO_04
       extends SeasonData {

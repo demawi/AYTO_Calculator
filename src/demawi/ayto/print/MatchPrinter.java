@@ -5,6 +5,7 @@ import java.util.function.Consumer;
 
 import demawi.ayto.modell.*;
 import demawi.ayto.modell.events.MatchingNight;
+import demawi.ayto.permutation.Mark;
 import demawi.ayto.service.MatchCalculator;
 import demawi.ayto.util.Language;
 
@@ -145,12 +146,12 @@ public abstract class MatchPrinter {
       for (Person frau : sortedFrauen) {
          table.get(0)
                .add(frau.getNamePlusMark());
-         if (frau.isMarked()) {
+         if (frau.hasMark(Mark.CAN_BE_AN_EXTRA_MATCH)) {
             markedPerson++;
          }
       }
       for (Person mann : sortedMaenner) {
-         if (mann.isMarked()) {
+         if (mann.hasMark(Mark.CAN_BE_AN_EXTRA_MATCH)) {
             markedPerson++;
          }
          List<String> line = new ArrayList<>();

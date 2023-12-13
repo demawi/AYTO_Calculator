@@ -24,11 +24,11 @@ public abstract class AYTO_Permutator<F, M, R> {
     BISEXUAL, // Every person can match with every other person. There aren't two groups.
     ;
 
-    public <Type extends ExtraEntry, F extends Type, M extends Type> List<Type> getExtraMatchPersons(List<F> frauen,
+    public <Type extends Markable, F extends Type, M extends Type> List<Type> getExtraMatchPersons(List<F> frauen,
           List<M> maenner) {
       List<Type> result = new ArrayList<>();
       Consumer<Type> checkExtra = p -> {
-        if (p.isExtraMatch())
+        if (p.hasMark(Mark.CAN_BE_AN_EXTRA_MATCH))
           result.add(p);
       };
       frauen.forEach(checkExtra);
@@ -44,10 +44,8 @@ public abstract class AYTO_Permutator<F, M, R> {
   protected final int womenCount;
   protected final int menCount;
   private final BiFunction<F, M, R> packingFunction;
-  private final boolean womenCanHaveTwoMatches;
-  private final boolean menCanHaveTwoMatches;
-  private final boolean[] extraMapWomen;
-  private final boolean[] extraMapMen;
+  private final Map<Mark, boolean[]> marksWomen = new LinkedHashMap<>();
+  private final Map<Mark, boolean[]> marksMen = new LinkedHashMap<>();
 
   protected AYTO_Permutator(List<F> women, List<M> men, BiFunction<F, M, R> packingFunction) {
     this.women = women;
@@ -58,66 +56,53 @@ public abstract class AYTO_Permutator<F, M, R> {
     maxSize = Math.max(womenCount, menCount);
     executorService = Executors.newCachedThreadPool();
 
-    // Wenn die andere Seite eine Double-Markierung hat, kann die eigene Seite doppelt vorkommen.
-    womenCanHaveTwoMatches = men.stream()
-          .anyMatch(this::canBeAnExtra);
-    menCanHaveTwoMatches = women.stream()
-          .anyMatch(this::canBeAnExtra);
-
-    // Pre-calculate extraMaps
-    extraMapWomen = new boolean[women.size()];
-    for (int i = 0, l = women.size(); i < l; i++) {
-      F f = women.get(i);
-      if (canBeAnExtra(f)) {
-        extraMapWomen[i] = true;
-      }
-    }
-    extraMapMen = new boolean[men.size()];
-    for (int i = 0, l = men.size(); i < l; i++) {
-      M m = men.get(i);
-      if (canBeAnExtra(m)) {
-        extraMapMen[i] = true;
-      }
+    // Pre-calculate MarkMaps
+    for (Mark mark : Arrays.asList(Mark.CAN_BE_AN_EXTRA_MATCH, Mark.IS_AN_EXTRA_MATCH)) {
+      marksWomen.put(mark, createMarkMap(women, mark));
+      marksMen.put(mark, createMarkMap(men, mark));
     }
   }
 
-  protected boolean isAnExtraFrau(int frau) {
-    return extraMapWomen[frau];
+  private static boolean[] createMarkMap(List<?> group, Mark mark) {
+    boolean[] result = new boolean[group.size()];
+    for (int i = 0, l = group.size(); i < l; i++) {
+      result[i] = hasMark(group.get(i), mark);
+    }
+    return result;
   }
 
-  protected boolean isAnExtraMann(int mann) {
-    return extraMapMen[mann];
+  protected boolean hasMarkWoman(int frau, Mark mark) {
+    return marksWomen.get(mark)[frau];
   }
 
-  protected boolean frauenCanHaveTwoMatches() {
-    return womenCanHaveTwoMatches;
+  protected boolean hasMarkMan(int mann, Mark mark) {
+    return marksMen.get(mark)[mann];
   }
 
-  protected boolean maennerCanHaveTwoMatches() {
-    return menCanHaveTwoMatches;
-  }
-
-  protected boolean canBeAnExtra(Object check) {
-    if (check instanceof ExtraEntry) {
-      return ((ExtraEntry) check).isExtraMatch();
+  protected static boolean hasMark(Object check, Mark mark) {
+    if (check instanceof Markable) {
+      return ((Markable) check).hasMark(mark);
     }
     return false;
   }
 
   public static <F, M, R> AYTO_Permutator<F, M, R> create(List<F> setA, List<M> setB, Mode zusatzType,
         BiFunction<F, M, R> packingFunction) {
-    if (zusatzType == Mode.STANDARD) {
-      return new AYTO_PermutatorSTANDARD<>(setA, setB, packingFunction);
-    }
-    else if (zusatzType == Mode.BISEXUAL) {
+    if (zusatzType == Mode.BISEXUAL) {
       return new AYTO_PermutatorBISEXUAL<>(setA, setB, packingFunction);
     }
-    else if (zusatzType == Mode.MARKED) {
-      return new AYTO_PermutatorMARKED<>(setA, setB, packingFunction);
-    }
     else {
-      throw new RuntimeException("Kein Permutationsalgorithmus für '" + zusatzType + "' gefunden!");
+      if (setA.size() == setB.size()) {
+        return new AYTO_PermutatorSTANDARD<>(setA, setB, packingFunction);
+      }
+      else {
+        if (Markable.hasMark(setA, Mark.IS_AN_EXTRA_MATCH) || Markable.hasMark(setB, Mark.IS_AN_EXTRA_MATCH)) {
+          return new AYTO_PermutatorMARKED2<>(setA, setB, packingFunction);
+        }
+        return new AYTO_PermutatorMARKED<>(setA, setB, packingFunction);
+      }
     }
+    // throw new RuntimeException("Kein Permutationsalgorithmus für '" + zusatzType + "' gefunden!");
   }
 
   public void permutate(Supplier<Consumer<Set<R>>> pairConsumer) {

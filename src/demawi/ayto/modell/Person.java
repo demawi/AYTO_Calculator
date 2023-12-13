@@ -1,31 +1,33 @@
 package demawi.ayto.modell;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
-import demawi.ayto.permutation.ExtraEntry;
+import demawi.ayto.permutation.Mark;
+import demawi.ayto.permutation.Markable;
 import demawi.ayto.util.Named;
 
-public class Person
-      implements ExtraEntry, Named {
+public class Person<T>
+      implements Markable, Named {
 
   private final String name;
-  public Mark marked;
+  public List<Mark> marks = new ArrayList<>();
 
   public Person(String name) {
     this.name = name;
   }
 
-  @Override
-  public boolean isExtraMatch() {
-    return hasMark(Mark.CAN_BE_AN_EXTRA_MATCH);
-  }
-
-  public void mark(Mark mark) {
-    this.marked = mark;
+  public T mark(Mark mark) {
+    if (mark != null) {
+      marks.add(mark);
+    }
+    return (T) this;
   }
 
   public boolean hasMark(Mark mark) {
-    return marked == mark;
+    return marks.contains(mark);
   }
 
   public String getName() {
@@ -33,15 +35,13 @@ public class Person
   }
 
   public String getNamePlusMark() {
-    return name + (marked != null ? marked : "");
+    return name + (marks.isEmpty() ? "" : marks.stream()
+          .map(Mark::toString)
+          .collect(Collectors.joining("")));
   }
 
   public String getNameWithoutMark() {
     return name;
-  }
-
-  public boolean isMarked() {
-    return marked != null;
   }
 
   /**

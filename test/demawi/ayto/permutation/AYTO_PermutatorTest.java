@@ -9,7 +9,6 @@ import java.util.stream.Stream;
 
 import org.junit.jupiter.api.Test;
 
-import demawi.ayto.modell.Mark;
 import demawi.ayto.modell.Person;
 import demawi.ayto.modell.Woman;
 import demawi.ayto.print.Formatter;
@@ -32,9 +31,13 @@ public class AYTO_PermutatorTest {
       boolean withFullOutput = frauenAnzahl + maennerAnzahl < 10;
       boolean withFullCheck = true;
       long start = System.currentTimeMillis();
+      List<Person> women = frauen(frauenAnzahl);
+      List<Person> men = maenner(maennerAnzahl);
+      men.get(men.size() - 1)
+            .mark(Mark.IS_AN_EXTRA_MATCH);
       AYTO_Permutator<Person, Person, Pair> permutator = AYTO_Permutator.create(
-            markAll(frauen(frauenAnzahl), frauenAnzahl > maennerAnzahl),
-            markAll(maenner(maennerAnzahl), maennerAnzahl > frauenAnzahl), AYTO_Permutator.Mode.MARKED, Pair::pair);
+            markAll(women, frauenAnzahl > maennerAnzahl), markAll(men, maennerAnzahl > frauenAnzahl),
+            AYTO_Permutator.Mode.MARKED2, Pair::pair);
       atomicCount.set(0);
       permutator.permutate(() -> result -> {
          atomicCount.incrementAndGet();
