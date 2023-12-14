@@ -38,8 +38,8 @@ public class Day {
       return this;
    }
 
-   public Day matchBox(AYTO_Pair matchingPair, Boolean perfectMatch, AYTO_Pair weitererAuszug) {
-      events.add(new MatchBoxResult(matchingPair, perfectMatch, weitererAuszug));
+   public Day matchBox(AYTO_Pair matchingPair, Boolean perfectMatch, AYTO_Pair... weitererAuszuege) {
+      events.add(new MatchBoxResult(matchingPair, perfectMatch, weitererAuszuege));
       return this;
    }
 

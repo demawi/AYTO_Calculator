@@ -8,13 +8,13 @@ MatchBox: Melissa & Aaron... (Wahrscheinlichkeit für das Ausgang des Ergebnisse
 Ja   => 100,00% [5] <==
 Nein => 0,00% [0]
 Die Anzahl der Kombinationen bleibt unverändert: 5
+Kein weiteres Paar zieht aus!
+Implizite Annahme aufgrund Nicht-Auszug: VanessaM & Aaron => No Match!
 
 ==================================================================================================================================================
 -- Berechne 02 - Nacht 9 inkl. 1 Matchbox(en)... [Ereignis#1]
 -- Combinations: 36288000 Possible: 4 Not possible: 36287996
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Kein weiteres Paar zieht aus!
-Implizite Annahme aufgrund Nicht-Auszug: VanessaM & Aaron => No Match!
 Die Anzahl der Kombinationen hat sich reduziert: 5 => 4
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)

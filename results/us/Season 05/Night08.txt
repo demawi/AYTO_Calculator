@@ -8,12 +8,12 @@ TrueBooth: Carolina & Hayden... (Probability of outcome)
 Yes => 54,76% [46] <==
 No  => 45,24% [38]
 The number of combinations has decreased: 84 => 46
+No other couple moves out!
 
 ==================================================================================================================================================
 -- Calculate 05 - Night 8 with 1 true booth(s)... [Event#1]
 -- Combinations: 39916800 Possible: 46 Not possible: 39916754
 --------------------------------------------------------------------------------------------------------------------------------------------------
-No other couple moves out!
 
 Matchup ceremony: (Probability that the respective pair is a perfect match.)
 Alicia & Ozzy: 0,00%

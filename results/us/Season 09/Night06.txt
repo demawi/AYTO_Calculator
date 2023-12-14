@@ -8,12 +8,12 @@ TrueBooth: Brooke & Ollie... (Probability of outcome)
 Yes => 67,44% [1485] <==
 No  => 32,56% [717]
 The number of combinations has decreased: 2202 => 1485
+No other couple moves out!
 
 ==================================================================================================================================================
 -- Calculate 09 - Night 6 with 1 true booth(s)... [Event#1]
 -- Combinations: 39916800 Possible: 1485 Not possible: 39915315
 --------------------------------------------------------------------------------------------------------------------------------------------------
-No other couple moves out!
 
 Matchup ceremony: (Probability that the respective pair is a perfect match.)
 Anissa & Samuel: 7,27%

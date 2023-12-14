@@ -8,13 +8,13 @@ MatchBox: Cecilia & Amadu... (Wahrscheinlichkeit für das Ausgang des Ergebnisse
 Ja   => 74,29% [130] <==
 Nein => 25,71% [45]
 Die Anzahl der Kombinationen hat sich reduziert: 175 => 130
+Kein weiteres Paar zieht aus!
+Implizite Annahme aufgrund Nicht-Auszug: Cecilia & Felix => No Match!
 
 ==================================================================================================================================================
 -- Berechne VIP02 - Nacht 7 inkl. 1 Matchbox(en)... [Ereignis#1]
 -- Combinations: 36288000 Possible: 116 Not possible: 36287884
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Kein weiteres Paar zieht aus!
-Implizite Annahme aufgrund Nicht-Auszug: Cecilia & Felix => No Match!
 Die Anzahl der Kombinationen hat sich reduziert: 130 => 116
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)

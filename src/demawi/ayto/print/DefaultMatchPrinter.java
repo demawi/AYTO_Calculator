@@ -141,8 +141,8 @@ public class DefaultMatchPrinter
                   previousResult.getPossibleConstellationSize()) + "% [" + noCombinations + "]" + noMarker);
       if (boxResult != null) {
          printCombinationChange(previousResult.getPossibleConstellationSize(), newCombinationCount);
-         printCalculationSummary(afterResult);
          checkPrintImplicit(event);
+         printCalculationSummary(afterResult);
          if (!event.implicits.isEmpty()) {
             printCombinationChange(newCombinationCount, afterResult.getPossibleConstellationSize());
          }
@@ -151,21 +151,23 @@ public class DefaultMatchPrinter
 
    private void checkPrintImplicit(MatchBoxResult event) {
       if (event.isTrue()) {
-         if (event.pairWeitererAuszug == null) {
+         if (event.additionalMoveouts == null) {
             print("Kein weiteres Paar zieht aus!", "No other couple moves out!");
          }
          else {
-            print("Zusätzlich zieht auch das Perfect Match %s aus!", "Additionally the perfect match %s moves out!",
-                  "" + event.pairWeitererAuszug);
+            for (AYTO_Pair pair : event.additionalMoveouts) {
+               print("Zusätzlich zieht auch das Perfect Match %s aus!", "Additionally the perfect match %s moves out!",
+                     "" + pair);
+            }
+         }
+         for (MatchBoxResult implicit : event.implicits) {
+            if (!implicit.result) {
+               print("Implizite Annahme aufgrund Nicht-Auszug: %s => No Match!",
+                     "Implicit assumption because no one else moves out: %s => No Match!", "" + implicit.pair);
+            }
          }
       }
 
-      for (MatchBoxResult implicit : event.implicits) {
-         if (!implicit.result) {
-            print("Implizite Annahme aufgrund Nicht-Auszug: %s => No Match!",
-                  "Implicit assumption because no one else moves out: %s => No Match!", "" + implicit.pair);
-         }
-      }
    }
 
    private void checkPrintImplicit(NewPerson event) {

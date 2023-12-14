@@ -8,13 +8,13 @@ MatchBox: Aurelia & Josua... (Wahrscheinlichkeit für das Ausgang des Ergebnisse
 Ja   => 40,00% [6] <==
 Nein => 60,00% [9]
 Die Anzahl der Kombinationen hat sich reduziert: 15 => 6
+Kein weiteres Paar zieht aus!
+Implizite Annahme aufgrund Nicht-Auszug: Vanessa & Josua => No Match!
 
 ==================================================================================================================================================
 -- Berechne VIP01 - Nacht 10 inkl. 1 Matchbox(en)... [Ereignis#1]
 -- Combinations: 36288000 Possible: 6 Not possible: 36287994
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Kein weiteres Paar zieht aus!
-Implizite Annahme aufgrund Nicht-Auszug: Vanessa & Josua => No Match!
 Die Anzahl der Kombinationen bleibt unverändert: 6
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)

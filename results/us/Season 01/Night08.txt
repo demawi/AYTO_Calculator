@@ -8,12 +8,12 @@ TrueBooth: Kayla & Wes... (Probability of outcome)
 Yes => 100,00% [1] <==
 No  => 0,00% [0]
 The number of combinations stays unchanged: 1
+No other couple moves out!
 
 ==================================================================================================================================================
 -- Calculate 01 - Night 8 with 1 true booth(s)... [Event#1]
 -- Combinations: 3628800 Possible: 1 Not possible: 3628799
 --------------------------------------------------------------------------------------------------------------------------------------------------
-No other couple moves out!
 
 Matchup ceremony: (Probability that the respective pair is a perfect match.)
 Amber & Ethan: 100,00%

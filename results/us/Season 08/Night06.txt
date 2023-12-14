@@ -8,12 +8,12 @@ TrueBooth: Aasha & Brandon... (Probability of outcome)
 Yes => 20,00% [11] <==
 No  => 80,00% [44]
 The number of combinations has decreased: 55 => 11
+No other couple moves out!
 
 ==================================================================================================================================================
 -- Calculate 08 - Night 6 with 1 true booth(s)... [Event#1]
 -- Combinations: 2027025 Possible: 11 Not possible: 2027014
 --------------------------------------------------------------------------------------------------------------------------------------------------
-No other couple moves out!
 
 Matchup ceremony: (Probability that the respective pair is a perfect match.)
 Aasha & Brandon: 100,00%

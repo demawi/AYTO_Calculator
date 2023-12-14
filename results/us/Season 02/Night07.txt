@@ -8,13 +8,13 @@ TrueBooth: Jenni & John... (Probability of outcome)
 Yes => 12,05% [30] <==
 No  => 87,95% [219]
 The number of combinations has decreased: 249 => 30
+No other couple moves out!
+Implicit assumption because no one else moves out: Christina & John => No Match!
 
 ==================================================================================================================================================
 -- Calculate 02 - Night 7 with 1 true booth(s)... [Event#1]
 -- Combinations: 36288000 Possible: 30 Not possible: 36287970
 --------------------------------------------------------------------------------------------------------------------------------------------------
-No other couple moves out!
-Implicit assumption because no one else moves out: Christina & John => No Match!
 The number of combinations stays unchanged: 30
 
 Matchup ceremony: (Probability that the respective pair is a perfect match.)

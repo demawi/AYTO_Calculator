@@ -8,12 +8,12 @@ TrueBooth: Chelsey & Connor... (Probability of outcome)
 Yes => 70,58% [2613] <==
 No  => 29,42% [1089]
 The number of combinations has decreased: 3702 => 2613
+No other couple moves out!
 
 ==================================================================================================================================================
 -- Calculate 03 - Night 5 with 1 true booth(s)... [Event#1]
 -- Combinations: 3628800 Possible: 2613 Not possible: 3626187
 --------------------------------------------------------------------------------------------------------------------------------------------------
-No other couple moves out!
 
 Matchup ceremony: (Probability that the respective pair is a perfect match.)
 Amanda & Tyler: 12,94%

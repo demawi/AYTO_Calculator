@@ -18,12 +18,12 @@ TrueBooth: Coleysia & Dillan... (Probability of outcome)
 Yes => 85,71% [78] <==
 No  => 14,29% [13]
 The number of combinations has decreased: 91 => 78
+No other couple moves out!
 
 ==================================================================================================================================================
 -- Calculate 01 - Night 5 with 2 true booth(s)... [Event#2]
 -- Combinations: 3628800 Possible: 78 Not possible: 3628722
 --------------------------------------------------------------------------------------------------------------------------------------------------
-No other couple moves out!
 
 Matchup ceremony: (Probability that the respective pair is a perfect match.)
 Amber & Ethan: 58,97%

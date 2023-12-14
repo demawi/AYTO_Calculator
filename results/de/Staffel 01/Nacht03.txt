@@ -8,12 +8,12 @@ MatchBox: Aline & Mo... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
 Ja   => 9,37% [19012] <==
 Nein => 90,63% [183921]
 Die Anzahl der Kombinationen hat sich reduziert: 202933 => 19012
+Kein weiteres Paar zieht aus!
 
 ==================================================================================================================================================
 -- Berechne 01 - Nacht 3 inkl. 1 Matchbox(en)... [Ereignis#1]
 -- Combinations: 3628800 Possible: 19012 Not possible: 3609788
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Kein weiteres Paar zieht aus!
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Aline & Mo: 100,00%

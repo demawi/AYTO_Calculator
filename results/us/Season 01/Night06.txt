@@ -8,12 +8,12 @@ TrueBooth: Paige & ChrisT... (Probability of outcome)
 Yes => 45,83% [11] <==
 No  => 54,17% [13]
 The number of combinations has decreased: 24 => 11
+No other couple moves out!
 
 ==================================================================================================================================================
 -- Calculate 01 - Night 6 with 1 true booth(s)... [Event#1]
 -- Combinations: 3628800 Possible: 11 Not possible: 3628789
 --------------------------------------------------------------------------------------------------------------------------------------------------
-No other couple moves out!
 
 Matchup ceremony: (Probability that the respective pair is a perfect match.)
 Amber & Ethan: 63,64%

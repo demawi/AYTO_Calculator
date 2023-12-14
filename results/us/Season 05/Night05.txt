@@ -8,12 +8,12 @@ TrueBooth: Kam & Edward... (Probability of outcome)
 Yes => 46,01% [951] <==
 No  => 53,99% [1116]
 The number of combinations has decreased: 2067 => 951
+No other couple moves out!
 
 ==================================================================================================================================================
 -- Calculate 05 - Night 5 with 1 true booth(s)... [Event#1]
 -- Combinations: 39916800 Possible: 951 Not possible: 39915849
 --------------------------------------------------------------------------------------------------------------------------------------------------
-No other couple moves out!
 
 Matchup ceremony: (Probability that the respective pair is a perfect match.)
 Alicia & Mike: 25,66%

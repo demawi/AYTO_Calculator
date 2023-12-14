@@ -8,12 +8,12 @@ TrueBooth: Taylor & Clay... (Probability of outcome)
 Yes => 50,00% [3] <==
 No  => 50,00% [3]
 The number of combinations has decreased: 6 => 3
+No other couple moves out!
 
 ==================================================================================================================================================
 -- Calculate 09 - Night 8 with 1 true booth(s)... [Event#1]
 -- Combinations: 39916800 Possible: 3 Not possible: 39916797
 --------------------------------------------------------------------------------------------------------------------------------------------------
-No other couple moves out!
 
 Matchup ceremony: (Probability that the respective pair is a perfect match.)
 Anissa & Aqel: 100,00%

@@ -8,13 +8,13 @@ TrueBooth: Ashley & Dario... (Probability of outcome)
 Yes => 100,00% [4] <==
 No  => 0,00% [0]
 The number of combinations stays unchanged: 4
+No other couple moves out!
+Implicit assumption because no one else moves out: Christina & Dario => No Match!
 
 ==================================================================================================================================================
 -- Calculate 02 - Night 10 with 1 true booth(s)... [Event#1]
 -- Combinations: 36288000 Possible: 3 Not possible: 36287997
 --------------------------------------------------------------------------------------------------------------------------------------------------
-No other couple moves out!
-Implicit assumption because no one else moves out: Christina & Dario => No Match!
 The number of combinations has decreased: 4 => 3
 
 Matchup ceremony: (Probability that the respective pair is a perfect match.)

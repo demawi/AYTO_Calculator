@@ -8,11 +8,6 @@ MatchBox: Caroline & Ken... (Wahrscheinlichkeit für das Ausgang des Ergebnisses
 Ja   => 8,83% [4026] <==
 Nein => 91,17% [41557]
 Die Anzahl der Kombinationen hat sich reduziert: 45583 => 4026
-
-==================================================================================================================================================
--- Berechne 04 - Nacht 5 inkl. 1 Matchbox(en)... [Ereignis#1]
--- Combinations: 199584000 Possible: 199 Not possible: 199583801
---------------------------------------------------------------------------------------------------------------------------------------------------
 Zusätzlich zieht auch das Perfect Match Caroline & Maximilian aus!
 Implizite Annahme aufgrund Nicht-Auszug: Caroline & Barkin => No Match!
 Implizite Annahme aufgrund Nicht-Auszug: Caroline & Burim => No Match!
@@ -23,6 +18,11 @@ Implizite Annahme aufgrund Nicht-Auszug: Caroline & Kenneth => No Match!
 Implizite Annahme aufgrund Nicht-Auszug: Caroline & Pascal => No Match!
 Implizite Annahme aufgrund Nicht-Auszug: Caroline & Sasa => No Match!
 Implizite Annahme aufgrund Nicht-Auszug: Caroline & Marwin => No Match!
+
+==================================================================================================================================================
+-- Berechne 04 - Nacht 5 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Combinations: 199584000 Possible: 199 Not possible: 199583801
+--------------------------------------------------------------------------------------------------------------------------------------------------
 Die Anzahl der Kombinationen hat sich reduziert: 4026 => 199
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)

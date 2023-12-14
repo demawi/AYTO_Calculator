@@ -8,13 +8,13 @@ MatchBox: Katharina & Kevin... (Wahrscheinlichkeit für das Ausgang des Ergebnis
 Ja   => 100,00% [1] <==
 Nein => 0,00% [0]
 Die Anzahl der Kombinationen bleibt unverändert: 1
+Kein weiteres Paar zieht aus!
+Implizite Annahme aufgrund Nicht-Auszug: Katharina & Edin => No Match!
 
 ==================================================================================================================================================
 -- Berechne 01 - Nacht 10 inkl. 1 Matchbox(en)... [Ereignis#1]
 -- Combinations: 36288000 Possible: 1 Not possible: 36287999
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Kein weiteres Paar zieht aus!
-Implizite Annahme aufgrund Nicht-Auszug: Katharina & Edin => No Match!
 Die Anzahl der Kombinationen bleibt unverändert: 1
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)

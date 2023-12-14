@@ -18,12 +18,12 @@ TrueBooth: Mijntje & Samuel... (Probability of outcome)
 Yes => 11,75% [61] <==
 No  => 88,25% [458]
 The number of combinations has decreased: 519 => 61
+No other couple moves out!
 
 ==================================================================================================================================================
 -- Calculate 09 - Night 7 with 2 true booth(s)... [Event#2]
 -- Combinations: 39916800 Possible: 61 Not possible: 39916739
 --------------------------------------------------------------------------------------------------------------------------------------------------
-No other couple moves out!
 
 Matchup ceremony: (Probability that the respective pair is a perfect match.)
 Anissa & Aqel: 42,62%

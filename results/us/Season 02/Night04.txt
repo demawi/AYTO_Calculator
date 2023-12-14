@@ -8,13 +8,13 @@ TrueBooth: Paris & Pratt... (Probability of outcome)
 Yes => 50,44% [69119] <==
 No  => 49,56% [67919]
 The number of combinations has decreased: 137038 => 69119
+No other couple moves out!
+Implicit assumption because no one else moves out: Christina & Pratt => No Match!
 
 ==================================================================================================================================================
 -- Calculate 02 - Night 4 with 1 true booth(s)... [Event#1]
 -- Combinations: 36288000 Possible: 62326 Not possible: 36225674
 --------------------------------------------------------------------------------------------------------------------------------------------------
-No other couple moves out!
-Implicit assumption because no one else moves out: Christina & Pratt => No Match!
 The number of combinations has decreased: 69119 => 62326
 
 Matchup ceremony: (Probability that the respective pair is a perfect match.)

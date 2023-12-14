@@ -17,13 +17,13 @@ MatchBox: Michelle & René... (Wahrscheinlichkeit für das Ausgang des Ergebniss
 Ja   => 13,89% [160] <==
 Nein => 86,11% [992]
 Die Anzahl der Kombinationen hat sich reduziert: 1152 => 160
+Kein weiteres Paar zieht aus!
+Implizite Annahme aufgrund Nicht-Auszug: Michelle & Edin => No Match!
 
 ==================================================================================================================================================
 -- Berechne 01 - Nacht 6 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en)... [Ereignis#2]
 -- Combinations: 36288000 Possible: 140 Not possible: 36287860
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Kein weiteres Paar zieht aus!
-Implizite Annahme aufgrund Nicht-Auszug: Michelle & Edin => No Match!
 Die Anzahl der Kombinationen hat sich reduziert: 160 => 140
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)

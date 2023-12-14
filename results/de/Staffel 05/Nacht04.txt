@@ -8,11 +8,6 @@ MatchBox: Shelly & Wilson... (Wahrscheinlichkeit für das Ausgang des Ergebnisse
 Ja   => 72,09% [59937] <==
 Nein => 27,91% [23204]
 Die Anzahl der Kombinationen hat sich reduziert: 83141 => 59937
-
-==================================================================================================================================================
--- Berechne 05 - Nacht 4 inkl. 1 Matchbox(en)... [Ereignis#1]
--- Combinations: 199584000 Possible: 51701 Not possible: 199532299
---------------------------------------------------------------------------------------------------------------------------------------------------
 Kein weiteres Paar zieht aus!
 Implizite Annahme aufgrund Nicht-Auszug: Afra & Wilson => No Match!
 Implizite Annahme aufgrund Nicht-Auszug: Edda & Wilson => No Match!
@@ -25,6 +20,11 @@ Implizite Annahme aufgrund Nicht-Auszug: Sina & Wilson => No Match!
 Implizite Annahme aufgrund Nicht-Auszug: Tais & Wilson => No Match!
 Implizite Annahme aufgrund Nicht-Auszug: Lina & Wilson => No Match!
 Implizite Annahme aufgrund Nicht-Auszug: Melanie & Wilson => No Match!
+
+==================================================================================================================================================
+-- Berechne 05 - Nacht 4 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Combinations: 199584000 Possible: 51701 Not possible: 199532299
+--------------------------------------------------------------------------------------------------------------------------------------------------
 Die Anzahl der Kombinationen hat sich reduziert: 59937 => 51701
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)

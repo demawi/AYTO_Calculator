@@ -8,13 +8,13 @@ TrueBooth: Shelby & Curtis... (Probability of outcome)
 Yes => 11,19% [1826] <==
 No  => 88,81% [14495]
 The number of combinations has decreased: 16321 => 1826
+No other couple moves out!
+Implicit assumption because no one else moves out: Christina & Curtis => No Match!
 
 ==================================================================================================================================================
 -- Calculate 02 - Night 5 with 1 true booth(s)... [Event#1]
 -- Combinations: 36288000 Possible: 1584 Not possible: 36286416
 --------------------------------------------------------------------------------------------------------------------------------------------------
-No other couple moves out!
-Implicit assumption because no one else moves out: Christina & Curtis => No Match!
 The number of combinations has decreased: 1826 => 1584
 
 Matchup ceremony: (Probability that the respective pair is a perfect match.)

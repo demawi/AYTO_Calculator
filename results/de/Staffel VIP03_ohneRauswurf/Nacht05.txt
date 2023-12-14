@@ -8,13 +8,13 @@ MatchBox: Darya & Danilo... (Wahrscheinlichkeit für das Ausgang des Ergebnisses
 Ja   => 93,89% [1490] <==
 Nein => 6,11% [97]
 Die Anzahl der Kombinationen hat sich reduziert: 1587 => 1490
+Kein weiteres Paar zieht aus!
+Implizite Annahme aufgrund Nicht-Auszug: Darya & Max => No Match!
 
 ==================================================================================================================================================
 -- Berechne VIP03_ohneRauswurf - Nacht 5 inkl. 1 Matchbox(en)... [Ereignis#1]
 -- Combinations: 36288000 Possible: 1376 Not possible: 36286624
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Kein weiteres Paar zieht aus!
-Implizite Annahme aufgrund Nicht-Auszug: Darya & Max => No Match!
 Die Anzahl der Kombinationen hat sich reduziert: 1490 => 1376
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)

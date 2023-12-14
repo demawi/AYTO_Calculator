@@ -8,12 +8,12 @@ TrueBooth: Kayla & Zak... (Probability of outcome)
 Yes => 57,14% [4] <==
 No  => 42,86% [3]
 The number of combinations has decreased: 7 => 4
+No other couple moves out!
 
 ==================================================================================================================================================
 -- Calculate 03 - Night 10 with 1 true booth(s)... [Event#1]
 -- Combinations: 3628800 Possible: 4 Not possible: 3628796
 --------------------------------------------------------------------------------------------------------------------------------------------------
-No other couple moves out!
 
 Matchup ceremony: (Probability that the respective pair is a perfect match.)
 Amanda & Alec: 25,00%

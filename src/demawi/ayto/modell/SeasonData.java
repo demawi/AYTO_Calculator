@@ -307,12 +307,12 @@ public class SeasonData {
             if (newPerson != null) {
               if (newPerson instanceof Woman) {
                 for (Person frau : getZusatzpersonen(tagNr)) {
-                  addImplicitForPerfectMatchEvent(result, frau, result.pair.mann, result.pairWeitererAuszug);
+                  addImplicitForPerfectMatchEvent(result, frau, result.pair.mann, result.additionalMoveouts);
                 }
               }
               else {
                 for (Person mann : getZusatzpersonen(tagNr)) {
-                  addImplicitForPerfectMatchEvent(result, result.pair.frau, mann, result.pairWeitererAuszug);
+                  addImplicitForPerfectMatchEvent(result, result.pair.frau, mann, result.additionalMoveouts);
                 }
               }
             }
@@ -326,12 +326,12 @@ public class SeasonData {
             // tritt bei ZusatzType.JEDER nicht auf, da die Person von vornherein dabei ist.
             if (newPerson instanceof Woman) {
               for (AYTO_Pair perfectMatch : previousPerfectMatches) {
-                addImplicitForPerfectMatchEvent(personEvent, (Woman) newPerson, perfectMatch.mann, null);
+                addImplicitForPerfectMatchEvent(personEvent, newPerson, perfectMatch.mann, null);
               }
             }
             else {
               for (AYTO_Pair perfectMatch : previousPerfectMatches) {
-                addImplicitForPerfectMatchEvent(personEvent, perfectMatch.frau, (Man) newPerson, null);
+                addImplicitForPerfectMatchEvent(personEvent, perfectMatch.frau, newPerson, null);
               }
             }
           }
@@ -341,13 +341,14 @@ public class SeasonData {
   }
 
   private void addImplicitForPerfectMatchEvent(EventWithImplicits implicitEvent, Person frau, Person mann,
-        AYTO_Pair pairWeitererAuszug) {
+        AYTO_Pair[] pairWeitererAuszuege) {
     AYTO_Pair implicitPair = AYTO_Pair.pair(frau, mann);
     if (implicitEvent instanceof MatchBoxResult && ((MatchBoxResult) implicitEvent).pair.equals(implicitPair)) {
       return;
     }
 
-    if (pairWeitererAuszug != null && pairWeitererAuszug.equals(implicitPair)) {
+    if (pairWeitererAuszuege != null && Arrays.stream(pairWeitererAuszuege)
+          .anyMatch(p -> p.equals(implicitPair))) {
       implicitEvent.implicits.add(new MatchBoxResult(implicitPair, true));
     }
     else {

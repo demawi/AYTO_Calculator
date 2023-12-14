@@ -8,12 +8,12 @@ MatchBox: Melissa & Laurin... (Wahrscheinlichkeit für das Ausgang des Ergebniss
 Ja   => 28,29% [4720] <==
 Nein => 71,71% [11962]
 Die Anzahl der Kombinationen hat sich reduziert: 16682 => 4720
+Kein weiteres Paar zieht aus!
 
 ==================================================================================================================================================
 -- Berechne 01 - Nacht 4 inkl. 1 Matchbox(en)... [Ereignis#1]
 -- Combinations: 3628800 Possible: 4720 Not possible: 3624080
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Kein weiteres Paar zieht aus!
 
 Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
 Aline & Mo: 100,00%

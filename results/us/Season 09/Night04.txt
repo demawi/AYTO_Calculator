@@ -8,12 +8,12 @@ TrueBooth: Julia-Ruth & Brendan... (Probability of outcome)
 Yes => 29,73% [20228] <==
 No  => 70,27% [47814]
 The number of combinations has decreased: 68042 => 20228
+No other couple moves out!
 
 ==================================================================================================================================================
 -- Calculate 09 - Night 4 with 1 true booth(s)... [Event#1]
 -- Combinations: 39916800 Possible: 20228 Not possible: 39896572
 --------------------------------------------------------------------------------------------------------------------------------------------------
-No other couple moves out!
 
 Matchup ceremony: (Probability that the respective pair is a perfect match.)
 Anissa & Aqel: 47,28%

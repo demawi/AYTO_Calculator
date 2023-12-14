@@ -10,17 +10,19 @@ public class MatchBoxResult
 
    public final AYTO_Pair pair;
    public final Boolean result;
-   public AYTO_Pair pairWeitererAuszug;
+   public AYTO_Pair[] additionalMoveouts;
 
    public MatchBoxResult(AYTO_Pair pair, Boolean result) {
       this.pair = pair;
       this.result = result;
    }
 
-   public MatchBoxResult(AYTO_Pair pair, Boolean result, AYTO_Pair pairWeitererAuszug) {
+   public MatchBoxResult(AYTO_Pair pair, Boolean result, AYTO_Pair[] additionalMoveouts) {
       this(pair, result);
-      assert result; // Wenn es einen weiteren Auszug gibt, muss das erste ein Perfect Match sein
-      this.pairWeitererAuszug = pairWeitererAuszug;
+      if (!result) { // Wenn es einen weiteren Auszug gibt, muss das erste ein Perfect Match sein
+         throw new RuntimeException("Pair has to be a perfect match. Otherwise there aren't any following move outs");
+      }
+      this.additionalMoveouts = additionalMoveouts;
    }
 
    public boolean isTrue() {
@@ -42,7 +44,7 @@ public class MatchBoxResult
       AYTO_Pair lookupPair = lookup.lookup(pair);
       if (result == null)
          return true;
-      if (pairWeitererAuszug != null && result != constellation.contains(lookupPair)) {
+      if (additionalMoveouts != null && result != constellation.contains(lookupPair)) {
          return false;
       }
       return result == constellation.contains(lookupPair);
