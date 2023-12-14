@@ -1,0 +1,76 @@
+
+==================================================================================================================================================
+-- Berechne 05 - Nacht 4... [Ereignis#0]
+-- Combinations: 199584000 Possible: 83141 Not possible: 199500859
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+MatchBox: Shelly & Wilson... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 72,09% [59937] <==
+Nein => 27,91% [23204]
+Die Anzahl der Kombinationen hat sich reduziert: 83141 => 59937
+
+==================================================================================================================================================
+-- Berechne 05 - Nacht 4 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Combinations: 199584000 Possible: 51701 Not possible: 199532299
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Kein weiteres Paar zieht aus!
+Implizite Annahme aufgrund Nicht-Auszug: Afra & Wilson => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Edda & Wilson => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Jana & Wilson => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Julia & Wilson => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Lisa-Marie & Wilson => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Maja & Wilson => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Pia & Wilson => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Sina & Wilson => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Tais & Wilson => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Lina & Wilson => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Melanie & Wilson => No Match!
+Die Anzahl der Kombinationen hat sich reduziert: 59937 => 51701
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Shelly & Wilson: 100,00%
+Tais & Gerrit: 63,82%
+Lina & Paddy: 12,13%
+Afra & Eti: 10,31%
+Lisa-Marie & Paolo: 12,64%
+Edda & Ryan: 8,01%
+Sina & Kevin: 32,85%
+Julia & Martin: 6,42%
+Pia & Sandro: 10,13%
+Jana & Sidar: 22,84%
+Kein Partner: Maja
+Kein Partner: Melanie
+
+Wahrscheinlichkeit für entsprechende Spotanzahl:
+0 => 0,00% [0]
+1 => 5,10% [2635]
+2 => 36,54% [18894]
+3 => 37,03% [19143] <==
+4 => 17,19% [8888]
+5 => 3,74% [1932]
+6 => 0,39% [201]
+7 => 0,02% [8]
+8 => 0,00% [0]
+9 => 0,00% [0]
+10 => 0,00% [0]
+Die Anzahl der Kombinationen hat sich reduziert: 51701 => 19143
+
+==================================================================================================================================================
+-- Berechne 05 - Nacht 4 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
+-- Combinations: 199584000 Possible: 19143 Not possible: 199564857
+--------------------------------------------------------------------------------------------------------------------------------------------------
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+        Afra*        Edda*        Jana*        Julia*       Lina*        Lisa-Marie*  Maja*        Melanie**    Pia*         Shelly*      Sina*        Tais*        
+Eti     12,98 % (2)   8,79 % (0)   6,04 % (0)   8,12 % (0)  13,19 % (0)   2,66 % (1)  29,84 % (1)    -     (0)  11,60 % (0)    -     (0)   4,75 % (0)   2,03 % (0)  
+Gerrit   3,96 % (0)   5,14 % (0)   3,37 % (0)   4,67 % (0)   7,27 % (0)   4,13 % (0)   5,58 % (0)  13,69 % (0)   2,44 % (1)    -     (0)   2,36 % (0)  74,77 % (3)  
+Kevin   10,55 % (0)  11,71 % (0)   8,20 % (0)  10,94 % (0)  15,20 % (0)  10,75 % (0)    -     (0)  29,30 % (1)  14,18 % (0)    -     (0)  42,91 % (3)   4,86 % (0)  
+Martin   9,94 % (0)  11,64 % (0)   6,96 % (0)   6,10 % (2)   9,23 % (1)  28,52 % (1)  10,87 % (0)   9,52 % (0)  16,99 % (0)    -     (0)   5,72 % (0)   3,55 % (0)  
+Paddy    9,69 % (0)  10,86 % (0)   7,04 % (0)  29,90 % (1)  10,64 % (1)   9,92 % (0)   9,15 % (1)   9,47 % (0)  14,08 % (0)    -     (1)   4,98 % (0)   3,22 % (0)  
+Paolo    9,15 % (0)  33,59 % (1)    -     (0)   9,19 % (0)  13,83 % (0)  13,60 % (2)  10,45 % (0)   9,59 % (0)  13,58 % (0)    -     (0)   5,84 % (0)   0,36 % (1)  
+Ryan    12,15 % (0)   3,21 % (1)  30,67 % (1)  12,89 % (0)    -     (1)  12,54 % (0)  14,10 % (0)   7,49 % (0)  10,13 % (1)    -     (0)   7,85 % (0)   3,94 % (0)  
+Sandro   9,95 % (0)   7,01 % (2)   8,34 % (0)  10,45 % (0)  19,11 % (0)  10,13 % (0)  11,68 % (0)   8,99 % (0)   6,42 % (1)    -     (0)  21,77 % (1)   4,13 % (0)  
+Sidar   21,63 % (1)   8,04 % (0)  29,37 % (3)   7,74 % (0)  11,54 % (0)   7,76 % (0)   8,33 % (0)  11,96 % (0)  10,57 % (0)    -     (0)   3,83 % (0)   3,13 % (0)  
+Wilson    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (1)    -     (0)    -     (0)    ✓     (3)    -     (0)    -     (0)  
+
+Mögliche Paare: 96/120
+*: Diese Personen müssen sich ggf. ein Match teilen.
