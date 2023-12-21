@@ -9,36 +9,67 @@ Ja   => 74,77% [14314] <==
 Nein => 25,23% [4829]
 Die Anzahl der Kombinationen hat sich reduziert: 19143 => 14314
 Zusätzlich zieht auch das Perfect Match Melanie & Gerrit aus!
-Zusätzlich zieht auch das Perfect Match Afra & Gerrit aus!
+Zusätzlich zieht auch das Perfect Match Pia & Gerrit aus!
+Implizite Annahme aufgrund Nicht-Auszug: Afra & Gerrit => No Match!
 Implizite Annahme aufgrund Nicht-Auszug: Edda & Gerrit => No Match!
 Implizite Annahme aufgrund Nicht-Auszug: Jana & Gerrit => No Match!
 Implizite Annahme aufgrund Nicht-Auszug: Julia & Gerrit => No Match!
 Implizite Annahme aufgrund Nicht-Auszug: Lisa-Marie & Gerrit => No Match!
 Implizite Annahme aufgrund Nicht-Auszug: Maja & Gerrit => No Match!
-Implizite Annahme aufgrund Nicht-Auszug: Pia & Gerrit => No Match!
 Implizite Annahme aufgrund Nicht-Auszug: Sina & Gerrit => No Match!
 Implizite Annahme aufgrund Nicht-Auszug: Shelly & Gerrit => No Match!
 Implizite Annahme aufgrund Nicht-Auszug: Lina & Gerrit => No Match!
 
 ==================================================================================================================================================
 -- Berechne 05 - Nacht 5 inkl. 1 Matchbox(en)... [Ereignis#1]
--- Combinations: 199584000 Possible: 278 Not possible: 199583722
+-- Combinations: 199584000 Possible: 291 Not possible: 199583709
 --------------------------------------------------------------------------------------------------------------------------------------------------
-Die Anzahl der Kombinationen hat sich reduziert: 14314 => 278
+Die Anzahl der Kombinationen hat sich reduziert: 14314 => 291
 
-Es hat keine Matching Night stattgefunden!
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Shelly & Wilson: 100,00%
+Tais & Gerrit: 100,00%
+Lisa-Marie & Martin: 17,87%
+Sina & Sandro: 33,33%
+Jana & Ryan: 42,27%
+Julia & Kevin: 15,81%
+Maja & Eti: 24,40%
+Afra & Sidar: 18,90%
+Lina & Paddy: 0,00%
+Edda & Paolo: 18,56%
+Kein Partner: Pia
+Kein Partner: Melanie
+
+Wahrscheinlichkeit für entsprechende Spotanzahl:
+0 => 0,00% [0]
+1 => 0,00% [0]
+2 => 0,00% [0]
+3 => 44,67% [130]
+4 => 39,52% [115] <==
+5 => 15,81% [46]
+6 => 0,00% [0]
+7 => 0,00% [0]
+8 => 0,00% [0]
+9 => 0,00% [0]
+10 => 0,00% [0]
+Die Anzahl der Kombinationen hat sich reduziert: 291 => 115
+
+==================================================================================================================================================
+-- Berechne 05 - Nacht 5 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
+-- Combinations: 199584000 Possible: 115 Not possible: 199583885
+--------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
         Afra*        Edda*        Jana*        Julia*       Lina*        Lisa-Marie*  Maja*        Melanie**    Pia*         Shelly*      Sina*        Tais*        
-Eti       -     (2)  10,07 % (0)   3,96 % (0)   9,71 % (0)  19,06 % (0)   3,24 % (1)  32,73 % (1)    -     (0)  16,19 % (0)    -     (0)   5,04 % (0)    -     (0)  
-Gerrit    ✓     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    ✓     (0)    -     (1)    -     (0)    -     (0)    ✓     (3)  
-Kevin     -     (0)   8,63 % (0)   5,40 % (0)   9,71 % (0)  14,39 % (0)   8,27 % (0)    -     (0)    -     (1)  10,79 % (0)    -     (0)  42,81 % (3)    -     (0)  
-Martin    -     (0)  12,95 % (0)   4,68 % (0)   5,40 % (2)   3,60 % (1)  36,69 % (1)  10,79 % (0)    -     (0)  20,50 % (0)    -     (0)   5,40 % (0)    -     (0)  
-Paddy     -     (0)  13,31 % (0)   6,12 % (0)  31,29 % (1)   7,55 % (1)  11,15 % (0)   5,40 % (1)    -     (0)  19,42 % (0)    -     (1)   5,76 % (0)    -     (0)  
-Paolo     -     (0)  40,29 % (1)    -     (0)   8,99 % (0)  17,27 % (0)   4,32 % (2)  10,79 % (0)    -     (0)  14,03 % (0)    -     (0)   4,32 % (0)    -     (1)  
-Ryan      -     (0)   0,72 % (1)  35,97 % (1)  14,75 % (0)    -     (1)  15,11 % (0)  17,63 % (0)    -     (0)   6,12 % (1)    -     (0)   9,71 % (0)    -     (0)  
-Sandro    -     (0)   6,83 % (2)   7,55 % (0)  10,79 % (0)  24,46 % (0)  12,23 % (0)  12,23 % (0)    -     (0)   2,88 % (1)    -     (0)  23,02 % (1)    -     (0)  
-Sidar     -     (1)   7,19 % (0)  36,33 % (3)   9,35 % (0)  13,67 % (0)   8,99 % (0)  10,43 % (0)    -     (0)  10,07 % (0)    -     (0)   3,96 % (0)    -     (0)  
-Wilson    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (1)    -     (0)    -     (0)    ✓     (3)    -     (0)    -     (0)  
+Eti     46,09 % (2)   2,61 % (0)   0,87 % (0)  10,43 % (0)   4,35 % (0)    -     (1)  34,78 % (2)    -     (0)    -     (0)    -     (0)   0,87 % (0)    -     (0)  
+Gerrit    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    ✓     (0)    ✓     (1)    -     (0)    -     (0)    ✓     (4)  
+Kevin    7,83 % (0)  21,74 % (0)  16,52 % (0)    -     (1)  46,09 % (0)   7,83 % (0)    -     (0)    -     (1)    -     (0)    -     (0)    -     (3)    -     (0)  
+Martin   6,96 % (0)  13,04 % (0)   7,83 % (0)    -     (2)   8,70 % (1)  27,83 % (2)  25,22 % (0)    -     (0)    -     (0)    -     (0)  10,43 % (0)    -     (0)  
+Paddy   11,30 % (0)  25,22 % (0)  22,61 % (0)    -     (1)    -     (2)  12,17 % (0)    -     (1)    -     (0)    -     (0)    -     (1)  28,70 % (0)    -     (0)  
+Paolo    1,74 % (0)  20,00 % (2)    -     (0)  13,91 % (0)   6,96 % (0)  45,22 % (2)   8,70 % (0)    -     (0)    -     (0)    -     (0)   3,48 % (0)    -     (1)  
+Ryan     1,74 % (0)   8,70 % (1)  47,83 % (2)  26,96 % (0)    -     (1)   0,87 % (0)  10,43 % (0)    -     (0)    -     (1)    -     (0)   3,48 % (0)    -     (0)  
+Sandro   1,74 % (0)    -     (2)   4,35 % (0)  23,48 % (0)  12,17 % (0)   1,74 % (0)   9,57 % (0)    -     (0)    -     (1)    -     (0)  46,96 % (2)    -     (0)  
+Sidar   22,61 % (2)   8,70 % (0)    -     (3)  25,22 % (0)  21,74 % (0)   4,35 % (0)  11,30 % (0)    -     (0)    -     (0)    -     (0)   6,09 % (0)    -     (0)  
+Wilson    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (1)    -     (0)    -     (0)    ✓     (4)    -     (0)    -     (0)  
 
-Mögliche Paare: 65/120
+Mögliche Paare: 56/120
 *: Diese Personen müssen sich ggf. ein Match teilen.
