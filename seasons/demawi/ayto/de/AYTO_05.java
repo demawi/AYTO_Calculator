@@ -64,8 +64,10 @@ public class AYTO_05
                   pair(Lisa_Marie, Paolo), pair(Edda, Ryan), pair(Sina, Kevin), pair(Julia, Martin), pair(Pia, Sandro),
                   pair(Jana, Sidar)); // Maja, Melanie
 
-      // TODO: Vierte Auszugsperson (aktuell hier Afra gesetzt) steht noch nicht fest!!!
-      newDay().matchBox(pair(Tais, Gerrit), true, pair(Melanie, Gerrit), pair(Afra, Gerrit));
+      newDay().matchBox(pair(Tais, Gerrit), true, pair(Melanie, Gerrit), pair(Pia, Gerrit))
+            .matchNight(4, pair(Shelly, Wilson), pair(Tais, Gerrit), pair(Lisa_Marie, Martin), pair(Sina, Sandro),
+                  pair(Jana, Ryan), pair(Julia, Kevin), pair(Maja, Eti), pair(Afra, Sidar), pair(Lina, Paddy),
+                  pair(Edda, Paolo)); // Melanie, Pia
 
    }
 
