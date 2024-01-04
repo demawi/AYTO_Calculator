@@ -72,7 +72,12 @@ public class AYTO_05
       newDay().matchBox(pair(Sina, Sandro), false)
             .matchNight(5, pair(Shelly, Wilson), pair(Tais, Gerrit), pair(Lisa_Marie, Martin), pair(Sina, Paolo),
                   pair(Lina, Kevin), pair(Maja, Eti), pair(Afra, Sandro), pair(Julia, Sidar), pair(Jana, Ryan),
-                  pair(Edda, Paddy));
+                  pair(Edda, Paddy)); // Melanie, Pia
+
+      newDay().matchBox(pair(Julia, Paolo), false)
+            .matchNight(5, pair(Shelly, Wilson), pair(Tais, Gerrit), pair(Maja, Eti), pair(Lina, Kevin),
+                  pair(Afra, Martin), pair(Julia, Sandro), pair(Jana, Paddy), pair(Lisa_Marie, Sidar),
+                  pair(Sina, Paolo), pair(Edda, Ryan)); // Melanie, Pia
 
    }
 
