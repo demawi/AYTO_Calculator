@@ -79,6 +79,16 @@ public class AYTO_05
                   pair(Afra, Martin), pair(Julia, Sandro), pair(Jana, Paddy), pair(Lisa_Marie, Sidar),
                   pair(Sina, Paolo), pair(Edda, Ryan)); // Melanie, Pia
 
+      newDay().matchBox(pair(Maja, Eti), null)
+            .matchNight(4, pair(Shelly, Wilson), pair(Tais, Gerrit), pair(Afra, Eti), pair(Lina, Kevin),
+                  pair(Edda, Ryan), pair(Jana, Paddy), pair(Sina, Paolo), pair(Lisa_Marie, Martin), pair(Julia, Sandro),
+                  pair(Maja, Sidar));
+
+      newDay().matchBox(pair(Afra, Sandro), false)
+            .matchNight(6, pair(Shelly, Wilson), pair(Tais, Gerrit), pair(Sina, Paddy), pair(Julia, Sandro),
+                  pair(Edda, Paolo), pair(Jana, Ryan), pair(Maja, Eti), pair(Lina, Kevin), pair(Lisa_Marie, Martin),
+                  pair(Afra, Sidar));
+
    }
 
    public static void main(String[] args) {
