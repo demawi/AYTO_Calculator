@@ -89,6 +89,14 @@ public class AYTO_05
                   pair(Edda, Paolo), pair(Jana, Ryan), pair(Maja, Eti), pair(Lina, Kevin), pair(Lisa_Marie, Martin),
                   pair(Afra, Sidar));
 
+      newDay().matchBox(pair(Lina, Kevin), true)
+            .matchNight(7, pair(Shelly, Wilson), pair(Tais, Gerrit), pair(Lina, Kevin), pair(Maja, Eti),
+                  pair(Julia, Sandro), pair(Paddy, Edda), pair(Lisa_Marie, Paolo), pair(Afra, Martin),
+                  pair(Sina, Sidar), pair(Jana, Ryan));
+
+      // Bekanntgabe während der 10ten MatchingNight:
+      newDay().matchBox(pair(Jana, Ryan), true);
+
    }
 
    public static void main(String[] args) {

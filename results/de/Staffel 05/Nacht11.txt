@@ -1,0 +1,45 @@
+
+==================================================================================================================================================
+-- Berechne 05 - Nacht 11... [Ereignis#0]
+-- Combinations: 199584000 Possible: 2 Not possible: 199583998
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+MatchBox: Jana & Ryan... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 50,00% [1] <==
+Nein => 50,00% [1]
+Die Anzahl der Kombinationen hat sich reduziert: 2 => 1
+Kein weiteres Paar zieht aus!
+Implizite Annahme aufgrund Nicht-Auszug: Afra & Ryan => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Edda & Ryan => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Julia & Ryan => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Lisa-Marie & Ryan => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Maja & Ryan => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Pia & Ryan => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Sina & Ryan => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Shelly & Ryan => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Tais & Ryan => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Lina & Ryan => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Melanie & Ryan => No Match!
+
+==================================================================================================================================================
+-- Berechne 05 - Nacht 11 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Combinations: 199584000 Possible: 1 Not possible: 199583999
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Die Anzahl der Kombinationen bleibt unverändert: 1
+
+Es hat keine Matching Night stattgefunden!
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+        Afra*        Edda*        Jana*        Julia*       Lina*        Lisa-Marie*  Maja*        Melanie**    Pia*         Shelly*      Sina*        Tais*        
+Eti       -     (3)    -     (0)    -     (0)    -     (0)    -     (0)    -     (1)    ✓     (6)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)  
+Gerrit    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    ✓     (0)    ✓     (1)    -     (0)    -     (0)    ✓     (9)  
+Kevin     -     (0)    -     (0)    -     (0)    -     (1)    ✓     (5)    -     (0)    -     (0)    -     (1)    -     (0)    -     (0)    -     (3)    -     (0)  
+Martin    -     (2)    -     (0)    -     (0)    -     (2)    -     (1)    -     (5)    -     (0)    -     (0)    -     (0)    -     (0)    ✓     (0)    -     (0)  
+Paddy     ✓     (0)    -     (2)    -     (2)    -     (1)    -     (2)    -     (0)    -     (1)    -     (0)    -     (0)    -     (1)    -     (1)    -     (0)  
+Paolo     -     (0)    -     (3)    -     (0)    -     (0)    -     (0)    ✓     (3)    -     (0)    -     (0)    -     (0)    -     (0)    -     (3)    -     (1)  
+Ryan      -     (0)    -     (3)    ✓     (5)    -     (0)    -     (1)    -     (0)    -     (0)    -     (0)    -     (1)    -     (0)    -     (0)    -     (0)  
+Sandro    -     (1)    -     (2)    -     (0)    ✓     (4)    -     (0)    -     (0)    -     (0)    -     (0)    -     (1)    -     (0)    -     (2)    -     (0)  
+Sidar     -     (3)    ✓     (0)    -     (3)    -     (1)    -     (0)    -     (1)    -     (1)    -     (0)    -     (0)    -     (0)    -     (1)    -     (0)  
+Wilson    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (1)    -     (0)    -     (0)    ✓     (9)    -     (0)    -     (0)  
+
+Mögliche Paare: 12/120
+*: Diese Personen müssen sich ggf. ein Match teilen.
