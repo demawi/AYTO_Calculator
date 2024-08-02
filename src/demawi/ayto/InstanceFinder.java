@@ -38,7 +38,7 @@ public class InstanceFinder {
                      }
                   }
                }
-               else {
+               else if (!line.contains(".")) {
                   findAllInstances(packageName + "." + line, subClassesOf, result);
                }
             });

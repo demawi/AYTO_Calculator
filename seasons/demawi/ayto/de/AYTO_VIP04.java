@@ -1,12 +1,13 @@
 package demawi.ayto.de;
 
-import demawi.ayto.modell.AYTO_Pair;
 import demawi.ayto.modell.Man;
 import demawi.ayto.modell.SeasonData;
 import demawi.ayto.modell.Woman;
 import demawi.ayto.permutation.AYTO_Permutator.Mode;
 import demawi.ayto.permutation.Mark;
 import demawi.ayto.print.DefaultMatchPrinter;
+
+import static demawi.ayto.modell.AYTO_Pair.pair;
 
 public class AYTO_VIP04
       extends SeasonData {
@@ -37,7 +38,11 @@ public class AYTO_VIP04
    public AYTO_VIP04() {
       super(Mode.MARKED);
 
-      newDay().matchBox(AYTO_Pair.pair(LauraL, Marc_Robin), false);
+      newDay().matchBox(pair(LauraL, Marc_Robin), false)
+            .matchNight(2, pair(Linda, Tim), pair(Jennifer, Lukas), pair(Tara, Nikola), pair(Nadja, Lars),
+                  pair(Asena, Kaan), pair(Emmy, Chris), pair(LauraL, Alex), pair(Anastasia, Marc_Robin),
+                  pair(Gabriela, Ozan), pair(LauraM, Antonino));
+
 
    }
 
