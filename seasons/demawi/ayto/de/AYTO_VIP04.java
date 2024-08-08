@@ -22,7 +22,7 @@ public class AYTO_VIP04
    private final Woman Linda = frau("Linda");
    private final Woman Nadja = frau("Nadja");
    private final Woman Tara = frau("Tara");
-   private final Woman Dana = frau("Max", Mark.CAN_BE_AN_EXTRA_MATCH, true);
+   private final Woman Dana = frau("Dana", Mark.CAN_BE_AN_EXTRA_MATCH, true);
 
    private final Man Alex = mann("Alex");
    private final Man Antonino = mann("Antonino");
@@ -42,6 +42,11 @@ public class AYTO_VIP04
             .matchNight(2, pair(Linda, Tim), pair(Jennifer, Lukas), pair(Tara, Nikola), pair(Nadja, Lars),
                   pair(Asena, Kaan), pair(Emmy, Chris), pair(LauraL, Alex), pair(Anastasia, Marc_Robin),
                   pair(Gabriela, Ozan), pair(LauraM, Antonino));
+
+      newDay().addNew(Dana)
+            .matchBox(pair(Emmy, Chris), true)
+            .matchNight(3, pair(Emmy, Chris), pair(Dana, Antonino), pair(Jennifer, Alex), pair(Anastasia, Lars), pair(Nadja, Kaan),
+                  pair(Linda, Tim), pair(Asena, Marc_Robin), pair(LauraL, Ozan), pair(Tara, Nikola), pair(LauraM, Lukas)); // Gabriela
 
 
    }
