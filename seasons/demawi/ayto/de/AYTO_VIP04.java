@@ -48,6 +48,10 @@ public class AYTO_VIP04
             .matchNight(3, pair(Emmy, Chris), pair(Dana, Antonino), pair(Jennifer, Alex), pair(Anastasia, Lars), pair(Nadja, Kaan),
                   pair(Linda, Tim), pair(Asena, Marc_Robin), pair(LauraL, Ozan), pair(Tara, Nikola), pair(LauraM, Lukas)); // Gabriela
 
+      newDay().matchBox(pair(Anastasia, Alex), null)
+            .matchNight(3, pair(Emmy, Chris), pair(Jennifer, Kaan), pair(Anastasia, Alex), pair(Asena, Marc_Robin),
+                  pair(Dana, Tim), pair(Nadja, Antonino), pair(Linda, Lukas), pair(LauraM, Ozan), pair(LauraL, Nikola),
+                  pair(Gabriela, Lars));
 
    }
 
