@@ -73,6 +73,11 @@ public class AYTO_VIP04
                   pair(Gabriela, Alex), pair(LauraL, Lars), pair(Asena, Antonino), pair(Tara, Kaan),
                   pair(Nadja, Nikola), pair(LauraM, Marc_Robin)); // Jennifer
 
+      newDay().matchBox(pair(Linda, Tim), true, pair(Dana, Tim))
+            .matchNight(7, pair(Emmy, Chris), pair(Anastasia, Ozan), pair(Linda, Tim), pair(Tara, Lukas),
+                  pair(LauraM, Marc_Robin), pair(Nadja, Nikola), pair(Jennifer, Kaan), pair(Gabriela, Alex),
+                  pair(LauraL, Lars), pair(Asena, Antonino)); // Dana
+
    }
 
    public static void main(String[] args) {
