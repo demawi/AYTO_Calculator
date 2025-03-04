@@ -1,0 +1,74 @@
+
+==================================================================================================================================================
+-- Berechne 06 - Nacht 4... [Ereignis#0]
+-- Combinations: 199584000 Possible: 215729 Not possible: 199368271
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+MatchBox: Nadja & Danish... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 4,29% [9249] <==
+Nein => 95,71% [206480]
+Die Anzahl der Kombinationen hat sich reduziert: 215729 => 9249
+Kein weiteres Paar zieht aus!
+Implizite Annahme aufgrund Nicht-Auszug: Anna & Danish => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Joanna & Danish => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Deisy & Danish => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Anastasia & Danish => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Camelia & Danish => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Ina & Danish => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Chiara & Danish => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Selina & Danish => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Sophia & Danish => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Tori & Danish => No Match!
+
+==================================================================================================================================================
+-- Berechne 06 - Nacht 4 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Combinations: 199584000 Possible: 7376 Not possible: 199576624
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Die Anzahl der Kombinationen hat sich reduziert: 9249 => 7376
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Nadja & Danish: 100,00%
+Enes & Selina: 17,22%
+Camelia & Levin: 58,43%
+Tori & Tano: 51,80%
+Deisy & Dino: 91,91%
+Ina & Josh: 19,93%
+Anastasia & Dion: 12,50%
+Sophia & Sinan: 14,38%
+Anna & Kaan: 62,57%
+Joanna & Joshua: 57,40%
+Kein Partner: Chiara
+
+Wahrscheinlichkeit für entsprechende Spotanzahl:
+0 => 0,00% [0]
+1 => 0,00% [0]
+2 => 0,00% [0]
+3 => 0,35% [26]
+4 => 41,55% [3065] <==
+5 => 35,51% [2619]
+6 => 17,29% [1275]
+7 => 4,79% [353]
+8 => 0,52% [38]
+9 => 0,00% [0]
+10 => 0,00% [0]
+Die Anzahl der Kombinationen hat sich reduziert: 7376 => 3065
+
+==================================================================================================================================================
+-- Berechne 06 - Nacht 4 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
+-- Combinations: 199584000 Possible: 3065 Not possible: 199580935
+--------------------------------------------------------------------------------------------------------------------------------------------------
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+        Anastasia*   Anna*        Camelia*     Chiara*      Deisy*       Ina*         Joanna*      Nadja*       Selina*      Sophia*      Tori*        
+Danish    -     (0)    -     (0)    -     (1)    -     (0)    -     (0)    -     (0)    -     (0)    ✓     (1)    -     (0)    -     (2)    -     (0)  
+Dino     0,49 % (0)   1,47 % (0)   1,47 % (0)   2,90 % (0)  89,27 % (4)   8,06 % (0)   1,73 % (0)    -     (0)   1,73 % (0)   5,42 % (0)   2,02 % (0)  
+Dion      -     (1)   3,26 % (0)   9,95 % (0)  32,07 % (1)   0,55 % (0)  12,89 % (0)   3,88 % (0)    -     (0)  26,85 % (1)   9,82 % (0)  12,95 % (1)  
+Enes    17,16 % (1)  16,51 % (1)   8,45 % (0)  11,55 % (0)   1,63 % (0)  17,91 % (0)   7,15 % (0)    -     (0)   7,80 % (2)  13,83 % (0)   7,60 % (0)  
+Josh     5,68 % (0)    -     (0)  13,31 % (0)  16,97 % (0)   4,18 % (0)   0,26 % (1)  12,72 % (0)    -     (3)  14,09 % (0)  25,97 % (0)  12,07 % (0)  
+Joshua   0,98 % (0)   6,07 % (0)   3,39 % (0)   5,09 % (0)   0,59 % (0)  13,34 % (0)  51,13 % (3)    -     (0)  17,88 % (1)   9,72 % (0)   5,45 % (0)  
+Kaan     2,12 % (0)  57,52 % (3)   4,24 % (0)   6,95 % (0)   1,17 % (0)  15,24 % (0)   4,83 % (1)    -     (0)   5,81 % (0)  10,90 % (0)   3,82 % (0)  
+Levin    4,14 % (0)   2,28 % (0)  46,46 % (3)  10,51 % (1)   0,29 % (0)  17,03 % (0)   4,54 % (0)    -     (0)  10,73 % (0)  13,12 % (0)   3,39 % (0)  
+Sinan   68,19 % (1)   6,10 % (0)   8,12 % (0)   1,86 % (0)   1,73 % (0)    -     (2)   7,54 % (0)    -     (0)   9,10 % (0)    -     (1)   5,12 % (0)  
+Tano     1,24 % (0)   6,79 % (0)   4,60 % (0)  12,10 % (1)   0,59 % (0)  15,27 % (0)   6,49 % (0)    -     (0)   6,00 % (0)  11,22 % (0)  47,57 % (3)  
+
+Mögliche Paare: 87/110
+*: Diese Personen müssen sich ggf. ein Match teilen.
