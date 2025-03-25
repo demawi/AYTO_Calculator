@@ -68,6 +68,11 @@ public class AYTO_06
             .matchNight(5, pair(Nadja, Danish), pair(Deisy, Dino), pair(Anna, Dion), pair(Chiara, Levin),
                   pair(Nasty, Josh), pair(Camelia, Sinan), pair(Sophia, Kaan), pair(Tori, Tano), pair(Selina, Enes),
                   pair(Ina, Joshua)); // Joanna
+
+      newDay().matchBox(pair(Sophia, Kaan), false)
+            .matchNight(6, pair(Nadja, Danish), pair(Deisy, Dino), pair(Selina, Kaan), pair(Joanna, Joshua),
+                  pair(Chiara, Levin), pair(Camelia, Josh), pair(Sophia, Enes), pair(Nasty, Sinan), pair(Tori, Dion),
+                  pair(Anna, Tano)); // Ina
    }
 
    public static void main(String[] args) {
