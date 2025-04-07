@@ -64,7 +64,7 @@ public class AYTO_06
                   pair(Ina, Josh), pair(Tori, Tano), pair(Sophia, Kaan), pair(Selina, Enes), pair(Chiara, Dion),
                   pair(Camelia, Levin)); // Anna
 
-      newDay().matchBox(pair(Tori, Tano), null)
+      newDay().matchBox(pair(Tori, Tano), null) // selbst verkauft
             .matchNight(5, pair(Nadja, Danish), pair(Deisy, Dino), pair(Anna, Dion), pair(Chiara, Levin),
                   pair(Nasty, Josh), pair(Camelia, Sinan), pair(Sophia, Kaan), pair(Tori, Tano), pair(Selina, Enes),
                   pair(Ina, Joshua)); // Joanna
@@ -78,6 +78,12 @@ public class AYTO_06
             .matchNight(5, pair(Nadja, Danish), pair(Deisy, Dino), pair(Anna, Joshua), pair(Camelia, Josh),
                   pair(Sophia, Enes), pair(Ina, Levin), pair(Selina, Kaan), pair(Chiara, Dion), pair(Nasty, Sinan),
                   pair(Joanna, Tano)); // Tori
+
+      // Frauen-Wahl
+      newDay().matchBox(pair(Nasty, Sinan), true)
+            .matchNight(7, pair(Nadja, Danish), pair(Deisy, Dino), pair(Nasty, Sinan), pair(Sophia, Dion),
+                  pair(Joanna, Tano), pair(Tori, Joshua), pair(Anna, Kaan), pair(Chiara, Levin), pair(Camelia, Josh),
+                  pair(Ina, Enes)); // Selina
    }
 
    public static void main(String[] args) {
