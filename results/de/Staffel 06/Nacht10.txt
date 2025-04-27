@@ -1,0 +1,74 @@
+
+==================================================================================================================================================
+-- Berechne 06 - Nacht 10... [Ereignis#0]
+-- Combinations: 199584000 Possible: 4 Not possible: 199583996
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+MatchBox: Camelia & Josh... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 100,00% [4] <==
+Nein => 0,00% [0]
+Die Anzahl der Kombinationen bleibt unverändert: 4
+Kein weiteres Paar zieht aus!
+Implizite Annahme aufgrund Nicht-Auszug: Anna & Josh => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Joanna & Josh => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Deisy & Josh => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Anastasia & Josh => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Ina & Josh => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Chiara & Josh => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Nadja & Josh => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Selina & Josh => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Sophia & Josh => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Tori & Josh => No Match!
+
+==================================================================================================================================================
+-- Berechne 06 - Nacht 10 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Combinations: 199584000 Possible: 3 Not possible: 199583997
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Die Anzahl der Kombinationen hat sich reduziert: 4 => 3
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Nadja & Danish: 100,00%
+Deisy & Dino: 100,00%
+Anastasia & Sinan: 100,00%
+Camelia & Josh: 100,00%
+Joanna & Tano: 100,00%
+Chiara & Levin: 100,00%
+Anna & Kaan: 100,00%
+Selina & Enes: 100,00%
+Tori & Dion: 100,00%
+Ina & Joshua: 100,00%
+Kein Partner: Sophia
+
+Wahrscheinlichkeit für entsprechende Spotanzahl:
+0 => 0,00% [0]
+1 => 0,00% [0]
+2 => 0,00% [0]
+3 => 0,00% [0]
+4 => 0,00% [0]
+5 => 0,00% [0]
+6 => 0,00% [0]
+7 => 0,00% [0]
+8 => 0,00% [0]
+9 => 0,00% [0]
+10 => 100,00% [3] <==
+Die Anzahl der Kombinationen bleibt unverändert: 3
+
+==================================================================================================================================================
+-- Berechne 06 - Nacht 10 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
+-- Combinations: 199584000 Possible: 3 Not possible: 199583997
+--------------------------------------------------------------------------------------------------------------------------------------------------
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+        Anastasia*   Anna*        Camelia*     Chiara*      Deisy*        Ina*         Joanna*      Nadja*       Selina*      Sophia*      Tori*        
+Danish    -     (0)    -     (0)    -     (1)    -     (0)    -     (0)     -     (0)    -     (0)    ✓     (7)    -     (0)    -     (2)    -     (0)  
+Dino      -     (0)    -     (0)    -     (0)    -     (0)    ✓     (10)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)  
+Dion      -     (1)    -     (1)    -     (0)    -     (3)    -     (0)     -     (0)    -     (0)    -     (0)    -     (1)    -     (1)    ✓     (3)  
+Enes      -     (1)    -     (1)    -     (0)    -     (0)    -     (0)     -     (1)    -     (0)    -     (0)    ✓     (5)    -     (2)    -     (0)  
+Josh      -     (1)    -     (0)    ✓     (4)    -     (0)    -     (0)     -     (2)    -     (0)    -     (3)    -     (0)    -     (0)    -     (0)  
+Joshua    -     (0)    -     (1)    -     (0)    -     (0)    -     (0)     ✓     (2)    -     (5)    -     (0)    -     (1)  33,33 % (0)    -     (1)  
+Kaan      -     (0)    ✓     (5)    -     (0)    -     (0)    -     (0)     -     (0)    -     (1)    -     (0)    -     (2)    -     (2)    -     (0)  
+Levin     -     (0)    -     (0)    -     (4)    ✓     (5)    -     (0)     -     (1)    -     (0)    -     (0)    -     (0)  33,33 % (0)    -     (0)  
+Sinan     ✓     (6)    -     (0)    -     (1)    -     (0)    -     (0)     -     (2)    -     (0)    -     (0)    -     (0)    -     (1)    -     (0)  
+Tano      -     (0)    -     (1)    -     (0)    -     (1)    -     (0)     -     (0)    ✓     (3)    -     (0)    -     (0)  33,33 % (0)    -     (5)  
+
+Mögliche Paare: 13/110
+*: Diese Personen müssen sich ggf. ein Match teilen.

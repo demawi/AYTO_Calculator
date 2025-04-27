@@ -1,0 +1,44 @@
+
+==================================================================================================================================================
+-- Berechne 06 - Nacht 11... [Ereignis#0]
+-- Combinations: 199584000 Possible: 3 Not possible: 199583997
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+MatchBox: Sophia & Tano... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 33,33% [1] <==
+Nein => 66,67% [2]
+Die Anzahl der Kombinationen hat sich reduziert: 3 => 1
+Kein weiteres Paar zieht aus!
+Implizite Annahme aufgrund Nicht-Auszug: Anna & Tano => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Joanna & Tano => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Deisy & Tano => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Anastasia & Tano => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Camelia & Tano => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Ina & Tano => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Chiara & Tano => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Nadja & Tano => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Selina & Tano => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Tori & Tano => No Match!
+
+==================================================================================================================================================
+-- Berechne 06 - Nacht 11 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Combinations: 199584000 Possible: 0 Not possible: 199584000
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Die Anzahl der Kombinationen hat sich reduziert: 1 => 0
+
+Es hat keine Matching Night stattgefunden!
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+        Anastasia*   Anna*        Camelia*     Chiara*      Deisy*        Ina*         Joanna*      Nadja*       Selina*      Sophia*      Tori*        
+Danish    NaN % (0)    NaN % (0)    NaN % (1)    NaN % (0)    NaN % (0)     NaN % (0)    NaN % (0)    NaN % (7)    NaN % (0)    NaN % (2)    NaN % (0)  
+Dino      NaN % (0)    NaN % (0)    NaN % (0)    NaN % (0)    NaN % (10)    NaN % (0)    NaN % (0)    NaN % (0)    NaN % (0)    NaN % (0)    NaN % (0)  
+Dion      NaN % (1)    NaN % (1)    NaN % (0)    NaN % (3)    NaN % (0)     NaN % (0)    NaN % (0)    NaN % (0)    NaN % (1)    NaN % (1)    NaN % (3)  
+Enes      NaN % (1)    NaN % (1)    NaN % (0)    NaN % (0)    NaN % (0)     NaN % (1)    NaN % (0)    NaN % (0)    NaN % (5)    NaN % (2)    NaN % (0)  
+Josh      NaN % (1)    NaN % (0)    NaN % (4)    NaN % (0)    NaN % (0)     NaN % (2)    NaN % (0)    NaN % (3)    NaN % (0)    NaN % (0)    NaN % (0)  
+Joshua    NaN % (0)    NaN % (1)    NaN % (0)    NaN % (0)    NaN % (0)     NaN % (2)    NaN % (5)    NaN % (0)    NaN % (1)    NaN % (0)    NaN % (1)  
+Kaan      NaN % (0)    NaN % (5)    NaN % (0)    NaN % (0)    NaN % (0)     NaN % (0)    NaN % (1)    NaN % (0)    NaN % (2)    NaN % (2)    NaN % (0)  
+Levin     NaN % (0)    NaN % (0)    NaN % (4)    NaN % (5)    NaN % (0)     NaN % (1)    NaN % (0)    NaN % (0)    NaN % (0)    NaN % (0)    NaN % (0)  
+Sinan     NaN % (6)    NaN % (0)    NaN % (1)    NaN % (0)    NaN % (0)     NaN % (2)    NaN % (0)    NaN % (0)    NaN % (0)    NaN % (1)    NaN % (0)  
+Tano      NaN % (0)    NaN % (1)    NaN % (0)    NaN % (1)    NaN % (0)     NaN % (0)    NaN % (3)    NaN % (0)    NaN % (0)    NaN % (0)    NaN % (5)  
+
+Mögliche Paare: 0/110
+*: Diese Personen müssen sich ggf. ein Match teilen.
