@@ -47,7 +47,10 @@ public class AYTO_VIP05
             .matchNight(2, pair(Elli, Xander), pair(Joanna, Calvin_Blond_S), pair(Nelly, Rob), pair(Sandra, Kevin),
                   pair(Ariel, Nico), pair(Beverly, Sidar), pair(Henna, Olli), pair(Hati, Calvin_hOt),
                   pair(Viki, Leandro), pair(Antonia, Jonny)); // Lennert
-      //newDay().matchBox(pair(Nelly, Calvin_Blond_S), false).matchNight(2, pair(Elli, Xander), pair(Joanna, Calvin_Blond_S), pair(Antonia, Olli), pair(Beverly, Nico), pair(Viki, Jonny), pair(Hati, Rob), pair(Sandra, Kevin), pair(Henna, Leandro), pair(Nelly, Lennert), pair(Ariel, Calvin_hOt)); // Sidar
+      newDay().matchBox(pair(Nelly, Calvin_Blond_S), false)
+            .matchNight(2, pair(Elli, Xander), pair(Joanna, Calvin_Blond_S), pair(Antonia, Olli), pair(Beverly, Nico),
+                  pair(Viki, Jonny), pair(Hati, Rob), pair(Sandra, Kevin), pair(Henna, Leandro), pair(Nelly, Lennert),
+                  pair(Ariel, Calvin_hOt)); // Sidar
 
    }
 
