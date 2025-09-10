@@ -8,6 +8,8 @@ import demawi.ayto.permutation.Mark;
 import demawi.ayto.print.DefaultMatchPrinter;
 
 import static demawi.ayto.modell.AYTO_Pair.pair;
+import static demawi.ayto.permutation.Mark.CAN_BE_AN_EXTRA_MATCH;
+import static demawi.ayto.permutation.Mark.IS_AN_EXTRA_MATCH;
 
 public class AYTO_VIP05
       extends SeasonData {
@@ -33,7 +35,9 @@ public class AYTO_VIP05
    private final Man Nico = mann("Nico", Mark.CAN_BE_AN_EXTRA_MATCH);
    private final Man Olli = mann("Olli", Mark.CAN_BE_AN_EXTRA_MATCH);
    private final Man Rob = mann("Rob", Mark.CAN_BE_AN_EXTRA_MATCH);
-   private final Man Leandro = mann("Leandro", Mark.CAN_BE_AN_EXTRA_MATCH, true);
+   private final Man Leandro = mann("Leandro", true).mark(Mark.CAN_BE_AN_EXTRA_MATCH);
+   private final Man Jimi = mann("Jimi", true).mark(CAN_BE_AN_EXTRA_MATCH)
+         .mark(IS_AN_EXTRA_MATCH);
 
    public AYTO_VIP05() {
       super(Mode.MARKED);
@@ -51,7 +55,12 @@ public class AYTO_VIP05
             .matchNight(2, pair(Elli, Xander), pair(Joanna, Calvin_Blond_S), pair(Antonia, Olli), pair(Beverly, Nico),
                   pair(Viki, Jonny), pair(Hati, Rob), pair(Sandra, Kevin), pair(Henna, Leandro), pair(Nelly, Lennert),
                   pair(Ariel, Calvin_hOt)); // Sidar
-
+      newDay().matchBox(pair(Beverly, Jonny), false)
+            .matchNight(3, pair(Elli, Xander), pair(Joanna, Calvin_Blond_S), pair(Nelly, Calvin_hOt),
+                  pair(Sandra, Leandro), pair(Ariel, Nico), pair(Beverly, Sidar), pair(Henna, Lennert),
+                  pair(Viki, Kevin), pair(Hati, Rob), pair(Antonia, Olli)); // Jonny
+      newDay().matchBox(pair(Sandra, Leandro), false)
+            .addNew(Jimi);
    }
 
    public static void main(String[] args) {

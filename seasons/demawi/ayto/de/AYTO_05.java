@@ -24,8 +24,7 @@ public class AYTO_05
    private final Woman Shelly = frau("Shelly").mark(CAN_BE_AN_EXTRA_MATCH);
    private final Woman Tais = frau("Tais").mark(CAN_BE_AN_EXTRA_MATCH);
    private final Woman Lina = frau("Lina", true).mark(CAN_BE_AN_EXTRA_MATCH);
-   private final Woman Melanie = frau("Melanie", true).mark(CAN_BE_AN_EXTRA_MATCH)
-         .mark(IS_AN_EXTRA_MATCH);
+   private final Woman Melanie = frau("Melanie", true).mark(CAN_BE_AN_EXTRA_MATCH).mark(IS_AN_EXTRA_MATCH);
 
    private final Man Eti = mann("Eti");
    private final Man Gerrit = mann("Gerrit");
