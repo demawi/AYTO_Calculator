@@ -37,7 +37,7 @@ public class AYTO_VIP05
    private final Man Rob = mann("Rob", Mark.CAN_BE_AN_EXTRA_MATCH);
    private final Man Leandro = mann("Leandro", true).mark(Mark.CAN_BE_AN_EXTRA_MATCH);
    private final Man Jimi = mann("Jimi", true).mark(CAN_BE_AN_EXTRA_MATCH)
-         .mark(IS_AN_EXTRA_MATCH);
+         .mark(IS_AN_EXTRA_MATCH); // eine Frau hat zwei PerfectMatches
 
    public AYTO_VIP05() {
       super(Mode.MARKED);
@@ -60,7 +60,17 @@ public class AYTO_VIP05
                   pair(Sandra, Leandro), pair(Ariel, Nico), pair(Beverly, Sidar), pair(Henna, Lennert),
                   pair(Viki, Kevin), pair(Hati, Rob), pair(Antonia, Olli)); // Jonny
       newDay().matchBox(pair(Sandra, Leandro), false)
-            .addNew(Jimi);
+            .addNew(Jimi)
+            .matchBox(pair(Nelly, Jimi), false)
+            .matchNight(4, pair(Elli, Xander), pair(Henna, Jimi), pair(Antonia, Olli), pair(Nelly, Calvin_hOt),
+                  pair(Sandra, Lennert), pair(Beverly, Sidar), pair(Hati, Rob), pair(Joanna, Calvin_Blond_S),
+                  pair(Ariel, Nico), pair(Viki, Kevin)); // Jonny, Leandro
+      newDay().matchBox(pair(Sandra, Lennert), true)
+            .matchNight(4, pair(Elli, Xander), pair(Sandra, Lennert), pair(Henna, Olli), pair(Hati, Jimi),
+                  pair(Viki, Jonny), pair(Beverly, Leandro), pair(Ariel, Kevin), pair(Antonia, Calvin_Blond_S),
+                  pair(Joanna, Sidar), pair(Nelly, Calvin_hOt)); // Rob, Nico
+      newDay().matchBox(pair(Antonia, Olli), false)
+            .matchBox(pair(Hati, Jimi), null);
    }
 
    public static void main(String[] args) {
