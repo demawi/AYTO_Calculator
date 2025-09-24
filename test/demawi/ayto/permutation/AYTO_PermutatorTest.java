@@ -9,6 +9,7 @@ import java.util.stream.Stream;
 
 import org.junit.jupiter.api.Test;
 
+import demawi.ayto.modell.PermutationConfiguration;
 import demawi.ayto.modell.Person;
 import demawi.ayto.modell.Woman;
 import demawi.ayto.print.Formatter;
@@ -25,7 +26,7 @@ public class AYTO_PermutatorTest {
     * Kleiner 4:3 Test mit kompletter Ausgabe
     */
    @Test
-   public void testSmallAll() {
+   public void testSmallAll_Marked_4_2_WITH_THIRD_MATCH() {
       int frauenAnzahl = 2;
       int maennerAnzahl = 4;
       boolean withFullOutput = frauenAnzahl + maennerAnzahl < 10;
@@ -34,10 +35,10 @@ public class AYTO_PermutatorTest {
       List<Person> women = frauen(frauenAnzahl);
       List<Person> men = maenner(maennerAnzahl);
       men.get(men.size() - 1)
-            .mark(Mark.IS_AN_EXTRA_MATCH);
+            .mark(Mark.IS_A_THIRD_MATCH);
       AYTO_Permutator<Person, Person, Pair> permutator = AYTO_Permutator.create(
             markAll(women, frauenAnzahl > maennerAnzahl), markAll(men, maennerAnzahl > frauenAnzahl),
-            AYTO_Permutator.Mode.MARKED2, Pair::pair);
+            new PermutationConfiguration(AYTO_Permutator.Mode.MARKED), Pair::pair);
       atomicCount.set(0);
       permutator.permutate(() -> result -> {
          atomicCount.incrementAndGet();
@@ -50,6 +51,61 @@ public class AYTO_PermutatorTest {
       });
       System.out.println(
             "Found " + atomicCount + " constellations in " + Formatter.minSecs(System.currentTimeMillis() - start));
+      assert (atomicCount.get() == 6);
+   }
+
+   @Test
+   public void testSmallAll_Marked_4_2_MAX_2_MATCHES() {
+      int frauenAnzahl = 2;
+      int maennerAnzahl = 4;
+      boolean withFullOutput = frauenAnzahl + maennerAnzahl < 10;
+      boolean withFullCheck = true;
+      long start = System.currentTimeMillis();
+      List<Person> women = frauen(frauenAnzahl);
+      List<Person> men = maenner(maennerAnzahl);
+      AYTO_Permutator<Person, Person, Pair> permutator = AYTO_Permutator.create(
+            markAll(women, frauenAnzahl > maennerAnzahl), markAll(men, maennerAnzahl > frauenAnzahl),
+            new PermutationConfiguration(AYTO_Permutator.Mode.MARKED, 2), Pair::pair);
+      atomicCount.set(0);
+      permutator.permutate(() -> result -> {
+         atomicCount.incrementAndGet();
+         if (withFullCheck) {
+            check(result, frauen(frauenAnzahl), maenner(maennerAnzahl));
+         }
+         if (withFullOutput) {
+            System.out.println(result);
+         }
+      });
+      System.out.println(
+            "Found " + atomicCount + " constellations in " + Formatter.minSecs(System.currentTimeMillis() - start));
+      assert (atomicCount.get() == 6);
+   }
+
+   @Test
+   public void testSmallAll_Marked_4_2_MAX_X_MATCHES() {
+      int frauenAnzahl = 2;
+      int maennerAnzahl = 4;
+      boolean withFullOutput = frauenAnzahl + maennerAnzahl < 10;
+      boolean withFullCheck = true;
+      long start = System.currentTimeMillis();
+      List<Person> women = frauen(frauenAnzahl);
+      List<Person> men = maenner(maennerAnzahl);
+      AYTO_Permutator<Person, Person, Pair> permutator = AYTO_Permutator.create(
+            markAll(women, frauenAnzahl > maennerAnzahl), markAll(men, maennerAnzahl > frauenAnzahl),
+            new PermutationConfiguration(AYTO_Permutator.Mode.MARKED), Pair::pair);
+      atomicCount.set(0);
+      permutator.permutate(() -> result -> {
+         atomicCount.incrementAndGet();
+         if (withFullCheck) {
+            check(result, frauen(frauenAnzahl), maenner(maennerAnzahl));
+         }
+         if (withFullOutput) {
+            System.out.println(result);
+         }
+      });
+      System.out.println(
+            "Found " + atomicCount + " constellations in " + Formatter.minSecs(System.currentTimeMillis() - start));
+      assert (atomicCount.get() == 14);
    }
 
    /**
@@ -64,7 +120,8 @@ public class AYTO_PermutatorTest {
       long start = System.currentTimeMillis();
       AYTO_Permutator<Person, Person, Pair> permutator2 = AYTO_Permutator.create(
             markLast(frauen(frauenAnzahl), frauenAnzahl - maennerAnzahl),
-            markLast(maenner(maennerAnzahl), maennerAnzahl - frauenAnzahl), AYTO_Permutator.Mode.MARKED, Pair::pair);
+            markLast(maenner(maennerAnzahl), maennerAnzahl - frauenAnzahl),
+            new PermutationConfiguration(AYTO_Permutator.Mode.MARKED), Pair::pair);
       atomicCount.set(0);
       permutator2.permutate(() -> result -> {
          atomicCount.incrementAndGet();
@@ -75,13 +132,14 @@ public class AYTO_PermutatorTest {
             System.out.println(result);
          }
       });
-      System.out.println("Found " + atomicCount + " constellations in " + Formatter.minSecs(System.currentTimeMillis() - start));
+      System.out.println(
+            "Found " + atomicCount + " constellations in " + Formatter.minSecs(System.currentTimeMillis() - start));
    }
 
    @Test
    public void testBigJEDER() {
       AYTO_Permutator<Person, Person, String> permutator = AYTO_Permutator.create(markAll(frauen(11)), maenner(10),
-            AYTO_Permutator.Mode.MARKED, (a, b) -> "" + a + b);
+            new PermutationConfiguration(AYTO_Permutator.Mode.MARKED), (a, b) -> "" + a + b);
       long start = System.currentTimeMillis();
       atomicCount.set(0);
       permutator.permutate(() -> result -> {
@@ -95,7 +153,7 @@ public class AYTO_PermutatorTest {
    @Test
    public void testBigNUR_LETZTER() {
       AYTO_Permutator<Person, Person, String> permutator = AYTO_Permutator.create(markLast(frauen(11)), maenner(10),
-            AYTO_Permutator.Mode.MARKED, (a, b) -> "" + a + b);
+            new PermutationConfiguration(AYTO_Permutator.Mode.MARKED), (a, b) -> "" + a + b);
       long start = System.currentTimeMillis();
       atomicCount.set(0);
       permutator.permutate(() -> result -> {
@@ -109,7 +167,7 @@ public class AYTO_PermutatorTest {
    @Test
    public void testCanAddBigJEDER() {
       AYTO_Permutator<Person, Person, String> permutator = AYTO_Permutator.create(markAll(frauen(11)), maenner(10),
-            AYTO_Permutator.Mode.MARKED, (a, b) -> "" + a + b);
+            new PermutationConfiguration(AYTO_Permutator.Mode.MARKED), (a, b) -> "" + a + b);
       // UrsprungDoppelt: 1 Es fehlt: E4
       assertNull(permutator.canAdd(ind("A"), ind("1"),
             pairs(true, "A1", "I9", "G8", "C7", "J2", "F0", "K5", "H6", "B1", "D3")));
@@ -135,7 +193,7 @@ public class AYTO_PermutatorTest {
       List<Person> frauen = markAll(Arrays.asList(frau1, frau2, frau3, frau4));
       List<Person> maenner = Arrays.asList(mann1, mann2, mann3);
       AYTO_Permutator<Person, Person, Pair> permutator = AYTO_Permutator.create(markAll(frauen), maenner,
-            AYTO_Permutator.Mode.MARKED, Pair::pair);
+            new PermutationConfiguration(AYTO_Permutator.Mode.MARKED), Pair::pair);
       assertNotNull(permutator.canAdd(ind("B"), ind("2"), pairs(false, "A1")));
       assertNotNull(permutator.canAdd(ind("C"), ind("1"), pairs(false, "A1", "B2")));
       assertNotNull(permutator.canAdd(ind("D"), ind("3"), pairs(true, "A1", "B2", "C1")));
@@ -148,7 +206,8 @@ public class AYTO_PermutatorTest {
       int maennerAnzahl = 4; // 1, 2, 3, 4
       AYTO_Permutator<Person, Person, Pair> permutator = AYTO_Permutator.create(
             markLast(frauen(frauenAnzahl), frauenAnzahl - maennerAnzahl),
-            markLast(maenner(maennerAnzahl), maennerAnzahl - frauenAnzahl), AYTO_Permutator.Mode.MARKED, Pair::pair);
+            markLast(maenner(maennerAnzahl), maennerAnzahl - frauenAnzahl),
+            new PermutationConfiguration(AYTO_Permutator.Mode.MARKED), Pair::pair);
       assertNotNull(permutator.canAdd(ind("B"), ind("2"), pairs(0, "A1")));
       assertNotNull(permutator.canAdd(ind("A"), ind("3"), pairs(1, "A1", "A2")));
       assertNull(permutator.canAdd(ind("A"), ind("4"), pairs(2, "A1", "A2", "A3")));
@@ -198,13 +257,14 @@ public class AYTO_PermutatorTest {
       List<Person> frauen = Arrays.asList(frau1, frau2, frau3, frau4);
       List<Person> maenner = Arrays.asList(mann1, mann2, mann3);
       AYTO_Permutator<Person, Person, String> permutator = AYTO_Permutator.create(frauen, maenner,
-            AYTO_Permutator.Mode.MARKED, (a, b) -> "" + a + b);
+            new PermutationConfiguration(AYTO_Permutator.Mode.MARKED), (a, b) -> "" + a + b);
       assertNotNull(permutator.canAdd(ind("B"), ind("3"), pairs(false, "A1")));
       assertNull(permutator.canAdd(ind("C"), ind("3"), pairs(false, "A1", "B3")));
       assertNotNull(permutator.canAdd(ind("D"), ind("1"), pairs(false, "A1", "B2")));
 
       frau3.mark(Mark.CAN_BE_AN_EXTRA_MATCH);
-      permutator = AYTO_Permutator.create(frauen, maenner, AYTO_Permutator.Mode.MARKED, (a, b) -> "" + a + b);
+      permutator = AYTO_Permutator.create(frauen, maenner, new PermutationConfiguration(AYTO_Permutator.Mode.MARKED),
+            (a, b) -> "" + a + b);
       assertNotNull(permutator.canAdd(ind("B"), ind("3"), pairs(false, "A1")));
       assertNotNull(permutator.canAdd(ind("C"), ind("3"), pairs(false, "A1", "B3")));
       assertNotNull(permutator.canAdd(ind("D"), ind("1"), pairs(false, "A1", "B2")));

@@ -46,7 +46,7 @@ Die Anzahl der Kombinationen hat sich reduziert: 2 => 1
 -- Combinations: 36288000 Possible: 1 Not possible: 36287999
 --------------------------------------------------------------------------------------------------------------------------------------------------
 ======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
-            Anastasia    Asena   sa      Dana*        Emmy         Gabriela     Jennifer     LauraL       LauraM       Linda        Nadja        Tara
+            Anastasia    Asena        Dana*        Emmy         Gabriela     Jennifer     LauraL       LauraM       Linda        Nadja        Tara         
 Alex          -     (1)    -     (0)    -     (0)    -     (0)    ✓     (3)    -     (2)    -     (1)    -     (0)    -     (0)    -     (0)    -     (0)  
 Antonino      -     (0)    ✓     (3)    -     (1)    -     (0)    -     (0)    -     (0)    -     (0)    -     (1)    -     (0)    -     (2)    -     (0)  
 Chris         -     (0)    -     (0)    -     (0)    ✓     (7)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)  

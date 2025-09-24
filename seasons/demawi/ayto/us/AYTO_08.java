@@ -1,5 +1,6 @@
 package demawi.ayto.us;
 
+import demawi.ayto.modell.PermutationConfiguration;
 import demawi.ayto.modell.Person;
 import demawi.ayto.modell.SeasonData;
 import demawi.ayto.permutation.AYTO_Permutator.Mode;
@@ -28,7 +29,7 @@ public class AYTO_08
    private final Person Remy = person("Remy");
 
    public AYTO_08() {
-      super(Mode.BISEXUAL, 8);
+      super(new PermutationConfiguration(Mode.BISEXUAL), 8);
 
       newDay().matchBox(pair(Justin, Nour), false)
             .matchNight(2, pair(Aasha, Paige), pair(Amber, Nour), pair(Basit, Jonathan), pair(Brandon, Remy),

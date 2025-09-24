@@ -1,5 +1,6 @@
 package demawi.ayto.de;
 
+import demawi.ayto.modell.PermutationConfiguration;
 import demawi.ayto.modell.Woman;
 import demawi.ayto.modell.Man;
 import demawi.ayto.modell.SeasonData;
@@ -36,7 +37,7 @@ public class AYTO_03
   private final Man Jordi = mann("Jordi");
 
   public AYTO_03() {
-    super(Mode.MARKED);
+    super(new PermutationConfiguration(Mode.MARKED));
 
     newDay().matchBox(pair(Jessica, Mike), false)
           .matchNight(3, pair(Jessica, Leon), pair(Joelina, Mike), pair(Kerstin, Max), pair(Monami, Antonino),

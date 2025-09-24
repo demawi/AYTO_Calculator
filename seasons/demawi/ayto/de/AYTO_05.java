@@ -1,6 +1,7 @@
 package demawi.ayto.de;
 
 import demawi.ayto.modell.Man;
+import demawi.ayto.modell.PermutationConfiguration;
 import demawi.ayto.modell.SeasonData;
 import demawi.ayto.modell.Woman;
 import demawi.ayto.permutation.AYTO_Permutator.Mode;
@@ -8,7 +9,7 @@ import demawi.ayto.print.DefaultMatchPrinter;
 
 import static demawi.ayto.modell.AYTO_Pair.pair;
 import static demawi.ayto.permutation.Mark.CAN_BE_AN_EXTRA_MATCH;
-import static demawi.ayto.permutation.Mark.IS_AN_EXTRA_MATCH;
+import static demawi.ayto.permutation.Mark.IS_A_THIRD_MATCH;
 
 public class AYTO_05
       extends SeasonData {
@@ -24,7 +25,7 @@ public class AYTO_05
    private final Woman Shelly = frau("Shelly").mark(CAN_BE_AN_EXTRA_MATCH);
    private final Woman Tais = frau("Tais").mark(CAN_BE_AN_EXTRA_MATCH);
    private final Woman Lina = frau("Lina", true).mark(CAN_BE_AN_EXTRA_MATCH);
-   private final Woman Melanie = frau("Melanie", true).mark(CAN_BE_AN_EXTRA_MATCH).mark(IS_AN_EXTRA_MATCH);
+   private final Woman Melanie = frau("Melanie", true).mark(CAN_BE_AN_EXTRA_MATCH).mark(IS_A_THIRD_MATCH);
 
    private final Man Eti = mann("Eti");
    private final Man Gerrit = mann("Gerrit");
@@ -38,7 +39,7 @@ public class AYTO_05
    private final Man Wilson = mann("Wilson");
 
    public AYTO_05() {
-      super(Mode.MARKED);
+      super(new PermutationConfiguration(Mode.MARKED));
 
       newDay().addNew(Lina)
             .matchBox(pair(Jana, Paolo), false)

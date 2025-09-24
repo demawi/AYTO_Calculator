@@ -1,10 +1,11 @@
 package demawi.ayto.de;
 
-import demawi.ayto.modell.Woman;
 import demawi.ayto.modell.Man;
-import demawi.ayto.permutation.Mark;
+import demawi.ayto.modell.PermutationConfiguration;
 import demawi.ayto.modell.SeasonData;
+import demawi.ayto.modell.Woman;
 import demawi.ayto.permutation.AYTO_Permutator.Mode;
+import demawi.ayto.permutation.Mark;
 import demawi.ayto.print.DefaultMatchPrinter;
 
 import static demawi.ayto.modell.AYTO_Pair.pair;
@@ -36,7 +37,7 @@ public class AYTO_VIP03
    private final Man Max = mann("Max", Mark.CAN_BE_AN_EXTRA_MATCH, true);
 
    public AYTO_VIP03() {
-      super(Mode.MARKED);
+      super(new PermutationConfiguration(Mode.MARKED));
 
       newDay().matchBox(pair(Jennifer, Danilo), false)
             .matchNight(3, pair(Darya, Danilo), pair(Sandra, Paco), pair(Paulina, Steffen), pair(Shakira, Marvin),

@@ -89,7 +89,7 @@ public class MatchCalculator {
          lookup.lookup(frau);
       }
       AYTO_Permutator<Person, Person, AYTO_Pair> permutator = AYTO_Permutator.create(calcPrimaryOptions.getFrauen(),
-            calcPrimaryOptions.getMaenner(), calcPrimaryOptions.getZusatztype(), AYTO_Pair::pair);
+            calcPrimaryOptions.getMaenner(), calcPrimaryOptions.getPermMode(), AYTO_Pair::pair);
 
       List<List<Pair<ConstellationValidation, AYTO_Result>>> results = new ArrayList<>();
       permutator.permutate(() -> {

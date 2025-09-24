@@ -5,14 +5,21 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.BiFunction;
 
+import demawi.ayto.modell.PermutationConfiguration;
+
 public class AYTO_PermutatorMARKED<F, M, R>
       extends AYTO_Permutator<F, M, R> {
 
    private final int difference;
+   private final int diff;
+   private final Integer maxMatches;
 
-   public AYTO_PermutatorMARKED(List<F> frauen, List<M> maenner, BiFunction<F, M, R> packingFunction) {
+   public AYTO_PermutatorMARKED(PermutationConfiguration permCfg, List<F> frauen, List<M> maenner,
+         BiFunction<F, M, R> packingFunction) {
       super(frauen, maenner, packingFunction);
+      diff = frauen.size() - maenner.size();
       difference = Math.abs(frauen.size() - maenner.size());
+      maxMatches = permCfg.getMaxMatches();
    }
 
    /**
@@ -26,6 +33,7 @@ public class AYTO_PermutatorMARKED<F, M, R>
       for (int i = 1, l = constellation.length; i < l; i++) {
          Integer current = (Integer) constellation[i];
          int decodedFrau = decodeFrau(current);
+
          if (decodedFrau == frau) { // die Frau ist bereits enthalten
             // Wenn noch kein Doppel genutzt wurde, könnte erlaubt sein, wenn der Mann ein Zusatzmann ist
             if (usedDoublePrevious >= difference || !hasMarkMan(mann, Mark.CAN_BE_AN_EXTRA_MATCH)) {
@@ -42,10 +50,42 @@ public class AYTO_PermutatorMARKED<F, M, R>
             }
             usedDouble = usedDoublePrevious + 1;
          }
+         if (maxMatches != null && diff != 0) {
+            if (diff < 0) {
+               if (countFrau(decodedFrau, constellation) > maxMatches) {
+                  return null;
+               }
+            }
+            else {
+               if (countMann(decodedMann, constellation) > maxMatches) {
+                  return null;
+               }
+            }
+         }
       }
       int number = encodePair(frau, mann);
       Object[] result = increment(constellation, number);
       result[0] = usedDouble;
+      return result;
+   }
+
+   private int countFrau(int frau, Object[] constellation) {
+      int result = 0;
+      for (Object cur : constellation) {
+         if (decodeFrau((Integer) cur) == frau) {
+            result++;
+         }
+      }
+      return result;
+   }
+
+   private int countMann(int frau, Object[] constellation) {
+      int result = 0;
+      for (Object cur : constellation) {
+         if (decodeMann((Integer) cur) == frau) {
+            result++;
+         }
+      }
       return result;
    }
 
@@ -62,6 +102,10 @@ public class AYTO_PermutatorMARKED<F, M, R>
       if (constellation.length < maxSize + 1) {
          return null;
       }
+      return decodeResultPairsIntern(constellation);
+   }
+
+   protected Set<R> decodeResultPairsIntern(Object[] constellation) {
       Set<R> result = new LinkedHashSet<>();
       for (int i = 1, l = constellation.length; i < l; i++) {
          result.add(decodePair((Integer) constellation[i]));

@@ -10,7 +10,7 @@ import demawi.ayto.permutation.Mark;
 public class SeasonData {
 
    public String name;
-   private final AYTO_Permutator.Mode zusatztype;
+   private final PermutationConfiguration permCfg;
    private final int matchingPairCount;
    private final boolean validiation;
 
@@ -70,18 +70,18 @@ public class SeasonData {
       return mann;
    }
 
-   public SeasonData(AYTO_Permutator.Mode zusatztype) {
-      this(zusatztype, 10);
+   public SeasonData(PermutationConfiguration permCfg) {
+      this(permCfg, 10);
    }
 
-   public SeasonData(AYTO_Permutator.Mode zusatztype, int matchingPairCount) {
-      this.zusatztype = zusatztype;
+   public SeasonData(PermutationConfiguration permCfg, int matchingPairCount) {
+      this.permCfg = permCfg;
       this.matchingPairCount = matchingPairCount;
       this.validiation = true;
    }
 
-   public SeasonData(AYTO_Permutator.Mode zusatztype, int matchingPairCount, boolean validation) {
-      this.zusatztype = zusatztype;
+   public SeasonData(PermutationConfiguration permCfg, int matchingPairCount, boolean validation) {
+      this.permCfg = permCfg;
       this.matchingPairCount = matchingPairCount;
       this.validiation = validation;
    }
@@ -100,8 +100,8 @@ public class SeasonData {
       return matchingPairCount;
    }
 
-   public AYTO_Permutator.Mode getZusatztype() {
-      return zusatztype;
+   public PermutationConfiguration getPermCfg() {
+      return permCfg;
    }
 
    public Day getTag(int tagNr) {
@@ -174,7 +174,8 @@ public class SeasonData {
    }
 
    public List<Person> getZusatzpersonen(int tagNr) {
-      return getZusatztype().getExtraMatchPersons(getFrauen(tagNr), getMaenner(tagNr));
+      return getPermCfg().getMode()
+            .getExtraMatchPersons(getFrauen(tagNr), getMaenner(tagNr));
    }
 
    /**
@@ -246,7 +247,7 @@ public class SeasonData {
                for (AYTO_Pair pair : constellation) {
                   personValidationCheck.accept(pair.frau);
                   personValidationCheck.accept(pair.mann);
-                  if (zusatztype != AYTO_Permutator.Mode.BISEXUAL) {
+                  if (permCfg.getMode() != AYTO_Permutator.Mode.BISEXUAL) {
                      validateMatchingPairs(constellation);
                   }
                }
@@ -305,7 +306,7 @@ public class SeasonData {
                   previousPerfectMatches.add(result.pair);
 
                   Person resultFrau = (result.pair.mann instanceof Woman) ? result.pair.mann : result.pair.frau;
-                  Person resultMann = (result.pair.frau instanceof Woman) ? result.pair.frau : result.pair.mann;
+                  Person resultMann = (result.pair.frau instanceof Woman) ? result.pair.mann : result.pair.frau;
                   if (newPerson != null) {
                      if (newPerson instanceof Woman) {
                         for (Person frau : getZusatzpersonen(tagNr)) {
@@ -349,8 +350,8 @@ public class SeasonData {
          return;
       }
 
-      if (pairWeitererAuszuege != null && Arrays.stream(pairWeitererAuszuege)
-            .anyMatch(p -> p.equals(implicitPair))) {
+      if (pairWeitererAuszuege != null && Arrays.asList(pairWeitererAuszuege)
+            .contains(implicitPair)) {
          implicitEvent.implicits.add(new MatchBoxResult(implicitPair, true));
       }
       else {

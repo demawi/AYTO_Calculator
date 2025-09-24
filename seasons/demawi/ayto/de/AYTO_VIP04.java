@@ -1,6 +1,7 @@
 package demawi.ayto.de;
 
 import demawi.ayto.modell.Man;
+import demawi.ayto.modell.PermutationConfiguration;
 import demawi.ayto.modell.SeasonData;
 import demawi.ayto.modell.Woman;
 import demawi.ayto.permutation.AYTO_Permutator.Mode;
@@ -36,7 +37,7 @@ public class AYTO_VIP04
    private final Man Tim = mann("Tim");
 
    public AYTO_VIP04() {
-      super(Mode.MARKED);
+      super(new PermutationConfiguration(Mode.MARKED));
 
       newDay().matchBox(pair(LauraL, Marc_Robin), false)
             .matchNight(2, pair(Linda, Tim), pair(Jennifer, Lukas), pair(Tara, Nikola), pair(Nadja, Lars),

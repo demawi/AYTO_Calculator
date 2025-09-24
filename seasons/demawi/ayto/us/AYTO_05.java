@@ -1,5 +1,6 @@
 package demawi.ayto.us;
 
+import demawi.ayto.modell.PermutationConfiguration;
 import demawi.ayto.modell.Woman;
 import demawi.ayto.modell.Man;
 import demawi.ayto.modell.SeasonData;
@@ -36,7 +37,7 @@ public class AYTO_05
    private final Man Tyler = mann("Tyler");
 
    public AYTO_05() {
-      super(Mode.STANDARD, 11);
+      super(new PermutationConfiguration(Mode.STANDARD), 11);
 
       newDay().matchBox(pair(Gianna, Hayden), false)
             .matchNight(2, pair(Alicia, Andre), pair(Carolina, Joey), pair(Casandra, Jaylan), pair(Gianna, Ozzy),

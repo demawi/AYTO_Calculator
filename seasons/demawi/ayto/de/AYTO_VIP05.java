@@ -1,6 +1,7 @@
 package demawi.ayto.de;
 
 import demawi.ayto.modell.Man;
+import demawi.ayto.modell.PermutationConfiguration;
 import demawi.ayto.modell.SeasonData;
 import demawi.ayto.modell.Woman;
 import demawi.ayto.permutation.AYTO_Permutator.Mode;
@@ -9,7 +10,6 @@ import demawi.ayto.print.DefaultMatchPrinter;
 
 import static demawi.ayto.modell.AYTO_Pair.pair;
 import static demawi.ayto.permutation.Mark.CAN_BE_AN_EXTRA_MATCH;
-import static demawi.ayto.permutation.Mark.IS_AN_EXTRA_MATCH;
 
 public class AYTO_VIP05
       extends SeasonData {
@@ -36,11 +36,11 @@ public class AYTO_VIP05
    private final Man Olli = mann("Olli", Mark.CAN_BE_AN_EXTRA_MATCH);
    private final Man Rob = mann("Rob", Mark.CAN_BE_AN_EXTRA_MATCH);
    private final Man Leandro = mann("Leandro", true).mark(Mark.CAN_BE_AN_EXTRA_MATCH);
-   private final Man Jimi = mann("Jimi", true).mark(CAN_BE_AN_EXTRA_MATCH)
-         .mark(IS_AN_EXTRA_MATCH); // eine Frau hat zwei PerfectMatches
+   private final Man Jimi = mann("Jimi", true).mark(
+         CAN_BE_AN_EXTRA_MATCH); // "damit hat ab sofort noch eine von euch Ladies zwei Perfect Matches"
 
    public AYTO_VIP05() {
-      super(Mode.MARKED);
+      super(new PermutationConfiguration(Mode.MARKED, 2));
 
       newDay().matchBox(pair(Sandra, Kevin), null)
             .addNew(Leandro)
@@ -69,8 +69,7 @@ public class AYTO_VIP05
             .matchNight(4, pair(Elli, Xander), pair(Sandra, Lennert), pair(Henna, Olli), pair(Hati, Jimi),
                   pair(Viki, Jonny), pair(Beverly, Leandro), pair(Ariel, Kevin), pair(Antonia, Calvin_Blond_S),
                   pair(Joanna, Sidar), pair(Nelly, Calvin_hOt)); // Rob, Nico
-      newDay().matchBox(pair(Antonia, Olli), false)
-            .matchBox(pair(Hati, Jimi), null);
+      //newDay().matchBox(pair(Antonia, Olli), false).matchBox(pair(Hati, Jimi), null);
    }
 
    public static void main(String[] args) {

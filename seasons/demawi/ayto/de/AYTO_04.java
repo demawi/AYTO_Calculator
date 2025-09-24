@@ -1,5 +1,6 @@
 package demawi.ayto.de;
 
+import demawi.ayto.modell.PermutationConfiguration;
 import demawi.ayto.modell.Woman;
 import demawi.ayto.modell.Man;
 import demawi.ayto.modell.SeasonData;
@@ -36,7 +37,7 @@ public class AYTO_04
   private final Man Marwin = mann("Marwin", CAN_BE_AN_EXTRA_MATCH);
 
   public AYTO_04() {
-    super(Mode.MARKED);
+    super(new PermutationConfiguration(Mode.MARKED));
 
     newDay().addNew(Marwin)
           .matchBox(pair(Valeria, Marwin), false)

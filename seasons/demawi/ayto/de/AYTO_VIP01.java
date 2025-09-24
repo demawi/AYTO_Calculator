@@ -1,5 +1,6 @@
 package demawi.ayto.de;
 
+import demawi.ayto.modell.PermutationConfiguration;
 import demawi.ayto.modell.Woman;
 import demawi.ayto.modell.Man;
 import demawi.ayto.modell.SeasonData;
@@ -36,7 +37,7 @@ public class AYTO_VIP01
   private final Man Josua = mann("Josua");
 
   public AYTO_VIP01() {
-    super(Mode.MARKED);
+    super(new PermutationConfiguration(Mode.MARKED));
 
     newDay().matchBox(pair(Finnja, Danilo), false)
           .matchNight(3, pair(Steffi, Danilo), pair(Jill, Jamie), pair(Walentina, Eugen), pair(Kathleen, Manuel),

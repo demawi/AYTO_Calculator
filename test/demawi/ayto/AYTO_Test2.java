@@ -1,8 +1,9 @@
 package demawi.ayto;
 
-import demawi.ayto.modell.Woman;
 import demawi.ayto.modell.Man;
+import demawi.ayto.modell.PermutationConfiguration;
 import demawi.ayto.modell.SeasonData;
+import demawi.ayto.modell.Woman;
 import demawi.ayto.permutation.AYTO_Permutator;
 import demawi.ayto.print.DefaultMatchPrinter;
 
@@ -18,7 +19,7 @@ public class AYTO_Test2
    private final Man Christopher = mann("Christopher");
 
    public AYTO_Test2() {
-      super(AYTO_Permutator.Mode.MARKED);
+      super(new PermutationConfiguration(AYTO_Permutator.Mode.MARKED));
 
       Woman newFrau = frau("Sarah");
       newDay().addNew(newFrau);

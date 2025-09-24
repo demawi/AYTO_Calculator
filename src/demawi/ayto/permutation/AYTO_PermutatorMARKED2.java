@@ -32,10 +32,10 @@ public class AYTO_PermutatorMARKED2<F, M, R>
             if (usedDoublePrevious >= difference) {
                return null;
             }
-            else if (!hasMarkMan(mann, Mark.IS_AN_EXTRA_MATCH) && usedDoublePrevious >= difference - 1) {
+            else if (!hasMarkMan(mann, Mark.IS_A_THIRD_MATCH) && usedDoublePrevious >= difference - 1) {
                return null;
             }
-            else if (hasMarkMan(mann, Mark.IS_AN_EXTRA_MATCH) && countFrau(frau, constellation) != difference) {
+            else if (hasMarkMan(mann, Mark.IS_A_THIRD_MATCH) && countFrau(frau, constellation) != difference) {
                return null;
             }
             else if (!hasMarkMan(mann, Mark.CAN_BE_AN_EXTRA_MATCH) && usedDoublePrevious >= difference - 2) {
@@ -50,10 +50,10 @@ public class AYTO_PermutatorMARKED2<F, M, R>
             if (usedDoublePrevious >= difference) {
                return null;
             }
-            else if (!hasMarkWoman(frau, Mark.IS_AN_EXTRA_MATCH) && usedDoublePrevious >= difference - 1) {
+            else if (!hasMarkWoman(frau, Mark.IS_A_THIRD_MATCH) && usedDoublePrevious >= difference - 1) {
                return null;
             }
-            else if (hasMarkWoman(frau, Mark.IS_AN_EXTRA_MATCH) && countMann(mann, constellation) != difference) {
+            else if (hasMarkWoman(frau, Mark.IS_A_THIRD_MATCH) && countMann(mann, constellation) != difference) {
                return null;
             }
             else if (!hasMarkWoman(frau, Mark.CAN_BE_AN_EXTRA_MATCH) && usedDoublePrevious >= difference - 2) {

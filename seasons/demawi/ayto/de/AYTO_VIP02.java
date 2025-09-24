@@ -1,5 +1,6 @@
 package demawi.ayto.de;
 
+import demawi.ayto.modell.PermutationConfiguration;
 import demawi.ayto.modell.Woman;
 import demawi.ayto.modell.Man;
 import demawi.ayto.modell.SeasonData;
@@ -36,7 +37,7 @@ public class AYTO_VIP02
    private final Man Felix = mann("Felix", CAN_BE_AN_EXTRA_MATCH, true);
 
    public AYTO_VIP02() {
-      super(Mode.MARKED);
+      super(new PermutationConfiguration(Mode.MARKED));
 
       newDay().matchBox(pair(Zoe, Martin), false)
             .matchNight(3, pair(Franziska, Max), pair(Anna, Michael), pair(Celina, Martin), pair(Ricarda, Maurice),

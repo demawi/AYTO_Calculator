@@ -7,9 +7,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.junit.jupiter.api.Test;
 
+import demawi.ayto.modell.PermutationConfiguration;
 import demawi.ayto.print.Formatter;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class AYTO_PermutatorBISEXUALTest {
@@ -23,7 +23,7 @@ public class AYTO_PermutatorBISEXUALTest {
    public void testCanAddSmallBISEXUAL() {
       List<String> curPersonen = Arrays.asList("A", "B", "C", "D");
       AYTO_Permutator<String, String, String> permutator = AYTO_Permutator.create(curPersonen, curPersonen,
-            AYTO_Permutator.Mode.BISEXUAL, (a, b) -> "" + a + b);
+            new PermutationConfiguration(AYTO_Permutator.Mode.BISEXUAL), (a, b) -> "" + a + b);
       assertNull(permutator.canAdd(ind("B"), ind("A"), pairs("AB")));
       assertNull(permutator.canAdd(ind("A"), ind("B"), pairs("AB")));
       assertNull(permutator.canAdd(ind("A"), ind("C"), pairs("AB")));
@@ -40,7 +40,8 @@ public class AYTO_PermutatorBISEXUALTest {
       boolean withFullCheck = true;
       long start = System.currentTimeMillis();
       AYTO_Permutator<String, String, String> permutator = AYTO_Permutator.create(personen(anzahlPersonen),
-            personen(anzahlPersonen), AYTO_Permutator.Mode.BISEXUAL, (a, b) -> "" + a + b);
+            personen(anzahlPersonen), new PermutationConfiguration(AYTO_Permutator.Mode.BISEXUAL),
+            (a, b) -> "" + a + b);
       atomicCount.set(0);
       permutator.permutate(() -> result -> {
          atomicCount.incrementAndGet();
@@ -51,7 +52,8 @@ public class AYTO_PermutatorBISEXUALTest {
             System.out.println(result);
          }
       });
-      System.out.println("Found " + atomicCount + " constellations in " + Formatter.minSecs(System.currentTimeMillis() - start));
+      System.out.println(
+            "Found " + atomicCount + " constellations in " + Formatter.minSecs(System.currentTimeMillis() - start));
    }
 
    private static int ind(String f) {
