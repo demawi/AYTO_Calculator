@@ -5,8 +5,14 @@ public class Mark {
     * The persons marked with this, can have a shared match.
     */
    public static final Mark CAN_BE_AN_EXTRA_MATCH = new Mark("*");
+
    /**
-    * Ist ein drittes Match
+    * Gehört in jedem Fall zu einem anderen Pärchen als Extra Match dazu.
+    */
+   public static final Mark IS_AN_EXTRA_MATCH = new Mark("*");
+
+   /**
+    * Gehört in jedem Fall zu dem anderen Match+ExtraMatch dazu.
     */
    public static final Mark IS_A_THIRD_MATCH = new Mark("*");
 

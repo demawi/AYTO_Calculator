@@ -36,8 +36,8 @@ public class AYTO_VIP05
    private final Man Olli = mann("Olli", Mark.CAN_BE_AN_EXTRA_MATCH);
    private final Man Rob = mann("Rob", Mark.CAN_BE_AN_EXTRA_MATCH);
    private final Man Leandro = mann("Leandro", true).mark(Mark.CAN_BE_AN_EXTRA_MATCH);
-   private final Man Jimi = mann("Jimi", true).mark(
-         CAN_BE_AN_EXTRA_MATCH); // "damit hat ab sofort noch eine von euch Ladies zwei Perfect Matches"
+   private final Man Jimi = mann("Jimi", true).mark(CAN_BE_AN_EXTRA_MATCH)
+         .mark(Mark.IS_AN_EXTRA_MATCH); // "damit hat ab sofort noch eine von euch Ladies zwei Perfect Matches"
 
    public AYTO_VIP05() {
       super(new PermutationConfiguration(Mode.MARKED, 2));
@@ -69,7 +69,8 @@ public class AYTO_VIP05
             .matchNight(4, pair(Elli, Xander), pair(Sandra, Lennert), pair(Henna, Olli), pair(Hati, Jimi),
                   pair(Viki, Jonny), pair(Beverly, Leandro), pair(Ariel, Kevin), pair(Antonia, Calvin_Blond_S),
                   pair(Joanna, Sidar), pair(Nelly, Calvin_hOt)); // Rob, Nico
-      //newDay().matchBox(pair(Antonia, Olli), false).matchBox(pair(Hati, Jimi), null);
+      newDay().matchBox(pair(Antonia, Olli), false)
+            .matchBox(pair(Hati, Jimi), null);
    }
 
    public static void main(String[] args) {

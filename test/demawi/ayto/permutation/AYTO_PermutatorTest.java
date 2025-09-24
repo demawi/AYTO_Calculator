@@ -82,6 +82,35 @@ public class AYTO_PermutatorTest {
    }
 
    @Test
+   public void testSmallAll_Marked_4_2_MAX_2_MATCHES_WITH_ONE_EXPLICIT() {
+      int frauenAnzahl = 3;
+      int maennerAnzahl = 5;
+      boolean withFullOutput = frauenAnzahl + maennerAnzahl < 10;
+      boolean withFullCheck = true;
+      long start = System.currentTimeMillis();
+      List<Person> women = frauen(frauenAnzahl);
+      List<Person> men = maenner(maennerAnzahl);
+      men.get(men.size() - 1)
+            .mark(Mark.IS_AN_EXTRA_MATCH);
+      AYTO_Permutator<Person, Person, Pair> permutator = AYTO_Permutator.create(
+            markAll(women, frauenAnzahl > maennerAnzahl), markAll(men, maennerAnzahl > frauenAnzahl),
+            new PermutationConfiguration(AYTO_Permutator.Mode.MARKED, 2), Pair::pair);
+      atomicCount.set(0);
+      permutator.permutate(() -> result -> {
+         atomicCount.incrementAndGet();
+         if (withFullCheck) {
+            check(result, frauen(frauenAnzahl), maenner(maennerAnzahl));
+         }
+         if (withFullOutput) {
+            System.out.println(result);
+         }
+      });
+      System.out.println(
+            "Found " + atomicCount + " constellations in " + Formatter.minSecs(System.currentTimeMillis() - start));
+      assert (atomicCount.get() == 6);
+   }
+
+   @Test
    public void testSmallAll_Marked_4_2_MAX_X_MATCHES() {
       int frauenAnzahl = 2;
       int maennerAnzahl = 4;
