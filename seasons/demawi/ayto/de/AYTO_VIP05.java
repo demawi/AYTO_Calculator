@@ -70,7 +70,11 @@ public class AYTO_VIP05
                   pair(Viki, Jonny), pair(Beverly, Leandro), pair(Ariel, Kevin), pair(Antonia, Calvin_Blond_S),
                   pair(Joanna, Sidar), pair(Nelly, Calvin_hOt)); // Rob, Nico
       newDay().matchBox(pair(Antonia, Olli), false)
-            .matchBox(pair(Hati, Jimi), null);
+            .matchBox(pair(Hati, Jimi), false)
+            .matchNight(5, pair(Elli, Xander), pair(Sandra, Lennert), pair(Hati, Jonny), pair(Antonia, Calvin_Blond_S),
+                  pair(Joanna, Sidar), pair(Nelly, Rob), pair(Ariel, Leandro), pair(Henna, Olli),
+                  pair(Viki, Kevin), pair(Beverly, Nico)); // Jimi, Calvin_hOt
+      newDay().matchBox(pair(Henna, Sidar), false);
    }
 
    public static void main(String[] args) {
