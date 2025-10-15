@@ -78,7 +78,11 @@ public class AYTO_VIP05
             .matchNight(4, pair(Elli, Xander), pair(Sandra, Lennert), pair(Henna, Olli), pair(Ariel, Kevin),
                   pair(Beverly, Nico), pair(Viki, Sidar), pair(Hati, Jonny), pair(Antonia, Calvin_Blond_S),
                   pair(Nelly, Rob), pair(Joanna, Calvin_hOt)); // Jimi, Sidar
-      newDay().matchBox(pair(Nelly, Calvin_hOt), false);
+      newDay().matchBox(pair(Nelly, Calvin_hOt), null)
+            .matchNight(4, pair(Elli, Xander), pair(Sandra, Lennert), pair(Nelly, Calvin_hOt), pair(Viki, Rob),
+                  pair(Henna, Olli), pair(Ariel, Leandro), pair(Hati, Kevin), pair(Beverly, Sidar),
+                  pair(Antonia, Jonny), pair(Joanna, Calvin_Blond_S)); // Jimi, Nico
+      newDay().matchBox(pair(Nelly, Calvin_hOt), true);
    }
 
    public static void main(String[] args) {
