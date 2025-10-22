@@ -27,21 +27,62 @@ Implizite Annahme aufgrund Nicht-Auszug: Nelly & Jimi => No Match!
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Die Anzahl der Kombinationen hat sich reduziert: 136 => 101
 
-Es hat keine Matching Night stattgefunden!
-======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
-                  Antonia      Ariel        Beverly      Elli         Hati         Henna        Joanna       Nelly        Sandra       Viki         
-Calvin Blond S.*    -     (3)  20,79 % (0)  25,74 % (1)    -     (0)  35,64 % (0)   9,90 % (0)    -     (5)    -     (0)    -     (0)   7,92 % (0)  
-Calvin hOt.*        -     (0)    -     (1)    -     (0)    -     (0)    -     (2)    -     (0)    -     (1)    ✓     (4)    -     (0)    -     (0)  
-Jimi**            21,78 % (0)  19,80 % (0)  18,81 % (0)    -     (0)    -     (1)    -     (1)  18,81 % (0)    -     (0)    -     (0)  20,79 % (0)  
-Jonny*              -     (2)  51,49 % (0)    -     (0)    -     (0)   9,90 % (2)  14,85 % (1)  23,76 % (0)    -     (0)    -     (0)    -     (2)  
-Kevin*              -     (0)    -     (2)    -     (0)    -     (0)    -     (1)    -     (0)    -     (0)    -     (0)    -     (3)    ✓     (3)  
-Leandro*          37,62 % (0)    -     (2)    -     (1)    -     (0)  29,70 % (0)   9,90 % (1)  22,77 % (0)    -     (0)    -     (1)    -     (2)  
-Lennert*            -     (1)    -     (0)    -     (0)    -     (0)    -     (0)    -     (1)    -     (0)    -     (1)    ✓     (5)    -     (0)  
-Nico*               -     (0)    -     (4)  90,10 % (3)    -     (0)    -     (0)    -     (0)   9,90 % (0)    -     (0)    -     (0)    -     (0)  
-Olli*               -     (3)    -     (0)    -     (0)    -     (0)    -     (0)    ✓     (5)    -     (0)    -     (0)    -     (0)    -     (0)  
-Rob*              22,77 % (0)  17,82 % (0)    -     (0)    -     (0)    -     (3)    -     (0)  59,41 % (1)    -     (3)    -     (0)    -     (1)  
-Sidar*            43,56 % (0)  21,78 % (0)    -     (4)    -     (0)  34,65 % (0)    -     (0)    -     (2)    -     (1)    -     (0)    -     (1)  
-Xander*             -     (0)    -     (0)    -     (0)    ✓     (9)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)  
+MatchBox: Joanna & Calvin Blond S.... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 0,00% [0]
+Nein => 100,00% [101] <==
+Die Anzahl der Kombinationen bleibt unverändert: 101
 
-Mögliche Paare: 31/120
+==================================================================================================================================================
+-- Berechne VIP05 - Nacht 10 inkl. 2 Matchbox(en)... [Ereignis#2]
+-- Combinations: 1796256000 Possible: 101 Not possible: 1796255899
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Elli & Xander: 100,00%
+Sandra & Lennert: 100,00%
+Nelly & Calvin hOt.: 100,00%
+Joanna & Rob: 59,41%
+Antonia & Calvin Blond S.: 0,00%
+Henna & Leandro: 9,90%
+Viki & Kevin: 100,00%
+Beverly & Nico: 90,10%
+Hati & Sidar: 34,65%
+Ariel & Olli: 0,00%
+Kein Partner: Jonny
+Kein Partner: Jimi
+
+Wahrscheinlichkeit für entsprechende Spotanzahl:
+0 => 0,00% [0]
+1 => 0,00% [0]
+2 => 0,00% [0]
+3 => 0,00% [0]
+4 => 0,00% [0]
+5 => 27,72% [28]
+6 => 50,50% [51]
+7 => 21,78% [22] <==
+8 => 0,00% [0]
+9 => 0,00% [0]
+10 => 0,00% [0]
+Die Anzahl der Kombinationen hat sich reduziert: 101 => 22
+
+==================================================================================================================================================
+-- Berechne VIP05 - Nacht 10 inkl. 2 Matchbox(en) inkl. Matchingnight... [Ereignis#3]
+-- Combinations: 1796256000 Possible: 22 Not possible: 1796255978
+--------------------------------------------------------------------------------------------------------------------------------------------------
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+                  Antonia      Ariel        Beverly      Elli          Hati         Henna        Joanna       Nelly        Sandra       Viki         
+Calvin Blond S.*    -     (4)  36,36 % (0)    -     (1)    -     (0)   22,73 % (0)  22,73 % (0)    -     (5)    -     (0)    -     (0)  18,18 % (0)  
+Calvin hOt.*        -     (0)    -     (1)    -     (0)    -     (0)     -     (2)    -     (0)    -     (1)    ✓     (5)    -     (0)    -     (0)  
+Jimi**            22,73 % (0)  18,18 % (0)  22,73 % (0)    -     (0)     -     (1)    -     (1)  18,18 % (0)    -     (0)    -     (0)  18,18 % (0)  
+Jonny*              -     (2)  81,82 % (0)    -     (0)    -     (0)     -     (2)    -     (1)  18,18 % (0)    -     (0)    -     (0)    -     (2)  
+Kevin*              -     (0)    -     (2)    -     (0)    -     (0)     -     (1)    -     (0)    -     (0)    -     (0)    -     (3)    ✓     (4)  
+Leandro*            ✓     (0)    -     (2)    -     (1)    -     (0)     -     (0)    -     (2)    -     (0)    -     (0)    -     (1)    -     (2)  
+Lennert*            -     (1)    -     (0)    -     (0)    -     (0)     -     (0)    -     (1)    -     (0)    -     (1)    ✓     (6)    -     (0)  
+Nico*               -     (0)    -     (4)    ✓     (4)    -     (0)     -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)  
+Olli*               -     (3)    -     (1)    -     (0)    -     (0)     -     (0)    ✓     (5)    -     (0)    -     (0)    -     (0)    -     (0)  
+Rob*                -     (0)    -     (0)    -     (0)    -     (0)     -     (3)    -     (0)    ✓     (2)    -     (3)    -     (0)    -     (1)  
+Sidar*              -     (0)    -     (0)    -     (4)    -     (0)     ✓     (1)    -     (0)    -     (2)    -     (1)    -     (0)    -     (1)  
+Xander*             -     (0)    -     (0)    -     (0)    ✓     (10)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)  
+
+Mögliche Paare: 20/120
 *: Diese Personen müssen sich ggf. ein Match teilen.
