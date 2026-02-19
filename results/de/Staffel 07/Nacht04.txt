@@ -1,0 +1,44 @@
+
+==================================================================================================================================================
+-- Berechne 07 - Nacht 4... [Ereignis#0]
+-- Combinations: 199584000 Possible: 1177404 Not possible: 198406596
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+MatchBox: Marla & Julian_M... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 7,18% [84590] <==
+Nein => 92,82% [1092814]
+Die Anzahl der Kombinationen hat sich reduziert: 1177404 => 84590
+Kein weiteres Paar zieht aus!
+Implizite Annahme aufgrund Nicht-Auszug: Adrianna & Julian_M => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Alicia & Julian_M => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Elena & Julian_M => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Ella & Julian_M => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Laura & Julian_M => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Linda & Julian_M => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Michelle & Julian_M => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Tiziana & Julian_M => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Tonia & Julian_M => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Aurora & Julian_M => No Match!
+
+==================================================================================================================================================
+-- Berechne 07 - Nacht 4 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Combinations: 199584000 Possible: 69303 Not possible: 199514697
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Die Anzahl der Kombinationen hat sich reduziert: 84590 => 69303
+
+Es hat keine Matching Night stattgefunden!
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+          Adrianna*    Alicia*      Aurora*      Elena*       Ella*        Laura*       Linda*       Marla*       Michelle*    Tiziana*     Tonia*       
+Chris     10,04 % (0)  12,68 % (0)   9,94 % (0)   9,98 % (0)   9,06 % (0)   5,18 % (0)  28,96 % (2)    -     (0)   8,54 % (0)   5,25 % (0)  11,65 % (1)  
+Ema        8,43 % (0)  11,38 % (0)   9,02 % (0)   8,83 % (0)  17,42 % (1)   5,05 % (0)  10,03 % (0)    -     (0)  27,47 % (2)   5,14 % (0)   8,82 % (0)  
+Evi        7,28 % (0)   9,47 % (0)   7,25 % (0)   7,46 % (0)   5,93 % (0)  56,63 % (3)   6,49 % (0)    -     (0)   5,53 % (0)    -     (0)   6,28 % (0)  
+Jeronymo   7,06 % (0)   9,11 % (0)   6,95 % (0)   7,18 % (0)   5,77 % (0)   1,79 % (0)   6,34 % (0)    -     (0)   5,37 % (0)  57,69 % (3)   6,13 % (0)  
+Jerry      8,96 % (0)  11,91 % (0)   0,31 % (1)  35,86 % (1)   5,60 % (0)   5,43 % (0)  10,35 % (0)    -     (0)  17,72 % (1)   5,50 % (0)   9,39 % (0)  
+Julian_M    -     (2)    -     (1)    -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    ✓     (0)    -     (0)    -     (0)    -     (0)  
+Julian_S  23,95 % (1)   2,96 % (1)  37,61 % (1)   7,84 % (0)   6,60 % (0)   6,52 % (0)    -     (0)    -     (0)   7,68 % (0)   6,56 % (0)  10,56 % (0)  
+Luke      12,22 % (0)  15,13 % (0)  11,45 % (0)  11,96 % (0)  10,11 % (0)   7,17 % (0)  12,19 % (0)    -     (3)   9,87 % (0)   7,40 % (0)  11,28 % (0)  
+Meji      11,83 % (0)  14,43 % (0)   7,35 % (0)   0,81 % (2)  30,61 % (1)   6,88 % (0)  11,50 % (0)    -     (0)   8,95 % (0)   7,05 % (0)  10,70 % (0)  
+Noel      10,24 % (0)  12,92 % (0)  10,12 % (0)  10,09 % (0)   8,89 % (0)   5,34 % (0)  14,14 % (1)    -     (0)   8,88 % (0)   5,41 % (0)  25,18 % (2)  
+
+Mögliche Paare: 89/110
+*: Diese Personen müssen sich ggf. ein Match teilen.

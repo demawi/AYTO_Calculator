@@ -56,7 +56,7 @@ public class AYTO_07
                   pair(Aurora, Jerry), pair(Elena, Meji), pair(Linda, Chris), pair(Laura, Evi), pair(Tiziana, Jeronymo),
                   pair(Michelle, Ema)); // Ella
 
-      //newDay().matchBox(pair(Marla, Julian_M), true); // Matching Night wurde verkauft
+      newDay().matchBox(pair(Marla, Julian_M), true); // Matching Night wurde verkauft
 
       //newDay().matchBox(pair(Aurora, Chris), false);
    }
