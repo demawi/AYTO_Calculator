@@ -15,7 +15,8 @@ public class AYTO_07
 
    private final Woman Adrianna = frau("Adrianna").mark(CAN_BE_AN_EXTRA_MATCH);
    private final Woman Alicia = frau("Alicia").mark(CAN_BE_AN_EXTRA_MATCH);
-   private final Woman Aurora = frau("Aurora", true).mark(CAN_BE_AN_EXTRA_MATCH); // Nachzüglerin, aber nicht zwangsweise im Doppelmatch vertreten
+   private final Woman Aurora = frau("Aurora", true).mark(
+         CAN_BE_AN_EXTRA_MATCH); // Nachzüglerin, aber nicht zwangsweise im Doppelmatch vertreten
    private final Woman Elena = frau("Elena").mark(CAN_BE_AN_EXTRA_MATCH);
    private final Woman Ella = frau("Ella").mark(CAN_BE_AN_EXTRA_MATCH);
    private final Woman Laura = frau("Laura").mark(CAN_BE_AN_EXTRA_MATCH);
@@ -48,7 +49,16 @@ public class AYTO_07
       newDay().matchBox(pair(Laura, Evi), null)
             .matchNight(2, pair(Tonia, Chris), pair(Tiziana, Jeronymo), pair(Adrianna, Julian_S), pair(Ella, Ema),
                   pair(Alicia, Julian_M), pair(Linda, Noel), pair(Marla, Luke), pair(Michelle, Jerry), pair(Laura, Evi),
-                  pair(Elena, Meji));
+                  pair(Elena, Meji)); // Aurora
+
+      newDay().matchBox(pair(Linda, Julian_S), false)
+            .matchNight(2, pair(Marla, Luke), pair(Alicia, Julian_S), pair(Adrianna, Julian_M), pair(Tonia, Noel),
+                  pair(Aurora, Jerry), pair(Elena, Meji), pair(Linda, Chris), pair(Laura, Evi), pair(Tiziana, Jeronymo),
+                  pair(Michelle, Ema)); // Ella
+
+      //newDay().matchBox(pair(Marla, Julian_M), true); // Matching Night wurde verkauft
+
+      //newDay().matchBox(pair(Aurora, Chris), false);
    }
 
    public static void main(String[] args) {
