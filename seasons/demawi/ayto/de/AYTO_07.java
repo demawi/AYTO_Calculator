@@ -58,7 +58,10 @@ public class AYTO_07
 
       newDay().matchBox(pair(Marla, Julian_M), true); // Matching Night wurde verkauft
 
-      //newDay().matchBox(pair(Aurora, Chris), false);
+      newDay().matchBox(pair(Aurora, Chris), false)
+            .matchNight(5, pair(Marla, Julian_M), pair(Ella, Meji), pair(Tonia, Noel), pair(Aurora, Evi),
+                  pair(Adrianna, Julian_S), pair(Laura, Luke), pair(Elena, Jerry), pair(Michelle, Ema),
+                  pair(Tiziana, Jeronymo), pair(Linda, Chris)); // Alicia
    }
 
    public static void main(String[] args) {
