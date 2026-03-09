@@ -9,12 +9,13 @@ import demawi.ayto.print.DefaultMatchPrinter;
 
 import static demawi.ayto.modell.AYTO_Pair.pair;
 import static demawi.ayto.permutation.Mark.CAN_BE_AN_EXTRA_MATCH;
+import static demawi.ayto.permutation.Mark.IS_AN_EXTRA_MATCH;
 
 public class AYTO_07
       extends SeasonData {
 
    private final Woman Adrianna = frau("Adrianna").mark(CAN_BE_AN_EXTRA_MATCH);
-   private final Woman Alicia = frau("Alicia").mark(CAN_BE_AN_EXTRA_MATCH);
+   private final Woman Alicia = frau("Alicia").mark(IS_AN_EXTRA_MATCH);
    private final Woman Aurora = frau("Aurora", true).mark(
          CAN_BE_AN_EXTRA_MATCH); // Nachzüglerin, aber nicht zwangsweise im Doppelmatch vertreten
    private final Woman Elena = frau("Elena").mark(CAN_BE_AN_EXTRA_MATCH);
@@ -62,6 +63,13 @@ public class AYTO_07
             .matchNight(5, pair(Marla, Julian_M), pair(Ella, Meji), pair(Tonia, Noel), pair(Aurora, Evi),
                   pair(Adrianna, Julian_S), pair(Laura, Luke), pair(Elena, Jerry), pair(Michelle, Ema),
                   pair(Tiziana, Jeronymo), pair(Linda, Chris)); // Alicia
+
+      newDay().matchBox(pair(Elena, Jerry), null)
+            // Alicia ist raus aber Teil des Doppelmatches
+            .matchNight(4, pair(Marla, Julian_M), pair(Tonia, Noel), pair(Tiziana, Julian_S), pair(Michelle, Ema),
+                  pair(Adrianna, Luke), pair(Linda, Evi), pair(Laura, Jeronymo), pair(Aurora, Meji), pair(Elena, Jerry),
+                  pair(Ella, Chris));
+
    }
 
    public static void main(String[] args) {
