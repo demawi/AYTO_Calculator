@@ -70,6 +70,10 @@ public class AYTO_07
                   pair(Adrianna, Luke), pair(Linda, Evi), pair(Laura, Jeronymo), pair(Aurora, Meji), pair(Elena, Jerry),
                   pair(Ella, Chris));
 
+      newDay().matchBox(pair(Tonia, Noel), true)
+            .matchNight(4, pair(Marla, Julian_M), pair(Tonia, Noel), pair(Laura, Jerry), pair(Aurora, Evi),
+                  pair(Tiziana, Jeronymo), pair(Adrianna, Julian_S), pair(Michelle, Ema), pair(Linda, Chris),
+                  pair(Ella, Meji), pair(Elena, Luke));
    }
 
    public static void main(String[] args) {
