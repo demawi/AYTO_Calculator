@@ -89,6 +89,8 @@ public class AYTO_07
             .matchNight(4, pair(Marla, Julian_M), pair(Tonia, Noel), pair(Tiziana, Jeronymo), pair(Adrianna, Evi),
                   pair(Linda, Luke), pair(Aurora, Jerry), pair(Michelle, Julian_S), pair(Laura, Chris),
                   pair(Ella, Meji), pair(Elena, Ema));
+
+      newDay().matchBox(pair(Alicia, Noel), true); // Auflösung beim Wiedersehen
    }
 
    public static void main(String[] args) {

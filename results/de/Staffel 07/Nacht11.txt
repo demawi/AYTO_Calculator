@@ -1,0 +1,44 @@
+
+==================================================================================================================================================
+-- Berechne 07 - Nacht 11... [Ereignis#0]
+-- Combinations: 32659200 Possible: 8 Not possible: 32659192
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+MatchBox: Alicia & Noel... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 12,50% [1] <==
+Nein => 87,50% [7]
+Die Anzahl der Kombinationen hat sich reduziert: 8 => 1
+Kein weiteres Paar zieht aus!
+Implizite Annahme aufgrund Nicht-Auszug: Adrianna & Noel => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Elena & Noel => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Ella & Noel => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Laura & Noel => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Linda & Noel => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Marla & Noel => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Michelle & Noel => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Tiziana & Noel => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Tonia & Noel => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Aurora & Noel => No Match!
+
+==================================================================================================================================================
+-- Berechne 07 - Nacht 11 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Combinations: 32659200 Possible: 0 Not possible: 32659200
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Die Anzahl der Kombinationen hat sich reduziert: 1 => 0
+
+Es hat keine Matching Night stattgefunden!
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+          Adrianna*    Alicia*      Aurora*      Elena*       Ella*        Laura*       Linda*       Marla*       Michelle*    Tiziana*     Tonia*       
+Chris       NaN % (0)    NaN % (0)    NaN % (0)    NaN % (0)    NaN % (1)    NaN % (1)    NaN % (5)    NaN % (0)    NaN % (0)    NaN % (1)    NaN % (1)  
+Ema         NaN % (0)    NaN % (0)    NaN % (1)    NaN % (1)    NaN % (1)    NaN % (0)    NaN % (1)    NaN % (0)    NaN % (5)    NaN % (0)    NaN % (0)  
+Evi         NaN % (1)    NaN % (0)    NaN % (3)    NaN % (0)    NaN % (0)    NaN % (3)    NaN % (1)    NaN % (0)    NaN % (1)    NaN % (0)    NaN % (0)  
+Jeronymo    NaN % (0)    NaN % (0)    NaN % (0)    NaN % (0)    NaN % (0)    NaN % (1)    NaN % (0)    NaN % (0)    NaN % (1)    NaN % (7)    NaN % (0)  
+Jerry       NaN % (0)    NaN % (0)    NaN % (2)    NaN % (5)    NaN % (0)    NaN % (1)    NaN % (0)    NaN % (0)    NaN % (1)    NaN % (0)    NaN % (0)  
+Julian_M    NaN % (2)    NaN % (1)    NaN % (0)    NaN % (0)    NaN % (0)    NaN % (0)    NaN % (0)    NaN % (6)    NaN % (0)    NaN % (0)    NaN % (0)  
+Julian_S    NaN % (4)    NaN % (1)    NaN % (1)    NaN % (0)    NaN % (0)    NaN % (1)    NaN % (0)    NaN % (0)    NaN % (1)    NaN % (1)    NaN % (0)  
+Luke        NaN % (2)    NaN % (0)    NaN % (0)    NaN % (1)    NaN % (0)    NaN % (2)    NaN % (1)    NaN % (3)    NaN % (0)    NaN % (0)    NaN % (0)  
+Meji        NaN % (0)    NaN % (0)    NaN % (1)    NaN % (2)    NaN % (6)    NaN % (0)    NaN % (0)    NaN % (0)    NaN % (0)    NaN % (0)    NaN % (0)  
+Noel        NaN % (0)    NaN % (0)    NaN % (0)    NaN % (0)    NaN % (0)    NaN % (0)    NaN % (1)    NaN % (0)    NaN % (0)    NaN % (0)    NaN % (8)  
+
+Mögliche Paare: 0/110
+*: Diese Personen müssen sich ggf. ein Match teilen.
