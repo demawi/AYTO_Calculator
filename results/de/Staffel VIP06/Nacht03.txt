@@ -1,0 +1,73 @@
+
+==================================================================================================================================================
+-- Berechne VIP06 - Nacht 3... [Ereignis#0]
+-- Combinations: 199584000 Possible: 991745 Not possible: 198592255
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+MatchBox: Marta & Johannes... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 24,20% [240000] <==
+Nein => 75,80% [751745]
+Die Anzahl der Kombinationen hat sich reduziert: 991745 => 240000
+Zusätzlich zieht auch das Perfect Match Janice & Johannes aus!
+Implizite Annahme aufgrund Nicht-Auszug: Alexandra & Johannes => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Christin & Johannes => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Emma & Johannes => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Francesca & Johannes => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Jenny & Johannes => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Julia & Johannes => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Michelle & Johannes => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Zoe & Johannes => No Match!
+Implizite Annahme aufgrund Nicht-Auszug: Joena & Johannes => No Match!
+
+==================================================================================================================================================
+-- Berechne VIP06 - Nacht 3 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Combinations: 199584000 Possible: 10903 Not possible: 199573097
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Die Anzahl der Kombinationen hat sich reduziert: 240000 => 10903
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Marta & Johannes: 100,00%
+Michelle & Raul: 7,53%
+Christin & Robin: 12,31%
+Alexandra & Germain: 7,80%
+Emma & Fabi: 8,27%
+Jenny & Cansin: 7,70%
+Julia & Bennett: 11,12%
+Zoe & Daymian: 9,86%
+Joena & Marwin: 9,40%
+Francesca & Brian: 10,01%
+Kein Partner: Janice
+
+Wahrscheinlichkeit für entsprechende Spotanzahl:
+0 => 0,00% [0]
+1 => 42,60% [4645]
+2 => 36,93% [4027]
+3 => 15,40% [1679] <==
+4 => 4,13% [450]
+5 => 0,82% [89]
+6 => 0,10% [11]
+7 => 0,02% [2]
+8 => 0,00% [0]
+9 => 0,00% [0]
+10 => 0,00% [0]
+Die Anzahl der Kombinationen hat sich reduziert: 10903 => 1679
+
+==================================================================================================================================================
+-- Berechne VIP06 - Nacht 3 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
+-- Combinations: 199584000 Possible: 1679 Not possible: 199582321
+--------------------------------------------------------------------------------------------------------------------------------------------------
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+          Alexandra*   Christin*    Emma*        Francesca*   Janice*      Jenny*       Joena*       Julia*       Marta*       Michelle*    Zoe*         
+Bennett    5,12 % (0)   8,10 % (0)   5,00 % (0)  25,37 % (1)    -     (0)   7,98 % (0)  12,09 % (1)  26,33 % (1)    -     (0)   5,00 % (0)   5,00 % (0)  
+Brian     10,07 % (1)  16,91 % (1)   6,43 % (0)  23,47 % (1)    -     (0)  10,72 % (0)   9,71 % (0)   9,83 % (0)    -     (0)   6,19 % (0)   6,67 % (0)  
+Cansin     5,78 % (0)   6,91 % (0)   4,59 % (0)   6,13 % (0)    -     (0)  17,99 % (1)   8,16 % (0)   8,81 % (0)    -     (0)   4,29 % (0)  37,34 % (2)  
+Daymian   10,36 % (0)  12,21 % (0)   8,93 % (0)   9,89 % (0)    -     (0)  14,29 % (1)  12,63 % (0)    -     (1)    -     (0)   8,10 % (0)  23,59 % (1)  
+Fabi       8,87 % (0)  10,18 % (0)  19,89 % (1)   8,34 % (0)    -     (1)  10,84 % (0)   9,83 % (0)  17,45 % (1)    -     (0)   7,21 % (0)   7,39 % (0)  
+Germain   19,00 % (1)   6,31 % (0)  37,46 % (2)   5,54 % (0)    -     (0)   7,03 % (0)   7,56 % (0)   8,76 % (0)    -     (0)   4,23 % (0)   4,11 % (0)  
+Johannes    -     (0)    -     (0)    -     (0)    -     (0)    ✓     (1)    -     (0)    -     (0)    -     (0)    ✓     (2)    -     (0)    -     (0)  
+Marwin     6,08 % (0)    -     (0)   5,00 % (0)   5,90 % (0)    -     (0)   6,79 % (0)  21,86 % (1)   8,40 % (0)    -     (0)  41,57 % (2)   4,41 % (0)  
+Raul      25,55 % (1)   9,65 % (0)   6,73 % (0)   6,73 % (0)    -     (0)   8,58 % (0)   8,46 % (0)  10,07 % (0)    -     (1)  18,17 % (1)   6,08 % (0)  
+Robin      9,17 % (0)  29,72 % (2)   5,96 % (0)   8,64 % (0)    -     (0)  15,78 % (1)   9,71 % (0)  10,36 % (0)    -     (0)   5,24 % (0)   5,42 % (0)  
+
+Mögliche Paare: 81/110
+*: Diese Personen müssen sich ggf. ein Match teilen.

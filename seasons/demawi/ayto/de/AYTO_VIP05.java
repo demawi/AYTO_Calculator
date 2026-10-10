@@ -11,6 +11,7 @@ import demawi.ayto.print.DefaultMatchPrinter;
 import static demawi.ayto.modell.AYTO_Pair.pair;
 import static demawi.ayto.permutation.Mark.CAN_BE_AN_EXTRA_MATCH;
 
+// 10 Frauen, 11 Männer
 public class AYTO_VIP05
       extends SeasonData {
 
@@ -25,7 +26,7 @@ public class AYTO_VIP05
    private final Woman Nelly = frau("Nelly");
    private final Woman Viki = frau("Viki");
 
-   private final Man Kevin = mann("Kevin", Mark.CAN_BE_AN_EXTRA_MATCH);
+   private final Man Kevin = mann("Kevin", CAN_BE_AN_EXTRA_MATCH);
    private final Man Sidar = mann("Sidar", Mark.CAN_BE_AN_EXTRA_MATCH);
    private final Man Xander = mann("Xander", Mark.CAN_BE_AN_EXTRA_MATCH);
    private final Man Calvin_hOt = mann("Calvin hOt.", Mark.CAN_BE_AN_EXTRA_MATCH);
