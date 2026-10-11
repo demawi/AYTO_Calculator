@@ -17,10 +17,48 @@ import demawi.ayto.util.Pair;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AYTO_PermutatorTest {
 
    private AtomicInteger atomicCount = new AtomicInteger(0);
+
+   @Test
+   public void testEqualGroupsWithExtraMatchMarksUseMarkedPermutator() {
+      List<Person> women = markAll(frauen(2));
+      List<Person> men = maenner(2);
+
+      AYTO_Permutator<Person, Person, Pair> permutator = AYTO_Permutator.create(
+            women, men, new PermutationConfiguration(AYTO_Permutator.Mode.MARKED), Pair::pair);
+
+      assertTrue(permutator instanceof AYTO_PermutatorMARKED);
+   }
+
+   @Test
+   public void testEqualGroupsWithDefiniteExtraMatchAllowRequiredDuplicate() {
+      List<Person> women = markAll(frauen(3));
+      List<Person> men = maenner(3);
+      women.get(0).mark(Mark.CAN_BE_AN_EXTRA_MATCH);
+      women.get(1).mark(Mark.CAN_BE_AN_EXTRA_MATCH);
+      women.get(2).mark(Mark.CAN_BE_AN_EXTRA_MATCH);
+      men.get(0).mark(Mark.CAN_BE_AN_EXTRA_MATCH);
+      men.get(1).mark(Mark.CAN_BE_AN_EXTRA_MATCH);
+      men.get(2).mark(Mark.IS_AN_EXTRA_MATCH);
+
+      AYTO_Permutator<Person, Person, Pair> permutator = AYTO_Permutator.create(
+            women, men, new PermutationConfiguration(AYTO_Permutator.Mode.MARKED), Pair::pair);
+      atomicCount.set(0);
+      permutator.permutate(() -> result -> {
+         if (result.stream().anyMatch(pair -> pair.getSecond().equals(men.get(0)))
+               && result.stream().anyMatch(pair -> result.stream()
+                     .filter(other -> other.getFirst().equals(pair.getFirst()))
+                     .count() >= 2)) {
+            atomicCount.incrementAndGet();
+         }
+      });
+
+      assertTrue(atomicCount.get() > 0);
+   }
 
    /**
     * Kleiner 4:3 Test mit kompletter Ausgabe

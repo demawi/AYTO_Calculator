@@ -26,17 +26,17 @@ public class AYTO_VIP06
    private final Woman Joena = frau("Joena", Mark.CAN_BE_AN_EXTRA_MATCH,
          true); // ein Mann hat zwei PerfectMatches, kann muss aber nicht Joena sein
 
-   private final Man Bennett = mann("Bennett");
-   private final Man Brian = mann("Brian");
-   private final Man Cansin = mann("Cansin");
-   private final Man Daymian = mann("Daymian");
-   private final Man Fabi = mann("Fabi");
-   private final Man Germain = mann("Germain");
-   private final Man Marwin = mann("Marwin");
-   private final Man Johannes = mann("Johannes");
-   private final Man Raul = mann("Raul");
-   private final Man Robin = mann("Robin");
-   private final Man Laurenz = mann("Laurenz", true);
+   private final Man Bennett = mann("Bennett", Mark.CAN_BE_AN_EXTRA_MATCH);
+   private final Man Brian = mann("Brian", Mark.CAN_BE_AN_EXTRA_MATCH);
+   private final Man Cansin = mann("Cansin", Mark.CAN_BE_AN_EXTRA_MATCH);
+   private final Man Daymian = mann("Daymian", Mark.CAN_BE_AN_EXTRA_MATCH);
+   private final Man Fabi = mann("Fabi", Mark.CAN_BE_AN_EXTRA_MATCH);
+   private final Man Germain = mann("Germain", Mark.CAN_BE_AN_EXTRA_MATCH);
+   private final Man Marwin = mann("Marwin", Mark.CAN_BE_AN_EXTRA_MATCH);
+   private final Man Johannes = mann("Johannes", Mark.CAN_BE_AN_EXTRA_MATCH);
+   private final Man Raul = mann("Raul", Mark.CAN_BE_AN_EXTRA_MATCH);
+   private final Man Robin = mann("Robin", Mark.CAN_BE_AN_EXTRA_MATCH);
+   private final Man Laurenz = mann("Laurenz", Mark.IS_AN_EXTRA_MATCH, true);
 
    public AYTO_VIP06() {
       super(new PermutationConfiguration(Mode.MARKED, 2));
@@ -59,13 +59,16 @@ public class AYTO_VIP06
                   pair(Emma, Fabi), pair(Jenny, Cansin), pair(Julia, Bennett), pair(Zoe, Daymian), pair(Joena, Marwin),
                   pair(Francesca, Brian));
 
-      newDay().matchBox(pair(Julia, Bennett), false).matchNight(4, pair(Marta, Johannes), pair(Zoe, Fabi), pair(Julia, Cansin), pair(Christin, Bennett),
-            pair(Francesca, Raul), pair(Joena, Robin), pair(Jenny, Daymian), pair(Emma, Marwin), pair(Michelle, Germain), pair(Alexandra, Brian));
+      newDay().matchBox(pair(Julia, Bennett), false)
+            .matchNight(4, pair(Marta, Johannes), pair(Zoe, Fabi), pair(Julia, Cansin), pair(Christin, Bennett),
+                  pair(Francesca, Raul), pair(Joena, Robin), pair(Jenny, Daymian), pair(Emma, Marwin),
+                  pair(Michelle, Germain), pair(Alexandra, Brian));
 
-      newDay().addNew(Laurenz).matchBox(pair(Emma, Laurenz), null).matchNight(3, pair(Marta, Johannes), pair(Zoe, Laurenz),
-            pair(Alexandra, Brian), pair(Emma, Germain), pair(Francesca, Marwin), pair(Jenny, Daymian), pair(Joena, Robin), pair(Christin, Bennett),
-            pair(Julia, Cansin), pair(Michelle, Raul)); // Fabi
+      //newDay().addNew(Laurenz);
+      //.matchBox(pair(Emma, Laurenz), null)
+      //.matchNight(3, pair(Marta, Johannes), pair(Zoe, Laurenz), pair(Alexandra, Brian), pair(Emma, Germain), pair(Francesca, Marwin), pair(Jenny, Daymian), pair(Joena, Robin), pair(Christin, Bennett), pair(Julia, Cansin), pair(Michelle, Raul)); // Fabi
 
+      // newDay().matchBox(pair(Michelle, Raul), false).matchNight(3, pair(Marta, Johannes), pair(Alexandra, Brian), pair(Joena, Robin), pair(Jenny, Daymian), pair(Francesca, Marwin), pair(Zoe, Cansin), pair(Michelle, Fabi), pair(Emma, Laurenz), pair(Christin, Bennett), pair(Julia, Germain)); // Raul
    }
 
    public static void main(String[] args) {

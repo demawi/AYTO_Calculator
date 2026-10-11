@@ -59,7 +59,8 @@ public abstract class AYTO_Permutator<F, M, R> {
       executorService = Executors.newCachedThreadPool();
 
       // Pre-calculate MarkMaps
-      for (Mark mark : Arrays.asList(Mark.CAN_BE_AN_EXTRA_MATCH, Mark.IS_A_THIRD_MATCH)) {
+      for (Mark mark : Arrays.asList(Mark.CAN_BE_AN_EXTRA_MATCH, Mark.IS_AN_EXTRA_MATCH,
+            Mark.IS_A_THIRD_MATCH)) {
          marksWomen.put(mark, createMarkMap(women, mark));
          marksMen.put(mark, createMarkMap(men, mark));
       }
@@ -94,7 +95,13 @@ public abstract class AYTO_Permutator<F, M, R> {
          return new AYTO_PermutatorBISEXUAL<>(setA, setB, packingFunction);
       }
       else {
-         if (setA.size() == setB.size()) {
+         boolean hasMarkedExtraMatch = Markable.hasMark(setA, Mark.CAN_BE_AN_EXTRA_MATCH)
+               || Markable.hasMark(setB, Mark.CAN_BE_AN_EXTRA_MATCH)
+               || Markable.hasMark(setA, Mark.IS_AN_EXTRA_MATCH)
+               || Markable.hasMark(setB, Mark.IS_AN_EXTRA_MATCH)
+               || Markable.hasMark(setA, Mark.IS_A_THIRD_MATCH)
+               || Markable.hasMark(setB, Mark.IS_A_THIRD_MATCH);
+         if (setA.size() == setB.size() && (permCfg.getMode() != Mode.MARKED || !hasMarkedExtraMatch)) {
             return new AYTO_PermutatorSTANDARD<>(setA, setB, packingFunction);
          }
          else {
@@ -131,12 +138,18 @@ public abstract class AYTO_Permutator<F, M, R> {
    private void permutateInternImpl(Object[] currentConstellation, Supplier<Consumer<Set<R>>> pairConsumerCreator,
          int branchLevel) {
       Consumer<Set<R>> pairConsumer = branchLevel < 0 ? pairConsumerCreator.get() : null;
-      if (womenCount >= menCount) { // jede Frau ist nur einmal vorhanden, somit iterieren wir über Frauen->Männer
+      boolean iterateWomen = womenCount > menCount
+            || womenCount == menCount && !hasDefiniteExtraMatchOnMen();
+      if (iterateWomen) { // jede Frau ist nur einmal vorhanden, somit iterieren wir über Frauen->Männer
          iterateFirstGroup(0, currentConstellation, pairConsumerCreator, pairConsumer, branchLevel);
       }
       else { // jeder Mann ist nur einmal vorhanden, somit iterieren wir über Männer->Frauen
          iterateSecondGroup(0, currentConstellation, pairConsumerCreator, pairConsumer, branchLevel);
       }
+   }
+
+   private boolean hasDefiniteExtraMatchOnMen() {
+      return Markable.hasMark(men, Mark.IS_AN_EXTRA_MATCH);
    }
 
    protected boolean iterateFirstGroup(int frau, Object[] currentConstellation,

@@ -13,9 +13,12 @@ public class AYTO_PermutatorMARKED<F, M, R>
       extends AYTO_Permutator<F, M, R> {
 
    private final int difference;
+   private final int duplicateCapacity;
    private final int diff;
    private final Integer maxMatches;
    private final boolean hasDefiniteExtraMatches;
+   private final boolean hasDefiniteExtraMatchOnMen;
+   private final boolean hasDefiniteExtraMatchOnWomen;
    private final List<F> frauen;
    private final List<M> maenner;
 
@@ -30,6 +33,11 @@ public class AYTO_PermutatorMARKED<F, M, R>
       hasDefiniteExtraMatches = maenner.stream()
             .anyMatch(a -> ((Person) a).hasMark(Mark.IS_AN_EXTRA_MATCH)) || frauen.stream()
             .anyMatch(a -> ((Person) a).hasMark(Mark.IS_AN_EXTRA_MATCH));
+      hasDefiniteExtraMatchOnMen = maenner.stream()
+            .anyMatch(a -> ((Person) a).hasMark(Mark.IS_AN_EXTRA_MATCH));
+      hasDefiniteExtraMatchOnWomen = frauen.stream()
+            .anyMatch(a -> ((Person) a).hasMark(Mark.IS_AN_EXTRA_MATCH));
+      duplicateCapacity = difference == 0 && hasDefiniteExtraMatches ? 1 : difference;
    }
 
    /**
@@ -46,7 +54,7 @@ public class AYTO_PermutatorMARKED<F, M, R>
 
          if (decodedFrau == frau) { // die Frau ist bereits enthalten
             // Wenn noch kein Doppel genutzt wurde, könnte erlaubt sein, wenn der Mann ein Zusatzmann ist
-            if (usedDoublePrevious >= difference || !hasMarkMan(mann, Mark.CAN_BE_AN_EXTRA_MATCH)) {
+            if (usedDoublePrevious >= duplicateCapacity || !canBeExtraMatchMan(mann)) {
                return null;
             }
             usedDouble = usedDoublePrevious + 1;
@@ -55,7 +63,7 @@ public class AYTO_PermutatorMARKED<F, M, R>
          int decodedMann = decodeMann(current);
          if (decodedMann == mann) { // der Mann ist bereits enthalten
             // Wenn noch kein Doppel genutzt wurde, könnte erlaubt sein, wenn die Frau eine Zusatzfrau ist
-            if (usedDoublePrevious >= difference || !hasMarkWoman(frau, Mark.CAN_BE_AN_EXTRA_MATCH)) {
+            if (usedDoublePrevious >= duplicateCapacity || !canBeExtraMatchWoman(frau)) {
                return null;
             }
             usedDouble = usedDoublePrevious + 1;
@@ -75,50 +83,20 @@ public class AYTO_PermutatorMARKED<F, M, R>
          }
       }
       // IS_AN_EXTRA_MATCH überprüfen
-      if (hasDefiniteExtraMatches && diff != 0 && isLastOne(constellation)) {
+      if (hasDefiniteExtraMatches && isLastOne(constellation)) {
          if (diff < 0) { // Frauen in Unterzahl
-            if (IntStream.range(0, maenner.size())
-                  .filter(idx -> ((Person) maenner.get(idx)).hasMark(Mark.IS_AN_EXTRA_MATCH))
-                  .anyMatch(idx -> {
-                     Integer seineFrau = -1;
-                     if (idx == mann) {
-                        seineFrau = frau;
-                     }
-                     else {
-                        for (int i = 1, l = constellation.length; i < l; i++) {
-                           Integer current = (Integer) constellation[i];
-                           if (decodeMann(current) == idx) {
-                              seineFrau = decodeFrau(current);
-                              break;
-                           }
-                        }
-                     }
-                     return countFrau(seineFrau, constellation) + (seineFrau == frau ? 1 : 0) < 2;
-                  })) {
+            if (hasDefiniteExtraMatchOnMen(frau, mann, constellation)) {
                return null;
             }
          }
-         else {
-            if (IntStream.range(0, frauen.size())
-                  .filter(idx -> ((Person) frauen.get(idx)).hasMark(Mark.IS_AN_EXTRA_MATCH))
-                  .anyMatch(idx -> {
-                     Integer ihrMann = -1;
-                     if (idx == frau) {
-                        ihrMann = mann;
-                     }
-                     else {
-                        for (int i = 1, l = constellation.length; i < l; i++) {
-                           Integer current = (Integer) constellation[i];
-                           if (decodeFrau(current) == idx) {
-                              ihrMann = decodeMann(current);
-                              break;
-                           }
-                        }
-                     }
-                     return countMann(ihrMann, constellation) + (ihrMann == mann ? 1 : 0) < 2;
-                  })) {
+         else if (diff > 0) {
+            if (hasDefiniteExtraMatchOnWomen(frau, mann, constellation)) {
                return null;
             }
+         }
+         else if (hasDefiniteExtraMatchOnMen(frau, mann, constellation)
+               || hasDefiniteExtraMatchOnWomen(frau, mann, constellation)) {
+            return null;
          }
       }
       int number = encodePair(frau, mann);
@@ -147,6 +125,56 @@ public class AYTO_PermutatorMARKED<F, M, R>
          }
       }
       return result;
+   }
+
+   private boolean canBeExtraMatchMan(int mann) {
+      return hasMarkMan(mann, Mark.CAN_BE_AN_EXTRA_MATCH)
+            || hasMarkMan(mann, Mark.IS_AN_EXTRA_MATCH);
+   }
+
+   private boolean canBeExtraMatchWoman(int frau) {
+      return hasMarkWoman(frau, Mark.CAN_BE_AN_EXTRA_MATCH)
+            || hasMarkWoman(frau, Mark.IS_AN_EXTRA_MATCH);
+   }
+
+   private boolean hasDefiniteExtraMatchOnMen(int frau, int mann, Object[] constellation) {
+      return IntStream.range(0, maenner.size())
+            .filter(idx -> ((Person) maenner.get(idx)).hasMark(Mark.IS_AN_EXTRA_MATCH))
+            .anyMatch(idx -> countFrau(getPartnerWoman(idx, frau, mann, constellation), constellation)
+                  + (idx == mann ? 1 : 0) < 2);
+   }
+
+   private boolean hasDefiniteExtraMatchOnWomen(int frau, int mann, Object[] constellation) {
+      return IntStream.range(0, frauen.size())
+            .filter(idx -> ((Person) frauen.get(idx)).hasMark(Mark.IS_AN_EXTRA_MATCH))
+            .anyMatch(idx -> countMann(getPartnerMan(idx, frau, mann, constellation), constellation)
+                  + (idx == frau ? 1 : 0) < 2);
+   }
+
+   private int getPartnerWoman(int mann, int currentFrau, int currentMann, Object[] constellation) {
+      if (mann == currentMann) {
+         return currentFrau;
+      }
+      for (int i = 1, l = constellation.length; i < l; i++) {
+         Integer current = (Integer) constellation[i];
+         if (decodeMann(current) == mann) {
+            return decodeFrau(current);
+         }
+      }
+      return -1;
+   }
+
+   private int getPartnerMan(int frau, int currentFrau, int currentMann, Object[] constellation) {
+      if (frau == currentFrau) {
+         return currentMann;
+      }
+      for (int i = 1, l = constellation.length; i < l; i++) {
+         Integer current = (Integer) constellation[i];
+         if (decodeFrau(current) == frau) {
+            return decodeMann(current);
+         }
+      }
+      return -1;
    }
 
    /**
