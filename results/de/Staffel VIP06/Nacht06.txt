@@ -1,0 +1,64 @@
+
+==================================================================================================================================================
+-- Berechne VIP06 - Nacht 6... [Ereignis#0]
+-- Combinations: 2195424000 Possible: 50 Not possible: 2195423950
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+MatchBox: Michelle & Raul... (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 0,00% [0]
+Nein => 100,00% [50] <==
+Die Anzahl der Kombinationen bleibt unverändert: 50
+
+==================================================================================================================================================
+-- Berechne VIP06 - Nacht 6 inkl. 1 Matchbox(en)... [Ereignis#1]
+-- Combinations: 2195424000 Possible: 50 Not possible: 2195423950
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Marta & Johannes: 100,00%
+Alexandra & Brian: 48,00%
+Joena & Robin: 16,00%
+Jenny & Daymian: 52,00%
+Francesca & Marwin: 0,00%
+Zoe & Cansin: 66,00%
+Michelle & Fabi: 0,00%
+Emma & Laurenz: 12,00%
+Christin & Bennett: 64,00%
+Julia & Germain: 32,00%
+Kein Partner: Raul
+Kein Partner: Janice
+
+Wahrscheinlichkeit für entsprechende Spotanzahl:
+0 => 0,00% [0]
+1 => 0,00% [0]
+2 => 16,00% [8]
+3 => 4,00% [2]
+4 => 56,00% [28]
+5 => 22,00% [11] <==
+6 => 2,00% [1]
+7 => 0,00% [0]
+8 => 0,00% [0]
+9 => 0,00% [0]
+10 => 0,00% [0]
+Die Anzahl der Kombinationen hat sich reduziert: 50 => 11
+
+==================================================================================================================================================
+-- Berechne VIP06 - Nacht 6 inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#2]
+-- Combinations: 2195424000 Possible: 11 Not possible: 2195423989
+--------------------------------------------------------------------------------------------------------------------------------------------------
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+           Alexandra*   Christin*    Emma*        Francesca*   Janice*      Jenny*       Joena*       Julia*       Marta*       Michelle*    Zoe*         
+Bennett*     -     (0)  90,91 % (3)    -     (0)    -     (1)    -     (0)    -     (0)    -     (1)    -     (1)    -     (0)   9,09 % (0)    -     (0)  
+Brian*     81,82 % (4)   9,09 % (1)    -     (0)    -     (1)    -     (0)    -     (0)    -     (0)   9,09 % (0)    -     (0)    -     (0)    -     (0)  
+Cansin*      -     (0)    -     (0)    -     (0)    -     (0)    -     (0)    -     (1)   9,09 % (0)    -     (2)    -     (0)    -     (0)  90,91 % (3)  
+Daymian*     -     (0)    -     (0)    -     (0)   9,09 % (0)    -     (0)  18,18 % (4)    -     (0)    -     (1)    -     (0)  63,64 % (0)   9,09 % (1)  
+Fabi*        -     (0)    -     (0)    ✓     (1)    -     (0)    -     (1)    -     (0)    -     (0)    -     (1)    -     (0)    -     (1)    -     (1)  
+Germain*    9,09 % (1)    -     (0)    -     (3)    -     (0)    -     (0)    -     (0)    -     (0)  72,73 % (1)    -     (0)  18,18 % (1)    -     (0)  
+Johannes*    -     (0)    -     (0)    -     (0)    -     (0)    ✓     (1)    -     (0)    -     (0)    -     (0)    ✓     (5)    -     (0)    -     (0)  
+Laurenz*    9,09 % (0)   9,09 % (0)  36,36 % (1)   9,09 % (0)    -     (0)   9,09 % (0)   9,09 % (0)   9,09 % (0)    -     (0)   9,09 % (0)    -     (1)  
+Marwin*      -     (0)    -     (0)    -     (1)    -     (2)    -     (0)    -     (0)  81,82 % (1)   9,09 % (0)    -     (0)   9,09 % (2)    -     (0)  
+Raul*       9,09 % (1)    -     (0)    -     (0)  81,82 % (1)    -     (0)    -     (0)    -     (0)   9,09 % (0)    -     (1)    -     (2)    -     (0)  
+Robin*       -     (0)    -     (2)    -     (0)   9,09 % (0)    -     (0)  81,82 % (1)   9,09 % (3)    -     (0)    -     (0)    -     (0)    -     (0)  
+
+Mögliche Paare: 34/121
+*: Diese Personen müssen sich ggf. ein Match teilen.

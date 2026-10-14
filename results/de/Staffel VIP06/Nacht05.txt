@@ -1,0 +1,67 @@
+
+==================================================================================================================================================
+-- Berechne VIP06 - Nacht 5... [Ereignis#0]
+-- Combinations: 199584000 Possible: 25 Not possible: 199583975
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Ein Mann ist hinzugekommen: Laurenz
+Implizite Annahme für die neue Person durch vorherige Auszüge: Marta & Laurenz => No Match!
+Implizite Annahme für die neue Person durch vorherige Auszüge: Janice & Laurenz => No Match!
+
+==================================================================================================================================================
+-- Berechne VIP06 - Nacht 5 inkl. 1 neuer Person(en)... [Ereignis#1]
+-- Combinations: 2195424000 Possible: 225 Not possible: 2195423775
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Die Anzahl der Kombinationen hat sich erhöht: 25 => 225
+
+MatchBox: Emma & Laurenz verkauft. (Wahrscheinlichkeit für das Ausgang des Ergebnisses)
+Ja   => 11,11% [25]
+Nein => 88,89% [200]
+
+Matching night: (Wahrscheinlichkeit, dass das jeweilige Paar ein Perfect Match ist.)
+Marta & Johannes: 100,00%
+Zoe & Laurenz: 11,11%
+Alexandra & Brian: 40,00%
+Emma & Germain: 40,00%
+Francesca & Marwin: 4,00%
+Jenny & Daymian: 48,00%
+Joena & Robin: 44,00%
+Christin & Bennett: 48,00%
+Julia & Cansin: 52,00%
+Michelle & Raul: 20,00%
+Kein Partner: Fabi
+Kein Partner: Janice
+
+Wahrscheinlichkeit für entsprechende Spotanzahl:
+0 => 0,00% [0]
+1 => 0,00% [0]
+2 => 7,11% [16]
+3 => 22,22% [50] <==
+4 => 41,78% [94]
+5 => 19,11% [43]
+6 => 5,33% [12]
+7 => 4,00% [9]
+8 => 0,44% [1]
+9 => 0,00% [0]
+10 => 0,00% [0]
+Die Anzahl der Kombinationen hat sich reduziert: 225 => 50
+
+==================================================================================================================================================
+-- Berechne VIP06 - Nacht 5 inkl. 1 neuer Person(en) inkl. 1 Matchbox(en) inkl. Matchingnight... [Ereignis#3]
+-- Combinations: 2195424000 Possible: 50 Not possible: 2195423950
+--------------------------------------------------------------------------------------------------------------------------------------------------
+======= Paar-Wahrscheinlichkeiten (In Klammern: Anzahl gemeinsame Matching Nights bisher) =======
+           Alexandra*   Christin*    Emma*        Francesca*   Janice*      Jenny*       Joena*       Julia*       Marta*       Michelle*    Zoe*         
+Bennett*    2,00 % (0)  64,00 % (2)    -     (0)  18,00 % (1)    -     (0)    -     (0)    -     (1)    -     (1)    -     (0)  16,00 % (0)    -     (0)  
+Brian*     48,00 % (3)  18,00 % (1)    -     (0)    -     (1)    -     (0)    -     (0)  16,00 % (0)  18,00 % (0)    -     (0)    -     (0)    -     (0)  
+Cansin*      -     (0)    -     (0)   2,00 % (0)    -     (0)    -     (0)    -     (1)  16,00 % (0)  16,00 % (2)    -     (0)    -     (0)  66,00 % (2)  
+Daymian*     -     (0)    -     (0)    -     (0)  16,00 % (0)    -     (0)  52,00 % (3)    -     (0)    -     (1)    -     (0)  16,00 % (0)  16,00 % (1)  
+Fabi*        -     (0)    -     (0)  98,00 % (1)    -     (0)    -     (1)    -     (0)    -     (0)    -     (1)    -     (0)    -     (0)   2,00 % (1)  
+Germain*   16,00 % (1)    -     (0)    -     (3)    -     (0)    -     (0)    -     (0)    -     (0)  32,00 % (0)    -     (0)  52,00 % (1)    -     (0)  
+Johannes*    -     (0)    -     (0)    -     (0)    -     (0)    ✓     (1)    -     (0)    -     (0)    -     (0)    ✓     (4)    -     (0)    -     (0)  
+Laurenz*   12,00 % (0)  12,00 % (0)  12,00 % (0)  12,00 % (0)    -     (0)  12,00 % (0)  12,00 % (0)  12,00 % (0)    -     (0)  12,00 % (0)   4,00 % (1)  
+Marwin*      -     (0)    -     (0)    -     (1)    -     (1)    -     (0)    -     (0)  52,00 % (1)  16,00 % (0)    -     (0)  16,00 % (2)  16,00 % (0)  
+Raul*      34,00 % (1)    -     (0)    -     (0)  50,00 % (1)    -     (0)    -     (0)    -     (0)  16,00 % (0)    -     (1)    -     (2)    -     (0)  
+Robin*       -     (0)  18,00 % (2)    -     (0)  16,00 % (0)    -     (0)  48,00 % (1)  16,00 % (2)   2,00 % (0)    -     (0)    -     (0)    -     (0)  
+
+Mögliche Paare: 44/121
+*: Diese Personen müssen sich ggf. ein Match teilen.
