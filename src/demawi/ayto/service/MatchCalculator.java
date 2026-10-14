@@ -3,6 +3,7 @@ package demawi.ayto.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
@@ -91,7 +92,10 @@ public class MatchCalculator {
       AYTO_Permutator<Person, Person, AYTO_Pair> permutator = AYTO_Permutator.create(calcPrimaryOptions.getFrauen(),
             calcPrimaryOptions.getMaenner(), calcPrimaryOptions.getPermMode(), AYTO_Pair::pair);
 
-      List<List<Pair<ConstellationValidation, AYTO_Result>>> results = new ArrayList<>();
+      List<List<Pair<ConstellationValidation, AYTO_Result>>> results =
+            java.util.Collections.synchronizedList(new ArrayList<>());
+      ProgressReporter progress = new ProgressReporter(out, start, permutator.estimateConstellations(),
+            permutator.hasExactConstellationEstimate());
       permutator.permutate(() -> {
          List<Pair<ConstellationValidation, AYTO_Result>> eventResults = new ArrayList<>();
          results.add(eventResults);
@@ -120,11 +124,14 @@ public class MatchCalculator {
             eventResults.get(0)
                   .getSecond()
                   .fixTotalPossibilities(totalConstellations.incrementAndGet());
+            long completed = progress.increment();
+            progress.report(completed);
          };
       });
+      progress.reportFinal();
 
       if (out != null) {
-         System.out.println(" Calculation time: " + Formatter.minSecs(System.currentTimeMillis() - start));
+         out.accept(" Calculation time: " + Formatter.minSecs(System.currentTimeMillis() - start));
       }
 
       return sum(calcOptions, results);
@@ -150,6 +157,64 @@ public class MatchCalculator {
          }
       }
       return finalResultList;
+   }
+
+   private static final class ProgressReporter {
+      private static final long REPORT_INTERVAL_MILLIS = 10_000;
+
+      private final Consumer<String> out;
+      private final long start;
+      private final long expectedTotal;
+      private final boolean exactTotal;
+      private final AtomicLong generated = new AtomicLong();
+      private final AtomicLong nextReport = new AtomicLong();
+
+      private ProgressReporter(Consumer<String> out, long start, long expectedTotal, boolean exactTotal) {
+         this.out = out;
+         this.start = start;
+         this.expectedTotal = expectedTotal;
+         this.exactTotal = exactTotal;
+         nextReport.set(start + REPORT_INTERVAL_MILLIS);
+      }
+
+      private long increment() {
+         return generated.incrementAndGet();
+      }
+
+      private void report(long current) {
+         report(current, false);
+      }
+
+      private void reportFinal() {
+         report(generated.get(), true);
+      }
+
+      private void report(long current, boolean force) {
+         if (out == null) {
+            return;
+         }
+         long now = System.currentTimeMillis();
+         long reportAt = nextReport.get();
+         if (!force && (now < reportAt || !nextReport.compareAndSet(reportAt, now + REPORT_INTERVAL_MILLIS))) {
+            return;
+         }
+         long elapsed = now - start;
+         long perSecond = elapsed == 0 ? 0 : current * 1000 / elapsed;
+         String estimateText = "Schätzung nicht verfügbar";
+         String etaText = "ETA nicht verfügbar";
+         if (expectedTotal > 0) {
+            double percent = Math.min(100d, current * 100d / expectedTotal);
+            estimateText = exactTotal
+                  ? String.format("%.2f%% (Gesamtzahl: %d)", percent, expectedTotal)
+                  : String.format("%.2f%% (obere Schranke: ca. %d)", percent, expectedTotal);
+            if (perSecond > 0 && current < expectedTotal) {
+               String etaLabel = exactTotal ? "Voraussichtliche Restzeit " : "Worst-Case-ETA ";
+               etaText = etaLabel + Formatter.minSecs((long) ((expectedTotal - current) * 1000d / perSecond));
+            }
+         }
+         out.accept(" Progress: " + current + " Konstellationen (" + estimateText + "), "
+               + perSecond + "/s, " + etaText + ", Laufzeit " + Formatter.minSecs(elapsed));
+      }
    }
 
 }

@@ -304,6 +304,9 @@ public class SeasonData {
                MatchBoxResult result = (MatchBoxResult) event;
                if (result.result != null && result.result) {
                   previousPerfectMatches.add(result.pair);
+                  if (result.additionalMoveouts != null) {
+                     previousPerfectMatches.addAll(Arrays.asList(result.additionalMoveouts));
+                  }
 
                   Person resultFrau = (result.pair.mann instanceof Woman) ? result.pair.mann : result.pair.frau;
                   Person resultMann = (result.pair.frau instanceof Woman) ? result.pair.mann : result.pair.frau;
@@ -360,4 +363,3 @@ public class SeasonData {
    }
 
 }
-

@@ -14,6 +14,11 @@ public class AYTO_PermutatorBISEXUAL<F, M, R>
       super(frauen, maenner, packingFunction);
    }
 
+   public AYTO_PermutatorBISEXUAL(List<F> frauen, List<M> maenner, BiFunction<F, M, R> packingFunction,
+         Integer parallelism) {
+      super(frauen, maenner, packingFunction, parallelism);
+   }
+
    /**
     * Prüft, ob ein Paar wirklich zu der bisherigen Konstellation hinzugefügt werden kann.
     * <p>

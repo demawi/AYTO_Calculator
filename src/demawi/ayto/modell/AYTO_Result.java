@@ -2,6 +2,8 @@ package demawi.ayto.modell;
 
 import java.util.*;
 
+import demawi.ayto.modell.events.Event;
+import demawi.ayto.modell.events.MatchBoxResult;
 import demawi.ayto.modell.events.MatchingNight;
 import demawi.ayto.modell.events.PairInterpreter;
 
@@ -97,6 +99,9 @@ public class AYTO_Result {
   }
 
   public double getBasePossibility(AYTO_Pair pair) {
+    if (isConfirmedPerfectMatch(pair)) {
+      return 1d;
+    }
     long gesamt = 0;
     List<Person> frauen = getFrauen();
     List<Person> maenner = getMaenner();
@@ -111,6 +116,29 @@ public class AYTO_Result {
       }
     }
     return 1d * getPossibleCount(pair) / gesamt;
+  }
+
+  private boolean isConfirmedPerfectMatch(AYTO_Pair pair) {
+    for (Event event : calcOptions.getEvents()) {
+      if (!(event instanceof MatchBoxResult)) {
+        continue;
+      }
+      MatchBoxResult matchBox = (MatchBoxResult) event;
+      if (!matchBox.isTrue()) {
+        continue;
+      }
+      if (pair.equals(matchBox.pair)) {
+        return true;
+      }
+      if (matchBox.additionalMoveouts != null) {
+        for (AYTO_Pair additionalMoveout : matchBox.additionalMoveouts) {
+          if (pair.equals(additionalMoveout)) {
+            return true;
+          }
+        }
+      }
+    }
+    return false;
   }
 
   public void addResult(Set<AYTO_Pair> constellation, boolean result, PairInterpreter lookup) {

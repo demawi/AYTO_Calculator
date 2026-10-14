@@ -44,9 +44,16 @@ public class MatchBoxResult
       AYTO_Pair lookupPair = lookup.lookup(pair);
       if (result == null)
          return true;
-      if (additionalMoveouts != null && result != constellation.contains(lookupPair)) {
+      if (result != constellation.contains(lookupPair)) {
          return false;
       }
-      return result == constellation.contains(lookupPair);
+      if (result && additionalMoveouts != null) {
+         for (AYTO_Pair additionalMoveout : additionalMoveouts) {
+            if (!constellation.contains(lookup.lookup(additionalMoveout))) {
+               return false;
+            }
+         }
+      }
+      return true;
    }
 }

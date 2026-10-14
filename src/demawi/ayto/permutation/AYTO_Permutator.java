@@ -14,8 +14,7 @@ import demawi.ayto.modell.PermutationConfiguration;
 public abstract class AYTO_Permutator<F, M, R> {
 
    /**
-    * -1: Multi-threading deactivated
-    * 0: branch on root (10 Threads)
+    * Branch on the root and use one worker per available processor.
     */
    private static final int BRANCH_LEVEL = 0;
    protected final ExecutorService executorService;
@@ -49,14 +48,25 @@ public abstract class AYTO_Permutator<F, M, R> {
    private final Map<Mark, boolean[]> marksWomen = new LinkedHashMap<>();
    private final Map<Mark, boolean[]> marksMen = new LinkedHashMap<>();
 
+   /**
+    * Das Ganze beruht auf der Aussagenlogik. Über den Permutator wird ein Modell entworfen, welches nachträglich geprüft werden kann.
+    * Jede aufgeführte Person muss mindestens einmal vorkommen, zudem müssen die an der Person getätigten Markierungen korrekt erfüllt sein.
+    * Anhand der erhaltenen Informationen über Events kann dann nachgelagert geprüft werden, ob ein Modell erfüllbar ist oder nicht.
+    */
    protected AYTO_Permutator(List<F> women, List<M> men, BiFunction<F, M, R> packingFunction) {
+      this(women, men, packingFunction, null);
+   }
+
+   protected AYTO_Permutator(List<F> women, List<M> men, BiFunction<F, M, R> packingFunction,
+         Integer parallelism) {
       this.women = women;
       this.men = men;
       this.packingFunction = packingFunction;
       womenCount = women.size();
       menCount = men.size();
       maxSize = Math.max(womenCount, menCount);
-      executorService = Executors.newCachedThreadPool();
+      int workers = parallelism == null ? Runtime.getRuntime().availableProcessors() : parallelism;
+      executorService = Executors.newFixedThreadPool(Math.max(1, workers));
 
       // Pre-calculate MarkMaps
       for (Mark mark : Arrays.asList(Mark.CAN_BE_AN_EXTRA_MATCH, Mark.IS_AN_EXTRA_MATCH,
@@ -92,7 +102,7 @@ public abstract class AYTO_Permutator<F, M, R> {
    public static <F, M, R> AYTO_Permutator<F, M, R> create(List<F> setA, List<M> setB, PermutationConfiguration permCfg,
          BiFunction<F, M, R> packingFunction) {
       if (permCfg.getMode() == Mode.BISEXUAL) {
-         return new AYTO_PermutatorBISEXUAL<>(setA, setB, packingFunction);
+         return new AYTO_PermutatorBISEXUAL<>(setA, setB, packingFunction, permCfg.getParallelism());
       }
       else {
          boolean hasMarkedExtraMatch = Markable.hasMark(setA, Mark.CAN_BE_AN_EXTRA_MATCH)
@@ -102,11 +112,11 @@ public abstract class AYTO_Permutator<F, M, R> {
                || Markable.hasMark(setA, Mark.IS_A_THIRD_MATCH)
                || Markable.hasMark(setB, Mark.IS_A_THIRD_MATCH);
          if (setA.size() == setB.size() && (permCfg.getMode() != Mode.MARKED || !hasMarkedExtraMatch)) {
-            return new AYTO_PermutatorSTANDARD<>(setA, setB, packingFunction);
+            return new AYTO_PermutatorSTANDARD<>(setA, setB, packingFunction, permCfg.getParallelism());
          }
          else {
             if (Markable.hasMark(setA, Mark.IS_A_THIRD_MATCH) || Markable.hasMark(setB, Mark.IS_A_THIRD_MATCH)) {
-               return new AYTO_PermutatorMARKED2<>(setA, setB, packingFunction);
+               return new AYTO_PermutatorMARKED2<>(setA, setB, packingFunction, permCfg.getParallelism());
             }
             return new AYTO_PermutatorMARKED<>(permCfg, setA, setB, packingFunction);
          }
@@ -124,11 +134,28 @@ public abstract class AYTO_Permutator<F, M, R> {
             System.out.println(((ThreadPoolExecutor) executorService).getActiveCount() + " Threads are still active!");
             // Nothing to do, just wait
          }
+
       }
       catch (InterruptedException e) {
          executorService.shutdownNow();
          throw new RuntimeException(e);
       }
+   }
+
+   /**
+    * Returns a structural estimate for the number of terminal constellations,
+    * or {@code -1} when no inexpensive estimate is available.
+    */
+   public long estimateConstellations() {
+      return -1;
+   }
+
+   /**
+    * Returns whether {@link #estimateConstellations()} is the exact number of
+    * terminal constellations rather than an upper bound.
+    */
+   public boolean hasExactConstellationEstimate() {
+      return false;
    }
 
    /**
@@ -213,6 +240,8 @@ public abstract class AYTO_Permutator<F, M, R> {
    }
 
    protected abstract Object[] canAdd(int frau, int mann, Object[] constellation);
+
+
 
    /**
     * Currently 16 is the maximum for each of the groups.

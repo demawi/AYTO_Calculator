@@ -15,6 +15,12 @@ public class AYTO_PermutatorMARKED2<F, M, R>
       difference = Math.abs(frauen.size() - maenner.size());
    }
 
+   public AYTO_PermutatorMARKED2(List<F> frauen, List<M> maenner, BiFunction<F, M, R> packingFunction,
+         Integer parallelism) {
+      super(frauen, maenner, packingFunction, parallelism);
+      difference = Math.abs(frauen.size() - maenner.size());
+   }
+
    /**
     * Prüft, ob ein Paar wirklich zu der bisherigen Konstellation hinzugefügt werden kann.
     * <p>

@@ -39,7 +39,9 @@ public class AYTO_VIP06
    private final Man Laurenz = mann("Laurenz", Mark.IS_AN_EXTRA_MATCH, true);
 
    public AYTO_VIP06() {
-      super(new PermutationConfiguration(Mode.MARKED, 2));
+      super(new PermutationConfiguration(Mode.MARKED, 2, 11));
+      System.out.println("Prozessoren: "+Runtime.getRuntime()
+            .availableProcessors());
 
       newDay().matchBox(pair(Christin, Marwin), false)
             .matchBox(pair(Marta, Robin), false)
@@ -64,11 +66,11 @@ public class AYTO_VIP06
                   pair(Francesca, Raul), pair(Joena, Robin), pair(Jenny, Daymian), pair(Emma, Marwin),
                   pair(Michelle, Germain), pair(Alexandra, Brian));
 
-      //newDay().addNew(Laurenz);
-      //.matchBox(pair(Emma, Laurenz), null)
-      //.matchNight(3, pair(Marta, Johannes), pair(Zoe, Laurenz), pair(Alexandra, Brian), pair(Emma, Germain), pair(Francesca, Marwin), pair(Jenny, Daymian), pair(Joena, Robin), pair(Christin, Bennett), pair(Julia, Cansin), pair(Michelle, Raul)); // Fabi
+      newDay().addNew(Laurenz)
+      .matchBox(pair(Emma, Laurenz), null)
+      .matchNight(3, pair(Marta, Johannes), pair(Zoe, Laurenz), pair(Alexandra, Brian), pair(Emma, Germain), pair(Francesca, Marwin), pair(Jenny, Daymian), pair(Joena, Robin), pair(Christin, Bennett), pair(Julia, Cansin), pair(Michelle, Raul)); // Fabi
 
-      // newDay().matchBox(pair(Michelle, Raul), false).matchNight(3, pair(Marta, Johannes), pair(Alexandra, Brian), pair(Joena, Robin), pair(Jenny, Daymian), pair(Francesca, Marwin), pair(Zoe, Cansin), pair(Michelle, Fabi), pair(Emma, Laurenz), pair(Christin, Bennett), pair(Julia, Germain)); // Raul
+       newDay().matchBox(pair(Michelle, Raul), false).matchNight(5, pair(Marta, Johannes), pair(Alexandra, Brian), pair(Joena, Robin), pair(Jenny, Daymian), pair(Francesca, Marwin), pair(Zoe, Cansin), pair(Michelle, Fabi), pair(Emma, Laurenz), pair(Christin, Bennett), pair(Julia, Germain)); // Raul
    }
 
    public static void main(String[] args) {

@@ -48,16 +48,31 @@ public class AYTO_PermutatorTest {
       AYTO_Permutator<Person, Person, Pair> permutator = AYTO_Permutator.create(
             women, men, new PermutationConfiguration(AYTO_Permutator.Mode.MARKED), Pair::pair);
       atomicCount.set(0);
+      AtomicInteger incompleteCount = new AtomicInteger(0);
       permutator.permutate(() -> result -> {
-         if (result.stream().anyMatch(pair -> pair.getSecond().equals(men.get(0)))
-               && result.stream().anyMatch(pair -> result.stream()
+         System.out.println(result);
+         if (result.stream().map(Pair::getFirst).distinct().count() != women.size()
+               || result.stream().map(Pair::getSecond).distinct().count() != men.size()
+               || result.size() != women.size() + 1
+               || result.stream().filter(pair -> pair.getSecond().equals(men.get(2))).count() != 1) {
+            incompleteCount.incrementAndGet();
+         }
+         boolean hasDefiniteMan = result.stream().anyMatch(pair -> pair.getSecond().equals(men.get(2)));
+         boolean hasDuplicatedDefiniteManPartner = result.stream()
+               .filter(pair -> pair.getSecond().equals(men.get(2)))
+               .anyMatch(pair -> result.stream()
                      .filter(other -> other.getFirst().equals(pair.getFirst()))
-                     .count() >= 2)) {
+                     .count() >= 2);
+         if (!hasDefiniteMan || !hasDuplicatedDefiniteManPartner) {
+            incompleteCount.incrementAndGet();
+         }
+         if (hasDefiniteMan && hasDuplicatedDefiniteManPartner) {
             atomicCount.incrementAndGet();
          }
       });
-
-      assertTrue(atomicCount.get() > 0);
+      System.out.println("Anzahl: "+atomicCount.get());
+      assertTrue(atomicCount.get() == 18);
+      assertTrue(incompleteCount.get() == 0);
    }
 
    /**
